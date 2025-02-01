@@ -2,6 +2,8 @@
 #include "CvTradeRoute.h"
 #include "CvDLLInterfaceIFaceBase.h"
 #include "CvSavegame.h"
+#include "CvCity.h"
+#include "CvEnums.h"
 
 CvTradeRoute::CvTradeRoute() :
 	m_iId(ANYWHERE_CITY_ID),
@@ -207,4 +209,35 @@ int CvTradeRoute::getBestPortCityID(PlayerTypes ePlayer) const
 {
 	return (GET_PLAYER(ePlayer).AI_findBestPort()->getIDInfo().iID);
 }
+
+int CvTradeRoute::getDistanceBetweenCities() const
+{
+	CvCity* sourceCity = getCity(m_kSourceCity);
+	CvCity* destinationCity = getCity(m_kDestinationCity);
+
+	if (NULL == sourceCity)
+	{
+		return -1;
+	}
+
+	if (NULL == destinationCity)
+	{
+		return -1;
+	}
+
+	return GC.getMap().calculatePathDistance(sourceCity->getCityIndexPlot(CITY_HOME_PLOT), destinationCity->getCityIndexPlot(CITY_HOME_PLOT));
+}
+
+int CvTradeRoute::getImportAmount() const
+{
+	CvCity* destinationCity = getCity(m_kDestinationCity);
+
+	if (NULL == destinationCity)
+	{
+		return -1;
+	}
+
+	return destinationCity->getMaxImportAmount(m_eYield);
+}
+
 // Custom_House_Mod End

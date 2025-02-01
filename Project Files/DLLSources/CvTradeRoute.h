@@ -8,6 +8,9 @@ class CvSavegameWriter;
 class CvTradeRoute
 {
 public:
+	static const int EUROPE_CITY_ID = -1;
+	static const int ANYWHERE_CITY_ID = -2;
+
 	CvTradeRoute();
 	~CvTradeRoute();
 
@@ -37,8 +40,9 @@ public:
 	// Custom_House_Mod Start
 	int getBestPortCityID(PlayerTypes ePlayer) const;
 	// Custom_House_Mod End
-	static const int EUROPE_CITY_ID = -1;
-	static const int ANYWHERE_CITY_ID = -2;
+
+	int getDistanceBetweenCities() const;
+	int getImportAmount() const;
 
 protected:
 	int m_iId;

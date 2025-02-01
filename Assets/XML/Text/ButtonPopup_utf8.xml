@@ -301,6 +301,24 @@
 		<Russian>в</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTES_MAIN_TABLE_5</Tag>
+		<English>Distance</English>
+		<French>Distante</French>
+		<German>Entfernung</German>
+		<Italian>Distanza</Italian>
+		<Spanish>Distancia</Spanish>
+		<Russian>Расстояние</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_TRADE_ROUTES_MAIN_TABLE_6</Tag>
+		<English>Import</English>
+		<French>Import</French>
+		<German>Import</German>
+		<Italian>Importare</Italian>
+		<Spanish>Importar</Spanish>
+		<Russian>Импорт</Russian>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TRADE_ROUTES_MISSING_YIELD</Tag>
 		<English>-</English>
 		<French>-</French>
