@@ -2128,11 +2128,11 @@ char const* CvPlayer::getUnitButton(UnitTypes eUnit) const
 //	return GC.getUnitInfo(eUnit).getArtInfo(0, NO_PROFESSION)->getButton();
 	if (getCivilizationType() != NO_CIVILIZATION)
 	{
-		return GC.getUnitInfo(eUnit).getUnitArtStylesArtInfo(0, NO_PROFESSION, (UnitArtStyleTypes) GC.getCivilizationInfo(getCivilizationType()).getUnitArtStyleType())->getButton();
+		return GC.getUnitInfo(eUnit).getUnitArtStylesArtInfo(0, NO_PROFESSION, GC.getCivilizationInfo(getCivilizationType()).getUnitArtStyleType())->getButton();
 	}
 	else
 	{
-	return GC.getUnitInfo(eUnit).getArtInfo(0, NO_PROFESSION)->getButton();
+	return GC.getUnitInfo(eUnit).getArtInfo(0, NO_PROFESSION, getID())->getButton();
 }
 
 	//Androrc End

@@ -14517,7 +14517,7 @@ const CvArtInfoUnit* CvUnit::getArtInfo(int i) const
 {
 	//Androrc UnitArtStyles
 //	return m_pUnitInfo->getArtInfo(i, getProfession());
-	return m_pUnitInfo->getUnitArtStylesArtInfo(i, getProfession(), (UnitArtStyleTypes) GC.getCivilizationInfo(getCivilizationType()).getUnitArtStyleType());
+	return m_pUnitInfo->getUnitArtStylesArtInfo(i, getProfession(), GC.getCivilizationInfo(getCivilizationType()).getUnitArtStyleType());
 	//Androrc End
 }
 

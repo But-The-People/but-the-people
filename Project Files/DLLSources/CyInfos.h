@@ -36,6 +36,7 @@ BOOST_STATIC_ASSERT(sizeof(CyFeatureInfo) == sizeof(CvFeatureInfo));
 class CyCivilizationInfo : public CvCivilizationInfo
 {
 public:
+	int getUnitArtStyleType() const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyCivilizationInfo) == sizeof(CvCivilizationInfo));
 
@@ -57,6 +58,8 @@ public:
 	int getDefaultProfession() const;
 	int getLeaderPromotion() const;
 	int getUnitClassType() const;
+
+	const CvArtInfoUnit* getUnitArtStylesArtInfo(int index, int iProfession, int iStyle) const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyUnitInfo) == sizeof(CvUnitInfo));
 

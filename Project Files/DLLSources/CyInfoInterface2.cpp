@@ -27,7 +27,7 @@ void CyInfoPythonInterface2()
 		.def("getDefaultPlayerColor", &CvCivilizationInfo::getDefaultPlayerColor, "int ()")
 		.def("getArtStyleType", &CvCivilizationInfo::getArtStyleType, "int ()")
 		//Androrc UnitArtStyles
-		.def("getUnitArtStyleType", &CvCivilizationInfo::getUnitArtStyleType, "int ()")
+		.def("getUnitArtStyleType", &CyCivilizationInfo::getUnitArtStyleType, "int ()")
 		//Androrc End
 		.def("getNumCityNames", &CvCivilizationInfo::getNumCityNames, "int ()")
 		.def("getNumLeaders", &CvCivilizationInfo::getNumLeaders, "int ()")

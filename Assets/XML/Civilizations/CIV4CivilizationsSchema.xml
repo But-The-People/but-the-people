@@ -541,7 +541,7 @@
 		<element type="DefaultPlayerColor"/>
 		<element type="ArtDefineTag"/>
 		<element type="ArtStyleType"/>
-		<element type="UnitArtStyleType" minOccurs="0" maxOccurs="1"/>
+		<element type="UnitArtStyleType"/>
 		<element type="bPlayable"/>
 		<element type="bAIPlayable"/>
 		<element type="bWaterStart"/>

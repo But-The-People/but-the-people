@@ -873,9 +873,9 @@ public:
 	DllExport const char* getFormationType() const;
 	const char* getButton() const;
 	void updateArtDefineButton();
-	const CvArtInfoUnit* getArtInfo(int i, int iProfession) const;
+	const CvArtInfoUnit* getArtInfo(int i, ProfessionTypes eProfession, PlayerTypes ePlayer) const;
 	//Androrc UnitArtStyles
-	const CvArtInfoUnit* getUnitArtStylesArtInfo(int i, int iProfession, int iStyle = -1) const;
+	const CvArtInfoUnit* getUnitArtStylesArtInfo(int i, ProfessionTypes eProfession, UnitArtStyleTypes eStyle = NO_UNIT_ARTSTYLE) const;
 	//Androrc End
 	const CvUnitMeshGroups& getProfessionMeshGroup(int iProfession) const;
 	void read(FDataStreamBase* );
@@ -1633,7 +1633,7 @@ public:
 	DllExport int getDefaultPlayerColor() const;
 	int getArtStyleType() const;
 	//Androrc UnitArtStyles
-	int getUnitArtStyleType() const;         // Expose to Python
+	UnitArtStyleTypes getUnitArtStyleType() const;
 	//Androrc End
 	int getNumCityNames() const;
 	// TAC - Great General Names - Ray - START
@@ -1744,7 +1744,7 @@ protected:
 	int m_iArtStyleType;
 
 	//Androrc UnitArtStyles
-	int m_iUnitArtStyleType;  // FlavorUnits by Impaler[WrG]
+	UnitArtStyleTypes m_eUnitArtStyleType;  // FlavorUnits by Impaler[WrG]
 	//Androrc End
 
 	// TAC - Great General Names - Ray - START

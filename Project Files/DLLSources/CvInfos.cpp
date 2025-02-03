@@ -3666,25 +3666,29 @@ const char* CvUnitInfo::getButton() const
 }
 void CvUnitInfo::updateArtDefineButton()
 {
-	m_szArtDefineButton = getArtInfo(0, NO_PROFESSION)->getButton();
+	m_szArtDefineButton = getArtInfo(0, NO_PROFESSION, NO_PLAYER)->getButton();
 }
-const CvArtInfoUnit* CvUnitInfo::getArtInfo(int index, int iProfession) const
+const CvArtInfoUnit* CvUnitInfo::getArtInfo(int index, ProfessionTypes eProfession, PlayerTypes ePlayer) const
 {
 	//Androrc UnitArtStyles
 //	return ARTFILEMGR.getUnitArtInfo(getArtDefineTag(index, iProfession));
 	UnitArtStyleTypes eStyle = NO_UNIT_ARTSTYLE;
 	if (GC.getGameINLINE().isFinalInitialized())
 	{
-		eStyle = (UnitArtStyleTypes) GC.getCivilizationInfo(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).getUnitArtStyleType();
+		if (!VARINFO<PlayerTypes>::isInRange(ePlayer))
+		{
+			ePlayer = GC.getGameINLINE().getActivePlayer();
+		}
+
+		eStyle = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getUnitArtStyleType();
 	}
-	return ARTFILEMGR.getUnitArtInfo(getArtDefineTag(index, iProfession, eStyle));
+	return ARTFILEMGR.getUnitArtInfo(getArtDefineTag(index, eProfession, eStyle));
 	//Androrc End
 }
 //Androrc UnitArtStyles
-const CvArtInfoUnit* CvUnitInfo::getUnitArtStylesArtInfo(int index, int iProfession, int iStyle) const
+const CvArtInfoUnit* CvUnitInfo::getUnitArtStylesArtInfo(int index, ProfessionTypes eProfession, UnitArtStyleTypes eStyle) const
 {
-	UnitArtStyleTypes eStyle = (UnitArtStyleTypes) iStyle;
-	return ARTFILEMGR.getUnitArtInfo(getArtDefineTag(index, iProfession, eStyle));
+	return ARTFILEMGR.getUnitArtInfo(getArtDefineTag(index, eProfession, eStyle));
 }
 //Androrc End
 const CvUnitMeshGroups& CvUnitInfo::getProfessionMeshGroup(int iProfession) const
@@ -6181,7 +6185,7 @@ CvCivilizationInfo::CvCivilizationInfo():
 m_iDefaultPlayerColor(NO_PLAYERCOLOR),
 m_iArtStyleType(NO_ARTSTYLE),
 //Androrc UnitArtStyles
-m_iUnitArtStyleType(NO_UNIT_ARTSTYLE),
+m_eUnitArtStyleType(NO_UNIT_ARTSTYLE),
 //Androrc End
 m_iNumCityNames(0),
 
@@ -6260,9 +6264,9 @@ int CvCivilizationInfo::getArtStyleType() const
 	return m_iArtStyleType;
 }
 //Androrc UnitArtStyles
-int CvCivilizationInfo::getUnitArtStyleType() const
+UnitArtStyleTypes CvCivilizationInfo::getUnitArtStyleType() const
 {
-	return m_iUnitArtStyleType;
+	return m_eUnitArtStyleType;
 }
 //Androrc End
 int CvCivilizationInfo::getNumCityNames() const
@@ -6592,7 +6596,7 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iDefaultPlayerColor);
 	stream->Read(&m_iArtStyleType);
 	//Androrc UnitArtStyles
-	stream->Read(&m_iUnitArtStyleType);   // FlavorUnits by Impaler[WrG]
+	//stream->Read(&m_iUnitArtStyleType);   // FlavorUnits by Impaler[WrG]
 	//Androrc End
 	stream->Read(&m_iNumCityNames);
 	stream->Read(&m_iNumGeneralNames); // TAC - Great General Names - Ray - START
@@ -6679,7 +6683,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->Write(uiFlag);		// flag for expansion
 	stream->Write(m_iDefaultPlayerColor);
 	stream->Write(m_iArtStyleType);
-	stream->Write(m_iUnitArtStyleType); //Androrc UnitArtStyles
+	//stream->Write(m_iUnitArtStyleType); //Androrc UnitArtStyles
 	stream->Write(m_iNumCityNames);
 	stream->Write(m_iNumGeneralNames);  // TAC - Great General Names - Ray - START
 	stream->Write(m_iNumAdmiralNames);  // R&R, ray, Great Admirals - START
@@ -6747,8 +6751,7 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(szTextVal, "ArtStyleType");
 	m_iArtStyleType = GC.getInfoTypeForString(szTextVal);
 	//Androrc UnitArtStyles
-	pXML->GetChildXmlValByName(szTextVal, "UnitArtStyleType");
-	m_iUnitArtStyleType = pXML->FindInInfoClass(szTextVal);
+	pXML->GetEnum(getType(), m_eUnitArtStyleType, "UnitArtStyleType");
 	//Androrc End
 	pXML->GetChildXmlValByName(szTextVal, "CivilizationSelectionSound");
 	m_iSelectionSoundScriptId = (szTextVal.GetLength() > 0) ? gDLL->getAudioTagIndex( szTextVal.GetCString(), AUDIOTAG_3DSCRIPT ) : -1;

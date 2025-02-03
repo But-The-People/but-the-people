@@ -38372,6 +38372,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_BLACK</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_BARBARIAN</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_NATIVES_EAST</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ENGLAND</UnitArtStyleType>
 			<bPlayable>0</bPlayable>
 			<bAIPlayable>0</bAIPlayable>
 			<bWaterStart>0</bWaterStart>
@@ -38420,6 +38421,7 @@
 			<DefaultPlayerColor>PLAYERCOLOR_WHITE</DefaultPlayerColor>
 			<ArtDefineTag>ART_DEF_CIVILIZATION_ENGLAND_EUROPE</ArtDefineTag>
 			<ArtStyleType>ARTSTYLE_ENGLAND</ArtStyleType>
+			<UnitArtStyleType>UNIT_ARTSTYLE_ENGLAND</UnitArtStyleType>
 			<bPlayable>0</bPlayable>
 			<bAIPlayable>0</bAIPlayable>
 			<bWaterStart>0</bWaterStart>

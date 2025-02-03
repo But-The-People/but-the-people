@@ -620,7 +620,7 @@ public:
 	PlayerTypes getCapturingPlayer() const;
 	void setCapturingPlayer(PlayerTypes eNewValue);
 	bool isCapturableLandUnit() const;
-	DllExport UnitTypes getUnitType() const;
+	UnitTypes getUnitType() const;
 	DllExport CvUnitInfo &getUnitInfo() const;
 	UnitClassTypes getUnitClassType() const;
 
