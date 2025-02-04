@@ -9939,6 +9939,18 @@ void CvYieldInfo::setChar(int i)
 {
 	m_iChar = i;
 }
+
+CvWString CvYieldInfo::getCharLink() const
+{
+	CvWString output;
+	output.append(L"[LINK=");
+	output.append(CvWString(getType()));
+	output.append(L"]");
+	output.append(CvWString::format(L"%c", getChar()));
+	output.append(L"[\\LINK]");
+	return output;
+}
+
 const char* CvYieldInfo::getIcon() const
 {
 	return m_szIcon;

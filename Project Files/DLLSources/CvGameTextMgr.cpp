@@ -6183,9 +6183,9 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 	std::map<int, CvWString> mapModifiers;
 	std::map<int, CvWString> mapChanges;
 	std::map<int, CvWString> mapBonus;
-	for (int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
+	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 	{
-		YieldTypes eYield = (YieldTypes) iYield;
+		const CvYieldInfo& kYieldInfo = GC.getYieldInfo(eYield);
 
 		int iModifier = GC.getUnitInfo(eUnit).getYieldModifier(eYield);
 		if (iModifier != 0)
@@ -6201,19 +6201,19 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 				}
 			}
 			//WTP, ray, Slave Hunter and Slave Master - END
-			mapModifiers[iModifier] += CvWString::format(L"%c", GC.getYieldInfo(eYield).getChar());
+			mapModifiers[iModifier] += kYieldInfo.getCharLink();
 		}
 
 		int iChange = GC.getUnitInfo(eUnit).getYieldChange(eYield);
 		if (iChange != 0)
 		{
-			mapChanges[iChange] += CvWString::format(L"%c", GC.getYieldInfo(eYield).getChar());
+			mapChanges[iChange] += kYieldInfo.getCharLink();
 		}
 
 		iChange = GC.getUnitInfo(eUnit).getBonusYieldChange(eYield);
 		if (iChange != 0)
 		{
-			mapBonus[iChange] += CvWString::format(L"%c", GC.getYieldInfo(eYield).getChar());
+			mapBonus[iChange] += kYieldInfo.getCharLink();
 		}
 	}
 
@@ -6274,7 +6274,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 	const InfoArray<YieldTypes, int> &infoYieldDemands = GC.getUnitInfo(eUnit).getYieldDemands();
 	for (int iI = 0; iI < infoYieldDemands.getLength(); ++iI)
 	{
-		szYieldsDemandedList += CvWString::format(L"%c", GC.getYieldInfo(infoYieldDemands.getYield(iI)).getChar());
+		szYieldsDemandedList += GC.getYieldInfo(infoYieldDemands.getYield(iI)).getCharLink();
 	}
 	if(!isEmpty(szYieldsDemandedList))
 	{
