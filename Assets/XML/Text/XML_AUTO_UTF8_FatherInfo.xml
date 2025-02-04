@@ -1024,7 +1024,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-		<Russian>Фрэнсис Дрейк</Russian>
+		<Russian>Сэр Фрэнсис Дрейк</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FATHER_FRANCIS_DRAKE_PEDIA</Tag>
@@ -1523,7 +1523,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-		<Russian>Уильям Пенн</Russian>
+		<Russian>Сэр Уильям Пенн</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FATHER_ADMIRAL_WILLIAM_PENN_PEDIA</Tag>
@@ -1640,7 +1640,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-		<Russian>Джеймс Ланкастер</Russian>
+		<Russian>Сэр Джеймс Ланкастер</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FATHER_JAMES_LANCASTER_PEDIA</Tag>
@@ -4005,7 +4005,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-		<Russian>Уолтер Рэли</Russian>
+		<Russian>Сэр Уолтер Рэли</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FATHER_WALTER_RALEIGH_PEDIA</Tag>

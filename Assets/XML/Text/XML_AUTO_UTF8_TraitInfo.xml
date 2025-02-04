@@ -999,7 +999,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-		<Russian>Фрэнсис Дрейк</Russian>
+		<Russian>Сэр Фрэнсис Дрейк</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_FRIEDRICH_WILHELM_VON_STEUBEN</Tag>
@@ -1369,7 +1369,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-		<Russian>Уильям Пенн</Russian>
+		<Russian>Сэр Уильям Пенн</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_OTTO_FRIEDRICH_VON_DER_GROEBEN</Tag>
@@ -1485,7 +1485,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-		<Russian>Джеймс Ланкастер</Russian>
+		<Russian>Сэр Джеймс Ланкастер</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_HENRY_SHRAPNEL</Tag>
@@ -2033,7 +2033,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-		<Russian>Хемфри Гилберт</Russian>
+		<Russian>Сэр Хемфри Гилберт</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_JOHN_SMITH</Tag>
@@ -3509,7 +3509,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-		<Russian>Уолтер Рэли</Russian>
+		<Russian>Сэр Уолтер Рэли</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VELAZQUEZ_DE_CUELLAR</Tag>
@@ -3625,7 +3625,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-		<Russian>Томас Гейтс</Russian>
+		<Russian>Сэр Томас Гейтс</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_ROBERT_BAKEWELL</Tag>
@@ -3770,7 +3770,7 @@
 			<Gender>Male</Gender>
 			<Plural>0</Plural>
 		</Spanish>
-		<Russian>Джон Харви</Russian>
+		<Russian>Сэр Джон Харви</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_JOHN_MAURICE</Tag>
