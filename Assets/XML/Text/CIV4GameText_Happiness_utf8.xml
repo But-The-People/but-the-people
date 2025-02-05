@@ -134,14 +134,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNHAPPINES_MISSING_DEFENSES</Tag>
 		<English>[ICON_BULLET]%d2%F3_Icon[TAB]by Missing Protection</English>
-		<English>[ICON_BULLET]%d2%F3_Icon[TAB]à cause des protections manquantes</English>
+		<French>[ICON_BULLET]%d2%F3_Icon[TAB]à cause des protections manquantes</French>
 		<German>[ICON_BULLET]%d2%F3_Icon[TAB]durch fehlenden Schutz</German>
 		<Russian>[ICON_BULLET]%d2%F3_Icon[TAB]от отсутствия солдат в гарнизоне</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNHAPPINES_TAX_RATE</Tag>
 		<English>[ICON_BULLET]%d2%F3_Icon[TAB]by Tax Rate</English>
-		<English>[ICON_BULLET]%d2%F3_Icon[TAB]dû aux taxes</English>
+		<French>[ICON_BULLET]%d2%F3_Icon[TAB]dû aux taxes</French>
 		<German>[ICON_BULLET]%d2%F3_Icon[TAB]durch Besteuerung</German>
 		<Russian>[ICON_BULLET]%d2%F3_Icon[TAB]от ставки налога</Russian>
 	</TEXT>
