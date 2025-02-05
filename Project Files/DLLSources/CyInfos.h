@@ -18,6 +18,8 @@ BOOST_STATIC_ASSERT(sizeof(CyEffectInfo) == sizeof(CvEffectInfo));
 class CyTerrainInfo : public CvTerrainInfo
 {
 public:
+	int getRiverYieldIncrease(int iYield) const;
+	int getYield(int iYield) const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyTerrainInfo) == sizeof(CvTerrainInfo));
 
@@ -30,6 +32,9 @@ BOOST_STATIC_ASSERT(sizeof(CyBonusInfo) == sizeof(CvBonusInfo));
 class CyFeatureInfo : public CvFeatureInfo
 {
 public:
+	int getYieldChange(int iYield) const;
+	int getRiverYieldIncrease(int iYield) const;
+	bool isTerrain(int iTerrain) const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyFeatureInfo) == sizeof(CvFeatureInfo));
 
@@ -43,6 +48,14 @@ BOOST_STATIC_ASSERT(sizeof(CyCivilizationInfo) == sizeof(CvCivilizationInfo));
 class CyLeaderHeadInfo : public CvLeaderHeadInfo
 {
 public:
+	int getContactRand(int iContact) const;
+	int getContactDelay(int iContact) const;
+	int getMemoryDecayRand(int iMemory) const;
+	int getMemoryAttitudePercent(int iMemory) const;
+	int getNoWarAttitudeProb(int iAttitude) const;
+	int getUnitAIWeightModifier(int iUnitAI) const;
+	int getImprovementWeightModifier(int iImprovement) const;
+	bool hasTrait(int iTrait) const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyLeaderHeadInfo) == sizeof(CvLeaderHeadInfo));
 

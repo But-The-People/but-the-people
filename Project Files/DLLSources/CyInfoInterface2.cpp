@@ -306,9 +306,9 @@ void CyInfoPythonInterface2()
 		.def("isNoImprovement", &CvFeatureInfo::isNoImprovement, "bool ()")
 		.def("isVisibleAlways", &CvFeatureInfo::isVisibleAlways, "bool ()")
 		// Arrays
-		.def("getYieldChange", &CvFeatureInfo::getYieldChange, "int (int i)")
-		.def("getRiverYieldIncrease", &CvFeatureInfo::getRiverYieldIncrease, "int (int i)")
-		.def("isTerrain", &CvFeatureInfo::isTerrain, "bool (int i)")
+		.def("getYieldChange", &CyFeatureInfo::getYieldChange, "int (int i)")
+		.def("getRiverYieldIncrease", &CyFeatureInfo::getRiverYieldIncrease, "int (int i)")
+		.def("isTerrain", &CyFeatureInfo::isTerrain, "bool (int i)")
 		.def("getNumVarieties", &CvFeatureInfo::getNumVarieties, "int ()")
 		;
 }

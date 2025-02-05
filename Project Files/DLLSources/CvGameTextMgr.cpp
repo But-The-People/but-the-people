@@ -4532,7 +4532,6 @@ void CvGameTextMgr::parseLeaderTraits(CvWStringBuffer &szHelpString, LeaderHeadT
 	PROFILE_FUNC();
 
 	CvWString szTempBuffer;	// Formatting
-	int iI;
 
 	//	Build help string
 	if (eLeader != NO_LEADER)
@@ -4572,9 +4571,9 @@ void CvGameTextMgr::parseLeaderTraits(CvWStringBuffer &szHelpString, LeaderHeadT
 		bool bFirst = true;
 		bool bFirstCivilizationTrait = true;
 		bool bFirstLeaderTrait = true;
-		for (iI = 0; iI < GC.getNumTraitInfos(); ++iI)
+		for (TraitTypes eTrait = FIRST_TRAIT; eTrait < NUM_TRAIT_TYPES; ++eTrait)
 		{
-			if (eCivilization != NO_CIVILIZATION && GC.getCivilizationInfo(eCivilization).hasTrait(iI))
+			if (eCivilization != NO_CIVILIZATION && GC.getCivilizationInfo(eCivilization).hasTrait(eTrait))
 			{
 				if (bFirstCivilizationTrait)
 				{
@@ -4606,12 +4605,12 @@ void CvGameTextMgr::parseLeaderTraits(CvWStringBuffer &szHelpString, LeaderHeadT
 					bFirst = false;
 				}
 
-				parseTraits(szHelpString, ((TraitTypes)iI), eCivilization, bDawnOfMan);
+				parseTraits(szHelpString, eTrait, eCivilization, bDawnOfMan);
 			}
 		}
-		for (iI = 0; iI < GC.getNumTraitInfos(); ++iI)
+		for (TraitTypes eTrait = FIRST_TRAIT; eTrait < NUM_TRAIT_TYPES; ++eTrait)
 		{
-			if (GC.getLeaderHeadInfo(eLeader).hasTrait(iI))
+			if (GC.getLeaderHeadInfo(eLeader).hasTrait(eTrait))
 			{
 				if (bFirstLeaderTrait)
 				{
@@ -4643,7 +4642,7 @@ void CvGameTextMgr::parseLeaderTraits(CvWStringBuffer &szHelpString, LeaderHeadT
 					bFirst = false;
 				}
 
-				parseTraits(szHelpString, ((TraitTypes)iI), eCivilization, bDawnOfMan);
+				parseTraits(szHelpString, eTrait, eCivilization, bDawnOfMan);
 			}
 		}
 		// R&R Androrc End
@@ -4665,9 +4664,9 @@ void CvGameTextMgr::parseLeaderShortTraits(CvWStringBuffer &szHelpString, Leader
 		FAssert((GC.getNumTraitInfos() > 0) && "GC.getNumTraitInfos() is less than or equal to zero but is expected to be larger than zero in CvSimpleCivPicker::setLeaderText");
 
 		bool bFirst = true;
-		for (int iI = 0; iI < GC.getNumTraitInfos(); ++iI)
+		for (TraitTypes eTrait = FIRST_TRAIT; eTrait < NUM_TRAIT_TYPES; ++eTrait)
 		{
-			if (GC.getLeaderHeadInfo(eLeader).hasTrait(iI))
+			if (GC.getLeaderHeadInfo(eLeader).hasTrait(eTrait))
 			{
 				if (!bFirst)
 				{
@@ -4677,7 +4676,7 @@ void CvGameTextMgr::parseLeaderShortTraits(CvWStringBuffer &szHelpString, Leader
 				{
 					szHelpString.append(L"[");
 				}
-				szHelpString.append(gDLL->getText(GC.getTraitInfo((TraitTypes)iI).getShortDescription()));
+				szHelpString.append(gDLL->getText(GC.getTraitInfo(eTrait).getShortDescription()));
 				bFirst = false;
 			}
 		}
@@ -8095,9 +8094,9 @@ void CvGameTextMgr::setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeat
 	{
 		szBuffer.append(feature.getDescription());
 
-		for (int iI = 0; iI < NUM_YIELD_TYPES; ++iI)
+		for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 		{
-			aiYields[iI] = feature.getYieldChange(iI);
+			aiYields[eYield] = feature.getYieldChange(eYield);
 		}
 		setYieldChangeHelp(szBuffer, L"", L"", L"", aiYields);
 	}
@@ -8163,9 +8162,9 @@ void CvGameTextMgr::setTerrainHelp(CvWStringBuffer &szBuffer, TerrainTypes eTerr
 	{
 		szBuffer.append(terrain.getDescription());
 
-		for (int iI = 0; iI < NUM_YIELD_TYPES; ++iI)
+		for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 		{
-			aiYields[iI] = terrain.getYield(iI);
+			aiYields[eYield] = terrain.getYield(eYield);
 		}
 		setYieldChangeHelp(szBuffer, L"", L"", L"", aiYields);
 	}

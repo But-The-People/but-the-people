@@ -69,8 +69,8 @@ void CyInfoPythonInterface3()
 		.def("isBadCityLocation", &CvTerrainInfo::isBadCityLocation, "bool ()") // WTP, ray, Health Overhaul
 
 		// Arrays
-		.def("getYield", &CvTerrainInfo::getYield, "int (int i)")
-		.def("getRiverYieldIncrease", &CvTerrainInfo::getRiverYieldIncrease, "int (int i)")
+		.def("getYield", &CyTerrainInfo::getYield, "int (int i)")
+		.def("getRiverYieldIncrease", &CyTerrainInfo::getRiverYieldIncrease, "int (int i)")
 		;
 	// CvInterfaceModeInfo
 	python::class_<CvInterfaceModeInfo, boost::noncopyable, python::bases<CvInfoBase> >("CvInterfaceModeInfo")
@@ -137,14 +137,14 @@ void CyInfoPythonInterface3()
 		// R&R, ray, Natives raiding party - END
 		.def("getArtDefineTag", &CvLeaderHeadInfo::getArtDefineTag, "string ()")
 		// Arrays
-		.def("hasTrait", &CvLeaderHeadInfo::hasTrait, "bool (int i)")
-		.def("getContactRand", &CvLeaderHeadInfo::getContactRand, "int (int i)")
-		.def("getContactDelay", &CvLeaderHeadInfo::getContactDelay, "int (int i)")
-		.def("getMemoryDecayRand", &CvLeaderHeadInfo::getMemoryDecayRand, "int (int i)")
-		.def("getMemoryAttitudePercent", &CvLeaderHeadInfo::getMemoryAttitudePercent, "int (int i)")
-		.def("getNoWarAttitudeProb", &CvLeaderHeadInfo::getNoWarAttitudeProb, "int (int i)")
-		.def("getUnitAIWeightModifier", &CvLeaderHeadInfo::getUnitAIWeightModifier, "int (int i)")
-		.def("getImprovementWeightModifier", &CvLeaderHeadInfo::getImprovementWeightModifier, "int (int i)")
+		.def("hasTrait", &CyLeaderHeadInfo::hasTrait, "bool (int i)")
+		.def("getContactRand", &CyLeaderHeadInfo::getContactRand, "int (int i)")
+		.def("getContactDelay", &CyLeaderHeadInfo::getContactDelay, "int (int i)")
+		.def("getMemoryDecayRand", &CyLeaderHeadInfo::getMemoryDecayRand, "int (int i)")
+		.def("getMemoryAttitudePercent", &CyLeaderHeadInfo::getMemoryAttitudePercent, "int (int i)")
+		.def("getNoWarAttitudeProb", &CyLeaderHeadInfo::getNoWarAttitudeProb, "int (int i)")
+		.def("getUnitAIWeightModifier", &CyLeaderHeadInfo::getUnitAIWeightModifier, "int (int i)")
+		.def("getImprovementWeightModifier", &CyLeaderHeadInfo::getImprovementWeightModifier, "int (int i)")
 		.def("getDiploPeaceMusicScriptIds", &CvLeaderHeadInfo::getDiploPeaceMusicScriptIds, "int (int i)")
 		.def("getDiploWarMusicScriptIds", &CvLeaderHeadInfo::getDiploWarMusicScriptIds, "int (int i)")
 		// Other

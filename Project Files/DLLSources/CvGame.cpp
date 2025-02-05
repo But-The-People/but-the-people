@@ -562,27 +562,27 @@ void CvGame::initDiplomacy()
 
 	//ray, fixing bug of player initialization braking traits impacting relations - START
 	//code for initialization of Traits has been moved here
-	for (int iPlayerX = 0; iPlayerX < MAX_PLAYERS; ++iPlayerX)
+	for (PlayerTypes ePlayerX = FIRST_PLAYER; ePlayerX < NUM_PLAYER_TYPES; ++ePlayerX)
 	{
-		CvPlayer& kLoopPlayer2 = GET_PLAYER((PlayerTypes)iPlayerX);
+		CvPlayer& kLoopPlayer2 = GET_PLAYER(ePlayerX);
 		if (kLoopPlayer2.isAlive())
 		{
-			for (int iI = 0; iI < GC.getNumTraitInfos(); iI++)
+			for (TraitTypes eTrait = FIRST_TRAIT; eTrait < NUM_TRAIT_TYPES; ++eTrait)
 			{
-				if (GC.getCivilizationInfo(kLoopPlayer2.getCivilizationType()).hasTrait(iI))
+				if (GC.getCivilizationInfo(kLoopPlayer2.getCivilizationType()).hasTrait(eTrait))
 				{
-					kLoopPlayer2.processTrait((TraitTypes) iI, 1);
+					kLoopPlayer2.processTrait(eTrait, 1);
 				}
 
-				if (GC.getLeaderHeadInfo(kLoopPlayer2.getLeaderType()).hasTrait(iI))
+				if (GC.getLeaderHeadInfo(kLoopPlayer2.getLeaderType()).hasTrait(eTrait))
 				{
-					kLoopPlayer2.processTrait((TraitTypes) iI, 1);
+					kLoopPlayer2.processTrait(eTrait, 1);
 				}
 			}
-			for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+			for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 			{
-				kLoopPlayer2.updateExtraYieldThreshold((YieldTypes)iI);
-				kLoopPlayer2.updateCityExtraYield((YieldTypes) iI);
+				kLoopPlayer2.updateExtraYieldThreshold(eYield);
+				kLoopPlayer2.updateCityExtraYield(eYield);
 			}
 		}
 	}
@@ -592,11 +592,12 @@ void CvGame::initDiplomacy()
 
 void CvGame::initFreeState()
 {
-	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	for (PlayerTypes ePlayer = FIRST_PLAYER; ePlayer < NUM_PLAYER_TYPES; ++ePlayer)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+		if (kPlayer.isAlive())
 		{
-			GET_PLAYER((PlayerTypes)iI).initFreeState();
+			kPlayer.initFreeState();
 		}
 	}
 }
