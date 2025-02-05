@@ -562,27 +562,27 @@ void CvGame::initDiplomacy()
 
 	//ray, fixing bug of player initialization braking traits impacting relations - START
 	//code for initialization of Traits has been moved here
-	for (int iPlayerX = 0; iPlayerX < MAX_PLAYERS; ++iPlayerX)
+	for (PlayerTypes ePlayerX = FIRST_PLAYER; ePlayerX < NUM_PLAYER_TYPES; ++ePlayerX)
 	{
-		CvPlayer& kLoopPlayer2 = GET_PLAYER((PlayerTypes)iPlayerX);
+		CvPlayer& kLoopPlayer2 = GET_PLAYER(ePlayerX);
 		if (kLoopPlayer2.isAlive())
 		{
-			for (int iI = 0; iI < GC.getNumTraitInfos(); iI++)
+			for (TraitTypes eTrait = FIRST_TRAIT; eTrait < NUM_TRAIT_TYPES; ++eTrait)
 			{
-				if (GC.getCivilizationInfo(kLoopPlayer2.getCivilizationType()).hasTrait(iI))
+				if (GC.getCivilizationInfo(kLoopPlayer2.getCivilizationType()).hasTrait(eTrait))
 				{
-					kLoopPlayer2.processTrait((TraitTypes) iI, 1);
+					kLoopPlayer2.processTrait(eTrait, 1);
 				}
 
-				if (GC.getLeaderHeadInfo(kLoopPlayer2.getLeaderType()).hasTrait(iI))
+				if (GC.getLeaderHeadInfo(kLoopPlayer2.getLeaderType()).hasTrait(eTrait))
 				{
-					kLoopPlayer2.processTrait((TraitTypes) iI, 1);
+					kLoopPlayer2.processTrait(eTrait, 1);
 				}
 			}
-			for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
+			for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 			{
-				kLoopPlayer2.updateExtraYieldThreshold((YieldTypes)iI);
-				kLoopPlayer2.updateCityExtraYield((YieldTypes) iI);
+				kLoopPlayer2.updateExtraYieldThreshold(eYield);
+				kLoopPlayer2.updateCityExtraYield(eYield);
 			}
 		}
 	}
@@ -592,11 +592,12 @@ void CvGame::initDiplomacy()
 
 void CvGame::initFreeState()
 {
-	for (int iI = 0; iI < MAX_PLAYERS; iI++)
+	for (PlayerTypes ePlayer = FIRST_PLAYER; ePlayer < NUM_PLAYER_TYPES; ++ePlayer)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+		if (kPlayer.isAlive())
 		{
-			GET_PLAYER((PlayerTypes)iI).initFreeState();
+			kPlayer.initFreeState();
 		}
 	}
 }
@@ -2130,13 +2131,17 @@ void CvGame::selectionListMove(CvPlot* pPlot, bool bAlt, bool bShift, bool bCtrl
 	while (pSelectedUnitNode != NULL)
 	{
 		pSelectedUnit = ::getUnit(pSelectedUnitNode->m_data);
+		pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
+
+		if (pSelectedUnit == NULL)
+			continue;
 
 		eRivalTeam = pSelectedUnit->getDeclareWarUnitMove(pPlot);
 
 		// Erik: No annoying popup for transport units
 		// WTP, ray, unless it is a "Troop only" ship
 		//if (pSelectedUnit->cargoSpace() == 0 && eRivalTeam != NO_TEAM)
-		if (pSelectedUnit != NULL && eRivalTeam != NO_TEAM && (pSelectedUnit->cargoSpace() == 0 || pSelectedUnit->getUnitInfo().isTroopShip()))
+		if (eRivalTeam != NO_TEAM && (pSelectedUnit->cargoSpace() == 0 || pSelectedUnit->getUnitInfo().isTroopShip()))
 		{
 			CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_DECLAREWARMOVE);
 			if (NULL != pInfo)
@@ -2157,8 +2162,6 @@ void CvGame::selectionListMove(CvPlot* pPlot, bool bAlt, bool bShift, bool bCtrl
 			}
 			return;
 		}
-
-		pSelectedUnitNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectedUnitNode);
 	}
 
 	selectionListGameNetMessage(GAMEMESSAGE_PUSH_MISSION, MISSION_MOVE_TO, pPlot->getX(), pPlot->getY(), 0, false, bShift);

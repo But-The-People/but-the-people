@@ -230,9 +230,9 @@ void CyInfoPythonInterface1()
 		.def("getArtDefineTag", &CvUnitInfo::getArtDefineTag, "string (int i, int j)")
 		//Androrc End
 		.def("getUnitNames", &CvUnitInfo::getUnitNames, "string (int i)")
-		.def("getArtInfo", &CvUnitInfo::getArtInfo,  python::return_value_policy<python::reference_existing_object>(), "CvArtInfoUnit* (int i)")
+		//.def("getArtInfo", &CvUnitInfo::getArtInfo,  python::return_value_policy<python::reference_existing_object>(), "CvArtInfoUnit* (int i)")
 		//Androrc UnitArtStyles
-		.def("getUnitArtStylesArtInfo", &CvUnitInfo::getUnitArtStylesArtInfo,  python::return_value_policy<python::reference_existing_object>(), "CvArtInfoUnit* (int i, int j)")
+		.def("getUnitArtStylesArtInfo", &CyUnitInfo::getUnitArtStylesArtInfo,  python::return_value_policy<python::reference_existing_object>(), "CvArtInfoUnit* (int iIndex, int iProfession, int iUnitArtStyle)")
 		//Androrc End
 		;
 	python::class_<CySpecialUnitInfo, boost::noncopyable, python::bases<CvInfoBase> >("CvSpecialUnitInfo")

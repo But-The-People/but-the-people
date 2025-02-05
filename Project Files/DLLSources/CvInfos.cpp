@@ -3666,25 +3666,29 @@ const char* CvUnitInfo::getButton() const
 }
 void CvUnitInfo::updateArtDefineButton()
 {
-	m_szArtDefineButton = getArtInfo(0, NO_PROFESSION)->getButton();
+	m_szArtDefineButton = getArtInfo(0, NO_PROFESSION, NO_PLAYER)->getButton();
 }
-const CvArtInfoUnit* CvUnitInfo::getArtInfo(int index, int iProfession) const
+const CvArtInfoUnit* CvUnitInfo::getArtInfo(int index, ProfessionTypes eProfession, PlayerTypes ePlayer) const
 {
 	//Androrc UnitArtStyles
 //	return ARTFILEMGR.getUnitArtInfo(getArtDefineTag(index, iProfession));
 	UnitArtStyleTypes eStyle = NO_UNIT_ARTSTYLE;
 	if (GC.getGameINLINE().isFinalInitialized())
 	{
-		eStyle = (UnitArtStyleTypes) GC.getCivilizationInfo(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).getUnitArtStyleType();
+		if (!VARINFO<PlayerTypes>::isInRange(ePlayer))
+		{
+			ePlayer = GC.getGameINLINE().getActivePlayer();
+		}
+
+		eStyle = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getUnitArtStyleType();
 	}
-	return ARTFILEMGR.getUnitArtInfo(getArtDefineTag(index, iProfession, eStyle));
+	return ARTFILEMGR.getUnitArtInfo(getArtDefineTag(index, eProfession, eStyle));
 	//Androrc End
 }
 //Androrc UnitArtStyles
-const CvArtInfoUnit* CvUnitInfo::getUnitArtStylesArtInfo(int index, int iProfession, int iStyle) const
+const CvArtInfoUnit* CvUnitInfo::getUnitArtStylesArtInfo(int index, ProfessionTypes eProfession, UnitArtStyleTypes eStyle) const
 {
-	UnitArtStyleTypes eStyle = (UnitArtStyleTypes) iStyle;
-	return ARTFILEMGR.getUnitArtInfo(getArtDefineTag(index, iProfession, eStyle));
+	return ARTFILEMGR.getUnitArtInfo(getArtDefineTag(index, eProfession, eStyle));
 }
 //Androrc End
 const CvUnitMeshGroups& CvUnitInfo::getProfessionMeshGroup(int iProfession) const
@@ -6181,7 +6185,7 @@ CvCivilizationInfo::CvCivilizationInfo():
 m_iDefaultPlayerColor(NO_PLAYERCOLOR),
 m_iArtStyleType(NO_ARTSTYLE),
 //Androrc UnitArtStyles
-m_iUnitArtStyleType(NO_UNIT_ARTSTYLE),
+m_eUnitArtStyleType(NO_UNIT_ARTSTYLE),
 //Androrc End
 m_iNumCityNames(0),
 
@@ -6260,9 +6264,9 @@ int CvCivilizationInfo::getArtStyleType() const
 	return m_iArtStyleType;
 }
 //Androrc UnitArtStyles
-int CvCivilizationInfo::getUnitArtStyleType() const
+UnitArtStyleTypes CvCivilizationInfo::getUnitArtStyleType() const
 {
-	return m_iUnitArtStyleType;
+	return m_eUnitArtStyleType;
 }
 //Androrc End
 int CvCivilizationInfo::getNumCityNames() const
@@ -6592,7 +6596,7 @@ void CvCivilizationInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iDefaultPlayerColor);
 	stream->Read(&m_iArtStyleType);
 	//Androrc UnitArtStyles
-	stream->Read(&m_iUnitArtStyleType);   // FlavorUnits by Impaler[WrG]
+	//stream->Read(&m_iUnitArtStyleType);   // FlavorUnits by Impaler[WrG]
 	//Androrc End
 	stream->Read(&m_iNumCityNames);
 	stream->Read(&m_iNumGeneralNames); // TAC - Great General Names - Ray - START
@@ -6679,7 +6683,7 @@ void CvCivilizationInfo::write(FDataStreamBase* stream)
 	stream->Write(uiFlag);		// flag for expansion
 	stream->Write(m_iDefaultPlayerColor);
 	stream->Write(m_iArtStyleType);
-	stream->Write(m_iUnitArtStyleType); //Androrc UnitArtStyles
+	//stream->Write(m_iUnitArtStyleType); //Androrc UnitArtStyles
 	stream->Write(m_iNumCityNames);
 	stream->Write(m_iNumGeneralNames);  // TAC - Great General Names - Ray - START
 	stream->Write(m_iNumAdmiralNames);  // R&R, ray, Great Admirals - START
@@ -6747,8 +6751,7 @@ bool CvCivilizationInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(szTextVal, "ArtStyleType");
 	m_iArtStyleType = GC.getInfoTypeForString(szTextVal);
 	//Androrc UnitArtStyles
-	pXML->GetChildXmlValByName(szTextVal, "UnitArtStyleType");
-	m_iUnitArtStyleType = pXML->FindInInfoClass(szTextVal);
+	pXML->GetEnum(getType(), m_eUnitArtStyleType, "UnitArtStyleType");
 	//Androrc End
 	pXML->GetChildXmlValByName(szTextVal, "CivilizationSelectionSound");
 	m_iSelectionSoundScriptId = (szTextVal.GetLength() > 0) ? gDLL->getAudioTagIndex( szTextVal.GetCString(), AUDIOTAG_3DSCRIPT ) : -1;
@@ -9752,17 +9755,17 @@ int CvFeatureInfo::getEffectProbability() const
 	return m_iEffectProbability;
 }
 // Arrays
-int CvFeatureInfo::getYieldChange(int i) const
+int CvFeatureInfo::getYieldChange(YieldTypes eYield) const
 {
-	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiYieldChange ? m_aiYieldChange[i] : -1;
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eYield > NO_YIELD, "Index out of bounds");
+	return m_aiYieldChange ? m_aiYieldChange[eYield] : -1;
 }
-int CvFeatureInfo::getRiverYieldIncrease(int i) const
+int CvFeatureInfo::getRiverYieldIncrease(YieldTypes eYield) const
 {
-	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiRiverYieldIncrease ? m_aiRiverYieldIncrease[i] : -1;
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eYield > NO_YIELD, "Index out of bounds");
+	return m_aiRiverYieldIncrease ? m_aiRiverYieldIncrease[eYield] : -1;
 }
 int CvFeatureInfo::get3DAudioScriptFootstepIndex(int i) const
 {
@@ -9770,11 +9773,11 @@ int CvFeatureInfo::get3DAudioScriptFootstepIndex(int i) const
 	FAssertMsg(i > -1, "Index out of bounds");
 	return m_ai3DAudioScriptFootstepIndex ? m_ai3DAudioScriptFootstepIndex[i] : -1;
 }
-bool CvFeatureInfo::isTerrain(int i) const
+bool CvFeatureInfo::isTerrain(TerrainTypes eTerrain) const
 {
-	FAssertMsg(i < GC.getNumTerrainInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_abTerrain ? m_abTerrain[i] : false;
+	FAssertMsg(eTerrain < NUM_TERRAIN_TYPES, "Index out of bounds");
+	FAssertMsg(eTerrain > NO_TERRAIN, "Index out of bounds");
+	return m_abTerrain ? m_abTerrain[eTerrain] : false;
 }
 int CvFeatureInfo::getNumVarieties() const
 {
@@ -9936,6 +9939,18 @@ void CvYieldInfo::setChar(int i)
 {
 	m_iChar = i;
 }
+
+CvWString CvYieldInfo::getCharLink() const
+{
+	CvWString output;
+	output.append(L"[LINK=");
+	output.append(CvWString(getType()));
+	output.append(L"]");
+	output.append(CvWString::format(L"%c", getChar()));
+	output.append(L"[\\LINK]");
+	return output;
+}
+
 const char* CvYieldInfo::getIcon() const
 {
 	return m_szIcon;
@@ -10286,17 +10301,17 @@ int CvTerrainInfo::getWorldSoundscapeScriptId() const
 	return m_iWorldSoundscapeScriptId;
 }
 // Arrays
-int CvTerrainInfo::getYield(int i) const
+int CvTerrainInfo::getYield(YieldTypes eYield) const
 {
-	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiYields ? m_aiYields[i] : -1;
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eYield > NO_YIELD, "Index out of bounds");
+	return m_aiYields ? m_aiYields[eYield] : -1;
 }
-int CvTerrainInfo::getRiverYieldIncrease(int i) const
+int CvTerrainInfo::getRiverYieldIncrease(YieldTypes eYield) const
 {
-	FAssertMsg(i < NUM_YIELD_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiRiverYieldIncrease ? m_aiRiverYieldIncrease[i] : -1;
+	FAssertMsg(eYield < NUM_YIELD_TYPES, "Index out of bounds");
+	FAssertMsg(eYield > NO_YIELD, "Index out of bounds");
+	return m_aiRiverYieldIncrease ? m_aiRiverYieldIncrease[eYield] : -1;
 }
 int CvTerrainInfo::get3DAudioScriptFootstepIndex(int i) const
 {
@@ -10772,53 +10787,53 @@ void CvLeaderHeadInfo::setArtDefineTag(const char* szVal)
 	m_szArtDefineTag = szVal;
 }
 // Arrays
-bool CvLeaderHeadInfo::hasTrait(int i) const
+bool CvLeaderHeadInfo::hasTrait(TraitTypes eTrait) const
 {
-	FAssertMsg(i < GC.getNumTraitInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_abTraits ? m_abTraits[i] : false;
+	FAssertMsg(eTrait < NUM_TRAIT_TYPES, "Index out of bounds");
+	FAssertMsg(eTrait > NO_TRAIT, "Index out of bounds");
+	return m_abTraits ? m_abTraits[eTrait] : false;
 }
-int CvLeaderHeadInfo::getContactRand(int i) const
+int CvLeaderHeadInfo::getContactRand(ContactTypes eContact) const
 {
-	FAssertMsg(i < NUM_CONTACT_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiContactRand ? m_aiContactRand[i] : -1;
+	FAssertMsg(eContact < NUM_CONTACT_TYPES, "Index out of bounds");
+	FAssertMsg(eContact > NO_CONTACT, "Index out of bounds");
+	return m_aiContactRand ? m_aiContactRand[eContact] : -1;
 }
-int CvLeaderHeadInfo::getContactDelay(int i) const
+int CvLeaderHeadInfo::getContactDelay(ContactTypes eContact) const
 {
-	FAssertMsg(i < NUM_CONTACT_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiContactDelay ? m_aiContactDelay[i] : -1;
+	FAssertMsg(eContact < NUM_CONTACT_TYPES, "Index out of bounds");
+	FAssertMsg(eContact > NO_CONTACT, "Index out of bounds");
+	return m_aiContactDelay ? m_aiContactDelay[eContact] : -1;
 }
-int CvLeaderHeadInfo::getMemoryDecayRand(int i) const
+int CvLeaderHeadInfo::getMemoryDecayRand(MemoryTypes eMemory) const
 {
-	FAssertMsg(i < NUM_MEMORY_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiMemoryDecayRand ? m_aiMemoryDecayRand[i] : -1;
+	FAssertMsg(eMemory < NUM_MEMORY_TYPES, "Index out of bounds");
+	FAssertMsg(eMemory > NO_MEMORY, "Index out of bounds");
+	return m_aiMemoryDecayRand ? m_aiMemoryDecayRand[eMemory] : -1;
 }
-int CvLeaderHeadInfo::getMemoryAttitudePercent(int i) const
+int CvLeaderHeadInfo::getMemoryAttitudePercent(MemoryTypes eMemory) const
 {
-	FAssertMsg(i < NUM_MEMORY_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiMemoryAttitudePercent ? m_aiMemoryAttitudePercent[i] : -1;
+	FAssertMsg(eMemory < NUM_MEMORY_TYPES, "Index out of bounds");
+	FAssertMsg(eMemory > NO_MEMORY, "Index out of bounds");
+	return m_aiMemoryAttitudePercent ? m_aiMemoryAttitudePercent[eMemory] : -1;
 }
-int CvLeaderHeadInfo::getNoWarAttitudeProb(int i) const
+int CvLeaderHeadInfo::getNoWarAttitudeProb(AttitudeTypes eAttitude) const
 {
-	FAssertMsg(i < NUM_ATTITUDE_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiNoWarAttitudeProb ? m_aiNoWarAttitudeProb[i] : -1;
+	FAssertMsg(eAttitude < NUM_ATTITUDE_TYPES, "Index out of bounds");
+	FAssertMsg(eAttitude > NO_ATTITUDE, "Index out of bounds");
+	return m_aiNoWarAttitudeProb ? m_aiNoWarAttitudeProb[eAttitude] : -1;
 }
-int CvLeaderHeadInfo::getUnitAIWeightModifier(int i) const
+int CvLeaderHeadInfo::getUnitAIWeightModifier(UnitAITypes eUnitAI) const
 {
-	FAssertMsg(i < NUM_UNITAI_TYPES, "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiUnitAIWeightModifier ? m_aiUnitAIWeightModifier[i] : -1;
+	FAssertMsg(eUnitAI < NUM_UNITAI_TYPES, "Index out of bounds");
+	FAssertMsg(eUnitAI > NO_UNITAI, "Index out of bounds");
+	return m_aiUnitAIWeightModifier ? m_aiUnitAIWeightModifier[eUnitAI] : -1;
 }
-int CvLeaderHeadInfo::getImprovementWeightModifier(int i) const
+int CvLeaderHeadInfo::getImprovementWeightModifier(ImprovementTypes eImprovement) const
 {
-	FAssertMsg(i < GC.getNumImprovementInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiImprovementWeightModifier ? m_aiImprovementWeightModifier[i] : -1;
+	FAssertMsg(eImprovement < NUM_IMPROVEMENT_TYPES, "Index out of bounds");
+	FAssertMsg(eImprovement > NO_IMPROVEMENT, "Index out of bounds");
+	return m_aiImprovementWeightModifier ? m_aiImprovementWeightModifier[eImprovement] : -1;
 }
 int CvLeaderHeadInfo::getDiploPeaceMusicScriptIds(int i) const
 {

@@ -375,6 +375,9 @@ bool shouldMoveBefore(const CvUnit* pUnitA, const CvUnit* pUnitB)
 
 bool shouldUnitMove(const CvUnit* pUnit)
 {
+	if (pUnit == NULL)
+		return false;
+
 	if (pUnit->isTempUnit())
 		return false;
 
@@ -1722,7 +1725,10 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 
 		CLLNode<IDInfo> const* pUnitNode = pSelectionGroup->headUnitNode();
 		// TODO: getUnit can return NULL in rare cases
-		int iMoveCost = kToPlot.movementCost(::getUnit(pUnitNode->m_data), &kFromPlot/*,
+		CvUnit const* pLoopUnit = ::getUnit(pUnitNode->m_data);
+		FAssert(pLoopUnit != NULL);
+		
+		int iMoveCost = kToPlot.movementCost(pLoopUnit, &kFromPlot/*,
 			false*/); // advc.001i
 		bool bUniformCost = true;
 

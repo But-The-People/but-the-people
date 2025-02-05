@@ -371,7 +371,16 @@ CvUnit* CvSelectionGroupAI::AI_getBestGroupAttacker(const CvPlot* pPlot, bool bP
 
 	pUnitNode = headUnitNode();
 
-	bool bIsHuman = (pUnitNode != NULL) ? GET_PLAYER(::getUnit(pUnitNode->m_data)->getOwnerINLINE()).isHuman() : true;
+	bool bIsHuman = true;
+	
+	if (pUnitNode != NULL)
+	{
+		const CvUnit* pUnit = ::getUnit(pUnitNode->m_data);
+		if (pUnit != NULL)
+		{
+			bIsHuman = GET_PLAYER(pUnit->getOwnerINLINE()).isHuman();
+		}
+	}
 
 	while (pUnitNode != NULL)
 	{

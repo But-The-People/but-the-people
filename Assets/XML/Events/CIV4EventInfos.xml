@@ -91590,7 +91590,7 @@
 			<iGold>0</iGold>
 			<bGoldToPlayer>0</bGoldToPlayer>
 			<iRandomGold>0</iRandomGold>
-			<iCulture>-5</iCulture>
+			<iCulture>0</iCulture>
 			<iHealth>0</iHealth>
 			<UnitClass>NONE</UnitClass>
 			<iNumFreeUnits>0</iNumFreeUnits>
@@ -91618,7 +91618,7 @@
 			<BonusRevealed>NONE</BonusRevealed>
 			<PlotExtraYields/>
 			<iOurAttitudeModifier>-1</iOurAttitudeModifier>
-			<iAttitudeModifier>-1</iAttitudeModifier>
+			<iAttitudeModifier>-2</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
 			<AdditionalEvents/>

@@ -525,6 +525,9 @@ void CvMap::updateCenterUnit()
 		const CvUnit* const pLoopUnit = ::getUnit(pSelectionNode->m_data);
 		pSelectionNode = gDLL->getInterfaceIFace()->nextSelectionListNode(pSelectionNode);
 
+		if (pLoopUnit == NULL)
+			continue;
+
 		const int iStepCost = pLoopUnit->getDomainType() == DOMAIN_LAND ? KmodPathFinder::MinimumStepCost(pLoopUnit->baseMoves()) : GLOBAL_DEFINE_MOVE_DENOMINATOR;
 		const int iLoopRange = pLoopUnit->maxMoves() / iStepCost;
 		iRange = std::max(iRange, iLoopRange);

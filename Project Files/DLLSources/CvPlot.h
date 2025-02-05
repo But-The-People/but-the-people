@@ -69,6 +69,11 @@ public:
 
 	void verifyUnitValidPlot();
 
+	int getDistance(const CvPlot* pOtherPlot) const;
+	int getDistance(const CvPlot& kOtherPlot) const;
+	int getDistanceManhattan(const CvPlot* pOtherPlot) const;
+	int getDistanceManhattan(const CvPlot& kOtherPlot) const;
+
     bool isAdjacentToPlot(CvPlot* pPlot) const;
 	bool isAdjacentToArea(int iAreaID) const;
 	bool isAdjacentToArea(const CvArea* pArea) const;
@@ -76,6 +81,7 @@ public:
 	bool isAdjacentToLand() const;
 	bool isCoastalLand(int iMinWaterSize = -1) const;
 	bool hasDeepWaterCoast() const;
+	bool isNextTo(TerrainTypes eTerrain) const;
 	bool hasOtherAdjacentOceanOrDeepWaterCoast() const; //WTP, ray, Safety Check for Deep Water Coast if there is Ocean or Deep Coast adjacent - START
 	bool isAdjacentWaterPassable(CvPlot* pPlot) const;
 

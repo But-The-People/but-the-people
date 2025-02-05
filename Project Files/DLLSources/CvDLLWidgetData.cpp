@@ -4438,12 +4438,6 @@ void CvDLLWidgetData::doMoveCargoToTransport(const CvWidgetDataStruct& destinati
 		{
 			//TAC Whaling, ray
 			PlayerTypes ePlayer = GC.getGameINLINE().getActivePlayer();
-			CvUnit* pUnit = GET_PLAYER(ePlayer).getUnit(destinationWidgetData.m_iData1);
-			//if (pUnit->getUnitInfo().isGatherBoat())
-			//{
-			//	break;
-			//}
-			//End TAC Whaling, ray
 
 			CvCity* pCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
 			if (pCity == NULL || pCity->getOwnerINLINE() != GC.getGameINLINE().getActivePlayer())
@@ -4469,11 +4463,6 @@ void CvDLLWidgetData::doMoveCargoToTransport(const CvWidgetDataStruct& destinati
 		// Europe
 		{
 			PlayerTypes ePlayer = GC.getGameINLINE().getActivePlayer();
-			CvUnit* pUnit = GET_PLAYER(ePlayer).getUnit(destinationWidgetData.m_iData1);
-			//if (pUnit->getUnitInfo().isGatherBoat())
-			//{
-			//	break;
-			//}
 
 			if (gDLL->shiftKey())
 			{
@@ -4483,7 +4472,8 @@ void CvDLLWidgetData::doMoveCargoToTransport(const CvWidgetDataStruct& destinati
 			}
 			else
 			{
-				int iAmount = pUnit->getLoadYieldAmount((YieldTypes) sourceWidgetData.m_iData1);
+				const CvUnit* pUnit = GET_PLAYER(ePlayer).getUnit(destinationWidgetData.m_iData1);
+				int iAmount = pUnit ? pUnit->getLoadYieldAmount((YieldTypes) sourceWidgetData.m_iData1) : 0;
 				if (iAmount > 0)
 				{
 					gDLL->sendPlayerAction(GC.getGameINLINE().getActivePlayer(), PLAYER_ACTION_BUY_YIELD_UNIT, sourceWidgetData.m_iData1, iAmount, destinationWidgetData.m_iData1);
@@ -4498,11 +4488,6 @@ void CvDLLWidgetData::doMoveCargoToTransport(const CvWidgetDataStruct& destinati
 		// Europe
 		{
 			PlayerTypes ePlayer = GC.getGameINLINE().getActivePlayer();
-			CvUnit* pUnit = GET_PLAYER(ePlayer).getUnit(destinationWidgetData.m_iData1);
-			//if (pUnit->getUnitInfo().isGatherBoat())
-			//{
-			//	break;
-			//}
 
 			if (gDLL->shiftKey())
 			{
@@ -4512,7 +4497,8 @@ void CvDLLWidgetData::doMoveCargoToTransport(const CvWidgetDataStruct& destinati
 			}
 			else
 			{
-				int iAmount = pUnit->getLoadYieldAmount((YieldTypes) sourceWidgetData.m_iData1);
+				const CvUnit* pUnit = GET_PLAYER(ePlayer).getUnit(destinationWidgetData.m_iData1);
+				int iAmount = pUnit ? pUnit->getLoadYieldAmount((YieldTypes)sourceWidgetData.m_iData1) : 0;
 				if (iAmount > 0)
 				{
 					gDLL->sendPlayerAction(GC.getGameINLINE().getActivePlayer(), PLAYER_ACTION_BUY_YIELD_UNIT_AFRICA, sourceWidgetData.m_iData1, iAmount, destinationWidgetData.m_iData1);
@@ -4526,11 +4512,6 @@ void CvDLLWidgetData::doMoveCargoToTransport(const CvWidgetDataStruct& destinati
 		// Europe
 		{
 			PlayerTypes ePlayer = GC.getGameINLINE().getActivePlayer();
-			CvUnit* pUnit = GET_PLAYER(ePlayer).getUnit(destinationWidgetData.m_iData1);
-			//if (pUnit->getUnitInfo().isGatherBoat())
-			//{
-			//	break;
-			//}
 
 			if (gDLL->shiftKey())
 			{
@@ -4540,7 +4521,8 @@ void CvDLLWidgetData::doMoveCargoToTransport(const CvWidgetDataStruct& destinati
 			}
 			else
 			{
-				int iAmount = pUnit->getLoadYieldAmount((YieldTypes) sourceWidgetData.m_iData1);
+				const CvUnit* pUnit = GET_PLAYER(ePlayer).getUnit(destinationWidgetData.m_iData1);
+				int iAmount = pUnit ? pUnit->getLoadYieldAmount((YieldTypes)sourceWidgetData.m_iData1) : 0;
 				if (iAmount > 0)
 				{
 					gDLL->sendPlayerAction(GC.getGameINLINE().getActivePlayer(), PLAYER_ACTION_BUY_YIELD_UNIT_PORT_ROYAL, sourceWidgetData.m_iData1, iAmount, destinationWidgetData.m_iData1);

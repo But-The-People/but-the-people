@@ -549,57 +549,56 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, UnitAITypes* peBestUnitAI, bool bPi
 	UnitTypes eBestUnit = NO_UNIT;
 
 	int iBestValue = 0;
-	int iI;
 
 	if (peBestUnitAI != NULL)
 	{
 		*peBestUnitAI = NO_UNITAI;
 	}
 
-	for (iI = 0; iI < NUM_UNITAI_TYPES; iI++)
+	for (UnitAITypes eUnitAI = FIRST_UNITAI; eUnitAI < NUM_UNITAI_TYPES; ++eUnitAI)
 	{
 		if (bAsync)
 		{
-			aiUnitAIVal[iI] += GC.getASyncRand().get(25, "AI Best UnitAI ASYNC");
+			aiUnitAIVal[eUnitAI] += GC.getASyncRand().get(25, "AI Best UnitAI ASYNC");
 		}
 		else
 		{
 			//aiUnitAIVal[iI] += GC.getGameINLINE().getSorenRandNum(100, "AI Best UnitAI");
 			//Erik: Less initial randomness for unit selection
-			aiUnitAIVal[iI] += GC.getGameINLINE().getSorenRandNum(25, "AI Best UnitAI");
+			aiUnitAIVal[eUnitAI] += GC.getGameINLINE().getSorenRandNum(25, "AI Best UnitAI");
 		}
 	}
 
-	for (iI = 0; iI < NUM_UNITAI_TYPES; iI++)
+	for (UnitAITypes eUnitAI = FIRST_UNITAI; eUnitAI < NUM_UNITAI_TYPES; ++eUnitAI)
 	{
 		// Erik: Note that no leader is currently making use of this
-		aiUnitAIVal[iI] *= std::max(0, (GC.getLeaderHeadInfo(getPersonalityType()).getUnitAIWeightModifier(iI) + 100));
-		aiUnitAIVal[iI] /= 100;
+		aiUnitAIVal[eUnitAI] *= std::max(0, (GC.getLeaderHeadInfo(getPersonalityType()).getUnitAIWeightModifier(eUnitAI) + 100));
+		aiUnitAIVal[eUnitAI] /= 100;
 
 		if (!bPickAny)
 		{
-			aiUnitAIVal[iI] *= GET_PLAYER(getOwnerINLINE()).AI_unitAIValueMultipler((UnitAITypes)iI);
-			aiUnitAIVal[iI] /= 100;
+			aiUnitAIVal[eUnitAI] *= GET_PLAYER(getOwnerINLINE()).AI_unitAIValueMultipler(eUnitAI);
+			aiUnitAIVal[eUnitAI] /= 100;
 		}
 	}
 
 	// TAC - AI Training - koma13 - START
 	if (GET_PLAYER(getOwnerINLINE()).getParent() != NO_PLAYER)
 	{
-		for (iI = 0; iI < NUM_UNITAI_TYPES; iI++)
+		for (UnitAITypes eUnitAI = FIRST_UNITAI; eUnitAI < NUM_UNITAI_TYPES; ++eUnitAI)
 		{
-			switch((UnitAITypes)iI)
+			switch(eUnitAI)
 			{
 			case UNITAI_WAGON:
 				{
 					const int iAreaCities = area()->getCitiesPerPlayer(getOwnerINLINE());
 					if ((iAreaCities <= 1) || ((area()->getNumAIUnits(getOwnerINLINE(), UNITAI_WAGON) + area()->getNumTrainAIUnits(getOwnerINLINE(), UNITAI_WAGON)) > (iAreaCities*(iAreaCities - 1)) / 2))
 					{
-						aiUnitAIVal[iI] = 0;
+						aiUnitAIVal[eUnitAI] = 0;
 					}
 					else
 					{
-						aiUnitAIVal[iI] = GET_PLAYER(getOwnerINLINE()).AI_unitAIValueMultipler((UnitAITypes)iI);
+						aiUnitAIVal[eUnitAI] = GET_PLAYER(getOwnerINLINE()).AI_unitAIValueMultipler(eUnitAI);
 					}
 				}
 				break;
@@ -615,17 +614,17 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, UnitAITypes* peBestUnitAI, bool bPi
 						const int iAreaCities = area()->getCitiesPerPlayer(getOwnerINLINE());
 						if (GET_PLAYER(getOwnerINLINE()).AI_totalWaterAreaUnitAIs(pWaterArea, UNITAI_TRANSPORT_COAST) <= iAreaCities / 2)
 						{
-							iValue = GET_PLAYER(getOwnerINLINE()).AI_unitAIValueMultipler((UnitAITypes)iI);
+							iValue = GET_PLAYER(getOwnerINLINE()).AI_unitAIValueMultipler(eUnitAI);
 						}
 					}
-					aiUnitAIVal[iI] = iValue;
+					aiUnitAIVal[eUnitAI] = iValue;
 				}
 				break;
 
 			case UNITAI_DEFENSIVE:
 				if (GET_PLAYER(getOwnerINLINE()).AI_totalDefendersNeeded(NULL, area(), true) <= 0)
 				{
-					aiUnitAIVal[iI] = 0;
+					aiUnitAIVal[eUnitAI] = 0;
 				}
 				break;
 
@@ -633,16 +632,16 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, UnitAITypes* peBestUnitAI, bool bPi
 			case UNITAI_ESCORT_SEA:
 				if (!GET_PLAYER(getOwnerINLINE()).AI_prepareAssaultSea())
 				{
-					aiUnitAIVal[iI] = 0;
+					aiUnitAIVal[eUnitAI] = 0;
 				}
 				break;
 
 			case UNITAI_WORKER_SEA:
 			case UNITAI_TRANSPORT_SEA:
 			case UNITAI_PIRATE_SEA:
-				if (GET_PLAYER(getOwnerINLINE()).AI_unitAIValueMultipler((UnitAITypes)iI) == 0)
+				if (GET_PLAYER(getOwnerINLINE()).AI_unitAIValueMultipler(eUnitAI) == 0)
 				{
-					aiUnitAIVal[iI] = 0;
+					aiUnitAIVal[eUnitAI] = 0;
 				}
 				break;
 
@@ -653,19 +652,19 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, UnitAITypes* peBestUnitAI, bool bPi
 	}
 	// TAC - AI Training - koma13 - END
 
-	for (iI = 0; iI < NUM_UNITAI_TYPES; iI++)
+	for (UnitAITypes eUnitAI = FIRST_UNITAI; eUnitAI < NUM_UNITAI_TYPES; ++eUnitAI)
 	{
-		if (aiUnitAIVal[iI] > iBestValue)
+		if (aiUnitAIVal[eUnitAI] > iBestValue)
 		{
-			eUnit = AI_bestUnitAI(((UnitAITypes)iI), bAsync);
+			eUnit = AI_bestUnitAI(eUnitAI, bAsync);
 
 			if (eUnit != NO_UNIT)
 			{
-				iBestValue = aiUnitAIVal[iI];
+				iBestValue = aiUnitAIVal[eUnitAI];
 				eBestUnit = eUnit;
 				if (peBestUnitAI != NULL)
 				{
-					*peBestUnitAI = ((UnitAITypes)iI);
+					*peBestUnitAI = eUnitAI;
 				}
 			}
 		}

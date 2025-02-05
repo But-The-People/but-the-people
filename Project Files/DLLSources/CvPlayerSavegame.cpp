@@ -724,6 +724,46 @@ void CvPlayer::resetSavedData(PlayerTypes eID, bool bConstructorCall)
 	m_achievesTurn.clear();
 	m_triggersFired.clear();
 
+	// R&R, ray, Bargaining - START
+	m_bWillingToBargain = false;
+	m_iTimeNoTrade = 0;
+	// R&R, ray, Bargaining - END
+
+	m_iDSecondPlayerFrenchNativeWar = 0; //WTP, ray, Colonial Intervention In Native War - START
+
+	// R&R, ray, Timers Diplo Events - START
+	m_iTimerNativeMerc = 0;
+	m_iTimerEuropeanWars = 0;
+	m_iTimerEuropeanPeace = 0;
+	m_iTimerRoyalInterventions = 0; // WTP, ray, Royal Intervention, START
+	m_iTimerPrivateersDiploEvent = 0; // WTP, ray, Privateers DLL Diplo Event - START
+	m_iTimerPrisonsCrowded = 0;
+	m_iTimerRevolutionaryNoble = 0;
+	m_iTimerBishop = 0;
+	m_iTimerChurchDemand = 0;
+	m_iTimerChurchWar = 0;
+	m_iTimerColonialInterventionInNativeWar = 0; //WTP, ray, Colonial Intervention In Native War - START
+	m_iTimerColoniesAndNativeAlliesWar = 0; // WTP, ray, Big Colonies and Native Allies War - START
+	m_iTimerSmugglingShip = 0;
+	m_iTimerRanger = 0;
+	m_iTimerConquistador = 0;
+	m_iTimerPirates = 0;
+	m_iTimerContinentalGuard = 0;
+	m_iTimerMortar = 0;
+	m_iTimerNativeSlave = 0;
+	m_iTimerAfricanSlaves = 0;
+	m_iTimerStealingImmigrant = 0;
+	// R&R, ray, Timers Diplo Events - END
+
+	m_iChurchFavoursReceived = 0; // R&R, ray, Church Favours
+
+	//WTP, ray Kings Used Ship - START
+	m_iTimerUsedShips = 0;
+	//WTP, ray Kings Used Ship - END
+
+	// WTP, ray, Foreign Kings, buy Immigrants - START
+	m_iTimerForeignImmigrants = 0;
+	// WTP, ray, Foreign Kings, buy Immigrants - END
 }
 
 void CvPlayer::read(CvSavegameReader reader)

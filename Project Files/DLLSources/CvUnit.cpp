@@ -481,6 +481,14 @@ void CvUnit::kill(bool bDelay, CvUnit* pAttacker)
 	FAssertMsg(pPlot != NULL, "Plot is not assigned a valid value");
 	FAssert(GET_PLAYER(getOwnerINLINE()).checkPopulation());
 
+	const CvCity* pCity = pPlot->getPlotCity();
+	if (pCity != NULL && getOwnerINLINE() == GC.getGameINLINE().getActivePlayer() && pCity->isCitySelected())
+	{
+		// mark city screen to be redrawn to prevent leaving a ghost behind
+		gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(CityScreen_DIRTY_BIT, true);
+	}
+
 	static std::vector<IDInfo> oldUnits;
 	oldUnits.erase(oldUnits.begin(), oldUnits.end());
 	CLLNode<IDInfo>* pUnitNode = pPlot->headUnitNode();
@@ -14509,7 +14517,7 @@ const CvArtInfoUnit* CvUnit::getArtInfo(int i) const
 {
 	//Androrc UnitArtStyles
 //	return m_pUnitInfo->getArtInfo(i, getProfession());
-	return m_pUnitInfo->getUnitArtStylesArtInfo(i, getProfession(), (UnitArtStyleTypes) GC.getCivilizationInfo(getCivilizationType()).getUnitArtStyleType());
+	return m_pUnitInfo->getUnitArtStylesArtInfo(i, getProfession(), GC.getCivilizationInfo(getCivilizationType()).getUnitArtStyleType());
 	//Androrc End
 }
 

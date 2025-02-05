@@ -6627,30 +6627,31 @@ void CvPlayerAI::AI_doTradeRoutes()
 
 void CvPlayerAI::AI_doCounter()
 {
-	int iI, iJ;
+	const CvLeaderHeadInfo& kLeaderHeadInfo = GC.getLeaderHeadInfo(getPersonalityType());
 
 	// R&R, ray, small code change from Commander Bello, united 2 for loops - START
-	for (iI = 0; iI < MAX_PLAYERS; iI++)
+	for (PlayerTypes ePlayer = FIRST_PLAYER; ePlayer < NUM_PLAYER_TYPES; ++ePlayer)
 	{
-		if (GET_PLAYER((PlayerTypes)iI).isAlive())
+		if (GET_PLAYER(ePlayer).isAlive())
 		{
-			for (iJ = 0; iJ < NUM_CONTACT_TYPES; iJ++)
+			for (ContactTypes eContact = FIRST_CONTACT; eContact < NUM_CONTACT_TYPES; ++eContact)
 			{
-				if (AI_getContactTimer(((PlayerTypes)iI), ((ContactTypes)iJ)) > 0)
+				if (AI_getContactTimer(ePlayer, eContact) > 0)
 				{
-					AI_changeContactTimer(((PlayerTypes)iI), ((ContactTypes)iJ), -1);
+					AI_changeContactTimer(ePlayer, eContact, -1);
 				}
 			}
 
-			for (iJ = 0; iJ < NUM_MEMORY_TYPES; iJ++)
+			for (MemoryTypes eMemory = FIRST_MEMORY; eMemory < NUM_MEMORY_TYPES; ++eMemory)
 			{
-				if (AI_getMemoryCount(((PlayerTypes)iI), ((MemoryTypes)iJ)) > 0)
+				if (AI_getMemoryCount(ePlayer, eMemory) > 0)
 				{
-					if (GC.getLeaderHeadInfo(getPersonalityType()).getMemoryDecayRand(iJ) > 0)
+					const int iMemoryDecayRand = kLeaderHeadInfo.getMemoryDecayRand(eMemory);
+					if (iMemoryDecayRand > 0)
 					{
-						if (GC.getGameINLINE().getSorenRandNum(GC.getLeaderHeadInfo(getPersonalityType()).getMemoryDecayRand(iJ), "Memory Decay") == 0)
+						if (GC.getGameINLINE().getSorenRandNum(iMemoryDecayRand, "Memory Decay") == 0)
 						{
-							AI_changeMemoryCount(((PlayerTypes)iI), ((MemoryTypes)iJ), -1);
+							AI_changeMemoryCount(ePlayer, eMemory, -1);
 						}
 					}
 				}

@@ -115,7 +115,7 @@ $var{Trait}            = {                 XML => 1};
 $var{TurnTimer}        = {                 XML => 1, JIT => "NO_JIT_ARRAY_TYPE"};
 $var{TradeLocation}    = {                 XML => 1, JIT => "JIT_ARRAY_TRADE_LOCATION"};
 $var{Unit}             = {not_strict => 1, XML => 1};
-$var{UnitArtStyle}     = {                 XML => 1, JIT => "NO_JIT_ARRAY_TYPE", NUM => "NUM_UNIT_ARTSTYLE_TYPES", COMPILE => "COMPILE_TIME_NUM_UNIT_ARTSTYLE_TYPES"};
+$var{UnitArtStyle}     = {                 XML => 1, JIT => "NO_JIT_ARRAY_TYPE", NUM => "NUM_UNIT_ARTSTYLE_TYPES", COMPILE => "COMPILE_TIME_NUM_UNIT_ARTSTYLE_TYPES", INFO => "getUnitArtStyleTypeInfo"};
 $var{UnitAI}           = {not_strict => 1, XML => 1};
 $var{UnitClass}        = {not_strict => 1, XML => 1};
 $var{UnitCombat}       = {not_strict => 1, XML => 1};

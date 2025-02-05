@@ -41,6 +41,8 @@
 
 #include "SavegameConstants.h"
 
+PlayerTypes EXE_CACHE_LAST_UNIT_OWNER = NO_PLAYER;
+
 
 class EXE_CvActionInfo : public CvActionInfo
 {
@@ -4007,8 +4009,15 @@ public:
 		getUnitInfo
 			?getUnitInfo@CvUnit@@QBEAAVCvUnitInfo@@XZ=?getUnitInfo@EXE_CvUnit@@QBEAAVCvUnitInfo@@XZ
 
-		getUnitType
-			?getUnitType@CvUnit@@QBE?AW4UnitTypes@@XZ=?getUnitType@EXE_CvUnit@@QBE?AW4UnitTypes@@XZ
+		
+*/
+	#pragma comment(linker, "/EXPORT:?getUnitType@CvUnit@@QBE?AW4UnitTypes@@XZ=?getUnitType@EXE_CvUnit@@QBE?AW4UnitTypes@@XZ")
+	DllExport UnitTypes getUnitType() const
+	{
+		EXE_CACHE_LAST_UNIT_OWNER = getOwnerINLINE();
+		return CvUnit::getUnitType();
+	}
+/*
 
 		getVisualCiv
 			?getVisualCiv@CvUnit@@QBE?AW4CivilizationTypes@@W4TeamTypes@@@Z=?getVisualCiv@EXE_CvUnit@@QBE?AW4CivilizationTypes@@W4TeamTypes@@@Z
@@ -4121,7 +4130,8 @@ public:
 	#pragma comment(linker, "/EXPORT:?getArtInfo@CvUnitInfo@@QBEPBVCvArtInfoUnit@@HH@Z=?getArtInfo@EXE_CvUnitInfo@@QBEPBVCvArtInfoUnit@@HH@Z")
 	DllExport const CvArtInfoUnit* getArtInfo(int i, int iProfession) const
 	{
-		return CvUnitInfo::getArtInfo(i, iProfession);
+		// a little bit of a hack is needed here. Exe doesn't provide unit owner, so we will use owner of the last time the exe called CvUnit::getOwner()
+		return CvUnitInfo::getArtInfo(i, static_cast<ProfessionTypes>(iProfession), EXE_CACHE_LAST_UNIT_OWNER);
 	}
 
 	#pragma comment(linker, "/EXPORT:?getDefaultProfession@CvUnitInfo@@QBEHXZ=?getDefaultProfession@EXE_CvUnitInfo@@QBEHXZ")

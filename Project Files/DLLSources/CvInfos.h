@@ -873,9 +873,9 @@ public:
 	DllExport const char* getFormationType() const;
 	const char* getButton() const;
 	void updateArtDefineButton();
-	const CvArtInfoUnit* getArtInfo(int i, int iProfession) const;
+	const CvArtInfoUnit* getArtInfo(int i, ProfessionTypes eProfession, PlayerTypes ePlayer) const;
 	//Androrc UnitArtStyles
-	const CvArtInfoUnit* getUnitArtStylesArtInfo(int i, int iProfession, int iStyle = -1) const;
+	const CvArtInfoUnit* getUnitArtStylesArtInfo(int i, ProfessionTypes eProfession, UnitArtStyleTypes eStyle = NO_UNIT_ARTSTYLE) const;
 	//Androrc End
 	const CvUnitMeshGroups& getProfessionMeshGroup(int iProfession) const;
 	void read(FDataStreamBase* );
@@ -1633,7 +1633,7 @@ public:
 	DllExport int getDefaultPlayerColor() const;
 	int getArtStyleType() const;
 	//Androrc UnitArtStyles
-	int getUnitArtStyleType() const;         // Expose to Python
+	UnitArtStyleTypes getUnitArtStyleType() const;
 	//Androrc End
 	int getNumCityNames() const;
 	// TAC - Great General Names - Ray - START
@@ -1744,7 +1744,7 @@ protected:
 	int m_iArtStyleType;
 
 	//Androrc UnitArtStyles
-	int m_iUnitArtStyleType;  // FlavorUnits by Impaler[WrG]
+	UnitArtStyleTypes m_eUnitArtStyleType;  // FlavorUnits by Impaler[WrG]
 	//Androrc End
 
 	// TAC - Great General Names - Ray - START
@@ -2704,10 +2704,10 @@ public:
 	EffectTypes getEffectType() const;
 	int getEffectProbability() const;
 	// Arrays
-	int getYieldChange(int i) const;
-	int getRiverYieldIncrease(int i) const;
+	int getYieldChange(YieldTypes eYield) const;
+	int getRiverYieldIncrease(YieldTypes eYield) const;
 	DllExport int get3DAudioScriptFootstepIndex(int i) const;
-	bool isTerrain(int i) const;
+	bool isTerrain(TerrainTypes eTerrain) const;
 	int getNumVarieties() const;
 	// Other
 	DllExport const CvArtInfoFeature* getArtInfo() const;
@@ -2780,6 +2780,7 @@ public:
 	YieldTypes getIndex() const { return m_eIndex; }
 	DllExport int getChar() const;
 	DllExport void setChar(int i);
+	CvWString getCharLink() const;
 	const char* getIcon() const;
 	WidgetTypes getWikiWidget() const;
 	YieldTypes getID() const;
@@ -2928,8 +2929,8 @@ public:
 
 	DllExport int getWorldSoundscapeScriptId() const;
 	// Arrays
-	int getYield(int i) const;
-	int getRiverYieldIncrease(int i) const;
+	int getYield(YieldTypes eYield) const;
+	int getRiverYieldIncrease(YieldTypes eYield) const;
 	DllExport int get3DAudioScriptFootstepIndex(int i) const;
 	// Other
 	DllExport const CvArtInfoTerrain* getArtInfo() const;
@@ -3067,15 +3068,15 @@ public:
 	const char* getArtDefineTag() const;
 	void setArtDefineTag(const char* szVal);
 	// Arrays
-	bool hasTrait(int i) const;
+	bool hasTrait(TraitTypes eTrait) const;
 
-	int getContactRand(int i) const;
-	int getContactDelay(int i) const;
-	int getMemoryDecayRand(int i) const;
-	int getMemoryAttitudePercent(int i) const;
-	int getNoWarAttitudeProb(int i) const;
-	int getUnitAIWeightModifier(int i) const;
-	int getImprovementWeightModifier(int i) const;
+	int getContactRand(ContactTypes eContact) const;
+	int getContactDelay(ContactTypes eContact) const;
+	int getMemoryDecayRand(MemoryTypes eMemory) const;
+	int getMemoryAttitudePercent(MemoryTypes eMemory) const;
+	int getNoWarAttitudeProb(AttitudeTypes eAttitude) const;
+	int getUnitAIWeightModifier(UnitAITypes eUnitAI) const;
+	int getImprovementWeightModifier(ImprovementTypes eImprovement) const;
 	DllExport int getDiploPeaceMusicScriptIds(int i) const;
 	DllExport int getDiploWarMusicScriptIds(int i) const;
 	// Other

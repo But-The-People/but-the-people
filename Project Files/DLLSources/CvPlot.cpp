@@ -901,6 +901,32 @@ void CvPlot::verifyUnitValidPlot()
 	}
 }
 
+int CvPlot::getDistance(const CvPlot* pOtherPlot) const
+{
+	return pOtherPlot == NULL ? MAX_INT : getDistance(*pOtherPlot);
+}
+
+int CvPlot::getDistance(const CvPlot& kOtherPlot) const
+{
+	// note: doesn't support maps with wrapping coordinates
+	int x = std::abs(getX_INLINE() - kOtherPlot.getX_INLINE());
+	int y = std::abs(getY_INLINE() - kOtherPlot.getY_INLINE());
+	return x > y ? y : x;
+}
+
+int CvPlot::getDistanceManhattan(const CvPlot* pOtherPlot) const
+{
+	return pOtherPlot == NULL ? MAX_INT : getDistance(*pOtherPlot);
+}
+
+int CvPlot::getDistanceManhattan(const CvPlot& kOtherPlot) const
+{
+	// note: doesn't support maps with wrapping coordinates
+	int x = std::abs(getX_INLINE() - kOtherPlot.getX_INLINE());
+	int y = std::abs(getY_INLINE() - kOtherPlot.getY_INLINE());
+	return x + y;
+}
+
 bool CvPlot::isAdjacentToPlot(CvPlot* pPlot) const
 {
     return (stepDistance(getX_INLINE(), getY_INLINE(), pPlot->getX_INLINE(), pPlot->getY_INLINE()) == 1);
@@ -1016,24 +1042,25 @@ bool CvPlot::isCoastalLand(int iMinWaterSize) const
 // needed to prevent that Buildings for bigger ships can be built - anything that can not enter Large Rivers
 bool CvPlot::hasDeepWaterCoast() const
 {
-	PROFILE_FUNC();
-
 	// now we check if we find any Water Plot that is COAST
 	// all others, like e.g. Large Rivers, Lakes, Ice Lakes, Shallow Coast, ... would be problematic
-	for (int iI = 0; iI < NUM_DIRECTION_TYPES; ++iI)
+	return isNextTo(TERRAIN_COAST);
+}
+
+bool CvPlot::isNextTo(TerrainTypes eTerrain) const
+{
+	for (DirectionTypes iI = FIRST_DIRECTION; iI < NUM_DIRECTION_TYPES; ++iI)
 	{
-		CvPlot* pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), ((DirectionTypes)iI));
+		CvPlot* pAdjacentPlot = plotDirection(getX_INLINE(), getY_INLINE(), iI);
 
 		if (pAdjacentPlot != NULL)
 		{
-			if (pAdjacentPlot->isWater() && pAdjacentPlot->getTerrainType() == TERRAIN_COAST)
+			if (pAdjacentPlot->getTerrainType() == eTerrain)
 			{
 					return true;
 			}
 		}
 	}
-
-	// otherwise it is just Water Plots we want to avoid
 	return false;
 }
 //WTP, ray, Large Rivers - END
@@ -8714,7 +8741,7 @@ void CvPlot::removeUnit(CvUnit* pUnit, bool bUpdate)
 	{
 		if (::getUnit(pUnitNode->m_data) == pUnit)
 		{
-			FAssertMsg(::getUnit(pUnitNode->m_data)->at(getX_INLINE(), getY_INLINE()), "The current unit instance is expected to be at getX_INLINE and getY_INLINE");
+			FAssertMsg(pUnit->at(getX_INLINE(), getY_INLINE()), "The current unit instance is expected to be at getX_INLINE and getY_INLINE");
 			m_units.deleteNode(pUnitNode);
 			break;
 		}
