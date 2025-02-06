@@ -558,14 +558,14 @@ Viel Spass![NEWLINE]
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_54</Tag>
 		<English>The time is near at hand which must determine whether Americans are to be free men or slaves.[NEWLINE]--- George Washington (1732 - 1799), Commander-in-Chief of the Continental Army and first President of the United States</English>
-		<Russian>Пришло время, которое определит, будут ли американцы свободными людьми или рабами.[NEWLINE]--- Джордж Вашингтон (1732 - 1799), главнокомандующий Континентальной армией и первый президент Соединенных Штатов</Russian>
 		<German>Die Zeit ist nahe, in der sich entscheiden muss, ob die Amerikaner freie Menschen oder Sklaven sein werden.[NEWLINE]--- George Washington (1732 - 1799), Oberbefehlshaber der Kontinentalarmee und erster Präsident der Vereinigten Staaten</German>
+		<Russian>Пришло время, которое определит, будут ли американцы свободными людьми или рабами.[NEWLINE]--- Джордж Вашингтон (1732 - 1799), главнокомандующий Континентальной армией и первый президент Соединенных Штатов</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_QUOTE_55</Tag>
 		<English>To secure all rights of independent sovereignty to each and yet provide for the interest and safety for all -- individuals entering into society must give up a share of liberty to preserve the rest.[NEWLINE]--- 1787 letter from George Washington (1732 - 1799), asking that the Constitution be ratified</English>
-		<Russian>Чтобы обеспечить все права независимого суверенитета для каждого и в то же время обеспечить интересы и безопасность для всех, индивидуумы, вступающие в общество, должны отказаться от части свободы, чтобы сохранить остальное.[NEWLINE]--- Письмо Джорджа Вашингтона (1732 - 1799) 1787 года с просьбой ратифицировать Конституцию</Russian>
 		<German>Um jedem alle Rechte der unabhängigen Souveränität zu sichern und dennoch für das Interesse und die Sicherheit aller zu sorgen, müssen die Individuen, die in die Gesellschaft eintreten, einen Teil der Freiheit aufgeben, um den Rest zu bewahren.[NEWLINE]--- Brief von George Washington (1732 - 1799) aus dem Jahr 1787, in dem er darum bittet, die Verfassung zu ratifizieren</German>
+		<Russian>Чтобы обеспечить все права независимого суверенитета для каждого и в то же время обеспечить интересы и безопасность для всех, индивидуумы, вступающие в общество, должны отказаться от части свободы, чтобы сохранить остальное.[NEWLINE]--- Письмо Джорджа Вашингтона (1732 - 1799) 1787 года с просьбой ратифицировать Конституцию</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_1</Tag>
@@ -760,8 +760,8 @@ Viel Spass![NEWLINE]
 	<TEXT>
 		<Tag>TXT_KEY_HINT_26</Tag>
 		<English>[BOLD]Don't put troops on your first frigate![\BOLD][NEWLINE]When you get your first frigate, whether you buy it, build it, or get it from a quest or a Founding Father, the King is going to commandeer it for the Royal Navy. Don't worry. You'll get it back in ten turns. However if you put any of your soldiers aboard they'll be shanghaied into the Royal Marines. You'll never see those troops again.</English>
-		<Russian>[BOLD][COLOR_NEGATIVE_TEXT]Никогда не загружайте войска в свой первый фрегат![COLOR_REVERT][\BOLD] Когда у вас появляется первый фрегат, независимо от того, покупаете ли вы его, строите, получаете по итогам задания или от отца-основателя, Король реквизирует его для Королевского флота. Но не волнуйтесь. Вы получите его обратно через десять ходов. Однако, если вы поместите на борт кого-нибудь из своих солдат, они будут переведены в Королевскую морскую пехоту и вы никогда больше не увидите эти войска. Разве что после объявления независимости...</Russian>
 		<German>[BOLD]Stellt keine Truppen auf Eure erste Fregatte![\BOLD][NEWLINE]Wenn Ihr Eure erste Fregatte erhaltet, egal ob Ihr sie kauft, baut oder von einem Gründervater oder einer Quest erhaltet, wird der König sie für die königliche Marine requirieren. Macht euch keine Sorgen. Du bekommst sie in zehn Runden zurück. Wenn du jedoch einen deiner Soldaten an Bord nimmst, werden sie in die Royal Marines gezwungen. Sie werden diese Truppen nie wieder sehen.</German>
+		<Russian>[BOLD][COLOR_NEGATIVE_TEXT]Никогда не загружайте войска в свой первый фрегат![COLOR_REVERT][\BOLD] Когда у вас появляется первый фрегат, независимо от того, покупаете ли вы его, строите, получаете по итогам задания или от отца-основателя, Король реквизирует его для Королевского флота. Но не волнуйтесь. Вы получите его обратно через десять ходов. Однако, если вы поместите на борт кого-нибудь из своих солдат, они будут переведены в Королевскую морскую пехоту и вы никогда больше не увидите эти войска. Разве что после объявления независимости...</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_HINT_27</Tag>
@@ -938,7 +938,6 @@ Viel Spass![NEWLINE]
 		<English>To found a colony, you need a unit with the [COLOR_HIGHLIGHT_TEXT]Settler[COLOR_REVERT] profession. You can assign this profession to almost any unit in the docks of Europe (the equipment will need to be purchased for gold from your treasury) or in one of your settlements in the New World (provided that the required equipment is in the storage).</English>
 		<German>Um eine Kolonie zu gründen, braucht man eine Einheit mit dem Beruf [COLOR_HIGHLIGHT_TEXT]Siedler[COLOR_REVERT]. Sie können diesen Beruf fast jeder Einheit in den Docks von Europa (die Ausrüstung muss für Gold aus Ihrer Schatzkammer gekauft werden) oder in einer Ihrer Siedlungen in der Neuen Welt (vorausgesetzt, die benötigte Ausrüstung befindet sich im Lager) zuweisen.</German>
 		<!--<French>N'importe quel colon peut fonder une nouvelle colonie. Il vous suffit de déplacer une unité à l'endroit de votre choix et de cliquer sur le bouton "Fonder colonie".</French>-->
-		<!--<German>Jede Kolonisteneinheit kann eine neue Siedlung errichten. Sie müssen dazu lediglich eine Einheit an den gewünschten Ort bewegen und auf "Siedlung gründen" klicken.</German>-->
 		<!--<Italian>Qualsiasi colono può costruire un nuovo insediamento. Tutto quello che devi fare è spostarlo nella posizione desiderata e premere il pulsante "Costruisci insediamento".</Italian>-->
 		<!--<Spanish>Cualquier unidad de Colonos puede construir un nuevo asentamiento. Todo lo que tenéis que hacer es trasladar una unidad al lugar deseado y pulsar el botón "Fundar asentamiento".</Spanish>-->
 		<Russian>Для основания колонии вам нужен юнит, владеющий профессией [COLOR_HIGHLIGHT_TEXT]поселенец[COLOR_REVERT]. Назначить эту профессию можно почти любому юниту в доках Европы (нужное при этом оборудование будет куплено за золото из вашей казны) или в одном из ваших поселений в Новом Свете (при условии, что требуемое оборудование есть на складе).</Russian>
