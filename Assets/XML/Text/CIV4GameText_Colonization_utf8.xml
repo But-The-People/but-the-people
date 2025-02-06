@@ -531,12 +531,12 @@
 <!-- ZorG. colopedia. unit equipment. START -->
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_REQUIRES_YIELD_QUANTITY_STRING</Tag>
-		<English>[ICON_BULLET]Requires %d1_Quantity %F2_Icon</English>
-		<French>[ICON_BULLET]Requiert %d1_Quantity %F2_Icon</French>
-		<German>[ICON_BULLET]Benötigt %d1_Quantity %F2_Icon</German>
-		<Italian>[ICON_BULLET]Richiede %d1_Quantity %F2_Icon</Italian>
-		<Spanish>[ICON_BULLET]Requiere %d1_Quantity de %F2_Icon</Spanish>
-		<Russian>[ICON_BULLET]Требуется : %d1_Quantity %F2_Icon</Russian>
+		<English>[ICON_BULLET]Requires %d1_Quantity %F2_Icon %s3_yield_name</English>
+		<French>[ICON_BULLET]Requiert %d1_Quantity %F2_Icon %s3_yield_name</French>
+		<German>[ICON_BULLET]Benötigt %d1_Quantity %F2_Icon %s3_yield_name</German>
+		<Italian>[ICON_BULLET]Richiede %d1_Quantity %F2_Icon %s3_yield_name</Italian>
+		<Spanish>[ICON_BULLET]Requiere %d1_Quantity de %F2_Icon %s3_yield_name</Spanish>
+		<Russian>[ICON_BULLET]Требуется : %d1_Quantity %F2_Icon %s3_yield_name</Russian>
 	</TEXT>
 <!-- ZorG. colopedia. unit equipment. END -->
 	<TEXT>
