@@ -314,7 +314,7 @@ void CvGame::setInitialItems(bool bScenario)
 				for (LeaderHeadTypes eLeader = FIRST_LEADER; eLeader < NUM_LEADER_TYPES; ++eLeader)
 				{
 					if (kCiv.isLeaders(eLeader)) {
-						GC.getInitCore().setColor(ePlayer, static_cast<PlayerColorTypes>(kCiv.getDefaultPlayerColor()));
+						GC.getInitCore().setColor(ePlayer, kCiv.getDefaultPlayerColor());
 						GC.getInitCore().setLeader(ePlayer, eLeader);
 						GC.getInitCore().setCiv(ePlayer, eCiv);
 						GC.getInitCore().setSlotStatus(ePlayer, SS_COMPUTER);
@@ -6854,7 +6854,7 @@ void CvGame::setReplayInfo(CvReplayInfo* pReplay)
 
 void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, CivilizationTypes eCiv)
 {
-	PlayerColorTypes eColor = (PlayerColorTypes)GC.getCivilizationInfo(eCiv).getDefaultPlayerColor();
+	PlayerColorTypes eColor = GC.getCivilizationInfo(eCiv).getDefaultPlayerColor();
 
 	for (int iI = 0; iI < MAX_PLAYERS; iI++)
 	{
@@ -6862,7 +6862,7 @@ void CvGame::addPlayer(PlayerTypes eNewPlayer, LeaderHeadTypes eLeader, Civiliza
 		{
 			for (int iK = 0; iK < GC.getNumPlayerColorInfos(); iK++)
 			{
-				if (iK != GC.getCivilizationInfo((CivilizationTypes)GC.getDefineINT("BARBARIAN_CIVILIZATION")).getDefaultPlayerColor())
+				if (iK != GC.getCivilizationInfo(GLOBAL_DEFINE_BARBARIAN_CIVILIZATION).getDefaultPlayerColor())
 				{
 					bool bValid = true;
 

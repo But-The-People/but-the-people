@@ -6461,11 +6461,11 @@ BuildingTypes CvCivilizationInfo::getCivilizationBuildings(int iBuildingClass) c
 	return m_aiCivilizationBuildings ? (BuildingTypes)m_aiCivilizationBuildings[iBuildingClass] : NO_BUILDING;
 }
 
-UnitTypes CvCivilizationInfo::getCivilizationUnits(int iUnitClass) const
+UnitTypes CvCivilizationInfo::getCivilizationUnits(UnitClassTypes eUnitClass) const
 {
-	FAssertMsg(iUnitClass < NUM_UNITCLASS_TYPES, "Index out of bounds");
-	FAssertMsg(iUnitClass > NO_UNITCLASS, "Index out of bounds");
-	return m_aiCivilizationUnits ? (UnitTypes)m_aiCivilizationUnits[iUnitClass] : NO_UNIT;
+	FAssertMsg(eUnitClass < NUM_UNITCLASS_TYPES, "Index out of bounds");
+	FAssertMsg(eUnitClass > NO_UNITCLASS, "Index out of bounds");
+	return m_aiCivilizationUnits ? (UnitTypes)m_aiCivilizationUnits[eUnitClass] : NO_UNIT;
 }
 
 int CvCivilizationInfo::getNumCivilizationFreeUnits() const
@@ -6484,11 +6484,11 @@ ProfessionTypes CvCivilizationInfo::getCivilizationFreeUnitsProfession(int index
 	FAssert(index > -1);
 	return m_aCivilizationFreeUnits[index].second;
 }
-CivicTypes CvCivilizationInfo::getCivilizationInitialCivics(int iCivicOption) const
+CivicTypes CvCivilizationInfo::getCivilizationInitialCivics(CivicOptionTypes eCivicOption) const
 {
-	FAssertMsg(iCivicOption < NUM_CIVICOPTION_TYPES, "Index out of bounds");
-	FAssertMsg(iCivicOption > NO_CIVICOPTION, "Index out of bounds");
-	return m_aiCivilizationInitialCivics ? (CivicTypes)m_aiCivilizationInitialCivics[iCivicOption] : NO_CIVIC;
+	FAssertMsg(eCivicOption < NUM_CIVICOPTION_TYPES, "Index out of bounds");
+	FAssertMsg(eCivicOption > NO_CIVICOPTION, "Index out of bounds");
+	return m_aiCivilizationInitialCivics ? (CivicTypes)m_aiCivilizationInitialCivics[eCivicOption] : NO_CIVIC;
 }
 int CvCivilizationInfo::getFreeYields(int iYield) const
 {
@@ -8133,9 +8133,9 @@ int CvGoodyInfo::getCityGoodyWeight() const
 {
 	return m_iCityGoodyWeight;
 }
-int CvGoodyInfo::getUnitClassType() const
+UnitClassTypes CvGoodyInfo::getUnitClassType() const
 {
-	return m_iUnitClassType;
+	return (UnitClassTypes)m_iUnitClassType;
 }
 int CvGoodyInfo::getTeachUnitClassType() const
 {
@@ -10095,9 +10095,9 @@ int CvYieldInfo::getColorType() const
 {
 	return m_iColorType;
 }
-int CvYieldInfo::getUnitClass() const
+UnitClassTypes CvYieldInfo::getUnitClass() const
 {
-	return m_iUnitClass;
+	return (UnitClassTypes)m_iUnitClass;
 }
 int CvYieldInfo::getTextureIndex() const
 {
@@ -15770,9 +15770,9 @@ int CvEventInfo::getHealth() const // R&R, ray, change for Health in Events
 {
 	return m_iHealth;
 }
-int CvEventInfo::getUnitClass() const
+UnitClassTypes CvEventInfo::getUnitClass() const
 {
-	return m_iUnitClass;
+	return (UnitClassTypes)m_iUnitClass;
 }
 int CvEventInfo::getNumUnits() const
 {

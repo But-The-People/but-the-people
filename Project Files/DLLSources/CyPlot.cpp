@@ -86,26 +86,26 @@ void CyPlot::spawnBarbarianUnitOnPlot(int iIndex) const
 		m_pPlot->spawnBarbarianUnitOnPlot(iIndex);
 }
 
-void CyPlot::spawnPlayerUnitOnAdjacentPlot(int iPlayer, int iIndex) const
+void CyPlot::spawnPlayerUnitOnAdjacentPlot(int iPlayer, int iUnitClass) const
 {
 	if (m_pPlot)
-		m_pPlot->spawnPlayerUnitOnAdjacentPlot(iPlayer, iIndex);
+		m_pPlot->spawnPlayerUnitOnAdjacentPlot(static_cast<PlayerTypes>(iPlayer), static_cast<UnitClassTypes>(iUnitClass));
 }
 
-void CyPlot::spawnBarbarianUnitOnAdjacentPlot(int iIndex) const
+void CyPlot::spawnBarbarianUnitOnAdjacentPlot(int iUnitClass) const
 {
 	if (m_pPlot)
-		m_pPlot->spawnBarbarianUnitOnAdjacentPlot(iIndex);
+		m_pPlot->spawnBarbarianUnitOnAdjacentPlot(static_cast<UnitClassTypes>(iUnitClass));
 }
 
-bool CyPlot::isPlayerUnitOnAdjacentPlot(int iPlayer, int iIndex) const
+bool CyPlot::isPlayerUnitOnAdjacentPlot(int iPlayer, int iUnitClass) const
 {
-	return m_pPlot ? m_pPlot->isPlayerUnitOnAdjacentPlot(iPlayer, iIndex) : false;
+	return m_pPlot ? m_pPlot->isPlayerUnitOnAdjacentPlot(static_cast<PlayerTypes>(iPlayer), static_cast<UnitClassTypes>(iUnitClass)) : false;
 }
 
-bool CyPlot::isBarbarianUnitOnAdjacentPlot(int iIndex) const
+bool CyPlot::isBarbarianUnitOnAdjacentPlot(int iUnitClass) const
 {
-	return m_pPlot ? m_pPlot->isBarbarianUnitOnAdjacentPlot(iIndex) : false;
+	return m_pPlot ? m_pPlot->isBarbarianUnitOnAdjacentPlot(static_cast<UnitClassTypes>((iUnitClass))) : false;
 }
 // WTP, ray, helper methods for Python Event System - Spawning Units and Barbarians on Plots - END
 

@@ -683,7 +683,7 @@ public:
 	#pragma comment(linker, "/EXPORT:?getCivilizationUnits@CvCivilizationInfo@@QBEHH@Z=?getCivilizationUnits@EXE_CvCivilizationInfo@@QBEHH@Z")
 	DllExport int getCivilizationUnits(int i) const
 	{
-		return CvCivilizationInfo::getCivilizationUnits(i);
+		return CvCivilizationInfo::getCivilizationUnits(static_cast<UnitClassTypes>(i));
 	}
 
 	#pragma comment(linker, "/EXPORT:?getDefaultPlayerColor@CvCivilizationInfo@@QBEHXZ=?getDefaultPlayerColor@EXE_CvCivilizationInfo@@QBEHXZ")

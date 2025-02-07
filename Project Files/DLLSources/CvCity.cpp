@@ -1479,11 +1479,9 @@ UnitTypes CvCity::allUpgradesAvailable(UnitTypes eUnit, int iUpgradeCount) const
 {
 	UnitTypes eUpgradeUnit;
 	UnitTypes eTempUnit;
-	UnitTypes eLoopUnit;
 	bool bUpgradeFound;
 	bool bUpgradeAvailable;
 	bool bUpgradeUnavailable;
-	int iI;
 
 	FAssertMsg(eUnit != NO_UNIT, "eUnit is expected to be assigned (not NO_UNIT)");
 
@@ -1498,11 +1496,11 @@ UnitTypes CvCity::allUpgradesAvailable(UnitTypes eUnit, int iUpgradeCount) const
 	bUpgradeAvailable = false;
 	bUpgradeUnavailable = false;
 
-	for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		if (GC.getUnitInfo(eUnit).getUpgradeUnitClass(iI))
+		if (GC.getUnitInfo(eUnit).getUpgradeUnitClass(eUnitClass))
 		{
-			eLoopUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI);
+			UnitTypes eLoopUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 
 			if (eLoopUnit != NO_UNIT)
 			{
@@ -1615,9 +1613,9 @@ bool CvCity::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool b
 
 bool CvCity::canTrain(UnitCombatTypes eUnitCombat) const
 {
-	for (int i = 0; i < GC.getNumUnitClassInfos(); i++)
+	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(i);
+		UnitTypes eUnit = GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationUnits(eUnitClass);
 
 		if (NO_UNIT != eUnit)
 		{
@@ -1702,9 +1700,9 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 			// if (isCoastal(GC.getMIN_WATER_SIZE_FOR_OCEAN()) && !plot()->isEuropeAccessable())
 			if (!plot()->isEuropeAccessable())
 			{
-				for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+				for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 				{
-					UnitTypes eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+					UnitTypes eLoopUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 					if (eLoopUnit != NO_UNIT)
 					{
 						const CvUnitInfo& kUnit = GC.getUnitInfo(eLoopUnit);
@@ -3465,7 +3463,7 @@ void CvCity::setPopulation(int iNewValue)
 		//adding more population
 		for (int i = iOldPopulation; i < iNewValue; i++)
 		{
-			UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("DEFAULT_POPULATION_UNIT"));
+			UnitTypes eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_DEFAULT_POPULATION_UNIT);
 
 			if (NO_UNIT != eUnit)
 			{
@@ -7130,13 +7128,13 @@ void CvCity::doGrowth()
 			if (GLOBAL_DEFINE_ENABLE_ETHICALLY_CORRECT_GROWTH && !isNative())
 			{
 				// we have to cast from UnitClassTypes to int
-				int iIDBestGrowthUnit = (int) bestGrowthUnitClass();
-				eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iIDBestGrowthUnit);
+				UnitClassTypes iIDBestGrowthUnit = bestGrowthUnitClass();
+				eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iIDBestGrowthUnit);
 			}
 			// old logic in else
 			else
 			{
-				eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("DEFAULT_POPULATION_UNIT"));
+				eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_DEFAULT_POPULATION_UNIT);
 			}
 			// WTP, ray, Ethnically correct Population Growth - END
 
@@ -8512,7 +8510,7 @@ void CvCity::applyEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredD
 
 	if (kEvent.getUnitClass() != NO_UNITCLASS)
 	{
-		UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(kEvent.getUnitClass());
+		UnitTypes eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(kEvent.getUnitClass());
 		if (eUnit != NO_UNIT)
 		{
 			for (int i = 0; i < kEvent.getNumUnits(); ++i)
@@ -9234,7 +9232,7 @@ void CvCity::ejectMissionary()
 		UnitTypes EjectedMissionaryType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(missionaryPlayer).getCivilizationType()).getCivilizationUnits(UNITCLASS_COLONIST);
 
 		if (missionaryRate > GC.getProfessionInfo(PROFESSION_MISSIONARY).getMissionaryRate() ) {
-			EjectedMissionaryType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(missionaryPlayer).getCivilizationType()).getCivilizationUnits(GC.getProfessionInfo(PROFESSION_MISSIONARY).LbD_getExpert());
+			EjectedMissionaryType = GC.getCivilizationInfo(GET_PLAYER(missionaryPlayer).getCivilizationType()).getCivilizationUnits((UnitClassTypes)GC.getProfessionInfo(PROFESSION_MISSIONARY).LbD_getExpert());
 		}
 
 		GET_PLAYER(missionaryPlayer).initUnit(EjectedMissionaryType, PROFESSION_MISSIONARY, getX_INLINE(), getY_INLINE());
@@ -9261,7 +9259,7 @@ void CvCity::ejectTrader()
 		UnitTypes EjectedTraderType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(tradePostPlayer).getCivilizationType()).getCivilizationUnits(UNITCLASS_COLONIST);
 
 		if (nativeTradeRate > GC.getProfessionInfo(PROFESSION_NATIVE_TRADER).getNativeTradeRate() ) {
-			EjectedTraderType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(tradePostPlayer).getCivilizationType()).getCivilizationUnits(GC.getProfessionInfo(PROFESSION_NATIVE_TRADER).LbD_getExpert());
+			EjectedTraderType = GC.getCivilizationInfo(GET_PLAYER(tradePostPlayer).getCivilizationType()).getCivilizationUnits((UnitClassTypes)GC.getProfessionInfo(PROFESSION_NATIVE_TRADER).LbD_getExpert());
 		}
 
 		GET_PLAYER(tradePostPlayer).initUnit(EjectedTraderType, PROFESSION_NATIVE_TRADER, getX_INLINE(), getY_INLINE());
@@ -12570,7 +12568,7 @@ bool CvCity::LbD_try_become_expert(CvUnit* convUnit, int base, int increase, int
 
 	// WTP, ray, teacher addon for LbD - START
 	// The Expert we might convert to later and also valid teachers
-	int expert = GC.getProfessionInfo(currentProfession).LbD_getExpert();
+	const UnitClassTypes expert = (UnitClassTypes)GC.getProfessionInfo(currentProfession).LbD_getExpert();
 	UnitTypes expertUnitType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(expert);
 	bool bValidTeacherFound = false;
 
@@ -13898,10 +13896,10 @@ void CvCity::updateSlaveWorkerProductionBonus(int iBonus)
 
 
 // WTP, ray, helper methods for Python Event System - Spawning Units and Barbarians on Plots - START
-void CvCity::spawnOwnPlayerUnitOnPlotOfCity(int /*UnitClassTypes*/ iIndex) const
+void CvCity::spawnOwnPlayerUnitOnPlotOfCity(UnitClassTypes eUnitClass) const
 {
 	CvPlayer& ownPlayer = GET_PLAYER(getOwnerINLINE());
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(eUnitClass);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		OOS_LOG_3("spawnOwnPlayerUnitOnPlotOfCity", CvString(getName()).c_str(), getTypeStr(eUnitToSpawn));
@@ -13911,7 +13909,7 @@ void CvCity::spawnOwnPlayerUnitOnPlotOfCity(int /*UnitClassTypes*/ iIndex) const
 }
 
 // careful with this, will take over City for Barbarians
-void CvCity::spawnBarbarianUnitOnPlotOfCity(int /*UnitClassTypes*/ iIndex) const
+void CvCity::spawnBarbarianUnitOnPlotOfCity(UnitClassTypes eUnitClass) const
 {
 	PlayerTypes eBarbarianPlayerType = GC.getGameINLINE().getBarbarianPlayer();
 	if (eBarbarianPlayerType == NO_PLAYER)
@@ -13920,7 +13918,7 @@ void CvCity::spawnBarbarianUnitOnPlotOfCity(int /*UnitClassTypes*/ iIndex) const
     }
 
 	CvPlayer& barbarianPlayer = GET_PLAYER(eBarbarianPlayerType);
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(eUnitClass);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		barbarianPlayer.initUnit(eUnitToSpawn, GC.getUnitInfo(eUnitToSpawn).getDefaultProfession(), getX_INLINE(), getY_INLINE(), NO_UNITAI);
@@ -13928,10 +13926,10 @@ void CvCity::spawnBarbarianUnitOnPlotOfCity(int /*UnitClassTypes*/ iIndex) const
 	return;
 }
 
-void CvCity::spawnOwnPlayerUnitOnAdjacentPlotOfCity(int /*UnitClassTypes*/ iIndex) const
+void CvCity::spawnOwnPlayerUnitOnAdjacentPlotOfCity(UnitClassTypes eUnitClass) const
 {
 	CvPlayer& ownPlayer = GET_PLAYER(getOwnerINLINE());
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(eUnitClass);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		// we use this as last fallback if we do not find an adjacent plot below
@@ -13958,7 +13956,7 @@ void CvCity::spawnOwnPlayerUnitOnAdjacentPlotOfCity(int /*UnitClassTypes*/ iInde
 	return;
 }
 
-void CvCity::spawnBarbarianUnitOnAdjacentPlotOfCity(int /*UnitClassTypes*/ iIndex) const
+void CvCity::spawnBarbarianUnitOnAdjacentPlotOfCity(UnitClassTypes eUnitClass) const
 {
 	PlayerTypes eBarbarianPlayerType = GC.getGameINLINE().getBarbarianPlayer();
 	if (eBarbarianPlayerType == NO_PLAYER)
@@ -13967,7 +13965,7 @@ void CvCity::spawnBarbarianUnitOnAdjacentPlotOfCity(int /*UnitClassTypes*/ iInde
     }
 
 	CvPlayer& barbarianPlayer = GET_PLAYER(eBarbarianPlayerType);
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(eUnitClass);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		// we use this as last fallback belok
@@ -13995,11 +13993,11 @@ void CvCity::spawnBarbarianUnitOnAdjacentPlotOfCity(int /*UnitClassTypes*/ iInde
 	return;
 }
 
-bool CvCity::isOwnPlayerUnitOnAdjacentPlotOfCity(int /*UnitClassTypes*/ iIndex) const
+bool CvCity::isOwnPlayerUnitOnAdjacentPlotOfCity(UnitClassTypes eUnitClass) const
 {
 	PlayerTypes eOwnPlayerType = getOwnerINLINE();
 	CvPlayer& ownPlayer = GET_PLAYER(getOwnerINLINE());
-	UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnit = GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(eUnitClass);
 	if (eUnit != NO_UNIT)
 	{
 		// we check the adjacent Plots
@@ -14028,7 +14026,7 @@ bool CvCity::isOwnPlayerUnitOnAdjacentPlotOfCity(int /*UnitClassTypes*/ iIndex) 
 	return false;
 }
 
-bool CvCity::isBarbarianUnitOnAdjacentPlotOfCity(int /*UnitClassTypes*/ iIndex) const
+bool CvCity::isBarbarianUnitOnAdjacentPlotOfCity(UnitClassTypes eUnitClass) const
 {
 	PlayerTypes eBarbarianPlayerType = GC.getGameINLINE().getBarbarianPlayer();
 	if (eBarbarianPlayerType == NO_PLAYER)
@@ -14037,7 +14035,7 @@ bool CvCity::isBarbarianUnitOnAdjacentPlotOfCity(int /*UnitClassTypes*/ iIndex) 
     }
 
 	CvPlayer& barbarianPlayer = GET_PLAYER(eBarbarianPlayerType);
-	UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnit = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(eUnitClass);
 	if (eUnit != NO_UNIT)
 	{
 		// we check the adjacent Plots

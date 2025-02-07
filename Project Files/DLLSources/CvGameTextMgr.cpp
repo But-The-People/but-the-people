@@ -522,8 +522,8 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 		// Display for become Expert - with turns worked and Expert Unit in Text
 		if(bCanBecomeExpert && lastProfession != NO_PROFESSION && GC.getProfessionInfo(lastProfession).LbD_isUsed() && iLbDRoundsWorked >0)
 		{
-			const int expert = GC.getProfessionInfo(lastProfession).LbD_getExpert();
-			const UnitTypes expertUnitType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).getCivilizationUnits(expert);
+			const UnitClassTypes expert = (UnitClassTypes)GC.getProfessionInfo(lastProfession).LbD_getExpert();
+			const UnitTypes expertUnitType = GC.getCivilizationInfo(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).getCivilizationUnits(expert);
 			// We need this check Since the current player (e.g. natives) may not have this expert type. (I observed that expertUnitType was -1 when changing to a native player in debug mode 
 			// which caused an AV)
 			if (expertUnitType != NO_UNIT)
@@ -546,7 +546,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 		// Display Profession before Last for become Expert - with turns worked and Expert Unit in Text
 		if(bCanBecomeExpert && lastProfessionBefore != NO_PROFESSION && GC.getProfessionInfo(lastProfessionBefore).LbD_isUsed() && iLbDRoundsWorkedBefore >0)
 		{
-			const int expertBefore = GC.getProfessionInfo(lastProfessionBefore).LbD_getExpert();
+			const UnitClassTypes expertBefore = (UnitClassTypes)GC.getProfessionInfo(lastProfessionBefore).LbD_getExpert();
 			const UnitTypes expertUnitTypeBefore = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).getCivilizationUnits(expertBefore);
 			if (expertUnitTypeBefore != NO_UNIT)
 			{ 
@@ -3968,16 +3968,16 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 
 		// Unit Classes
 		iLast = 0;
-		for (int iI = 0; iI < GC.getNumUnitClassInfos();++iI)
+		for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 		{
 			UnitTypes eLoopUnit;
 			if (eCivilization == NO_CIVILIZATION)
 			{
-				eLoopUnit = ((UnitTypes)(GC.getUnitClassInfo((UnitClassTypes)iI).getDefaultUnitIndex()));
+				eLoopUnit = (UnitTypes)GC.getUnitClassInfo(eUnitClass).getDefaultUnitIndex();
 			}
 			else
 			{
-				eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(eCivilization).getCivilizationUnits(iI)));
+				eLoopUnit = GC.getCivilizationInfo(eCivilization).getCivilizationUnits(eUnitClass);
 			}
 
 			if (eLoopUnit != NO_UNIT)
@@ -4125,20 +4125,20 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			}
 		}
 
-		for (int iUnitClass = 0; iUnitClass < GC.getNumUnitClassInfos(); ++iUnitClass)
+		for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 		{
-			UnitTypes eUnit = (UnitTypes) GC.getUnitClassInfo((UnitClassTypes) iUnitClass).getDefaultUnitIndex();
+			UnitTypes eUnit = (UnitTypes) GC.getUnitClassInfo(eUnitClass).getDefaultUnitIndex();
 
 			if (eCivilization != NO_CIVILIZATION)
 			{
-				eUnit = (UnitTypes) GC.getCivilizationInfo(eCivilization).getCivilizationUnits(iUnitClass);
+				eUnit = GC.getCivilizationInfo(eCivilization).getCivilizationUnits(eUnitClass);
 			}
 
 			if (eUnit != NO_UNIT)
 			{
-				if (kTrait.getUnitMoveChange(iUnitClass) != 0)
+				if (kTrait.getUnitMoveChange(eUnitClass) != 0)
 				{
-					szTempBuffer = gDLL->getText("TXT_KEY_UNIT_MOVES_INCREASE", kTrait.getUnitMoveChange(iUnitClass), GC.getUnitInfo(eUnit).getTextKeyWide());
+					szTempBuffer = gDLL->getText("TXT_KEY_UNIT_MOVES_INCREASE", kTrait.getUnitMoveChange(eUnitClass), GC.getUnitInfo(eUnit).getTextKeyWide());
 					szHelpString.append(NEWLINE);
 					if (bIndent)
 					{
@@ -4147,9 +4147,9 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 					szHelpString.append(szTempBuffer);
 				}
 
-				if (kTrait.getUnitStrengthModifier(iUnitClass) != 0)
+				if (kTrait.getUnitStrengthModifier(eUnitClass) != 0)
 				{
-					szTempBuffer = gDLL->getText("TXT_KEY_UNIT_STRENGTH_INCREASE", kTrait.getUnitStrengthModifier(iUnitClass), GC.getUnitInfo(eUnit).getTextKeyWide());
+					szTempBuffer = gDLL->getText("TXT_KEY_UNIT_STRENGTH_INCREASE", kTrait.getUnitStrengthModifier(eUnitClass), GC.getUnitInfo(eUnit).getTextKeyWide());
 					szHelpString.append(NEWLINE);
 					if (bIndent)
 					{
@@ -4739,8 +4739,6 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 	CvWString szBuffer;
 	CvWStringBuffer szTempString;
 	CvWString szText;
-	UnitTypes eDefaultUnit;
-	UnitTypes eUniqueUnit;
 	BuildingTypes eDefaultBuilding;
 	BuildingTypes eUniqueBuilding;
 
@@ -4767,10 +4765,10 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		}
 
 		bool bFound = false;
-		for (int iI = 0; iI < GC.getNumUnitClassInfos(); ++iI)
+		for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 		{
-			eDefaultUnit = ((UnitTypes)(kCivilizationInfo.getCivilizationUnits(iI)));
-			eUniqueUnit = ((UnitTypes)(GC.getUnitClassInfo((UnitClassTypes) iI).getDefaultUnitIndex()));
+			UnitTypes eDefaultUnit = kCivilizationInfo.getCivilizationUnits(eUnitClass);
+			UnitTypes eUniqueUnit = (UnitTypes)GC.getUnitClassInfo(eUnitClass).getDefaultUnitIndex();
 			if ((eDefaultUnit != NO_UNIT) && (eUniqueUnit != NO_UNIT))
 			{
 				if (eDefaultUnit != eUniqueUnit)
@@ -4858,9 +4856,9 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 			CvWString szDesc;
 			for (int iI = 0; iI < kCivilizationInfo.getNumCivilizationFreeUnits(); iI++)
 			{
-				int iLoopUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iI);
-				ProfessionTypes eLoopUnitProfession = (ProfessionTypes) kCivilizationInfo.getCivilizationFreeUnitsProfession(iI);
-				UnitTypes eLoopUnit = (UnitTypes)kCivilizationInfo.getCivilizationUnits(iLoopUnitClass);
+				UnitClassTypes eLoopUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iI);
+				ProfessionTypes eLoopUnitProfession = kCivilizationInfo.getCivilizationFreeUnitsProfession(iI);
+				UnitTypes eLoopUnit = kCivilizationInfo.getCivilizationUnits(eLoopUnitClass);
 
 				if (eLoopUnit != NO_UNIT)
 				{
@@ -6129,7 +6127,6 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 	CvWString szTempBuffer;
 	PlayerTypes ePlayer;
 	int iProduction;
-	int iI;
 
 	if (NO_UNIT == eUnit)
 	{
@@ -6163,13 +6160,13 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 
 	if (NO_UNIT != eDefaultUnit && eDefaultUnit != eUnit)
 	{
-		for (iI  = 0; iI < GC.getNumCivilizationInfos(); ++iI)
+		for (CivilizationTypes eCiv = FIRST_CIVILIZATION; eCiv < NUM_CIVILIZATION_TYPES; ++eCiv)
 		{
-			UnitTypes eUniqueUnit = (UnitTypes)GC.getCivilizationInfo((CivilizationTypes)iI).getCivilizationUnits((int)eUnitClass);
+			UnitTypes eUniqueUnit = GC.getCivilizationInfo(eCiv).getCivilizationUnits(eUnitClass);
 			if (eUniqueUnit == eUnit)
 			{
 				szBuffer.append(NEWLINE);
-				szBuffer.append(gDLL->getText("TXT_KEY_UNIQUE_UNIT", GC.getCivilizationInfo((CivilizationTypes)iI).getTextKeyWide()));
+				szBuffer.append(gDLL->getText("TXT_KEY_UNIQUE_UNIT", GC.getCivilizationInfo(eCiv).getTextKeyWide()));
 			}
 		}
 
@@ -9755,8 +9752,8 @@ void CvGameTextMgr::setCitizenHelp(CvWStringBuffer &szString, const CvCity& kCit
 	// Display for become Expert - with turns worked and Expert Unit in Text
 	if(bCanBecomeExpert && lastProfession != NO_PROFESSION && GC.getProfessionInfo(lastProfession).LbD_isUsed() && iLbDRoundsWorked >0)
 	{
-		int expert = GC.getProfessionInfo(lastProfession).LbD_getExpert();
-		UnitTypes expertUnitType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).getCivilizationUnits(expert);
+		UnitClassTypes expert = (UnitClassTypes)GC.getProfessionInfo(lastProfession).LbD_getExpert();
+		UnitTypes expertUnitType = GC.getCivilizationInfo(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).getCivilizationUnits(expert);
 		szString.append(NEWLINE);
 		szString.append(gDLL->getText("TXT_KEY_MISC_HELP_LBD_BECOME_EXPPERT_TURNS_WORKED", iLbDRoundsWorked, GC.getUnitInfo(expertUnitType).getDescription()));
 		szString.append(SEPARATOR);
@@ -9769,8 +9766,8 @@ void CvGameTextMgr::setCitizenHelp(CvWStringBuffer &szString, const CvCity& kCit
 	// Display for become Expert - with turns worked and Expert Unit in Text
 	if(bCanBecomeExpert && lastProfessionBefore != NO_PROFESSION && GC.getProfessionInfo(lastProfessionBefore).LbD_isUsed() && iLbDRoundsWorkedBefore >0)
 	{
-		int expertBefore = GC.getProfessionInfo(lastProfessionBefore).LbD_getExpert();
-		UnitTypes expertUnitTypeBefore = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).getCivilizationUnits(expertBefore);
+		UnitClassTypes expertBefore = (UnitClassTypes)GC.getProfessionInfo(lastProfessionBefore).LbD_getExpert();
+		UnitTypes expertUnitTypeBefore = GC.getCivilizationInfo(GET_PLAYER(GC.getGameINLINE().getActivePlayer()).getCivilizationType()).getCivilizationUnits(expertBefore);
 		szString.append(NEWLINE);
 		szString.append(gDLL->getText("TXT_KEY_MISC_HELP_LBD_BECOME_EXPPERT_TURNS_WORKED", iLbDRoundsWorkedBefore, GC.getUnitInfo(expertUnitTypeBefore).getDescription()));
 		szString.append(SEPARATOR);
@@ -10379,11 +10376,11 @@ void CvGameTextMgr::setEventHelp(CvWStringBuffer& szBuffer, EventTypes eEvent, i
 		}
 	}
 
-	for (int i = 0; i < GC.getNumUnitClassInfos(); ++i)
+	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		if (NO_PROMOTION != kEvent.getUnitClassPromotion(i))
+		if (NO_PROMOTION != kEvent.getUnitClassPromotion(eUnitClass))
 		{
-			UnitTypes ePromotedUnit = ((UnitTypes)(GC.getCivilizationInfo(kActivePlayer.getCivilizationType()).getCivilizationUnits(i)));
+			UnitTypes ePromotedUnit = GC.getCivilizationInfo(kActivePlayer.getCivilizationType()).getCivilizationUnits(eUnitClass);
 			if (NO_UNIT != ePromotedUnit)
 			{
 				szBuffer.append(NEWLINE);
@@ -10645,20 +10642,20 @@ void CvGameTextMgr::setFatherHelp(CvWStringBuffer &szBuffer, FatherTypes eFather
 		}
 	}
 
-	for (int iUnitClass = 0; iUnitClass < GC.getNumUnitClassInfos(); ++iUnitClass)
+	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		UnitTypes eUnit = (UnitTypes) GC.getUnitClassInfo((UnitClassTypes) iUnitClass).getDefaultUnitIndex();
+		UnitTypes eUnit = (UnitTypes) GC.getUnitClassInfo(eUnitClass).getDefaultUnitIndex();
 
 		if (ePlayer != NO_PLAYER)
 		{
-			eUnit = (UnitTypes) GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationUnits(iUnitClass);
+			eUnit = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationUnits(eUnitClass);
 		}
 
 		if (eUnit != NO_UNIT)
 		{
-			if (kFatherInfo.getFreeUnits(iUnitClass) > 0)
+			if (kFatherInfo.getFreeUnits(eUnitClass) > 0)
 			{
-				szTempBuffer = gDLL->getText("TXT_KEY_FATHER_FREE_UNITS", kFatherInfo.getFreeUnits(iUnitClass), GC.getUnitInfo(eUnit).getTextKeyWide());
+				szTempBuffer = gDLL->getText("TXT_KEY_FATHER_FREE_UNITS", kFatherInfo.getFreeUnits(eUnitClass), GC.getUnitInfo(eUnit).getTextKeyWide());
 				szBuffer.append(NEWLINE);
 				szBuffer.append(szTempBuffer);
 			}

@@ -399,12 +399,12 @@ void CvPlot::doTurn()
 				// Spawns Native Mercenaries
 				CvPlayer& barbarianPlayer = GET_PLAYER(BarbarianPlayerType);
 				UnitTypes GeneratedUnitType = NO_UNIT;
-				GeneratedUnitType = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_PROTECTOR_HOSTILE_VILLAGE"));
+				GeneratedUnitType = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_PROTECTOR_HOSTILE_VILLAGE);
 
 				if(GeneratedUnitType != NO_UNIT)
 				{
 					// we generate with Default UNit AI
-					CvUnit* protectingUnit = barbarianPlayer.initUnit(GeneratedUnitType, (ProfessionTypes) GC.getUnitInfo(GeneratedUnitType).getDefaultProfession(), getX_INLINE(), getY_INLINE(), NO_UNITAI);
+					CvUnit* protectingUnit = barbarianPlayer.initUnit(GeneratedUnitType, GC.getUnitInfo(GeneratedUnitType).getDefaultProfession(), getX_INLINE(), getY_INLINE(), NO_UNITAI);
 				}
 			}
 		}
@@ -434,15 +434,15 @@ void CvPlot::doTurn()
 				const int iUnitChoice = GC.getGameINLINE().getSorenRandNum(3, "Barbarian Camp Defender");
 				if (iUnitChoice == 0)
 				{
-					generatedUnitType = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_REVOLTING_SLAVE"));
+					generatedUnitType = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(UNITCLASS_REVOLTING_SLAVE);
 				}
 				else if (iUnitChoice == 1)
 				{
-					generatedUnitType = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_REVOLTING_NATIVE_SLAVE"));
+					generatedUnitType = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(UNITCLASS_REVOLTING_NATIVE_SLAVE);
 				}
 				else if (iUnitChoice == 2)
 				{
-					generatedUnitType = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_REVOLTING_CRIMINAL"));
+					generatedUnitType = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(UNITCLASS_REVOLTING_CRIMINAL);
 				}
 				else
 				{
@@ -10318,7 +10318,7 @@ void CvPlot::doMonastery()
 						//if (iChanceForConverting > iMonasteryFeatureChance)
 						// R&R mod, vetiarvind, monasteries and forts balancing - end
 						{
-							UnitClassTypes eUnitClass = (UnitClassTypes) GC.getCivilizationInfo(GET_PLAYER(pLoopUnit2->getOwner()).getCivilizationType()).getCapturedCityUnitClass();
+							UnitClassTypes eUnitClass = GC.getCivilizationInfo(GET_PLAYER(pLoopUnit2->getOwner()).getCivilizationType()).getCapturedCityUnitClass();
 							if (eUnitClass != NO_UNITCLASS)
 							{
 								UnitTypes eUnit = (UnitTypes) GC.getCivilizationInfo(GET_PLAYER(MonasteryOwner).getCivilizationType()).getCivilizationUnits(eUnitClass);
@@ -10431,7 +10431,7 @@ void CvPlot::spawnPlayerUnitOnPlot(int /*PlayerTypes*/ iPlayer, int /*UnitClassT
 	}
 
 	CvPlayer& ownPlayer = GET_PLAYER((PlayerTypes) iPlayer);
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits((UnitClassTypes)iIndex);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		OOS_LOG("CvPlot::spawnPlayerUnitOnPlot",  getTypeStr(eUnitToSpawn));
@@ -10450,7 +10450,7 @@ void CvPlot::spawnBarbarianUnitOnPlot(int /*UnitClassTypes*/ iIndex) const
     }
 
 	CvPlayer& barbarianPlayer = GET_PLAYER(eBarbarianPlayerType);
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits((UnitClassTypes)iIndex);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		CvUnit* eBarbarianUnitToSpawn = barbarianPlayer.initUnit(eUnitToSpawn, GC.getUnitInfo(eUnitToSpawn).getDefaultProfession(), getX_INLINE(), getY_INLINE(), NO_UNITAI);
@@ -10458,15 +10458,15 @@ void CvPlot::spawnBarbarianUnitOnPlot(int /*UnitClassTypes*/ iIndex) const
 	return;
 }
 
-void CvPlot::spawnPlayerUnitOnAdjacentPlot(int /*PlayerTypes*/ iPlayer, int /*UnitClassTypes*/ iIndex) const
+void CvPlot::spawnPlayerUnitOnAdjacentPlot(PlayerTypes ePlayer, UnitClassTypes eUnitClass) const
 {
-	if ((PlayerTypes) iPlayer == NO_PLAYER)
+	if (ePlayer == NO_PLAYER)
 	{
 		return;
 	}
 
-	CvPlayer& ownPlayer = GET_PLAYER((PlayerTypes) iPlayer);
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	CvPlayer& ownPlayer = GET_PLAYER(ePlayer);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(eUnitClass);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		// we use this as last fallback if we do not find an adjacent plot below
@@ -10494,7 +10494,7 @@ void CvPlot::spawnPlayerUnitOnAdjacentPlot(int /*PlayerTypes*/ iPlayer, int /*Un
 	return;
 }
 
-void CvPlot::spawnBarbarianUnitOnAdjacentPlot(int /*UnitClassTypes*/ iIndex) const
+void CvPlot::spawnBarbarianUnitOnAdjacentPlot(UnitClassTypes eUnitClass) const
 {
 	PlayerTypes eBarbarianPlayerType = GC.getGameINLINE().getBarbarianPlayer();
 	if (eBarbarianPlayerType == NO_PLAYER)
@@ -10503,7 +10503,7 @@ void CvPlot::spawnBarbarianUnitOnAdjacentPlot(int /*UnitClassTypes*/ iIndex) con
     }
 
 	CvPlayer& barbarianPlayer = GET_PLAYER(eBarbarianPlayerType);
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(eUnitClass);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		// we use this as last fallback belok
@@ -10531,16 +10531,15 @@ void CvPlot::spawnBarbarianUnitOnAdjacentPlot(int /*UnitClassTypes*/ iIndex) con
 	return;
 }
 
-bool CvPlot::isPlayerUnitOnAdjacentPlot(int /*PlayerTypes*/ iPlayer, int /*UnitClassTypes*/ iIndex) const
+bool CvPlot::isPlayerUnitOnAdjacentPlot(PlayerTypes ePlayer, UnitClassTypes eUnitClass) const
 {
-	if ((PlayerTypes) iPlayer == NO_PLAYER)
+	if (ePlayer == NO_PLAYER)
 	{
 		return false;
 	}
 
-	PlayerTypes eOwnPlayerType = (PlayerTypes) iPlayer;
-	CvPlayer& ownPlayer = GET_PLAYER((PlayerTypes) iPlayer);
-	UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	CvPlayer& ownPlayer = GET_PLAYER(ePlayer);
+	UnitTypes eUnit = GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(eUnitClass);
 	if (eUnit != NO_UNIT)
 	{
 		// we check the adjacent Plots
@@ -10556,7 +10555,7 @@ bool CvPlot::isPlayerUnitOnAdjacentPlot(int /*PlayerTypes*/ iPlayer, int /*UnitC
 					CvUnit* pLoopUnit = pAdjacentPlot->getUnitNodeLoop(pUnitNode);
 
 					// check for owner and UnitType
-					if (pLoopUnit != NULL && pLoopUnit->getOwnerINLINE() == eOwnPlayerType && pLoopUnit->getUnitType() == eUnit)
+					if (pLoopUnit != NULL && pLoopUnit->getOwnerINLINE() == ePlayer && pLoopUnit->getUnitType() == eUnit)
 					{
 						// we found a unit of our player;
 						return true;
@@ -10569,7 +10568,7 @@ bool CvPlot::isPlayerUnitOnAdjacentPlot(int /*PlayerTypes*/ iPlayer, int /*UnitC
 	return false;
 }
 
-bool CvPlot::isBarbarianUnitOnAdjacentPlot(int /*UnitClassTypes*/ iIndex) const
+bool CvPlot::isBarbarianUnitOnAdjacentPlot(UnitClassTypes eUnitClass) const
 {
 	PlayerTypes eBarbarianPlayerType = GC.getGameINLINE().getBarbarianPlayer();
 	if (eBarbarianPlayerType == NO_PLAYER)
@@ -10578,7 +10577,7 @@ bool CvPlot::isBarbarianUnitOnAdjacentPlot(int /*UnitClassTypes*/ iIndex) const
     }
 
 	CvPlayer& barbarianPlayer = GET_PLAYER(eBarbarianPlayerType);
-	UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnit = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(eUnitClass);
 	if (eUnit != NO_UNIT)
 	{
 		// we check the adjacent Plots

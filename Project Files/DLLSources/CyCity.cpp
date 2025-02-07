@@ -1287,38 +1287,38 @@ void CyCity::changeCityHealth(int iValue)
 
 
 // WTP, ray, helper methods for Python Event System - Spawning Units and Barbarians on Plots - START
-void CyCity::spawnOwnPlayerUnitOnPlotOfCity(int iIndex) const
+void CyCity::spawnOwnPlayerUnitOnPlotOfCity(int iUnitClass) const
 {
 	if (m_pCity)
-		m_pCity->spawnOwnPlayerUnitOnPlotOfCity(iIndex);
+		m_pCity->spawnOwnPlayerUnitOnPlotOfCity(static_cast<UnitClassTypes>(iUnitClass));
 }
 
-void CyCity::spawnBarbarianUnitOnPlotOfCity(int iIndex) const
+void CyCity::spawnBarbarianUnitOnPlotOfCity(int iUnitClass) const
 {
 	if (m_pCity)
-		m_pCity->spawnBarbarianUnitOnPlotOfCity(iIndex);
+		m_pCity->spawnBarbarianUnitOnPlotOfCity(static_cast<UnitClassTypes>(iUnitClass));
 }
 
-void CyCity::spawnOwnPlayerUnitOnAdjacentPlotOfCity(int iIndex) const
+void CyCity::spawnOwnPlayerUnitOnAdjacentPlotOfCity(int iUnitClass) const
 {
 	if (m_pCity)
-		m_pCity->spawnOwnPlayerUnitOnAdjacentPlotOfCity(iIndex);
+		m_pCity->spawnOwnPlayerUnitOnAdjacentPlotOfCity(static_cast<UnitClassTypes>(iUnitClass));
 }
 
-void CyCity::spawnBarbarianUnitOnAdjacentPlotOfCity(int iIndex) const
+void CyCity::spawnBarbarianUnitOnAdjacentPlotOfCity(int iUnitClass) const
 {
 	if (m_pCity)
-		m_pCity->spawnBarbarianUnitOnAdjacentPlotOfCity(iIndex);
+		m_pCity->spawnBarbarianUnitOnAdjacentPlotOfCity(static_cast<UnitClassTypes>(iUnitClass));
 }
 
-bool CyCity::isOwnPlayerUnitOnAdjacentPlotOfCity(int iIndex) const
+bool CyCity::isOwnPlayerUnitOnAdjacentPlotOfCity(int iUnitClass) const
 {
-	return m_pCity ? m_pCity->isOwnPlayerUnitOnAdjacentPlotOfCity(iIndex) : false;
+	return m_pCity ? m_pCity->isOwnPlayerUnitOnAdjacentPlotOfCity(static_cast<UnitClassTypes>(iUnitClass)) : false;
 }
 
-bool CyCity::isBarbarianUnitOnAdjacentPlotOfCity(int iIndex) const
+bool CyCity::isBarbarianUnitOnAdjacentPlotOfCity(int iUnitClass) const
 {
-	return m_pCity ? m_pCity->isBarbarianUnitOnAdjacentPlotOfCity(iIndex) : false;
+	return m_pCity ? m_pCity->isBarbarianUnitOnAdjacentPlotOfCity(static_cast<UnitClassTypes>(iUnitClass)) : false;
 }
 // WTP, ray, helper methods for Python Event System - Spawning Units and Barbarians on Plots - END
 

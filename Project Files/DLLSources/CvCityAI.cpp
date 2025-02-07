@@ -85,7 +85,7 @@ void CvCityAI::AI_doTurn()
 {
 	PROFILE_FUNC();
 
-	UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("DEFAULT_POPULATION_UNIT"));
+	UnitTypes eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_DEFAULT_POPULATION_UNIT);
 	CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
 
 	AI_doTradedYields();
@@ -682,16 +682,16 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync) const
 	int iBestValue;
 	int iOriginalValue;
 	int iBestOriginalValue;
-	int iI, iJ, iK;
+	int iJ, iK;
 
 
 	FAssertMsg(eUnitAI != NO_UNITAI, "UnitAI is not assigned a valid value");
 
 	iBestOriginalValue = 0;
 
-	for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+		eLoopUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 
 		if (eLoopUnit != NO_UNIT)
 		{
@@ -719,9 +719,9 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync) const
 	iBestValue = 0;
 	eBestUnit = NO_UNIT;
 
-	for (iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+		eLoopUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 
 		if (eLoopUnit != NO_UNIT)
 		{
@@ -803,7 +803,7 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync) const
 
 
 						iValue *= (GET_PLAYER(getOwnerINLINE()).getNumCities() * 2);
-						iValue /= (GET_PLAYER(getOwnerINLINE()).getUnitClassCountPlusMaking((UnitClassTypes)iI) + GET_PLAYER(getOwnerINLINE()).getNumCities() + 1);
+						iValue /= (GET_PLAYER(getOwnerINLINE()).getUnitClassCountPlusMaking(eUnitClass) + GET_PLAYER(getOwnerINLINE()).getNumCities() + 1);
 
 						FAssert((MAX_INT / 1000) > iValue);
 						iValue *= 1000;
@@ -845,7 +845,7 @@ bool CvCityAI::AI_hasCoastalRoute() const
 			// Determine if these cities share a common water area
 			if (waterArea() == pLoopCity->waterArea())
 			{
-				static const UnitTypes eShipUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_SMALL_COASTAL_SHIP"));
+				static const UnitTypes eShipUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_SMALL_COASTAL_SHIP);
 				FAssert(eShipUnit != NO_UNIT);
 
 				// Check if there's a coastal / cultural route between the cities
@@ -2332,9 +2332,9 @@ void CvCityAI::AI_doHurry(bool bForce)
 	typedef std::pair<int, UnitTypes> UnitHurryCost;
 	std::vector<UnitHurryCost> unitHurryCostList;
 
-	for (UnitTypes iI = FIRST_UNIT; iI < GC.getNumUnitClassInfos(); iI++)
+	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		const UnitTypes eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+		const UnitTypes eLoopUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 
 		if (!canTrain(eLoopUnit))
 			continue;
@@ -2679,9 +2679,9 @@ bool CvCityAI::AI_chooseBuild()
 		}
 	}
 
-	for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		UnitTypes eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+		UnitTypes eLoopUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 
 		if (eLoopUnit != NO_UNIT)
 		{

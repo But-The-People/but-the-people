@@ -642,11 +642,11 @@ public:
 	// WTP, ray, helper methods for Python Event System - Spawning Units and Barbarians on Plots - START
 	void spawnPlayerUnitOnPlot(int /*PlayerTypes*/ iPlayer, int /*UnitClassTypes*/ iIndex) const;
 	void spawnBarbarianUnitOnPlot(int /*UnitClassTypes*/ iIndex) const; // careful with this, because will take over City for Barbarians
-	void spawnPlayerUnitOnAdjacentPlot(int /*PlayerTypes*/ iPlayer, int /*UnitClassTypes*/ iIndex) const;
-	void spawnBarbarianUnitOnAdjacentPlot(int /*UnitClassTypes*/ iIndex) const;
+	void spawnPlayerUnitOnAdjacentPlot(PlayerTypes ePlayer, UnitClassTypes eUnitClass) const;
+	void spawnBarbarianUnitOnAdjacentPlot(UnitClassTypes eUnitClass) const;
 
-	bool isPlayerUnitOnAdjacentPlot(int /*PlayerTypes*/ iPlayer, int /*UnitClassTypes*/ iIndex) const;
-	bool isBarbarianUnitOnAdjacentPlot(int /*UnitClassTypes*/ iIndex) const;
+	bool isPlayerUnitOnAdjacentPlot(PlayerTypes ePlayer, UnitClassTypes eUnitClass) const;
+	bool isBarbarianUnitOnAdjacentPlot(UnitClassTypes eUnitClass) const;
 	// WTP, ray, helper methods for Python Event System - Spawning Units and Barbarians on Plots - END
 
 protected:

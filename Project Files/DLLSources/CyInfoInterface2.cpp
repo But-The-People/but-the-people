@@ -184,7 +184,7 @@ void CyInfoPythonInterface2()
 		.def("getHealing", &CvGoodyInfo::getHealing, "int ()")
 		.def("getDamagePrereq", &CvGoodyInfo::getDamagePrereq, "int ()")
 		.def("getCityGoodyWeight", &CvGoodyInfo::getCityGoodyWeight, "int ()")
-		.def("getUnitClassType", &CvGoodyInfo::getUnitClassType, "int ()")
+		.def("getUnitClassType", &CyGoodyInfo::getUnitClassType, "int ()")
 		.def("getTeachUnitClassType", &CvGoodyInfo::getTeachUnitClassType, "int ()")
 		.def("isBad", &CvGoodyInfo::isBad, "bool ()")
 		.def("isWaterGoody", &CvGoodyInfo::isWaterGoody, "bool ()") // R&R, ray, Goodies on Water

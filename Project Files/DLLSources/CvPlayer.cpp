@@ -190,19 +190,19 @@ void CvPlayer::init(PlayerTypes eID)
 		*/
 		//ray, fixing bug of player initialization braking traits impacting relations - END
 
-		for (int iI = 0; iI < GC.getNumCivicOptionInfos(); iI++)
+		for (CivicOptionTypes eCivicOption = FIRST_CIVICOPTION; eCivicOption < NUM_CIVICOPTION_TYPES; ++eCivicOption)
 		{
-			setCivic(((CivicOptionTypes)iI), ((CivicTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationInitialCivics(iI))));
+			setCivic(eCivicOption, GC.getCivilizationInfo(getCivilizationType()).getCivilizationInitialCivics(eCivicOption));
 		}
 
-		for (int iI = 0; iI < GC.getNumEventInfos(); iI++)
+		for (EventTypes eEvent = FIRST_EVENT; eEvent < NUM_EVENT_TYPES; ++eEvent)
 		{
-			resetEventOccured((EventTypes)iI, false);
+			resetEventOccured(eEvent, false);
 		}
 
-		for (int iI = 0; iI < GC.getNumEventTriggerInfos(); iI++)
+		for (EventTriggerTypes eEventTrigger = FIRST_EVENTTRIGGER; eEventTrigger < NUM_EVENTTRIGGER_TYPES; ++eEventTrigger)
 		{
-			resetTriggerFired((EventTriggerTypes)iI);
+			resetTriggerFired(eEventTrigger);
 		}
 	}
 
@@ -337,9 +337,6 @@ void CvPlayer::initFreeState()
 
 void CvPlayer::initFreeUnits()
 {
-	UnitTypes eLoopUnit;
-	int iFreeCount;
-
 	if ((GC.getGameINLINE().isOption(GAMEOPTION_ADVANCED_START) || GC.getCivilizationInfo(getCivilizationType()).getAdvancedStartPoints() > 0) && !GC.getCivilizationInfo(getCivilizationType()).isEurope())
 	{
 		int iPoints = GC.getCivilizationInfo(getCivilizationType()).getAdvancedStartPoints();
@@ -397,22 +394,22 @@ void CvPlayer::initFreeUnits()
 		CvCivilizationInfo& kCivilizationInfo = GC.getCivilizationInfo(getCivilizationType());
 		for (int iI = 0; iI < kCivilizationInfo.getNumCivilizationFreeUnits(); iI++)
 		{
-			int iLoopUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iI);
+			UnitClassTypes eLoopUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iI);
 			ProfessionTypes eLoopUnitProfession = (ProfessionTypes) kCivilizationInfo.getCivilizationFreeUnitsProfession(iI);
-			eLoopUnit = (UnitTypes)kCivilizationInfo.getCivilizationUnits(iLoopUnitClass);
+			UnitTypes eLoopUnit = kCivilizationInfo.getCivilizationUnits(eLoopUnitClass);
 
 			if (eLoopUnit != NO_UNIT)
 			{
-				iFreeCount = (GC.getEraInfo(GC.getGameINLINE().getStartEra()).getStartingUnitMultiplier() + ((!isHuman()) ? GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIStartingUnitMultiplier() : 0));
+				int iFreeCount = (GC.getEraInfo(GC.getGameINLINE().getStartEra()).getStartingUnitMultiplier() + ((!isHuman()) ? GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getAIStartingUnitMultiplier() : 0));
 
 				for (int iJ = 0; iJ < iFreeCount; iJ++)
 				{
 					//add revolution units to children
 					if (GC.getCivilizationInfo(getCivilizationType()).isEurope())
 					{
-						for (int iPlayer=0;iPlayer<MAX_PLAYERS;iPlayer++)
+						for (PlayerTypes ePlayer = FIRST_PLAYER; ePlayer < NUM_PLAYER_TYPES; ++ePlayer)
 						{
-							CvPlayer& kChild = GET_PLAYER((PlayerTypes) iPlayer);
+							CvPlayer& kChild = GET_PLAYER(ePlayer);
 							if(kChild.isAlive() && (kChild.getParent() == getID()))
 							{
 								kChild.addRevolutionEuropeUnit(eLoopUnit, eLoopUnitProfession);
@@ -465,7 +462,7 @@ void CvPlayer::initFreeUnits()
 
 		/** NBMOD REF **/
 
-		iFreeCount = GC.getEraInfo(GC.getGameINLINE().getStartEra()).getStartingDefenseUnits();
+		int iFreeCount = GC.getEraInfo(GC.getGameINLINE().getStartEra()).getStartingDefenseUnits();
 		iFreeCount += GC.getHandicapInfo(getHandicapType()).getStartingDefenseUnits();
 
 		if (!isHuman())
@@ -558,9 +555,9 @@ void CvPlayer::addFreeUnitAI(UnitAITypes eUnitAI, int iCount)
 	ProfessionTypes eBestProfession = NO_PROFESSION;
 	int iBestValue = 0;
 
-	for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		UnitTypes eLoopUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI);
+		UnitTypes eLoopUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 
 		if (eLoopUnit != NO_UNIT)
 		{
@@ -1637,7 +1634,7 @@ bool CvPlayer::initEuropeSettler(bool bPayEquipment)
 		if(getGold() >= iEquipmentCosts)
 		{
 			changeGold(-iEquipmentCosts);
-			UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("DEFAULT_POPULATION_UNIT"));
+			UnitTypes eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_DEFAULT_POPULATION_UNIT);
 			CvUnit* pUnit = initUnit(eUnit, eSettlerProfession, Coordinates::invalidCoord(), UNITAI_SETTLER, NO_DIRECTION);
 			unloadUnitToEurope(pUnit);
 			return true;
@@ -1653,9 +1650,9 @@ bool CvPlayer::initEuropeTransport(bool bPay)
 	CvCivilizationInfo& kCivilizationInfo = GC.getCivilizationInfo(getCivilizationType());
 	for (int iI = 0; iI < kCivilizationInfo.getNumCivilizationFreeUnits(); iI++)
 	{
-		int iLoopUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iI);
-		ProfessionTypes eLoopUnitProfession = (ProfessionTypes) kCivilizationInfo.getCivilizationFreeUnitsProfession(iI);
-		UnitTypes eLoopUnit = (UnitTypes)kCivilizationInfo.getCivilizationUnits(iLoopUnitClass);
+		UnitClassTypes eLoopUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iI);
+		ProfessionTypes eLoopUnitProfession = kCivilizationInfo.getCivilizationFreeUnitsProfession(iI);
+		UnitTypes eLoopUnit = (UnitTypes)kCivilizationInfo.getCivilizationUnits(eLoopUnitClass);
 
 		if (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == UNITAI_TRANSPORT_SEA)
 		{
@@ -2114,7 +2111,7 @@ ArtStyleTypes CvPlayer::getArtStyleType() const
 {
 	if (GC.getInitCore().getArtStyle(getID()) == NO_ARTSTYLE)
 	{
-		return ((ArtStyleTypes)(GC.getCivilizationInfo(getCivilizationType()).getArtStyleType()));
+		return GC.getCivilizationInfo(getCivilizationType()).getArtStyleType();
 	}
 	else
 	{
@@ -2466,9 +2463,9 @@ void CvPlayer::doTurnUnits()
 		{
 			int iLowestCost = MAX_INT;
 			UnitTypes eCheapestShip = NO_UNIT;
-			for (int iUnitClass = 0; iUnitClass < GC.getNumUnitClassInfos(); ++iUnitClass)
+			for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 			{
-				UnitTypes eLoopUnit = (UnitTypes) GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iUnitClass);
+				UnitTypes eLoopUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 				if (eLoopUnit != NO_UNIT)
 				{
 					// TAC - AI Improved Navel AI - koma13 - START
@@ -3095,13 +3092,13 @@ void CvPlayer::contact(PlayerTypes ePlayer)
 
 CvCity *CvPlayer::buyUnitFromParentPlayer(PlayerTypes eSellingPlayer, const char *szUnitClass, int iNumUnits, CvWString szMessage, int iPriceToPay, LocationFlags eLocationFlags, bool bReceivePrice, bool bMessageMentionLocation)
 {
-	UnitTypes eUnitType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits(GC.getDefineINT(szUnitClass));
+	UnitTypes eUnitType = GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits((UnitClassTypes)getIndexOfType(JIT_ARRAY_UNITCLASS, szUnitClass));
 	return buyUnitFromPlayer(eSellingPlayer, eUnitType, iNumUnits, szMessage, iPriceToPay, eLocationFlags, bReceivePrice, bMessageMentionLocation);
 }
 
 CvCity *CvPlayer::buyUnitFromPlayer(PlayerTypes eSellingPlayer, UnitClassTypes eUnitClass, int iNumUnits, CvWString szMessage, int iPriceToPay, LocationFlags eLocationFlags, bool bReceivePrice, bool bMessageMentionLocation)
 {
-	UnitTypes eUnitType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
+	UnitTypes eUnitType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 	return buyUnitFromPlayer(eSellingPlayer, eUnitType, iNumUnits, szMessage, iPriceToPay, eLocationFlags, bReceivePrice, bMessageMentionLocation);
 }
 
@@ -3441,7 +3438,7 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 
 				if (locationToAppear != NULL)
 				{
-					UnitTypes SlaveType = (UnitTypes)GC.getCivilizationInfo(kPlayer.getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_AFRICAN_SLAVE"));
+					UnitTypes SlaveType = GC.getCivilizationInfo(kPlayer.getCivilizationType()).getCivilizationUnits(UNITCLASS_AFRICAN_SLAVE);
 					CvUnit* pSlaveUnit = NULL;
 					for (int i=0; i < iNumSlaves; ++i)
 					{
@@ -3486,7 +3483,7 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 
 				if (locationToAppear != NULL)
 				{
-					UnitTypes ePrisonerType = (UnitTypes)GC.getCivilizationInfo(kPlayer.getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_PRISONER"));
+					UnitTypes ePrisonerType = GC.getCivilizationInfo(kPlayer.getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_PRISONER);
 					CvUnit* pPrisonerUnit = NULL;
 					for (int i=0; i < iNumPrisoners; ++i)
 					{
@@ -3600,7 +3597,7 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 						case 4:
 							{
 								// new Missionary
-								UnitTypes ChurchRewardUnitType = (UnitTypes)GC.getCivilizationInfo(kPlayer.getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_CHURCH_REWARD1"));
+								UnitTypes ChurchRewardUnitType = GC.getCivilizationInfo(kPlayer.getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_CHURCH_REWARD1);
 								CvUnit* ChurchRewardUnit;
 								ChurchRewardUnit = kPlayer.initUnit(ChurchRewardUnitType, GC.getUnitInfo(ChurchRewardUnitType).getDefaultProfession(), pCity->coord(), NO_UNITAI);
 								szBuffer += gDLL->getText("TXT_KEY_CHURCH_REWARD_MISSIONARY");
@@ -3609,7 +3606,7 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 						case 5:
 							{
 								// new Preacher or Priest
-								UnitTypes ChurchRewardUnitType = (UnitTypes)GC.getCivilizationInfo(kPlayer.getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_CHURCH_REWARD2"));
+								UnitTypes ChurchRewardUnitType = GC.getCivilizationInfo(kPlayer.getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_CHURCH_REWARD2);
 								CvUnit* ChurchRewardUnit;
 								ChurchRewardUnit = kPlayer.initUnit(ChurchRewardUnitType, GC.getUnitInfo(ChurchRewardUnitType).getDefaultProfession(), pCity->coord(), NO_UNITAI);
 								szBuffer += gDLL->getText("TXT_KEY_PAYED_CHURCH_REWARD_PREACHER");
@@ -3794,9 +3791,9 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 				if (locationToAppear != NULL)
 				{
 
-					UnitTypes ChurchReinforcementTypeInfantery = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_CONQUISTADOR"));
-					UnitTypes ChurchReinforcementTypeCavalery = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_MOUNTED_CONQUISTADOR"));
-					UnitTypes ChurchReinforcementTypeArtillery = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(kPlayer.getParent()).getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_KING_REINFORCEMENT_ARTIL"));
+					const UnitTypes ChurchReinforcementTypeInfantery = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_CONQUISTADOR);
+					const UnitTypes ChurchReinforcementTypeCavalery = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_MOUNTED_CONQUISTADOR);
+					const UnitTypes ChurchReinforcementTypeArtillery = GC.getCivilizationInfo(GET_PLAYER(kPlayer.getParent()).getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_ARTIL);
 
 					CvUnit* ChurchReinforcementUnitInfantery = kPlayer.initUnit(ChurchReinforcementTypeInfantery, GC.getUnitInfo(ChurchReinforcementTypeInfantery).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
 					CvUnit* ChurchReinforcementUnitCavalery = kPlayer.initUnit(ChurchReinforcementTypeCavalery, GC.getUnitInfo(ChurchReinforcementTypeCavalery).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
@@ -3882,9 +3879,9 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 
 				if (locationToAppear != NULL)
 				{
-					UnitTypes Colonial_Intervention_Unit1 = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_NATIVE_MERC"));
-					UnitTypes Colonial_Intervention_Unit2 = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_RANGER"));
-					UnitTypes Colonial_Intervention_Unit3 = (UnitTypes)GC.getCivilizationInfo(kNativePlayer.getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_GREAT_GENERAL"));
+					const UnitTypes Colonial_Intervention_Unit1 = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_NATIVE_MERC);
+					const UnitTypes Colonial_Intervention_Unit2 = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_RANGER);
+					const UnitTypes Colonial_Intervention_Unit3 = GC.getCivilizationInfo(kNativePlayer.getCivilizationType()).getCivilizationUnits(UNITCLASS_GREAT_GENERAL);
 
 					// now let us see how much Gold the Natives have and how many Native Soldiers can be acquired
 					int iGoldCostPerUnit = GC.getCOLONIAL_INTERVENTION_NATIVE_WAR_GOLD_TO_PAY_PER_UNIT() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent() / 100;
@@ -3974,8 +3971,8 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 			}
 
 			// in exchange we also get some Warriors - we use the Civilization of the Native Civ for getting the UnitTypes=
-			int iNumNativeWarriorsCreated = GC.getDefineINT("NATIVE_WARRIORS_RECEIVED_COLONIES_AND_NATIVE_ALLIES_WAR");
-			UnitTypes NativeWarriorUnitType = (UnitTypes)GC.getCivilizationInfo(HumanPlayer.getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_NATIVE_WARRIORS"));
+			int iNumNativeWarriorsCreated = GLOBAL_DEFINE_NATIVE_WARRIORS_RECEIVED_COLONIES_AND_NATIVE_ALLIES_WAR;
+			UnitTypes NativeWarriorUnitType = GC.getCivilizationInfo(HumanPlayer.getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_NATIVE_WARRIORS);
 			if (pOurOwnCapitolCity != NULL)
 			{
 				for (int i=0;i<iNumNativeWarriorsCreated;i++)
@@ -5126,7 +5123,7 @@ void CvPlayer::raze(CvCity* pCity)
 	{
 		if (pCity->getHighestPopulation() > 1)
 		{
-			UnitClassTypes eUnitClass = (UnitClassTypes) GC.getCivilizationInfo(GET_PLAYER(pCity->getPreviousOwner()).getCivilizationType()).getCapturedCityUnitClass();
+			UnitClassTypes eUnitClass = GC.getCivilizationInfo(GET_PLAYER(pCity->getPreviousOwner()).getCivilizationType()).getCapturedCityUnitClass();
 
 			if (eUnitClass != NO_UNITCLASS)
 			{
@@ -5139,7 +5136,7 @@ void CvPlayer::raze(CvCity* pCity)
 						// R&R, ray, Native Slaves, START
 						if (GET_PLAYER(pCity->getPreviousOwner()).isNative())
 						{
-							UnitTypes SlaveType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_NATIVE_SLAVE"));
+							UnitTypes SlaveType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_NATIVE_SLAVE);
 							initUnit(SlaveType, GC.getUnitInfo(SlaveType).getDefaultProfession(), pCity->coord());
 
 						}
@@ -5319,7 +5316,7 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, const CvUnit* p
 
 	if (kGoody.getUnitClassType() != NO_UNITCLASS)
 	{
-		UnitTypes eUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(kGoody.getUnitClassType())));
+		UnitTypes eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(kGoody.getUnitClassType());
 
 		if (eUnit == NO_UNIT)
 		{
@@ -5396,7 +5393,7 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, const CvUnit* p
 			return false;
 		}
 
-		UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(kGoody.getTeachUnitClassType());
+		UnitTypes eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits((UnitClassTypes)kGoody.getTeachUnitClassType());
 
 		if (eUnit == NO_UNIT)
 		{
@@ -5454,7 +5451,7 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, const CvUnit* p
 		}
 
 		// for Animals we also need to check the Terrain configured correctly for immersion:
-		UnitTypes eUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(kGoody.getUnitClassType())));
+		UnitTypes eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(kGoody.getUnitClassType());
 		if (eUnit != NO_UNIT)
 		{
 			CvUnitInfo& eAnmialInfo = GC.getUnitInfo(eUnit);
@@ -5718,7 +5715,7 @@ int CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 
 	if (kGoody.getTeachUnitClassType() != NO_UNITCLASS)
 	{
-		UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(kGoody.getTeachUnitClassType());
+		UnitTypes eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits((UnitClassTypes)kGoody.getTeachUnitClassType());
 
 		if (eUnit != NO_UNIT)
 		{
@@ -5770,7 +5767,7 @@ int CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 	if (kGoody.isSpawnHostileUnitsAsXML() || kGoody.isSpawnHostileAnimals() || kGoody.isSpawnHostileNatives() || kGoody.isSpawnHostileCriminals())
 	{
 
-		int eHostileUnitClass = kGoody.getUnitClassType();
+		UnitClassTypes eHostileUnitClass = kGoody.getUnitClassType();
 		PlayerTypes barbarianPlayerTypes = GC.getGameINLINE().getBarbarianPlayer();
 
 		// for safety
@@ -5785,7 +5782,7 @@ int CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 			}
 
 			// we get UnitClass, Unit and Barbarian Player
-			UnitTypes eUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eHostileUnitClass)));
+			UnitTypes eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eHostileUnitClass);
 			CvPlayer& barbarianPlayer = GET_PLAYER(barbarianPlayerTypes);
 
 			// check for eUnit to be safe
@@ -7986,7 +7983,7 @@ void CvPlayer::setCombatExperience(int iExperience)
 			// has been modified
 			if (pBestCity)
 			{
-				UnitTypes eGeneralUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_GREAT_GENERAL"));
+				UnitTypes eGeneralUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_GREAT_GENERAL);
 				if (eGeneralUnit != NO_UNIT)
 				{
 					if (GC.getUnitInfo(eGeneralUnit).getLeaderExperience() > 0 || GC.getUnitInfo(eGeneralUnit).getLeaderPromotion() != NO_PROMOTION)
@@ -8054,7 +8051,7 @@ void CvPlayer::setSeaCombatExperience(int iExperience)
 
 			if (pBestCity)
 			{
-				UnitTypes eAdmiralUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_GREAT_ADMIRAL"));
+				UnitTypes eAdmiralUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_GREAT_ADMIRAL);
 				if (eAdmiralUnit != NO_UNIT)
 				{
 					if (GC.getUnitInfo(eAdmiralUnit).getLeaderExperience() > 0 || GC.getUnitInfo(eAdmiralUnit).getLeaderPromotion() != NO_PROMOTION)
@@ -11492,8 +11489,8 @@ void CvPlayer::NBMOD_AddEuropeRandomUnit(bool bDisplay)
         std::vector<int> aiUnitWeights(iNumFreeUnits, 100);
 		for (int i = 0; i < iNumFreeUnits; ++i)
 		{
-			int iUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(i);
-			UnitTypes eUnit = (UnitTypes) kCivilizationInfo.getCivilizationUnits(iUnitClass);
+			UnitClassTypes eUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(i);
+			UnitTypes eUnit = kCivilizationInfo.getCivilizationUnits(eUnitClass);
 			if (eUnit == NO_UNIT)
 			{
 				aiUnitWeights[i] = 0;
@@ -11512,9 +11509,9 @@ void CvPlayer::NBMOD_AddEuropeRandomUnit(bool bDisplay)
 		if (iNumFreeUnits > 0)
 		{
 			int iIndex = GC.getGameINLINE().getSorenRand().pickValue(CREATE_ASSERT_DATA, aiUnitWeights, "Pick Expeditionary force unit");
-			int iUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iIndex);
-			ProfessionTypes eUnitProfession = (ProfessionTypes) kCivilizationInfo.getCivilizationFreeUnitsProfession(iIndex);
-			UnitTypes eUnit = (UnitTypes)kCivilizationInfo.getCivilizationUnits(iUnitClass);
+			UnitClassTypes eUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iIndex);
+			ProfessionTypes eUnitProfession = kCivilizationInfo.getCivilizationFreeUnitsProfession(iIndex);
+			UnitTypes eUnit = kCivilizationInfo.getCivilizationUnits(eUnitClass);
 			FAssert(eUnit != NO_UNIT);
 
 			addRevolutionEuropeUnit(eUnit, eUnitProfession);
@@ -11565,8 +11562,8 @@ void CvPlayer::NBMOD_AddEuropeShipUnit(bool bDisplay)
         std::vector<int> aiUnitWeights(iNumFreeUnits, 100);
 		for (int i = 0; i < iNumFreeUnits; ++i)
 		{
-			int iUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(i);
-			UnitTypes eUnit = (UnitTypes) kCivilizationInfo.getCivilizationUnits(iUnitClass);
+			UnitClassTypes eUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(i);
+			UnitTypes eUnit = (UnitTypes) kCivilizationInfo.getCivilizationUnits(eUnitClass);
 			if (eUnit == NO_UNIT)
 			{
 				aiUnitWeights[i] = 0;
@@ -11583,9 +11580,9 @@ void CvPlayer::NBMOD_AddEuropeShipUnit(bool bDisplay)
 		if (iNumFreeUnits > 0)
 		{
 			int iIndex = GC.getGameINLINE().getSorenRand().pickValue(CREATE_ASSERT_DATA, aiUnitWeights, "Pick Expeditionary force unit");
-			int iUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iIndex);
-			ProfessionTypes eUnitProfession = (ProfessionTypes) kCivilizationInfo.getCivilizationFreeUnitsProfession(iIndex);
-			UnitTypes eUnit = (UnitTypes)kCivilizationInfo.getCivilizationUnits(iUnitClass);
+			UnitClassTypes eUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iIndex);
+			ProfessionTypes eUnitProfession = kCivilizationInfo.getCivilizationFreeUnitsProfession(iIndex);
+			UnitTypes eUnit = kCivilizationInfo.getCivilizationUnits(eUnitClass);
 			FAssert(eUnit != NO_UNIT);
 
 			addRevolutionEuropeUnit(eUnit, eUnitProfession);
@@ -11791,8 +11788,8 @@ void CvPlayer::doBells()
 					std::vector<int> aiUnitWeights(iNumFreeUnits, 100);
 					for (int i = 0; i < iNumFreeUnits; ++i)
 					{
-						int iUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(i);
-						UnitTypes eUnit = (UnitTypes) kCivilizationInfo.getCivilizationUnits(iUnitClass);
+						UnitClassTypes eUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(i);
+						UnitTypes eUnit = kCivilizationInfo.getCivilizationUnits(eUnitClass);
 						if (eUnit == NO_UNIT)
 						{
 							aiUnitWeights[i] = 0;
@@ -11812,9 +11809,9 @@ void CvPlayer::doBells()
 						for (int i = 0; i < iNumUnits; ++i)
 						{
 							int iIndex = GC.getGameINLINE().getSorenRand().pickValue(CREATE_ASSERT_DATA, aiUnitWeights, "Pick Expeditionary force unit");
-							int iUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iIndex);
-							ProfessionTypes eUnitProfession = (ProfessionTypes) kCivilizationInfo.getCivilizationFreeUnitsProfession(iIndex);
-							UnitTypes eUnit = (UnitTypes)kCivilizationInfo.getCivilizationUnits(iUnitClass);
+							UnitClassTypes eUnitClass = kCivilizationInfo.getCivilizationFreeUnitsClass(iIndex);
+							ProfessionTypes eUnitProfession = kCivilizationInfo.getCivilizationFreeUnitsProfession(iIndex);
+							UnitTypes eUnit = kCivilizationInfo.getCivilizationUnits(eUnitClass);
 							FAssert(eUnit != NO_UNIT);
 							addRevolutionEuropeUnit(eUnit, eUnitProfession);
 						}
@@ -13389,7 +13386,7 @@ void CvPlayer::processCivics(CivicTypes eCivic, int iChange)
 
 	for (int i = 0; i < kCivicInfo.getNumFreeUnitClasses(); ++i)
 	{
-		UnitTypes eUnit = (UnitTypes) GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(kCivicInfo.getFreeUnitClass(i));
+		UnitTypes eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits((UnitClassTypes)kCivicInfo.getFreeUnitClass(i));
 		if (eUnit != NO_UNIT)
 		{
 			int iLoop;
@@ -18890,7 +18887,7 @@ void CvPlayer::applyMissionaryPoints(CvCity* pCity)
 		{
 			//spawn converted native
 			bool bUnitCreated = false;
-			UnitClassTypes eUnitClass = (UnitClassTypes) GC.getCivilizationInfo(getCivilizationType()).getCapturedCityUnitClass();
+			UnitClassTypes eUnitClass = GC.getCivilizationInfo(getCivilizationType()).getCapturedCityUnitClass();
 			if (eUnitClass != NO_UNITCLASS)
 			{
 				UnitTypes eUnit = (UnitTypes) GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationUnits(eUnitClass);
@@ -21086,9 +21083,9 @@ bool CvPlayer::LbD_try_become_expert(CvUnit* convUnit, int base, int increase, i
 		return false;
 	}
 
-	int expert = GC.getProfessionInfo(convUnit->getProfession()).LbD_getExpert();
+	UnitClassTypes expert = (UnitClassTypes)GC.getProfessionInfo(convUnit->getProfession()).LbD_getExpert();
 
-	UnitTypes expertUnitType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(expert);
+	UnitTypes expertUnitType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(expert);
 	FAssert(expertUnitType != NO_UNIT);
 	// R&R, ray, small fix
 	//CvUnit* expertUnit = initUnit(expertUnitType, convUnit->getProfession(), convUnit->getX_INLINE(), convUnit->getY_INLINE(), convUnit->AI_getUnitAIType());
@@ -21150,7 +21147,7 @@ bool CvPlayer::LbD_try_get_free(CvUnit* convUnit, int base, int increase, int pr
 	}
 
 	// convert Unit to Free Settler
-	UnitTypes DefaultUnitType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("DEFAULT_POPULATION_UNIT"));
+	UnitTypes DefaultUnitType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_DEFAULT_POPULATION_UNIT);
 	FAssert(DefaultUnitType != NO_UNIT);
 	// R&R, ray, small fix
 	//CvUnit* DefaultUnit = initUnit(DefaultUnitType, convUnit->getProfession(), convUnit->getX_INLINE(), convUnit->getY_INLINE(), convUnit->AI_getUnitAIType());
@@ -21225,8 +21222,8 @@ void CvPlayer::doLbD()
 					if(iExperience >= iExperienceVeteran)
 					{
 						// convert Unit to Veteran Unit of the Profession
-						int expert = GC.getProfessionInfo(pLoopUnit->getProfession()).LbD_getExpert();
-						UnitTypes expertUnitType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(expert);
+						UnitClassTypes expert = (UnitClassTypes)GC.getProfessionInfo(pLoopUnit->getProfession()).LbD_getExpert();
+						UnitTypes expertUnitType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(expert);
 						OOS_LOG("doLbD", getTypeStr(expertUnitType));
 						CvUnit* expertUnit = initUnit(expertUnitType, GC.getCivilizationInfo(getCivilizationType()).getDefaultProfession(), pLoopUnit->getX_INLINE(), pLoopUnit->getY_INLINE());
 						expertUnit->joinGroup(pLoopUnit->getGroup());
@@ -21244,7 +21241,7 @@ void CvPlayer::doLbD()
 					if(iExperience >= iExperienceFree)
 					{
 						// convert Unit to Free Settler
-						UnitTypes DefaultUnitType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("DEFAULT_POPULATION_UNIT"));
+						UnitTypes DefaultUnitType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_DEFAULT_POPULATION_UNIT);
 						OOS_LOG("doLbD", getTypeStr(DefaultUnitType));
 						CvUnit* DefaultUnit = initUnit(DefaultUnitType, GC.getUnitInfo(DefaultUnitType).getDefaultProfession(), pLoopUnit->getX_INLINE(), pLoopUnit->getY_INLINE());
 						DefaultUnit->joinGroup(pLoopUnit->getGroup());
@@ -21468,7 +21465,7 @@ void CvPlayer::checkForNativeSlaves()
 							m_iTimerNativeSlave = GC.getTIMER_NATIVE_SLAVE() * gamespeedMod / 100; // WTP, ray, small correction in balancing
 
 							//creating unit
-							UnitTypes DefaultSlaveUnitType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_NATIVE_SLAVE"));
+							UnitTypes DefaultSlaveUnitType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_NATIVE_SLAVE);
 							FAssert(DefaultSlaveUnitType != NO_UNIT);
 							CvUnit* SlaveUnit = initUnit(DefaultSlaveUnitType, GC.getUnitInfo(DefaultSlaveUnitType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
 						}
@@ -21575,7 +21572,7 @@ void CvPlayer::checkForAfricanSlaves()
 			if (!AI().AI_isStrategy(STRATEGY_MILITARY_BUILDUP))
 			{
 				//create the prisoners
-				UnitTypes SlaveType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_AFRICAN_SLAVE"));
+				UnitTypes SlaveType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_AFRICAN_SLAVE);
 				CvUnit* SlaveUnit;
 				for (int i=0;i<numSlavesOffered;i++)
 				{
@@ -21683,7 +21680,7 @@ void CvPlayer::checkForPrisonsCrowded()
 			if (!AI().AI_isStrategy(STRATEGY_MILITARY_BUILDUP))
 			{
 				//create the prisoners
-				UnitTypes PrisonerType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_PRISONER"));
+				UnitTypes PrisonerType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_PRISONER);
 				CvUnit* PrisonerUnit;
 				for (int i=0;i<numPrisonersOffered;i++)
 				{
@@ -21789,7 +21786,7 @@ void CvPlayer::checkForRevolutionaryNoble()
 			if (!AI().AI_isStrategy(STRATEGY_MILITARY_BUILDUP))
 			{
 				//create the noble
-				UnitTypes NobleType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_NOBLE"));
+				UnitTypes NobleType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_NOBLE);
 				CvUnit* NobleUnit;
 				NobleUnit = initUnit(NobleType, GC.getUnitInfo(NobleType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
 				//pay the king
@@ -21907,7 +21904,7 @@ void CvPlayer::checkForBishop()
 			if (!AI().AI_isStrategy(STRATEGY_MILITARY_BUILDUP))
 			{
 				//create the bishop
-				UnitTypes BishopType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_BISHOP"));
+				UnitTypes BishopType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_BISHOP);
 				CvUnit* BishopUnit;
 				BishopUnit = initUnit(BishopType, GC.getUnitInfo(BishopType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
 				//pay the king
@@ -22019,12 +22016,12 @@ void CvPlayer::checkForRevolutionSupport()
 						if (randomSupportChoice > 1)
 						{
 							supportAmount = GC.getDefineINT("REV_SUPPORT_LAND");
-							DefaultSupportType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_REV_SUPPORT_LAND"));
+							DefaultSupportType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_REV_SUPPORT_LAND);
 						}
 						else
 						{
 							supportAmount = GC.getDefineINT("REV_SUPPORT_SEA");
-							DefaultSupportType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_REV_SUPPORT_SEA"));
+							DefaultSupportType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_REV_SUPPORT_SEA);
 						}
 
 						FAssert(DefaultSupportType != NO_UNIT);
@@ -22131,15 +22128,15 @@ void CvPlayer::checkForEuropeanWars()
 		UnitTypes KingReinforcementType;
 		if (randomSupportChoice > 2)
 		{
-			KingReinforcementType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_KING_REINFORCEMENT_SEA"));
+			KingReinforcementType = GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_SEA);
 		}
 		else if (randomSupportChoice > 1)
 		{
-			KingReinforcementType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_KING_REINFORCEMENT_ARTIL"));
+			KingReinforcementType = GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_ARTIL);
 		}
 		else
 		{
-			KingReinforcementType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_KING_REINFORCEMENT_LAND"));
+			KingReinforcementType = GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_LAND);
 		}
 		FAssert(KingReinforcementType != NO_UNIT);
 		CvUnit* ReinforcementUnit = initUnit(KingReinforcementType, GC.getUnitInfo(KingReinforcementType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
@@ -22360,7 +22357,7 @@ void CvPlayer::checkForSmugglers()
 		if (!AI().AI_isStrategy(STRATEGY_MILITARY_BUILDUP))
 		{
 			//create the smuggling ship
-			UnitTypes SmugglingShipType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_SMUGGLING_SHIP"));
+			UnitTypes SmugglingShipType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_SMUGGLING_SHIP);
 			CvUnit* SmugglingShipUnit;
 			SmugglingShipUnit = initUnit(SmugglingShipType, GC.getUnitInfo(SmugglingShipType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
 			//pay
@@ -22446,7 +22443,7 @@ void CvPlayer::checkForRangers()
 			{
 				m_iTimerRanger = GC.getTIMER_RANGER() * gamespeedMod/100;
 				//create the ranger
-				UnitTypes RangerType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_RANGER"));
+				UnitTypes RangerType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_RANGER);
 				CvUnit* RangerUnit = initUnit(RangerType, GC.getUnitInfo(RangerType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
 				//pay
 				OOS_LOG("CvPlayer::checkForRangers AI", pricetopay);
@@ -22563,11 +22560,11 @@ void CvPlayer::checkForConquistadors()
 					int conquistUnitRand = GC.getGameINLINE().getSorenRandNum(3, "Conquistadors Available");
 					if (conquistUnitRand == 1)
 					{
-						ConquistadorType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_MOUNTED_CONQUISTADOR"));
+						ConquistadorType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_MOUNTED_CONQUISTADOR);
 					}
 					else
 					{
-						ConquistadorType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_CONQUISTADOR"));
+						ConquistadorType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_CONQUISTADOR);
 					}
 					CvUnit* ConquistadorUnit;
 					ConquistadorUnit = initUnit(ConquistadorType, GC.getUnitInfo(ConquistadorType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
@@ -22687,7 +22684,7 @@ void CvPlayer::checkForPirates()
 		if (!AI().AI_isStrategy(STRATEGY_MILITARY_BUILDUP))
 		{
 			//create the pirate ship
-			UnitTypes PirateShipType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_PIRATE_FRIGATE"));
+			UnitTypes PirateShipType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_PIRATE_FRIGATE);
 			CvUnit* PirateShipUnit;
 			PirateShipUnit = initUnit(PirateShipType, GC.getUnitInfo(PirateShipType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
 			//pay
@@ -23219,7 +23216,7 @@ void CvPlayer::createEnemyPirates()
 	// init Pirate Ship
 	if (pBestPlot != NULL)
 	{
-		UnitTypes PirateShipType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_PIRATE_FRIGATE"));
+		UnitTypes PirateShipType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_PIRATE_FRIGATE);
 		CvUnit* PirateShipUnit;
 		PirateShipUnit = barbarianPlayer.initUnit(PirateShipType, GC.getUnitInfo(PirateShipType).getDefaultProfession(), pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), NO_UNITAI);
 		PirateShipUnit->setBarbarian(true);
@@ -23309,7 +23306,7 @@ void CvPlayer::checkForContinentalGuard()
 		if (!AI().AI_isStrategy(STRATEGY_MILITARY_BUILDUP))
 		{
 			//create the Continental Guard
-			UnitTypes ContinentalGuardType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_CONTINENTAL_GUARD"));
+			UnitTypes ContinentalGuardType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_CONTINENTAL_GUARD);
 			CvUnit* ContinentalGuardUnit;
 			ContinentalGuardUnit = initUnit(ContinentalGuardType, GC.getUnitInfo(ContinentalGuardType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
 			//pay
@@ -23426,7 +23423,7 @@ void CvPlayer::checkForMortar()
 		if (!AI().AI_isStrategy(STRATEGY_MILITARY_BUILDUP))
 		{
 			//create the Mortar
-			UnitTypes MortarType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_MORTAR"));
+			UnitTypes MortarType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_MORTAR);
 			CvUnit* MortarUnit;
 			MortarUnit = initUnit(MortarType, GC.getUnitInfo(MortarType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);
 			//pay
@@ -23461,7 +23458,7 @@ void CvPlayer::checkForMilitiaOrUnrest()
 	int minCitySize = GC.getMIN_CITY_SIZE_MILITIA_OR_UNREST();
 	int chanceForMilitia = GC.getCHANCE_MILITIA();
 	int chanceForUnrest = GC.getCHANCE_UNREST();
-	UnitTypes MilitiaType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_MILITIA"));
+	UnitTypes MilitiaType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_MILITIA);
 
 	int iLoop;
 	CvCity* pLoopCity = NULL;
@@ -24360,11 +24357,11 @@ void CvPlayer::checkForChurchWar()
 		UnitTypes ChurchReinforcementType;
 		if (randomSupportChoice > 1)
 		{
-			ChurchReinforcementType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_KING_REINFORCEMENT_ARTIL"));
+			ChurchReinforcementType = GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_ARTIL);
 		}
 		else
 		{
-			ChurchReinforcementType = (UnitTypes)GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_MOUNTED_CONQUISTADOR"));
+			ChurchReinforcementType = GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits(GLOBAL_DEFINE_UNITCLASS_MOUNTED_CONQUISTADOR);
 		}
 		//FAssert(ChurchReinforcementType != NO_UNIT);
 		CvUnit* ReinforcementUnit = initUnit(ChurchReinforcementType, GC.getUnitInfo(ChurchReinforcementType).getDefaultProfession(), locationToAppear->coord(), NO_UNITAI);

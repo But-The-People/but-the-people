@@ -1699,11 +1699,11 @@ public:
 	void setArtDefineTag(const char* szVal);
 	// Arrays
 	BuildingTypes getCivilizationBuildings(int iBuildingClass) const;
-	UnitTypes getCivilizationUnits(int iUnitClass) const;
+	UnitTypes getCivilizationUnits(UnitClassTypes eUnitClass) const;
 	int getNumCivilizationFreeUnits() const;
 	UnitClassTypes getCivilizationFreeUnitsClass(int index) const;
 	ProfessionTypes getCivilizationFreeUnitsProfession(int index) const;
-	CivicTypes getCivilizationInitialCivics(int iCivicOption) const;
+	CivicTypes getCivilizationInitialCivics(CivicOptionTypes eCivicOption) const;
 	int getFreeYields(int iYield) const;
 	int getTeachUnitClassWeight(int iUnitClass) const;
 
@@ -2251,7 +2251,7 @@ public:
 	int getHealing() const;
 	int getDamagePrereq() const;
 	int getCityGoodyWeight() const;
-	int getUnitClassType() const;
+	UnitClassTypes getUnitClassType() const;
 	int getTeachUnitClassType() const;
 
 	bool isBad() const;
@@ -2823,7 +2823,7 @@ public:
 	int getAIBaseValue() const;
 	int getNativeBaseValue() const;
 	DllExport int getColorType() const;
-	int getUnitClass() const;
+	UnitClassTypes getUnitClass() const;
 	DllExport int getTextureIndex() const;
 	DllExport int getWaterTextureIndex() const;
 	int getPowerValue() const;
@@ -4627,7 +4627,7 @@ public:
 	int getRandomGold() const;
 	int getCulture() const;
 	int getHealth() const; // R&R, ray, change for Health in Events
-	int getUnitClass() const;
+	UnitClassTypes getUnitClass() const;
 	int getNumUnits() const;
 	int getBuildingClass() const;
 	int getBuildingChange() const;

@@ -6229,7 +6229,7 @@ void CvUnit::establishTradePost()
 		// we use the same configurations for the survival of Trader as for Missionary
 		if (GC.getGameINLINE().getSorenRandNum(100, "Dis mission roll") < getFailedTraderSurvivalPercent())
 		{
-			UnitTypes FailedTraderType = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(GC.getDefineINT("UNITCLASS_FAILED_TRADER"));
+			UnitTypes FailedTraderType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(UNITCLASS_FAILED_TRADER);
 			// WTP, ray, just for safety
 			if (FailedTraderType != NO_UNIT)
 			{
@@ -7729,9 +7729,9 @@ bool CvUnit::doFound(bool bBuyLand)
 		{
 			int iLowestCost = MAX_INT;
 
-			for (int iUnitClass = 0; iUnitClass < GC.getNumUnitClassInfos(); ++iUnitClass)
+			for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 			{
-				UnitTypes eLoopUnit = (UnitTypes) GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iUnitClass);
+				UnitTypes eLoopUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 				if (eLoopUnit != NO_UNIT)
 				{
 					if (GC.getUnitInfo(eLoopUnit).getDefaultUnitAIType() == UNITAI_DEFENSIVE)
@@ -8424,12 +8424,10 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 
 bool CvUnit::upgradeAvailable(UnitTypes eFromUnit, UnitClassTypes eToUnitClass, int iCount) const
 {
-	UnitTypes eLoopUnit;
-	int iI;
-	int numUnitClassInfos = GC.getNumUnitClassInfos();
-
-	if (iCount > numUnitClassInfos)
+	if (iCount > NUM_UNITCLASS_TYPES)
 	{
+		FAssertMsg(false, "Unit upgrade has an infinite loop")
+		// we got caught in a loop
 		return false;
 	}
 
@@ -8440,11 +8438,11 @@ bool CvUnit::upgradeAvailable(UnitTypes eFromUnit, UnitClassTypes eToUnitClass, 
 		return true;
 	}
 
-	for (iI = 0; iI < numUnitClassInfos; iI++)
+	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		if (fromUnitInfo.getUpgradeUnitClass(iI))
+		if (fromUnitInfo.getUpgradeUnitClass(eUnitClass))
 		{
-			eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+			UnitTypes eLoopUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 
 			if (eLoopUnit != NO_UNIT)
 			{
@@ -8767,12 +8765,12 @@ UnitTypes CvUnit::getCaptureUnitType(CivilizationTypes eCivilization) const
     UnitTypes eCaptureUnit = NO_UNIT;
 	if(m_pUnitInfo->getUnitCaptureClassType() != NO_UNITCLASS)
 	{
-		eCaptureUnit = (UnitTypes)GC.getCivilizationInfo(eCivilization).getCivilizationUnits(m_pUnitInfo->getUnitCaptureClassType());
+		eCaptureUnit = GC.getCivilizationInfo(eCivilization).getCivilizationUnits((UnitClassTypes)m_pUnitInfo->getUnitCaptureClassType());
 	}
 
 	if (eCaptureUnit == NO_UNIT && isUnarmed())
 	{
-		eCaptureUnit = (UnitTypes)GC.getCivilizationInfo(eCivilization).getCivilizationUnits(getUnitClassType());
+		eCaptureUnit = GC.getCivilizationInfo(eCivilization).getCivilizationUnits(getUnitClassType());
 	}
 
 	if (eCaptureUnit == NO_UNIT)
@@ -12924,7 +12922,7 @@ PlayerColorTypes CvUnit::getPlayerColor(TeamTypes eForTeam) const
 	PlayerTypes eOwner = getVisualOwner(eForTeam);
 	if (eOwner == UNKNOWN_PLAYER || eOwner == NO_PLAYER)
 	{
-		return (PlayerColorTypes) GC.getCivilizationInfo(getVisualCiv(eForTeam)).getDefaultPlayerColor();
+		return GC.getCivilizationInfo(getVisualCiv(eForTeam)).getDefaultPlayerColor();
 	}
 
 	return GET_PLAYER(eOwner).getPlayerColor();
@@ -16611,7 +16609,7 @@ void CvUnit::useProductionSupplies()
 void CvUnit::spawnOwnPlayerUnitOnPlotOfUnit(int /*UnitClassTypes*/ iIndex) const
 {
 	CvPlayer& ownPlayer = GET_PLAYER(getOwnerINLINE());
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits((UnitClassTypes)iIndex);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		OOS_LOG("CvUnit::spawnOwnPlayerUnitOnPlotOfUnit", getTypeStr(eUnitToSpawn));
@@ -16629,7 +16627,7 @@ void CvUnit::spawnBarbarianUnitOnPlotOfUnit(int /*UnitClassTypes*/ iIndex) const
     }
 
 	CvPlayer& barbarianPlayer = GET_PLAYER(eBarbarianPlayerType);
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits((UnitClassTypes)iIndex);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		CvUnit* eBarbarianUnitToSpawn = barbarianPlayer.initUnit(eUnitToSpawn, GC.getUnitInfo(eUnitToSpawn).getDefaultProfession(), getX_INLINE(), getY_INLINE(), NO_UNITAI);
@@ -16640,7 +16638,7 @@ void CvUnit::spawnBarbarianUnitOnPlotOfUnit(int /*UnitClassTypes*/ iIndex) const
 void CvUnit::spawnOwnPlayerUnitOnAdjacentPlotOfUnit(int /*UnitClassTypes*/ iIndex) const
 {
 	CvPlayer& ownPlayer = GET_PLAYER(getOwnerINLINE());
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits((UnitClassTypes)iIndex);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		// we use this as last fallback if we do not find an adjacent plot below
@@ -16676,7 +16674,7 @@ void CvUnit::spawnBarbarianUnitOnAdjacentPlotOfUnit(int /*UnitClassTypes*/ iInde
     }
 
 	CvPlayer& barbarianPlayer = GET_PLAYER(eBarbarianPlayerType);
-	UnitTypes eUnitToSpawn = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnitToSpawn = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits((UnitClassTypes)iIndex);
 	if (eUnitToSpawn != NO_UNIT)
 	{
 		// we use this as last fallback belok
@@ -16708,7 +16706,7 @@ bool CvUnit::isOwnPlayerUnitOnAdjacentPlotOfUnit(int /*UnitClassTypes*/ iIndex) 
 {
 	PlayerTypes eOwnPlayerType = getOwnerINLINE();
 	CvPlayer& ownPlayer = GET_PLAYER(getOwnerINLINE());
-	UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnit = GC.getCivilizationInfo(ownPlayer.getCivilizationType()).getCivilizationUnits((UnitClassTypes)iIndex);
 	if (eUnit != NO_UNIT)
 	{
 		// we check the adjacent Plots
@@ -16746,7 +16744,7 @@ bool CvUnit::isBarbarianUnitOnAdjacentPlotOfUnit(int /*UnitClassTypes*/ iIndex) 
     }
 
 	CvPlayer& barbarianPlayer = GET_PLAYER(eBarbarianPlayerType);
-	UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits(iIndex);
+	UnitTypes eUnit = GC.getCivilizationInfo(barbarianPlayer.getCivilizationType()).getCivilizationUnits((UnitClassTypes)iIndex);
 	if (eUnit != NO_UNIT)
 	{
 		// we check the adjacent Plots

@@ -76,9 +76,9 @@ int CyCivilizationInfo::getCivilizationBuildings(int i) const
 	return CvCivilizationInfo::getCivilizationBuildings(i);
 }
 
-int CyCivilizationInfo::getCivilizationUnits(int i) const
+int CyCivilizationInfo::getCivilizationUnits(int iUnitClass) const
 {
-	return CvCivilizationInfo::getCivilizationUnits(i);
+	return CvCivilizationInfo::getCivilizationUnits(static_cast<UnitClassTypes>(iUnitClass));
 }
 
 int CyCivilizationInfo::getNumCivilizationFreeUnits() const
@@ -96,9 +96,9 @@ int CyCivilizationInfo::getCivilizationFreeUnitsProfession(int index) const
 	return CvCivilizationInfo::getCivilizationFreeUnitsProfession(index);
 }
 
-int CyCivilizationInfo::getCivilizationInitialCivics(int i) const
+int CyCivilizationInfo::getCivilizationInitialCivics(int iCivicOption) const
 {
-	return CvCivilizationInfo::getCivilizationInitialCivics(i);
+	return CvCivilizationInfo::getCivilizationInitialCivics(static_cast<CivicOptionTypes>(iCivicOption));
 }
 
 int CyCivilizationInfo::getFreeYields(int i) const
@@ -131,6 +131,11 @@ bool CyCivilizationInfo::hasTrait(int i) const
 	return CvCivilizationInfo::hasTrait(i);
 }
 
+int CyEventInfo::getUnitClass() const
+{
+	return CvEventInfo::getUnitClass();
+}
+
 int CyFeatureInfo::getYieldChange(int iYield) const
 {
 	return CvFeatureInfo::getYieldChange(static_cast<YieldTypes>(iYield));
@@ -144,6 +149,11 @@ int CyFeatureInfo::getRiverYieldIncrease(int iYield) const
 bool CyFeatureInfo::isTerrain(int iTerrain) const
 {
 	return CvFeatureInfo::isTerrain(static_cast<TerrainTypes>(iTerrain));
+}
+
+int CyGoodyInfo::getUnitClassType() const
+{
+	return CvGoodyInfo::getUnitClassType();
 }
 
 int CyLeaderHeadInfo::getContactRand(int iContact) const
@@ -219,4 +229,9 @@ int CyUnitInfo::getUnitClassType() const
 const CvArtInfoUnit* CyUnitInfo::getUnitArtStylesArtInfo(int index, int iProfession, int iStyle) const
 {
 	return CvUnitInfo::getUnitArtStylesArtInfo(index, static_cast<ProfessionTypes>(iProfession), static_cast<UnitArtStyleTypes>(iStyle));
+}
+
+int CyYieldInfo::getUnitClass() const
+{
+	return CvYieldInfo::getUnitClass();
 }

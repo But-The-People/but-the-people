@@ -4565,9 +4565,9 @@ int CvUnitAI::AI_getCostDifferenceFreeVsSlave() const
 
 	const CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
 
-	for (int iI = 0; iI < GC.getNumUnitClassInfos(); iI++)
+	for (UnitClassTypes eUnitClass = FIRST_UNITCLASS; eUnitClass < NUM_UNITCLASS_TYPES; ++eUnitClass)
 	{
-		const UnitTypes eLoopUnit = ((UnitTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI)));
+		const UnitTypes eLoopUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 
 		if (eLoopUnit != NO_UNIT)
 		{

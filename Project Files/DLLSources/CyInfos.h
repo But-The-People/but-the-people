@@ -58,11 +58,11 @@ public:
 	int getCapturedCityUnitClass() const;
 
 	int getCivilizationBuildings(int i) const;
-	int getCivilizationUnits(int i) const;
+	int getCivilizationUnits(int iUnitClass) const;
 	int getNumCivilizationFreeUnits() const;
 	int getCivilizationFreeUnitsClass(int index) const;
 	int getCivilizationFreeUnitsProfession(int index) const;
-	int getCivilizationInitialCivics(int i) const;
+	int getCivilizationInitialCivics(int iCivicOption) const;
 	int getFreeYields(int i) const;
 	int getTeachUnitClassWeight(int i) const;
 	bool isLeaders(int i) const;
@@ -112,6 +112,7 @@ BOOST_STATIC_ASSERT(sizeof(CySpecialUnitInfo) == sizeof(CvSpecialUnitInfo));
 class CyYieldInfo : public CvYieldInfo
 {
 public:
+	int getUnitClass() const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyYieldInfo) == sizeof(CvYieldInfo));
 
@@ -130,6 +131,7 @@ BOOST_STATIC_ASSERT(sizeof(CyImprovementInfo) == sizeof(CvImprovementInfo));
 class CyGoodyInfo : public CvGoodyInfo
 {
 public:
+	int getUnitClassType() const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyGoodyInfo) == sizeof(CvGoodyInfo));
 
@@ -311,6 +313,7 @@ BOOST_STATIC_ASSERT(sizeof(CyEventTriggerInfo) == sizeof(CvEventTriggerInfo));
 class CyEventInfo : public CvEventInfo
 {
 public:
+	int getUnitClass() const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyEventInfo) == sizeof(CvEventInfo));
 

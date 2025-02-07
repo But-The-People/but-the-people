@@ -1197,7 +1197,7 @@ void CvDLLWidgetData::doDeleteGroup()
 
 void CvDLLWidgetData::doTrain(const CvWidgetDataStruct &widgetDataStruct)
 {
-	UnitTypes eUnit = (UnitTypes) GC.getCivilizationInfo(GC.getGameINLINE().getActiveCivilizationType()).getCivilizationUnits(widgetDataStruct.m_iData1);
+	UnitTypes eUnit = GC.getCivilizationInfo(GC.getGameINLINE().getActiveCivilizationType()).getCivilizationUnits(static_cast<UnitClassTypes>(widgetDataStruct.m_iData1));
 
 	if (widgetDataStruct.m_iData2 != FFreeList::INVALID_INDEX)
 	{
@@ -1471,7 +1471,7 @@ void CvDLLWidgetData::doPediaFatherJump(const CvWidgetDataStruct &widgetDataStru
 void CvDLLWidgetData::doPediaTrainJump(const CvWidgetDataStruct &widgetDataStruct)
 {
 	CyArgsList argsList;
-	argsList.add(GC.getCivilizationInfo(GC.getGameINLINE().getActiveCivilizationType()).getCivilizationUnits(widgetDataStruct.m_iData1));
+	argsList.add((int)GC.getCivilizationInfo(GC.getGameINLINE().getActiveCivilizationType()).getCivilizationUnits(static_cast<UnitClassTypes>(widgetDataStruct.m_iData1)));
 
 	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToUnit", argsList.makeFunctionArgs());
 }
@@ -1717,7 +1717,7 @@ void CvDLLWidgetData::parseTrainHelp(const CvWidgetDataStruct &widgetDataStruct,
 
 	if (pHeadSelectedCity != NULL)
 	{
-		eUnit = (UnitTypes)GC.getCivilizationInfo(pHeadSelectedCity->getCivilizationType()).getCivilizationUnits(widgetDataStruct.m_iData1);
+		eUnit = GC.getCivilizationInfo(pHeadSelectedCity->getCivilizationType()).getCivilizationUnits(static_cast<UnitClassTypes>(widgetDataStruct.m_iData1));
 		GAMETEXT.setUnitHelp(szBuffer, eUnit, false, widgetDataStruct.m_bOption, pHeadSelectedCity);
 	}
 }
