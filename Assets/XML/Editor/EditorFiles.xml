@@ -411,9 +411,9 @@
 		</File>
 		<File>
 			<Dir>GameInfo</Dir>
-			<Name>CIV4TradeScreenInfo</Name>
-			<Tag>TradeScreenInfo</Tag>
-			<Root>Civ4TradeScreenInfo</Root>
+			<Name>CIV4TradeLocationInfo</Name>
+			<Tag>TradeLocationInfo</Tag>
+			<Root>Civ4TradeLocationInfo</Root>
 		</File>
 		<File>
 			<Dir>GameInfo</Dir>
