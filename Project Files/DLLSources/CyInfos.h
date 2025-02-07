@@ -41,7 +41,34 @@ BOOST_STATIC_ASSERT(sizeof(CyFeatureInfo) == sizeof(CvFeatureInfo));
 class CyCivilizationInfo : public CvCivilizationInfo
 {
 public:
+	int getDefaultPlayerColor() const;
+	int getArtStyleType() const;
 	int getUnitArtStyleType() const;
+	int getDefaultProfession() const;
+
+	int getNumCityNames() const;
+	int getNumLeaders() const;
+	int getSelectionSoundScriptId() const;
+	int getActionSoundScriptId() const;
+	int getAdvancedStartPoints() const;
+	int getAreaMultiplier() const;
+	int getDensityMultiplier() const;
+	int getTreasure() const;
+	int getFavoredTerrain() const;
+	int getCapturedCityUnitClass() const;
+
+	int getCivilizationBuildings(int i) const;
+	int getCivilizationUnits(int i) const;
+	int getNumCivilizationFreeUnits() const;
+	int getCivilizationFreeUnitsClass(int index) const;
+	int getCivilizationFreeUnitsProfession(int index) const;
+	int getCivilizationInitialCivics(int i) const;
+	int getFreeYields(int i) const;
+	int getTeachUnitClassWeight(int i) const;
+	bool isLeaders(int i) const;
+	bool isCivilizationFreeBuildingClass(int i) const;
+	bool isValidProfession(int i) const;
+	bool hasTrait(int i) const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyCivilizationInfo) == sizeof(CvCivilizationInfo));
 

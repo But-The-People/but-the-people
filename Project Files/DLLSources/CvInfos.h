@@ -1627,11 +1627,16 @@ class CvCivilizationInfo :
 {
 	//---------------------------------------PUBLIC INTERFACE---------------------------------
 public:
+	//
+	// EXE and python can't reach this class directly
+	// Argument compatibility issues with those two should now trigger compile time errors rather than runtime crashes
+	//
+
 	DllExport CvCivilizationInfo();
 	virtual ~CvCivilizationInfo();
 	virtual void reset();
-	DllExport int getDefaultPlayerColor() const;
-	int getArtStyleType() const;
+	PlayerColorTypes getDefaultPlayerColor() const;
+	ArtStyleTypes getArtStyleType() const;
 	//Androrc UnitArtStyles
 	UnitArtStyleTypes getUnitArtStyleType() const;
 	//Androrc End
@@ -1646,28 +1651,28 @@ public:
 	int getNumShipNames() const;
 	// TAC - Ship Names - Ray - END
 	int getNumLeaders() const;				 // the number of leaders the Civ has, this is needed so that random leaders can be generated easily
-	DllExport int getSelectionSoundScriptId() const;
+	int getSelectionSoundScriptId() const;
 	int getActionSoundScriptId() const;
 	int getAdvancedStartPoints() const;
 	int getAreaMultiplier() const;
 	int getDensityMultiplier() const;
 	int getTreasure() const;
 	int getFavoredTerrain() const;
-	int getCapturedCityUnitClass() const;
+	UnitClassTypes getCapturedCityUnitClass() const;
 	ProfessionTypes getDefaultProfession() const;
-	DllExport int getMissionaryChar() const;
-	DllExport void setMissionaryChar(int iChar);
+	int getMissionaryChar() const;
+	void setMissionaryChar(int iChar);
 	int getChar() const;
 	int getTradingPostChar() const;
 	void setChar(int iChar);
 
-	DllExport bool isAIPlayable() const;
-	DllExport bool isPlayable() const;
+	bool isAIPlayable() const;
+	bool isPlayable() const;
 	bool isWaterStart() const;
-	DllExport bool isOpenBorders() const;
+	bool isOpenBorders() const;
 	bool isWaterWorks() const;
-	DllExport bool isEurope() const;
-	DllExport bool isNative() const;
+	bool isEurope() const;
+	bool isNative() const;
 
 	// R&R, ray, Correct Geographical Placement of Natives - START
 	bool isNorthAmericanNative() const;
@@ -1680,35 +1685,34 @@ public:
 	inline CivEffectTypes getCivEffect() const { return m_eCivEffect; }
 
 	std::wstring pyGetShortDescription(uint uiForm) { return getShortDescription(uiForm); }
-	DllExport const wchar* getShortDescription(uint uiForm = 0);
+	const wchar* getShortDescription(uint uiForm = 0);
 	const wchar* getShortDescriptionKey() const;
 	std::wstring pyGetShortDescriptionKey() { return getShortDescriptionKey(); }
 
 	std::wstring pyGetAdjective(uint uiForm) { return getAdjective(uiForm);  }
-	DllExport const wchar* getAdjective(uint uiForm = 0);
+	const wchar* getAdjective(uint uiForm = 0);
 	const wchar* getAdjectiveKey() const;
 	std::wstring pyGetAdjectiveKey() { return getAdjectiveKey(); }
 
-	DllExport const char* getFlagTexture() const;
+	const char* getFlagTexture() const;
 	const char* getArtDefineTag() const;
 	void setArtDefineTag(const char* szVal);
 	// Arrays
-	DllExport int getCivilizationBuildings(int i) const;
-	DllExport int getCivilizationUnits(int i) const;
-	int getCivilizationProfessions(int i) const;
+	BuildingTypes getCivilizationBuildings(int iBuildingClass) const;
+	UnitTypes getCivilizationUnits(int iUnitClass) const;
 	int getNumCivilizationFreeUnits() const;
-	int getCivilizationFreeUnitsClass(int index) const;
-	int getCivilizationFreeUnitsProfession(int index) const;
-	int getCivilizationInitialCivics(int i) const;
-	int getFreeYields(int i) const;
-	int getTeachUnitClassWeight(int i) const;
+	UnitClassTypes getCivilizationFreeUnitsClass(int index) const;
+	ProfessionTypes getCivilizationFreeUnitsProfession(int index) const;
+	CivicTypes getCivilizationInitialCivics(int iCivicOption) const;
+	int getFreeYields(int iYield) const;
+	int getTeachUnitClassWeight(int iUnitClass) const;
 
 	template<typename Ta, typename Tb> Ta getCivSpecificForClass(Tb eVar) const;
 
-	DllExport bool isLeaders(int i) const;
-	bool isCivilizationFreeBuildingClass(int i) const;
-	bool isValidProfession(int i) const;
-	bool hasTrait(int i) const;
+	bool isLeaders(int iLeaderHead) const;
+	bool isCivilizationFreeBuildingClass(int iBuildingClass) const;
+	bool isValidProfession(int iProfession) const;
+	bool hasTrait(int iTrait) const;
 
 	CvWString getCityNames(int i) const;
 
@@ -1724,9 +1728,9 @@ public:
 	CvWString getShipNames(int i) const;
 	// TAC - Ship Names - Ray - END
 
-	DllExport const CvArtInfoCivilization* getArtInfo() const;
+	const CvArtInfoCivilization* getArtInfo() const;
 	const char* getButton() const;
-	DllExport int getDerivativeCiv() const;
+	int getDerivativeCiv() const;
 	void setDerivativeCiv(int iCiv);
 	bool read(CvXMLLoadUtility* pXML);
 	bool readPass2(CvXMLLoadUtility* pXML);
@@ -1734,9 +1738,6 @@ public:
 	void write(FDataStreamBase* stream);
 
 	bool postLoadSetup();
-
-	// EXE/python access functions
-	int PY_getDefaultProfession() const;
 
 	//---------------------------------------PROTECTED MEMBER VARIABLES---------------------------------
 protected:

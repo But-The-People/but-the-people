@@ -620,8 +620,8 @@ CvInfos.h
 	DllExport bool isOpenBorders() const;
 	DllExport bool isEurope() const;
 	DllExport bool isNative() const;
-	DllExport const wchar* getShortDescription(uint uiForm = 0);
-	DllExport const wchar* getAdjective(uint uiForm = 0);
+	DllExport const wchar* getShortDescription(uint uiForm);
+	DllExport const wchar* getAdjective(uint uiForm);
 	DllExport const char* getFlagTexture() const;
 	DllExport int getCivilizationBuildings(int i) const;
 	DllExport int getCivilizationUnits(int i) const;

@@ -6255,13 +6255,13 @@ void CvCivilizationInfo::reset()
 	m_szCachedShortDescription.clear();
 	m_szCachedAdjective.clear();
 }
-int CvCivilizationInfo::getDefaultPlayerColor() const
+PlayerColorTypes CvCivilizationInfo::getDefaultPlayerColor() const
 {
-	return m_iDefaultPlayerColor;
+	return (PlayerColorTypes)m_iDefaultPlayerColor;
 }
-int CvCivilizationInfo::getArtStyleType() const
+ArtStyleTypes CvCivilizationInfo::getArtStyleType() const
 {
-	return m_iArtStyleType;
+	return (ArtStyleTypes)m_iArtStyleType;
 }
 //Androrc UnitArtStyles
 UnitArtStyleTypes CvCivilizationInfo::getUnitArtStyleType() const
@@ -6328,9 +6328,9 @@ int CvCivilizationInfo::getFavoredTerrain() const
 {
 	return m_iFavoredTerrain;
 }
-int CvCivilizationInfo::getCapturedCityUnitClass() const
+UnitClassTypes CvCivilizationInfo::getCapturedCityUnitClass() const
 {
-	return m_iCapturedCityUnitClass;
+	return (UnitClassTypes)m_iCapturedCityUnitClass;
 }
 ProfessionTypes CvCivilizationInfo::getDefaultProfession() const
 {
@@ -6454,76 +6454,76 @@ void CvCivilizationInfo::setArtDefineTag(const char* szVal)
 	Parameters:
 		int iIndexBuildingClass ... index, that corresponds to the list of BuildingClasses
 */
-int CvCivilizationInfo::getCivilizationBuildings(int i) const
+BuildingTypes CvCivilizationInfo::getCivilizationBuildings(int iBuildingClass) const
 {
-	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiCivilizationBuildings ? m_aiCivilizationBuildings[i] : -1;
+	FAssertMsg(iBuildingClass < NUM_BUILDINGCLASS_TYPES, "Index out of bounds");
+	FAssertMsg(iBuildingClass > NO_BUILDINGCLASS, "Index out of bounds");
+	return m_aiCivilizationBuildings ? (BuildingTypes)m_aiCivilizationBuildings[iBuildingClass] : NO_BUILDING;
 }
 
-int CvCivilizationInfo::getCivilizationUnits(int i) const
+UnitTypes CvCivilizationInfo::getCivilizationUnits(int iUnitClass) const
 {
-	FAssertMsg(i < GC.getNumUnitClassInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiCivilizationUnits ? m_aiCivilizationUnits[i] : -1;
+	FAssertMsg(iUnitClass < NUM_UNITCLASS_TYPES, "Index out of bounds");
+	FAssertMsg(iUnitClass > NO_UNITCLASS, "Index out of bounds");
+	return m_aiCivilizationUnits ? (UnitTypes)m_aiCivilizationUnits[iUnitClass] : NO_UNIT;
 }
 
 int CvCivilizationInfo::getNumCivilizationFreeUnits() const
 {
 	return m_aCivilizationFreeUnits.size();
 }
-int CvCivilizationInfo::getCivilizationFreeUnitsClass(int index) const
+UnitClassTypes CvCivilizationInfo::getCivilizationFreeUnitsClass(int index) const
 {
 	FAssert(index < (int) m_aCivilizationFreeUnits.size());
 	FAssert(index > -1);
 	return m_aCivilizationFreeUnits[index].first;
 }
-int CvCivilizationInfo::getCivilizationFreeUnitsProfession(int index) const
+ProfessionTypes CvCivilizationInfo::getCivilizationFreeUnitsProfession(int index) const
 {
 	FAssert(index < (int) m_aCivilizationFreeUnits.size());
 	FAssert(index > -1);
 	return m_aCivilizationFreeUnits[index].second;
 }
-int CvCivilizationInfo::getCivilizationInitialCivics(int i) const
+CivicTypes CvCivilizationInfo::getCivilizationInitialCivics(int iCivicOption) const
 {
-	FAssertMsg(i < GC.getNumCivicOptionInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiCivilizationInitialCivics ? m_aiCivilizationInitialCivics[i] : -1;
+	FAssertMsg(iCivicOption < NUM_CIVICOPTION_TYPES, "Index out of bounds");
+	FAssertMsg(iCivicOption > NO_CIVICOPTION, "Index out of bounds");
+	return m_aiCivilizationInitialCivics ? (CivicTypes)m_aiCivilizationInitialCivics[iCivicOption] : NO_CIVIC;
 }
-int CvCivilizationInfo::getFreeYields(int i) const
+int CvCivilizationInfo::getFreeYields(int iYield) const
 {
-	FAssert(i < NUM_YIELD_TYPES && i >= 0);
-	return m_aiFreeYields ? m_aiFreeYields[i] : -1;
+	FAssert(iYield < NUM_YIELD_TYPES && iYield >= 0);
+	return m_aiFreeYields ? m_aiFreeYields[iYield] : -1;
 }
-bool CvCivilizationInfo::isLeaders(int i) const
+bool CvCivilizationInfo::isLeaders(int iLeaderHead) const
 {
-	FAssertMsg(i < GC.getNumLeaderHeadInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_abLeaders ? m_abLeaders[i] : false;
+	FAssertMsg(iLeaderHead < NUM_LEADER_TYPES, "Index out of bounds");
+	FAssertMsg(iLeaderHead > NO_LEADER, "Index out of bounds");
+	return m_abLeaders ? m_abLeaders[iLeaderHead] : false;
 }
-bool CvCivilizationInfo::isCivilizationFreeBuildingClass(int i) const
+bool CvCivilizationInfo::isCivilizationFreeBuildingClass(int iUnitClass) const
 {
-	FAssertMsg(i < GC.getNumBuildingClassInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_abCivilizationFreeBuildingClass ? m_abCivilizationFreeBuildingClass[i] : false;
+	FAssertMsg(iUnitClass < NUM_BUILDINGCLASS_TYPES, "Index out of bounds");
+	FAssertMsg(iUnitClass > NO_BUILDINGCLASS, "Index out of bounds");
+	return m_abCivilizationFreeBuildingClass ? m_abCivilizationFreeBuildingClass[iUnitClass] : false;
 }
-bool CvCivilizationInfo::isValidProfession(int i) const
+bool CvCivilizationInfo::isValidProfession(int iProfession) const
 {
-	FAssertMsg(i < GC.getNumProfessionInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_abValidProfessions ? m_abValidProfessions[i] : false;
+	FAssertMsg(iProfession < NUM_PROFESSION_TYPES, "Index out of bounds");
+	FAssertMsg(iProfession > NO_PROFESSION, "Index out of bounds");
+	return m_abValidProfessions ? m_abValidProfessions[iProfession] : false;
 }
-bool CvCivilizationInfo::hasTrait(int i) const
+bool CvCivilizationInfo::hasTrait(int iTrait) const
 {
-	FAssertMsg(i < GC.getNumTraitInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_abTraits ? m_abTraits[i] : false;
+	FAssertMsg((TraitTypes)iTrait < NUM_TRAIT_TYPES, "Index out of bounds");
+	FAssertMsg((TraitTypes)iTrait > NO_TRAIT, "Index out of bounds");
+	return m_abTraits ? m_abTraits[iTrait] : false;
 }
-int CvCivilizationInfo::getTeachUnitClassWeight(int i) const
+int CvCivilizationInfo::getTeachUnitClassWeight(int iUnitClass) const
 {
-	FAssertMsg(i < GC.getNumUnitClassInfos(), "Index out of bounds");
-	FAssertMsg(i > -1, "Index out of bounds");
-	return m_aiTeachUnitClassWeights ? m_aiTeachUnitClassWeights[i] : false;
+	FAssertMsg(iUnitClass < NUM_UNITCLASS_TYPES, "Index out of bounds");
+	FAssertMsg(iUnitClass > NO_UNITCLASS, "Index out of bounds");
+	return m_aiTeachUnitClassWeights ? m_aiTeachUnitClassWeights[iUnitClass] : false;
 }
 const CvArtInfoCivilization* CvCivilizationInfo::getArtInfo() const
 {
@@ -6985,11 +6985,6 @@ bool CvCivilizationInfo::readPass2(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(szTextVal, "DerivativeCiv");
 	m_iDerivativeCiv = GC.getInfoTypeForString(szTextVal);
 	return true;
-}
-
-int CvCivilizationInfo::PY_getDefaultProfession() const
-{
-	return getDefaultProfession();
 }
 
 //======================================================================================================

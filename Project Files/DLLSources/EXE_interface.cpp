@@ -662,59 +662,108 @@ BOOST_STATIC_ASSERT(sizeof(EXE_CvCity) == sizeof(CvCity));
 class EXE_CvCivilizationInfo : public CvCivilizationInfo
 {
 public:
-	/*
-		getAdjective
-			?getAdjective@CvCivilizationInfo@@QAEPBGI@Z=?getAdjective@EXE_CvCivilizationInfo@@QAEPBGI@Z
+	#pragma comment(linker, "/EXPORT:?getAdjective@CvCivilizationInfo@@QAEPBGI@Z=?getAdjective@EXE_CvCivilizationInfo@@QAEPBGI@Z")
+	DllExport const wchar* getAdjective(uint uiForm)
+	{
+		return CvCivilizationInfo::getAdjective(uiForm);
+	}
 
-		getArtInfo
-			?getArtInfo@CvCivilizationInfo@@QBEPBVCvArtInfoCivilization@@XZ=?getArtInfo@EXE_CvCivilizationInfo@@QBEPBVCvArtInfoCivilization@@XZ
+	#pragma comment(linker, "/EXPORT:?getArtInfo@CvCivilizationInfo@@QBEPBVCvArtInfoCivilization@@XZ=?getArtInfo@EXE_CvCivilizationInfo@@QBEPBVCvArtInfoCivilization@@XZ")
+	DllExport const CvArtInfoCivilization* getArtInfo() const
+	{
+		return CvCivilizationInfo::getArtInfo();
+	}
 
-		getCivilizationBuildings
-			?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z=?getCivilizationBuildings@EXE_CvCivilizationInfo@@QBEHH@Z
+	#pragma comment(linker, "/EXPORT:?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z=?getCivilizationBuildings@EXE_CvCivilizationInfo@@QBEHH@Z")
+	DllExport int getCivilizationBuildings(int i) const
+	{
+		return CvCivilizationInfo::getCivilizationBuildings(i);
+	}
 
-		getCivilizationUnits
-			?getCivilizationUnits@CvCivilizationInfo@@QBEHH@Z=?getCivilizationUnits@EXE_CvCivilizationInfo@@QBEHH@Z
+	#pragma comment(linker, "/EXPORT:?getCivilizationUnits@CvCivilizationInfo@@QBEHH@Z=?getCivilizationUnits@EXE_CvCivilizationInfo@@QBEHH@Z")
+	DllExport int getCivilizationUnits(int i) const
+	{
+		return CvCivilizationInfo::getCivilizationUnits(i);
+	}
 
-		getDefaultPlayerColor
-			?getDefaultPlayerColor@CvCivilizationInfo@@QBEHXZ=?getDefaultPlayerColor@EXE_CvCivilizationInfo@@QBEHXZ
+	#pragma comment(linker, "/EXPORT:?getDefaultPlayerColor@CvCivilizationInfo@@QBEHXZ=?getDefaultPlayerColor@EXE_CvCivilizationInfo@@QBEHXZ")
+	DllExport int getDefaultPlayerColor() const
+	{
+		return CvCivilizationInfo::getDefaultPlayerColor();
+	}
 
-		getDerivativeCiv
-			?getDerivativeCiv@CvCivilizationInfo@@QBEHXZ=?getDerivativeCiv@EXE_CvCivilizationInfo@@QBEHXZ
+	#pragma comment(linker, "/EXPORT:?getDerivativeCiv@CvCivilizationInfo@@QBEHXZ=?getDerivativeCiv@EXE_CvCivilizationInfo@@QBEHXZ")
+	DllExport int getDerivativeCiv() const
+	{
+		return CvCivilizationInfo::getDerivativeCiv();
+	}
+	
+	#pragma comment(linker, "/EXPORT:?getFlagTexture@CvCivilizationInfo@@QBEPBDXZ=?getFlagTexture@EXE_CvCivilizationInfo@@QBEPBDXZ")
+	DllExport const char* getFlagTexture() const
+	{
+		return CvCivilizationInfo::getFlagTexture();
+	}
 
-		getFlagTexture
-			?getFlagTexture@CvCivilizationInfo@@QBEPBDXZ=?getFlagTexture@EXE_CvCivilizationInfo@@QBEPBDXZ
+	#pragma comment(linker, "/EXPORT:?getMissionaryChar@CvCivilizationInfo@@QBEHXZ=?getMissionaryChar@EXE_CvCivilizationInfo@@QBEHXZ")
+	DllExport int getMissionaryChar() const
+	{
+		return CvCivilizationInfo::getMissionaryChar();
+	}
+	
+	#pragma comment(linker, "/EXPORT:?getSelectionSoundScriptId@CvCivilizationInfo@@QBEHXZ=?getSelectionSoundScriptId@EXE_CvCivilizationInfo@@QBEHXZ")
+	DllExport int getSelectionSoundScriptId() const
+	{
+		return CvCivilizationInfo::getSelectionSoundScriptId();
+	}
 
-		getMissionaryChar
-			?getMissionaryChar@CvCivilizationInfo@@QBEHXZ=?getMissionaryChar@EXE_CvCivilizationInfo@@QBEHXZ
+	#pragma comment(linker, "/EXPORT:?getShortDescription@CvCivilizationInfo@@QAEPBGI@Z=?getShortDescription@EXE_CvCivilizationInfo@@QAEPBGI@Z")
+	DllExport const wchar* getShortDescription(uint uiForm)
+	{
+		return CvCivilizationInfo::getShortDescription(uiForm);
+	}
 
-		getSelectionSoundScriptId
-			?getSelectionSoundScriptId@CvCivilizationInfo@@QBEHXZ=?getSelectionSoundScriptId@EXE_CvCivilizationInfo@@QBEHXZ
+	#pragma comment(linker, "/EXPORT:?isAIPlayable@CvCivilizationInfo@@QBE_NXZ=?isAIPlayable@EXE_CvCivilizationInfo@@QBE_NXZ")
+	DllExport bool isAIPlayable() const
+	{
+		return CvCivilizationInfo::isAIPlayable();
+	}
 
-		getShortDescription
-			?getShortDescription@CvCivilizationInfo@@QAEPBGI@Z=?getShortDescription@EXE_CvCivilizationInfo@@QAEPBGI@Z
+	#pragma comment(linker, "/EXPORT:?isEurope@CvCivilizationInfo@@QBE_NXZ=?isEurope@EXE_CvCivilizationInfo@@QBE_NXZ")
+	DllExport bool isEurope() const
+	{
+		return CvCivilizationInfo::isEurope();
+	}
 
-		isAIPlayable
-			?isAIPlayable@CvCivilizationInfo@@QBE_NXZ=?isAIPlayable@EXE_CvCivilizationInfo@@QBE_NXZ
+	#pragma comment(linker, "/EXPORT:?isLeaders@CvCivilizationInfo@@QBE_NH@Z=?isLeaders@EXE_CvCivilizationInfo@@QBE_NH@Z")
+	DllExport bool isLeaders(int i) const
+	{
+		return CvCivilizationInfo::isLeaders(i);
+	}
 
-		isEurope
-			?isEurope@CvCivilizationInfo@@QBE_NXZ=?isEurope@EXE_CvCivilizationInfo@@QBE_NXZ
+	#pragma comment(linker, "/EXPORT:?isNative@CvCivilizationInfo@@QBE_NXZ=?isNative@EXE_CvCivilizationInfo@@QBE_NXZ")
+	DllExport bool isNative() const
+	{
+		return CvCivilizationInfo::isNative();
+	}
+		
+	#pragma comment(linker, "/EXPORT:?isOpenBorders@CvCivilizationInfo@@QBE_NXZ=?isOpenBorders@EXE_CvCivilizationInfo@@QBE_NXZ")
+	DllExport bool isOpenBorders() const
+	{
+		return CvCivilizationInfo::isOpenBorders();
+	}
+		
+	#pragma comment(linker, "/EXPORT:?isPlayable@CvCivilizationInfo@@QBE_NXZ=?isPlayable@EXE_CvCivilizationInfo@@QBE_NXZ")
+	DllExport bool isPlayable() const
+	{
+		return CvCivilizationInfo::isPlayable();
+	}
+		
+	#pragma comment(linker, "/EXPORT:?setMissionaryChar@CvCivilizationInfo@@QAEXH@Z=?setMissionaryChar@EXE_CvCivilizationInfo@@QAEXH@Z")
+	DllExport void setMissionaryChar(int iChar)
+	{
+		CvCivilizationInfo::setMissionaryChar(iChar);
+	}
 
-		isLeaders
-			?isLeaders@CvCivilizationInfo@@QBE_NH@Z=?isLeaders@EXE_CvCivilizationInfo@@QBE_NH@Z
-
-		isNative
-			?isNative@CvCivilizationInfo@@QBE_NXZ=?isNative@EXE_CvCivilizationInfo@@QBE_NXZ
-
-		isOpenBorders
-			?isOpenBorders@CvCivilizationInfo@@QBE_NXZ=?isOpenBorders@EXE_CvCivilizationInfo@@QBE_NXZ
-
-		isPlayable
-			?isPlayable@CvCivilizationInfo@@QBE_NXZ=?isPlayable@EXE_CvCivilizationInfo@@QBE_NXZ
-
-		setMissionaryChar
-			?setMissionaryChar@CvCivilizationInfo@@QAEXH@Z=?setMissionaryChar@EXE_CvCivilizationInfo@@QAEXH@Z
-
-	*/
 };
 BOOST_STATIC_ASSERT(sizeof(EXE_CvCivilizationInfo) == sizeof(CvCivilizationInfo));
 
