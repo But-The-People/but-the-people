@@ -4513,11 +4513,11 @@ int CvPlayerAI::AI_unitEconomicValue(UnitTypes eUnit, UnitAITypes* peUnitAI, CvC
 
 				if (kUnitInfo.getYieldModifier(eYield) > 0)
 				{
-					for (int iJ = 0; iJ < GC.getNumProfessionInfos(); iJ++)
+					for(ProfessionTypes eProfession = FIRST_PROFESSION; eProfession < NUM_PROFESSION_TYPES; ++eProfession)
 					{
-						if (GC.getCivilizationInfo(getCivilizationType()).isValidProfession(iJ))
+						if (GC.getCivilizationInfo(getCivilizationType()).isValidProfession(eProfession))
 						{
-							CvProfessionInfo& kProfessionInfo = GC.getProfessionInfo((ProfessionTypes)iJ);
+							const CvProfessionInfo& kProfessionInfo = GC.getProfessionInfo(eProfession);
 							// R&R, ray , MYCP partially based on code of Aymerick - START
 							if (kProfessionInfo.getNumYieldsProduced() >0 && kProfessionInfo.getYieldsProduced(0) == eYield)
 							{

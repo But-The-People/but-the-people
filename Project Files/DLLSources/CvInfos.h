@@ -1704,15 +1704,15 @@ public:
 	UnitClassTypes getCivilizationFreeUnitsClass(int index) const;
 	ProfessionTypes getCivilizationFreeUnitsProfession(int index) const;
 	CivicTypes getCivilizationInitialCivics(CivicOptionTypes eCivicOption) const;
-	int getFreeYields(int iYield) const;
-	int getTeachUnitClassWeight(int iUnitClass) const;
+	int getFreeYields(YieldTypes eYield) const;
+	int getTeachUnitClassWeight(UnitClassTypes eUnitClass) const;
 
 	template<typename Ta, typename Tb> Ta getCivSpecificForClass(Tb eVar) const;
 
-	bool isLeaders(int iLeaderHead) const;
-	bool isCivilizationFreeBuildingClass(int iBuildingClass) const;
-	bool isValidProfession(int iProfession) const;
-	bool hasTrait(int iTrait) const;
+	bool isLeaders(LeaderHeadTypes eLeaderHead) const;
+	bool isCivilizationFreeBuildingClass(BuildingClassTypes eBuildingClass) const;
+	bool isValidProfession(ProfessionTypes eProfession) const;
+	bool hasTrait(TraitTypes eTrait) const;
 
 	CvWString getCityNames(int i) const;
 

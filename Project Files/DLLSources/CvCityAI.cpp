@@ -1003,11 +1003,11 @@ bool CvCityAI::AI_isProductionBuilding(BuildingTypes eBuilding, bool bMajorCity)
 	ProfessionTypes eProfessionConsumed = NO_PROFESSION;
 	ProfessionTypes eProfessionProduced = NO_PROFESSION;
 
-	for (int i = 0; i < GC.getNumProfessionInfos(); ++i)
+	for (ProfessionTypes eLoopProfessionProduced = FIRST_PROFESSION; eLoopProfessionProduced < NUM_PROFESSION_TYPES; ++eLoopProfessionProduced)
 	{
-		CvProfessionInfo& kProfession = GC.getProfessionInfo((ProfessionTypes)i);
+		CvProfessionInfo& kProfession = GC.getProfessionInfo(eLoopProfessionProduced);
 
-		if (GC.getCivilizationInfo(kOwner.getCivilizationType()).isValidProfession(i))
+		if (GC.getCivilizationInfo(kOwner.getCivilizationType()).isValidProfession(eLoopProfessionProduced))
 		{
 			if (kProfession.getSpecialBuilding() == kBuildingInfo.getSpecialBuildingType())
 			{
@@ -1016,21 +1016,21 @@ bool CvCityAI::AI_isProductionBuilding(BuildingTypes eBuilding, bool bMajorCity)
 				eYieldConsumed = (YieldTypes)kProfession.getYieldsConsumed(0);
 				// R&R, ray , MYCP partially based on code of Aymerick - END
 
-				eProfessionProduced = (ProfessionTypes)i;
+				eProfessionProduced = eLoopProfessionProduced;
 
 				if (eYieldProduced != NO_YIELD && eYieldConsumed != NO_YIELD)
 				{
-					for (int k = 0; k < GC.getNumProfessionInfos(); ++k)
+					for (ProfessionTypes eLoopProfessionConsumed = FIRST_PROFESSION; eLoopProfessionConsumed < NUM_PROFESSION_TYPES; ++eLoopProfessionConsumed)
 					{
-						CvProfessionInfo& kProfessionConsumed = GC.getProfessionInfo((ProfessionTypes)k);
+						CvProfessionInfo& kProfessionConsumed = GC.getProfessionInfo(eLoopProfessionConsumed);
 
-						if (GC.getCivilizationInfo(kOwner.getCivilizationType()).isValidProfession(k))
+						if (GC.getCivilizationInfo(kOwner.getCivilizationType()).isValidProfession(eLoopProfessionConsumed))
 						{
 							// R&R, ray , MYCP partially based on code of Aymerick - START
 							if ((YieldTypes)kProfessionConsumed.getYieldsProduced(0) == (YieldTypes)kProfession.getYieldsConsumed(0))
 							// R&R, ray , MYCP partially based on code of Aymerick - END
 							{
-								eProfessionConsumed = (ProfessionTypes)k;
+								eProfessionConsumed = eLoopProfessionConsumed;
 								break;
 							}
 						}

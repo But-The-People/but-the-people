@@ -101,34 +101,34 @@ int CyCivilizationInfo::getCivilizationInitialCivics(int iCivicOption) const
 	return CvCivilizationInfo::getCivilizationInitialCivics(static_cast<CivicOptionTypes>(iCivicOption));
 }
 
-int CyCivilizationInfo::getFreeYields(int i) const
+int CyCivilizationInfo::getFreeYields(int iYield) const
 {
-	return CvCivilizationInfo::getFreeYields(i);
+	return CvCivilizationInfo::getFreeYields(static_cast<YieldTypes>(iYield));
 }
 
-int CyCivilizationInfo::getTeachUnitClassWeight(int i) const
+int CyCivilizationInfo::getTeachUnitClassWeight(int iUnitClass) const
 {
-	return CvCivilizationInfo::getTeachUnitClassWeight(i);
+	return CvCivilizationInfo::getTeachUnitClassWeight(static_cast<UnitClassTypes>(iUnitClass));
 }
 
-bool CyCivilizationInfo::isLeaders(int i) const
+bool CyCivilizationInfo::isLeaders(int iLeaderHead) const
 {
-	return CvCivilizationInfo::isLeaders(i);
+	return CvCivilizationInfo::isLeaders(static_cast<LeaderHeadTypes>(iLeaderHead));
 }
 
-bool CyCivilizationInfo::isCivilizationFreeBuildingClass(int i) const
+bool CyCivilizationInfo::isCivilizationFreeBuildingClass(int iBuildingClass) const
 {
-	return CvCivilizationInfo::isCivilizationFreeBuildingClass(i);
+	return CvCivilizationInfo::isCivilizationFreeBuildingClass(static_cast<BuildingClassTypes>(iBuildingClass));
 }
 
-bool CyCivilizationInfo::isValidProfession(int i) const
+bool CyCivilizationInfo::isValidProfession(int iProfession) const
 {
-	return CvCivilizationInfo::isValidProfession(i);
+	return CvCivilizationInfo::isValidProfession(static_cast<ProfessionTypes>(iProfession));
 }
 
-bool CyCivilizationInfo::hasTrait(int i) const
+bool CyCivilizationInfo::hasTrait(int iTrait) const
 {
-	return CvCivilizationInfo::hasTrait(i);
+	return CvCivilizationInfo::hasTrait(static_cast<TraitTypes>(iTrait));
 }
 
 int CyEventInfo::getUnitClass() const

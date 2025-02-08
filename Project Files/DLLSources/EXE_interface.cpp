@@ -737,7 +737,7 @@ public:
 	#pragma comment(linker, "/EXPORT:?isLeaders@CvCivilizationInfo@@QBE_NH@Z=?isLeaders@EXE_CvCivilizationInfo@@QBE_NH@Z")
 	DllExport bool isLeaders(int i) const
 	{
-		return CvCivilizationInfo::isLeaders(i);
+		return CvCivilizationInfo::isLeaders(static_cast<LeaderHeadTypes>(i));
 	}
 
 	#pragma comment(linker, "/EXPORT:?isNative@CvCivilizationInfo@@QBE_NXZ=?isNative@EXE_CvCivilizationInfo@@QBE_NXZ")

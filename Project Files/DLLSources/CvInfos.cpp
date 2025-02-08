@@ -6490,40 +6490,40 @@ CivicTypes CvCivilizationInfo::getCivilizationInitialCivics(CivicOptionTypes eCi
 	FAssertMsg(eCivicOption > NO_CIVICOPTION, "Index out of bounds");
 	return m_aiCivilizationInitialCivics ? (CivicTypes)m_aiCivilizationInitialCivics[eCivicOption] : NO_CIVIC;
 }
-int CvCivilizationInfo::getFreeYields(int iYield) const
+int CvCivilizationInfo::getFreeYields(YieldTypes eYield) const
 {
-	FAssert(iYield < NUM_YIELD_TYPES && iYield >= 0);
-	return m_aiFreeYields ? m_aiFreeYields[iYield] : -1;
+	FAssert(eYield < NUM_YIELD_TYPES && eYield >= 0);
+	return m_aiFreeYields ? m_aiFreeYields[eYield] : -1;
 }
-bool CvCivilizationInfo::isLeaders(int iLeaderHead) const
+bool CvCivilizationInfo::isLeaders(LeaderHeadTypes eLeaderHead) const
 {
-	FAssertMsg(iLeaderHead < NUM_LEADER_TYPES, "Index out of bounds");
-	FAssertMsg(iLeaderHead > NO_LEADER, "Index out of bounds");
-	return m_abLeaders ? m_abLeaders[iLeaderHead] : false;
+	FAssertMsg(eLeaderHead < NUM_LEADER_TYPES, "Index out of bounds");
+	FAssertMsg(eLeaderHead > NO_LEADER, "Index out of bounds");
+	return m_abLeaders ? m_abLeaders[eLeaderHead] : false;
 }
-bool CvCivilizationInfo::isCivilizationFreeBuildingClass(int iUnitClass) const
+bool CvCivilizationInfo::isCivilizationFreeBuildingClass(BuildingClassTypes eBuildingClass) const
 {
-	FAssertMsg(iUnitClass < NUM_BUILDINGCLASS_TYPES, "Index out of bounds");
-	FAssertMsg(iUnitClass > NO_BUILDINGCLASS, "Index out of bounds");
-	return m_abCivilizationFreeBuildingClass ? m_abCivilizationFreeBuildingClass[iUnitClass] : false;
+	FAssertMsg(eBuildingClass < NUM_BUILDINGCLASS_TYPES, "Index out of bounds");
+	FAssertMsg(eBuildingClass > NO_BUILDINGCLASS, "Index out of bounds");
+	return m_abCivilizationFreeBuildingClass ? m_abCivilizationFreeBuildingClass[eBuildingClass] : false;
 }
-bool CvCivilizationInfo::isValidProfession(int iProfession) const
+bool CvCivilizationInfo::isValidProfession(ProfessionTypes eProfession) const
 {
-	FAssertMsg(iProfession < NUM_PROFESSION_TYPES, "Index out of bounds");
-	FAssertMsg(iProfession > NO_PROFESSION, "Index out of bounds");
-	return m_abValidProfessions ? m_abValidProfessions[iProfession] : false;
+	FAssertMsg(eProfession < NUM_PROFESSION_TYPES, "Index out of bounds");
+	FAssertMsg(eProfession > NO_PROFESSION, "Index out of bounds");
+	return m_abValidProfessions ? m_abValidProfessions[eProfession] : false;
 }
-bool CvCivilizationInfo::hasTrait(int iTrait) const
+bool CvCivilizationInfo::hasTrait(TraitTypes eTrait) const
 {
-	FAssertMsg((TraitTypes)iTrait < NUM_TRAIT_TYPES, "Index out of bounds");
-	FAssertMsg((TraitTypes)iTrait > NO_TRAIT, "Index out of bounds");
-	return m_abTraits ? m_abTraits[iTrait] : false;
+	FAssertMsg(eTrait < NUM_TRAIT_TYPES, "Index out of bounds");
+	FAssertMsg(eTrait > NO_TRAIT, "Index out of bounds");
+	return m_abTraits ? m_abTraits[eTrait] : false;
 }
-int CvCivilizationInfo::getTeachUnitClassWeight(int iUnitClass) const
+int CvCivilizationInfo::getTeachUnitClassWeight(UnitClassTypes eUnitClass) const
 {
-	FAssertMsg(iUnitClass < NUM_UNITCLASS_TYPES, "Index out of bounds");
-	FAssertMsg(iUnitClass > NO_UNITCLASS, "Index out of bounds");
-	return m_aiTeachUnitClassWeights ? m_aiTeachUnitClassWeights[iUnitClass] : false;
+	FAssertMsg(eUnitClass < NUM_UNITCLASS_TYPES, "Index out of bounds");
+	FAssertMsg(eUnitClass > NO_UNITCLASS, "Index out of bounds");
+	return m_aiTeachUnitClassWeights ? m_aiTeachUnitClassWeights[eUnitClass] : false;
 }
 const CvArtInfoCivilization* CvCivilizationInfo::getArtInfo() const
 {

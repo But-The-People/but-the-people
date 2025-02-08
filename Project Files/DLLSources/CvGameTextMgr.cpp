@@ -4160,13 +4160,13 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			}
 		}
 
-		for (int iProfession = 0; iProfession < GC.getNumProfessionInfos(); ++iProfession)
+		for (ProfessionTypes eProfession = FIRST_PROFESSION; eProfession < NUM_PROFESSION_TYPES; ++eProfession)
 		{
-			if (eCivilization == NO_CIVILIZATION || GC.getCivilizationInfo(eCivilization).isValidProfession(iProfession))
+			if (eCivilization == NO_CIVILIZATION || GC.getCivilizationInfo(eCivilization).isValidProfession(eProfession))
 			{
-				if (kTrait.getProfessionMoveChange(iProfession) != 0)
+				if (kTrait.getProfessionMoveChange(eProfession) != 0)
 				{
-					szTempBuffer = gDLL->getText("TXT_KEY_UNIT_MOVES_INCREASE", kTrait.getProfessionMoveChange(iProfession), GC.getProfessionInfo((ProfessionTypes)iProfession).getTextKeyWide());
+					szTempBuffer = gDLL->getText("TXT_KEY_UNIT_MOVES_INCREASE", kTrait.getProfessionMoveChange(eProfession), GC.getProfessionInfo(eProfession).getTextKeyWide());
 					szHelpString.append(NEWLINE);
 					if (bIndent)
 					{
@@ -4700,9 +4700,9 @@ void CvGameTextMgr::parseCivShortTraits(CvWStringBuffer &szHelpString, Civilizat
 		FAssert((GC.getNumTraitInfos() > 0) && "GC.getNumTraitInfos() is less than or equal to zero but is expected to be larger than zero in CvSimpleCivPicker::setLeaderText");
 
 		bool bFirst = true;
-		for (int iI = 0; iI < GC.getNumTraitInfos(); ++iI)
+		for (TraitTypes eTrait = FIRST_TRAIT; eTrait < NUM_TRAIT_TYPES; ++eTrait)
 		{
-			if (GC.getCivilizationInfo(eCiv).hasTrait(iI))
+			if (GC.getCivilizationInfo(eCiv).hasTrait(eTrait))
 			{
 				if (!bFirst)
 				{
@@ -4712,7 +4712,7 @@ void CvGameTextMgr::parseCivShortTraits(CvWStringBuffer &szHelpString, Civilizat
 				{
 					szHelpString.append(L"[");
 				}
-				szHelpString.append(gDLL->getText(GC.getTraitInfo((TraitTypes)iI).getShortDescription()));
+				szHelpString.append(gDLL->getText(GC.getTraitInfo(eTrait).getShortDescription()));
 				bFirst = false;
 			}
 		}

@@ -63,12 +63,12 @@ public:
 	int getCivilizationFreeUnitsClass(int index) const;
 	int getCivilizationFreeUnitsProfession(int index) const;
 	int getCivilizationInitialCivics(int iCivicOption) const;
-	int getFreeYields(int i) const;
-	int getTeachUnitClassWeight(int i) const;
-	bool isLeaders(int i) const;
-	bool isCivilizationFreeBuildingClass(int i) const;
-	bool isValidProfession(int i) const;
-	bool hasTrait(int i) const;
+	int getFreeYields(int iYield) const;
+	int getTeachUnitClassWeight(int iUnitClass) const;
+	bool isLeaders(int iLeaderHead) const;
+	bool isCivilizationFreeBuildingClass(int iBuildingClass) const;
+	bool isValidProfession(int iProfession) const;
+	bool hasTrait(int iTrait) const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyCivilizationInfo) == sizeof(CvCivilizationInfo));
 
