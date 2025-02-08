@@ -3090,20 +3090,33 @@ void CvPlayer::contact(PlayerTypes ePlayer)
 	}
 }
 
-CvCity *CvPlayer::buyUnitFromParentPlayer(PlayerTypes eSellingPlayer, const char *szUnitClass, int iNumUnits, CvWString szMessage, int iPriceToPay, LocationFlags eLocationFlags, bool bReceivePrice, bool bMessageMentionLocation)
+CvCity* CvPlayer::buyUnitFromPlayer(PlayerTypes eSellingPlayer, UnitClassTypes eUnitClass, int iNumUnits, CvWString szMessage, int iPriceToPay, LocationFlags eLocationFlags, bool bReceivePrice, bool bMessageMentionLocation)
 {
-	UnitTypes eUnitType = GC.getCivilizationInfo(GET_PLAYER(getParent()).getCivilizationType()).getCivilizationUnits((UnitClassTypes)getIndexOfType(JIT_ARRAY_UNITCLASS, szUnitClass));
-	return buyUnitFromPlayer(eSellingPlayer, eUnitType, iNumUnits, szMessage, iPriceToPay, eLocationFlags, bReceivePrice, bMessageMentionLocation);
-}
+	if (eUnitClass == NO_UNITCLASS)
+	{
+		FAssertMsg(eUnitClass != NO_UNITCLASS, "Trying to buy a non-existing unitclass");
+		return NULL;
+	}
 
-CvCity *CvPlayer::buyUnitFromPlayer(PlayerTypes eSellingPlayer, UnitClassTypes eUnitClass, int iNumUnits, CvWString szMessage, int iPriceToPay, LocationFlags eLocationFlags, bool bReceivePrice, bool bMessageMentionLocation)
-{
 	UnitTypes eUnitType = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(eUnitClass);
 	return buyUnitFromPlayer(eSellingPlayer, eUnitType, iNumUnits, szMessage, iPriceToPay, eLocationFlags, bReceivePrice, bMessageMentionLocation);
 }
 
 CvCity* CvPlayer::buyUnitFromPlayer(PlayerTypes eSellingPlayer, UnitTypes eUnitType, int iNumUnits, CvWString szMessage, int iPriceToPay, LocationFlags eLocationFlags, bool bReceivePrice, bool bMessageMentionLocation)
 {
+	FAssertMsg(getID() != eSellingPlayer, "Player is trying to sell a unit to itself");
+	
+	if (eSellingPlayer == NO_PLAYER)
+	{
+		FAssertMsg(eSellingPlayer != NO_PLAYER, "Buying a unit from a non-existing player");
+		return NULL;
+	}
+	if (eUnitType == NO_UNIT)
+	{
+		FAssertMsg(eUnitType != NO_UNIT, "Trying to buy a non-existing unit");
+		return NULL;
+	}
+
 	CvPlayer& kSellingPlayer = GET_PLAYER(eSellingPlayer);
 
 	if (getGold() >= iPriceToPay)
@@ -4146,12 +4159,12 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 		if(choosenLandSupport)
 		{
 			CvWString szBuffer = gDLL->getText("TXT_KEY_REV_SUPPORT_ARRIVED", GC.getLeaderHeadInfo(GET_PLAYER(getParent()).getLeaderType()).getDescription());
-			GET_PLAYER(ePlayer).buyUnitFromParentPlayer(getID(), "UNITCLASS_REV_SUPPORT_LAND", GLOBAL_DEFINE_REV_SUPPORT_LAND, szBuffer, 0, location, false, false);
+			GET_PLAYER(ePlayer).buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_REV_SUPPORT_LAND, GLOBAL_DEFINE_REV_SUPPORT_LAND, szBuffer, 0, location, false, false);
 		}
 		else
 		{
 			CvWString szBuffer = gDLL->getText("TXT_KEY_REV_SUPPORT_ARRIVED", GC.getLeaderHeadInfo(GET_PLAYER(getParent()).getLeaderType()).getDescription());
-			GET_PLAYER(ePlayer).buyUnitFromParentPlayer(getID(), "UNITCLASS_REV_SUPPORT_SEA", GLOBAL_DEFINE_REV_SUPPORT_SEA, szBuffer, 0, location, false, false);
+			GET_PLAYER(ePlayer).buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_REV_SUPPORT_SEA, GLOBAL_DEFINE_REV_SUPPORT_SEA, szBuffer, 0, location, false, false);
 		}
 	}
 		break;
@@ -4204,31 +4217,31 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 				//declaring limited war
 				GET_TEAM(kPlayer.getTeam()).declareWar(kEnemyPlayer.getTeam(),false, WARPLAN_LIMITED);
 
-				bool bSuccess = kPlayer.buyUnitFromParentPlayer(getID(), "UNITCLASS_KING_REINFORCEMENT_SEA", GLOBAL_DEFINE_KING_REINFORCEMENT_SEA, "", 0, location);
+				bool bSuccess = kPlayer.buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_SEA, GLOBAL_DEFINE_KING_REINFORCEMENT_SEA, "", 0, location);
 				if (bSuccess)
 				{
-					kPlayer.buyUnitFromParentPlayer(getID(), "UNITCLASS_KING_REINFORCEMENT_LAND", GLOBAL_DEFINE_KING_REINFORCEMENT_LAND, "TXT_KEY_EUROPE_WAR_KING_SENT_TROOPS", 0, location, false, false);
-					kPlayer.buyUnitFromParentPlayer(getID(), "UNITCLASS_KING_REINFORCEMENT_ARTIL", GLOBAL_DEFINE_KING_REINFORCEMENT_ARTIL, "", 0, location);
+					kPlayer.buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_LAND, GLOBAL_DEFINE_KING_REINFORCEMENT_LAND, "TXT_KEY_EUROPE_WAR_KING_SENT_TROOPS", 0, location, false, false);
+					kPlayer.buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_ARTIL, GLOBAL_DEFINE_KING_REINFORCEMENT_ARTIL, "", 0, location);
 				}
 				else	// we need to find an alternative since the Player seems to have not gotten a proper city
 							// we just give the player more land Units in his Capitol but no Sea Units
 				{
-					kPlayer.buyUnitFromParentPlayer(getID(), "UNITCLASS_KING_REINFORCEMENT_LAND", GLOBAL_DEFINE_KING_REINFORCEMENT_LAND + 1, "TXT_KEY_EUROPE_WAR_KING_SENT_TROOPS", 0, location, false, false);
-					kPlayer.buyUnitFromParentPlayer(getID(), "UNITCLASS_KING_REINFORCEMENT_ARTIL", GLOBAL_DEFINE_KING_REINFORCEMENT_ARTIL + 1, "", 0, location);
+					kPlayer.buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_LAND, GLOBAL_DEFINE_KING_REINFORCEMENT_LAND + 1, "TXT_KEY_EUROPE_WAR_KING_SENT_TROOPS", 0, location, false, false);
+					kPlayer.buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_ARTIL, GLOBAL_DEFINE_KING_REINFORCEMENT_ARTIL + 1, "", 0, location);
 				}
 
 				// WTP, ray, giving reinforcement to other Player as well - START
-				bSuccess = kEnemyPlayer.buyUnitFromParentPlayer(eEnemyParentPlayer, "UNITCLASS_KING_REINFORCEMENT_SEA", GLOBAL_DEFINE_KING_REINFORCEMENT_SEA, "", 0, location);
+				bSuccess = kEnemyPlayer.buyUnitFromPlayer(eEnemyParentPlayer, GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_SEA, GLOBAL_DEFINE_KING_REINFORCEMENT_SEA, "", 0, location);
 				if (bSuccess)
 				{
-					kEnemyPlayer.buyUnitFromParentPlayer(eEnemyParentPlayer, "UNITCLASS_KING_REINFORCEMENT_LAND", GLOBAL_DEFINE_KING_REINFORCEMENT_LAND, "TXT_KEY_EUROPE_WAR_KING_SENT_TROOPS_OTHER_PLAYER", 0, location, false, false);
-					kEnemyPlayer.buyUnitFromParentPlayer(eEnemyParentPlayer, "UNITCLASS_KING_REINFORCEMENT_ARTIL", GLOBAL_DEFINE_KING_REINFORCEMENT_ARTIL, "", 0, location);
+					kEnemyPlayer.buyUnitFromPlayer(eEnemyParentPlayer, GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_LAND, GLOBAL_DEFINE_KING_REINFORCEMENT_LAND, "TXT_KEY_EUROPE_WAR_KING_SENT_TROOPS_OTHER_PLAYER", 0, location, false, false);
+					kEnemyPlayer.buyUnitFromPlayer(eEnemyParentPlayer, GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_ARTIL, GLOBAL_DEFINE_KING_REINFORCEMENT_ARTIL, "", 0, location);
 				}
 				else	// we need to find an alternative since the other Player seems to have not gotten a proper city
 							// we just give the player more land Units in his Capitol but no Sea Units
 				{
-					kEnemyPlayer.buyUnitFromParentPlayer(eEnemyParentPlayer, "UNITCLASS_KING_REINFORCEMENT_LAND", GLOBAL_DEFINE_KING_REINFORCEMENT_LAND + 1, "TXT_KEY_EUROPE_WAR_KING_SENT_TROOPS_OTHER_PLAYER", 0, location, false, false);
-					kEnemyPlayer.buyUnitFromParentPlayer(eEnemyParentPlayer, "UNITCLASS_KING_REINFORCEMENT_ARTIL", GLOBAL_DEFINE_KING_REINFORCEMENT_ARTIL + 1, "", 0, location);
+					kEnemyPlayer.buyUnitFromPlayer(eEnemyParentPlayer, GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_LAND, GLOBAL_DEFINE_KING_REINFORCEMENT_LAND + 1, "TXT_KEY_EUROPE_WAR_KING_SENT_TROOPS_OTHER_PLAYER", 0, location, false, false);
+					kEnemyPlayer.buyUnitFromPlayer(eEnemyParentPlayer, GLOBAL_DEFINE_UNITCLASS_KING_REINFORCEMENT_ARTIL, GLOBAL_DEFINE_KING_REINFORCEMENT_ARTIL + 1, "", 0, location);
 				}
 				// WTP, ray, giving reinforcement to other Player as well - END
 
@@ -4237,11 +4250,10 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 			else
 			{
 				//increasing max tax rate
-				int maxtaxincrease = GC.getDefineINT("NEG_TAX_EUROPE_WARS");
 				int currentmaxtax = kPlayer.NBMOD_GetMaxTaxRate();
 
 				int absolutMaxTaxrate = GC.getMAX_TAX_RATE();
-				while ((kPlayer.NBMOD_GetMaxTaxRate() < currentmaxtax + maxtaxincrease) && (kPlayer.NBMOD_GetMaxTaxRate() < absolutMaxTaxrate))
+				while ((kPlayer.NBMOD_GetMaxTaxRate() < currentmaxtax + GLOBAL_DEFINE_NEG_TAX_EUROPE_WARS) && (kPlayer.NBMOD_GetMaxTaxRate() < absolutMaxTaxrate))
 				{
 					kPlayer.NBMOD_IncreaseMaxTaxRate();
 				}
@@ -4332,8 +4344,8 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 				kPlayer.forcePeace(enemyID);
 
 				CvWString szBuffer = gDLL->getText("TXT_KEY_EUROPE_PEACE_ACCEPTED", GC.getLeaderHeadInfo(GET_PLAYER(enemyID).getLeaderType()).getDescription());
-				kPlayer.buyUnitFromParentPlayer(getID(), "UNITCLASS_DIPLOMAT_1", 1, szBuffer, 0, LocationFlags::LocationFlagNone, false, false);
-				kPlayer.buyUnitFromParentPlayer(getID(), "UNITCLASS_DIPLOMAT_2", 1, "", 0, LocationFlags::LocationFlagNone, false, false);
+				kPlayer.buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_DIPLOMAT_1, 1, szBuffer, 0, LocationFlags::LocationFlagNone, false, false);
+				kPlayer.buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_DIPLOMAT_2, 1, "", 0, LocationFlags::LocationFlagNone, false, false);
 			}
 			else
 			{
@@ -4403,14 +4415,14 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 				LocationFlags location;
 				location.deepCoastal = true;
 				location.europe = true;
-				CvCity *locationToAppear = kPlayer.buyUnitFromParentPlayer(getID(), "UNITCLASS_ROYAL_INTERVENTIONS_SHIP", 1, "", 0, location, false, false);
+				CvCity *locationToAppear = kPlayer.buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_ROYAL_INTERVENTIONS_SHIP, 1, "", 0, location, false, false);
 				CvWString locationName = locationToAppear != NULL
 					? static_cast<CvWString>(locationToAppear->getNameKey())
 					: gDLL->getText("TXT_KEY_CONCEPT_EUROPE");
 				CvWString szBuffer = gDLL->getText("TXT_KEY_ROYAL_INTERVENTION_ACCEPTED", GC.getLeaderHeadInfo(GET_PLAYER(enemyID).getLeaderType()).getDescription(), locationName.c_str());
 
-				kPlayer.buyUnitFromParentPlayer(getID(), "UNITCLASS_ROYAL_INTERVENTIONS_LAND_UNIT_1", 1, szBuffer, 0, location, false, false);
-				kPlayer.buyUnitFromParentPlayer(getID(), "UNITCLASS_ROYAL_INTERVENTIONS_LAND_UNIT_2", 1, "", 0, location, false, false);
+				kPlayer.buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_ROYAL_INTERVENTIONS_LAND_UNIT_1, 1, szBuffer, 0, location, false, false);
+				kPlayer.buyUnitFromPlayer(getID(), GLOBAL_DEFINE_UNITCLASS_ROYAL_INTERVENTIONS_LAND_UNIT_2, 1, "", 0, location, false, false);
 			}
 			// we just post a message
 			else
@@ -22934,11 +22946,11 @@ void CvPlayer::checkForRoyalIntervention()
 		location.deepCoastal = true;
 		location.europe = true;
 
-		if (buyUnitFromParentPlayer(getParent(), "UNITCLASS_ROYAL_INTERVENTIONS_SHIP", 1, "", 0, location, false, false))
+		if (buyUnitFromPlayer(getParent(), GLOBAL_DEFINE_UNITCLASS_ROYAL_INTERVENTIONS_SHIP, 1, "", 0, location, false, false))
 		{
 			// it is possible to buy the ship from the parent player
-			buyUnitFromParentPlayer(getParent(), "UNITCLASS_ROYAL_INTERVENTIONS_LAND_UNIT_1", 1, "", 0, location, false, false);
-			buyUnitFromParentPlayer(getParent(), "UNITCLASS_ROYAL_INTERVENTIONS_LAND_UNIT_2", 1, "", 0, location, false, false);
+			buyUnitFromPlayer(getParent(), GLOBAL_DEFINE_UNITCLASS_ROYAL_INTERVENTIONS_LAND_UNIT_1, 1, "", 0, location, false, false);
+			buyUnitFromPlayer(getParent(), GLOBAL_DEFINE_UNITCLASS_ROYAL_INTERVENTIONS_LAND_UNIT_2, 1, "", 0, location, false, false);
 
 			// if AI has the money
 			if (getGold() > iGoldModifiedByAttitude)

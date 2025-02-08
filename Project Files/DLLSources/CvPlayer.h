@@ -1241,7 +1241,6 @@ protected:
 	void kill();
 
 	// WTP, jooe, functionalise the buy Unit logic. Return value is the city where the units will appear (or NULL)
-	CvCity* buyUnitFromParentPlayer(PlayerTypes eSellingPlayer, const char *szUnitClass, int iNumUnits, CvWString szIDTag = CvWString(), int iPriceToPay = 0, LocationFlags eLocationFlags = LocationFlags::LocationFlagNone, bool bReceivePrice = true, bool bMessageMentionLocation = true);
 	CvCity* buyUnitFromPlayer(PlayerTypes eSellingPlayer, UnitClassTypes eUnitClass, int iNumUnits, CvWString szIDTag = CvWString(), int iPriceToPay = 0, LocationFlags eLocationFlags = LocationFlags::LocationFlagNone, bool bReceivePrice = true, bool bMessageMentionLocation = true);
 	CvCity* buyUnitFromPlayer(PlayerTypes eSellingPlayer, UnitTypes eUnitType, int iNumUnits, CvWString szIDTag = CvWString(), int iPriceToPay = 0, LocationFlags eLocationFlags = LocationFlags::LocationFlagNone, bool bReceivePrice = true, bool bMessageMentionLocation = true);
 
