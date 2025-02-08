@@ -143,7 +143,7 @@ int CvCityYields::getBaseRawYieldProducedBuildings(YieldTypes eYieldType) const
 
 	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
-		BuildingTypes eBuilding = (BuildingTypes)civilizationInfo.getCivilizationBuildings(eBuildingClass);
+		BuildingTypes eBuilding = civilizationInfo.getCivilizationBuildings(eBuildingClass);
 
 		if (eBuilding != NO_BUILDING && m_city.isHasBuilding(eBuilding))
 		{

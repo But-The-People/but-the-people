@@ -192,7 +192,7 @@ void CvPlayerCivEffect::rebuildCivEffectCache()
 	// WTP, ray, refactored according to advice of Nightinggale
 	for (BuildingTypes eBuilding = FIRST_BUILDING; eBuilding < NUM_BUILDING_TYPES; ++eBuilding)
 	{
-		if (eBuilding != kCivInfo.getCivilizationBuildings(GC.getBuildingInfo(eBuilding).getBuildingClassType()))
+		if (eBuilding != kCivInfo.getCivilizationBuildings((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()))
 		{
 			m_em_iCacheAllowsBuildings.set(eBuilding, -50);
 		}

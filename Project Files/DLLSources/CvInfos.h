@@ -1698,7 +1698,7 @@ public:
 	const char* getArtDefineTag() const;
 	void setArtDefineTag(const char* szVal);
 	// Arrays
-	BuildingTypes getCivilizationBuildings(int iBuildingClass) const;
+	BuildingTypes getCivilizationBuildings(BuildingClassTypes eBuildingClass) const;
 	UnitTypes getCivilizationUnits(UnitClassTypes eUnitClass) const;
 	int getNumCivilizationFreeUnits() const;
 	UnitClassTypes getCivilizationFreeUnitsClass(int index) const;
@@ -1885,14 +1885,14 @@ template<>
 inline BuildingTypes CvCivilizationInfo::getCivSpecificForClass(BuildingClassTypes eVar) const
 {
 	FAssertMsg(this != NULL, "InfoArray: BuildingClass->Unit conversion done on a NULL civ pointer");
-	return (BuildingTypes)getCivilizationBuildings(eVar);
+	return getCivilizationBuildings(eVar);
 }
 
 template<>
 inline UnitTypes CvCivilizationInfo::getCivSpecificForClass(UnitClassTypes eVar) const
 {
 	FAssertMsg(this != NULL, "InfoArray: UnitClass->Unit conversion done on a NULL civ pointer");
-	return (UnitTypes)getCivilizationUnits(eVar);
+	return getCivilizationUnits(eVar);
 }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

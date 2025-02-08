@@ -4032,16 +4032,16 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 
 		// Buildings
 		iLast = 0;
-		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); ++iI)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
 			BuildingTypes eLoopBuilding;
 			if (eCivilization == NO_CIVILIZATION)
 			{
-				eLoopBuilding = ((BuildingTypes)(GC.getBuildingClassInfo((BuildingClassTypes)iI).getDefaultBuildingIndex()));
+				eLoopBuilding = (BuildingTypes)GC.getBuildingClassInfo(eBuildingClass).getDefaultBuildingIndex();
 			}
 			else
 			{
-				eLoopBuilding = ((BuildingTypes)(GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(iI)));
+				eLoopBuilding = GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(eBuildingClass);
 			}
 
 			if (eLoopBuilding != NO_BUILDING)
@@ -4098,22 +4098,22 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			}
 		}
 
-		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); ++iBuildingClass)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
-			BuildingTypes eBuilding = (BuildingTypes) GC.getBuildingClassInfo((BuildingClassTypes) iBuildingClass).getDefaultBuildingIndex();
+			BuildingTypes eBuilding = (BuildingTypes) GC.getBuildingClassInfo(eBuildingClass).getDefaultBuildingIndex();
 
 			if (eCivilization != NO_CIVILIZATION)
 			{
-				eBuilding = (BuildingTypes) GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(iBuildingClass);
+				eBuilding = GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(eBuildingClass);
 			}
 
 			if (eBuilding != NO_BUILDING)
 			{
 				for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
 				{
-					if (kTrait.getBuildingYieldChange(iBuildingClass, iYield) != 0)
+					if (kTrait.getBuildingYieldChange(eBuildingClass, iYield) != 0)
 					{
-						szTempBuffer = gDLL->getText("TXT_KEY_BUILDING_YIELD_INCREASE", kTrait.getBuildingYieldChange(iBuildingClass, iYield), GC.getYieldInfo((YieldTypes)iYield).getChar(), GC.getBuildingInfo(eBuilding).getTextKeyWide());
+						szTempBuffer = gDLL->getText("TXT_KEY_BUILDING_YIELD_INCREASE", kTrait.getBuildingYieldChange(eBuildingClass, iYield), GC.getYieldInfo((YieldTypes)iYield).getChar(), GC.getBuildingInfo(eBuilding).getTextKeyWide());
 						szHelpString.append(NEWLINE);
 						if (bIndent)
 						{
@@ -4177,18 +4177,18 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 			}
 		}
 
-		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); ++iI)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
-			if (kTrait.isFreeBuildingClass(iI))
+			if (kTrait.isFreeBuildingClass(eBuildingClass))
 			{
 				BuildingTypes eFreeBuilding;
 				if (eCivilization != NO_CIVILIZATION)
 				{
-					eFreeBuilding = ((BuildingTypes)(GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(iI)));
+					eFreeBuilding = GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(eBuildingClass);
 				}
 				else
 				{
-					eFreeBuilding = (BuildingTypes)GC.getBuildingClassInfo((BuildingClassTypes)iI).getDefaultBuildingIndex();
+					eFreeBuilding = (BuildingTypes)GC.getBuildingClassInfo(eBuildingClass).getDefaultBuildingIndex();
 				}
 
 				if (NO_BUILDING != eFreeBuilding)
@@ -4204,18 +4204,18 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 		}
 
 		iLast = 0;
-		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); ++iBuildingClass)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
-			BuildingTypes eBuilding = (BuildingTypes) GC.getBuildingClassInfo((BuildingClassTypes) iBuildingClass).getDefaultBuildingIndex();
+			BuildingTypes eBuilding = (BuildingTypes) GC.getBuildingClassInfo(eBuildingClass).getDefaultBuildingIndex();
 
 			if (eCivilization != NO_CIVILIZATION)
 			{
-				eBuilding = (BuildingTypes) GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(iBuildingClass);
+				eBuilding = GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(eBuildingClass);
 			}
 
 			if (eBuilding != NO_BUILDING)
 			{
-				int iModifier = kTrait.getBuildingProductionModifier(iBuildingClass);
+				int iModifier = kTrait.getBuildingProductionModifier(eBuildingClass);
 				if (iModifier != 0)
 				{
 					CvWString szText = NEWLINE;
@@ -4816,10 +4816,10 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 		}
 
 		bFound = false;
-		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); ++iI)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
-			eDefaultBuilding = ((BuildingTypes)(kCivilizationInfo.getCivilizationBuildings(iI)));
-			eUniqueBuilding = ((BuildingTypes)(GC.getBuildingClassInfo((BuildingClassTypes) iI).getDefaultBuildingIndex()));
+			eDefaultBuilding = kCivilizationInfo.getCivilizationBuildings(eBuildingClass);
+			eUniqueBuilding = (BuildingTypes)GC.getBuildingClassInfo(eBuildingClass).getDefaultBuildingIndex();
 			if ((eDefaultBuilding != NO_BUILDING) && (eUniqueBuilding != NO_BUILDING))
 			{
 				if (eDefaultBuilding != eUniqueBuilding)
@@ -6291,7 +6291,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 			}
 			else
 			{
-				eBuilding = (BuildingTypes) GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationBuildings(GC.getUnitInfo(eUnit).getPrereqBuilding());
+				eBuilding = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationBuildings((BuildingClassTypes)GC.getUnitInfo(eUnit).getPrereqBuilding());
 			}
 			if(eBuilding != NO_BUILDING)
 			{
@@ -6306,15 +6306,15 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 		bool bValid = true;
 		bool bFirst = true;
 		szTempBuffer.clear();
-		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); ++iBuildingClass)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
-			if (GC.getUnitInfo(eUnit).isPrereqOrBuilding(iBuildingClass))
+			if (GC.getUnitInfo(eUnit).isPrereqOrBuilding(eBuildingClass))
 			{
 				bValid = false;
-				BuildingTypes eBuilding = (BuildingTypes) GC.getBuildingClassInfo((BuildingClassTypes) iBuildingClass).getDefaultBuildingIndex();
+				BuildingTypes eBuilding = (BuildingTypes) GC.getBuildingClassInfo(eBuildingClass).getDefaultBuildingIndex();
 				if (ePlayer != NO_PLAYER)
 				{
-					eBuilding = (BuildingTypes) GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationBuildings(iBuildingClass);
+					eBuilding = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 				}
 
 				if (NO_BUILDING != eBuilding)
@@ -6578,7 +6578,7 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 	{
 		for (CivilizationTypes eCiv  = FIRST_CIVILIZATION; eCiv < NUM_CIVILIZATION_TYPES; ++eCiv)
 		{
-			const BuildingTypes eUniqueBuilding = (BuildingTypes)GC.getCivilizationInfo(eCiv).getCivilizationBuildings(eBuildingClass);
+			const BuildingTypes eUniqueBuilding = GC.getCivilizationInfo(eCiv).getCivilizationBuildings(eBuildingClass);
 			if (eUniqueBuilding == eBuilding)
 			{
 				szBuffer.append(NEWLINE);
@@ -6801,15 +6801,15 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 
 	bFirst = true;
 
-	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); ++iI)
+	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
 		if (ePlayer != NO_PLAYER)
 		{
-			eLoopBuilding = ((BuildingTypes)(GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationBuildings(iI)));
+			eLoopBuilding = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 		}
 		else
 		{
-			eLoopBuilding = (BuildingTypes)GC.getBuildingClassInfo((BuildingClassTypes)iI).getDefaultBuildingIndex();
+			eLoopBuilding = (BuildingTypes)GC.getBuildingClassInfo(eBuildingClass).getDefaultBuildingIndex();
 		}
 
 		if (eLoopBuilding != NO_BUILDING)
@@ -6965,45 +6965,45 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 		{
 			szBuffer.append(ENDCOLR);
 		}
-		for (int iI = 0; iI < GC.getNumBuildingClassInfos(); ++iI)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
-			if (ePlayer == NO_PLAYER && kBuilding.getPrereqNumOfBuildingClass((BuildingClassTypes)iI) > 0)
+			if (ePlayer == NO_PLAYER && kBuilding.getPrereqNumOfBuildingClass(eBuildingClass) > 0)
 			{
-				eLoopBuilding = (BuildingTypes)GC.getBuildingClassInfo((BuildingClassTypes)iI).getDefaultBuildingIndex();
-				szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS_NO_CITY", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), kBuilding.getPrereqNumOfBuildingClass((BuildingClassTypes)iI)).c_str());
+				eLoopBuilding = (BuildingTypes)GC.getBuildingClassInfo(eBuildingClass).getDefaultBuildingIndex();
+				szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS_NO_CITY", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), kBuilding.getPrereqNumOfBuildingClass(eBuildingClass)).c_str());
 
 				szBuffer.append(szTempBuffer);
 			}
-			else if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getBuildingClassPrereqBuilding(eBuilding, ((BuildingClassTypes)iI)) > 0)
+			else if (ePlayer != NO_PLAYER && GET_PLAYER(ePlayer).getBuildingClassPrereqBuilding(eBuilding, eBuildingClass) > 0)
 			{
-				if ((pCity == NULL) || (GET_PLAYER(ePlayer).getBuildingClassCount((BuildingClassTypes)iI) < GET_PLAYER(ePlayer).getBuildingClassPrereqBuilding(eBuilding, ((BuildingClassTypes)iI))))
+				if (pCity == NULL || GET_PLAYER(ePlayer).getBuildingClassCount(eBuildingClass) < GET_PLAYER(ePlayer).getBuildingClassPrereqBuilding(eBuilding, eBuildingClass))
 				{
-					eLoopBuilding = ((BuildingTypes)(GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationBuildings(iI)));
+					eLoopBuilding = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 
 					if (eLoopBuilding != NO_BUILDING)
 					{
 						if (pCity != NULL)
 						{
-							szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), GET_PLAYER(ePlayer).getBuildingClassCount((BuildingClassTypes)iI), GET_PLAYER(ePlayer).getBuildingClassPrereqBuilding(eBuilding, ((BuildingClassTypes)iI))).c_str());
+							szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), GET_PLAYER(ePlayer).getBuildingClassCount(eBuildingClass), GET_PLAYER(ePlayer).getBuildingClassPrereqBuilding(eBuilding, eBuildingClass)).c_str());
 						}
 						else
 						{
-							szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS_NO_CITY", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), GET_PLAYER(ePlayer).getBuildingClassPrereqBuilding(eBuilding, ((BuildingClassTypes)iI))).c_str());
+							szTempBuffer.Format(L"%s%s", NEWLINE, gDLL->getText("TXT_KEY_BUILDING_REQUIRES_NUM_SPECIAL_BUILDINGS_NO_CITY", GC.getBuildingInfo(eLoopBuilding).getTextKeyWide(), GET_PLAYER(ePlayer).getBuildingClassPrereqBuilding(eBuilding, eBuildingClass)).c_str());
 						}
 
 						szBuffer.append(szTempBuffer);
 					}
 				}
 			}
-			else if (kBuilding.isBuildingClassNeededInCity(iI))
+			else if (kBuilding.isBuildingClassNeededInCity(eBuildingClass))
 			{
 				if (NO_PLAYER != ePlayer)
 				{
-					eLoopBuilding = ((BuildingTypes)(GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationBuildings(iI)));
+					eLoopBuilding = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 				}
 				else
 				{
-					eLoopBuilding = (BuildingTypes)GC.getBuildingClassInfo((BuildingClassTypes)iI).getDefaultBuildingIndex();
+					eLoopBuilding = (BuildingTypes)GC.getBuildingClassInfo(eBuildingClass).getDefaultBuildingIndex();
 				}
 
 				if (eLoopBuilding != NO_BUILDING)
@@ -7232,16 +7232,16 @@ void CvGameTextMgr::setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, b
 		}
 	}
 	CivilizationTypes eCivilization = GC.getGameINLINE().getActiveCivilizationType();
-	for (int i = 0; i < GC.getNumBuildingClassInfos(); i++)
+	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
 		BuildingTypes eLoopBuilding;
 		if (eCivilization == NO_CIVILIZATION)
 		{
-			eLoopBuilding = ((BuildingTypes)(GC.getBuildingClassInfo((BuildingClassTypes)i).getDefaultBuildingIndex()));
+			eLoopBuilding = (BuildingTypes)GC.getBuildingClassInfo(eBuildingClass).getDefaultBuildingIndex();
 		}
 		else
 		{
-			eLoopBuilding = ((BuildingTypes)(GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(i)));
+			eLoopBuilding = GC.getCivilizationInfo(eCivilization).getCivilizationBuildings(eBuildingClass);
 		}
 	}
 	if (!isEmpty(GC.getBonusInfo(eBonus).getHelp()))
@@ -10232,7 +10232,7 @@ void CvGameTextMgr::setEventHelp(CvWStringBuffer& szBuffer, EventTypes eEvent, i
 		CivilizationTypes eCiv = kActivePlayer.getCivilizationType();
 		if (NO_CIVILIZATION != eCiv)
 		{
-			BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(eCiv).getCivilizationBuildings(kEvent.getBuildingClass());
+			BuildingTypes eBuilding = GC.getCivilizationInfo(eCiv).getCivilizationBuildings((BuildingClassTypes)kEvent.getBuildingClass());
 			if (eBuilding != NO_BUILDING)
 			{
 				if (kEvent.getBuildingChange() > 0)
@@ -10252,18 +10252,18 @@ void CvGameTextMgr::setEventHelp(CvWStringBuffer& szBuffer, EventTypes eEvent, i
 	if (kEvent.getNumBuildingYieldChanges() > 0)
 	{
 		CvWStringBuffer szYield;
-		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); ++iBuildingClass)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
 			CivilizationTypes eCiv = kActivePlayer.getCivilizationType();
 			if (NO_CIVILIZATION != eCiv)
 			{
-				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(eCiv).getCivilizationBuildings(iBuildingClass);
+				BuildingTypes eBuilding = GC.getCivilizationInfo(eCiv).getCivilizationBuildings(eBuildingClass);
 				if (eBuilding != NO_BUILDING)
 				{
 					int aiYields[NUM_YIELD_TYPES];
 					for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
 					{
-						aiYields[iYield] = kEvent.getBuildingYieldChange(iBuildingClass, iYield);
+						aiYields[iYield] = kEvent.getBuildingYieldChange(eBuildingClass, iYield);
 					}
 
 					szYield.clear();

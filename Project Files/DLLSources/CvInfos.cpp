@@ -6454,11 +6454,11 @@ void CvCivilizationInfo::setArtDefineTag(const char* szVal)
 	Parameters:
 		int iIndexBuildingClass ... index, that corresponds to the list of BuildingClasses
 */
-BuildingTypes CvCivilizationInfo::getCivilizationBuildings(int iBuildingClass) const
+BuildingTypes CvCivilizationInfo::getCivilizationBuildings(BuildingClassTypes eBuildingClass) const
 {
-	FAssertMsg(iBuildingClass < NUM_BUILDINGCLASS_TYPES, "Index out of bounds");
-	FAssertMsg(iBuildingClass > NO_BUILDINGCLASS, "Index out of bounds");
-	return m_aiCivilizationBuildings ? (BuildingTypes)m_aiCivilizationBuildings[iBuildingClass] : NO_BUILDING;
+	FAssertMsg(eBuildingClass < NUM_BUILDINGCLASS_TYPES, "Index out of bounds");
+	FAssertMsg(eBuildingClass > NO_BUILDINGCLASS, "Index out of bounds");
+	return m_aiCivilizationBuildings ? (BuildingTypes)m_aiCivilizationBuildings[eBuildingClass] : NO_BUILDING;
 }
 
 UnitTypes CvCivilizationInfo::getCivilizationUnits(UnitClassTypes eUnitClass) const

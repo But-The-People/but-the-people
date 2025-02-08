@@ -294,7 +294,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, Coordinates initCoord, bool bBump
 		{
 			if (GC.getCivilizationInfo(getCivilizationType()).isCivilizationFreeBuildingClass(eLoopBuildingClass))
 			{
-				BuildingTypes eLoopBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eLoopBuildingClass)));
+				BuildingTypes eLoopBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eLoopBuildingClass);
 
 				if (eLoopBuilding != NO_BUILDING)
 				{
@@ -1770,11 +1770,11 @@ bool CvCity::canConstruct(BuildingTypes eBuilding, bool bContinue, bool bTestVis
 		return false;
 	}
 
-	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
-		if (kBuilding.isBuildingClassNeededInCity(iI))
+		if (kBuilding.isBuildingClassNeededInCity(eBuildingClass))
 		{
-			BuildingTypes ePrereqBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI)));
+			BuildingTypes ePrereqBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 
 			if (ePrereqBuilding != NO_BUILDING)
 			{
@@ -3140,7 +3140,7 @@ bool CvCity::isHasBuildingClass(BuildingClassTypes eIndex) const
 {
 	FAssert(eIndex != NO_BUILDINGCLASS);
 
-	BuildingTypes eBuilding = (BuildingTypes) GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationBuildings(eIndex);
+	BuildingTypes eBuilding = GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationBuildings(eIndex);
 	if(eBuilding == NO_BUILDING)
 	{
 		return false;
@@ -4525,9 +4525,9 @@ int CvCity::getPotentialProductionOutput(ProfessionTypes eProfession) const
 	}
 	else
 	{
-		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); ++iBuildingClass)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
-			BuildingTypes eLoopBuilding = (BuildingTypes) GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationBuildings(iBuildingClass);
+			BuildingTypes eLoopBuilding = GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 			if (NO_BUILDING != eLoopBuilding)
 			{
 				const CvBuildingInfo& kLoopBuilding = GC.getBuildingInfo(eLoopBuilding);
@@ -4566,9 +4566,9 @@ bool CvCity::hasOtherProductionBuilding(BuildingTypes eBuilding, int iMax) const
 
 				if (eYieldProduced != NO_YIELD && GC.getYieldInfo(eYieldProduced).isCargo())
 				{
-					for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); ++iBuildingClass)
+					for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 					{
-						BuildingTypes eLoopBuilding = (BuildingTypes) GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationBuildings(iBuildingClass);
+						BuildingTypes eLoopBuilding = GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 						if (NO_BUILDING != eLoopBuilding)
 						{
 							const CvBuildingInfo& kLoopBuilding = GC.getBuildingInfo(eLoopBuilding);
@@ -5265,9 +5265,9 @@ void CvCity::cache_storageLossTradeValues_usingRawData()
 	//For human and AI players alike:
 	//Iterate over all buildings buildable by this civilization, ...
 	int iNumBuildingClasses = GC.getNumBuildingClassInfos();
-	for (int i = 0; i < iNumBuildingClasses; i++)
+	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
-		BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(i);
+		BuildingTypes eBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 		//... check if the iterator building is present in the city and if it is highest tier building in its building slot ...
 		if (eBuilding != NO_BUILDING && isHasBuilding(eBuilding))
 		{
@@ -8267,7 +8267,7 @@ int CvCity::getTriggerValue(EventTriggerTypes eTrigger) const
 			// the InfoArray won't be containing NO_BUILDINGCLASS
 			//if (ReqBuildings.getBuildingClass(i) != NO_BUILDINGCLASS)
 			{
-				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(ReqBuildings.getBuildingClass(i));
+				BuildingTypes eBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(ReqBuildings.getBuildingClass(i));
 				if (NO_BUILDING != eBuilding)
 				{
 					if (isHasRealBuilding(eBuilding))
@@ -8370,7 +8370,7 @@ bool CvCity::canApplyEvent(EventTypes eEvent, const EventTriggeredData& kTrigger
 
 	if (kEvent.getBuildingClass() != NO_BUILDINGCLASS)
 	{
-		BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(kEvent.getBuildingClass());
+		BuildingTypes eBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings((BuildingClassTypes)kEvent.getBuildingClass());
 		if (eBuilding == NO_BUILDING)
 		{
 			return false;
@@ -8523,7 +8523,7 @@ void CvCity::applyEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredD
 
 	if (kEvent.getBuildingClass() != NO_BUILDINGCLASS)
 	{
-		BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(kEvent.getBuildingClass());
+		BuildingTypes eBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings((BuildingClassTypes)kEvent.getBuildingClass());
 		if (eBuilding != NO_BUILDING)
 		{
 			if (0 != kEvent.getBuildingChange())
@@ -8535,11 +8535,11 @@ void CvCity::applyEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredD
 
 	if (kEvent.getNumBuildingYieldChanges() > 0)
 	{
-		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); ++iBuildingClass)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
-			for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
+			for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 			{
-				setBuildingYieldChange((BuildingClassTypes)iBuildingClass, (YieldTypes)iYield, getBuildingYieldChange((BuildingClassTypes)iBuildingClass, (YieldTypes)iYield) + kEvent.getBuildingYieldChange(iBuildingClass, iYield));
+				setBuildingYieldChange(eBuildingClass, eYield, getBuildingYieldChange(eBuildingClass, eYield) + kEvent.getBuildingYieldChange(eBuildingClass, eYield));
 			}
 		}
 	}
@@ -8641,7 +8641,7 @@ void CvCity::setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldType
 					(*it).iChange = iChange;
 				}
 
-				BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+				BuildingTypes eBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 				if (NO_BUILDING != eBuilding)
 				{
 					if (isHasBuilding(eBuilding))
@@ -8663,7 +8663,7 @@ void CvCity::setBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldType
 		kChange.iChange = iChange;
 		m_aBuildingYieldChange.push_back(kChange);
 
-		BuildingTypes eBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+		BuildingTypes eBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 		if (NO_BUILDING != eBuilding)
 		{
 			if (isHasBuilding(eBuilding))
@@ -9318,9 +9318,9 @@ int CvCity::getMaxYieldCapacityUncached() const
 {
 	int iCapacity = GC.getGameINLINE().getCargoYieldCapacity();
 
-	for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); ++iBuildingClass)
+	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
-		BuildingTypes eBuilding = (BuildingTypes) GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iBuildingClass);
+		BuildingTypes eBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 		if (eBuilding != NO_BUILDING)
 		{
 			if (isHasBuilding(eBuilding))

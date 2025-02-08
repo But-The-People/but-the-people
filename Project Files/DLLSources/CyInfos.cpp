@@ -71,9 +71,9 @@ int CyCivilizationInfo::getCapturedCityUnitClass() const
 	return CvCivilizationInfo::getCapturedCityUnitClass();
 }
 
-int CyCivilizationInfo::getCivilizationBuildings(int i) const
+int CyCivilizationInfo::getCivilizationBuildings(int iBuildingClass) const
 {
-	return CvCivilizationInfo::getCivilizationBuildings(i);
+	return CvCivilizationInfo::getCivilizationBuildings(static_cast<BuildingClassTypes>(iBuildingClass));
 }
 
 int CyCivilizationInfo::getCivilizationUnits(int iUnitClass) const

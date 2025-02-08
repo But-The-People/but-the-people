@@ -1960,9 +1960,9 @@ bool CvDLLButtonPopup::launchProductionPopup(CvPopup* pPopup, CvPopupInfo &info)
 			}
 		}
 	}
-	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
-		BuildingTypes eLoopBuilding = ((BuildingTypes)(GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings(iI)));
+		BuildingTypes eLoopBuilding = GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 
 		if (eLoopBuilding != NO_BUILDING)
 		{
@@ -1974,7 +1974,7 @@ bool CvDLLButtonPopup::launchProductionPopup(CvPopup* pPopup, CvPopupInfo &info)
 					{
 						int iTurns = pCity->getProductionTurnsLeft(eLoopBuilding, 0);
 						szBuffer.Format(L"%s (%d)", GC.getBuildingInfo(eLoopBuilding).getDescription(), iTurns);
-						gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, GC.getBuildingInfo(eLoopBuilding).getButton(), iI, WIDGET_CONSTRUCT, iI, pCity->getID(), true, POPUP_LAYOUT_STRETCH, DLL_FONT_LEFT_JUSTIFY);
+						gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szBuffer, GC.getBuildingInfo(eLoopBuilding).getButton(), eBuildingClass, WIDGET_CONSTRUCT, eBuildingClass, pCity->getID(), true, POPUP_LAYOUT_STRETCH, DLL_FONT_LEFT_JUSTIFY);
 						iNumBuilds++;
 					}
 				}
@@ -2030,9 +2030,9 @@ bool CvDLLButtonPopup::launchProductionPopup(CvPopup* pPopup, CvPopupInfo &info)
 			}
 		}
 	}
-	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
-		BuildingTypes eLoopBuilding = ((BuildingTypes)(GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings(iI)));
+		BuildingTypes eLoopBuilding = GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 		if (eLoopBuilding != NO_BUILDING)
 		{
 			if (pCity->canConstruct(eLoopBuilding, false, true) && !pCity->canConstruct(eLoopBuilding))
@@ -2046,9 +2046,8 @@ bool CvDLLButtonPopup::launchProductionPopup(CvPopup* pPopup, CvPopupInfo &info)
 					szExtraBuilds.append(L", ");
 				}
 				szExtraBuilds.append(GC.getBuildingInfo(eLoopBuilding).getDescription());
-				for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
+				for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 				{
-					YieldTypes eYield = (YieldTypes) iYield;
 					if (GC.getYieldInfo(eYield).isCargo())
 					{
 						int iNeeded = pCity->getYieldProductionNeeded(eLoopBuilding, eYield) - pCity->getYieldStored(eYield);

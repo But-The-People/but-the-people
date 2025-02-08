@@ -677,7 +677,7 @@ public:
 	#pragma comment(linker, "/EXPORT:?getCivilizationBuildings@CvCivilizationInfo@@QBEHH@Z=?getCivilizationBuildings@EXE_CvCivilizationInfo@@QBEHH@Z")
 	DllExport int getCivilizationBuildings(int i) const
 	{
-		return CvCivilizationInfo::getCivilizationBuildings(i);
+		return CvCivilizationInfo::getCivilizationBuildings(static_cast<BuildingClassTypes>(i));
 	}
 
 	#pragma comment(linker, "/EXPORT:?getCivilizationUnits@CvCivilizationInfo@@QBEHH@Z=?getCivilizationUnits@EXE_CvCivilizationInfo@@QBEHH@Z")

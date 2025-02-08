@@ -1212,9 +1212,7 @@ void CvDLLWidgetData::doTrain(const CvWidgetDataStruct &widgetDataStruct)
 
 void CvDLLWidgetData::doConstruct(const CvWidgetDataStruct &widgetDataStruct)
 {
-	BuildingTypes eBuilding;
-
-	eBuilding = ((BuildingTypes)(GC.getCivilizationInfo(GC.getGameINLINE().getActiveCivilizationType()).getCivilizationBuildings(widgetDataStruct.m_iData1)));
+	BuildingTypes eBuilding = GC.getCivilizationInfo(GC.getGameINLINE().getActiveCivilizationType()).getCivilizationBuildings((BuildingClassTypes)widgetDataStruct.m_iData1);
 
 	if (widgetDataStruct.m_iData2 != FFreeList::INVALID_INDEX)
 	{
@@ -1480,7 +1478,7 @@ void CvDLLWidgetData::doPediaTrainJump(const CvWidgetDataStruct &widgetDataStruc
 void CvDLLWidgetData::doPediaConstructJump(const CvWidgetDataStruct &widgetDataStruct)
 {
 	CyArgsList argsList;
-	argsList.add(GC.getCivilizationInfo(GC.getGameINLINE().getActiveCivilizationType()).getCivilizationBuildings(widgetDataStruct.m_iData1));
+	argsList.add((int)GC.getCivilizationInfo(GC.getGameINLINE().getActiveCivilizationType()).getCivilizationBuildings((BuildingClassTypes)widgetDataStruct.m_iData1));
 
 	gDLL->getPythonIFace()->callFunction(PYScreensModule, "pediaJumpToBuilding", argsList.makeFunctionArgs());
 }
@@ -1726,7 +1724,6 @@ void CvDLLWidgetData::parseTrainHelp(const CvWidgetDataStruct &widgetDataStruct,
 void CvDLLWidgetData::parseConstructHelp(const CvWidgetDataStruct &widgetDataStruct, CvWStringBuffer &szBuffer)
 {
 	CvCity* pHeadSelectedCity;
-	BuildingTypes eBuilding;
 
 	if (widgetDataStruct.m_iData2 != FFreeList::INVALID_INDEX)
 	{
@@ -1739,7 +1736,7 @@ void CvDLLWidgetData::parseConstructHelp(const CvWidgetDataStruct &widgetDataStr
 
 	if (pHeadSelectedCity != NULL)
 	{
-		eBuilding = (BuildingTypes)GC.getCivilizationInfo(pHeadSelectedCity->getCivilizationType()).getCivilizationBuildings(widgetDataStruct.m_iData1);
+		BuildingTypes eBuilding = GC.getCivilizationInfo(pHeadSelectedCity->getCivilizationType()).getCivilizationBuildings((BuildingClassTypes)widgetDataStruct.m_iData1);
 		GAMETEXT.setBuildingHelp(szBuffer, eBuilding, false, widgetDataStruct.m_bOption, pHeadSelectedCity);
 	}
 }
@@ -3346,9 +3343,9 @@ void CvDLLWidgetData::parseSpecialBuildingHelp(const CvWidgetDataStruct &widgetD
 	CvCity* pCity = gDLL->getInterfaceIFace()->getHeadSelectedCity();
 	if (pCity != NULL)
 	{
-		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); ++iBuildingClass)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
-			BuildingTypes eBuilding = (BuildingTypes) GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings(iBuildingClass);
+			BuildingTypes eBuilding = GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 			if (eBuilding != NO_BUILDING)
 			{
 				if (GC.getBuildingInfo(eBuilding).getSpecialBuildingType() == widgetDataStruct.m_iData1)

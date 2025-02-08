@@ -9692,7 +9692,7 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible) const
 
 		if (kUnit.getPrereqBuilding() != NO_BUILDINGCLASS)
 		{
-			BuildingTypes eBuilding = (BuildingTypes) GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings(kUnit.getPrereqBuilding());
+			BuildingTypes eBuilding = GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings((BuildingClassTypes)kUnit.getPrereqBuilding());
 			if (NO_BUILDING == eBuilding)
 			{
 				return false;
@@ -9709,11 +9709,11 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible) const
 		}
 
 		bool bValid = true;
-		for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); ++iBuildingClass)
+		for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 		{
-			if (kUnit.isPrereqOrBuilding(iBuildingClass))
+			if (kUnit.isPrereqOrBuilding(eBuildingClass))
 			{
-				BuildingTypes eBuilding = (BuildingTypes) GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings(iBuildingClass);
+				BuildingTypes eBuilding = GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 				SpecialBuildingTypes eSpecialBuilding = NO_SPECIALBUILDING;
 				if (eBuilding != NO_BUILDING)
 				{
@@ -9722,7 +9722,7 @@ bool CvPlot::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible) const
 				if ((eSpecialBuilding == NO_SPECIALBUILDING) || !(GET_PLAYER(getOwnerINLINE()).isSpecialBuildingNotRequired(eSpecialBuilding)))
 				{
 					bValid = false;
-					BuildingTypes eBuilding = (BuildingTypes) GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings(iBuildingClass);
+					BuildingTypes eBuilding = GC.getCivilizationInfo(pCity->getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 					if (NO_BUILDING != eBuilding)
 					{
 						if (pCity->isHasConceptualBuilding(eBuilding) )

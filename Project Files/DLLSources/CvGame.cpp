@@ -7092,11 +7092,11 @@ bool CvGame::isUnitEverActive(UnitTypes eUnit) const
 
 bool CvGame::isBuildingEverActive(BuildingTypes eBuilding) const
 {
-	for (int iCiv = 0; iCiv < GC.getNumCivilizationInfos(); ++iCiv)
+	for (CivilizationTypes eCiv = FIRST_CIVILIZATION; eCiv < NUM_CIVILIZATION_TYPES; ++eCiv)
 	{
-		if (isCivEverActive((CivilizationTypes)iCiv))
+		if (isCivEverActive(eCiv))
 		{
-			if (eBuilding == GC.getCivilizationInfo((CivilizationTypes)iCiv).getCivilizationBuildings(GC.getBuildingInfo(eBuilding).getBuildingClassType()))
+			if (eBuilding == GC.getCivilizationInfo(eCiv).getCivilizationBuildings((BuildingClassTypes)GC.getBuildingInfo(eBuilding).getBuildingClassType()))
 			{
 				return true;
 			}

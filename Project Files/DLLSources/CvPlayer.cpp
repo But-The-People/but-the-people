@@ -1242,7 +1242,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bTrade)
 		if (pabHasRealBuilding[iI])
 		{
 			BuildingClassTypes eBuildingClass = (BuildingClassTypes)GC.getBuildingInfo((BuildingTypes)iI).getBuildingClassType();
-			BuildingTypes eBuildingCivSpecific = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
+			BuildingTypes eBuildingCivSpecific = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 
 			if (eBuildingCivSpecific != NO_BUILDING)
 			{
@@ -5002,7 +5002,7 @@ void CvPlayer::findNewCapital()
 		return;
 	}
 
-	eCapitalBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eCapitalBuildingClass)));
+	eCapitalBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eCapitalBuildingClass);
 	if (eCapitalBuilding == NO_BUILDING)
 	{
 		return;
@@ -6188,9 +6188,9 @@ CvCity* CvPlayer::found(Coordinates foundCoord)
 	CvCity* pCity = initCity(foundCoord, true);
 	FAssertMsg(pCity != NULL, "City is not assigned a valid value");
 
-	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
-		BuildingTypes eLoopBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI)));
+		BuildingTypes eLoopBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 
 		if (eLoopBuilding != NO_BUILDING)
 		{
@@ -6543,10 +6543,9 @@ int CvPlayer::getBuildingClassPrereqBuilding(BuildingTypes eBuilding, BuildingCl
 void CvPlayer::removeBuildingClass(BuildingClassTypes eBuildingClass)
 {
 	CvCity* pLoopCity;
-	BuildingTypes eBuilding;
 	int iLoop;
 
-	eBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass)));
+	const BuildingTypes eBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 
 	if (eBuilding != NO_BUILDING)
 	{
@@ -6685,11 +6684,11 @@ void CvPlayer::processTrait(TraitTypes eTrait, int iChange)
 		changeProfessionMoveChange((ProfessionTypes) iProfession, iChange * kTrait.getProfessionMoveChange(iProfession));
 	}
 
-	for (int iBuildingClass = 0; iBuildingClass < GC.getNumBuildingClassInfos(); ++iBuildingClass)
+	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
-		if (kTrait.isFreeBuildingClass(iBuildingClass))
+		if (kTrait.isFreeBuildingClass(eBuildingClass))
 		{
-			BuildingTypes eFreeBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iBuildingClass);
+			BuildingTypes eFreeBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 			if (eFreeBuilding != NO_BUILDING)
 			{
 				changeFreeBuildingCount(eFreeBuilding, iChange);
@@ -9817,15 +9816,15 @@ int CvPlayer::getSpecialBuildingCount(int iIndex, bool bPlusMaking) const
 {
 	int iCount = 0;
 
-	for (int iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
+	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
-		BuildingTypes eLoopBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iI);
+		BuildingTypes eLoopBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 
 		if (eLoopBuilding != NO_BUILDING)
 		{
 			if (GC.getBuildingInfo(eLoopBuilding).getSpecialBuildingType() == iIndex)
 			{
-				iCount += (bPlusMaking) ? getBuildingClassCountPlusMaking((BuildingClassTypes)iI) : getBuildingClassCount((BuildingClassTypes)iI);
+				iCount += (bPlusMaking) ? getBuildingClassCountPlusMaking(eBuildingClass) : getBuildingClassCount(eBuildingClass);
 			}
 		}
 	}
@@ -14085,7 +14084,7 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 			{
 				//if (kTrigger.getBuildingRequired(i) != NO_BUILDINGCLASS)
 				{
-					BuildingTypes eTestBuilding = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(ReqBuildings.getBuildingClass(i));
+					BuildingTypes eTestBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(ReqBuildings.getBuildingClass(i));
 					if (NO_BUILDING != eTestBuilding && pCity->isHasRealBuilding(eTestBuilding))
 					{
 						aeBuildings.push_back(eTestBuilding);
@@ -16010,9 +16009,9 @@ void CvPlayer::forcePeace(PlayerTypes ePlayer)
 int CvPlayer::getNewCityProductionValue() const
 {
 	int iValue = 0;
-	for (int iJ = 0; iJ < GC.getNumBuildingClassInfos(); iJ++)
+	for (BuildingClassTypes eBuildingClass = FIRST_BUILDINGCLASS; eBuildingClass < NUM_BUILDINGCLASS_TYPES; ++eBuildingClass)
 	{
-		BuildingTypes eBuilding = ((BuildingTypes)(GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(iJ)));
+		BuildingTypes eBuilding = GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eBuildingClass);
 
 		if (NO_BUILDING != eBuilding)
 		{
@@ -16034,15 +16033,15 @@ int CvPlayer::getNewCityProductionValue() const
 		}
 	}
 
-	iValue *= 100 + GC.getDefineINT("NEW_CITY_BUILDING_VALUE_MODIFIER");
+	iValue *= 100 + GLOBAL_DEFINE_NEW_CITY_BUILDING_VALUE_MODIFIER;
 	iValue /= 100;
 
-	iValue += (GC.getDefineINT("ADVANCED_START_CITY_COST") * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent()) / 100;
+	iValue += (GLOBAL_DEFINE_ADVANCED_START_CITY_COST * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent()) / 100;
 
-	int iPopulation = GC.getDefineINT("INITIAL_CITY_POPULATION") + GC.getEraInfo(GC.getGameINLINE().getStartEra()).getFreePopulation();
+	int iPopulation = GLOBAL_DEFINE_INITIAL_CITY_POPULATION + GC.getEraInfo(GC.getGameINLINE().getStartEra()).getFreePopulation();
 	for (int i = 1; i <= iPopulation; ++i)
 	{
-		iValue += (getGrowthThreshold(i) * GC.getDefineINT("ADVANCED_START_POPULATION_COST")) / 100;
+		iValue += (getGrowthThreshold(i) * GLOBAL_DEFINE_ADVANCED_START_POPULATION_COST) / 100;
 	}
 
 	return iValue;
@@ -24924,12 +24923,12 @@ CvCivilizationInfo& CvPlayer::getCivilizationInfo() const
 
 BuildingTypes CvPlayer::getBuildingType(BuildingClassTypes eBuildingClass) const
 {
-	return (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
+	return getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
 }
 
 UnitTypes CvPlayer::getUnitType(UnitClassTypes eUnitClass) const
 {
-	return (UnitTypes)getCivilizationInfo().getCivilizationUnits(eUnitClass);
+	return getCivilizationInfo().getCivilizationUnits(eUnitClass);
 }
 
 void CvPlayer::testOOSanDoEvent(EventTypes eEvent, bool bSuccess) const

@@ -57,7 +57,7 @@ public:
 	int getFavoredTerrain() const;
 	int getCapturedCityUnitClass() const;
 
-	int getCivilizationBuildings(int i) const;
+	int getCivilizationBuildings(int iBuildingClass) const;
 	int getCivilizationUnits(int iUnitClass) const;
 	int getNumCivilizationFreeUnits() const;
 	int getCivilizationFreeUnitsClass(int index) const;

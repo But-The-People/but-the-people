@@ -275,7 +275,7 @@ int InfoArrayBase::getWithTypeWithConversion(JITarrayTypes eType, int iIndex, in
 		int iValue = getInternal(iIndex, iTokenIndex);
 		if (iValue >= 0 && iValue < GC.getNumBuildingClassInfos())
 		{
-			return pCivInfo->getCivilizationBuildings(iValue);
+			return pCivInfo->getCivilizationBuildings((BuildingClassTypes)iValue);
 		}
 	}
 	else if (eType == JIT_ARRAY_UNIT && getType(iTokenIndex) == JIT_ARRAY_UNITCLASS)
