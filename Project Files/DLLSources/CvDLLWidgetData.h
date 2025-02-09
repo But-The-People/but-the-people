@@ -20,7 +20,9 @@ public:
 	bool executeDropOn(const CvWidgetDataStruct& destinationWidgetData, const CvWidgetDataStruct& sourceWidgetData);
 	bool executeDoubleClick(const CvWidgetDataStruct& destinationWidgetData);
 
-	bool isLink(const CvWidgetDataStruct &widgetDataStruct) const;
+	// removing isLink might cause issues even if it appears to be unused in the exe
+	// let's just keep exporting as this one doesn't really make a difference
+	DllExport bool isLink(const CvWidgetDataStruct &widgetDataStruct) const;
 
 protected:
 	//	Actions to be executed

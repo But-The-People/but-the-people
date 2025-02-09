@@ -123,6 +123,7 @@ CvDLLWidgetData.h
 	DllExport bool executeAltAction(CvWidgetDataStruct &widgetDataStruct);
 	DllExport bool executeDropOn(const CvWidgetDataStruct& destinationWidgetData, const CvWidgetDataStruct& sourceWidgetData);
 	DllExport bool executeDoubleClick(const CvWidgetDataStruct& destinationWidgetData);
+	DllExport bool isLink(const CvWidgetDataStruct &widgetDataStruct) const;
 CvFractal.h
 	enum DllExport FracVals
 	DllExport void fracInit(int iNewXs, int iNewYs, int iGrain, CvRandom& random, int iFlags, CvFractal* pRifts=NULL, int iFracXExp=DEFAULT_FRAC_X_EXP, int iFracYExp=DEFAULT_FRAC_Y_EXP);
