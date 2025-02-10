@@ -621,7 +621,7 @@
 		<InterfaceArtInfo>
 			<Type>INTERFACE_SCROLL_BG</Type>
 			<Path>Art/Interface/Screens/City_Management/ScrollBG.dds</Path>
-		</InterfaceArtInfo>	
+		</InterfaceArtInfo>
 		<InterfaceArtInfo>
 			<Type>INTERFACE_SCROLL_BG_GRASS</Type>
 			<Path>Art/Interface/Screens/City_Management/ScrollBG_Grasland.dds</Path>
@@ -744,7 +744,7 @@
 		</InterfaceArtInfo>
 		<InterfaceArtInfo>
 			<Type>INTERFACE_DOMESTIC_TRADE_COUNT</Type>
-			<Path>Art/Interface/Game Hud/Actions/import_export.dds</Path>
+			<Path>Art/Interface/Game Hud/Actions/trade_count.dds</Path>
 		</InterfaceArtInfo>
 		<InterfaceArtInfo>
 			<Type>INTERFACE_TOTAL_PRODUCTION_BUTTON</Type>
