@@ -2765,7 +2765,7 @@ int CvPlayer::calculateScore(bool bFinal, bool bVictory) const
 
     // R&R, Robert Surcouf, No More Variables Hidden game option START
 	//if (isNative())
-	if (isNative()&& !GC.getGameINLINE().isOption(GAMEOPTION_NO_MORE_VARIABLES_HIDDEN))
+	if (isNative() && !GC.getGameINLINE().isOption(GAMEOPTION_NO_MORE_VARIABLES_HIDDEN))
 	{
 		return 0;
 	}
@@ -2775,15 +2775,19 @@ int CvPlayer::calculateScore(bool bFinal, bool bVictory) const
 
 	gDLL->getPythonIFace()->pythonCalculateScore(getID(), &iScore, bFinal, bVictory);
 
-	iScore *= getScoreTaxFactor();
-	iScore /= 100;
+	if (is(CIV_CATEGORY_COLONIAL))
+	{
+		iScore *= getScoreTaxFactor();
+		iScore /= 100;
+	}
 
 	return ((int)iScore);
 }
 
 int CvPlayer::getScoreTaxFactor() const
 {
-	return std::max(0, 100 - GC.getDefineINT("SCORE_TAX_FACTOR") * getTaxRate() / 100);
+	// only colonial players can have a tax rate
+	return is(CIV_CATEGORY_COLONIAL) ? std::max(0, 100 - GLOBAL_DEFINE_SCORE_TAX_FACTOR * getTaxRate() / 100) : 100;
 }
 
 int CvPlayer::findBestFoundValue() const
