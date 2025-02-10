@@ -329,9 +329,6 @@ void CvCity::init(int iID, PlayerTypes eOwner, Coordinates initCoord, bool bBump
 	GET_PLAYER(getOwnerINLINE()).AI_invalidateDistanceMap();
 	AI_init();
 	m_iSlaveWorkerProductionBonus = 0;
-
-	m_iOppressometer = 0;
-	m_iOppressometerGrowthModifier = 100;
 }
 
 
@@ -685,9 +682,6 @@ void CvCity::doTurn()
 		}
 	}
 	// Fixing stuck units in colonies - Nightinggale - End
-
-	doOppressometerDecay();
-	doOppressometerGrowth();
 
 	// ONEVENT - Do turn
 	gDLL->getEventReporterIFace()->cityDoTurn(this, getOwnerINLINE());
@@ -14173,111 +14167,6 @@ void CvCity::writeDesyncLog(FILE *f) const
 			fprintf(f, "\t\t\t%S: %d\n", GC.getYieldInfo(eYield).getDescription(), iNum);
 		}
 	}
-}
-
-void CvCity::doOppressometerGrowth()
-{
-	if (isOccupation() || isNative())
-	{
-		// for now, don't run this for natives, but might be changed later if natives are made playable one day ;)
-		return;
-	}
-
-	const int iOldOppressometer = getOppressometer();
-
-	const int iSlaveWorkerProductionBonus = getSlaveWorkerProductionBonus();
-	FOREACH(CityPlot)
-	{
-		CvPlot* pPlot = getCityIndexPlot(eLoopCityPlot);
-		if (pPlot != NULL && isPlotProducingYields(eLoopCityPlot))
-		{
-			CvUnit* const pUnit = getUnitWorkingPlot(pPlot);
-			if (pUnit != NULL)
-			{
-				const int iForcedLaborFactor = pUnit->getForcedLaborFactor();
-				if (iForcedLaborFactor > 0)
-				{
-					for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; eYield++)
-					{
-						int iOppressometerGrowth = pPlot->getYield(eYield);
-
-						if (iOppressometerGrowth > 0)
-						{
-							// forcedLaborFactor == 2 -> apply complete modifier, discriminationFactor == 1 -> apply 1/2 modifier (for indentured etc.)
-							iOppressometerGrowth *= 100 + ((GET_PLAYER(getOwnerINLINE()).getOppressometerForcedLaborModifier() * iForcedLaborFactor) / 2);
-							iOppressometerGrowth /= 100;
-
-							iOppressometerGrowth *= GC.getHandicapInfo(GC.getGameINLINE().getHandicapType()).getOppressometerGrowthHandicap();
-							iOppressometerGrowth /= 100;
-
-							const int iDiscriminationFactor = pUnit->getDiscriminationFactor();
-							if (iDiscriminationFactor > 0)
-							{
-								// discriminationFactor == 2 -> apply complete modifier, discriminationFactor == 1 -> apply 1/2 modifier
-								iOppressometerGrowth *= 100 + ((GET_PLAYER(getOwnerINLINE()).getOppressometerDiscriminationModifier() * iDiscriminationFactor) / 2);
-								iOppressometerGrowth /= 100;
-							}
-
-							if (iSlaveWorkerProductionBonus > 0 && pUnit->getUnitInfo().getYieldChange(eYield) > 0)
-							{
-								// if slaves are pushed more by a slave master, they will suffer even more oppression
-								iOppressometerGrowth *= (100 + iSlaveWorkerProductionBonus * 2);
-								iOppressometerGrowth /= 100;
-							}
-
-							// normalize Oppressometer growth by game speed
-							iOppressometerGrowth *= 100;
-							iOppressometerGrowth /= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
-
-							growOppressometer(iOppressometerGrowth);
-						}
-					}
-				}
-			}
-		}
-	}
-	// debug message - delete later!
-	// gDLL->UI().addPlayerMessage(getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OPPRESSOMETER_GROWTH_CITY", getNameKey(), iOldOppressometer, getOppressometer()), coord(), "AS2D_DEAL_CANCELLED", MESSAGE_TYPE_INFO);
-}
-
-void CvCity::changeOppressometer(int iChange)
-{
-	m_iOppressometer += iChange;
-	FAssert(m_iOppressometer >= 0);
-}
-
-void CvCity::growOppressometer(int iChange)
-{
-// add to oppressometer modified by Oppressometer growth modifier
-	FAssert(iChange >= 0);
-	const int iEffectiveChange = (iChange * getOppressometerGrowthModifier()) / 100;
-	changeOppressometer(iEffectiveChange);
-}
-
-void CvCity::changeOppressometerGrowthModifier(int iChange)
-{
-	m_iOppressometerGrowthModifier += iChange;
-	FAssert(m_iOppressometerGrowthModifier > 0);
-}
-
-void CvCity::doOppressometerDecay()
-{
-	int iOppressometerDecayRate = GLOBAL_DEFINE_OPPRESSOMETER_DECAY_RATE_BASE; // (percent value)
-	// start with a flat decay, later this could have modifiers
-	// e.g. high percentage of non-free citizens should decrease decay rate
-	// or FF with some change to it
-
-	// normalize Oppressometer decay by game speed
-	iOppressometerDecayRate *= 100;
-	iOppressometerDecayRate /= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
-
-	int iOppressometerDecay = (getOppressometer() * iOppressometerDecayRate) / 100;
-	if (iOppressometerDecay < 1 && getOppressometer() > 0)
-	{
-		iOppressometerDecay = 1; // always decay at least a bit
-	}
-
-	changeOppressometer(-iOppressometerDecay);
 }
 
 // WTP, ray, Center Plot specific Backgrounds - Start

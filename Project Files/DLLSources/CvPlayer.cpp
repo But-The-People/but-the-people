@@ -209,10 +209,6 @@ void CvPlayer::init(PlayerTypes eID)
 	AI_init();
 
 	Update_cache_YieldEquipmentAmount(); // cache CvPlayer::getYieldEquipmentAmount - Nightinggale
-
-	m_iOppressometerDiscriminationModifier = GLOBAL_DEFINE_OPPRESSOMETER_DISCRIMINATION_MODIFIER_BASE_COLONIZERS;
-	m_iOppressometerForcedLaborModifier = GLOBAL_DEFINE_OPPRESSOMETER_FORCED_LABOR_MODIFIER_BASE;
-	m_lPlayerOppressometer = 0l;
 }
 
 
@@ -2331,8 +2327,6 @@ void CvPlayer::doTurn()
 	m_aiTradeMessageAmounts.clear();
 	m_aiTradeMessageCommissions.clear();
 	// TAC - Trade Messages - koma13 - END
-
-	recalculatePlayerOppressometer();
 
 	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
 
@@ -18380,11 +18374,12 @@ const int CvPlayer::getTaxThresold()
 
 const int CvPlayer::getTaxThresold(bool fullCalculation)
 {
+	FAssert(is(CIV_CATEGORY_KING));
 	CvPlayerAI& pColony = *getColonyPlayer();
 	int iMultiplier = 100;
 	for (TraitTypes eTrait = FIRST_TRAIT; eTrait < NUM_TRAIT_TYPES; ++eTrait)
 	{
-		CvTraitInfo& kTrait = GC.getTraitInfo(eTrait);
+		const CvTraitInfo& kTrait = GC.getTraitInfo(eTrait);
 		if (pColony.hasTrait(eTrait))
 		{
 			iMultiplier += kTrait.getTaxRateThresholdModifier();
@@ -18416,19 +18411,51 @@ void CvPlayer::changeYieldTradedTotal(YieldTypes eYield, int iChange)
 }
 */
 
-// R&R, vetiarvind, Price dependent tax rate change - END
-YieldTypes CvPlayer::getHighestTradedYield() const
+bool CvPlayer::hasHighestTradedYield() const
 {
+	return getHighestTradedYield(true) != NO_YIELD;
+}
+
+// R&R, vetiarvind, Price dependent tax rate change - END
+YieldTypes CvPlayer::getHighestTradedYield(bool bCalledFrom_hasHighestTradedYield) const
+{
+	const CvPlayer* pColony = NULL;
+	const CvPlayer* pKing = NULL;
+
+	switch (getCivCategoryTypes())
+	{
+	case CIV_CATEGORY_COLONIAL:
+		pColony = this;
+		pKing = getParentPlayer();
+		break;
+	case CIV_CATEGORY_KING:
+		pColony = getColonyPlayer();;
+		pKing = this;
+		break;
+	default:
+		FAssert(false);
+		return NO_YIELD;
+	}
+
+	FAssert(pColony != NULL);
+	FAssert(pKing != NULL);
+
 	YieldTypes eBestYield = NO_YIELD;
 	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_CARGO_YIELD_TYPES; ++eYield)
 	{
 		// reverse order of ifs compared to vanilla. We now go from fastest to slowest tests - Nightinggale
-		if ((eBestYield == NO_YIELD) || (getYieldScoreTotal(eYield) > getYieldScoreTotal(eBestYield)))
+		if ((eBestYield == NO_YIELD) || (pKing->getYieldScoreTotal(eYield) > pKing->getYieldScoreTotal(eBestYield)))
 		{
-			if (isYieldEuropeTradable(eYield))
+			if (pColony->isYieldEuropeTradable(eYield))
 			{
-				if (getCity(getHighestStoredYieldCityId(eYield)) != NULL)
+				if (pColony->getCity(pColony->getHighestStoredYieldCityId(eYield)) != NULL)
 				{
+					if (bCalledFrom_hasHighestTradedYield)
+					{
+						// we only want to know if it is different from NO_YIELD
+						// no need to loop the rest
+						return eYield;
+					}
 					eBestYield = eYield;
 				}
 			}
@@ -18516,18 +18543,20 @@ void CvPlayer::changeBellsStored(int iChange)
 
 int CvPlayer::getTaxRate() const
 {
+	FAssert(is(CIV_CATEGORY_COLONIAL));
 	return m_iTaxRate;
 }
 
 void CvPlayer::setTaxRate(int iValue)
 {
+	FAssert(is(CIV_CATEGORY_COLONIAL));
 	m_iTaxRate = iValue;
 	FAssert(getTaxRate() >= 0);
 }
 
 void CvPlayer::changeTaxRate(int iChange)
 {
-	FAssert(isColonialNation())
+	FAssert(is(CIV_CATEGORY_COLONIAL));
 	if (iChange == 0) return;
 
 	int iOldRate = getTaxRate();
@@ -19374,7 +19403,7 @@ const int CvPlayer::getTaxRaiseChance()
 	FAssertMsg(getColony() == pColony.getID(), "The Europe player shall rise taxes on his own colonies only");
 
 	if (GC.getEraInfo(getCurrentEra()).isRevolution()) return 0;
-	if (pColony.getHighestTradedYield() == NO_YIELD) return 0;
+	if (hasHighestTradedYield()) return 0;
 
 	// If the colony is already above the max tax rate, then there is no chance
 	if (pColony.getTaxRate() >= pColony.NBMOD_GetMaxTaxRate()) return 0;
@@ -19412,7 +19441,7 @@ void CvPlayer::doTaxRaises()
 	FAssertMsg(getColony() == pColony.getID(), "The Europe player shall rise taxes on his own colonies only");
 
 	if (GC.getEraInfo(getCurrentEra()).isRevolution()) return;
-	if (getHighestTradedYield() == NO_YIELD) return;
+	if (hasHighestTradedYield()) return;
 
 	// the revenue fraction  for tax purpose is now calculated here
 	if (getFullYieldScore(true) <= getTaxThresold(true) ) return; // we have not traded enough yet;
@@ -25034,7 +25063,6 @@ void CvPlayer::postLoadFixes()
 			}
 		}
 	}
-	recalculatePlayerOppressometer();
 }
 
 
@@ -25137,43 +25165,6 @@ DirectionTypes CvPlayer::getPreferredStartingDirection() const
 
 	FAssertMsg(bestDirection >= FIRST_DIRECTION && bestDirection < NUM_DIRECTION_TYPES, "Invalid DirectionTypes enum returned");
 	return bestDirection;
-}
-
-void CvPlayer::changeOppressometerDiscriminationModifier(int iChange)
-{
-	m_iOppressometerDiscriminationModifier += iChange;
-	FAssert(m_iOppressometerDiscriminationModifier > 0);
-}
-
-void CvPlayer::changeOppressometerForcedLaborModifier(int iChange)
-{
-	m_iOppressometerForcedLaborModifier += iChange;
-	FAssert(m_iOppressometerForcedLaborModifier > 0);
-}
-
-
-void CvPlayer::recalculatePlayerOppressometer()
-{
-	long long lOldPlayerOppressometer = m_lPlayerOppressometer;
-	m_lPlayerOppressometer = 0;
-	int iLoop;
-	for (CvCity *pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		m_lPlayerOppressometer += pLoopCity->getOppressometer();
-	}
-
-	// capping to MAX_INT because possibly the game can not handle larger numbers
-	if (m_lPlayerOppressometer > MAX_INT)
-	{
-		m_lPlayerOppressometer = MAX_INT;
-	}
-	if (lOldPlayerOppressometer > MAX_INT)
-	{
-		lOldPlayerOppressometer = MAX_INT;
-	}
-
-	// debug message - delete later!
-	// gDLL->UI().addPlayerMessage(getID(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OPPRESSOMETER_RECALCULATION_PLAYER", static_cast<int>(lOldPlayerOppressometer), static_cast<int>(getPlayerOppressometer())), Coordinates::invalidCoord(), "AS2D_DEAL_CANCELLED", MESSAGE_TYPE_INFO);
 }
 
 void CvPlayer::read(FDataStreamBase* pStream)

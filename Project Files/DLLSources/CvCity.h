@@ -1055,26 +1055,6 @@ public:
 	inline bool getHasUnlockedStorageLossTradeSettings()const		{ return m_bHasUnlockedStorageLossTradeSettings; }
 
 	int getMaxImportAmount(YieldTypes eYield) const;
-
-protected:
-	int m_iOppressometer;
-	int m_iOppressometerGrowthModifier;
-
-	int getOppressometerGrowthModifier() const
-	{
-		return m_iOppressometerGrowthModifier;
-	}
-	void changeOppressometer(int iChange);
-	void changeOppressometerGrowthModifier(int iChange);
-	void doOppressometerDecay();
-	void doOppressometerGrowth();
-
-public:
-	int getOppressometer() const
-	{
-		return m_iOppressometer;
-	}
-	void growOppressometer(int iChange);
 };
 
 // NBMOD EDU cache - start - Nightinggale

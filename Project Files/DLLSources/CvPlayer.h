@@ -808,7 +808,8 @@ public:
 	//void changeYieldBoughtTotalPortRoyal(YieldTypes eYield, int iChange);
 	// WTP, ray, Yields Traded Total for Africa and Port Royal - END
 
-	YieldTypes getHighestTradedYield() const;
+	bool hasHighestTradedYield() const;
+	YieldTypes getHighestTradedYield(bool bCalledFrom_hasHighestTradedYield = false) const;
 	int getHighestStoredYieldCityId(YieldTypes eYield) const;
 
 	DllExport void doAction(PlayerActionTypes eAction, int iData1, int iData2, int iData3);
@@ -1264,28 +1265,6 @@ public:
 	// Clean this up
 	std::vector<ProfessionTypes> m_validCityJobProfessions;
 
-protected:
-	int m_iOppressometerDiscriminationModifier;
-	int m_iOppressometerForcedLaborModifier;
-	long long m_lPlayerOppressometer;
-
-	void changeOppressometerDiscriminationModifier(int iChange);
-	void changeOppressometerForcedLaborModifier(int iChange);
-	void recalculatePlayerOppressometer();
-
-public:
-	int getOppressometerDiscriminationModifier() const
-	{
-		return m_iOppressometerDiscriminationModifier;
-	}
-	int getOppressometerForcedLaborModifier() const
-	{
-		return m_iOppressometerForcedLaborModifier;
-	}
-	long long getPlayerOppressometer() const
-	{
-		return m_lPlayerOppressometer;
-	}
 	CvUnit* getOrCreateTempUnit(UnitTypes eUnit, int iX, int iY);
 	void releaseTempUnit();
 

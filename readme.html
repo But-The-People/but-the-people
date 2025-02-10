@@ -71,7 +71,50 @@
 }
 
 
-    #aboutEnglish, #teamEnglish, #installEnglish, #multiplayerEnglish, #installProblemEnglish, #wrongSteamEnglish, #moreSiblingsThanMemoryEnglish, #savegameIssuesEnglish, #ramProblemEnglish, #pythonFailedEnglish, #gameCoreNotLoadedEnglish, #whatEnglish, #aboutGerman, #teamGerman, #installGerman, #multiplayerGerman, #installProblemGerman, #wrongSteamGerman, #moreSiblingsThanMemoryGerman, #savegameIssuesGerman, #ramProblemGerman, #pythonFailedGerman, #gameCoreNotLoadedGerman, #whatGerman, #aboutRussian, #teamRussian, #installRussian, #multiplayerRussian, #installProblemRussian, #wrongSteamRussian, #moreSiblingsThanMemoryRussian, #savegameIssuesRussian, #ramProblemRussian, #pythonFailedRussian, #gameCoreNotLoadedRussian, #whatRussian {
+    #aboutEnglish,
+	#teamEnglish,
+	#installEnglish,
+	#howtoinstallEnglish,
+	#protonEnglish,
+	#installAutoEnglish,
+	#installManuallyEnglish,
+	#loadingModEnglish,
+	#unloadingEnglish,
+	#shortcutEnglish,
+	#specialNoteEnglish,
+	#multiplayerEnglish,
+	#installProblemEnglish,
+	#wrongSteamEnglish,
+	#moreSiblingsThanMemoryEnglish,
+	#savegameIssuesEnglish,
+	#ramProblemEnglish,
+	#pythonFailedEnglish,
+	#gameCoreNotLoadedEnglish,
+	#whatEnglish,
+	#aboutGerman,
+	#teamGerman,
+	#installGerman,
+	#multiplayerGerman,
+	#installProblemGerman,
+	#wrongSteamGerman,
+	#moreSiblingsThanMemoryGerman,
+	#savegameIssuesGerman,
+	#ramProblemGerman,
+	#pythonFailedGerman,
+	#gameCoreNotLoadedGerman,
+	#whatGerman,
+	#aboutRussian,
+	#teamRussian,
+	#installRussian,
+	#multiplayerRussian,
+	#installProblemRussian,
+	#wrongSteamRussian,
+	#moreSiblingsThanMemoryRussian,
+	#savegameIssuesRussian,
+	#ramProblemRussian,
+	#pythonFailedRussian,
+	#gameCoreNotLoadedRussian,
+	#whatRussian {
         padding-top: 60px; /* Adjust this value as needed */
         margin-top: -60px;
         height: 100%;
@@ -108,15 +151,30 @@
 		<ul>
 			<li><a href="#aboutEnglish">About We The People</a></li>
 			<li><a href="#teamEnglish">WTP Team Members</a></li>
-			<li><a href="#installEnglish">How to Install the Mod</a></li>
+			<li><a href="#installEnglish">How to Install the Mod</a>
+				<ul>
+					<li><a href="#howtoinstallEnglish">How do I install the mod?</a></li>
+					<li><a href="#protonEnglish">Proton setup (linux only step)</a></li>
+					<li><a href="#installAutoEnglish">Installing the mod automatically</a></li>
+					<li><a href="#installManuallyEnglish">Installing the mod manually</a></li>
+					<li><a href="#loadingModEnglish">Loading the mod</a></li>
+					<li><a href="#unloadingEnglish">Unloading the mod</a></li>
+					<li><a href="#shortcutEnglish">Creating a desktop shortcut</a></li>
+					<li><a href="#specialNoteEnglish">Special Note</a></li>
+				</ul>
+			</li>
 			<li><a href="#multiplayerEnglish">Multiplayer Setup</a></li>
-			<li><a href="#installProblemEnglish">Common Issues when getting the Mod to work</a></li>
-			<li><a href="#wrongSteamEnglish">Steam needs to use the original "unsupported" Steam release version</a></li>
-			<li><a href="#moreSiblingsThanMemoryEnglish">More siblings than memory allocated error</a></li>
-			<li><a href="#savegameIssuesEnglish">Savegame Issues</a></li>
-			<li><a href="#ramProblemEnglish">The game tells me I have low memory?</a></li>
-			<li><a href="#pythonFailedEnglish">Python Failed Initializing?</a></li>
-			<li><a href="#gameCoreNotLoadedEnglish">CvGameCoreDLL.dll not loaded?</a></li>
+			<li><a href="#installProblemEnglish">Common Issues when getting the Mod to work</a>
+				<ul>
+					<li><a href="#wrongSteamEnglish">Steam needs to use the original "unsupported" Steam release version</a></li>
+					<li><a href="#moreSiblingsThanMemoryEnglish">More siblings than memory allocated error</a></li>
+					<li><a href="#savegameIssuesEnglish">Savegame Issues</a></li>
+					<li><a href="#ramProblemEnglish">The game tells me I have low memory?</a></li>
+					<li><a href="#pythonFailedEnglish">Python Failed Initializing?</a></li>
+					<li><a href="#gameCoreNotLoadedEnglish">CvGameCoreDLL.dll not loaded?</a></li>
+				</ul>
+			</li>
+			
 			<li><a href="#whatEnglish">What is the Mod About?</a></li>
 		</ul>
 		<h3 id="aboutEnglish">Foreword</h3>
@@ -206,76 +264,167 @@
 		<p><strong>Credits and thanks also to the creators/publishers of the original game:</strong></p>
 		<p><b>Firaxis and 2Kgames</b></p>
 		<hr>
-		<h3 id="installEnglish">How do I install the mod?</h3>
-		<p>All currently purchasable versions of Sid Meier's Civilization 4: Colonization are fully patched, unless you somehow have the original CD version, which will first need to be patched with the official patch 1.01.f.</p>
-		<p><strong><i>HOWEVER,</strong></i></p>
-		<p>if you are using the <i>Steam</i> version of Civ 4: Col, then you need to go to your Steam properties for the game and opt into the original Steam release version. Firaxis released another patch, only for Steam for some reason, that causes issue with mods for the game and multiplayer as well. If you especially want to play multiplayer, you <b>must</b> revert to the <i>original</i> Steam release. Despite the fact that Steam says the original release is "unsupported", this release is actually the best available version on Steam. <a href="https://forums.civfanatics.com/threads/important-for-all-steam-users-follow-these-instructions-to-play-wtp-without-bugs.674675/">This forum guide</a> includes screenshots on how to opt into betas and other versions on Steam.</p>
-		<p>Now, to install "We The People" is similar to any other Civilization 4 mod.</p>
-		<p>If there is no MODS folder within the game's main directory, simply create a folder named MODS within the game's primary folder. Good Old Games names the main directory \Civ4Colonization\, while Steam calls it \Civilization IV Colonization\.</p>
-		<p>Then, move the downloaded archive from the download link of the corresponding release (e.g. on GitHub) into that MODs folder.</p>
-		<p>Unpack/extract the contents of the mod's archive into the MODS folder.</p>
-		<p>Be very careful not to create another MODS folder within the MODS folder, resulting in a path such as C:\Program Files (x86)\GOG Galaxy\Games\Civilization IV Complete\<b>Civ4Colonization\MODS\MODS\WeThePeople\</b></p>
-		<p>The path must have We The People's folder be within the MODS folder, such as C:\Program Files (x86)\GOG Galaxy\Games\Civilization IV Complete\<b>Civ4Colonization\MODS\WeThePeople\</b></p>
-		<p>To be clear, the Assets folder in We The People should have a path similar to: C:\Program Files (x86)\GOG Galaxy\Games\Civilization IV Complete\<b>Civ4Colonization\MODS\WeThePeople\Assets</b></p>
-		<p>Once the mod is unpacked properly in its correct destination folder, you should go ahead and run "setup.bat" or the batch file named "setup" (depending on how your Windows[or other OS] is set up, it may not display the file extension) within We The People's folder. This will ensure that two files are copied into the main Colonization directory that are necessary to run the mod correctly without errors on startup.</p>
-		<p>All setup.bat does is copy the files in \Copy to Colonization.exe\ into the main Colonization directory, but it's easier to run setup.bat instead of doing so manually.</p>
-		<p>Whether you're using Steam, GOG, or another version, we recommend you go to the game's primary folder, right-click the Colonization.exe, then hit send to desktop to create a shortcut there. If you use Mac or Linux, however else you make shortcuts, I would do something similar.</p>
-		<p>Once that's done, at least for Windows, you can edit the properties of the shortcut and find the target such as "C:\Program Files (x86)\GOG Galaxy\Games\Civilization IV Complete\Civ4Colonization\Colonization.exe", then add a space after the final ", followed by mod="WeThePeoplesuchandsuch" (with the exact name being the same name as the folder the mod resides in, such as WeThePeople-4.2 or whatever.</p>
-		<p>Once that's done, clicking your new icon will take you to the mod, passing through the Vanilla window along the way without launching it. Opening Vanilla first and launching to the mod can cause problems.</p>
-		<p><b>Special Note:</b> Check the <a href="https://forums.civfanatics.com/forums/civ4col-we-the-people.591/">forum</a> every now and then to see if there are new versions. We also maintain a consistent and healthy discussion on the <a href="https://forums.civfanatics.com/threads/we-the-people-discord-chat.665974/">Discord</a>. In addition to these two locations, the in-game Colopedia is maintained as well as we have time for (and when it's not forgotten to be updated) in order to inform players of the changes the mod makes. Pay special attention to the <b>Concepts</b> section of the Colopedia!</a></p>
+		<section id="installEnglish">
+			<section id="howtoinstallEnglish">
+				<h3>How do I install the mod?</h3>
+				<p>First you install Colonization. In addition to installing, depending on your version another step might be needed.</p>
+				<p><ul>
+					<li>Steam: Switch to beta version "Original release". <a href="#wrongSteamEnglish">Info on how to do this</a>. </li>
+					<li>GOG: no extra steps</li>
+					<li>DVD: no extra steps</li>
+					<li>CD: Install the <a href="https://forums.civfanatics.com/resources/civilization-iv-colonization-patch-v1-01f.11915/">official 1.01f patch</a>.</li>
+			</ul></p>
+			</section>
+		
+			<section id="protonEnglish">
+				<p>If you want to play on linux, you should read <a href="https://forums.civfanatics.com/threads/has-anyone-gotten-we-the-people-working-on-steam-deck.681177/#post-16419389">this forum post about proton settings</a>.</p>
+			</section>
+		
+			<section id="installAutoEnglish">
+				<h4>Installing the mod automatically</h4>
+				<p>The easiest way to install is to use <a href="https://github.com/We-the-People-civ4col-mod/wtpupdater/releases">wtpupdater</a> (windows only). If you do that, then follow the readme from that.</p>
+			</section>
+		
+			<section id="installManuallyEnglish">
+				<h4>Installing the mod manually</h4>
+				<p>This guide assumes the mod's name to be WeThePeople. See further down on mod naming as there is support for having multiple versions installed.</p>
+		
+				<p><ul>
+					<li>Navigate to the Colonization installation directory (the one with colonization.exe)</li>
+					<li><p>Open the folder "Mods". Create it if it's not already there</p>
+						<p>Note capitalization doesn't matter on windows, but it does on Linux. Name might be MODS.</p>
+					</li>
+					<li>Unzip We The People into Mods</li>
+					<li>If installed correctly, you now have <strong>Mods/WeThePeople/Assets</strong>. Make sure you don't have an extra folder like Mods/WeThePeople/<i><s>WeThePeople</s></i>/Assets
+					<li><p>Install dll files into Colonization by doing either</p>
+					<ul>
+						<li>double click <strong>Mods/WeThePeople/setup.bat</strong></li>
+						<li>copy content of <strong>Mods/WeThePeople/Copy to Colonization.exe</strong> to the colonization game dir (the one with Mods and Colonization.exe)</li>
+					</ul>		
+					</li>
+				</ul>
+				<p>You can name the mod whatever you want and have multiple mods for whatever reason you want (different versions etc). You should however be aware that it's easier to use a consistent name as it affects <a href="#savegameIssuesEnglish">savegame loading</a> and <a href="#multiplayerEnglish">multiplayer</a>.</p>
+			</section>
+		
+			<section id="loadingModEnglish">
+				<h4>Loading the mod</h4>
+				<ul>
+					<li>Open Colonization</li>
+					<li>Click <strong>ADVANCED</strong></li>
+					<li>Click <strong>LOAD A MOD</strong></li>
+					<li>Select the mod from the list</li>
+					<li>Click ok and accept restarting</li>
+				</ul>
+				<p>Once Colonization has started with the mod loaded, it will remember that mod and start it by default from now on. This is a feature of our mod and doesn't apply to other mods.</p>
+			</section>
+				
+			<section id="unloadingEnglish">
+				<h4>Unloading the mod</h4>
+				<p>If you for some reason want to remove loading the mod by default, then you need to manually clear the setting, which tells which mod Colonization should load by default.</p>
+				<ul>
+					<li>Navigate to Documents/My Games</li>
+					<li>Locate the folder named something with Colonization. Precise name depends on which version of Colonization you have. Common names:
+					<ul>
+						<li>Civ4Colonization</li>
+						<li>Civilization IV Colonization</li>
+					</ul>
+					</li>
+					<li>Inside this Colonization folder, open CivilizationIV.ini (note: ignore CivilizationIV.ini.bak)</li>
+					<li>Find the line with the mod setting. Clear it by setting it to 0, like <strong>"Mod = 0"</strong></li>
+					<li>If you don't like editing the ini file, then you can delete it to reset all settings back to default</li>
+				</ul>
+			</section>
+		
+			<section id="shortcutEnglish">
+				<h4>Creating a desktop shortcut</h4>
+				<p>The easiest way is to make a normal shortcut and let the mod set itself as the default. However if you for any reason want or need to do it manually, here is how it is done.</p>
+				<p>Once that's done, at least for Windows, you can edit the properties of the shortcut and find the target such as "C:\Program Files (x86)\GOG Galaxy\Games\Civilization IV Complete\Civ4Colonization\Colonization.exe", then add a space after the final ", followed by mod="WeThePeoplesuchandsuch" (with the exact name being the same name as the folder the mod resides in, such as WeThePeople-4.2 or whatever.</p>
+				<p>Once that's done, clicking your new icon will take you to the mod, passing through the Vanilla window along the way without launching it. Opening Vanilla first and launching to the mod can cause problems.</p>
+			</section>
+			
+			<section id="specialNoteEnglish">
+				<h4>Special Note:</h4>
+				<p>Check the <a href="https://forums.civfanatics.com/forums/civ4col-we-the-people.591/">forum</a> every now and then to see if there are new versions. We also maintain a consistent and healthy discussion on the <a href="https://forums.civfanatics.com/threads/we-the-people-discord-chat.665974/">Discord</a>. In addition to these two locations, the in-game Colopedia is maintained as well as we have time for (and when it's not forgotten to be updated) in order to inform players of the changes the mod makes. Pay special attention to the <b>Concepts</b> section of the Colopedia!</a></p>
+			</section>
+		</section>
 		<hr>
-		<h3 id="multiplayerEnglish">Multiplayer Setup</h3>
-		<p>If you want to play Multiplayer, every player must have the mod folder's name be <i>identical</i>, or else the Civ4 engine will refuse to allow you all to play together.</p>
-		<p>I, Dyllin Black, must be careful to mention here that the dev team has strived to reduce or eliminate desyncs as often as possible, but writing network-safe code that runs with the Civ4 engine is more difficult than code that works fine in a singleplayer context. A desync is when your game's "state" does not match another player's game's "state", which can result in the game failing. Due to the nature of how Civ4 handles multiplayer, it's just plain harder to make solid code. They've done their best and we continue to do our best, but I cannot guarantee that you won't run into understandably frustrating desyncs at some point. If you do, we appreciate bug reports in the <a href="https://forums.civfanatics.com/threads/we-the-people-discord-chat.665974/">Discord</a> or <a href="https://forums.civfanatics.com/forums/civ4col-we-the-people.591/">Civfanatics forum.</a></p>
+			
+		<section id="multiplayerEnglish">
+			<h3>Multiplayer Setup</h3>
+			<p>If you want to play Multiplayer, every player must have the mod folder's name be <i>identical</i>, or else the Civ4 engine will refuse to allow you all to play together.</p>
+			<p>I, Dyllin Black, must be careful to mention here that the dev team has strived to reduce or eliminate desyncs as often as possible, but writing network-safe code that runs with the Civ4 engine is more difficult than code that works fine in a singleplayer context. A desync is when your game's "state" does not match another player's game's "state", which can result in the game failing. Due to the nature of how Civ4 handles multiplayer, it's just plain harder to make solid code. They've done their best and we continue to do our best, but I cannot guarantee that you won't run into understandably frustrating desyncs at some point. If you do, we appreciate bug reports in the <a href="https://forums.civfanatics.com/threads/we-the-people-discord-chat.665974/">Discord</a> or <a href="https://forums.civfanatics.com/forums/civ4col-we-the-people.591/">Civfanatics forum.</a></p>
+		</section>
 		<hr>
-		<h4 id="installProblemEnglish">Common issues when getting the mod to work</h4>
-		<h3 id="wrongSteamEnglish">Steam needs to use the original "unsupported" Steam release version</h3>
-		<p><strong>Only applies to the Steam version of Colonization</strong></p>
-		<p>The newest version of Colonization on steam broke something related to mod support. To get around this, the original "unsupported" release version is needed. To switch to it, right click on Colonization inside steam, select properties, then betas and switch to "original_release_unsupported". Ignore that it says unsupported. It becomes the same version as the one supported on GOG, but it does lose the steam specific multiplayer.</p>
-		<p><a href="https://forums.civfanatics.com/threads/important-for-all-steam-users-follow-these-instructions-to-play-wtp-without-bugs.674675/">Forum guide on how to do this, including screenshots</a></p>
-		<h3 id="#moreSiblingsThanMemoryEnglish">More siblings than memory allocated error</h3>
-		<p>This is a consequence of not running "setup.bat" in the We The People folder. We The People requires some files to be copied into the main Colonization directory, otherwise it won't run.</p>
-		<h3 id="savegameIssuesEnglish">Savegame Issues</h3>
-		<p>Savegames only run as long as the mod folder matches the savegame's saved mod folder name. This can be changed though by following the instructions for the <a href="https://we-the-people-civ4col-mod.github.io/DeveloperNotes/SavegameModRenamingTool/index.html">Savegame Mod Renaming Tool</a></p>
-		<p>We try to avoid breaking saves between releases, but sometimes its unavoidable in order to make the mod more efficient in terms of memory usage or fix mechanics.</p>
-		<h3 id="ramProblemEnglish">The game tells me I have low memory?</h3>
-		<p><strong>This should only apply to the CD version and maybe the DVD version</strong>. Steam and GOG have prepatched their versions of Colonization.</p>
-		<p>This is a legacy problem from back when people used 32 bit versions of windows. The system could only handle 4 GB of ram and to protect windows from crashing due to lacking memory, applications were only allowed to use 2 GB. Since We The People requires 64 bit windows to function properly, this is no longer an issue. However the disc version still has this old setting.</p>
-		<p>Luckily it's fairly easy to fix. Just download <a href="https://ntcore.com/?page_id=371">this 4 GB patching tool</a> and use it to patch Colonization.exe. It's unknown if patching Colonization_PitBoss.exe is needed, but it doesn't hurt to do so.</p>
-		<p>For those who wants to to know what technically happens when patching (no, you don't need to understand this) is the <a href="https://learn.microsoft.com/en-us/windows/win32/debug/pe-format">PE flag</a> is toggled. It can literally be done using a hex editor if you know what you are doing. However the patching tool is way easier.</p>
-		<h3 id="#pythonFailedEnglish">Python Failed Initializing?</h3>
-		<p>This error occurs when Python exceptions are not enabled in an 'ini' file. This means the actual error is hidden. Since CvGameCoreDLL.dll forces python errors to be displayed, we can assume that file isn't loaded. See below on how to deal with that issue.</p>
-		<h3 id="#gameCoreNotLoadedEnglish">CvGameCoreDLL.dll not loaded?</h3>
-		<p>Either this file is missing when it should be located at WeThePeople\Assets\CvGameCoreDLL.dll, or you're a more advanced user who needs to compile the develop version most likely. Every release given out to the general playerbase should contain a CvGameCoreDLL.dll, so it was either deleted, or we forgot to include it and will fix that problem immediately after release, or you need to <a href="https://github.com/We-the-People-civ4col-mod/Mod/wiki/How-to-play-the-development-version">compile your develop version.</a></p>
+		<section id="installProblemEnglish">
+			<h4>Common issues when getting the mod to work</h4>
+			
+			<section id="wrongSteamEnglish">
+				<h3>Steam needs to use the original "unsupported" Steam release version</h3>
+				<p><strong>Only applies to the Steam version of Colonization</strong></p>
+				<p>The newest version of Colonization on steam broke something related to mod support. To get around this, the original "unsupported" release version is needed. To switch to it, right click on Colonization inside steam, select properties, then betas and switch to "original_release_unsupported". Ignore that it says unsupported. It becomes the same version as the one supported on GOG, but it does lose the steam specific multiplayer.</p>
+				<p><a href="https://forums.civfanatics.com/threads/important-for-all-steam-users-follow-these-instructions-to-play-wtp-without-bugs.674675/">Forum guide on how to do this, including screenshots</a></p>
+			</section>
+			
+			<section id="moreSiblingsThanMemoryEnglish">
+				<h3>More siblings than memory allocated error</h3>
+				<p>This is a consequence of not running "setup.bat" in the We The People folder. We The People requires some files to be copied into the main Colonization directory, otherwise it won't run.</p>
+			</section>
+			
+			<section id="savegameIssuesEnglish">
+				<h3>Savegame Issues</h3>
+				<p>Savegames only run as long as the mod folder matches the savegame's saved mod folder name. This can be changed though by following the instructions for the <a href="https://we-the-people-civ4col-mod.github.io/DeveloperNotes/SavegameModRenamingTool/index.html">Savegame Mod Renaming Tool</a>.</p>
+				<p>We try to avoid breaking saves between releases, but sometimes its unavoidable in order to make the mod more efficient in terms of memory usage or fix mechanics.</p>
+			</section>
+			
+			<section id="ramProblemEnglish">
+				<h3>The game tells me I have low memory?</h3>
+				<p><strong>This should only apply to the CD version and maybe the DVD version</strong>. Steam and GOG have prepatched their versions of Colonization.</p>
+				<p>This is a legacy problem from back when people used 32 bit versions of windows. The system could only handle 4 GB of ram and to protect windows from crashing due to lacking memory, applications were only allowed to use 2 GB. Since We The People requires 64 bit windows to function properly, this is no longer an issue. However the disc version still has this old setting.</p>
+				<p>Luckily it's fairly easy to fix. Just download <a href="https://ntcore.com/?page_id=371">this 4 GB patching tool</a> and use it to patch Colonization.exe. It's unknown if patching Colonization_PitBoss.exe is needed, but it doesn't hurt to do so.</p>
+				<p>For those who wants to to know what technically happens when patching (no, you don't need to understand this) is the <a href="https://learn.microsoft.com/en-us/windows/win32/debug/pe-format">PE flag</a> is toggled. It can literally be done using a hex editor if you know what you are doing. However the patching tool is way easier.</p>
+			</section>
+			
+			<section id="pythonFailedEnglish">
+				<h3>Python Failed Initializing?</h3>
+				<p>This error occurs when Python exceptions are not enabled in an 'ini' file. This means the actual error is hidden. Since CvGameCoreDLL.dll forces python errors to be displayed, we can assume that file isn't loaded. See below on how to deal with that issue.</p>
+			</section>
+			
+			<section id="gameCoreNotLoadedEnglish">
+				<h3>CvGameCoreDLL.dll not loaded?</h3>
+				<p>Either this file is missing when it should be located at WeThePeople\Assets\CvGameCoreDLL.dll, or you're a more advanced user who needs to compile the develop version most likely. Every release given out to the general playerbase should contain a CvGameCoreDLL.dll, so it was either deleted, or we forgot to include it and will fix that problem immediately after release, or you need to <a href="https://github.com/We-the-People-civ4col-mod/Mod/wiki/How-to-play-the-development-version">compile your develop version.</a></p>
+			</section>
+		</section>
 		<hr>
-		<h3 id="whatEnglish">What is the mod about?</h3>
-		<p>It is currently by far the largest CivCol mod in existence. It’s our attempt to bring together many of the best ideas and concepts that the CivCol modding has created.</p>
-		<p>We have also tried to bring back some of the bigger features from the original Colonization, which for some reason were missing from CivCol.</p>
-		<p>But we didn't just throw it all together. Almost everything we put in has been tweaked and improved. We’ve very carefully weighed which features to include and how to implement them.</p>
-		<p>We want to create a mod that offers more variety, more surprises and more challenge. Little by little we’re trying to improve every single aspect of the game: economy, exploration, diplomacy, trade, events, wars...</p>
-		<p>Some aspects of the mod are meant to lean a little more towards complicated simulation, while others deliver more action.</p>
-		<p>But, while we do this, we always think about usability, AI, performance, historical authenticity; things to to think about. Not everything is done yet.</p>
-		<hr>
-		<p>Is using our work allowed?</p>
-		<p>Yes, in general you can use our source code, our graphics, our images ...</p>
-		<p>But please remember to give proper credit. Ask if you’re not sure.</p>
-		<hr>
-		<p>Important remarks about distribution and rights of use: "We The People" is a non-commercial mod project.</p>
-		<p>If you distribute "We The People", please pay attention to the copyright. We allow use and distribution as long as "We The People" remains non-commercial. Of course, you are allowed to use "We The People" in your own mod project, as long as there’s no copyright infringement and it’s a non-commercial project. If you use "We The People" in a mod of your own, you must say so, and also point out changes to the original "We The People" mod.</p>
-		<hr>
-		<p>Can I support your work financially? <br><strong>No.</strong> <br>Many people have offered to donate money, but we can't accept money. This project was only born out of joy and fun in modding.</p>
-		<hr>
-		<p>What are the plans for the future?</p>
-		<p>Please have a look at our forum. That’s where we can keep game status and current planning up to date.</p>
-		<hr>
-		<p>Is it possible to participate?</p>
-		<p>Yes, absolutely. You can give feedback, report bugs, share ideas ... We are also looking for new team members, partners and projects for collaborations.</p>
-		<hr>
-		<h4>A little advice:</h4>
-		<p>When you play "We The People” for the first time, read the Colopedia and check out the <a href="https://forums.civfanatics.com/forums/civ4col-we-the-people.591/">forum</a>. Ask questions if you don't know something. The team and the community are helpful.</p>
-		<hr>
-		<p>Now it’s finally time to play the mod! <br>Have fun!</p>
-		<h4> Your WTP Team</h4>
+		<section id="whatEnglish">
+			<h3>What is the mod about?</h3>
+			<p>It is currently by far the largest CivCol mod in existence. It’s our attempt to bring together many of the best ideas and concepts that the CivCol modding has created.</p>
+			<p>We have also tried to bring back some of the bigger features from the original Colonization, which for some reason were missing from CivCol.</p>
+			<p>But we didn't just throw it all together. Almost everything we put in has been tweaked and improved. We’ve very carefully weighed which features to include and how to implement them.</p>
+			<p>We want to create a mod that offers more variety, more surprises and more challenge. Little by little we’re trying to improve every single aspect of the game: economy, exploration, diplomacy, trade, events, wars...</p>
+			<p>Some aspects of the mod are meant to lean a little more towards complicated simulation, while others deliver more action.</p>
+			<p>But, while we do this, we always think about usability, AI, performance, historical authenticity; things to to think about. Not everything is done yet.</p>
+			<hr>
+			<p>Is using our work allowed?</p>
+			<p>Yes, in general you can use our source code, our graphics, our images ...</p>
+			<p>But please remember to give proper credit. Ask if you’re not sure.</p>
+			<hr>
+			<p>Important remarks about distribution and rights of use: "We The People" is a non-commercial mod project.</p>
+			<p>If you distribute "We The People", please pay attention to the copyright. We allow use and distribution as long as "We The People" remains non-commercial. Of course, you are allowed to use "We The People" in your own mod project, as long as there’s no copyright infringement and it’s a non-commercial project. If you use "We The People" in a mod of your own, you must say so, and also point out changes to the original "We The People" mod.</p>
+			<hr>
+			<p>Can I support your work financially? <br><strong>No.</strong> <br>Many people have offered to donate money, but we can't accept money. This project was only born out of joy and fun in modding.</p>
+			<hr>
+			<p>What are the plans for the future?</p>
+			<p>Please have a look at our forum. That’s where we can keep game status and current planning up to date.</p>
+			<hr>
+			<p>Is it possible to participate?</p>
+			<p>Yes, absolutely. You can give feedback, report bugs, share ideas ... We are also looking for new team members, partners and projects for collaborations.</p>
+			<hr>
+			<h4>A little advice:</h4>
+			<p>When you play "We The People” for the first time, read the Colopedia and check out the <a href="https://forums.civfanatics.com/forums/civ4col-we-the-people.591/">forum</a>. Ask questions if you don't know something. The team and the community are helpful.</p>
+			<hr>
+			<p>Now it’s finally time to play the mod! <br>Have fun!</p>
+			<h4> Your WTP Team</h4>
+		</section>
 	</div>
 
 	<hr>
