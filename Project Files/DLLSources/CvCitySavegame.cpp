@@ -179,6 +179,9 @@ enum SavegameVariableTypes
 
 	CitySave_tradeAutoExports,
 
+	CitySave_Oppressometer,
+	CitySave_OppressometerGrowthModifier,
+
 	NUM_CITYSAVE_ENUM_VALUES,
 };
 
@@ -300,6 +303,9 @@ const char* getSavedEnumNameCity(SavegameVariableTypes eType)
 		case CitySave_orderQueue: return "CitySave_orderQueue";
 
 		case CitySave_WorkingPlot: return "CitySave_WorkingPlot";
+
+		case CitySave_Oppressometer: return "CitySave_Oppressometer";
+		case CitySave_OppressometerGrowthModifier: return "CitySave_OppressometerGrowthModifier";
 	}
 	FAssertMsg(0, "Missing case");
 	return "";
@@ -580,6 +586,9 @@ void CvCity::read(CvSavegameReader reader)
 		case CitySave_orderQueue                                 : reader.Read(m_orderQueue)                                ; break;
 
 		case CitySave_WorkingPlot                                : reader.Read(m_em_iWorkingPlot)                           ; break;
+
+		case CitySave_Oppressometer                              : reader.Discard<int>()                                    ; break;
+		case CitySave_OppressometerGrowthModifier                : reader.Discard<int>()                                    ; break;
 		}
 	}
 
