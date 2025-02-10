@@ -302,6 +302,10 @@ enum SavegameVariableTypes
 	PlayerSave_chievesTurn,
 	PlayerSave_triggersFired,
 	PlayerSave_CacheUpdate,
+
+	PlayerSave_OppressometerDiscriminationModifier,
+	PlayerSave_OppressometerForcedLaborModifier,
+
 	PlayerSave_RandomSeed,
 
 	PlayerSave_TempUnitId,
@@ -501,6 +505,9 @@ const char* getSavedEnumNamePlayer(SavegameVariableTypes eType)
 	case PlayerSave_chievesTurn: return "PlayerSave_chievesTurn";
 	case PlayerSave_triggersFired: return "PlayerSave_triggersFired";
 	case PlayerSave_CacheUpdate: return "PlayerSave_CacheUpdate";
+
+	case PlayerSave_OppressometerDiscriminationModifier: return "PlayerSave_OppressometerDiscriminationModifier";
+	case PlayerSave_OppressometerForcedLaborModifier: return "PlayerSave_OppressometerForcedLaborModifier";
 	}
 	FAssertMsg(0, "Missing case");
 	return "";
@@ -963,6 +970,10 @@ void CvPlayer::read(CvSavegameReader reader)
 		case PlayerSave_chievesGained: reader.Read(m_achievesGained); break;
 		case PlayerSave_chievesTurn: reader.Read(m_achievesTurn); break;
 		case PlayerSave_triggersFired: reader.Read(m_triggersFired); break;
+
+		case PlayerSave_OppressometerDiscriminationModifier: reader.Discard<int>(); break;
+		case PlayerSave_OppressometerForcedLaborModifier: reader.Discard<int>(); break;
+
 		case PlayerSave_CacheUpdate:
 			// Updating cache prior to reading anything, which relies on cache to load properly or set other caches
 			// Cities in particular relies on cached values in CvPlayer
