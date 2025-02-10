@@ -18460,7 +18460,7 @@ YieldTypes CvPlayer::getHighestTradedYield(bool bCalledFrom_hasHighestTradedYiel
 					{
 						// we only want to know if it is different from NO_YIELD
 						// no need to loop the rest
-						return eBestYield;
+						return eYield;
 					}
 					eBestYield = eYield;
 				}
