@@ -209,10 +209,6 @@ void CvPlayer::init(PlayerTypes eID)
 	AI_init();
 
 	Update_cache_YieldEquipmentAmount(); // cache CvPlayer::getYieldEquipmentAmount - Nightinggale
-
-	m_iOppressometerDiscriminationModifier = GLOBAL_DEFINE_OPPRESSOMETER_DISCRIMINATION_MODIFIER_BASE_COLONIZERS;
-	m_iOppressometerForcedLaborModifier = GLOBAL_DEFINE_OPPRESSOMETER_FORCED_LABOR_MODIFIER_BASE;
-	m_lPlayerOppressometer = 0l;
 }
 
 
@@ -2331,8 +2327,6 @@ void CvPlayer::doTurn()
 	m_aiTradeMessageAmounts.clear();
 	m_aiTradeMessageCommissions.clear();
 	// TAC - Trade Messages - koma13 - END
-
-	recalculatePlayerOppressometer();
 
 	gDLL->getInterfaceIFace()->setDirty(CityInfo_DIRTY_BIT, true);
 
@@ -25069,7 +25063,6 @@ void CvPlayer::postLoadFixes()
 			}
 		}
 	}
-	recalculatePlayerOppressometer();
 }
 
 
@@ -25172,43 +25165,6 @@ DirectionTypes CvPlayer::getPreferredStartingDirection() const
 
 	FAssertMsg(bestDirection >= FIRST_DIRECTION && bestDirection < NUM_DIRECTION_TYPES, "Invalid DirectionTypes enum returned");
 	return bestDirection;
-}
-
-void CvPlayer::changeOppressometerDiscriminationModifier(int iChange)
-{
-	m_iOppressometerDiscriminationModifier += iChange;
-	FAssert(m_iOppressometerDiscriminationModifier > 0);
-}
-
-void CvPlayer::changeOppressometerForcedLaborModifier(int iChange)
-{
-	m_iOppressometerForcedLaborModifier += iChange;
-	FAssert(m_iOppressometerForcedLaborModifier > 0);
-}
-
-
-void CvPlayer::recalculatePlayerOppressometer()
-{
-	long long lOldPlayerOppressometer = m_lPlayerOppressometer;
-	m_lPlayerOppressometer = 0;
-	int iLoop;
-	for (CvCity *pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		m_lPlayerOppressometer += pLoopCity->getOppressometer();
-	}
-
-	// capping to MAX_INT because possibly the game can not handle larger numbers
-	if (m_lPlayerOppressometer > MAX_INT)
-	{
-		m_lPlayerOppressometer = MAX_INT;
-	}
-	if (lOldPlayerOppressometer > MAX_INT)
-	{
-		lOldPlayerOppressometer = MAX_INT;
-	}
-
-	// debug message - delete later!
-	// gDLL->UI().addPlayerMessage(getID(), false, GC.getEVENT_MESSAGE_TIME(), gDLL->getText("TXT_KEY_OPPRESSOMETER_RECALCULATION_PLAYER", static_cast<int>(lOldPlayerOppressometer), static_cast<int>(getPlayerOppressometer())), Coordinates::invalidCoord(), "AS2D_DEAL_CANCELLED", MESSAGE_TYPE_INFO);
 }
 
 void CvPlayer::read(FDataStreamBase* pStream)

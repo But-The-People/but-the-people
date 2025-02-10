@@ -110,9 +110,6 @@ const int defaultNativeTradeModifier = 0;
 const int defaultTotalPlayerAfricaSellProfitModifierInPercent = 0; // WTP, Africa and Port Royal Profit Modifiers - START
 const int defaultTotalPlayerPortRoyalSellProfitModifierInPercent = 0; // WTP, Africa and Port Royal Profit Modifiers - START
 const int defaultTotalPlayerDomesticMarketProfitModifierInPercent = 0; // WTP, ray, Domestic Market Profit Modifier - START
-
-const int defaultOppressometerDiscriminationModifier = GLOBAL_DEFINE_OPPRESSOMETER_DISCRIMINATION_MODIFIER_BASE_COLONIZERS;
-const int defaultOppressometerForcedLaborModifier = GLOBAL_DEFINE_OPPRESSOMETER_FORCED_LABOR_MODIFIER_BASE;
 const int defaultTempUnitId = -1;
 
 const unsigned long defaultRandomSeed = 0;
@@ -305,10 +302,6 @@ enum SavegameVariableTypes
 	PlayerSave_chievesTurn,
 	PlayerSave_triggersFired,
 	PlayerSave_CacheUpdate,
-
-	PlayerSave_OppressometerDiscriminationModifier,
-	PlayerSave_OppressometerForcedLaborModifier,
-
 	PlayerSave_RandomSeed,
 
 	PlayerSave_TempUnitId,
@@ -508,9 +501,6 @@ const char* getSavedEnumNamePlayer(SavegameVariableTypes eType)
 	case PlayerSave_chievesTurn: return "PlayerSave_chievesTurn";
 	case PlayerSave_triggersFired: return "PlayerSave_triggersFired";
 	case PlayerSave_CacheUpdate: return "PlayerSave_CacheUpdate";
-
-	case PlayerSave_OppressometerDiscriminationModifier: return "PlayerSave_OppressometerDiscriminationModifier";
-	case PlayerSave_OppressometerForcedLaborModifier: return "PlayerSave_OppressometerForcedLaborModifier";
 	}
 	FAssertMsg(0, "Missing case");
 	return "";
@@ -619,10 +609,6 @@ void CvPlayer::resetSavedData(PlayerTypes eID, bool bConstructorCall)
 	m_eParent= defaultParent;
 	m_eColony = defaultColony; 
 	m_eImmigrationConversion= defaultImmigrationConversion;
-
-	m_iOppressometerDiscriminationModifier = defaultOppressometerDiscriminationModifier;
-	m_iOppressometerForcedLaborModifier = defaultOppressometerForcedLaborModifier;
-
 	m_em_iLandPlotYield.reset();
 	m_em_iSeaPlotYield.reset();
 	m_em_iYieldRateModifier.reset();
@@ -977,10 +963,6 @@ void CvPlayer::read(CvSavegameReader reader)
 		case PlayerSave_chievesGained: reader.Read(m_achievesGained); break;
 		case PlayerSave_chievesTurn: reader.Read(m_achievesTurn); break;
 		case PlayerSave_triggersFired: reader.Read(m_triggersFired); break;
-
-		case PlayerSave_OppressometerDiscriminationModifier: reader.Read(m_iOppressometerDiscriminationModifier); break;
-		case PlayerSave_OppressometerForcedLaborModifier: reader.Read(m_iOppressometerForcedLaborModifier); break;
-
 		case PlayerSave_CacheUpdate:
 			// Updating cache prior to reading anything, which relies on cache to load properly or set other caches
 			// Cities in particular relies on cached values in CvPlayer
@@ -1239,12 +1221,6 @@ void CvPlayer::write(CvSavegameWriter writer)
 	writer.Write(PlayerSave_chievesGained, m_achievesGained);
 	writer.Write(PlayerSave_chievesTurn, m_achievesTurn);
 	writer.Write(PlayerSave_triggersFired, m_triggersFired);
-
-	// don't set a default here, this might have different defaults for different player types
-	writer.Write(PlayerSave_OppressometerDiscriminationModifier, m_iOppressometerDiscriminationModifier);
-	// don't set a default here, this might have different defaults for different player types
-	writer.Write(PlayerSave_OppressometerForcedLaborModifier, m_iOppressometerForcedLaborModifier);
-
 
 	// forces a cache update on read
 	// Anything relying on CivEffect should be below this

@@ -7230,7 +7230,6 @@ m_iMinGoldAskPercent(25),
 
 /** NBMOD REF **/
 m_iNBMOD_REF_Weight(100),
-m_iOppressometerGrowthHandicap(100),
 /** NBMOD REF **/
 m_iAdvancedStartPointsMod(0),
 m_iStartingGold(0),
@@ -7555,8 +7554,6 @@ void CvHandicapInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iNBMOD_REF_Weight);
 	/** NBMOD REF **/
 
-	stream->Read(&m_iOppressometerGrowthHandicap);
-
 	stream->ReadString(m_szHandicapName);
 	stream->Read(&m_iWaveTurns);	// TAC - AI Revolution - koma13
 
@@ -7627,8 +7624,6 @@ void CvHandicapInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iNBMOD_REF_Weight);
 	/** NBMOD REF **/
 
-	stream->Write(m_iOppressometerGrowthHandicap);
-
 	stream->WriteString(m_szHandicapName);
 
 	stream->Write(m_iWaveTurns);	// TAC - AI Revolution - koma13
@@ -7657,7 +7652,6 @@ bool CvHandicapInfo::read(CvXMLLoadUtility* pXML)
 	/** NBMOD REF **/
 	pXML->GetChildXmlValByName(&m_iNBMOD_REF_Weight, "iNBMOD_REF_Weight");
 	/** NBMOD REF **/
-	pXML->GetChildXmlValByName(&m_iOppressometerGrowthHandicap, "iOppressometerGrowthHandicap");
 	pXML->GetChildXmlValByName(&m_iAdvancedStartPointsMod, "iAdvancedStartPointsMod");
 	pXML->GetChildXmlValByName(&m_iStartingGold, "iGold");
 	pXML->GetChildXmlValByName(&m_iFatherPercent, "iFatherPercent");
@@ -17111,11 +17105,6 @@ int CvHandicapInfo::getAIMaxTaxrate() const
 	return m_iAIMaxTaxrate;
 }
 // TAC - AI More Immigrants - koma13 - END
-
-int CvHandicapInfo::getOppressometerGrowthHandicap() const
-{
-    return m_iOppressometerGrowthHandicap;
-}
 
 // trade screen type - start - Nightinggale
 CvTradeLocationInfo::CvTradeLocationInfo()
