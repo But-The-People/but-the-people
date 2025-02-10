@@ -808,7 +808,8 @@ public:
 	//void changeYieldBoughtTotalPortRoyal(YieldTypes eYield, int iChange);
 	// WTP, ray, Yields Traded Total for Africa and Port Royal - END
 
-	YieldTypes getHighestTradedYield() const;
+	bool hasHighestTradedYield() const;
+	YieldTypes getHighestTradedYield(bool bCalledFrom_hasHighestTradedYield = false) const;
 	int getHighestStoredYieldCityId(YieldTypes eYield) const;
 
 	DllExport void doAction(PlayerActionTypes eAction, int iData1, int iData2, int iData3);
