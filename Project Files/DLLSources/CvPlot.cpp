@@ -1420,20 +1420,28 @@ int CvPlot::getSeeFromLevelUncached() const
 
 bool CvPlot::visibilityNeedsUpdating(ImprovementTypes eNewImprovement) const
 {
-	int value = 0;
+	int seeFrom = 0;
+	int plotVisibility = 0;
+	int unitVisibility = 0;
 	const ImprovementTypes eCurrentImprovement = getImprovementType();
 	
 	if (eCurrentImprovement != NO_IMPROVEMENT)
 	{
-		value = GC.getImprovementInfo(eCurrentImprovement).getSeeFrom();
+		const CvImprovementInfo& info = GC.getImprovementInfo(eCurrentImprovement);
+		seeFrom = info.getSeeFrom();
+		plotVisibility = info.getPlotVisibilityChange();
+		unitVisibility = info.getUnitVisibilityChange();
 	}
 	
 	if (eNewImprovement != NO_IMPROVEMENT)
 	{
-		value -= GC.getImprovementInfo(eNewImprovement).getSeeFrom();
+		const CvImprovementInfo& info = GC.getImprovementInfo(eNewImprovement);
+		seeFrom -= info.getSeeFrom();
+		plotVisibility -= info.getPlotVisibilityChange();
+		unitVisibility -= info.getUnitVisibilityChange();
 	}
 	
-	return value != 0;
+	return seeFrom != 0 || plotVisibility != 0 || unitVisibility != 0;
 }
 
 void CvPlot::setSeeFromLevelCache()
@@ -6031,8 +6039,12 @@ void CvPlot::setTerrainType(TerrainTypes eNewValue, bool bRecalculate, bool bReb
 		m_eTerrainType = eNewValue;
 
 		// update caches right away as they are used by updateSeeFromSight
-		setSeeFromLevelCache();
-		setSeeThroughLevelCache();
+		if (bUpdateSight)
+		{
+			setSeeFromLevelCache();
+			setSeeThroughLevelCache();
+		}
+		
 		updateImpassable();
 
 		updateYield(true);
@@ -6120,7 +6132,11 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 
 		// update caches right away as they are used by updateSeeFromSight
 		updateImpassable();
-		setSeeThroughLevelCache();
+
+		if (bUpdateSight)
+		{
+			setSeeThroughLevelCache();
+		}
 
 		updateYield(true);
 
@@ -6254,9 +6270,12 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 		m_eImprovementType = eNewValue;
 
 		// update caches right away as they are used by updateSeeFromSight
-		setSeeFromLevelCache();
-		setPlotVisibilityCache();
-		setUnitVisibilityBonusCache();
+		if (bUpdateSight)
+		{
+			setSeeFromLevelCache();
+			setPlotVisibilityCache();
+			setUnitVisibilityBonusCache();
+		}
 
 		if (getImprovementType() == NO_IMPROVEMENT)
 		{
