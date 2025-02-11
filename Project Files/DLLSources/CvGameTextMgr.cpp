@@ -5507,12 +5507,6 @@ void CvGameTextMgr::setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit,
 		//End TAC Whaling, ray
 	}
 
-	if (kUnitInfo.isOnlyDefensive())
-	{
-		szBuffer.append(NEWLINE);
-		szBuffer.append(gDLL->getText("TXT_KEY_UNIT_ONLY_DEFENSIVE"));
-	}
-
 	// WTP, ray, new Harbour System - START
 	if (GLOBAL_DEFINE_ENABLE_NEW_HARBOUR_SYSTEM && kUnitInfo.getHarbourSpaceNeeded() > 0)
 	{
