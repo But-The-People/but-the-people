@@ -1418,6 +1418,24 @@ int CvPlot::getSeeFromLevelUncached() const
 	return iLevel;
 }
 
+bool CvPlot::visibilityNeedsUpdating(ImprovementTypes eNewImprovement) const
+{
+	int value = 0;
+	const ImprovementTypes eCurrentImprovement = getImprovementType();
+	
+	if (eCurrentImprovement != NO_IMPROVEMENT)
+	{
+		value = GC.getImprovementInfo(eCurrentImprovement).getSeeFrom();
+	}
+	
+	if (eNewImprovement != NO_IMPROVEMENT)
+	{
+		value -= GC.getImprovementInfo(eNewImprovement).getSeeFrom();
+	}
+	
+	return value != 0;
+}
+
 void CvPlot::setSeeFromLevelCache()
 {
 	m_seeFromLevelCache = getSeeFromLevelUncached();
@@ -1458,6 +1476,47 @@ int CvPlot::getSeeThroughLevelUncached() const
 	}
 
 	return iLevel;
+}
+
+bool CvPlot::visibilityNeedsUpdating(FeatureTypes eNewFeature) const
+{
+	int value = 0;
+	const FeatureTypes eCurrentFeature = getFeatureType();
+	
+	if (eCurrentFeature != NO_FEATURE)
+	{
+		value = GC.getFeatureInfo(eCurrentFeature).getSeeThroughChange();
+	}
+	
+	if (eNewFeature != NO_FEATURE)
+	{
+		value -= GC.getFeatureInfo(eNewFeature).getSeeThroughChange();
+	}
+	
+	return value != 0;
+}
+
+bool CvPlot::visibilityNeedsUpdating(TerrainTypes eNewTerrain) const
+{
+	int seeThrough = 0;
+	int seeFrom = 0;
+	const TerrainTypes eCurrentTerrain = getTerrainType();
+
+	if (eCurrentTerrain != NO_TERRAIN)
+	{
+		const CvTerrainInfo& info = GC.getTerrainInfo(eCurrentTerrain);
+		seeThrough = info.getSeeThroughLevel();
+		seeFrom = info.getSeeFromLevel();
+	}
+	
+	if (eNewTerrain != NO_TERRAIN)
+	{
+		const CvTerrainInfo& info = GC.getTerrainInfo(eNewTerrain);
+		seeThrough -= info.getSeeThroughLevel();
+		seeFrom -= info.getSeeFromLevel();
+	}
+	
+	return seeThrough != 0 || seeFrom != 0;
 }
 
 void CvPlot::setSeeThroughLevelCache()
@@ -5960,21 +6019,9 @@ void CvPlot::setCoastline(bool bRecalculate, bool bRebuildGraphics)
 
 void CvPlot::setTerrainType(TerrainTypes eNewValue, bool bRecalculate, bool bRebuildGraphics)
 {
-	bool bUpdateSight;
-
 	if (getTerrainType() != eNewValue)
 	{
-		if ((getTerrainType() != NO_TERRAIN) &&
-			  (eNewValue != NO_TERRAIN) &&
-			  ((GC.getTerrainInfo(getTerrainType()).getSeeFromLevel() != GC.getTerrainInfo(eNewValue).getSeeFromLevel()) ||
-				 (GC.getTerrainInfo(getTerrainType()).getSeeThroughLevel() != GC.getTerrainInfo(eNewValue).getSeeThroughLevel())))
-		{
-			bUpdateSight = true;
-		}
-		else
-		{
-			bUpdateSight = false;
-		}
+		const bool bUpdateSight = visibilityNeedsUpdating(eNewValue);
 
 		if (bUpdateSight)
 		{
@@ -6026,10 +6073,7 @@ FeatureTypes CvPlot::getVariable(FeatureTypes) const
 
 void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 {
-	FeatureTypes eOldFeature;
-	bool bUpdateSight;
-
-	eOldFeature = getFeatureType();
+	const FeatureTypes eOldFeature = getFeatureType();
 
 	if (eNewValue != NO_FEATURE)
 	{
@@ -6064,16 +6108,7 @@ void CvPlot::setFeatureType(FeatureTypes eNewValue, int iVariety)
 
 	if ((eOldFeature != eNewValue) || (m_iFeatureVariety != iVariety))
 	{
-		if ((eOldFeature == NO_FEATURE) ||
-			  (eNewValue == NO_FEATURE) ||
-			  (GC.getFeatureInfo(eOldFeature).getSeeThroughChange() != GC.getFeatureInfo(eNewValue).getSeeThroughChange()))
-		{
-			bUpdateSight = true;
-		}
-		else
-		{
-			bUpdateSight = false;
-		}
+		const bool bUpdateSight = visibilityNeedsUpdating(eNewValue);
 
 		if (bUpdateSight)
 		{
@@ -6207,8 +6242,13 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 			}
 		}
 
+		const bool bUpdateSight = visibilityNeedsUpdating(eNewValue);
+
 		// Super Forts begin *vision*
-		updateSight(false);
+		if (bUpdateSight)
+		{
+			updateSeeFromSight(false);
+		}
 		// Super Forts end
 
 		m_eImprovementType = eNewValue;
@@ -6254,9 +6294,10 @@ void CvPlot::setImprovementType(ImprovementTypes eNewValue)
 			}
 		}
 
-
-		updateSight(true); // Super Forts *vision*
-
+		if (bUpdateSight)
+		{
+			updateSeeFromSight(true); // Super Forts *vision*
+		}
 
 		updateYield(true);
 

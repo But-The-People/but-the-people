@@ -660,6 +660,10 @@ protected:
 	int getPlotVisibilityUncached() const;
 	int getUnitVisibilityBonusUncached() const;
 
+	bool visibilityNeedsUpdating(ImprovementTypes eNewImprovement) const;
+	bool visibilityNeedsUpdating(FeatureTypes eNewFeature) const;
+	bool visibilityNeedsUpdating(TerrainTypes eNewTerrain) const;
+
 	bool hasYieldUncached() const;
 	bool m_bHasYield;
 	// CvPlot::hasYield cache - end - Nightinggale
