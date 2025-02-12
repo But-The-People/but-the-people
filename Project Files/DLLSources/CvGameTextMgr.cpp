@@ -6489,8 +6489,27 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 	if (!bCivilopediaText)
 	{
 		// R&R, ray , MYCP partially based on code of Aymerick - START
-		szTempBuffer.Format( SETCOLR L"<link=literal>%s</link>" ENDCOLR , TEXT_COLOR("COLOR_BUILDING_TEXT"), kBuilding.getDescription());
+		szTempBuffer.Format(SETCOLR L"<link=literal>%s</link>" ENDCOLR, TEXT_COLOR("COLOR_BUILDING_TEXT"), kBuilding.getDescription());
 		szBuffer.append(szTempBuffer);
+
+		int aiYields[NUM_YIELD_TYPES];
+		for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
+		{
+			aiYields[eYield] = kBuilding.getYieldChange(eYield);
+
+			if (NULL != pCity)
+			{
+				aiYields[eYield] += pCity->getBuildingYieldChange((BuildingClassTypes)kBuilding.getBuildingClassType(), eYield);
+			}
+
+			if (ePlayer != NO_PLAYER)
+			{
+				aiYields[eYield] += GET_PLAYER(ePlayer).getBuildingYieldChange((BuildingClassTypes)kBuilding.getBuildingClassType(), eYield);
+			}
+		}
+		setYieldChangeHelp(szBuffer, L", ", L"", L"", aiYields, false, false);
+		setYieldChangeHelp(szBuffer, L", ", L"", L"", kBuilding.getYieldModifierArray(), true, bCivilopediaText);
+
 		// R&R, ray , fix conflict MYCP and MYPB
 		// std::vector<YieldTypes> eBuildingYieldsConversion;
 		if (kBuilding.getProfessionOutput() != 0)
@@ -6545,23 +6564,6 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 			}
 		}
 		// R&R, ray , MYCP partially based on code of Aymerick - END
-		int aiYields[NUM_YIELD_TYPES];
-		for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
-		{
-			aiYields[eYield] = kBuilding.getYieldChange(eYield);
-
-			if (NULL != pCity)
-			{
-				aiYields[eYield] += pCity->getBuildingYieldChange((BuildingClassTypes)kBuilding.getBuildingClassType(), eYield);
-			}
-
-			if (ePlayer != NO_PLAYER)
-			{
-				aiYields[eYield] += GET_PLAYER(ePlayer).getBuildingYieldChange((BuildingClassTypes)kBuilding.getBuildingClassType(), eYield);
-			}
-		}
-		setYieldChangeHelp(szBuffer, L", ", L"", L"", aiYields, false, false);
-		setYieldChangeHelp(szBuffer, L", ", L"", L"", kBuilding.getYieldModifierArray(), true, bCivilopediaText);
 	}
 
 	// test for unique building
