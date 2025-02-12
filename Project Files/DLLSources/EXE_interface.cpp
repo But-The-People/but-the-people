@@ -3342,10 +3342,15 @@ public:
 
 		getVisibleImprovementState
 			?getVisibleImprovementState@CvPlot@@QAEXAAW4ImprovementTypes@@AA_N@Z=?getVisibleImprovementState@EXE_CvPlot@@QAEXAAW4ImprovementTypes@@AA_N@Z
+			*/
 
-		getWorkingCity
-			?getWorkingCity@CvPlot@@QBEPAVCvCity@@XZ=?getWorkingCity@EXE_CvPlot@@QBEPAVCvCity@@XZ
+	#pragma comment(linker, "/EXPORT:?getWorkingCity@CvPlot@@QBEPAVCvCity@@XZ=?getWorkingCity@EXE_CvPlot@@QBEPAVCvCity@@XZ")
+	DllExport CvCity* getWorkingCity() const
+	{
+		return CvPlot::getWorkingCity();
+	}
 
+			/*
 		getX
 			?getX@CvPlot@@QBEHXZ=?getX@EXE_CvPlot@@QBEHXZ
 
