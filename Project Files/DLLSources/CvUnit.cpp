@@ -14363,6 +14363,13 @@ int CvUnit::getTriggerValue(EventTriggerTypes eTrigger, const CvPlot* pPlot, boo
 		return MIN_INT;
 	}
 
+	if (plot() == NULL)
+	{
+		FAssert(getUnitTravelState() != NO_UNIT_TRAVEL_STATE);
+		// this feels a bit like a fix for symptoms rather than cause because units should be on plots. However at least this way the game won't crash.
+		return MIN_INT;
+	}
+
 	if (!isEmpty(kTrigger.getPythonCanDoUnit()))
 	{
 		long lResult;
