@@ -89,7 +89,7 @@ public:
 	// PYTHON HELPER FUNCTIONS
 	//int getNumPlayerOwnedPlots(int /*PlayerTypes*/ iPlayer);
 
-	void updateWaterPlotTerrainTypes(); // autodetect lakes
+	void closeWB();
 
 	int getCityCatchmentRadius() const;
 	void setCityCatchmentRadiusMapMaker(int iSetting);

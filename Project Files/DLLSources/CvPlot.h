@@ -514,7 +514,7 @@ public:
 	DllExport const char* getResourceLayerIcon(ResourceLayerOptions eOption, CvWStringBuffer& szHelp, PlotIndicatorVisibilityFlags& eVisibilityFlag, ColorTypes& eColor) const;
 	DllExport CvUnit* getUnitLayerUnit(UnitLayerOptionTypes eOption, CvWStringBuffer& szHelp, PlotIndicatorVisibilityFlags& eVisibilityFlag, ColorTypes& eColor, bool& bTestEnemyVisibility) const;
 
-	void postLoadFixes();
+	void postLoadFixes(int iStep);
 
 	void read(CvSavegameReader reader);
 	void write(CvSavegameWriter writer);

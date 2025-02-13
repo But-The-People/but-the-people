@@ -329,13 +329,11 @@ void CyMap::calculateCanalAndChokePoints()
 }
 // Super Forts end
 
+void closeWBcacheSetup();
 // autodetect lakes - start
-void CyMap::updateWaterPlotTerrainTypes()
+void CyMap::closeWB()
 {
-	if (m_pMap)
-	{
-		m_pMap->updateWaterPlotTerrainTypes();
-	}
+	closeWBcacheSetup();
 }
 // autodetect lakes - end
 

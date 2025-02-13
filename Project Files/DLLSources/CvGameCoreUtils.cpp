@@ -2289,6 +2289,24 @@ CvWString getUnitAIStateString(UnitAIStates eUnitAIState)
 }
 
 
+void closeWBcacheSetup()
+{
+	CvMap& kMap = GC.getMap();
+	kMap.updateWaterPlotTerrainTypes(); // autodetect lakes
+	const int iNumPlots = kMap.numPlotsINLINE();
+
+	for (int iI = 0; iI < iNumPlots; ++iI)
+	{
+		kMap.plotByIndexINLINE(iI)->postLoadFixes(0);
+	}
+
+	// set proper cache for all plots (doable now that the entire savegame have been loaded)
+	for (int iI = 0; iI < iNumPlots; ++iI)
+	{
+		kMap.plotByIndexINLINE(iI)->postLoadFixes(1);
+	}
+}
+
 /// post load function - start - Nightinggale
 //
 // This function is called whenever a savegame finish loading
@@ -2304,18 +2322,15 @@ void postLoadGameFixes()
 	kMap.updateWaterPlotTerrainTypes(); // autodetect lakes
 	const int iNumPlots = kMap.numPlotsINLINE();
 
-	// reset visibility count as it is garbage right now
-	// this might not be needed anymore, but keep it just to be safe
-	// Nightinggale
 	for (int iI = 0; iI < iNumPlots; ++iI)
 	{
-		kMap.plotByIndexINLINE(iI)->m_em_iVisibilityCount.reset();
+		kMap.plotByIndexINLINE(iI)->postLoadFixes(0);
 	}
 
 	// set proper cache for all plots (doable now that the entire savegame have been loaded)
 	for (int iI = 0; iI < iNumPlots; ++iI)
 	{
-		kMap.plotByIndexINLINE(iI)->postLoadFixes();
+		kMap.plotByIndexINLINE(iI)->postLoadFixes(1);
 	}
 
 	// deal with players

@@ -187,7 +187,7 @@ class CvWorldBuilderScreen:
 		CvScreensInterface.hideWorldBuilderDiplomacyScreen()
 
 		# autodetect lakes - start
-		gc.getMap().updateWaterPlotTerrainTypes()
+		gc.getMap().closeWB()
 		# autodetect lakes - end
 
 	def handleInput (self, inputClass):

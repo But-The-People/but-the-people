@@ -10444,24 +10444,40 @@ void CvPlot::__template_declaration_func()
 }
 
 // setting up cache after loading a game
-void CvPlot::postLoadFixes()
+void CvPlot::postLoadFixes(int iStep)
 {
-	// update count for clearing fog of war
-	updateSight(true);
-
-	// tells if a plot can produce yields or not
-	// Surprisingly CPU heavy, hence cached
-	setYieldCache();
-	updateYield(false);
-
-	// A vanilla bug could leave deleted cities in m_workingCity after the city was deleted.
-	// This caused issues if a new city managed to get the same ID.
-	// The bug has been fixed and this code is to correct invalid cache in savegames from before the fix.
-	CvCity* pCity = getCity(m_workingCity);
-	if ((pCity == NULL && m_workingCity.iID != -1) ||
-		(pCity && pCity->coord().distance(coord()) > CITY_PLOTS_RADIUS))
+	switch (iStep)
 	{
-		m_workingCity.reset();
+	case 0:
+		// set cache, which doesn't rely on cache from other plirs
+		m_em_iVisibilityCount.reset();
+		
+		setSeeFromLevelCache();
+		setSeeThroughLevelCache();
+		setPlotVisibilityCache();
+		setUnitVisibilityBonusCache();
+		break;
+	case 1:
+		// step 0 has been completed for all plots, so now we can rely on the cache set there
+
+		// update count for clearing fog of war
+		updateSight(true);
+
+		// tells if a plot can produce yields or not
+		// Surprisingly CPU heavy, hence cached
+		setYieldCache();
+		updateYield(false);
+
+		// A vanilla bug could leave deleted cities in m_workingCity after the city was deleted.
+		// This caused issues if a new city managed to get the same ID.
+		// The bug has been fixed and this code is to correct invalid cache in savegames from before the fix.
+		CvCity* pCity = getCity(m_workingCity);
+		if ((pCity == NULL && m_workingCity.iID != -1) ||
+			(pCity && pCity->coord().distance(coord()) > CITY_PLOTS_RADIUS))
+		{
+			m_workingCity.reset();
+		}
+		break;
 	}
 }
 

@@ -52,7 +52,7 @@ void CyMapPythonInterface2(python::class_<CyMap>& x)
 		.def("updateMinOriginalStartDist", &CyMap::updateMinOriginalStartDist, "void (CyArea* pArea)")		
 		.def("calculateCanalAndChokePoints", &CyMap::calculateCanalAndChokePoints, "void ()")// Super Forts  *canal* *choke*
 
-		.def("updateWaterPlotTerrainTypes", &CyMap::updateWaterPlotTerrainTypes, "void ()") // autodetect lakes
+		.def("closeWB", &CyMap::closeWB, "void ()")
 		
 		.def("getCityCatchmentRadius", &CyMap::getCityCatchmentRadius, "int ()")
 		.def("setCityCatchmentRadiusMapMaker", &CyMap::setCityCatchmentRadiusMapMaker, "void (int)")
