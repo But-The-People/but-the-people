@@ -590,9 +590,7 @@ public:
 
 	// unit iteration
 	DllExport CvUnit* firstUnit(int *pIterIdx) const;
-	CvUnit* firstUnitInternal(int* pIterIdx) const;
 	DllExport CvUnit* nextUnit(int *pIterIdx) const;
-	CvUnit* nextUnitInternal(int* pIterIdx) const;
 	DllExport int getNumUnits() const;
 	int getNumShips() const;// WTP, ray, easily counting Ships - START
 	DllExport CvUnit* getUnit(int iID) const;
@@ -1247,6 +1245,9 @@ protected:
 
 	void testOOSanDoEvent(EventTypes eEvent, bool bSuccess) const;
 	void testOOSanDoGoody(GoodyTypes eGoody, int iUnitID, bool bSuccess) const;
+
+	CvUnit* firstUnitInternal(int* pIterIdx) const;
+	CvUnit* nextUnitInternal(int* pIterIdx) const;
 
 	// Temp unit which is used to generate paths for hypothetical units.
 	// Kept around rather than created each usage to avoid chewing through the ID space.
