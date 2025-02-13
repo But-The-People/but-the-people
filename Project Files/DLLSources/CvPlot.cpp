@@ -6493,11 +6493,11 @@ void CvPlot::setPlotCity(CvCity* pNewValue)
 }
 
 
-CvCity* CvPlot::getWorkingCity(bool bIgnoreAssertTest) const
+CvCity* CvPlot::getWorkingCity() const
 {
 	CvCity* pCity = getCity(m_workingCity);
-	FAssertMsg(bIgnoreAssertTest || SAVEGAME_IS_LOADING || pCity == NULL || pCity->coord().distance(coord()) <= CITY_PLOTS_RADIUS, "Plot has a working city, which is out of range");
-	FAssertMsg(bIgnoreAssertTest || SAVEGAME_IS_LOADING || pCity != NULL || m_workingCity.iID == -1, "Plot has m_workingCity with a city ID, which doesn't exist");
+	FAssertMsg(CityKill::isActive() || SAVEGAME_IS_LOADING || pCity == NULL || pCity->coord().distance(coord()) <= CITY_PLOTS_RADIUS, "Plot has a working city, which is out of range");
+	FAssertMsg(CityKill::isActive() || SAVEGAME_IS_LOADING || pCity != NULL || m_workingCity.iID == -1, "Plot has m_workingCity with a city ID, which doesn't exist");
 	return pCity;
 }
 
@@ -6558,8 +6558,7 @@ void CvPlot::updateWorkingCity()
 		}
 	}
 
-	// disable assert test for getWorkingCity because if this is called as part of CvCity::kill(), then the city is already gone
-	pOldWorkingCity = getWorkingCity(true);
+	pOldWorkingCity = getWorkingCity();
 
 	if (pOldWorkingCity != pBestCity || (pOldWorkingCity == NULL && m_workingCity.iID != -1))
 	{

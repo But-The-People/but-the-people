@@ -362,7 +362,7 @@ public:
 	void updateCityRoute();
 	DllExport CvCity* getPlotCity() const;
 	void setPlotCity(CvCity* pNewValue);
-	CvCity* getWorkingCity(bool bIgnoreAssertTest = false) const;
+	CvCity* getWorkingCity() const;
 	void updateWorkingCity();
 	CvCity* getWorkingCityOverride() const;
 	void setWorkingCityOverride( const CvCity* pNewValue);

@@ -12,6 +12,19 @@ class CvArea;
 class CvGenericBuilding;
 class CvInfoBase;
 
+class CityKill
+{
+	// class to report if any function in the call stack has a CityKill instance
+	// this allows functions to know this without adding a bool argument in the entire chain of calls
+public:
+	CityKill();
+	~CityKill();
+	
+	static bool isActive();
+private:
+	static int m_iActiveCount;
+};
+
 class CvCity : public CvDLLEntity
 {
 public:

@@ -514,6 +514,9 @@
     <ClCompile Include="DLLSources\Info\EventTriggerInfo.cpp">
       <Filter>Classes\Info\CPP</Filter>
     </ClCompile>
+    <ClCompile Include="DLLSources\StaticVariables.cpp">
+      <Filter>CV\CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DLLSources\CvArea.h">

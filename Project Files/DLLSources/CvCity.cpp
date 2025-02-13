@@ -36,6 +36,22 @@
 
 #pragma warning( disable: 4355 ) // using this as initializer in constructor
 
+CityKill::CityKill()
+{
+	++m_iActiveCount;
+}
+
+CityKill::~CityKill()
+{
+	--m_iActiveCount;
+}
+
+bool CityKill::isActive()
+{
+	return m_iActiveCount > 0;
+}
+
+
 CvCity::CvCity()
 	: m_yields(*this)
 {
@@ -410,6 +426,8 @@ void CvCity::setupGraphical()
 
 void CvCity::kill()
 {
+	CityKill killCounter; // activate CityKill::isActive() until this goes out of scope
+
 	CvPlot* pPlot = plot();
 
 	removeTradeRoutes();
