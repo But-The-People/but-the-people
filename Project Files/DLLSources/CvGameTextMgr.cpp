@@ -8698,7 +8698,7 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 	if (iUnproduced > 0)
 	{
 		// R&R, ray , MYCP partially based on code of Aymerick - START
-		std::vector<YieldTypes> eMissing;
+		std::set<YieldTypes> sMissingInputYields;
 		for (int i = 0; i < city.getPopulation(); ++i)
 		{
 			CvUnit* pUnit = city.getPopulationUnitByIndex(i);
@@ -8718,7 +8718,7 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 								{
 									if (city.getYieldStored(eYieldConsumed) < city.getRawYieldConsumed(eYieldConsumed))
 									{
-										eMissing.push_back((YieldTypes) GC.getProfessionInfo(eProfession).getYieldsConsumed(k));
+										sMissingInputYields.insert((YieldTypes) GC.getProfessionInfo(eProfession).getYieldsConsumed(k));
 									}
 								}
 							}
@@ -8727,30 +8727,36 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 				}
 			}
 		}
-		if (!eMissing.empty())
+		if (!sMissingInputYields.empty())
 		{
 			CvWString szYieldsList;
-			for (std::vector<YieldTypes>::iterator it = eMissing.begin(); it != eMissing.end(); ++it)
+			std::set<YieldTypes>::iterator it = sMissingInputYields.begin();
+
+			for (; it != sMissingInputYields.end(); ++it)
 			{
 				if (!szYieldsList.empty())
 				{
-					if (*it == eMissing.back())
+					std::set<YieldTypes>::iterator itNext = it;
+					++itNext; // Manually advance to check if it's the last element
+
+					if (itNext == sMissingInputYields.end()) // Last element
 					{
-						szYieldsList += CvWString::format(gDLL->getText("TXT_KEY_AND"));
+						szYieldsList += CvWString::format(gDLL->getText("TXT_KEY_AND")); // Add "and" before last element
 					}
 					else
 					{
 						szYieldsList += L", ";
 					}
 				}
+
 				szYieldsList += CvWString::format(L"%c", GC.getYieldInfo(*it).getChar());
 			}
+
 			iBaseProduction -= iUnproduced;
 			szBuffer.append(NEWLINE);
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_UNPRODUCED_CITY_YIELD_SPECIFIC", -iUnproduced, info.getChar(), szYieldsList.GetCString()));
 		}
-		// R&R, ray , MYCP partially based on code of Aymerick - END
-	}
+	}		// R&R, ray , MYCP partially based on code of Aymerick - END
 
 	int iModifiedProduction = city.yields().getBaseRawYieldProduced(eYieldType);
 	if (iBaseProduction != 0)
