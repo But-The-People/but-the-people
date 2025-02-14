@@ -1205,7 +1205,7 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 			int iCost;
 			if (USE_CLASSIC_MOVEMENT_SYSTEM)
 			{
-				iCost = PATH_MOVEMENT_WEIGHT * (iMovesLeft == 0 ? iMoveCost : iMoveCost);
+				iCost = PATH_MOVEMENT_WEIGHT * (iMovesLeft == 0 ? iMaxMoves : iMoveCost);
 			}
 			else
 			{
