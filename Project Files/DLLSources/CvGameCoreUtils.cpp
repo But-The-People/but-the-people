@@ -36,6 +36,7 @@
 #define PATH_DAMAGE_WEIGHT								(500)
 // R&R, Robert Surcouf, Damage on Storm plots, End
 #define PATH_COMBAT_WEIGHT								(300) // K-Mod. penalty for having to fight along the way.
+#define TURN_PENALTY_WEIGHT								(10000)
 
 CvPlot* plotCity(int iX, int iY, int iIndex)
 {
@@ -1210,6 +1211,15 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 			else
 			{
 				iCost = PATH_MOVEMENT_WEIGHT * iMoveCost;
+				// For non-classical movement, add extra penalty for additional turns.
+				int baseTurnCost = pLoopUnit->maxMoves() * GLOBAL_DEFINE_MOVE_DENOMINATOR;
+				// Note: iMoveCost here has been scaled by PATH_MOVEMENT_WEIGHT already.
+				// If the cost exceeds what can be paid in one turn, add a penalty.
+				if (iCost > baseTurnCost)
+				{
+					int extraTurns = (iCost - baseTurnCost + baseTurnCost - 1) / baseTurnCost;
+					iCost += extraTurns * TURN_PENALTY_WEIGHT;
+				}
 			}
 
 			iCost = (iCost * iExploreModifier) / 3;
