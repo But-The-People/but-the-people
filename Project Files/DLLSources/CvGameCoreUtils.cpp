@@ -1788,7 +1788,16 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 				{
 					iUnitMoves -= plot_list[i - 1]->movementCost(pLoopUnit, plot_list[i]/*,
 						false*/); // advc.001i
-					FAssert(iUnitMoves > 0 || i == 1);
+
+					if (USE_CLASSIC_MOVEMENT_SYSTEM)
+					{
+						FAssert(iUnitMoves > 0 || i == 1);
+					}
+					else
+					{
+						// TODO: Get the most costly terrain/feature combo path cost from xml and use it as the threshold
+						FAssert(iUnitMoves >= -500); // Note: does not have to be accurate, just enough to detect corruption etc.
+					}
 				}
 				if (USE_CLASSIC_MOVEMENT_SYSTEM)
 				{
