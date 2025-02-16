@@ -6881,6 +6881,7 @@ bool CvUnitAI::AI_sailTo(const SailToHelper& sth, bool bMove, bool bIgnoreDanger
 	int iBestValue = 0;
 	CvPlot* pBestPlot = NULL;
 	CvPlot* pBestMissionPlot = NULL;
+	int iBestTurns = INT_MAX;
 
 	for (int iI = 0; iI < GC.getMap().numPlotsINLINE(); iI++)
 	{
@@ -6903,12 +6904,9 @@ bool CvUnitAI::AI_sailTo(const SailToHelper& sth, bool bMove, bool bIgnoreDanger
 			int iPathTurns;
 			if (generatePath(pLoopPlot, MOVE_BUST_FOG, true, &iPathTurns/*, bIgnoreDanger*/))
 			{
-				int iValue = 10000;
-				iValue /= 100 + getPathCost();
-
-				if (iValue > iBestValue)
+				if (iPathTurns < iBestTurns)
 				{
-					iBestValue = iValue;
+					iBestTurns = iPathTurns;
 					pBestPlot = getPathEndTurnPlot();
 					pBestMissionPlot = pLoopPlot;
 				}
