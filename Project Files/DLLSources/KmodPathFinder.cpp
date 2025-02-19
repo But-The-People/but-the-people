@@ -27,15 +27,12 @@ void KmodPathFinder::InitHeuristicWeights()
 	for (RouteTypes eRoute = FIRST_ROUTE; eRoute < NUM_ROUTE_TYPES; ++eRoute)
 	{
 		const CvRouteInfo& kInfo = GC.getRouteInfo(eRoute);
+
+		// Required to prevent the "dummy" Raft Station entry from potentially influencing the heuristic
+		if (kInfo.isGraphicalOnly())
+			continue;
+
 		const int iCost = kInfo.getMovementCost();
-		// WTP: No tech tree yet :(
-		/*
-		for (int t = 0; t < GC.getNumTechInfos(); t++)
-		{
-			if (kInfo.getTechMovementChange(t) < 0)
-				iCost += kInfo.getTechMovementChange(t);
-		}
-		*/
 		admissible_base_weight = std::min(admissible_base_weight, iCost);
 		admissible_scaled_weight = std::min(admissible_scaled_weight, kInfo.getFlatMovementCost());
 	}
