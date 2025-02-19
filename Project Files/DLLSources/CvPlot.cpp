@@ -1570,7 +1570,7 @@ int CvPlot::getUnitVisibilityBonusUncached() const
 
 int CvPlot::getUnitVisibilityBonus() const
 {
-	FAssert(m_iUnitVisibilityBonusCache == getUnitVisibilityBonusUncached());
+	FAssert(GAME_IS_STARTING_UP || m_iUnitVisibilityBonusCache == getUnitVisibilityBonusUncached());
 	return m_iUnitVisibilityBonusCache;
 }
 
