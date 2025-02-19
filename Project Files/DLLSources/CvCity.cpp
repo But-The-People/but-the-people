@@ -5095,10 +5095,10 @@ void CvCity::calculateNetYields(int aiYields[NUM_YIELD_TYPES], int* aiProducedYi
 		}
 	}
 
-	for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
+	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 	{
-		FAssert((iYield == YIELD_FOOD) || (aiYields[iYield] >= 0));
-		aiYields[iYield] -= getYieldStored((YieldTypes) iYield);
+		FAssertMsg((eYield == YIELD_FOOD) || (aiYields[eYield] >= 0), CvString::format("%s=%d", GC.getYieldInfo(eYield).getType(), aiYields[eYield]).c_str());
+		aiYields[eYield] -= getYieldStored(eYield);
 	}
 
 	// Immigration
