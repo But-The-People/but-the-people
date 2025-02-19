@@ -288,10 +288,12 @@ void KmodPathFinder::SetSettings(const CvPathSettings& new_settings)
 					// of what is essentially a sea-road that cuts movement cost in half 
 					settings.iHeuristicWeight = GLOBAL_DEFINE_MOVE_DENOMINATOR / 2;
 				else
-					// K-Mod "this assume there are no sea-roads, or promotions to reduce sea movement cost."
-					// Note that WTP does have such promotions but they cannot presently reduce movement below
-					// the move denominator
 					settings.iHeuristicWeight = GLOBAL_DEFINE_MOVE_DENOMINATOR;
+
+				// Quick hack to accomodate double-feature movement promotions
+				// TODO: We need to cache any water feature double movement promotion so that we
+				// can replace the below with a proper computation
+				settings.iHeuristicWeight /= 2;
 			}
 			else
 			{
