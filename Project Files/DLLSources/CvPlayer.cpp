@@ -19380,10 +19380,9 @@ void CvPlayer::doPrices()
 	}
 }
 
-//returns a tax hike chnace out of 1000
+//returns a tax hike chance out of 1000
 const int CvPlayer::getTaxRaiseChance()
 {
-	const int MAX_ATTITUDE_ADJUST = GLOBAL_DEFINE_TAX_RATE_ATTITUDE_BOUND;
 	FAssertMsg(isEurope(), "Only the European Homeland player - i.e the King - should calculate tax raises on his colony");
 	FAssertMsg(getColonyPlayer() != NULL, "getColonyPlayer() is not initialized");
 	CvPlayer& pColony = *getColonyPlayer();
@@ -19391,31 +19390,27 @@ const int CvPlayer::getTaxRaiseChance()
 	FAssertMsg(getColony() == pColony.getID(), "The Europe player shall rise taxes on his own colonies only");
 
 	if (GC.getEraInfo(getCurrentEra()).isRevolution()) return 0;
-	if (hasHighestTradedYield()) return 0;
+	if (!hasHighestTradedYield()) return 0;
 
 	// If the colony is already above the max tax rate, then there is no chance
 	if (pColony.getTaxRate() >= pColony.NBMOD_GetMaxTaxRate()) return 0;
 
-	// the revenue fraction  for tax purpose is now calculated here
+	// the revenue fraction for tax purpose is now calculated here
 	if (getFullYieldScore(true) <= getTaxThresold(true)) return 0;
 
 	int iAttitudeModifier = AI().AI_getAttitudeVal(pColony.getID()) * GLOBAL_DEFINE_TAX_TRADE_INCREASE_CHANCE_KING_ATTITUDE_BASE;
 
-	if (iAttitudeModifier > MAX_ATTITUDE_ADJUST)
+	if (iAttitudeModifier > GLOBAL_DEFINE_TAX_RATE_ATTITUDE_BOUND)
 	{
-		iAttitudeModifier = MAX_ATTITUDE_ADJUST;
+		iAttitudeModifier = GLOBAL_DEFINE_TAX_RATE_ATTITUDE_BOUND;
 	}
-	if (iAttitudeModifier < -MAX_ATTITUDE_ADJUST)
+	if (iAttitudeModifier < -GLOBAL_DEFINE_TAX_RATE_ATTITUDE_BOUND)
 	{
-		iAttitudeModifier = -MAX_ATTITUDE_ADJUST;
+		iAttitudeModifier = -GLOBAL_DEFINE_TAX_RATE_ATTITUDE_BOUND;
 	}
-
 
 	return  1000 * GLOBAL_DEFINE_TAX_INCREASE_CHANCE / (100 + iAttitudeModifier);
-
 }
-
-
 
 void CvPlayer::doTaxRaises()
 {
@@ -19428,26 +19423,15 @@ void CvPlayer::doTaxRaises()
 	CvPlayer& pColony = *getColonyPlayer();
 	FAssertMsg(getColony() == pColony.getID(), "The Europe player shall rise taxes on his own colonies only");
 
-	if (GC.getEraInfo(getCurrentEra()).isRevolution()) return;
-	if (hasHighestTradedYield()) return;
+	const int iTaxChangeChance = getTaxRaiseChance();
 
-	// the revenue fraction  for tax purpose is now calculated here
-	if (getFullYieldScore(true) <= getTaxThresold(true) ) return; // we have not traded enough yet;
+	if (iTaxChangeChance <= 0)
+		return; // no change of a tax increase
 
-
-	int iAttitudeModifier = AI().AI_getAttitudeVal(pColony.getID()) * GLOBAL_DEFINE_TAX_TRADE_INCREASE_CHANCE_KING_ATTITUDE_BASE;
-
-	if (iAttitudeModifier > MAX_ATTITUDE_ADJUST)
-	{
-		iAttitudeModifier = MAX_ATTITUDE_ADJUST;
-	}
-	if (iAttitudeModifier < -MAX_ATTITUDE_ADJUST)
-	{
-		iAttitudeModifier = -MAX_ATTITUDE_ADJUST;
-	}
-
-	if (GC.getGameINLINE().getSorenRandNum(100 + iAttitudeModifier, "Tax rate increase") >= GLOBAL_DEFINE_TAX_INCREASE_CHANCE)
+	if (GC.getGameINLINE().getSorenRandNum(1000, "Tax rate increase") >= iTaxChangeChance)
 		return; //Nah, we don't feel like increasing the tax right away
+
+	FAssert(hasHighestTradedYield());
 
 	const int iOldTaxRate = pColony.getTaxRate();
 	int iAttemptedNewTaxRate = iOldTaxRate + 1 + GC.getGameINLINE().getSorenRandNum(GLOBAL_DEFINE_TAX_RATE_MAX_INCREASE, "Tax Rate Increase");
