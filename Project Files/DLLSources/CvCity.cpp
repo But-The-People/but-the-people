@@ -10688,6 +10688,14 @@ int CvCity::getUnhappinessFromMissingDefense() const
 
 int CvCity::getUnhappinessFromTaxRate() const
 {
+	const CvPlayer& owner = GET_PLAYER(getOwnerINLINE());
+
+	if (!owner.is(CIV_CATEGORY_COLONIAL))
+	{
+		// only colonial players pay tax and as such has settings for taxes
+		return 0;
+	}
+
 	int iUnHapTax = 0;
 
 	int iTaxDivisor = GC.getTAX_DIVISOR_UNHAPPINESS();
@@ -10697,7 +10705,7 @@ int CvCity::getUnhappinessFromTaxRate() const
 		iTaxDivisor = 1;
 	}
 
-	int iCurrentTaxRate = GET_PLAYER(getOwnerINLINE()).getTaxRate();
+	int iCurrentTaxRate = owner.getTaxRate();
 	iUnHapTax = iCurrentTaxRate / iTaxDivisor;
 
 	// to ensure that small cities are not hit too much by Unhappiness from Taxes
