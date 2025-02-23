@@ -4478,7 +4478,8 @@ bool CvUnit::canLoadUnit(const CvUnit* pTransport, const CvPlot* pPlot, bool bCh
 	// Prohibit a unit with hidden nationality from boarding a non-hidden nat. transport
 	// This also fixes the bug that allows buccanneers to attack a ship if a friendly ship is 
 	// present on the same plot (see #877)
-	if (m_pUnitInfo->isHiddenNationality() &&
+	if (m_pUnitInfo->getDefaultUnitAIType() != UNITAI_YIELD &&
+		m_pUnitInfo->isHiddenNationality() &&
 		!pTransport->getUnitInfo().isHiddenNationality())
 	{
 		return false;
