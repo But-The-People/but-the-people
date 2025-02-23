@@ -1708,4 +1708,20 @@
 		<DefineName>BASE_TERRAINS_WITHOUT_FEATURE_PERCENTAGE</DefineName>
 		<iDefineIntVal>20</iDefineIntVal>
 	</Define>
+	<Define>
+		<!--
+			trade counter. The higher it is, the more likely a negative price change (drops for exports and increase for imports.
+			It increases with each off map trade, so to prevent it from going astronomical, counters are needed.
+			Turn decay: counter is multiplied by this each turn, then divided by 1024.
+			Price change: counter is multiplied by this when a price changes, then divided by 1024
+			Unlike vanilla, this won't reset on tax changes.
+		-->
+		<DefineName>TRADE_DECAY_TURN</DefineName>
+		<iDefineIntVal>1020</iDefineIntVal>
+	</Define>
+	<Define>
+		<!-- see comments for TRADE_DECAY_TURN -->
+		<DefineName>TRADE_DECAY_PRICE_CHANGE</DefineName>
+		<iDefineIntVal>128</iDefineIntVal>
+	</Define>
 </Civ4Defines>

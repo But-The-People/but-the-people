@@ -16116,6 +16116,8 @@ void CvPlayer::setYieldBuyPrice(YieldTypes eYield, int iPrice, bool bMessage)
 	FAssert(eYield >= 0);
 	FAssert(eYield < NUM_YIELD_TYPES);
 
+	const YieldTypes eOriginalYield = eYield;
+
 	// TAC - Price Limits - Ray - START
 //	iPrice = std::max(iPrice, 1);
 
@@ -16476,6 +16478,8 @@ void CvPlayer::setYieldBuyPrice(YieldTypes eYield, int iPrice, bool bMessage)
 
 		m_em_iYieldBuyPrice.set(eYield, iPrice);
 
+		applyYieldTradedModifier(TRADE_LOCATION_EUROPE, eOriginalYield, GLOBAL_DEFINE_TRADE_DECAY_PRICE_CHANGE);
+
 		gDLL->getInterfaceIFace()->setDirty(EuropeScreen_DIRTY_BIT, true);
 
 		if (bMessage)
@@ -16538,17 +16542,16 @@ void CvPlayer::sellYieldUnitToEurope(CvUnit* pUnit, int iAmount, int iCommission
 				// R&R, ray, Smuggling - START
 				// int iProfit = getSellToEuropeProfit(eYield, iAmount * (100 - iCommission) / 100);
 				int iProfit = 0;
-				int iBribe = GC.getDefineINT("SMUGGLING_BRIBE_RATE");
 				int iSellPrice;
 				if (bSmuggling)
 				{
 					if (!isYieldEuropeTradable(eYield))
 					{
 						int minPrice = GC.getYieldInfo(eYield).getMinimumBuyPrice();
-						iProfit = iAmount * minPrice * (100 - iBribe) / 100;
+						iProfit = iAmount * minPrice * (100 - GLOBAL_DEFINE_SMUGGLING_BRIBE_RATE) / 100;
 						iSellPrice = minPrice; // R&R, vetiarvind, Price dependent tax rate change
 					}
-					else if (iBribe > iCommission) // R&R, ray, small change from C.B.
+					else if (GLOBAL_DEFINE_SMUGGLING_BRIBE_RATE > iCommission) // R&R, ray, small change from C.B.
 					{
 						iProfit = getSellToEuropeProfit(eYield, iAmount * (100 - iCommission) / 100);
 						iSellPrice = -1; // R&R, vetiarvind, Price dependent tax rate change: -1 will use Europe Sale price
@@ -16557,7 +16560,7 @@ void CvPlayer::sellYieldUnitToEurope(CvUnit* pUnit, int iAmount, int iCommission
 					{
 						CvPlayer& kPlayerEurope = GET_PLAYER(getParent());
 						int price = kPlayerEurope.getYieldBuyPrice(eYield);
-						iProfit = iAmount * price  * (100 - iBribe) / 100;
+						iProfit = iAmount * price  * (100 - GLOBAL_DEFINE_SMUGGLING_BRIBE_RATE) / 100;
 						iSellPrice = price; // R&R, vetiarvind, Price dependent tax rate change
 					}
 
@@ -16584,18 +16587,16 @@ void CvPlayer::sellYieldUnitToEurope(CvUnit* pUnit, int iAmount, int iCommission
 					pUnit->kill(bDelayedDeath);
 				}
 
-				for (int i = 0; i < GC.getNumFatherPointInfos(); ++i)
+				for (FatherPointTypes ePointType = FIRST_FATHER_POINT; ePointType < NUM_FATHER_POINT_TYPES; ++ePointType)
 				{
-					FatherPointTypes ePointType = (FatherPointTypes) i;
-
 					changeFatherPoints(ePointType, iProfit * GC.getFatherPointInfo(ePointType).getEuropeTradeGoldPointPercent() / 100);
 				}
 
 				CvWStringBuffer szMessage;
 				// R&R, ray, Smuggling - START
-				if (bSmuggling && !(iBribe > iCommission)) // R&R, ray, small change from C.B.
+				if (bSmuggling && !(GLOBAL_DEFINE_SMUGGLING_BRIBE_RATE > iCommission)) // R&R, ray, small change from C.B.
 				{
-					GAMETEXT.setEuropeYieldSoldHelp(szMessage, *this, eYield, iAmount, iBribe);
+					GAMETEXT.setEuropeYieldSoldHelp(szMessage, *this, eYield, iAmount, GLOBAL_DEFINE_SMUGGLING_BRIBE_RATE);
 				}
 				else
 				{
@@ -16912,6 +16913,8 @@ void CvPlayer::setYieldAfricaBuyPrice(YieldTypes eYield, int iPrice, bool bMessa
 {
 	FAssert(eYield >= 0);
 	FAssert(eYield < NUM_YIELD_TYPES);
+
+	const YieldTypes eOriginalYield = eYield;
 
 	// TAC - Price Limits - Ray - START
 	//	iPrice = std::max(iPrice, 1);
@@ -17271,6 +17274,8 @@ void CvPlayer::setYieldAfricaBuyPrice(YieldTypes eYield, int iPrice, bool bMessa
 
 		m_em_iYieldAfricaBuyPrice.set(eYield, iPrice);
 
+		applyYieldTradedModifier(TRADE_LOCATION_AFRICA, eOriginalYield, GLOBAL_DEFINE_TRADE_DECAY_PRICE_CHANGE);
+
 		gDLL->getInterfaceIFace()->setDirty(AfricaScreen_DIRTY_BIT, true);
 
 		// no message because it would get too much
@@ -17475,6 +17480,8 @@ void CvPlayer::setYieldPortRoyalBuyPrice(YieldTypes eYield, int iPrice, bool bMe
 {
 	FAssert(eYield >= 0);
 	FAssert(eYield < NUM_YIELD_TYPES);
+
+	const YieldTypes eOriginalYield = eYield;
 
 	// TAC - Price Limits - Ray - START
 	//	iPrice = std::max(iPrice, 1);
@@ -17833,6 +17840,8 @@ void CvPlayer::setYieldPortRoyalBuyPrice(YieldTypes eYield, int iPrice, bool bMe
 		// TAC - Price Limits - Ray - END
 
 		m_em_iYieldPortRoyalBuyPrice.set(eYield, iPrice);
+
+		applyYieldTradedModifier(TRADE_LOCATION_PORT_ROYAL, eOriginalYield, GLOBAL_DEFINE_TRADE_DECAY_PRICE_CHANGE);
 
 		gDLL->getInterfaceIFace()->setDirty(PortRoyalScreen_DIRTY_BIT, true);
 
@@ -18504,7 +18513,19 @@ int CvPlayer::getYieldBoughtTotal(TradeLocationTypes eLocation, YieldTypes eYiel
 {
 	FAssert(isInRange(eLocation));
 	FAssert(eYield >= 0 && eYield < NUM_YIELD_TYPES);
-	return m_em_iYieldBoughtTotal[eLocation].get(eYield);
+	return is(CIV_CATEGORY_COLONIAL) ? m_em_iYieldBoughtTotal[eLocation].get(eYield) : -m_em_iYieldSoldTotal[eLocation].get(eYield);
+}
+
+void CvPlayer::applyYieldTradedModifier(TradeLocationTypes eLocation, YieldTypes eYield, int iMultiplier)
+{
+	FAssert(isInRange(eLocation));
+	FAssert(eYield >= 0 && eYield < NUM_YIELD_TYPES);
+	FAssert(is(CIV_CATEGORY_KING));
+	
+	long long iCountBuffer = m_em_iYieldSoldTotal[eLocation].get(eYield);
+	iCountBuffer *= iMultiplier;
+	iCountBuffer = iCountBuffer >> 10;
+	m_em_iYieldSoldTotal[eLocation].set(eYield, (int)iCountBuffer);
 }
 
 int CvPlayer::getCrossesStored() const
@@ -19358,6 +19379,8 @@ void CvPlayer::doPrices()
 	OOS_LOG("CvPlayer::doPrices start", getID());
 	FAssertMsg(isEurope(), "Only the European Homeland player - i.e the King - should calculate price changes in Europe");
 
+	const int iSpeedModifier = GC.getHandicapInfo(getHandicapType()).getEuropePriceThresholdMultiplier() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
+
 	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_CARGO_YIELD_TYPES; ++eYield)
 	{
 		const CvYieldInfo& kYield = GC.getYieldInfo(eYield);
@@ -19367,7 +19390,9 @@ void CvPlayer::doPrices()
 		GC.getGameINLINE().changeYieldBoughtTotal(TRADE_LOCATION_EUROPE, getID(), eYield, kYield.getEuropeVolumeAttrition());
 		//Androrc End
 
-		int iBaseThreshold = kYield.getPriceChangeThreshold() * GC.getHandicapInfo(getHandicapType()).getEuropePriceThresholdMultiplier() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent() / 10000;
+		applyYieldTradedModifier(TRADE_LOCATION_EUROPE, eYield, GLOBAL_DEFINE_TRADE_DECAY_TURN);
+
+		int iBaseThreshold = kYield.getPriceChangeThreshold() * iSpeedModifier / 10000;
 		int iNewPrice = kYield.getBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getBuyPriceHigh() - kYield.getBuyPriceLow() + 1, "Price selection");
 		iNewPrice += getYieldBoughtTotal(TRADE_LOCATION_EUROPE, eYield) / std::max(1, iBaseThreshold);
 
@@ -19385,20 +19410,20 @@ const int CvPlayer::getTaxRaiseChance()
 {
 	FAssertMsg(isEurope(), "Only the European Homeland player - i.e the King - should calculate tax raises on his colony");
 	FAssertMsg(getColonyPlayer() != NULL, "getColonyPlayer() is not initialized");
-	CvPlayer& pColony = *getColonyPlayer();
+	CvPlayer& kColony = *getColonyPlayer();
 
-	FAssertMsg(getColony() == pColony.getID(), "The Europe player shall rise taxes on his own colonies only");
+	FAssertMsg(getColony() == kColony.getID(), "The Europe player shall rise taxes on his own colonies only");
 
 	if (GC.getEraInfo(getCurrentEra()).isRevolution()) return 0;
 	if (!hasHighestTradedYield()) return 0;
 
 	// If the colony is already above the max tax rate, then there is no chance
-	if (pColony.getTaxRate() >= pColony.NBMOD_GetMaxTaxRate()) return 0;
+	if (kColony.getTaxRate() >= kColony.NBMOD_GetMaxTaxRate()) return 0;
 
 	// the revenue fraction for tax purpose is now calculated here
 	if (getFullYieldScore(true) <= getTaxThresold(true)) return 0;
 
-	int iAttitudeModifier = AI().AI_getAttitudeVal(pColony.getID()) * GLOBAL_DEFINE_TAX_TRADE_INCREASE_CHANCE_KING_ATTITUDE_BASE;
+	int iAttitudeModifier = AI().AI_getAttitudeVal(kColony.getID()) * GLOBAL_DEFINE_TAX_TRADE_INCREASE_CHANCE_KING_ATTITUDE_BASE;
 
 	if (iAttitudeModifier > GLOBAL_DEFINE_TAX_RATE_ATTITUDE_BOUND)
 	{
@@ -19414,14 +19439,11 @@ const int CvPlayer::getTaxRaiseChance()
 
 void CvPlayer::doTaxRaises()
 {
-	//Note : the calculation of Tax Raises chance in const int getTaxRaiseChance() just above must match the algorithm down here
-	const int MAX_ATTITUDE_ADJUST = GLOBAL_DEFINE_TAX_RATE_ATTITUDE_BOUND;
-
 	FAssertMsg(isEurope(), "Only the European Homeland player - i.e the King - should calculate tax raises on his colony");
 	FAssertMsg(getColonyPlayer() != NULL, "getColonyPlayer() is not initialized");
 
-	CvPlayer& pColony = *getColonyPlayer();
-	FAssertMsg(getColony() == pColony.getID(), "The Europe player shall rise taxes on his own colonies only");
+	CvPlayer& kColony = *getColonyPlayer();
+	FAssertMsg(getColony() == kColony.getID(), "The Europe player shall rise taxes on his own colonies only");
 
 	const int iTaxChangeChance = getTaxRaiseChance();
 
@@ -19433,11 +19455,11 @@ void CvPlayer::doTaxRaises()
 
 	FAssert(hasHighestTradedYield());
 
-	const int iOldTaxRate = pColony.getTaxRate();
+	const int iOldTaxRate = kColony.getTaxRate();
 	int iAttemptedNewTaxRate = iOldTaxRate + 1 + GC.getGameINLINE().getSorenRandNum(GLOBAL_DEFINE_TAX_RATE_MAX_INCREASE, "Tax Rate Increase");
-	int iNewTaxRate = pColony.NBMOD_GetNewTaxRate(iAttemptedNewTaxRate);
+	int iNewTaxRate = kColony.NBMOD_GetNewTaxRate(iAttemptedNewTaxRate);
 
-	if (!pColony.isHuman())
+	if (!kColony.isHuman())
 	{
 		int iAIMaxTaxRate = GC.getHandicapInfo(getHandicapType()).getAIMaxTaxrate();
 		if (iNewTaxRate > iAIMaxTaxRate)
@@ -19453,13 +19475,13 @@ void CvPlayer::doTaxRaises()
 	int iChange = iNewTaxRate - iOldTaxRate;
 	if(iChange > 0)
 	{
-		if(pColony.isHuman())
+		if(kColony.isHuman())
 		{
-			pColony.taxIncreaseDiploCall(iOldTaxRate, iNewTaxRate, iChange);
+			kColony.taxIncreaseDiploCall(iOldTaxRate, iNewTaxRate, iChange);
 		}
 		else
 		{
-			pColony.changeTaxRate(iChange);
+			kColony.changeTaxRate(iChange);
 		}
 	}
 
@@ -19482,11 +19504,12 @@ void CvPlayer::doAfricaPrices()
 	OOS_LOG("CvPlayer::doAfricaPrices start", getID());
 	if (isEurope())
 	{
+		const int iSpeedModifier = GC.getHandicapInfo(getHandicapType()).getEuropePriceThresholdMultiplier() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
+
 		for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_CARGO_YIELD_TYPES; ++eYield)
 		{
 			const CvYieldInfo& kYield = GC.getYieldInfo(eYield);
 
-			if (kYield.isCargo())
 			{
 				// WTP, ray, Yields Traded Total for Africa and Port Royal - START
 				// R&R, Androrc Price Recovery
@@ -19494,7 +19517,9 @@ void CvPlayer::doAfricaPrices()
 				//Androrc End
 				// WTP, ray, Yields Traded Total for Africa and Port Royal - END
 
-				int iBaseThreshold = kYield.getPriceChangeThreshold() * GC.getHandicapInfo(getHandicapType()).getEuropePriceThresholdMultiplier() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent() / 10000;
+				applyYieldTradedModifier(TRADE_LOCATION_AFRICA, eYield, GLOBAL_DEFINE_TRADE_DECAY_TURN);
+
+				int iBaseThreshold = kYield.getPriceChangeThreshold() * iSpeedModifier / 10000;
 				int iNewPrice = kYield.getAfricaBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getAfricaBuyPriceHigh() - kYield.getAfricaBuyPriceLow() + 1, "Price selection");
 				iNewPrice += getYieldBoughtTotal(TRADE_LOCATION_AFRICA, eYield) / std::max(1, iBaseThreshold); // WTP, ray, Yields Traded Total for Africa and Port Royal - START
 
@@ -19516,11 +19541,12 @@ void CvPlayer::doPortRoyalPrices()
 	OOS_LOG("CvPlayer::DoPortRoyalPrices start", getID());
 	if (isEurope())
 	{
+		const int iSpeedModifier = GC.getHandicapInfo(getHandicapType()).getEuropePriceThresholdMultiplier() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
+
 		for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_CARGO_YIELD_TYPES; ++eYield)
 		{
 			const CvYieldInfo& kYield = GC.getYieldInfo(eYield);
 
-			if (kYield.isCargo())
 			{
 				// WTP, ray, Yields Traded Total for Africa and Port Royal - START
 				// R&R, Androrc Price Recovery
@@ -19528,7 +19554,9 @@ void CvPlayer::doPortRoyalPrices()
 				//Androrc End
 				// WTP, ray, Yields Traded Total for Africa and Port Royal - END
 
-				int iBaseThreshold = kYield.getPriceChangeThreshold() * GC.getHandicapInfo(getHandicapType()).getEuropePriceThresholdMultiplier() * GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent() / 10000;
+				applyYieldTradedModifier(TRADE_LOCATION_PORT_ROYAL, eYield, GLOBAL_DEFINE_TRADE_DECAY_TURN);
+
+				int iBaseThreshold = kYield.getPriceChangeThreshold() * iSpeedModifier / 10000;
 				int iNewPrice = kYield.getPortRoyalBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getPortRoyalBuyPriceHigh() - kYield.getPortRoyalBuyPriceLow() + 1, "Price selection");
 				iNewPrice += getYieldBoughtTotal(TRADE_LOCATION_PORT_ROYAL, eYield) / std::max(1, iBaseThreshold); // WTP, ray, Yields Traded Total for Africa and Port Royal - START
 

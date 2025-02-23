@@ -1208,6 +1208,8 @@ protected:
 	const int getFullYieldScore(bool fullCalculation);//WTP, jburet, Tax Reform
 	const int getTaxThresold(bool fullCalculation);//WTP, jburet, Tax Reform
 
+	void applyYieldTradedModifier(TradeLocationTypes eLocation, YieldTypes eYield, int iMultiplier);
+
 	bool checkExpireEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData) const;
 	void expireEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData, bool bFail);
 	CvCity* pickTriggerCity(EventTriggerTypes eTrigger) const;
