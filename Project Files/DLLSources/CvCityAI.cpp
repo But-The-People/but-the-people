@@ -3327,57 +3327,63 @@ BestJob AI_findBestJob(const CvCityAI& kCity, ProfessionTypes eProfession, const
 
 struct FindBestJob
 {
-	FindBestJob(const std::vector<ProfessionTypes>& valid_, const CvCityAI& kCity_, const CvUnit& kUnit_, bool bIndoorOnly_) :
-		valid(valid_), kCity(kCity_), kUnit(kUnit_), bIndoorOnly(bIndoorOnly_), bestJob() {}
+	FindBestJob(const std::vector<std::vector<ProfessionTypes> >& groups_, const CvCityAI& kCity_, const CvUnit& kUnit_, bool bIndoorOnly_) :
+		groups(groups_), kCity(kCity_), kUnit(kUnit_), bIndoorOnly(bIndoorOnly_), bestJob() {}
 
-	FindBestJob(const FindBestJob& x, tbb::split) : valid(x.valid), kCity(x.kCity), kUnit(x.kUnit), bIndoorOnly(x.bIndoorOnly), bestJob()
+	FindBestJob(const FindBestJob& x, tbb::split) : groups(x.groups), kCity(x.kCity), kUnit(x.kUnit), bIndoorOnly(x.bIndoorOnly), bestJob()
 	{};
 
+	// operator() processes each sub-vector in [r.begin(), r.end())
 	void operator()(const tbb::blocked_range<size_t>& r)
 	{
-		const size_t end = r.end();
-
-		for (size_t i = r.begin(); i != end; ++i)
+		for (size_t groupIndex = r.begin(); groupIndex < r.end(); ++groupIndex)
 		{
-			const BestJob currentBestJob = AI_findBestJob(kCity, valid[i],  kUnit, bIndoorOnly);
+			const std::vector<ProfessionTypes>& group = groups[groupIndex];
 
-			update(currentBestJob);
+			// Process this group's professions *serially*
+			for (size_t i = 0; i < group.size(); ++i)
+			{
+				const ProfessionTypes eProf = group[i];
+				// Evaluate the job
+				const BestJob currentBestJob = AI_findBestJob(kCity, eProf, kUnit, bIndoorOnly);
+
+				// Update partial best job
+				update(currentBestJob);
+			}
 		}
 	}
-
-	void join(const FindBestJob& x)
+	
+	// Join operation merges partial results from two sub-reductions
+	void join(const FindBestJob& rhs)
 	{
-		update(x.bestJob);
+		update(rhs.bestJob);
 	}
 
+	// The final result after the reduction
 	BestJob bestJob;
 
 private:
 
+	// Update the partial best with a new candidate
 	void update(const BestJob& potentialBestJob)
 	{
 		if (potentialBestJob.iBestValue > bestJob.iBestValue)
 		{
-			// Update best job since we've found a better one
 			bestJob = potentialBestJob;
 		}
-		// Tie-breaker clause
-#if 0
-		else if (bestJob.eBestProfession != NO_PROFESSION && potentialBestJob.iBestValue == bestJob.iBestValue)
+		// Tie-breaker to ensure deterministic ordering when values match
+		else if (bestJob.eBestProfession != NO_PROFESSION &&
+			potentialBestJob.iBestValue == bestJob.iBestValue)
 		{
-			// Prefer the lowest profession index to preserve commutative ordering
+			// Prefer the lowest profession index for consistent ordering
 			if (potentialBestJob.eBestProfession < bestJob.eBestProfession)
 			{
-				// BUG: We can't really swap units this freely. What about swapping slot and plot workers, slaves and experts ?
-				// Swap anyway, even if the values are the same we must preserve
-				// deterministic ordering
 				bestJob = potentialBestJob;
 			}
 		}
-#endif
 	}
 
-	const std::vector<ProfessionTypes>& valid;
+	const std::vector<std::vector<ProfessionTypes> >& groups;
 	const CvCityAI& kCity;
 	const CvUnit& kUnit;
 	bool bIndoorOnly;
@@ -3386,9 +3392,7 @@ private:
 
 CvUnit* CvCityAI::AI_parallelAssignToBestJob(CvUnit& kUnit, bool bIndoorOnly)
 {
-	const std::vector<ProfessionTypes>& kValidCityJobs = GET_PLAYER(getOwnerINLINE()).m_validCityJobProfessions;
-
-	FindBestJob fbj(GET_PLAYER(getOwnerINLINE()).m_validCityJobProfessions, *this, kUnit, bIndoorOnly);
+	FindBestJob fbj(GET_PLAYER(getOwnerINLINE()).m_professionGroups, *this, kUnit, bIndoorOnly);
 
 	// Get the rng state prior to starting a concurrent operation
 	unsigned long rngStatePrior = GC.getGameConst().getSorenRand().peek();
@@ -3396,7 +3400,7 @@ CvUnit* CvCityAI::AI_parallelAssignToBestJob(CvUnit& kUnit, bool bIndoorOnly)
 	// TODO: Determine if 8 bits are enough
 	// TODO: Split in two ranges to better balance the workload (plot vs. building workers) ?
 	// TODO: Maybe set grainsize to the number of professions that we expect to iterate through divided by the
-	Threads::parallel_reduce(tbb::blocked_range<size_t>(0, kValidCityJobs.size()), fbj, tbb::auto_partitioner());
+	Threads::parallel_reduce(tbb::blocked_range<size_t>(0, GET_PLAYER(getOwnerINLINE()).m_professionGroups.size()), fbj, tbb::auto_partitioner());
 
 	// Assert that the rng state is the same after the concurrent operation has completed
 	unsigned long rngStatePost = GC.getGameConst().getSorenRand().peek();

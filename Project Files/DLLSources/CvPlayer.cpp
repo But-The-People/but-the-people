@@ -25,8 +25,6 @@
 #include "CyPlot.h"
 #include "CvTradeRoute.h"
 #include "CvTradeRouteGroup.h" //R&R mod, vetiarvind, trade groups
-#include <numeric>
-#include <algorithm>
 
 #include "CvDLLInterfaceIFaceBase.h"
 #include "CvDLLEntityIFaceBase.h"
@@ -38,6 +36,10 @@
 #include "CvSavegame.h"
 #include "BetterBTSAI.h"
 
+#include <algorithm>
+#include <numeric>
+#include <map>
+#include <vector>
 
 // Public Functions...
 
@@ -25007,6 +25009,240 @@ void CvPlayer::sortEuropeUnits()
 	std::sort(m_aEuropeUnits.begin(), m_aEuropeUnits.end(), compareUnitValue);
 }
 
+bool SharesCommonInput(ProfessionTypes profA, ProfessionTypes profB)
+{
+	const CvProfessionInfo& infoA = GC.getProfessionInfo(profA);
+	const CvProfessionInfo& infoB = GC.getProfessionInfo(profB);
+
+	int numConsumedA = infoA.getNumYieldsConsumed();
+	int numConsumedB = infoB.getNumYieldsConsumed();
+
+	for (int i = 0; i < numConsumedA; ++i)
+	{
+		int yA = infoA.getYieldsConsumed(i);
+		if (yA == NO_YIELD)
+			continue;
+
+		for (int j = 0; j < numConsumedB; ++j)
+		{
+			int yB = infoB.getYieldsConsumed(j);
+			if (yB == NO_YIELD)
+				continue;
+
+			if (yA == yB)
+			{
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+namespace
+{
+
+// Find parent with path compression
+int findParent(std::vector<int>& parent, int i)
+{
+	if (parent[i] != i)
+	{
+		parent[i] = findParent(parent, parent[i]);
+	}
+	return parent[i];
+}
+
+void unionSets(std::vector<int>& parent, int i, int j)
+{
+	int ri = findParent(parent, i);
+	int rj = findParent(parent, j);
+	if (ri != rj)
+	{
+		parent[rj] = ri;  // Or any other union heuristic
+	}
+}
+
+
+// Main function to partition a list of professions into connected components.
+std::vector<std::vector<ProfessionTypes> >
+partitionProfessions(const std::vector<ProfessionTypes>& validProfs)
+{
+	// Number of professions we want to partition
+	int n = static_cast<int>(validProfs.size());
+	std::vector<int> parent(n);
+
+	// Initialize union-find parent array
+	for (int i = 0; i < n; ++i)
+	{
+		parent[i] = i;
+	}
+
+	// For each pair of professions, check if they should be unified.
+	for (int i = 0; i < n; ++i)
+	{
+		const CvProfessionInfo& infoI = GC.getProfessionInfo(validProfs[i]);
+		int buildingI = infoI.getSpecialBuilding();
+
+		for (int j = i + 1; j < n; ++j)
+		{
+			const CvProfessionInfo& infoJ = GC.getProfessionInfo(validProfs[j]);
+			int buildingJ = infoJ.getSpecialBuilding();
+
+			// 1) Check for same special building (non-NO_SPECIALBUILDING)
+			bool shareBuilding = false;
+			if (buildingI != NO_SPECIALBUILDING && buildingJ != NO_SPECIALBUILDING && buildingI == buildingJ)
+			{
+				shareBuilding = true;
+			}
+
+			// 2) Check for shared input yields
+			bool shareInput = SharesCommonInput(validProfs[i], validProfs[j]);
+
+			if (shareBuilding || shareInput)
+			{
+				unionSets(parent, i, j);
+			}
+		}
+	}
+
+	// Collect the connected components by parent
+	std::map<int, std::vector<ProfessionTypes> > groupsMap;
+	for (int i = 0; i < n; ++i)
+	{
+		int root = findParent(parent, i);
+		groupsMap[root].push_back(validProfs[i]);
+	}
+
+	// Convert map to final vector-of-vectors
+	std::vector<std::vector<ProfessionTypes> > result;
+	for (std::map<int, std::vector<ProfessionTypes> >::iterator it = groupsMap.begin();
+		it != groupsMap.end(); ++it)
+	{
+		result.push_back(it->second);
+	}
+
+	return result;
+}
+
+// For clarity, rename your union-find result type as well.
+typedef std::vector<ProfessionTypes> ProfessionGroup;
+
+// A small helper to get the size of a group easily
+static inline size_t groupSize(const ProfessionGroup& g)
+{
+	return g.size();
+}
+
+// Named comparator struct in C++03 style.
+struct CompareGroupSize
+{
+	bool operator()(const ProfessionGroup& a, const ProfessionGroup& b) const
+	{
+		return a.size() < b.size();
+	}
+};
+
+/**
+ * mergeGroupsBestEffort (C++03 compatible)
+ *
+ * Sorts groups by ascending size (using CompareGroupSize), then accumulates them
+ * in a greedy manner so that each merged group ends up with total size around minGroupSize.
+ *
+ * - If a group alone is >= minGroupSize, we keep it separate.
+ * - Otherwise, we accumulate small groups together until adding the next
+ *   would exceed minGroupSize, at which point we flush the current group.
+ *
+ * This yields a "best effort" approach, preventing a single massive group while
+ * also minimizing the number of trivial tasks (tiny groups).
+ */
+std::vector<ProfessionGroup> mergeGroups(
+	const std::vector<ProfessionGroup>& unionFindGroups,
+	size_t minGroupSize)
+{
+	// Copy input groups so we can sort them
+	std::vector<ProfessionGroup> sortedGroups = unionFindGroups;
+
+	// Sort them ascending by group size using our named comparator
+	std::sort(sortedGroups.begin(), sortedGroups.end(), CompareGroupSize());
+
+	std::vector<ProfessionGroup> result;
+	ProfessionGroup accumulator; // We'll accumulate multiple small groups here
+	size_t currentSize = 0;      // Track total size of the accumulator
+
+	for (size_t i = 0; i < sortedGroups.size(); i++)
+	{
+		const ProfessionGroup& g = sortedGroups[i];
+		size_t gSize = g.size();
+
+		// If this group alone is >= minGroupSize, flush any accumulator first, then add it by itself.
+		if (gSize >= minGroupSize)
+		{
+			if (!accumulator.empty())
+			{
+				result.push_back(accumulator);
+				accumulator.clear();
+				currentSize = 0;
+			}
+			// Add the large group as a single group in the result.
+			result.push_back(g);
+		}
+		else
+		{
+			// The group is smaller than minGroupSize
+			// Check if we can add it to our accumulator
+			if (currentSize + gSize <= minGroupSize)
+			{
+				// Accumulate
+				accumulator.insert(accumulator.end(), g.begin(), g.end());
+				currentSize += gSize;
+			}
+			else
+			{
+				// Flushing the current accumulator first
+				if (!accumulator.empty())
+				{
+					result.push_back(accumulator);
+					accumulator.clear();
+				}
+				// Start a new accumulator with this group
+				accumulator = g;
+				currentSize = gSize;
+			}
+		}
+	}
+
+	// Flush the last accumulator if it has members
+	if (!accumulator.empty())
+	{
+		result.push_back(accumulator);
+	}
+
+	return result;
+}
+
+void logProfessionGroups(const std::vector<std::vector<ProfessionTypes> >& professionGroups, const CvWString& playerDesc)
+{
+	// Log the total number of groups for the given player.
+	logBBAI(" Player %S has %d profession groups", playerDesc.GetCString(), professionGroups.size());
+
+	// Iterate over each group.
+	for (size_t i = 0; i < professionGroups.size(); ++i)
+	{
+		const std::vector<ProfessionTypes>& group = professionGroups[i];
+
+		// Log the group index and its size.
+		logBBAI("  Group %d: size = %d", i, group.size());
+
+		// Log each profession in this group.
+		for (size_t j = 0; j < group.size(); ++j)
+		{
+			ProfessionTypes eProfession = group[j];
+			CvWString szProfessionName = GC.getProfessionInfo(eProfession).getDescription();
+			logBBAI("    Profession: %S", szProfessionName.GetCString());
+		}
+	}
+}
+} // End anon namespace
+
 void CvPlayer::postLoadFixes()
 {
 	checkPower(true);
@@ -25022,7 +25258,9 @@ void CvPlayer::postLoadFixes()
 
 		}
 
-		m_validCityJobProfessions.clear();
+		m_professionGroups.clear();
+		std::vector<ProfessionTypes> validCityJobProfessions;
+
 		// Notes from Nightinggale
 		// The xml data (all files) is ready at the end of CvXMLLoadUtility::readXMLfiles when bFirst is False
 		// CvXMLLoadUtility::readXMLfiles is in CvXMLLoadUtilitySet.cpp
@@ -25038,9 +25276,14 @@ void CvPlayer::postLoadFixes()
 		{
 			if (GC.getCivilizationInfo(getCivilizationType()).isValidProfession(eProfession) && GC.getProfessionInfo(eProfession).isCitizen())
 			{
-				m_validCityJobProfessions.push_back(eProfession);
+				validCityJobProfessions.push_back(eProfession);
 			}
 		}
+
+		// Init professions groups (each group is guaranteed to not share inputs nor building slots)
+		int iMinGroupSize = 5;
+		m_professionGroups = mergeGroups(partitionProfessions(validCityJobProfessions), iMinGroupSize);
+		logProfessionGroups(m_professionGroups, getCivilizationDescription(0));
 
 		m_em_iUnitClassMaking.reset();
 

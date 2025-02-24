@@ -1266,7 +1266,7 @@ public:
 	void postLoadFixes();
 
 	// Clean this up
-	std::vector<ProfessionTypes> m_validCityJobProfessions;
+	std::vector<std::vector<ProfessionTypes> > m_professionGroups;
 
 	CvUnit* getOrCreateTempUnit(UnitTypes eUnit, int iX, int iY);
 	void releaseTempUnit();
