@@ -118,8 +118,12 @@ void CvCity::init(int iID, PlayerTypes eOwner, Coordinates initCoord, bool bBump
 	reset(iID, eOwner, initCoord);
 	// R&R, ray, adjustment Domestic Markets for Luxury Goods needed
 	// R&R, Androrc, Domestic Market
-	if(!isNative())
+
+	const CvPlayerAI& owner = GET_PLAYER(getOwnerINLINE());
+
+	if (owner.is(CIV_CATEGORY_COLONIAL))
 	{
+		const CvPlayerAI& king = *owner.getParentPlayer();
 		for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 		{
 			const CvYieldInfo& kYield = GC.getYieldInfo(eYield);
@@ -130,17 +134,17 @@ void CvCity::init(int iID, PlayerTypes eOwner, Coordinates initCoord, bool bBump
 			// Luxury Goods should also give a little profit
 			if (eYield == YIELD_LUXURY_GOODS)
 			{
-				iBuyPrice = GET_PLAYER(getOwnerINLINE()).getYieldSellPrice(eYield) + GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_LUXURY_GOODS;
+				iBuyPrice = king.getYieldSellPrice(eYield) + GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_LUXURY_GOODS;
 			}
 			// WTP, now also Fieldworker Tools, but the Diff is only half
 			else if (eYield == YIELD_FIELD_WORKER_TOOLS)
 			{
-				iBuyPrice = GET_PLAYER(getOwnerINLINE()).getYieldSellPrice(eYield) + (GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_LUXURY_GOODS/ 2);
+				iBuyPrice = king.getYieldSellPrice(eYield) + (GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_LUXURY_GOODS/ 2);
 			}
 			// WTP, now also Household Goods, but the Diff is only half
 			else if (eYield == YIELD_HOUSEHOLD_GOODS)
 			{
-				iBuyPrice = GET_PLAYER(getOwnerINLINE()).getYieldSellPrice(eYield) + (GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_LUXURY_GOODS / 2);
+				iBuyPrice = king.getYieldSellPrice(eYield) + (GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_LUXURY_GOODS / 2);
 			}
 			else
 			{
@@ -13653,6 +13657,13 @@ int CvCity::getYieldDemand(YieldTypes eYield) const
 // needs to be checked for Special Cases like Luxury Goods
 void CvCity::doPrices()
 {
+	const CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
+	if (!kOwner.is(CIV_CATEGORY_COLONIAL))
+	{
+		return;
+	}
+	const CvPlayerAI& king = *kOwner.getParentPlayer();
+
 	// constants to determine when to change price
 	// higher iPointsPerPriceDiff will make prices move more towards Europe prices
 	// higher iPointsToTriggerPriceChange will increase the chance of no change
@@ -13665,9 +13676,8 @@ void CvCity::doPrices()
 	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_CARGO_YIELD_TYPES; ++eYield)
 	{
 		const CvYieldInfo& kYield = GC.getYieldInfo(eYield);
-		const CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
-
-		int iTargetPrice = kOwner.getYieldSellPrice(eYield);
+		
+		int iTargetPrice = king.getYieldSellPrice(eYield);
 
 		// todo: change price offset to an int in yield xml to make it configurable for each yield instead of hardcoding
 		switch (eYield)

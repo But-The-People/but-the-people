@@ -9477,7 +9477,7 @@ int CvPlayerAI::AI_yieldValue(YieldTypes eYield, bool bProduce, int iAmount, boo
 
 void CvPlayerAI::AI_updateYieldValues()
 {
-	if (isNative())
+	if (!is(CIV_CATEGORY_COLONIAL) && !is(CIV_CATEGORY_KING))
 	{
 		return;
 	}
@@ -9490,9 +9490,8 @@ void CvPlayerAI::AI_updateYieldValues()
 	}
 
 	CvPlayer& kParent = GET_PLAYER(eParent);
-	for (int i = 0; i < NUM_YIELD_TYPES; ++i)
+	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 	{
-		YieldTypes eYield = (YieldTypes)i;
 		int iValue = 0;
 		switch (eYield)
 		{

@@ -87,55 +87,41 @@ void CvPlayer::init(PlayerTypes eID)
 	m_ulRandomSeed = GC.getGameINLINE().getSorenRand().peek();
 
 	//assign europe civilization as parent
-	for (int iParent = 0; iParent < MAX_PLAYERS; ++iParent)
+	if (is(CIV_CATEGORY_COLONIAL))
 	{
-		CvPlayer& kParent = GET_PLAYER((PlayerTypes) iParent);
-		if(kParent.getCivilizationType() != NO_CIVILIZATION)
+		for (PlayerTypes eParent = FIRST_PLAYER; eParent < NUM_PLAYER_TYPES; ++eParent)
 		{
-			if(GC.getCivilizationInfo(kParent.getCivilizationType()).getDerivativeCiv() == getCivilizationType())
+			CvPlayer& kParent = GET_PLAYER(eParent);
+			if (kParent.getCivilizationType() != NO_CIVILIZATION)
 			{
-				setParent((PlayerTypes) iParent);
-				break;
+				if (GC.getCivilizationInfo(kParent.getCivilizationType()).getDerivativeCiv() == getCivilizationType())
+				{
+					setParent(eParent);
+					break;
+				}
 			}
 		}
 	}
 
-	for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
+	if (is(CIV_CATEGORY_KING))
 	{
-		YieldTypes eYield = (YieldTypes) iYield;
-		CvYieldInfo& kYield = GC.getYieldInfo(eYield);
+		for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_CARGO_YIELD_TYPES; ++eYield)
+		{
+			const CvYieldInfo& kYield = GC.getYieldInfo(eYield);
 
-		FAssert(kYield.getBuyPriceHigh() >= kYield.getBuyPriceLow());
+			FAssert(kYield.getBuyPriceHigh() >= kYield.getBuyPriceLow());
+			const int iBuyPrice = kYield.getBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getBuyPriceHigh() - kYield.getBuyPriceLow() + 1, "Yield Price");
+			setYieldBuyPrice(eYield, iBuyPrice, false);
 
-		int iBuyPrice = kYield.getBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getBuyPriceHigh() - kYield.getBuyPriceLow() + 1, "Yield Price");
-		setYieldBuyPrice(eYield, iBuyPrice, false);
+			FAssert(kYield.getAfricaBuyPriceHigh() >= kYield.getAfricaBuyPriceLow());
+			const int iAfricaBuyPrice = kYield.getAfricaBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getAfricaBuyPriceHigh() - kYield.getAfricaBuyPriceLow() + 1, "Yield Price");
+			setYieldAfricaBuyPrice(eYield, iAfricaBuyPrice, false);
+
+			FAssert(kYield.getPortRoyalBuyPriceHigh() >= kYield.getPortRoyalBuyPriceLow());
+			const int iPortRoyalBuyPrice = kYield.getPortRoyalBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getPortRoyalBuyPriceHigh() - kYield.getPortRoyalBuyPriceLow() + 1, "Yield Price");
+			setYieldPortRoyalBuyPrice(eYield, iPortRoyalBuyPrice, false);
+		}
 	}
-
-	// R&R, ray, Africa
-	for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
-	{
-		YieldTypes eYield = (YieldTypes) iYield;
-		CvYieldInfo& kYield = GC.getYieldInfo(eYield);
-
-		FAssert(kYield.getAfricaBuyPriceHigh() >= kYield.getAfricaBuyPriceLow());
-
-		int iAfricaBuyPrice = kYield.getAfricaBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getAfricaBuyPriceHigh() - kYield.getAfricaBuyPriceLow() + 1, "Yield Price");
-		setYieldAfricaBuyPrice(eYield, iAfricaBuyPrice, false);
-	}
-	// R&R, ray, Africa - END
-
-	// R&R, ray, Port Royal
-	for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
-	{
-		YieldTypes eYield = (YieldTypes) iYield;
-		CvYieldInfo& kYield = GC.getYieldInfo(eYield);
-
-		FAssert(kYield.getPortRoyalBuyPriceHigh() >= kYield.getPortRoyalBuyPriceLow());
-
-		int iPortRoyalBuyPrice = kYield.getPortRoyalBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getPortRoyalBuyPriceHigh() - kYield.getPortRoyalBuyPriceLow() + 1, "Yield Price");
-		setYieldPortRoyalBuyPrice(eYield, iPortRoyalBuyPrice, false);
-	}
-	// R&R, ray, Port Royal - END
 
 	//--------------------------------
 	// Init containers
@@ -1598,6 +1584,8 @@ CvUnit* CvPlayer::initEuropeUnit(UnitTypes eUnit, UnitAITypes eUnitAI, Direction
 //WTP, jooe, add a return value to signal if we succeeded or not
 bool CvPlayer::initEuropeSettler(bool bPayEquipment)
 {
+	FAssert(is(CIV_CATEGORY_COLONIAL));
+
 	// here we need to get the Profession Settler for initUnit call
 	ProfessionTypes eSettlerProfession = NO_PROFESSION;
 	int iEquipmentCosts = 0;
@@ -1615,7 +1603,7 @@ bool CvPlayer::initEuropeSettler(bool bPayEquipment)
 				for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 				{
 					int iYieldAmount = getYieldEquipmentAmount(eLoopProfession, eYield);
-					iEquipmentCosts += iYieldAmount * getYieldSellPrice(eYield); // we only use the sell price
+					iEquipmentCosts += iYieldAmount * getParentPlayer()->getYieldSellPrice(eYield); // we only use the sell price
 				}
 			}
 
@@ -16102,6 +16090,7 @@ int CvPlayer::getYieldSellPrice(YieldTypes eYield) const
 {
 	FAssert(eYield >= 0);
 	FAssert(eYield < NUM_YIELD_TYPES);
+	FAssert(is(CIV_CATEGORY_KING));
 
 	return std::max(1, getYieldBuyPrice(eYield) + GC.getYieldInfo(eYield).getSellPriceDifference());
 }
@@ -16110,6 +16099,7 @@ int CvPlayer::getYieldBuyPrice(YieldTypes eYield) const
 {
 	FAssert(eYield >= 0);
 	FAssert(eYield < NUM_YIELD_TYPES);
+	FAssert(is(CIV_CATEGORY_KING));
 	return m_em_iYieldBuyPrice.get(eYield);
 }
 
@@ -16117,6 +16107,7 @@ void CvPlayer::setYieldBuyPrice(YieldTypes eYield, int iPrice, bool bMessage)
 {
 	FAssert(eYield >= 0);
 	FAssert(eYield < NUM_YIELD_TYPES);
+	FAssert(is(CIV_CATEGORY_KING));
 
 	const YieldTypes eOriginalYield = eYield;
 
@@ -16895,6 +16886,8 @@ int CvPlayer::getYieldAfricaSellPrice(YieldTypes eYield) const
 
 int CvPlayer::getYieldAfricaBuyPrice(YieldTypes eYield) const
 {
+	FAssert(is(CIV_CATEGORY_KING));
+
 	// WTP, Africa and Port Royal Profit Modifiers - START
 	int iPrice = getYieldAfricaBuyPriceNoModifier(eYield);
 	int iModifierFromTraits = getTotalPlayerAfricaSellProfitModifierInPercent();
@@ -16915,6 +16908,7 @@ void CvPlayer::setYieldAfricaBuyPrice(YieldTypes eYield, int iPrice, bool bMessa
 {
 	FAssert(eYield >= 0);
 	FAssert(eYield < NUM_YIELD_TYPES);
+	FAssert(is(CIV_CATEGORY_KING));
 
 	const YieldTypes eOriginalYield = eYield;
 
@@ -17462,6 +17456,7 @@ int CvPlayer::getYieldPortRoyalSellPrice(YieldTypes eYield) const
 
 int CvPlayer::getYieldPortRoyalBuyPrice(YieldTypes eYield) const
 {
+	FAssert(is(CIV_CATEGORY_KING));
 	// WTP, Africa and Port Royal Profit Modifiers - START
 	int iPrice = getYieldPortRoyalBuyPriceNoModifier(eYield);
 	const int iModifierFromTraits = getTotalPlayerPortRoyalSellProfitModifierInPercent();
@@ -17482,6 +17477,7 @@ void CvPlayer::setYieldPortRoyalBuyPrice(YieldTypes eYield, int iPrice, bool bMe
 {
 	FAssert(eYield >= 0);
 	FAssert(eYield < NUM_YIELD_TYPES);
+	FAssert(is(CIV_CATEGORY_KING));
 
 	const YieldTypes eOriginalYield = eYield;
 
