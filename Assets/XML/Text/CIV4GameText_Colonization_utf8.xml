@@ -635,7 +635,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_BUY_AND_SELL_YIELD_AFRICA</Tag>
 		<English>Africa	  [TAB]Sell : %d1_Price[ICON_GOLD] / Buy : %d2_Price[ICON_GOLD]</English>
-		<French>Afrique	[TAB]Vendre : %d1_Price[ICON_GOLD] / Acheter : %d2_Price[ICON_GOLD]</French>
+		<French>Afrique	  [TAB]Vendre : %d1_Price[ICON_GOLD] / Acheter : %d2_Price[ICON_GOLD]</French>
 		<German>Afrika	  [TAB]Verkauf: %d1_Price[ICON_GOLD] / Kauf: %d2_Price[ICON_GOLD]</German>
 		<Italian>Africa	  [TAB]Vendere: %d1_Price[ICON_GOLD] / Comperare: %d2_Price[ICON_GOLD]</Italian>
 		<Spanish>África	  [TAB]Vender: %d1_Price[ICON_GOLD] / Comprar: %d2_Price[ICON_GOLD]</Spanish>
@@ -643,11 +643,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUY_AND_SELL_YIELD_PORT_ROYAL</Tag>
-		<English>Port Royal[TAB]Sell : %d1_Price[ICON_GOLD] / Buy : %d2_Price[ICON_GOLD]</English>
-		<French>Port Royal[TAB]Vendre : %d1_Price[ICON_GOLD] / Acheter : %d2_Price[ICON_GOLD]</French>
-		<German>Port Royal[TAB]Verkauf: %d1_Price[ICON_GOLD] / Kauf: %d2_Price[ICON_GOLD]</German>
-		<Italian>Port Royal[TAB]Vendere: %d1_Price[ICON_GOLD] / Comperare: %d2_Price[ICON_GOLD]</Italian>
-		<Spanish>Port Royal[TAB]Vender: %d1_Price[ICON_GOLD] / Comprar: %d2_Price[ICON_GOLD]</Spanish>
+		<English>Port Royal	 [TAB]Sell : %d1_Price[ICON_GOLD] / Buy : %d2_Price[ICON_GOLD]</English>
+		<French>Port Royal	 [TAB]Vendre : %d1_Price[ICON_GOLD] / Acheter : %d2_Price[ICON_GOLD]</French>
+		<German>Port Royal	 [TAB]Verkauf: %d1_Price[ICON_GOLD] / Kauf: %d2_Price[ICON_GOLD]</German>
+		<Italian>Port Royal	 [TAB]Vendere: %d1_Price[ICON_GOLD] / Comperare: %d2_Price[ICON_GOLD]</Italian>
+		<Spanish>Port Royal	 [TAB]Vender: %d1_Price[ICON_GOLD] / Comprar: %d2_Price[ICON_GOLD]</Spanish>
 		<Russian>Порт Ройал  Прод. : %d1_Price[ICON_GOLD] / Куп. : %d2_Price[ICON_GOLD]</Russian>
 	</TEXT>
 	<TEXT>
@@ -2604,7 +2604,7 @@
 		<German>Alle Güter verkaufen</German>
 		<Italian>Vendi tutti i beni</Italian>
 		<Spanish>Vender todo</Spanish>
-		<Russian>Продать все товары</Russian>
+		<Russian>Продать все товары в трюме</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_LOAD_ALL_EUROPE</Tag>
@@ -2613,7 +2613,7 @@
 		<German>An Docks beladen</German>
 		<Italian>Carica dal molo</Italian>
 		<Spanish>Cargar en Muelles</Spanish>
-		<Russian>Забрать из Доков</Russian>
+		<Russian>Забрать эмигрантов из доков</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PURCHASE_EUROPE</Tag>
@@ -3185,7 +3185,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_STATE_TRADE_COUNT</Tag>
 		<English>Exported goods</English>
-		<Russian>Экспортированные товары</Russian>
+		<Russian>Товарооборот</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_STATE_CITIZEN</Tag>
