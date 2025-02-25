@@ -1238,12 +1238,14 @@
 		<English>[ICON_BULLET]Allows all land units to cross [LINK=TERRAIN_LARGE_RIVERS]large rivers[\LINK]</English>
 		<French>[ICON_BULLET]Permet à toutes les unités terrestres de traverser [LINK=TERRAIN_LARGE_RIVERS]grands fleuves[\LINK]</French>
 		<German>[ICON_BULLET]Erlaubt es allen Landeinheiten einen [LINK=TERRAIN_LARGE_RIVERS]Großen Fluss[\LINK] zu überqueren.</German>
+		<Russian>[ICON_BULLET]Позволяет всем сухопутным юнитам пересекать [LINK=TERRAIN_LARGE_RIVERS]большие реки[\LINK]</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_IS_CANAL</Tag>
 		<English>[ICON_BULLET]Can only be built adjacent to [COLOR_UNIT_TEXT]water plots[COLOR_REVERT] like coasts, shallow coasts, large rivers, lakes or ice lakes [NEWLINE][ICON_BULLET]Allows [COLOR_UNIT_TEXT]coastal ships[COLOR_REVERT] and [COLOR_UNIT_TEXT]fishing boats[COLOR_REVERT] to cross [COLOR_HIGHLIGHT_TEXT]land tiles[COLOR_REVERT]</English>
 		<French>[ICON_BULLET]Ne peut être construit qu'à côté de [COLOR_UNIT_TEXT]parcelles d'eau[COLOR_REVERT] comme les côtes, les côtes peu profondes, les grandes rivières, lacs ou lacs de glace [NEWLINE][ICON_BULLET]Permet aux [COLOR_UNIT_TEXT]navires côtiers[COLOR_REVERT] et aux [COLOR_UNIT_TEXT]bateaux de pêche[COLOR_REVERT] de traverser des [COLOR_HIGHLIGHT_TEXT]tuiles terrestres[COLOR_REVERT].</French>
 		<German>[ICON_BULLET]Kann nur angrenzend an [COLOR_UNIT_TEXT]Wassergeländefelder[COLOR_REVERT], wie z.B. Küsten, flache Küsten, große Flüsse, Seen oder Eisseen gebaut werden [NEWLINE][ICON_BULLET]Erlaubt [COLOR_UNIT_TEXT]Küstenschiffen [COLOR_REVERT] und [COLOR_UNIT_TEXT]Fischerbooten[COLOR_REVERT] die Durchfahrt über [COLOR_HIGHLIGHT_TEXT]Land[COLOR_REVERT]</German>
+		<Russian>[ICON_BULLET]Можно построить только рядом с [COLOR_UNIT_TEXT]водными участками[COLOR_REVERT], такими как побережье, мелководье, большие реки, озера или ледяные озера[NEWLINE][ICON_BULLET]Позволяет [COLOR_UNIT_TEXT]прибрежным судам[COLOR_REVERT] и [COLOR_UNIT_TEXT]рыбацким лодкам[COLOR_REVERT] пересекать [COLOR_HIGHLIGHT_TEXT]плитки суши[COLOR_REVERT]</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_IMPROVEMENT_FISHING_NETS</Tag>

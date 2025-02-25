@@ -351,7 +351,7 @@
 		<German>Ohne World Builder spielen</German>
 		<Italian>Rimuovere il World Builder</Italian>
 		<Spanish>Eliminar el World Builder</Spanish>
-		<Russian>Убрать Строитель мира</Russian>
+		<Russian>Отключить Строитель мира</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_REMOVE_WORLD_BUILDER_HELP</Tag>
@@ -360,7 +360,7 @@
 		<German>Entfernt die Möglichkeit, den World Builder zu benutzen.[NEWLINE]Der World Builder ist ein bekannter Weg, um zu betrügen, und einige Spieler wollen diese Option vielleicht nicht, sei es für eine Art von kompetitivem Spiel oder einfach nur, um der Versuchung zu entgehen.</German>
 		<Italian>Rimuove la possibilità di entrare nel World Builder.[NEWLINE]Il World Builder è un modo noto per barare e la gente potrebbe non volere questa opzione, sia per una sorta di gioco competitivo o semplicemente per rimuovere la tentazione.</Italian>
 		<Spanish>Elimina la posibilidad de entrar en el World Builder.[NEWLINE]El World Builder es una forma conocida de hacer trampas y la gente podría no querer esta opción, ya sea para algún tipo de juego competitivo o simplemente para eliminar la tentación.</Spanish>
-		<Russian>Удаляет возможность запуска Строителя мира.[NEWLINE]Строитель мира – известный способ обмана и людям может не понадобиться эта опция, будь то соревновательная игра или просто избавление от искушения.</Russian>
+		<Russian>Убирает возможность запуска Строителя мира.[NEWLINE]Строитель мира – серьёзный способ обмана в игре и иногда требуется, чтобы он был недоступен. Например, в качестве меры избавления от искушения или многопользовательская игра.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_GAMEOPTION_DEACTIVATE_HEMISPHERE_RESTRICTIONS</Tag>

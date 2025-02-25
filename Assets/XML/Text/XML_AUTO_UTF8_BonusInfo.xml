@@ -420,12 +420,13 @@
 		<English>Caribou</English>
 		<French>Caribou</French>
 		<German>Karibus</German>
-		<Russian>Карибу</Russian>
+		<Russian>Северные олени</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_CARIBOU_PEDIA</Tag>
 		<English>[BOLD]Strategy :[\BOLD][NEWLINE][PARAGRAPH:1][COLOR_UNIT_TEXT]Caribou[COLOR_REVERT] migrate across tundra and [LINK=FEATURE_FOREST_TUNDRA]taiga[\LINK] in vast herds. They are also found in smaller groups in northern [LINK=FEATURE_LIGHT_FOREST]light forests[\LINK]or in [LINK=FEATURE_FOREST]forests[\LINK].[NEWLINE][NEWLINE][BOLD]Background :[\BOLD][NEWLINE]The North American range of caribou extends from Alaska through the Yukon, the Northwest Territories and Nunavut into the boreal forest and south through the Canadian Rockies. Barren-ground caribou form large herds which undertake lengthy seasonal migrations from birthing grounds to feeding grounds in the tundra and taiga, some of the longest migrations of any mammal. Arctic people depend on caribou for food, clothing, and shelter. Woodland caribou swim high out of the water, unlike any other mammal, because their hollow, air-filled, quill-like hair acts as a supporting life jacket.</English>
 		<German>[BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Karibus[COLOR_REVERT] </German>
+		<Russian>[BOLD]Стратегия :[\BOLD][NEWLINE][PARAGRAPH:1][COLOR_UNIT_TEXT]Северные олени[COLOR_REVERT] мигрируют по тундре и [LINK=FEATURE_FOREST_TUNDRA]северному лесу[\LINK] огромными стадами. Также небольшие группы можно встретить в северных [LINK=FEATURE_FOREST]лиственных лесах[\LINK] или [LINK=FEATURE_LIGHT_FOREST]редколесье[\LINK].[NEWLINE][NEWLINE][BOLD]Историческая справка :[\BOLD][NEWLINE]Северный олень (в Северной Америке — карибу) это парнокопытное млекопитающее семейства оленевых, единственный представитель рода Северные олени. Отличен от других оленей тем, что рога имеют как самцы, так и самки; питанием, в котором значительную долю занимают лишайники; многими особенностями поведения, самая заметная из которых — образование больших стад. Обитает в тундре и тайге Евразии и Северной Америки, на ряде островов Северного Ледовитого океана. Существует как в диком, так и в одомашенном состоянии. Северный олень в далёком прошлом дал возможность человеку освоить Север и в настоящее время остаётся важнейшим биологическим ресурсом более двадцати народов Евразии и Северной Америки. Объект охоты (с целью добычи мяса и шкуры). В результате приручения и одомашнивания северного оленя возникло северное оленеводство, то есть разведение северных оленей для получения мяса, шкур, молока и использования в качестве ездового и вьючного транспорта. Различают карибу лесных и тундровых: лесные — крупнее, распространены в тайге; тундровые — мельче, обитают в открытой тундре, лишь на зиму заходят в тайгу.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_MOOSE</Tag>

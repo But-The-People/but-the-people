@@ -302,7 +302,7 @@
 		<German>In [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] ist ein fetter Wirt überführt worden, seinen Gästen Rattenkadaver als Hirschragout serviert zu haben.[NEWLINE]Der Mann wurde an die eigenen Schweine verfüttert! Seine reichen Kellervorräte an Getreide, Käse und Bier wurden ins Lagerhaus der Gemeinde verbracht.</German>
 		<Italian>La popolazione di [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] festeggia l'abbondanza della recente stagione di caccia al caribù.</Italian>
 		<Spanish>Las gentes de [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] celebran que la última temporada de caza de caribúes ha sido muy generosa.</Spanish>
-		<Russian>Жители [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] празднуют богатую добычу в последнем сезоне охоты на карибу.</Russian>
+		<Russian>Жители [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] празднуют богатую добычу в последнем сезоне охоты на северных оленей.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_HAPPY_HUNTING_3</Tag>
@@ -4033,7 +4033,7 @@
 		<English>The traders will pay us for the use of our wagon trains.</English>
 		<French>Les marchands doivent compenser une partie de nos dépenses par leurs revenus, qu'ils ont acquis avec nos trains de chariots.</French>
 		<German>Die Händer sollen einen Teil unseres Aufwands durch ihr Einkommen kompensieren, dass sie mit unseren Wagenzügen erworben haben.</German>
-		<Russian>Торговцы будут платить нам за использование наших повозок.</Russian>
+		<Russian>В таком случае, пусть они возместят нам затраты на изготовление.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FIVE_WAGON_TRAINS_QUEST_DONE_2</Tag>

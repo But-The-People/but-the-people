@@ -2067,21 +2067,21 @@
 		<English>Sell this ship?</English>
 		<French>Vendre votre bateau ?</French>
 		<German>Schiff verkaufen?</German>
-		<Russian>Продать этот корабль?</Russian>
+		<Russian>Торговый агент спрашивает:</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_SELL_MESSAGE</Tag>
 		<English>That floating coffin named [COLOR_UNIT_TEXT]%s1[COLOR_REVERT]? Well, I'll give you %d2[ICON_GOLD].</English>
 		<French>Ce raffiot que vous appelez [COLOR_UNIT_TEXT]%s1[COLOR_REVERT] ? Et bien, je vous en donne %d2[ICON_GOLD].</French>
 		<German>Diesen morschen Kahn namens [COLOR_UNIT_TEXT]%s1[COLOR_REVERT]? Nun, %d2[ICON_GOLD] seien Euch gewährt.</German>
-		<Russian>[COLOR_UNIT_TEXT]%s1[COLOR_REVERT], этот плавающий гроб? Хмм, что ж, я дам вам за него %d2[ICON_GOLD]</Russian>
+		<Russian>Хотите продать [COLOR_UNIT_TEXT]%s1[COLOR_REVERT], этот плавающий гроб? Хмм, что ж, я дам вам за него %d2[ICON_GOLD]</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_SELL_SHORT</Tag>
 		<English>Sell your [COLOR_UNIT_TEXT]%s1[COLOR_REVERT] for [COLOR_YELLOW]%d2[COLOR_REVERT][ICON_GOLD]?</English>
 		<French>Vendre votre [COLOR_UNIT_TEXT]%s1[COLOR_REVERT] pour [COLOR_YELLOW]%d2[COLOR_REVERT][ICON_GOLD] ?</French>
 		<German>[COLOR_UNIT_TEXT]%s1[COLOR_REVERT] für [COLOR_YELLOW]%d2[COLOR_REVERT][ICON_GOLD] verkaufen?</German>
-		<Russian>Продать [COLOR_UNIT_TEXT]%s1[COLOR_REVERT] за [COLOR_YELLOW]%d2[COLOR_REVERT][ICON_GOLD]?</Russian>
+		<Russian>Продать [COLOR_UNIT_TEXT]%s1[COLOR_REVERT]</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_DIALOG_ACCEPT</Tag>
@@ -2090,7 +2090,7 @@
 		<German>Großzügig! Habt Dank.</German>
 		<Italian>Great! Thank you.</Italian>
 		<Spanish>Great! Thank you.</Spanish>
-		<Russian>Здорово! Спасибо.</Russian>
+		<Russian>Меня устраивает эта сумма, он ваш.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EU_BOYCOTT_LABEL</Tag>

@@ -366,7 +366,7 @@
 		<English>Irrigate Desert</English>
 		<French>Irriguer le désert</French>
 		<German>Wüste bewässern</German>
-		<Russian>Создать [COLOR_HIGHLIGHT_TEXT]ирригацию пустыни[COLOR_REVERT]</Russian>
+		<Russian>Провести ирригацию</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_DESERT_IRRIGATION_HELP</Tag>
