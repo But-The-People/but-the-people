@@ -74,6 +74,7 @@ void CvGame::init(HandicapTypes eHandicap)
 
 	//--------------------------------
 	// Init non-saved data
+	m_iLastNetworkOOSTurn = -1;
 
 	//--------------------------------
 	// Init other game data
@@ -1255,6 +1256,8 @@ void CvGame::update()
 		AI_updateAssignWork();
 
 		testAlive();
+
+		testNetworkOOS();
 
 		if ((getAIAutoPlay() == 0) && !(gDLL->GetAutorun()) && GAMESTATE_EXTENDED != getGameState())
 		{
@@ -7440,4 +7443,34 @@ void CvGame::increaseWorldBuilderOpeningCounter()
 	{
 		++m_uiWorldBuilderUseCount;
 	}
+}
+
+bool CvGame::isNetworkOOSActive() const
+{
+	return m_iLastNetworkOOSTurn == GC.getInitCore().getGameTurn();
+}
+
+void CvGame::testNetworkOOS()
+{
+	const CvInitCore& core = GC.getInitCore();
+
+	if (!core.getMultiplayer())
+	{
+		return;
+	}
+
+	if (core.getGameTurn() == m_iLastNetworkOOSTurn)
+	{
+		return;
+	}
+
+	if (!gDLL->isOOSVisible())
+	{
+		return;
+	}
+
+	// OOS detected
+	m_iLastNetworkOOSTurn = core.getGameTurn();
+
+	// todo: whatever code we want to execute once per turn when an OOS is detected
 }

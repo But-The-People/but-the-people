@@ -409,6 +409,9 @@ public:
 	unsigned int getWorldBuilderOpeningCounter() const;
 	void increaseWorldBuilderOpeningCounter();
 
+	// tells if an OOS has been detected this turn
+	bool isNetworkOOSActive() const;
+
 	static const int PLOT_OCEAN_DISTANCE_IMPASSABLE_THRESHOLD = 1000;
 
 protected:
@@ -531,6 +534,9 @@ protected:
 
 	void doUpdateCacheOnTurn();
 	CvPlot* getAnyEuropePlot() const;
+
+	void testNetworkOOS();
+	int m_iLastNetworkOOSTurn; // no save
 };
 
 #endif
