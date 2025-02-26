@@ -12,12 +12,12 @@
 #pragma push_macro("new")
 #undef free
 #undef new
-#include "tbb/parallel_for.h"
-#include "tbb/parallel_reduce.h"
-#include "tbb/blocked_range.h"
-#include "tbb/task_scheduler_init.h"
-#include "tbb/cache_aligned_allocator.h"
-#include "tbb/mutex.h"
+#include "lib/tbb/parallel_for.h"
+#include "lib/tbb/parallel_reduce.h"
+#include "lib/tbb/blocked_range.h"
+#include "lib/tbb/task_scheduler_init.h"
+#include "lib/tbb/cache_aligned_allocator.h"
+#include "lib/tbb/mutex.h"
 #pragma pop_macro("new")
 #pragma pop_macro("free")
 
