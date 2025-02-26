@@ -832,6 +832,9 @@ public:
 	
 	bool canChangeProfession() const;
 
+	bool isAllowDirectPath() const;
+	void setAllowDirectPath(bool bNewValue, bool bRefreshUi = false);
+
 protected:
 
 	void updateVisibilityCache(int iNewRange);
@@ -938,6 +941,7 @@ protected:
 	// R&R, ray, Natives Trading - END
 
 	bool m_bAllowDangerousPath;
+	bool m_bAllowDirectPath;
 
 	UnitTravelStates m_eUnitTravelState;
 

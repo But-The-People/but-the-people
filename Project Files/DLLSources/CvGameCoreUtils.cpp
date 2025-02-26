@@ -1005,6 +1005,19 @@ namespace
 
 		return true;
 	}
+
+	bool isAdjacent(const FAStarNode& node1, const FAStarNode& node2)
+	{
+		int dx = abs(node1.m_iX - node2.m_iX);
+		int dy = abs(node1.m_iY - node2.m_iY);
+		return (dx <= 1 && dy <= 1);
+	}
+	
+	// Helper function to reduce repetition
+	bool allowDirectPath(const CvSelectionGroup& kSelectionGroup, const FAStarNode& node1, const FAStarNode& node2)
+	{
+		return kSelectionGroup.getHeadUnit()->isAllowDirectPath() && isAdjacent(node1, node2);
+	}
 }
 
 int pathDestValid(int iToX, int iToY, const void* pointer, FAStar* finder)
@@ -1097,6 +1110,15 @@ int pathDestValid(int iToX, int iToY, const void* pointer, FAStar* finder)
 				return FALSE;
 			}
 		}
+	}
+
+	if (!USE_CLASSIC_MOVEMENT_SYSTEM && pSelectionGroup->getHeadUnit()->isAllowDirectPath())
+	{
+		const CvPlot& kCurrentPlot = *pSelectionGroup->plot();
+		int dx = abs(kToPlot.getX_INLINE() - kCurrentPlot.getX_INLINE());
+		int dy = abs(kToPlot.getY_INLINE() - kCurrentPlot.getY_INLINE());
+		if (dx > 1 || dy > 1)
+			return FALSE;
 	}
 
 	return TRUE;
@@ -1204,7 +1226,7 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 			//iWorstMaxMoves = std::min(iWorstMaxMoves, iMaxMoves);
 
 			int iCost;
-			if (USE_CLASSIC_MOVEMENT_SYSTEM)
+			if (USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node))
 			{
 				iCost = PATH_MOVEMENT_WEIGHT * (iMovesLeft == 0 ? iMaxMoves : iMoveCost);
 			}
@@ -1233,7 +1255,44 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 		}
 	}
 
-	iWorstCost += PATH_STEP_WEIGHT;
+	if (!(USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node)))
+	{
+		// Add step penalty as a tie-breaker.
+		// If the move occurs within the same turn, use the computed step count
+		// multiplied by half of PATH_STEP_WEIGHT.
+#if 0 
+		if (parent->m_iData2 == node->m_iData2)
+		{
+			const int iStepCount = computeStepCount(node);
+			iWorstCost += iStepCount * (PATH_STEP_WEIGHT / 2);
+		}
+#endif
+		//else
+		{
+			// If a turn break occurs, use the full step penalty.
+			iWorstCost += PATH_STEP_WEIGHT;
+		}
+
+#if 0
+		#define NON_ROAD_PENALTY 50000  // Tune this value as needed
+
+		// Compute the step count for the candidate route.
+		int stepCount = computeStepCount(node);
+		// If the unit's current plot has no road but the candidate route's final plot shows a road,
+		// and the route is not a single, direct move (i.e. more than one step), then add a penalty.
+		if (kFromPlot.getRevealedRouteType(pSelectionGroup->getHeadTeam(), false) == NO_ROUTE &&
+			kToPlot.getRevealedRouteType(pSelectionGroup->getHeadTeam(), false) != NO_ROUTE &&
+			stepCount > 1)
+		{
+			iWorstCost += NON_ROAD_PENALTY;
+		}
+#endif
+		iWorstCost += PATH_STEP_WEIGHT;
+	}
+	else
+	{		
+		iWorstCost += PATH_STEP_WEIGHT;
+	}
 
 	// symmetry breaking. This is meant to prevent two paths from having equal cost.
 	// (If two paths have equal cost, sometimes the interface shows one path and the units follow the other. This is bad.)
@@ -1683,7 +1742,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 		// K-Mod. I've moved the code from here into separate functions.
 		iMoves = bMoveMaxMoves ? pSelectionGroup->maxMoves() : pSelectionGroup->movesLeft();
 
-		if (!USE_CLASSIC_MOVEMENT_SYSTEM)
+		if ((!USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node)))
 		{
 			while (iMoves <= 0)
 			{
@@ -1713,7 +1772,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 		// K-Mod. The original code would give incorrect results for groups where one unit had more moves but also had higher move cost.
 		// (eg. the most obvious example is when a group with 1-move units and 2-move units is moving on a railroad. - In this situation,
 		//  the original code would consistently underestimate the remaining moves at every step.)
-		if (USE_CLASSIC_MOVEMENT_SYSTEM)
+		if (USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node))
 		{
 			const bool bNewTurn = iMoves == 0;
 
@@ -1723,7 +1782,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 				iMoves = pSelectionGroup->maxMoves();
 			}
 		}
-		else // GLOBAL_DEFINE_USE_CLASSIC_MOVEMENT_SYSTEM == 0
+		else
 		{
 			// add how many turns it takes before the unit can move again
 			while (iMoves <= 0)
@@ -1758,7 +1817,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 		if (bUniformCost)
 		{
 			// the simple, normal case
-			if (USE_CLASSIC_MOVEMENT_SYSTEM)
+			if (USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node))
 			{
 				iMoves = std::max(0, iMoves - iMoveCost);
 			}
@@ -1799,7 +1858,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 					iUnitMoves -= plot_list[i - 1]->movementCost(pLoopUnit, plot_list[i]/*,
 						false*/); // advc.001i
 
-					if (USE_CLASSIC_MOVEMENT_SYSTEM)
+					if (USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node))
 					{
 						FAssert(iUnitMoves > 0 || i == 1);
 					}
@@ -1809,7 +1868,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 						FAssert(iUnitMoves >= -500); // Note: does not have to be accurate, just enough to detect corruption etc.
 					}
 				}
-				if (USE_CLASSIC_MOVEMENT_SYSTEM)
+				if (USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node))
 				{
 					iUnitMoves = std::max(iUnitMoves, 0);
 				}
@@ -1819,7 +1878,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 		// K-Mod end
 	}
 
-	if (USE_CLASSIC_MOVEMENT_SYSTEM)
+	if (USE_CLASSIC_MOVEMENT_SYSTEM/* || allowDirectPath(*pSelectionGroup, *parent, *node)*/)
 	{
 		FAssertMsg(iMoves >= 0, "iMoves is expected to be non-negative (invalid Index)");
 	}

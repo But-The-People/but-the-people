@@ -2777,6 +2777,20 @@ bool CvUnit::canDoCommand(CommandTypes eCommand, int iData1, int iData2, bool bT
 		}
 		break;
 
+	case COMMAND_ALLOW_DIRECT_PATH:
+		if (!USE_CLASSIC_MOVEMENT_SYSTEM && isGroupHead() && !isAllowDirectPath())
+		{
+			return true;
+		}
+		break;
+
+	case COMMAND_DISALLOW_DIRECT_PATH:
+		if (!USE_CLASSIC_MOVEMENT_SYSTEM && isGroupHead() && isAllowDirectPath())
+		{
+			return true;
+		}
+		break;
+
 	default:
 		FAssert(false);
 		break;
@@ -3098,6 +3112,20 @@ void CvUnit::doCommand(CommandTypes eCommand, int iData1, int iData2)
 			if (gDLL->getInterfaceIFace()->getHeadSelectedUnit() == this)
 			{
 				setAllowDangerousPath(false, /*bRefreshUi*/true);
+			}
+			break;
+
+		case COMMAND_ALLOW_DIRECT_PATH:
+			if (gDLL->getInterfaceIFace()->getHeadSelectedUnit() == this)
+			{
+				setAllowDirectPath(true, /*bRefreshUi*/true);
+			}
+			break;
+
+		case COMMAND_DISALLOW_DIRECT_PATH:
+			if (gDLL->getInterfaceIFace()->getHeadSelectedUnit() == this)
+			{
+				setAllowDirectPath(false, /*bRefreshUi*/true);
 			}
 			break;
 
@@ -16940,6 +16968,7 @@ void CvUnit::setAllowDangerousPath(bool bNewValue, bool bRefreshUi)
 			// we may invalidate with this setting 
 			gDLL->getFAStarIFace()->ForceReset(&GC.getInterfacePathFinder());
 			gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
+			gDLL->getInterfaceIFace()->setDirty(Waypoints_DIRTY_BIT, true);
 		}
 	}
 }
@@ -17013,4 +17042,25 @@ bool CvUnit::canChangeProfession() const
 		CanChangeProfessionFunctor(found, *this), tbb::simple_partitioner());
 
 	return found;
+}
+
+bool CvUnit::isAllowDirectPath() const
+{
+	return m_bAllowDirectPath;
+}
+
+void CvUnit::setAllowDirectPath(bool bNewValue, bool bRefreshUi)
+{
+	if (m_bAllowDirectPath != bNewValue)
+	{
+		m_bAllowDirectPath = bNewValue;
+		if (bRefreshUi)
+		{
+			// UI path finder needs a reset since it may be caching a path that 
+			// we may invalidate with this setting 
+			gDLL->getFAStarIFace()->ForceReset(&GC.getInterfacePathFinder());
+			gDLL->getInterfaceIFace()->setDirty(SelectionButtons_DIRTY_BIT, true);
+			gDLL->getInterfaceIFace()->setDirty(Waypoints_DIRTY_BIT, true);
+		}
+	}
 }

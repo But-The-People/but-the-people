@@ -242,6 +242,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_PLOT_DEFENSIVE_BONUS_OWNED_PLOT</Tag>
 		<English>Potential defense bonus (only if owned): %D1_Mod%%</English>
+	</TEXT>
+	<TEXT>
 		<Russian>Бонус защиты (для игрока): %D1_Mod%%</Russian>
+		<Tag>TXT_KEY_ALLOW_DIRECT_PATH</Tag>
+		<English>Allow unit to use a direct path</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_DISALLOW_DIRECT_PATH</Tag>
+		<English>Disallow unit from using a direct path</English>
 	</TEXT>
 </Civ4GameText>

@@ -484,7 +484,7 @@ bool KmodPathFinder::ProcessNode()
 	if (best_it == open_list.end())
 		return false;
 
-	FAStarNode* parent_node = (*best_it);
+	FAStarNode* const parent_node = (*best_it);
 
 	// erase the node from the open_list.
 	// Note: this needs to be done before pushing new entries, otherwise the iterator will be invalid.
@@ -499,7 +499,7 @@ bool KmodPathFinder::ProcessNode()
 	// open a new node for each direction coming off the chosen node.
 	for (int i = 0; i < NUM_DIRECTION_TYPES; i++)
 	{
-		CvPlot* const pAdjacentPlot = plotDirection(parent_node->m_iX, parent_node->m_iY, (DirectionTypes)i);
+		const CvPlot* const pAdjacentPlot = plotDirection(parent_node->m_iX, parent_node->m_iY, (DirectionTypes)i);
 		if (!pAdjacentPlot)
 			continue;
 
@@ -520,7 +520,7 @@ bool KmodPathFinder::ProcessNode()
 
 	// Execute parallel work
 	ProcessNodesInternal pni(parent_node, child_nodes, settings, dest_x, dest_y, pno);
-	const int grainSize = 2; // 1 seems to result in too little work per task
+	const int grainSize = 3; // 1 seems to result in too little work per task
 	const tbb::blocked_range<size_t> range = tbb::blocked_range<size_t>(0, child_nodes.size(), grainSize);
 	Threads::parallel_for(range, pni, tbb::auto_partitioner());
 
