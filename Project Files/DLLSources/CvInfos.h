@@ -4423,8 +4423,8 @@ private:
 //
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#include "Info\EventTriggerInfo.h"
-#include "Info\InfoHelpers.h"
+#include "Info/EventTriggerInfo.h"
+#include "Info/InfoHelpers.h"
 
 class CvEventTriggerInfo : public CvInfoBase
 {
