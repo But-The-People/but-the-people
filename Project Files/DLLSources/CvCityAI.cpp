@@ -3215,10 +3215,10 @@ void CvCityAI::AI_juggleCitizens()
 struct BestJob
 {
 	BestJob() :
-		iBestValue(0), iBestPlot(-1), eBestProfession(NO_PROFESSION) {};
+		iBestValue(0), iBestPlot(-1), eBestProfession(NO_PROFESSION), iID(-1) {};
 
-	BestJob(int iBestValue_, int iBestPlot_, ProfessionTypes eBestProfession_) :
-		iBestValue(iBestValue_), iBestPlot(iBestPlot_), eBestProfession(eBestProfession_) {};
+	BestJob(int iBestValue_, int iBestPlot_, ProfessionTypes eBestProfession_, int iID_) :
+		iBestValue(iBestValue_), iBestPlot(iBestPlot_), eBestProfession(eBestProfession_), iID(iID_) {};
 
 	BestJob& operator=(const BestJob& rhs)
 	{
@@ -3228,12 +3228,14 @@ struct BestJob
 		iBestValue = rhs.iBestValue;
 		iBestPlot = rhs.iBestPlot;
 		eBestProfession = rhs.eBestProfession;
+		iID = rhs.iID;
 		return *this;
 	}
 
 	int iBestValue;
 	int iBestPlot;
 	ProfessionTypes eBestProfession;
+	int iID;
 };
 
 // Note: cannot be a member since it must be called from the functor
@@ -3322,16 +3324,19 @@ BestJob AI_findBestJob(const CvCityAI& kCity, ProfessionTypes eProfession, const
 		}
 	}
 
-	return BestJob(iBestValue, eBestPlot, eBestProfession);
+	return BestJob(iBestValue, eBestPlot, eBestProfession, kUnit.getID());
 }
 
 struct FindBestJob
 {
-	FindBestJob(const std::vector<std::vector<ProfessionTypes> >& groups_, const CvCityAI& kCity_, const CvUnit& kUnit_, bool bIndoorOnly_) :
+	FindBestJob(const std::vector<std::vector<ProfessionTypes> >& groups_,
+		const CvCityAI& kCity_,
+		const CvUnit& kUnit_,
+		bool bIndoorOnly_) :
 		groups(groups_), kCity(kCity_), kUnit(kUnit_), bIndoorOnly(bIndoorOnly_), bestJob() {}
 
-	FindBestJob(const FindBestJob& x, tbb::split) : groups(x.groups), kCity(x.kCity), kUnit(x.kUnit), bIndoorOnly(x.bIndoorOnly), bestJob()
-	{};
+	FindBestJob(const FindBestJob& x, tbb::split) :
+		groups(x.groups), kCity(x.kCity), kUnit(x.kUnit), bIndoorOnly(x.bIndoorOnly), bestJob() {}
 
 	// operator() processes each sub-vector in [r.begin(), r.end())
 	void operator()(const tbb::blocked_range<size_t>& r)
@@ -3339,46 +3344,59 @@ struct FindBestJob
 		for (size_t groupIndex = r.begin(); groupIndex < r.end(); ++groupIndex)
 		{
 			const std::vector<ProfessionTypes>& group = groups[groupIndex];
-
-			// Process this group's professions *serially*
+			// Process each profession in this group serially.
 			for (size_t i = 0; i < group.size(); ++i)
 			{
 				const ProfessionTypes eProf = group[i];
-				// Evaluate the job
 				const BestJob currentBestJob = AI_findBestJob(kCity, eProf, kUnit, bIndoorOnly);
-
-				// Update partial best job
 				update(currentBestJob);
 			}
 		}
 	}
-	
-	// Join operation merges partial results from two sub-reductions
+
+	// Join operation merges partial results from two sub-reductions.
 	void join(const FindBestJob& rhs)
 	{
 		update(rhs.bestJob);
 	}
 
-	// The final result after the reduction
+	// Final result after reduction.
 	BestJob bestJob;
 
 private:
 
-	// Update the partial best with a new candidate
+	// Update the partial best with a new candidate using a two-level tie-breaker.
 	void update(const BestJob& potentialBestJob)
 	{
+		// If the potential job has a higher value, choose it.
 		if (potentialBestJob.iBestValue > bestJob.iBestValue)
 		{
 			bestJob = potentialBestJob;
 		}
-		// Tie-breaker to ensure deterministic ordering when values match
-		else if (bestJob.eBestProfession != NO_PROFESSION &&
-			potentialBestJob.iBestValue == bestJob.iBestValue)
+		// If the values are equal, we need to break the tie.
+		else if (potentialBestJob.iBestValue == bestJob.iBestValue)
 		{
-			// Prefer the lowest profession index for consistent ordering
-			if (potentialBestJob.eBestProfession < bestJob.eBestProfession)
+			// If our current best is not set (i.e. NO_PROFESSION), update it.
+			if (bestJob.eBestProfession == NO_PROFESSION)
 			{
 				bestJob = potentialBestJob;
+			}
+			// Otherwise, if both are valid, apply the tie-breaker.
+			else if (potentialBestJob.eBestProfession != NO_PROFESSION)
+			{
+				// First tie-breaker: lower profession ID wins.
+				if (potentialBestJob.eBestProfession < bestJob.eBestProfession)
+				{
+					bestJob = potentialBestJob;
+				}
+				// Second tie-breaker: if profession IDs are equal, choose the one with lower citizenId.
+				else if (potentialBestJob.eBestProfession == bestJob.eBestProfession)
+				{
+					if (potentialBestJob.iID < bestJob.iID)
+					{
+						bestJob = potentialBestJob;
+					}
+				}
 			}
 		}
 	}
