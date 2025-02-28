@@ -107,7 +107,7 @@ bool CvUnitAI::AI_update()
 		}
 	}
 
-	if (getUnitTravelState() != NO_UNIT_TRAVEL_STATE)
+	if (getUnitTravelState() == UNIT_TRAVEL_STATE_IN_EUROPE || getUnitTravelState() == UNIT_TRAVEL_STATE_IN_AFRICA)
 	{
 		AI_europeUpdate();
 		return false;
