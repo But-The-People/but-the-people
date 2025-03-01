@@ -3930,13 +3930,13 @@ bool CvUnit::jumpToNearestValidPlot()
 	FAssertMsg(!isAttacking(), "isAttacking did not return false as expected");
 	FAssertMsg(!isFighting(), "isFighting did not return false as expected");
 
-	CvCity* pNearestCity = GC.getMap().findCity(coord(), getOwnerINLINE());
+	CvCity* const pNearestCity = GC.getMap().findCity(coord(), getOwnerINLINE());
 	int iBestValue = MAX_INT;
 	CvPlot* pBestPlot = NULL;
 
 	for (int iI = 0; iI < GC.getMap().numPlotsINLINE(); iI++)
 	{
-		CvPlot* pLoopPlot = GC.getMap().plotByIndexINLINE(iI);
+		CvPlot* const pLoopPlot = GC.getMap().plotByIndexINLINE(iI);
 
 		if (isValidPlot(pLoopPlot))
 		{
@@ -3954,8 +3954,18 @@ bool CvUnit::jumpToNearestValidPlot()
 					}
 
 					// TAC - AI Mauritsstad Bugfix - koma13 - START
-					bool bEuropeTravelstate = (getUnitTravelState() == UNIT_TRAVEL_STATE_FROM_EUROPE || getUnitTravelState() == UNIT_TRAVEL_STATE_IN_EUROPE || getUnitTravelState() == UNIT_TRAVEL_STATE_TO_EUROPE);
-					if (getUnitTravelState() == NO_UNIT_TRAVEL_STATE || (bEuropeTravelstate && pLoopPlot->isEurope()))
+					const bool bTravelstate = (
+						getUnitTravelState() == UNIT_TRAVEL_STATE_FROM_EUROPE     ||
+						getUnitTravelState() == UNIT_TRAVEL_STATE_IN_EUROPE       ||
+						getUnitTravelState() == UNIT_TRAVEL_STATE_TO_EUROPE       ||
+						getUnitTravelState() == UNIT_TRAVEL_STATE_FROM_AFRICA     ||
+						getUnitTravelState() == UNIT_TRAVEL_STATE_IN_AFRICA       ||
+						getUnitTravelState() == UNIT_TRAVEL_STATE_TO_AFRICA		  ||
+						getUnitTravelState() == UNIT_TRAVEL_STATE_FROM_PORT_ROYAL ||
+						getUnitTravelState() == UNIT_TRAVEL_STATE_IN_PORT_ROYAL   ||
+						getUnitTravelState() == UNIT_TRAVEL_STATE_TO_PORT_ROYAL);
+
+					if (getUnitTravelState() == NO_UNIT_TRAVEL_STATE || (bTravelstate && pLoopPlot->isEurope()))
 					{
 						int iValue = (plotDistance(coord(), pLoopPlot->coord()) * 2);
 
