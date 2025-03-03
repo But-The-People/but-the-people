@@ -216,7 +216,8 @@ void CvSelectionGroup::doTurn()
 
 		if (AI_isControlled())
 		{
-			if ((getActivityType() != ACTIVITY_MISSION) || (!canFight() && (GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 1) > 0)))
+			// TODO: Consider using visbilityRange (but how should we deal with the plot bonus range?)
+			if ((getActivityType() != ACTIVITY_MISSION) || (!canFight() && (GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), dangerDetectionRange()) > 0)))
 			{
 				setForceUpdate(true);
 			}
@@ -225,7 +226,7 @@ void CvSelectionGroup::doTurn()
 		{
 			if (getActivityType() == ACTIVITY_MISSION)
 			{
-				if (GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 1) > 0)
+				if (GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), dangerDetectionRange()) > 0)
 				{
 					clearMissionQueue();
 				}
@@ -496,7 +497,7 @@ void CvSelectionGroup::autoMission()
 		{
 			if (!isBusy())
 			{
-				if (isHuman() && GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 1) > 0)
+				if (isHuman() && GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), dangerDetectionRange()) > 0)
 				{
 					clearMissionQueue();
 				}
@@ -2162,7 +2163,7 @@ bool CvSelectionGroup::canBombard(const CvPlot* pPlot)
 	return false;
 }
 
-bool CvSelectionGroup::visibilityRange()
+int CvSelectionGroup::visibilityRange() const
 {
 	int iMaxRange = 0;
 
@@ -4501,3 +4502,20 @@ int CvSelectionGroup::movesLeft() const
 	}
 	return iMoves;
 } // K-Mod end
+
+// Helper function to return an appropriate visibility range
+// We'd prefer to the the group's visibility range, but that may be problematic on land
+// due to some plots having a very large bonus range and hence units travelling through such plots
+// may be "spooked" by enemies that could not possibly attack this turn
+int CvSelectionGroup::dangerDetectionRange() const
+{
+	if (getDomainType() == DOMAIN_SEA)
+	{
+		return visibilityRange() + 1; // Units can see enemies one plot further away. For a group without any visibility
+		// promotions that translates to the standard 2 range danger check
+	}
+	else
+	{
+		return 2;
+	}
+}

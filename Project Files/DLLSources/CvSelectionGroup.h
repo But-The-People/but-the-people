@@ -80,7 +80,7 @@ public:
 	bool canFight();
 	bool canDefend();
 	bool canBombard(const CvPlot* pPlot);
-	bool visibilityRange();
+	int visibilityRange() const;
 
 	int getBombardTurns( CvCity* pCity );	// TAC - AI Attack City - koma13, jdog5000(BBAI)
 
@@ -208,6 +208,8 @@ public:
 
 	int maxMoves() const; // K-Mod
 	int movesLeft() const; // K-Mod
+
+	int dangerDetectionRange() const;
 
 	// for serialization
 	virtual void read(FDataStreamBase* pStream);
