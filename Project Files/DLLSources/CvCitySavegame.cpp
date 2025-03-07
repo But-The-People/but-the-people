@@ -412,7 +412,6 @@ void CvCity::resetSavedData(int iID, PlayerTypes eOwner, Coordinates resetCoord,
 	m_em_iYieldStored.reset();
 	m_iTotalYieldStored = 0; //not stored
 	m_em_iYieldRushed.reset();
-	m_em_iYieldBuyPrice.reset();
 
 	m_em_iBaseYieldRank.reset();
 	m_em_bBaseYieldRankValid.reset();
@@ -551,7 +550,11 @@ void CvCity::read(CvSavegameReader reader)
 		case CitySave_YieldRateModifier                          : reader.Read(m_em_iYieldRateModifier)                     ; break;
 		case CitySave_YieldStored                                : reader.Read(m_em_iYieldStored)                           ; break;
 		case CitySave_YieldRushed                                : reader.Read(m_em_iYieldRushed)                           ; break;
-		case CitySave_YieldBuyPrice                              : reader.Read(m_em_iYieldBuyPrice)                         ; break;
+		case CitySave_YieldBuyPrice:
+		{
+			EnumMap<YieldTypes, int> temp_enummap;
+			reader.Read(temp_enummap); break;
+		}
 
 		case CitySave_BaseYieldRank                              : reader.Read(m_em_iBaseYieldRank)                         ; break;
 		case CitySave_BaseYieldRankValid                         : reader.Read(m_em_bBaseYieldRankValid)                    ; break;
@@ -604,12 +607,6 @@ void CvCity::read(CvSavegameReader reader)
 
 		// make sure we won't read corrupted extreme domestic prices - Nightinggale
 		const CvYieldInfo& kInfo = GC.getInfo(eYield);
-		int iMaxPrice = (kInfo.price(TRADE_LOCATION_EUROPE).buyHigh * 2) + 10;
-		if (getYieldBuyPrice(eYield) > iMaxPrice)
-		{
-			setYieldBuyPrice(eYield, iMaxPrice);
-		}
-
 		if (kInfo.isCargo() && !kInfo.isIgnoredForStorageCapacity())
 		{
 			m_iTotalYieldStored += m_em_iYieldStored.get(eYield);
@@ -710,7 +707,6 @@ void CvCity::write(CvSavegameWriter writer)
 	writer.Write(CitySave_YieldRateModifier, m_em_iYieldRateModifier);
 	writer.Write(CitySave_YieldStored, m_em_iYieldStored);
 	writer.Write(CitySave_YieldRushed, m_em_iYieldRushed);
-	writer.Write(CitySave_YieldBuyPrice, m_em_iYieldBuyPrice);
 
 	writer.Write(CitySave_BaseYieldRank, m_em_iBaseYieldRank);
 	writer.Write(CitySave_BaseYieldRankValid, m_em_bBaseYieldRankValid);

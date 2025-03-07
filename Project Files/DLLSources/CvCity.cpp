@@ -116,48 +116,6 @@ void CvCity::init(int iID, PlayerTypes eOwner, Coordinates initCoord, bool bBump
 	//--------------------------------
 	// Init saved data
 	reset(iID, eOwner, initCoord);
-	// R&R, ray, adjustment Domestic Markets for Luxury Goods needed
-	// R&R, Androrc, Domestic Market
-
-	const CvPlayerAI& owner = GET_PLAYER(getOwnerINLINE());
-
-	if (owner.is(CIV_CATEGORY_COLONIAL))
-	{
-		const CvPlayerAI& king = *owner.getParentPlayer();
-		for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
-		{
-			const CvYieldInfo& kYield = GC.getYieldInfo(eYield);
-			FAssert(kYield.price(FIRST_TRADELOCATION).buyHighInit >= kYield.price(FIRST_TRADELOCATION).buyLowInit);
-
-			int iBuyPrice = 0;
-
-			// Luxury Goods should also give a little profit
-			if (eYield == YIELD_LUXURY_GOODS)
-			{
-				iBuyPrice = king.getYieldSellPrice(eYield) + GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_LUXURY_GOODS;
-			}
-			// WTP, now also Fieldworker Tools, but the Diff is only half
-			else if (eYield == YIELD_FIELD_WORKER_TOOLS)
-			{
-				iBuyPrice = king.getYieldSellPrice(eYield) + (GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_LUXURY_GOODS/ 2);
-			}
-			// WTP, now also Household Goods, but the Diff is only half
-			else if (eYield == YIELD_HOUSEHOLD_GOODS)
-			{
-				iBuyPrice = king.getYieldSellPrice(eYield) + (GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_LUXURY_GOODS / 2);
-			}
-			else
-			{
-				iBuyPrice = kYield.price(FIRST_TRADELOCATION).buyLowInit + GC.getGameINLINE().getSorenRandNum(kYield.price(FIRST_TRADELOCATION).buyHighInit - kYield.price(FIRST_TRADELOCATION).buyLowInit + 1, "Yield Price");
-				// WTP, trying to fix issue that Domestic Market became unattractive
-				iBuyPrice += GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_OTHER_GOODS;
-			}
-
-			setYieldBuyPrice(eYield, iBuyPrice);
-
-		}
-	}
-	//Androrc End
 
 	// R&R, ray, finishing Custom House Screen
 	// initializing default data
@@ -595,7 +553,6 @@ void CvCity::doTurn()
 			doExtraCityDefenseAttacks(); // R&R, ray, Extra City Defense Attacks
 			doEntertainmentBuildings(); // R&R, ray, Entertainment Buildings
 			doLbD(); // TAC - LBD - Ray - START
-			doPrices(); // R&R, Androrc Domestic Market
 			doCityHealth(); // R&R, ray, Health
 			// WTP, ray, Happiness - START
 			updateCityHappiness();
@@ -13531,8 +13488,14 @@ void CvCity::doExtraCityDefenseAttacks()
 int CvCity::getYieldBuyPriceUnmodified(YieldTypes eYield) const
 {
 	FAssert(validEnumRange(eYield));
-	return m_em_iYieldBuyPrice.get(eYield);
+	int iPrice = GC.getYieldInfo(eYield).getDomesticPriceBonus();
 
+	PlayerTypes eParent = GET_PLAYER(getOwnerINLINE()).getParent();
+	if (eParent != NO_PLAYER)
+	{
+		iPrice += GET_PLAYER(eParent).getYieldBuyPrice(eYield);
+	}
+	return iPrice;
 }
 
 int CvCity::getYieldBuyPrice(YieldTypes eYield) const
@@ -13542,22 +13505,9 @@ int CvCity::getYieldBuyPrice(YieldTypes eYield) const
 	// WTP, ray Domestic Market Events - START
 	// we modify the price in case there is a Market Event going on
 	int iDomesticMarketEventModifier = getDomesticDemandEventPriceModifier();
-	int iModifiedPrice = m_em_iYieldBuyPrice.get(eYield) * (100 + iDomesticMarketEventModifier) /  100;
+	int iModifiedPrice = getYieldBuyPriceUnmodified(eYield) * (100 + iDomesticMarketEventModifier) /  100;
 	return iModifiedPrice;
 
-}
-
-// R&R, ray, adjustment Domestic Markets
-// No messages, because too many messages get annoying
-void CvCity::setYieldBuyPrice(YieldTypes eYield, int iPrice)
-{
-	FAssert(validEnumRange(eYield));
-
-	iPrice = std::max(iPrice, 1);
-	if (iPrice != getYieldBuyPriceUnmodified(eYield))
-	{
-		m_em_iYieldBuyPrice.set(eYield, iPrice);
-	}
 }
 
 // R&R, ray, adjustment Domestic Markets
@@ -13651,79 +13601,6 @@ int CvCity::getYieldDemand(YieldTypes eYield) const
 	YieldCargoArray<int> aYields;
 	getYieldDemands(aYields);
 	return aYields.get(eYield);
-}
-// R&R, ray, adjustment Domestic Markets
-// function completely rewritten by Nightinggale to fix extreme price bug
-// needs to be checked for Special Cases like Luxury Goods
-void CvCity::doPrices()
-{
-	const CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
-	if (!kOwner.is(CIV_CATEGORY_COLONIAL))
-	{
-		return;
-	}
-	const CvPlayerAI& king = *kOwner.getParentPlayer();
-
-	// constants to determine when to change price
-	// higher iPointsPerPriceDiff will make prices move more towards Europe prices
-	// higher iPointsToTriggerPriceChange will increase the chance of no change
-	// iDefaultPoints is how many points a yield has if there is no price diff
-	// note if iDefaultPoints <= iPointsToTriggerPriceChange, then prices will only move towards Europe prices
-	const int iPointsPerPriceDiff = 35;
-	const int iPointsToTriggerPriceChange = 70;
-	const int iDefaultPoints = 100;
-
-	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_CARGO_YIELD_TYPES; ++eYield)
-	{
-		const CvYieldInfo& kYield = GC.getYieldInfo(eYield);
-		
-		int iTargetPrice = king.getYieldSellPrice(eYield);
-
-		// todo: change price offset to an int in yield xml to make it configurable for each yield instead of hardcoding
-		switch (eYield)
-		{
-		case YIELD_LUXURY_GOODS:
-			// Luxury Goods should always give a little profit
-			iTargetPrice += GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_LUXURY_GOODS;
-			break;
-		case YIELD_FIELD_WORKER_TOOLS:
-		case YIELD_HOUSEHOLD_GOODS:
-			// WTP, now also Fieldwoker Tools, but the Diff is only half
-			// WTP, now also Household Goods, but the Diff is only half
-			iTargetPrice += GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_LUXURY_GOODS / 2;
-			break;
-			// WTP, trying to fix issue that Domestic Market became unattractive
-		default:
-			iTargetPrice += GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_OTHER_GOODS;
-			break;
-		}
-
-		const int iPriceDiff = iTargetPrice - getYieldBuyPriceUnmodified(eYield);
-
-		int iMin = -iDefaultPoints;
-		int iMax = iDefaultPoints;
-
-		if (iPriceDiff > 0)
-		{
-			iMax += iPriceDiff * iPointsPerPriceDiff;
-		}
-		else
-		{
-			iMin += iPriceDiff * iPointsPerPriceDiff;
-		}
-
-		// get result in range iMin to iMax, both inclusive
-		int iResult = GC.getGameINLINE().getSorenRandNum(iMax - iMin + 1, "Colony price change") + iMin;
-
-		if (iResult >= iPointsToTriggerPriceChange)
-		{
-			setYieldBuyPrice(eYield, getYieldBuyPriceUnmodified(eYield) + 1);
-		}
-		else if (iResult <= -iPointsToTriggerPriceChange && kYield.price(FIRST_TRADELOCATION).buyLow < getYieldBuyPriceUnmodified(eYield))
-		{
-			setYieldBuyPrice(eYield, getYieldBuyPriceUnmodified(eYield) - 1);
-		}
-	}
 }
 //Androrc End
 

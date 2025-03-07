@@ -392,7 +392,6 @@ public:
 	// R&R, Androrc, Domestic Market
 	int getYieldBuyPriceUnmodified(YieldTypes eYield) const;
 	int getYieldBuyPrice(YieldTypes eYield) const;
-	void setYieldBuyPrice(YieldTypes eYield, int iPrice);
 	int getYieldDemand(YieldTypes eYield) const;
 	void getYieldDemands(YieldCargoArray<int> &aYields) const;
 	//Androrc End
@@ -870,9 +869,6 @@ protected:
 	EnumMap<YieldTypes,int> m_em_iYieldRateModifier;
 	EnumMap<YieldTypes,int> m_em_iYieldStored;
 	EnumMap<YieldTypes,int> m_em_iYieldRushed;
-	// R&R, Androrc, Domestic Market
-	EnumMap<YieldTypes,int> m_em_iYieldBuyPrice;
-	//Androrc End
 
 	// R&R, ray, finishing Custom House Screen
 	EnumMap<YieldTypes,int> m_em_iCustomHouseSellThreshold;
@@ -930,7 +926,6 @@ protected:
 	void doPlotCulture(bool bUpdate, PlayerTypes ePlayer, int iCultureRate);
 	void doSpecialists();
 	void doProduction(bool bAllowNoProduction);
-	void doPrices(); // R&R, Androrc, Domestic Market
 	void doDecay();
 	void doMissionaries();
 	void doNativeTradePost(); // WTP, ray, Native Trade Posts - START

@@ -2800,6 +2800,7 @@ public:
 	const YieldPriceTable price(TradeLocationTypes eLocation) const;
 	int getPriceChangeThreshold() const;
 	int getPriceCorrectionPercent() const;
+	int getDomesticPriceBonus() const;
 	int getNativeBuyPrice() const;
 	int getNativeSellPrice() const;
 	int getNativeConsumptionPercent() const;
