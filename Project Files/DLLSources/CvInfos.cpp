@@ -9862,27 +9862,8 @@ bool CvFeatureInfo::read(CvXMLLoadUtility* pXML)
 CvYieldInfo::CvYieldInfo() :
 m_eIndex(NO_YIELD),
 m_iChar(0),
-m_iBuyPriceLow(0),
-m_iBuyPriceHigh(0),
-// TAC - Price Limits - Ray - START
-m_iBuyPriceMin(0),
-// TAC - Price Limits - Ray - END
-m_iSellPriceDifference(0),
 m_iPriceChangeThreshold(0),
 m_iPriceCorrectionPercent(0),
-// R&R, Androrc Price Recovery
-m_iEuropeVolumeAttrition(0),
-//Androrc End
-// R&R, ray, Africa
-m_iAfricaBuyPriceLow(0),
-m_iAfricaBuyPriceHigh(0),
-m_iAfricaSellPriceDifference(0),
-// R&R, ray, Africa - END
-// R&R, ray, Port Royal
-m_iPortRoyalBuyPriceLow(0),
-m_iPortRoyalBuyPriceHigh(0),
-m_iPortRoyalSellPriceDifference(0),
-// R&R, ray, Port Royal - END
 m_iNativeBuyPrice(0),
 m_iNativeSellPrice(0),
 m_iNativeConsumptionPercent(0),
@@ -9917,6 +9898,16 @@ m_bLivestock(false)
 //  PURPOSE :   Default destructor
 //
 //------------------------------------------------------------------------------------------------------
+CvYieldInfo::YieldPriceTable::YieldPriceTable()
+	: buyLow(0)
+	, buyHigh(0)
+	, buyLowInit(0)
+	, buyHighInit(0)
+	, sellPriceDifference(0)
+	, volumeAttrition(0)
+{
+}
+
 CvYieldInfo::~CvYieldInfo()
 {
 }
@@ -9952,16 +9943,7 @@ WidgetTypes CvYieldInfo::getWikiWidget() const
 
 YieldTypes CvYieldInfo::getID() const
 {
-	for (int iYield = 0; iYield < NUM_YIELD_TYPES; ++iYield)
-	{
-		YieldTypes eYield = (YieldTypes)iYield;
-		if (this == &GC.getYieldInfo(eYield))
-		{
-			return eYield;
-		}
-	}
-	FAssertMsg(false, "Yield info failed to find itself")
-	return NO_YIELD;
+	return m_eIndex;
 }
 
 // KJ Jansson addon for Multiple Professions per Building modcomp by Androrc the Orc START
@@ -9974,54 +9956,9 @@ const char* CvYieldInfo::getHighlightIcon() const
 {
 	return m_szHightlightIcon;
 }
-int CvYieldInfo::getBuyPriceLow() const
+const CvYieldInfo::YieldPriceTable CvYieldInfo::price(TradeLocationTypes eLocation) const
 {
-	return m_iBuyPriceLow;
-}
-int CvYieldInfo::getBuyPriceHigh() const
-{
-	return m_iBuyPriceHigh;
-}
-
-// R&R, ray, Africa
-int CvYieldInfo::getAfricaBuyPriceLow() const
-{
-	return m_iAfricaBuyPriceLow;
-}
-int CvYieldInfo::getAfricaBuyPriceHigh() const
-{
-	return m_iAfricaBuyPriceHigh;
-}
-int CvYieldInfo::getAfricaSellPriceDifference() const
-{
-	return m_iAfricaSellPriceDifference;
-}
-// R&R, ray, Africa- END
-// R&R, ray, Port Royal
-int CvYieldInfo::getPortRoyalBuyPriceLow() const
-{
-	return m_iPortRoyalBuyPriceLow;
-}
-int CvYieldInfo::getPortRoyalBuyPriceHigh() const
-{
-	return m_iPortRoyalBuyPriceHigh;
-}
-int CvYieldInfo::getPortRoyalSellPriceDifference() const
-{
-	return m_iPortRoyalSellPriceDifference;
-}
-// R&R, ray, Port Royal- END
-
-// TAC - Price Limits - Ray - START
-int CvYieldInfo::getMinimumBuyPrice() const
-{
-	return m_iBuyPriceMin;
-}
-// TAC - Price Limits - Ray - END
-
-int CvYieldInfo::getSellPriceDifference() const
-{
-	return m_iSellPriceDifference;
+	return m_prices[eLocation];
 }
 int CvYieldInfo::getPriceChangeThreshold() const
 {
@@ -10031,12 +9968,6 @@ int CvYieldInfo::getPriceCorrectionPercent() const
 {
 	return m_iPriceCorrectionPercent;
 }
-// R&R, Androrc Price Recovery
-int CvYieldInfo::getEuropeVolumeAttrition() const
-{
-	return m_iEuropeVolumeAttrition;
-}
-//Androrc End
 int CvYieldInfo::getNativeBuyPrice() const
 {
 	return m_iNativeBuyPrice;
@@ -10137,31 +10068,73 @@ bool CvYieldInfo::read(CvXMLLoadUtility* pXML)
 	m_eIndex = static_cast<YieldTypes>(getIndexForType(JIT_ARRAY_YIELD, getType()));
 	FAssert(m_eIndex != NO_YIELD);
 
-	pXML->GetChildXmlValByName(&m_iBuyPriceLow, "iBuyPriceLow");
-	pXML->GetChildXmlValByName(&m_iBuyPriceHigh, "iBuyPriceHigh");
-	// TAC - Price Limits - Ray - START
-	pXML->GetChildXmlValByName(&m_iBuyPriceMin, "iBuyPriceMin");
-	// TAC - Price Limits - Ray - END
-	pXML->GetChildXmlValByName(&m_iSellPriceDifference, "iSellPriceDifference");
-	pXML->GetChildXmlValByName(&m_iPriceChangeThreshold, "iPriceChangeThreshold");
-	pXML->GetChildXmlValByName(&m_iPriceCorrectionPercent, "iPriceCorrectionPercent");
-	// R&R, Androrc Price Recovery
-	pXML->GetChildXmlValByName(&m_iEuropeVolumeAttrition, "iEuropeVolumeAttrition");
-	//Androrc End
-	// R&R, ray, Africa
-	pXML->GetChildXmlValByName(&m_iAfricaBuyPriceLow, "iAfricaBuyPriceLow");
-	pXML->GetChildXmlValByName(&m_iAfricaBuyPriceHigh, "iAfricaBuyPriceHigh");
-	pXML->GetChildXmlValByName(&m_iAfricaSellPriceDifference, "iAfricaSellPriceDifference");
-	// R&R, ray, Africa - END
-	// R&R, ray, Port Royal
-	pXML->GetChildXmlValByName(&m_iPortRoyalBuyPriceLow, "iPortRoyalBuyPriceLow");
-	pXML->GetChildXmlValByName(&m_iPortRoyalBuyPriceHigh, "iPortRoyalBuyPriceHigh");
-	pXML->GetChildXmlValByName(&m_iPortRoyalSellPriceDifference, "iPortRoyalSellPriceDifference");
-	// R&R, ray, Port Royal - END
-	pXML->GetChildXmlValByName(&m_iNativeBuyPrice, "iNativeBuyPrice");
-	pXML->GetChildXmlValByName(&m_iNativeSellPrice, "iNativeSellPrice");
-	pXML->GetChildXmlValByName(&m_iNativeConsumptionPercent, "iNativeConsumptionPercent");
-	pXML->GetChildXmlValByName(&m_iNativeHappy, "iNativeHappy");
+	// make sure it's always allocated just to be safe
+	m_prices.allocate();
+
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "Prices"))
+	{
+		pXML->GetChildXmlValByName(&m_iDomesticPriceBonus, "iDomesticPriceBonus");
+		pXML->GetChildXmlValByName(&m_iPriceChangeThreshold, "iPriceChangeThreshold");
+		pXML->GetChildXmlValByName(&m_iPriceCorrectionPercent, "iPriceCorrectionPercent");
+
+		if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "NativePrice"))
+		{
+			pXML->GetChildXmlValByName(&m_iNativeBuyPrice, "iNativeBuyPrice");
+			pXML->GetChildXmlValByName(&m_iNativeSellPrice, "iNativeSellPrice");
+			pXML->GetChildXmlValByName(&m_iNativeConsumptionPercent, "iNativeConsumptionPercent");
+			pXML->GetChildXmlValByName(&m_iNativeHappy, "iNativeHappy");
+
+			gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+		}
+
+		if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "PriceLocation"))
+		{
+			do
+			{
+				TradeLocationTypes eLocation;
+				pXML->GetEnum(getType(), eLocation, "location");
+				
+				if (eLocation >= FIRST_TRADELOCATION && eLocation < NUM_TRADELOCATION_TYPES)
+				{
+					int iBuyLow;
+					pXML->GetChildXmlValByName(&iBuyLow, "iBuyLow");
+					int iBuyHigh;
+					pXML->GetChildXmlValByName(&iBuyHigh, "iBuyHigh");
+					int iBuyLowInit;
+					pXML->GetChildXmlValByName(&iBuyLowInit, "iBuyLowInit");
+					int iBuyHighInit;
+					pXML->GetChildXmlValByName(&iBuyHighInit, "iBuyHighInit");
+					int iSellPriceDifference;
+					pXML->GetChildXmlValByName(&iSellPriceDifference, "iSellPriceDifference");
+					int iVolumeAttrition;
+					pXML->GetChildXmlValByName(&iVolumeAttrition, "iVolumeAttrition");
+					
+					m_prices[eLocation].buyLow = iBuyLow;
+					m_prices[eLocation].buyHigh = iBuyHigh;
+					m_prices[eLocation].buyLowInit = iBuyLowInit;
+					m_prices[eLocation].buyHighInit = iBuyHighInit;
+					m_prices[eLocation].sellPriceDifference = iSellPriceDifference;
+					m_prices[eLocation].volumeAttrition = iVolumeAttrition;
+
+					FAssertMsg(m_prices[eLocation].buyLow == iBuyLow, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyLow, iBuyLow).c_str());
+					FAssertMsg(m_prices[eLocation].buyHigh = iBuyHigh, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyHigh, iBuyHigh).c_str());
+					FAssertMsg(m_prices[eLocation].buyLowInit = iBuyLowInit, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyLowInit, iBuyLowInit).c_str());
+					FAssertMsg(m_prices[eLocation].buyHighInit = iBuyHighInit, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyHighInit, iBuyHighInit).c_str());
+					FAssertMsg(m_prices[eLocation].sellPriceDifference = iSellPriceDifference, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].sellPriceDifference, iSellPriceDifference).c_str());
+					FAssertMsg(m_prices[eLocation].volumeAttrition = iVolumeAttrition, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].volumeAttrition, iVolumeAttrition).c_str());
+				
+					FAssertMsg(iBuyLow <= iBuyHigh, getType());
+					FAssertMsg(iBuyLowInit <= iBuyLow, getType());
+					FAssertMsg(iBuyHigh <= iBuyHighInit, getType());
+				}
+
+			} while (gDLL->getXMLIFace()->NextSibling(pXML->GetXML()));
+
+			gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+		}
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+	
 	pXML->GetChildXmlValByName(&m_iHillsChange, "iHillsChange");
 	pXML->GetChildXmlValByName(&m_iPeakChange, "iPeakChange");
 	pXML->GetChildXmlValByName(&m_iLakeChange, "iLakeChange");

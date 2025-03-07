@@ -127,7 +127,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, Coordinates initCoord, bool bBump
 		for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 		{
 			const CvYieldInfo& kYield = GC.getYieldInfo(eYield);
-			FAssert(kYield.getBuyPriceHigh() >= kYield.getBuyPriceLow());
+			FAssert(kYield.price(FIRST_TRADELOCATION).buyHighInit >= kYield.price(FIRST_TRADELOCATION).buyLowInit);
 
 			int iBuyPrice = 0;
 
@@ -148,7 +148,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, Coordinates initCoord, bool bBump
 			}
 			else
 			{
-				iBuyPrice = kYield.getBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getBuyPriceHigh() - kYield.getBuyPriceLow() + 1, "Yield Price");
+				iBuyPrice = kYield.price(FIRST_TRADELOCATION).buyLowInit + GC.getGameINLINE().getSorenRandNum(kYield.price(FIRST_TRADELOCATION).buyHighInit - kYield.price(FIRST_TRADELOCATION).buyLowInit + 1, "Yield Price");
 				// WTP, trying to fix issue that Domestic Market became unattractive
 				iBuyPrice += GLOBAL_DEFINE_PRICE_DIFF_EUROPE_DOMESTIC_OTHER_GOODS;
 			}
@@ -7443,7 +7443,7 @@ void CvCity::doYields()
 						else
 						{
 							int briberate = GET_PLAYER(getOwnerINLINE()).getTaxRate();
-							int minPrice = GC.getYieldInfo(eYield).getMinimumBuyPrice();
+							int minPrice = GC.getYieldInfo(eYield).price(FIRST_TRADELOCATION).buyLow;
 							int iAmount = iLoss;
 							iComparableProfitInEast = iAmount * minPrice;
 							iComparableProfitInEast -= (iComparableProfitInEast * briberate) / 100;
@@ -13719,7 +13719,7 @@ void CvCity::doPrices()
 		{
 			setYieldBuyPrice(eYield, getYieldBuyPriceUnmodified(eYield) + 1);
 		}
-		else if (iResult <= -iPointsToTriggerPriceChange && kYield.getMinimumBuyPrice() < getYieldBuyPriceUnmodified(eYield))
+		else if (iResult <= -iPointsToTriggerPriceChange && kYield.price(FIRST_TRADELOCATION).buyLow < getYieldBuyPriceUnmodified(eYield))
 		{
 			setYieldBuyPrice(eYield, getYieldBuyPriceUnmodified(eYield) - 1);
 		}

@@ -112,6 +112,15 @@ BOOST_STATIC_ASSERT(sizeof(CySpecialUnitInfo) == sizeof(CvSpecialUnitInfo));
 class CyYieldInfo : public CvYieldInfo
 {
 public:
+	int getBuyPriceLow() const;
+	int getBuyPriceHigh() const;
+	int getSellPriceDifference() const;
+	int getAfricaBuyPriceLow() const;
+	int getAfricaBuyPriceHigh() const;
+	int getAfricaSellPriceDifference() const;
+	int getPortRoyalBuyPriceLow() const;
+	int getPortRoyalBuyPriceHigh() const;
+	int getPortRoyalSellPriceDifference() const;
 	int getUnitClass() const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyYieldInfo) == sizeof(CvYieldInfo));

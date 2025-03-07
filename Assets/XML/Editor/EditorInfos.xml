@@ -1394,5 +1394,27 @@
 		<CombiIcon/>
 		<HighlightIcon/>
 		<Button class="Button"/>
+		<Prices>
+			<iDomesticPriceBonus/>
+			<iPriceChangeThreshold/>
+			<iPriceCorrectionPercent/>
+			<NativePrice>
+				<iNativeBuyPrice/>
+				<iNativeSellPrice/>
+				<iNativeConsumptionPercent/>
+				<iNativeHappy/>
+			</NativePrice>
+			<PriceTables>
+				<PriceTable>
+					<location class="Type" type="TradeLocationInfo" none="false"/>
+					<iBuyLow class="Int"/>
+					<iBuyHigh/>
+					<iBuyLowInit/>
+					<iBuyHighInit/>
+					<iSellPriceDifference/>
+					<iVolumeAttrition class="Int" help="The trade counter for price changes is changed by this each turn. Setting it to 5 will make the counter assume 5 units are sold each turn for the sake of prices."/>
+				</PriceTable>
+			</PriceTables>
+		</Prices>
 	</YieldInfo>
 </root>

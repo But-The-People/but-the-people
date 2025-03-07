@@ -74,19 +74,8 @@
 	<ElementType name="bIgnoredForStorageCapacity" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bIsExportYield" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bLivestock" content="textOnly" dt:type="boolean"/>
-	<ElementType name="iBuyPriceLow" content="textOnly" dt:type="int"/>
-	<ElementType name="iBuyPriceHigh" content="textOnly" dt:type="int"/>
-	<ElementType name="iBuyPriceMin" content="textOnly" dt:type="int"/>
-	<ElementType name="iSellPriceDifference" content="textOnly" dt:type="int"/>
 	<ElementType name="iPriceChangeThreshold" content="textOnly" dt:type="int"/>
 	<ElementType name="iPriceCorrectionPercent" content="textOnly" dt:type="int"/>
-	<ElementType name="iEuropeVolumeAttrition" content="textOnly" dt:type="int"/>
-	<ElementType name="iAfricaBuyPriceLow" content="textOnly" dt:type="int"/>
-	<ElementType name="iAfricaBuyPriceHigh" content="textOnly" dt:type="int"/>
-	<ElementType name="iAfricaSellPriceDifference" content="textOnly" dt:type="int"/>
-	<ElementType name="iPortRoyalBuyPriceLow" content="textOnly" dt:type="int"/>
-	<ElementType name="iPortRoyalBuyPriceHigh" content="textOnly" dt:type="int"/>
-	<ElementType name="iPortRoyalSellPriceDifference" content="textOnly" dt:type="int"/>
 	<ElementType name="iNativeBuyPrice" content="textOnly" dt:type="int"/>
 	<ElementType name="iNativeSellPrice" content="textOnly" dt:type="int"/>
 	<ElementType name="iNativeConsumptionPercent" content="textOnly" dt:type="int"/>
@@ -108,6 +97,43 @@
 	<ElementType name="Icon" content="textOnly"/>
 	<ElementType name="CombiIcon" content="textOnly"/>
 	<ElementType name="HighlightIcon" content="textOnly"/>
+	
+	<ElementType name="iDomesticPriceBonus" content="textOnly" dt:type="int"/>
+	
+	<ElementType name="location" content="textOnly"/>
+	<ElementType name="iBuyLow" content="textOnly" dt:type="int"/>
+	<ElementType name="iBuyHigh" content="textOnly" dt:type="int"/>
+	<ElementType name="iBuyLowInit" content="textOnly" dt:type="int"/>
+	<ElementType name="iBuyHighInit" content="textOnly" dt:type="int"/>
+	<ElementType name="iSellPriceDifference" content="textOnly" dt:type="int"/>
+	<ElementType name="iVolumeAttrition" content="textOnly" dt:type="int"/>
+	
+	<ElementType name="PriceTable" content="eltOnly">
+		<element type="location"/>
+		<element type="iBuyLow"/>
+		<element type="iBuyHigh"/>
+		<element type="iBuyLowInit"/>
+		<element type="iBuyHighInit"/>
+		<element type="iSellPriceDifference"/>
+		<element type="iVolumeAttrition"/>
+	</ElementType>
+	<ElementType name="PriceTables" content="eltOnly">
+		<element type="PriceTable" maxOccurs="*"/>
+	</ElementType>
+	<ElementType name="NativePrice" content="eltOnly">
+		<element type="iNativeBuyPrice"/>
+		<element type="iNativeSellPrice"/>
+		<element type="iNativeConsumptionPercent"/>
+		<element type="iNativeHappy"/>
+	</ElementType>
+	<ElementType name="Prices" content="eltOnly">
+		<element type="iDomesticPriceBonus"/>
+		<element type="iPriceChangeThreshold"/>
+		<element type="iPriceCorrectionPercent"/>
+		<element type="NativePrice"/>
+		<element type="PriceTables"/>
+	</ElementType>
+	
 	<ElementType name="YieldInfo" content="eltOnly">
 		<element type="Type"/>
 		<element type="Description"/>
@@ -116,23 +142,7 @@
 		<element type="bIgnoredForStorageCapacity" minOccurs="0"/>
 		<element type="bIsExportYield" minOccurs="0"/>
 		<element type="bLivestock" minOccurs="0"/>
-		<element type="iBuyPriceLow"/>
-		<element type="iBuyPriceHigh"/>
-		<element type="iBuyPriceMin"/>
-		<element type="iSellPriceDifference"/>
-		<element type="iPriceChangeThreshold"/>
-		<element type="iPriceCorrectionPercent"/>
-		<element type="iEuropeVolumeAttrition" minOccurs="0" maxOccurs="1"/>
-		<element type="iAfricaBuyPriceLow"/>
-		<element type="iAfricaBuyPriceHigh"/>
-		<element type="iAfricaSellPriceDifference"/>
-		<element type="iPortRoyalBuyPriceLow"/>
-		<element type="iPortRoyalBuyPriceHigh"/>
-		<element type="iPortRoyalSellPriceDifference"/>
-		<element type="iNativeBuyPrice"/>
-		<element type="iNativeSellPrice"/>
-		<element type="iNativeConsumptionPercent"/>
-		<element type="iNativeHappy"/>
+		<element type="Prices"/>
 		<element type="iHillsChange"/>
 		<element type="iPeakChange"/>
 		<element type="iLakeChange"/>

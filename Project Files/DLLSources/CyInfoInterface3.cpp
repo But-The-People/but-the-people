@@ -20,18 +20,18 @@ void CyInfoPythonInterface3()
 		.def("getCombiIcon", &CvYieldInfo::getCombiIcon, "string ()")
 // KJ Jansson addon for Multiple Professions per Building modcomp by Androrc the Orc END
 		.def("getHighlightIcon", &CvYieldInfo::getHighlightIcon, "string ()")
-		.def("getBuyPriceLow", &CvYieldInfo::getBuyPriceLow, "int ()")
-		.def("getBuyPriceHigh", &CvYieldInfo::getBuyPriceHigh, "int ()")
-		.def("getSellPriceDifference", &CvYieldInfo::getSellPriceDifference, "int ()")
+		.def("getBuyPriceLow", &CyYieldInfo::getBuyPriceLow, "int ()")
+		.def("getBuyPriceHigh", &CyYieldInfo::getBuyPriceHigh, "int ()")
+		.def("getSellPriceDifference", &CyYieldInfo::getSellPriceDifference, "int ()")
 		// R&R, ray, Africa
-		.def("getPortRoyalBuyPriceLow", &CvYieldInfo::getPortRoyalBuyPriceLow, "int ()")
-		.def("getPortRoyalBuyPriceHigh", &CvYieldInfo::getPortRoyalBuyPriceHigh, "int ()")
-		.def("getPortRoyalSellPriceDifference", &CvYieldInfo::getPortRoyalSellPriceDifference, "int ()")
+		.def("getPortRoyalBuyPriceLow", &CyYieldInfo::getPortRoyalBuyPriceLow, "int ()")
+		.def("getPortRoyalBuyPriceHigh", &CyYieldInfo::getPortRoyalBuyPriceHigh, "int ()")
+		.def("getPortRoyalSellPriceDifference", &CyYieldInfo::getPortRoyalSellPriceDifference, "int ()")
 		// R&R, ray, Africa - END
 		// R&R, ray, Port Royal
-		.def("getAfricaBuyPriceLow", &CvYieldInfo::getAfricaBuyPriceLow, "int ()")
-		.def("getAfricaBuyPriceHigh", &CvYieldInfo::getAfricaBuyPriceHigh, "int ()")
-		.def("getAfricaSellPriceDifference", &CvYieldInfo::getAfricaSellPriceDifference, "int ()")
+		.def("getAfricaBuyPriceLow", &CyYieldInfo::getAfricaBuyPriceLow, "int ()")
+		.def("getAfricaBuyPriceHigh", &CyYieldInfo::getAfricaBuyPriceHigh, "int ()")
+		.def("getAfricaSellPriceDifference", &CyYieldInfo::getAfricaSellPriceDifference, "int ()")
 		// R&R, ray, Port Royal - END
 		.def("getPriceChangeThreshold", &CvYieldInfo::getPriceChangeThreshold, "int ()")
 		.def("getPriceCorrectionPercent", &CvYieldInfo::getPriceCorrectionPercent, "int ()")

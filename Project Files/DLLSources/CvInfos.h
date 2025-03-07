@@ -2772,6 +2772,18 @@ class CvYieldInfo :
 {
 	//---------------------------------------PUBLIC INTERFACE---------------------------------
 public:
+	struct YieldPriceTable
+	{
+		YieldPriceTable();
+
+		int buyLow : 8;
+		int buyHigh : 8;
+		int buyLowInit : 8;
+		int buyHighInit : 8;
+		int sellPriceDifference : 8;
+		int volumeAttrition : 16;
+	};
+
 	CvYieldInfo();
 	virtual ~CvYieldInfo();
 	YieldTypes getIndex() const { return m_eIndex; }
@@ -2785,27 +2797,9 @@ public:
 	const char* getCombiIcon() const;
 // KJ Jansson addon for Multiple Professions per Building modcomp by Androrc the Orc END
 	const char* getHighlightIcon() const;
-	int getBuyPriceLow() const;
-	int getBuyPriceHigh() const;
-	// TAC - Price Limits - Ray - START
-	int getMinimumBuyPrice() const;
-	// TAC - Price Limits - Ray - END
-	int getSellPriceDifference() const;
+	const YieldPriceTable price(TradeLocationTypes eLocation) const;
 	int getPriceChangeThreshold() const;
 	int getPriceCorrectionPercent() const;
-	// R&R, Androrc Price Recovery
-	int getEuropeVolumeAttrition() const;
-	//Androrc End
-	// R&R, ray, Africa
-	int getAfricaBuyPriceHigh() const;
-	int getAfricaBuyPriceLow() const;
-	int getAfricaSellPriceDifference() const;
-	// R&R, ray, Africa - END
-	// R&R, ray, Port Royal
-	int getPortRoyalBuyPriceHigh() const;
-	int getPortRoyalBuyPriceLow() const;
-	int getPortRoyalSellPriceDifference() const;
-	// R&R, ray, Port Royal - END
 	int getNativeBuyPrice() const;
 	int getNativeSellPrice() const;
 	int getNativeConsumptionPercent() const;
@@ -2844,27 +2838,8 @@ protected:
 	CvString m_szCombiIcon;
 // KJ Jansson addon for Multiple Professions per Building modcomp by Androrc the Orc END
 	CvString m_szHightlightIcon;
-	int m_iBuyPriceLow;
-	int m_iBuyPriceHigh;
-	// TAC - Price Limits - Ray - START
-	int m_iBuyPriceMin;
-	// TAC - Price Limits - Ray - END
-	int m_iSellPriceDifference;
 	int m_iPriceChangeThreshold;
 	int m_iPriceCorrectionPercent;
-	// R&R, Androrc Price Recovery
-	int m_iEuropeVolumeAttrition;
-	//Androrc End
-	// R&R, ray, Africa
-	int m_iAfricaBuyPriceLow;
-	int m_iAfricaBuyPriceHigh;
-	int m_iAfricaSellPriceDifference;
-	// R&R, ray, Africa - END
-	// R&R, ray, Port Royal
-	int m_iPortRoyalBuyPriceLow;
-	int m_iPortRoyalBuyPriceHigh;
-	int m_iPortRoyalSellPriceDifference;
-	// R&R, ray, Port Royal - END
 	int m_iNativeBuyPrice;
 	int m_iNativeSellPrice;
 	int m_iNativeConsumptionPercent;
@@ -2891,6 +2866,9 @@ protected:
 	// R&R, Androrc, Livestock Breeding
 	bool m_bLivestock;
 	// R&R, Androrc, Livestock Breeding, END
+
+	EnumMap<TradeLocationTypes, YieldPriceTable> m_prices;
+	int m_iDomesticPriceBonus;
 };
 
 

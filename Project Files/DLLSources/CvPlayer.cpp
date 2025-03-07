@@ -109,16 +109,13 @@ void CvPlayer::init(PlayerTypes eID)
 		{
 			const CvYieldInfo& kYield = GC.getYieldInfo(eYield);
 
-			FAssert(kYield.getBuyPriceHigh() >= kYield.getBuyPriceLow());
-			const int iBuyPrice = kYield.getBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getBuyPriceHigh() - kYield.getBuyPriceLow() + 1, "Yield Price");
+			const int iBuyPrice = kYield.price(TRADE_LOCATION_EUROPE).buyLowInit + GC.getGameINLINE().getSorenRandNum(kYield.price(TRADE_LOCATION_EUROPE).buyHighInit - kYield.price(TRADE_LOCATION_EUROPE).buyLowInit + 1, "Yield Price");
 			setYieldBuyPrice(eYield, iBuyPrice, false);
 
-			FAssert(kYield.getAfricaBuyPriceHigh() >= kYield.getAfricaBuyPriceLow());
-			const int iAfricaBuyPrice = kYield.getAfricaBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getAfricaBuyPriceHigh() - kYield.getAfricaBuyPriceLow() + 1, "Yield Price");
+			const int iAfricaBuyPrice = kYield.price(TRADE_LOCATION_AFRICA).buyLowInit + GC.getGameINLINE().getSorenRandNum(kYield.price(TRADE_LOCATION_AFRICA).buyHighInit - kYield.price(TRADE_LOCATION_AFRICA).buyLowInit + 1, "Yield Price");
 			setYieldAfricaBuyPrice(eYield, iAfricaBuyPrice, false);
 
-			FAssert(kYield.getPortRoyalBuyPriceHigh() >= kYield.getPortRoyalBuyPriceLow());
-			const int iPortRoyalBuyPrice = kYield.getPortRoyalBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getPortRoyalBuyPriceHigh() - kYield.getPortRoyalBuyPriceLow() + 1, "Yield Price");
+			const int iPortRoyalBuyPrice = kYield.price(TRADE_LOCATION_PORT_ROYAL).buyLowInit + GC.getGameINLINE().getSorenRandNum(kYield.price(TRADE_LOCATION_PORT_ROYAL).buyHighInit - kYield.price(TRADE_LOCATION_PORT_ROYAL).buyLowInit + 1, "Yield Price");
 			setYieldPortRoyalBuyPrice(eYield, iPortRoyalBuyPrice, false);
 		}
 	}
@@ -16092,7 +16089,7 @@ int CvPlayer::getYieldSellPrice(YieldTypes eYield) const
 	FAssert(eYield < NUM_YIELD_TYPES);
 	FAssert(is(CIV_CATEGORY_KING));
 
-	return std::max(1, getYieldBuyPrice(eYield) + GC.getYieldInfo(eYield).getSellPriceDifference());
+	return std::max(1, getYieldBuyPrice(eYield) + GC.getYieldInfo(eYield).price(TRADE_LOCATION_EUROPE).sellPriceDifference);
 }
 
 int CvPlayer::getYieldBuyPrice(YieldTypes eYield) const
@@ -16458,8 +16455,8 @@ void CvPlayer::setYieldBuyPrice(YieldTypes eYield, int iPrice, bool bMessage)
 
 	//Never let price end up outside of range set in xml
 	const CvYieldInfo& kYield = GC.getYieldInfo(eYield);
-	iPrice = std::max(iPrice, kYield.getMinimumBuyPrice());
-	iPrice = std::min(iPrice, kYield.getBuyPriceHigh());
+	iPrice = std::max(iPrice, kYield.price(TRADE_LOCATION_EUROPE).buyLow);
+	iPrice = std::min(iPrice, kYield.price(TRADE_LOCATION_EUROPE).buyHigh);
 
 	// TAC - Price Limits - Ray - END
 
@@ -16540,7 +16537,7 @@ void CvPlayer::sellYieldUnitToEurope(CvUnit* pUnit, int iAmount, int iCommission
 				{
 					if (!isYieldEuropeTradable(eYield))
 					{
-						int minPrice = GC.getYieldInfo(eYield).getMinimumBuyPrice();
+						const int minPrice = GC.getYieldInfo(eYield).price(TRADE_LOCATION_EUROPE).buyLow;
 						iProfit = iAmount * minPrice * (100 - GLOBAL_DEFINE_SMUGGLING_BRIBE_RATE) / 100;
 						iSellPrice = minPrice; // R&R, vetiarvind, Price dependent tax rate change
 					}
@@ -16881,7 +16878,7 @@ int CvPlayer::getYieldAfricaSellPrice(YieldTypes eYield) const
 	FAssert(eYield >= 0);
 	FAssert(eYield < NUM_YIELD_TYPES);
 
-	return std::max(1, getYieldAfricaBuyPrice(eYield) + GC.getYieldInfo(eYield).getAfricaSellPriceDifference());
+	return std::max(1, getYieldAfricaBuyPrice(eYield) + GC.getYieldInfo(eYield).price(TRADE_LOCATION_AFRICA).sellPriceDifference);
 }
 
 int CvPlayer::getYieldAfricaBuyPrice(YieldTypes eYield) const
@@ -17258,7 +17255,7 @@ void CvPlayer::setYieldAfricaBuyPrice(YieldTypes eYield, int iPrice, bool bMessa
 	}
 
 	//Never let price fall below Minimum
-	iPrice = std::max(iPrice, GC.getYieldInfo(eYield).getMinimumBuyPrice());
+	iPrice = std::max(iPrice, GC.getYieldInfo(eYield).price(TRADE_LOCATION_AFRICA).buyLow);
 
 	// TAC - Price Limits - Ray - END
 
@@ -17346,7 +17343,7 @@ void CvPlayer::sellYieldUnitToAfrica(CvUnit* pUnit, int iAmount, int iCommission
 				{
 					if (!isYieldAfricaTradable(eYield))
 					{
-						int minPrice = GC.getYieldInfo(eYield).getMinimumBuyPrice();
+						const int minPrice = GC.getYieldInfo(eYield).price(TRADE_LOCATION_AFRICA).buyLow;
 						iProfit = iAmount * minPrice * (100 - iBribe) / 100;
 						iSellPrice = minPrice;// R&R, vetiarvind, Price dependent tax rate change
 					}
@@ -17451,7 +17448,7 @@ int CvPlayer::getYieldPortRoyalSellPrice(YieldTypes eYield) const
 	FAssert(eYield >= 0);
 	FAssert(eYield < NUM_YIELD_TYPES);
 
-	return std::max(1, getYieldPortRoyalBuyPrice(eYield) + GC.getYieldInfo(eYield).getPortRoyalSellPriceDifference());
+	return std::max(1, getYieldPortRoyalBuyPrice(eYield) + GC.getYieldInfo(eYield).price(TRADE_LOCATION_PORT_ROYAL).sellPriceDifference);
 }
 
 int CvPlayer::getYieldPortRoyalBuyPrice(YieldTypes eYield) const
@@ -17827,7 +17824,7 @@ void CvPlayer::setYieldPortRoyalBuyPrice(YieldTypes eYield, int iPrice, bool bMe
 	}
 
 	//Never let price fall below Minimum
-	iPrice = std::max(iPrice, GC.getYieldInfo(eYield).getMinimumBuyPrice());
+	iPrice = std::max(iPrice, GC.getYieldInfo(eYield).price(TRADE_LOCATION_PORT_ROYAL).buyLow);
 
 	// TAC - Price Limits - Ray - END
 
@@ -19385,13 +19382,13 @@ void CvPlayer::doPrices()
 
 
 		// R&R, Androrc Price Recovery
-		GC.getGameINLINE().changeYieldBoughtTotal(TRADE_LOCATION_EUROPE, getID(), eYield, kYield.getEuropeVolumeAttrition());
+		GC.getGameINLINE().changeYieldBoughtTotal(TRADE_LOCATION_EUROPE, getID(), eYield, kYield.price(TRADE_LOCATION_EUROPE).volumeAttrition);
 		//Androrc End
 
 		applyYieldTradedModifier(TRADE_LOCATION_EUROPE, eYield, GLOBAL_DEFINE_TRADE_DECAY_TURN);
 
 		int iBaseThreshold = kYield.getPriceChangeThreshold() * iSpeedModifier / 10000;
-		int iNewPrice = kYield.getBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getBuyPriceHigh() - kYield.getBuyPriceLow() + 1, "Price selection");
+		int iNewPrice = kYield.price(TRADE_LOCATION_EUROPE).buyLow + GC.getGameINLINE().getSorenRandNum(kYield.price(TRADE_LOCATION_EUROPE).buyHigh - kYield.price(TRADE_LOCATION_EUROPE).buyLow + 1, "Price selection");
 		iNewPrice += getYieldBoughtTotal(TRADE_LOCATION_EUROPE, eYield) / std::max(1, iBaseThreshold);
 
 		if (GC.getGameINLINE().getSorenRandNum(100, "Price correction") < kYield.getPriceCorrectionPercent() * std::abs(iNewPrice - getYieldBuyPrice(eYield)))
@@ -19511,14 +19508,14 @@ void CvPlayer::doAfricaPrices()
 			{
 				// WTP, ray, Yields Traded Total for Africa and Port Royal - START
 				// R&R, Androrc Price Recovery
-				GC.getGameINLINE().changeYieldBoughtTotal(TRADE_LOCATION_AFRICA, getID(), eYield, kYield.getEuropeVolumeAttrition());
+				GC.getGameINLINE().changeYieldBoughtTotal(TRADE_LOCATION_AFRICA, getID(), eYield, kYield.price(TRADE_LOCATION_AFRICA).volumeAttrition);
 				//Androrc End
 				// WTP, ray, Yields Traded Total for Africa and Port Royal - END
 
 				applyYieldTradedModifier(TRADE_LOCATION_AFRICA, eYield, GLOBAL_DEFINE_TRADE_DECAY_TURN);
 
 				int iBaseThreshold = kYield.getPriceChangeThreshold() * iSpeedModifier / 10000;
-				int iNewPrice = kYield.getAfricaBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getAfricaBuyPriceHigh() - kYield.getAfricaBuyPriceLow() + 1, "Price selection");
+				int iNewPrice = kYield.price(TRADE_LOCATION_AFRICA).buyLow + GC.getGameINLINE().getSorenRandNum(kYield.price(TRADE_LOCATION_AFRICA).buyHigh - kYield.price(TRADE_LOCATION_AFRICA).buyLow + 1, "Price selection");
 				iNewPrice += getYieldBoughtTotal(TRADE_LOCATION_AFRICA, eYield) / std::max(1, iBaseThreshold); // WTP, ray, Yields Traded Total for Africa and Port Royal - START
 
 				if (GC.getGameINLINE().getSorenRandNum(100, "Price correction") < kYield.getPriceCorrectionPercent() * std::abs(iNewPrice - getYieldAfricaBuyPriceNoModifier(eYield)))
@@ -19548,14 +19545,14 @@ void CvPlayer::doPortRoyalPrices()
 			{
 				// WTP, ray, Yields Traded Total for Africa and Port Royal - START
 				// R&R, Androrc Price Recovery
-				GC.getGameINLINE().changeYieldBoughtTotal(TRADE_LOCATION_PORT_ROYAL, getID(), eYield, kYield.getEuropeVolumeAttrition());
+				GC.getGameINLINE().changeYieldBoughtTotal(TRADE_LOCATION_PORT_ROYAL, getID(), eYield, kYield.price(TRADE_LOCATION_PORT_ROYAL).volumeAttrition);
 				//Androrc End
 				// WTP, ray, Yields Traded Total for Africa and Port Royal - END
 
 				applyYieldTradedModifier(TRADE_LOCATION_PORT_ROYAL, eYield, GLOBAL_DEFINE_TRADE_DECAY_TURN);
 
 				int iBaseThreshold = kYield.getPriceChangeThreshold() * iSpeedModifier / 10000;
-				int iNewPrice = kYield.getPortRoyalBuyPriceLow() + GC.getGameINLINE().getSorenRandNum(kYield.getPortRoyalBuyPriceHigh() - kYield.getPortRoyalBuyPriceLow() + 1, "Price selection");
+				int iNewPrice = kYield.price(TRADE_LOCATION_PORT_ROYAL).buyLow + GC.getGameINLINE().getSorenRandNum(kYield.price(TRADE_LOCATION_PORT_ROYAL).buyHigh - kYield.price(TRADE_LOCATION_PORT_ROYAL).buyLow + 1, "Price selection");
 				iNewPrice += getYieldBoughtTotal(TRADE_LOCATION_PORT_ROYAL, eYield) / std::max(1, iBaseThreshold); // WTP, ray, Yields Traded Total for Africa and Port Royal - START
 
 				if (GC.getGameINLINE().getSorenRandNum(100, "Price correction") < kYield.getPriceCorrectionPercent() * std::abs(iNewPrice - getYieldPortRoyalBuyPriceNoModifier(eYield)))

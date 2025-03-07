@@ -2790,6 +2790,167 @@ void CvXMLLoadUtility::SetVariableListTagPairForAudioScripts(int **ppiList, char
 	}
 }
 
+// code to redesign xml files automatically. Feel free to change it as needed since the code is likely only needed once.
+#if 0
+
+#include "tinyxml2.h"
+
+// root is the index of each xml entry
+static void updateXMLFileEntry(tinyxml2::XMLElement* root)
+{
+	tinyxml2::XMLDocument* doc = root->GetDocument();
+
+	tinyxml2::XMLElement* prev_element = root->FirstChildElement("bLivestock");
+	if (prev_element == NULL)
+	{
+		prev_element = root->FirstChildElement("bIsExportYield");
+	}
+	if (prev_element == NULL)
+	{
+		prev_element = root->FirstChildElement("bIgnoredForStorageCapacity");
+	}
+	if (prev_element == NULL)
+	{
+		prev_element = root->FirstChildElement("bCargo");
+	}
+	tinyxml2::XMLElement* prices = doc->NewElement("Prices");
+
+	root->InsertAfterChild(prev_element, prices);
+
+	tinyxml2::XMLElement* new_element = doc->NewElement("iDomesticPriceBonus");
+	new_element->SetText(2);
+	prices->InsertEndChild(new_element);
+	prices->InsertEndChild(root->FirstChildElement("iPriceChangeThreshold"));
+	prices->InsertEndChild(root->FirstChildElement("iPriceCorrectionPercent"));
+
+	tinyxml2::XMLElement* VolumeAttrition = root->FirstChildElement("iEuropeVolumeAttrition");
+	if (VolumeAttrition != NULL)
+	{
+		VolumeAttrition->SetValue("iVolumeAttrition");
+	}
+	else
+	{
+		VolumeAttrition = doc->NewElement("iVolumeAttrition");
+		VolumeAttrition->SetText(0);
+	}
+	
+	tinyxml2::XMLElement* NativePrices = doc->NewElement("NativePrice");
+	prices->InsertEndChild(NativePrices);
+	NativePrices->InsertEndChild(root->FirstChildElement("iNativeBuyPrice"));
+	NativePrices->InsertEndChild(root->FirstChildElement("iNativeSellPrice"));
+	NativePrices->InsertEndChild(root->FirstChildElement("iNativeConsumptionPercent"));
+	NativePrices->InsertEndChild(root->FirstChildElement("iNativeHappy"));
+
+	tinyxml2::XMLElement* PriceTables = doc->NewElement("PriceTables");
+	prices->InsertEndChild(PriceTables);
+	tinyxml2::XMLElement* PriceTable = NULL;
+	tinyxml2::XMLElement* lowPrice = NULL;
+	tinyxml2::XMLElement* highPrice = NULL;
+	
+	// europe
+	PriceTable = doc->NewElement("PriceTable");
+	PriceTables->InsertEndChild(PriceTable);
+	new_element = doc->NewElement("location");
+	new_element->SetText("TRADE_LOCATION_EUROPE");
+	PriceTable->InsertEndChild(new_element);
+	lowPrice = root->FirstChildElement("iBuyPriceMin");
+	lowPrice->SetValue("iBuyLow");
+	PriceTable->InsertEndChild(lowPrice);
+	highPrice = root->FirstChildElement("iBuyPriceHigh");
+	highPrice->SetValue("iBuyHigh");
+	PriceTable->InsertEndChild(highPrice);
+
+	new_element = root->FirstChildElement("iBuyPriceLow");
+	new_element->SetValue("iBuyLowInit");
+	PriceTable->InsertEndChild(new_element);
+	new_element = doc->NewElement("iBuyHighInit");
+	new_element->SetText(highPrice->GetText());
+	PriceTable->InsertEndChild(new_element);
+
+	PriceTable->InsertEndChild(root->FirstChildElement("iSellPriceDifference"));
+	PriceTable->InsertEndChild(VolumeAttrition);
+
+	// africa
+	PriceTable = doc->NewElement("PriceTable");
+	PriceTables->InsertEndChild(PriceTable);
+	new_element = doc->NewElement("location");
+	new_element->SetText("TRADE_LOCATION_AFRICA");
+	PriceTable->InsertEndChild(new_element);
+
+	lowPrice = root->FirstChildElement("iAfricaBuyPriceLow");
+	lowPrice->SetValue("iBuyLow");
+	PriceTable->InsertEndChild(lowPrice);
+	highPrice = root->FirstChildElement("iAfricaBuyPriceHigh");
+	highPrice->SetValue("iBuyHigh");
+	PriceTable->InsertEndChild(highPrice);
+
+	new_element = doc->NewElement("iBuyLowInit");
+	new_element->SetText(lowPrice->GetText());
+	PriceTable->InsertEndChild(new_element);
+	new_element = doc->NewElement("iBuyHighInit");
+	new_element->SetText(highPrice->GetText());
+	PriceTable->InsertEndChild(new_element);
+	
+	new_element = root->FirstChildElement("iAfricaSellPriceDifference");
+	new_element->SetValue("iSellPriceDifference");
+	PriceTable->InsertEndChild(new_element);
+
+	new_element = doc->NewElement("iVolumeAttrition");
+	new_element->SetText(VolumeAttrition->GetText());
+	PriceTable->InsertEndChild(new_element);
+
+	// port royal
+	PriceTable = doc->NewElement("PriceTable");
+	PriceTables->InsertEndChild(PriceTable);
+	new_element = doc->NewElement("location");
+	new_element->SetText("TRADE_LOCATION_PORT_ROYAL");
+	PriceTable->InsertEndChild(new_element);
+
+	lowPrice = root->FirstChildElement("iPortRoyalBuyPriceLow");
+	lowPrice->SetValue("iBuyLow");
+	PriceTable->InsertEndChild(lowPrice);
+	highPrice = root->FirstChildElement("iPortRoyalBuyPriceHigh");
+	highPrice->SetValue("iBuyHigh");
+	PriceTable->InsertEndChild(highPrice);
+
+	new_element = doc->NewElement("iBuyLowInit");
+	new_element->SetText(lowPrice->GetText());
+	PriceTable->InsertEndChild(new_element);
+	new_element = doc->NewElement("iBuyHighInit");
+	new_element->SetText(highPrice->GetText());
+	PriceTable->InsertEndChild(new_element);
+
+	new_element = root->FirstChildElement("iPortRoyalSellPriceDifference");
+	new_element->SetValue("iSellPriceDifference");
+	PriceTable->InsertEndChild(new_element);
+
+	new_element = doc->NewElement("iVolumeAttrition");
+	new_element->SetText(VolumeAttrition->GetText());
+	PriceTable->InsertEndChild(new_element);
+}
+
+// load an xml file, loop through the entries and then write the file
+static void updateXMLFile()
+{
+	CvString filePath = GetDLLPath();
+	filePath.append("/XML/Terrain/CIV4YieldInfos.xml");
+
+	tinyxml2::XMLDocument doc;
+	doc.LoadFile(filePath.c_str());
+	FAssert(!doc.Error());
+	tinyxml2::XMLElement* element = doc.RootElement();
+	element = element->FirstChildElement();
+	element = element->FirstChildElement();
+	for (; element != NULL; element = element->NextSiblingElement())
+	{
+		updateXMLFileEntry(element);
+	}
+
+	doc.SaveFile(filePath.c_str());
+}
+
+#endif
+
 DllExport bool CvXMLLoadUtility::LoadPlayerOptions()
 {
 	// load order: 1

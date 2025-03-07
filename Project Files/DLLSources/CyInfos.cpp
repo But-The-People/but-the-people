@@ -231,6 +231,43 @@ const CvArtInfoUnit* CyUnitInfo::getUnitArtStylesArtInfo(int index, int iProfess
 	return CvUnitInfo::getUnitArtStylesArtInfo(index, static_cast<ProfessionTypes>(iProfession), static_cast<UnitArtStyleTypes>(iStyle));
 }
 
+int CyYieldInfo::getBuyPriceLow() const
+{
+	return price(TRADE_LOCATION_EUROPE).buyLow;
+}
+int CyYieldInfo::getBuyPriceHigh() const
+{
+	return price(TRADE_LOCATION_EUROPE).buyHigh;
+}
+int CyYieldInfo::getSellPriceDifference() const
+{
+	return price(TRADE_LOCATION_EUROPE).sellPriceDifference;
+}
+int CyYieldInfo::getAfricaBuyPriceLow() const
+{
+	return price(TRADE_LOCATION_AFRICA).buyLow;
+}
+int CyYieldInfo::getAfricaBuyPriceHigh() const
+{
+	return price(TRADE_LOCATION_AFRICA).buyHigh;
+}
+int CyYieldInfo::getAfricaSellPriceDifference() const
+{
+	return price(TRADE_LOCATION_AFRICA).sellPriceDifference;
+}
+int CyYieldInfo::getPortRoyalBuyPriceLow() const
+{
+	return price(TRADE_LOCATION_PORT_ROYAL).buyLow;
+}
+int CyYieldInfo::getPortRoyalBuyPriceHigh() const
+{
+	return price(TRADE_LOCATION_PORT_ROYAL).buyHigh;
+}
+int CyYieldInfo::getPortRoyalSellPriceDifference() const
+{
+	return price(TRADE_LOCATION_PORT_ROYAL).sellPriceDifference;
+}
+
 int CyYieldInfo::getUnitClass() const
 {
 	return CvYieldInfo::getUnitClass();
