@@ -10092,49 +10092,53 @@ bool CvYieldInfo::read(CvXMLLoadUtility* pXML)
 			gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 		}
 
-		if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "PriceLocation"))
+		if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "PriceTables"))
 		{
-			do
+			if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "PriceTable"))
 			{
-				TradeLocationTypes eLocation;
-				pXML->GetEnum(getType(), eLocation, "location");
-				
-				if (eLocation >= FIRST_TRADELOCATION && eLocation < NUM_TRADELOCATION_TYPES)
+				do
 				{
-					int iBuyLow;
-					pXML->GetChildXmlValByName(&iBuyLow, "iBuyLow");
-					int iBuyHigh;
-					pXML->GetChildXmlValByName(&iBuyHigh, "iBuyHigh");
-					int iBuyLowInit;
-					pXML->GetChildXmlValByName(&iBuyLowInit, "iBuyLowInit");
-					int iBuyHighInit;
-					pXML->GetChildXmlValByName(&iBuyHighInit, "iBuyHighInit");
-					int iSellPriceDifference;
-					pXML->GetChildXmlValByName(&iSellPriceDifference, "iSellPriceDifference");
-					int iVolumeAttrition;
-					pXML->GetChildXmlValByName(&iVolumeAttrition, "iVolumeAttrition");
-					
-					m_prices[eLocation].buyLow = iBuyLow;
-					m_prices[eLocation].buyHigh = iBuyHigh;
-					m_prices[eLocation].buyLowInit = iBuyLowInit;
-					m_prices[eLocation].buyHighInit = iBuyHighInit;
-					m_prices[eLocation].sellPriceDifference = iSellPriceDifference;
-					m_prices[eLocation].volumeAttrition = iVolumeAttrition;
+					TradeLocationTypes eLocation;
+					pXML->GetEnum(getType(), eLocation, "location");
 
-					FAssertMsg(m_prices[eLocation].buyLow == iBuyLow, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyLow, iBuyLow).c_str());
-					FAssertMsg(m_prices[eLocation].buyHigh = iBuyHigh, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyHigh, iBuyHigh).c_str());
-					FAssertMsg(m_prices[eLocation].buyLowInit = iBuyLowInit, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyLowInit, iBuyLowInit).c_str());
-					FAssertMsg(m_prices[eLocation].buyHighInit = iBuyHighInit, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyHighInit, iBuyHighInit).c_str());
-					FAssertMsg(m_prices[eLocation].sellPriceDifference = iSellPriceDifference, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].sellPriceDifference, iSellPriceDifference).c_str());
-					FAssertMsg(m_prices[eLocation].volumeAttrition = iVolumeAttrition, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].volumeAttrition, iVolumeAttrition).c_str());
-				
-					FAssertMsg(iBuyLow <= iBuyHigh, getType());
-					FAssertMsg(iBuyLowInit <= iBuyLow, getType());
-					FAssertMsg(iBuyHigh <= iBuyHighInit, getType());
-				}
+					if (eLocation >= FIRST_TRADELOCATION && eLocation < NUM_TRADELOCATION_TYPES)
+					{
+						int iBuyLow;
+						pXML->GetChildXmlValByName(&iBuyLow, "iBuyLow");
+						int iBuyHigh;
+						pXML->GetChildXmlValByName(&iBuyHigh, "iBuyHigh");
+						int iBuyLowInit;
+						pXML->GetChildXmlValByName(&iBuyLowInit, "iBuyLowInit");
+						int iBuyHighInit;
+						pXML->GetChildXmlValByName(&iBuyHighInit, "iBuyHighInit");
+						int iSellPriceDifference;
+						pXML->GetChildXmlValByName(&iSellPriceDifference, "iSellPriceDifference");
+						int iVolumeAttrition;
+						pXML->GetChildXmlValByName(&iVolumeAttrition, "iVolumeAttrition");
 
-			} while (gDLL->getXMLIFace()->NextSibling(pXML->GetXML()));
+						m_prices[eLocation].buyLow = iBuyLow;
+						m_prices[eLocation].buyHigh = iBuyHigh;
+						m_prices[eLocation].buyLowInit = iBuyLowInit;
+						m_prices[eLocation].buyHighInit = iBuyHighInit;
+						m_prices[eLocation].sellPriceDifference = iSellPriceDifference;
+						m_prices[eLocation].volumeAttrition = iVolumeAttrition;
 
+						FAssertMsg(m_prices[eLocation].buyLow == iBuyLow, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyLow, iBuyLow).c_str());
+						FAssertMsg(m_prices[eLocation].buyHigh == iBuyHigh, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyHigh, iBuyHigh).c_str());
+						FAssertMsg(m_prices[eLocation].buyLowInit == iBuyLowInit, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyLowInit, iBuyLowInit).c_str());
+						FAssertMsg(m_prices[eLocation].buyHighInit == iBuyHighInit, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].buyHighInit, iBuyHighInit).c_str());
+						FAssertMsg(m_prices[eLocation].sellPriceDifference == iSellPriceDifference, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].sellPriceDifference, iSellPriceDifference).c_str());
+						FAssertMsg(m_prices[eLocation].volumeAttrition == iVolumeAttrition, CvString::format("%s: %d == %d", getType(), m_prices[eLocation].volumeAttrition, iVolumeAttrition).c_str());
+
+						FAssertMsg(iBuyLow <= iBuyHigh, getType());
+						FAssertMsg(iBuyLowInit >= iBuyLow, getType());
+						FAssertMsg(iBuyHigh >= iBuyHighInit, getType());
+					}
+
+				} while (gDLL->getXMLIFace()->NextSibling(pXML->GetXML()));
+
+				gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+			}
 			gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 		}
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
