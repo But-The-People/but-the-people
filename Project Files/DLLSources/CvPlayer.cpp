@@ -25298,6 +25298,21 @@ void CvPlayer::postLoadFixes()
 				}
 			}
 		}
+
+		// Fix for issue that may have caused a ship gotten stuck in PR due to an earlier bug, 
+		for (CvUnit* pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+		{
+			if (pLoopUnit != NULL && pLoopUnit->getUnitTravelState() == UNIT_TRAVEL_STATE_FROM_PORT_ROYAL)
+			{
+				if (pLoopUnit->plot() != NULL && pLoopUnit->plot()->getEurope() == NO_EUROPE)
+				{
+					FAssertMsg(false, "Ship travelling from port has no valid Europe destination plot!");
+					// Place the unit back in PR
+					pLoopUnit->setUnitTravelState(UNIT_TRAVEL_STATE_IN_PORT_ROYAL, false);
+					pLoopUnit->setUnitTravelTimer(0);
+				}
+			}
+		}
 	}
 }
 
