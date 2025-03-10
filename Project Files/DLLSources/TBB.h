@@ -12,12 +12,14 @@
 #pragma push_macro("new")
 #undef free
 #undef new
+#include "lib/tbb/atomic.h"
+#include "lib/tbb/blocked_range.h"
+#include "lib/tbb/cache_aligned_allocator.h"
 #include "lib/tbb/parallel_for.h"
 #include "lib/tbb/parallel_reduce.h"
-#include "lib/tbb/blocked_range.h"
-#include "lib/tbb/task_scheduler_init.h"
-#include "lib/tbb/cache_aligned_allocator.h"
 #include "lib/tbb/mutex.h"
+#include "lib/tbb/partitioner.h"
+#include "lib/tbb/task_scheduler_init.h"
 #pragma pop_macro("new")
 #pragma pop_macro("free")
 
@@ -26,7 +28,6 @@
 
 namespace tbb
 {
-
 	struct mutex
 	{
 		inline void lock() const {}
@@ -53,15 +54,36 @@ namespace tbb
 	};
 
 	struct auto_partitioner {};
+	struct simple_partitioner {};
 	struct split {};
 
+	template<typename T>
+	struct atomic {
+	public:
+		// Default constructor initializes with default value of T.
+		atomic() : m_value() {}
+
+		// Construct with an initial value.
+		atomic(const T& initial) : m_value(initial) {}
+
+		// Implicit conversion to T.
+		operator T() const { return m_value; }
+
+		atomic<T>& operator=(const T& new_value) {
+			m_value = new_value;
+			return *this;
+		}
+
+	private:
+		T m_value;
+	};
 }
 #endif
 
 struct Threads
 {
-	template<typename Range, typename Body, typename auto_partitioner>
-	static void parallel_reduce(const Range& range, Body& body, const auto_partitioner& partitioner)
+	template<typename Range, typename Body, typename Partitioner>
+	static void parallel_reduce(const Range& range, Body& body, const Partitioner& partitioner)
 	{
 #ifdef MULTICORE
 		ThreadOverview.m_bMultithreaded = true;
@@ -71,9 +93,8 @@ struct Threads
 		body(range);
 #endif
 }
-
-	template<typename Range, typename Body, typename auto_partitioner>
-	static void parallel_for(const Range& range, Body& body, const auto_partitioner& partitioner)
+	template<typename Range, typename Body, typename Partitioner>
+	static void parallel_for(const Range& range, Body& body, const Partitioner& partitioner)
 	{
 #ifdef MULTICORE
 		ThreadOverview.m_bMultithreaded = true;

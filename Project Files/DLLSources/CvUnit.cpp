@@ -32,6 +32,8 @@
 #include "CvSavegame.h"
 #include "BetterBTSAI.h"
 
+#include "TBB.h"
+
 // Public Functions...
 
 CvUnitTemporaryStrengthModifier::CvUnitTemporaryStrengthModifier(CvUnit* pUnit, ProfessionTypes eProfession) :
@@ -2601,17 +2603,14 @@ bool CvUnit::canDoCommand(CommandTypes eCommand, int iData1, int iData2, bool bT
 	//TAC Whaling, ray
 	case COMMAND_PROFESSION:
 		{
-			if (iData1 == -1)
+			const bool bAnyProfession = (iData1 == -1);
+			if (bAnyProfession)
 			{
-				CvSelectionGroup* pSelection = gDLL->getInterfaceIFace()->getSelectionList();
-				if (pSelection != NULL)
+				if (canChangeProfession())
 				{
-					if (pSelection->canChangeProfession())
+					if (!getUnitInfo().isGatherBoat())
 					{
-						if (!getUnitInfo().isGatherBoat())
-						{
-							return true;
-						}
+						return true;
 					}
 				}
 			}
@@ -16961,4 +16960,45 @@ void CvUnit::changeIdentity(UnitTypes eUnit)
 bool CvUnit::isTempUnit() const
 {
 	return GET_PLAYER(getOwner()).isTempUnit(this);
+}
+
+namespace 
+{ 
+	struct CanChangeProfessionFunctor {
+		tbb::atomic<bool>& found;
+		const CvUnit& kUnit;
+
+		CanChangeProfessionFunctor(tbb::atomic<bool>& f, const CvUnit& u)
+			: found(f), kUnit(u) {}
+
+		void operator()(const tbb::blocked_range<int>& range) const {
+			// Process each element in the subrange.
+			for (int i = range.begin(); i != range.end(); ++i) {
+				// If a match was found by another task, exit early.
+				if (found)
+					break;
+				const ProfessionTypes eProfession = static_cast<ProfessionTypes>(i);
+				// Skip checking the unit's current profession.
+				if (eProfession != kUnit.getProfession()) {
+					if (kUnit.canHaveProfession(eProfession, false)) {
+						found = true;
+						break;
+					}
+				}
+			}
+		}
+	};
+}
+
+bool CvUnit::canChangeProfession() const
+{
+	tbb::atomic<bool> found;
+	found = false;
+
+	// Parallelize over the range of ProfessionTypes.
+	Threads::parallel_for(
+		tbb::blocked_range<int>(FIRST_PROFESSION, NUM_PROFESSION_TYPES),
+		CanChangeProfessionFunctor(found, *this), tbb::simple_partitioner());
+
+	return found;
 }
