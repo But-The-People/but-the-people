@@ -14627,12 +14627,22 @@ bool CvGraphicOptionInfo::read(CvXMLLoadUtility* pXML)
 //	Event triggers
 //
 //
+
+CvEventTriggerInfo::UnitTriggers::UnitTriggers()
+	: Tracked(false)
+	, OnPlot(false)
+	, NumUnits(0)
+	, NumUnitsGlobal(0)
+	, DamagedWeight(0)
+	, DistanceWeight(0)
+	, ExperienceWeight(0)
+{
+}
+
 CvEventTriggerInfo::CvEventTriggerInfo() :
 	m_iPercentGamesActive(0),
 	m_iProbability(0),
-	m_iNumUnits(0),
 	m_iNumBuildings(0),
-	m_iNumUnitsGlobal(0),
 	m_iNumBuildingsGlobal(0),
 	m_iNumPlotsRequired(0),
 	m_iOtherPlayerShareBorders(0),
@@ -14643,9 +14653,6 @@ CvEventTriggerInfo::CvEventTriggerInfo() :
 	m_iMinOurLandmass(0),
 	m_iMaxOurLandmass(0),
 	m_eMinDifficulty(NO_HANDICAP),
-	m_iUnitDamagedWeight(0),
-	m_iUnitDistanceWeight(0),
-	m_iUnitExperienceWeight(0),
 	m_iMinTreasury(0),
 	m_bTutorial(false),
 	m_bSinglePlayer(false),
@@ -14661,7 +14668,6 @@ CvEventTriggerInfo::CvEventTriggerInfo() :
 	m_bPickOtherPlayerCity(false),
 	m_bShowPlot(true),
 	m_iCityFoodWeight(0),
-	m_bUnitsOnPlot(false),
 	m_bOwnPlot(false),
 	m_bProbabilityUnitMultiply(false),
 	m_bProbabilityBuildingMultiply(false),
@@ -14672,6 +14678,12 @@ CvEventTriggerInfo::CvEventTriggerInfo() :
 CvEventTriggerInfo::~CvEventTriggerInfo()
 {
 }
+
+const CvEventTriggerInfo::UnitTriggers& CvEventTriggerInfo::unitTriggers() const
+{
+	return m_UnitTrigger;
+}
+
 int CvEventTriggerInfo::getPercentGamesActive() const
 {
 	return m_iPercentGamesActive;
@@ -14682,11 +14694,11 @@ int CvEventTriggerInfo::getProbability() const
 }
 int CvEventTriggerInfo::PY_getUnitRequired(int i) const
 {
-	return m_info_UnitsRequired.getUnitClass(i);
+	return m_UnitTrigger.UnitsRequired.getUnitClass(i);
 }
 int CvEventTriggerInfo::PY_getNumUnitsRequired() const
 {
-	return m_info_UnitsRequired.getLength();
+	return m_UnitTrigger.UnitsRequired.getLength();
 }
 int CvEventTriggerInfo::PY_getBuildingRequired(int i) const
 {
@@ -14696,17 +14708,9 @@ int CvEventTriggerInfo::PY_getNumBuildingsRequired() const
 {
 	return m_info_BuildingsRequired.getLength();
 }
-int CvEventTriggerInfo::getNumUnits() const
-{
-	return m_iNumUnits;
-}
 int CvEventTriggerInfo::getNumBuildings() const
 {
 	return m_iNumBuildings;
-}
-int CvEventTriggerInfo::getNumUnitsGlobal() const
-{
-	return m_iNumUnitsGlobal;
 }
 int CvEventTriggerInfo::getNumBuildingsGlobal() const
 {
@@ -14759,18 +14763,6 @@ HandicapTypes CvEventTriggerInfo::getMinDifficulty() const
 int CvEventTriggerInfo::PY_getMinDifficulty() const
 {
 	return m_eMinDifficulty;
-}
-int CvEventTriggerInfo::getUnitDamagedWeight() const
-{
-	return m_iUnitDamagedWeight;
-}
-int CvEventTriggerInfo::getUnitDistanceWeight() const
-{
-	return m_iUnitDistanceWeight;
-}
-int CvEventTriggerInfo::getUnitExperienceWeight() const
-{
-	return m_iUnitExperienceWeight;
 }
 int CvEventTriggerInfo::getMinTreasury() const
 {
@@ -14827,10 +14819,6 @@ int CvEventTriggerInfo::PY_getNumRoutesRequired() const
 bool CvEventTriggerInfo::canTriggerOnCivCategory(CivCategoryTypes eCategory) const
 {
 	return m_emAllowedCivCategories.get(eCategory);
-}
-const InfoArray<UnitClassTypes>& CvEventTriggerInfo::getUnitsRequired() const
-{
-	return m_info_UnitsRequired;
 }
 const InfoArray<BuildingClassTypes>& CvEventTriggerInfo::getBuildingsRequired() const
 {
@@ -14953,10 +14941,6 @@ int CvEventTriggerInfo::getCityFoodWeight() const
 {
 	return m_iCityFoodWeight;
 }
-bool CvEventTriggerInfo::isUnitsOnPlot() const
-{
-	return m_bUnitsOnPlot;
-}
 bool CvEventTriggerInfo::isOwnPlot() const
 {
 	return m_bOwnPlot;
@@ -15009,9 +14993,7 @@ void CvEventTriggerInfo::read(FDataStreamBase* stream)
 	stream->Read(&uiFlag);	// flags for expansion
 	stream->Read(&m_iPercentGamesActive);
 	stream->Read(&m_iProbability);
-	stream->Read(&m_iNumUnits);
 	stream->Read(&m_iNumBuildings);
-	stream->Read(&m_iNumUnitsGlobal);
 	stream->Read(&m_iNumBuildingsGlobal);
 	stream->Read(&m_iNumPlotsRequired);
 	stream->Read(&m_iOtherPlayerShareBorders);
@@ -15022,9 +15004,6 @@ void CvEventTriggerInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iMinOurLandmass);
 	stream->Read(&m_iMaxOurLandmass);
 	stream->Read(&m_eMinDifficulty);
-	stream->Read(&m_iUnitDamagedWeight);
-	stream->Read(&m_iUnitDistanceWeight);
-	stream->Read(&m_iUnitExperienceWeight);
 	stream->Read(&m_iMinTreasury);
 	stream->Read(&iNumElements);
 	// Begin EmperorFool: Events with Images
@@ -15044,7 +15023,6 @@ void CvEventTriggerInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_bPickOtherPlayerCity);
 	stream->Read(&m_bShowPlot);
 	stream->Read(&m_iCityFoodWeight);
-	stream->Read(&m_bUnitsOnPlot);
 	stream->Read(&m_bOwnPlot);
 	stream->Read(&m_bProbabilityUnitMultiply);
 	stream->Read(&m_bProbabilityBuildingMultiply);
@@ -15082,9 +15060,7 @@ void CvEventTriggerInfo::write(FDataStreamBase* stream)
 	stream->Write(uiFlag);		// flag for expansion
 	stream->Write(m_iPercentGamesActive);
 	stream->Write(m_iProbability);
-	stream->Write(m_iNumUnits);
 	stream->Write(m_iNumBuildings);
-	stream->Write(m_iNumUnitsGlobal);
 	stream->Write(m_iNumBuildingsGlobal);
 	stream->Write(m_iNumPlotsRequired);
 	stream->Write(m_iOtherPlayerShareBorders);
@@ -15095,9 +15071,6 @@ void CvEventTriggerInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iMinOurLandmass);
 	stream->Write(m_iMaxOurLandmass);
 	stream->Write(m_eMinDifficulty);
-	stream->Write(m_iUnitDamagedWeight);
-	stream->Write(m_iUnitDistanceWeight);
-	stream->Write(m_iUnitExperienceWeight);
 	stream->Write(m_iMinTreasury);
 	// Begin EmperorFool: Events with Images
 	stream->WriteString(m_szEventArt);
@@ -15116,7 +15089,6 @@ void CvEventTriggerInfo::write(FDataStreamBase* stream)
 	stream->Write(m_bPickOtherPlayerCity);
 	stream->Write(m_bShowPlot);
 	stream->Write(m_iCityFoodWeight);
-	stream->Write(m_bUnitsOnPlot);
 	stream->Write(m_bOwnPlot);
 	stream->Write(m_bProbabilityUnitMultiply);
 	stream->Write(m_bProbabilityBuildingMultiply);
@@ -15148,11 +15120,24 @@ bool CvEventTriggerInfo::read(CvXMLLoadUtility* pXML)
 	{
 		return false;
 	}
+
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "UnitTriggerConditions"))
+	{
+		pXML->GetChildXmlValByName(&m_UnitTrigger.Tracked, "bTrackUnit");
+		pXML->GetChildXmlValByName(&m_UnitTrigger.OnPlot, "bUnitsOnPlot");
+		pXML->GetChildXmlValByName(&m_UnitTrigger.NumUnits, "iNumUnits");
+		pXML->GetChildXmlValByName(&m_UnitTrigger.NumUnitsGlobal, "iNumUnitsGlobal");
+		pXML->GetChildXmlValByName(&m_UnitTrigger.DamagedWeight, "iUnitDamagedWeight");
+		pXML->GetChildXmlValByName(&m_UnitTrigger.DistanceWeight, "iUnitDistanceWeight");
+		pXML->GetChildXmlValByName(&m_UnitTrigger.ExperienceWeight, "iUnitExperienceWeight");
+		readXML(m_UnitTrigger.UnitsRequired, "UnitsRequired");
+
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
+
 	pXML->GetChildXmlValByName(&m_iPercentGamesActive, "iPercentGamesActive");
 	pXML->GetChildXmlValByName(&m_iProbability, "iWeight");
-	pXML->GetChildXmlValByName(&m_iNumUnits, "iNumUnits");
 	pXML->GetChildXmlValByName(&m_iNumBuildings, "iNumBuildings");
-	pXML->GetChildXmlValByName(&m_iNumUnitsGlobal, "iNumUnitsGlobal");
 	pXML->GetChildXmlValByName(&m_iNumBuildingsGlobal, "iNumBuildingsGlobal");
 	pXML->GetChildXmlValByName(&m_iNumPlotsRequired, "iNumPlotsRequired");
 
@@ -15181,9 +15166,6 @@ bool CvEventTriggerInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iMinOurLandmass, "iMinOurLandmass");
 	pXML->GetChildXmlValByName(&m_iMaxOurLandmass, "iMaxOurLandmass");
 	pXML->GetEnum(getType(), m_eMinDifficulty, "eMinDifficulty", false);
-	pXML->GetChildXmlValByName(&m_iUnitDamagedWeight, "iUnitDamagedWeight");
-	pXML->GetChildXmlValByName(&m_iUnitDistanceWeight, "iUnitDistanceWeight");
-	pXML->GetChildXmlValByName(&m_iUnitExperienceWeight, "iUnitExperienceWeight");
 	pXML->GetChildXmlValByName(&m_iMinTreasury, "iMinTreasury");
 
 	{
@@ -15208,7 +15190,6 @@ bool CvEventTriggerInfo::read(CvXMLLoadUtility* pXML)
 		}
 	}
 
-	readXML(m_info_UnitsRequired, "UnitsRequired");
 	readXML(m_info_BuildingsRequired, "BuildingsRequired");
 	readXML(m_info_Events, "Events");
 	readXML(m_info_PrereqEvents, "PrereqEvents");
@@ -15296,7 +15277,6 @@ bool CvEventTriggerInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bPickOtherPlayerCity, "bPickOtherPlayerCity");
 	pXML->GetChildXmlValByName(&m_bShowPlot, "bShowPlot");
 	pXML->GetChildXmlValByName(&m_iCityFoodWeight, "iCityFoodWeight");
-	pXML->GetChildXmlValByName(&m_bUnitsOnPlot, "bUnitsOnPlot");
 	pXML->GetChildXmlValByName(&m_bOwnPlot, "bOwnPlot");
 	pXML->GetChildXmlValByName(&m_bProbabilityUnitMultiply, "bProbabilityUnitMultiply");
 	pXML->GetChildXmlValByName(&m_bProbabilityBuildingMultiply, "bProbabilityBuildingMultiply");

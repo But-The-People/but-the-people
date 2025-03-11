@@ -136,6 +136,36 @@ int CyEventInfo::getUnitClass() const
 	return CvEventInfo::getUnitClass();
 }
 
+int CyEventTriggerInfo::getNumUnits() const
+{
+	return unitTriggers().NumUnits;
+}
+
+int CyEventTriggerInfo::getNumUnitsGlobal() const
+{
+	return unitTriggers().NumUnitsGlobal;
+}
+
+int CyEventTriggerInfo::getUnitDamagedWeight() const
+{
+	return unitTriggers().DamagedWeight;
+}
+
+int CyEventTriggerInfo::getUnitDistanceWeight() const
+{
+	return unitTriggers().DistanceWeight;
+}
+
+int CyEventTriggerInfo::getUnitExperienceWeight() const
+{
+	return unitTriggers().ExperienceWeight;
+}
+
+bool CyEventTriggerInfo::isUnitsOnPlot() const
+{
+	return unitTriggers().OnPlot;
+}
+
 int CyFeatureInfo::getYieldChange(int iYield) const
 {
 	return CvFeatureInfo::getYieldChange(static_cast<YieldTypes>(iYield));

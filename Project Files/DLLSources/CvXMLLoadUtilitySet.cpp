@@ -40,7 +40,7 @@ static void verifyXMLsettings()
 
 		CvEventTriggerInfo& kInfo = GC.getEventTriggerInfo(eTrigger);
 
-		if (kInfo.getPercentGamesActive() > 0 && kInfo.isUnitsOnPlot())
+		if (kInfo.getPercentGamesActive() > 0 && kInfo.unitTriggers().OnPlot)
 		{
 			FAssertMsg(isPlotEventTrigger(eTrigger), CvString::format("XML error: %s has bUnitsOnPlot set, but failed isPlotEventTrigger()", kInfo.getType()));
 		}
@@ -2798,142 +2798,79 @@ void CvXMLLoadUtility::SetVariableListTagPairForAudioScripts(int **ppiList, char
 // root is the index of each xml entry
 static void updateXMLFileEntry(tinyxml2::XMLElement* root)
 {
+#if 0
+	// moving, adding and deleting xml elements
+	// listing the subset of instructions, which will usually be enough to do all xml tasks for us. Tinyxml2 has a lot more options available if needed.
+	// note that child elements are elements in the sense that they too can have child elements using the same functions
+
+	// root is just the root of the entry. It's an element with no special meaning and it can use all the functions listed here if needed
+
+	// create element
+	tinyxml2::XMLElement* my_element = doc->NewElement("name");
+
+	// change name
+	my_element->SetValue("NewName");
+
+	// change data
+	my_element->SetText("1");
+
+	// read data
+	my_element->GetText();
+
+	// delete element
+	doc->DeleteNode(my_element);
+
+	// get child (returns NULL if it doesn't exist)
+	my_element->FirstChildElement("name");
+
+	// insert child
+	my_element->InsertEndChild(pElement);
+	
+	// move element
+	my_element->InsertEndChild(my_old_element->FirstChildElement("name"));
+	// this works as an element can only be in one location at once, so if an element is inserted, it will automatically be removed from the old location
+
+	// insert at specific location
+	my_element->InsertAfterChild(prev_element, new_element);
+
+#endif
+
 	tinyxml2::XMLDocument* doc = root->GetDocument();
+	
+	tinyxml2::XMLElement* prev_element = root->FirstChildElement("eMinDifficulty");
 
-	tinyxml2::XMLElement* prev_element = root->FirstChildElement("bLivestock");
-	if (prev_element == NULL)
-	{
-		prev_element = root->FirstChildElement("bIsExportYield");
-	}
-	if (prev_element == NULL)
-	{
-		prev_element = root->FirstChildElement("bIgnoredForStorageCapacity");
-	}
-	if (prev_element == NULL)
-	{
-		prev_element = root->FirstChildElement("bCargo");
-	}
-	tinyxml2::XMLElement* prices = doc->NewElement("Prices");
+	tinyxml2::XMLElement* unit_element = doc->NewElement("UnitTriggerConditions");
 
-	root->InsertAfterChild(prev_element, prices);
+	root->InsertAfterChild(prev_element, unit_element);
 
-	tinyxml2::XMLElement* new_element = doc->NewElement("iDomesticPriceBonus");
-	new_element->SetText(2);
-	prices->InsertEndChild(new_element);
-	prices->InsertEndChild(root->FirstChildElement("iPriceChangeThreshold"));
-	prices->InsertEndChild(root->FirstChildElement("iPriceCorrectionPercent"));
-
-	tinyxml2::XMLElement* VolumeAttrition = root->FirstChildElement("iEuropeVolumeAttrition");
-	if (VolumeAttrition != NULL)
+	tinyxml2::XMLElement* numUnitsElement = root->FirstChildElement("iNumUnits");
+	tinyxml2::XMLElement* numUnitsGlobalElement = root->FirstChildElement("iNumUnitsGlobal");
+	tinyxml2::XMLElement* trackUnit = doc->NewElement("bTrackUnit");
+	if (strcmp(numUnitsElement->GetText(), "0") != 0 || strcmp(numUnitsGlobalElement->GetText(), "0") != 0)
 	{
-		VolumeAttrition->SetValue("iVolumeAttrition");
+		trackUnit->SetText("1");
 	}
 	else
 	{
-		VolumeAttrition = doc->NewElement("iVolumeAttrition");
-		VolumeAttrition->SetText(0);
+		trackUnit->SetText("0");
 	}
 	
-	tinyxml2::XMLElement* NativePrices = doc->NewElement("NativePrice");
-	prices->InsertEndChild(NativePrices);
-	NativePrices->InsertEndChild(root->FirstChildElement("iNativeBuyPrice"));
-	NativePrices->InsertEndChild(root->FirstChildElement("iNativeSellPrice"));
-	NativePrices->InsertEndChild(root->FirstChildElement("iNativeConsumptionPercent"));
-	NativePrices->InsertEndChild(root->FirstChildElement("iNativeHappy"));
-
-	tinyxml2::XMLElement* PriceTables = doc->NewElement("PriceTables");
-	prices->InsertEndChild(PriceTables);
-	tinyxml2::XMLElement* PriceTable = NULL;
-	tinyxml2::XMLElement* lowPrice = NULL;
-	tinyxml2::XMLElement* highPrice = NULL;
 	
-	// europe
-	PriceTable = doc->NewElement("PriceTable");
-	PriceTables->InsertEndChild(PriceTable);
-	new_element = doc->NewElement("location");
-	new_element->SetText("TRADE_LOCATION_EUROPE");
-	PriceTable->InsertEndChild(new_element);
-	lowPrice = root->FirstChildElement("iBuyPriceMin");
-	lowPrice->SetValue("iBuyLow");
-	PriceTable->InsertEndChild(lowPrice);
-	highPrice = root->FirstChildElement("iBuyPriceHigh");
-	highPrice->SetValue("iBuyHigh");
-	PriceTable->InsertEndChild(highPrice);
-
-	new_element = root->FirstChildElement("iBuyPriceLow");
-	new_element->SetValue("iBuyLowInit");
-	PriceTable->InsertEndChild(new_element);
-	new_element = doc->NewElement("iBuyHighInit");
-	new_element->SetText(highPrice->GetText());
-	PriceTable->InsertEndChild(new_element);
-
-	PriceTable->InsertEndChild(root->FirstChildElement("iSellPriceDifference"));
-	PriceTable->InsertEndChild(VolumeAttrition);
-
-	// africa
-	PriceTable = doc->NewElement("PriceTable");
-	PriceTables->InsertEndChild(PriceTable);
-	new_element = doc->NewElement("location");
-	new_element->SetText("TRADE_LOCATION_AFRICA");
-	PriceTable->InsertEndChild(new_element);
-
-	lowPrice = root->FirstChildElement("iAfricaBuyPriceLow");
-	lowPrice->SetValue("iBuyLow");
-	PriceTable->InsertEndChild(lowPrice);
-	highPrice = root->FirstChildElement("iAfricaBuyPriceHigh");
-	highPrice->SetValue("iBuyHigh");
-	PriceTable->InsertEndChild(highPrice);
-
-	new_element = doc->NewElement("iBuyLowInit");
-	new_element->SetText(lowPrice->GetText());
-	PriceTable->InsertEndChild(new_element);
-	new_element = doc->NewElement("iBuyHighInit");
-	new_element->SetText(highPrice->GetText());
-	PriceTable->InsertEndChild(new_element);
-	
-	new_element = root->FirstChildElement("iAfricaSellPriceDifference");
-	new_element->SetValue("iSellPriceDifference");
-	PriceTable->InsertEndChild(new_element);
-
-	new_element = doc->NewElement("iVolumeAttrition");
-	new_element->SetText(VolumeAttrition->GetText());
-	PriceTable->InsertEndChild(new_element);
-
-	// port royal
-	PriceTable = doc->NewElement("PriceTable");
-	PriceTables->InsertEndChild(PriceTable);
-	new_element = doc->NewElement("location");
-	new_element->SetText("TRADE_LOCATION_PORT_ROYAL");
-	PriceTable->InsertEndChild(new_element);
-
-	lowPrice = root->FirstChildElement("iPortRoyalBuyPriceLow");
-	lowPrice->SetValue("iBuyLow");
-	PriceTable->InsertEndChild(lowPrice);
-	highPrice = root->FirstChildElement("iPortRoyalBuyPriceHigh");
-	highPrice->SetValue("iBuyHigh");
-	PriceTable->InsertEndChild(highPrice);
-
-	new_element = doc->NewElement("iBuyLowInit");
-	new_element->SetText(lowPrice->GetText());
-	PriceTable->InsertEndChild(new_element);
-	new_element = doc->NewElement("iBuyHighInit");
-	new_element->SetText(highPrice->GetText());
-	PriceTable->InsertEndChild(new_element);
-
-	new_element = root->FirstChildElement("iPortRoyalSellPriceDifference");
-	new_element->SetValue("iSellPriceDifference");
-	PriceTable->InsertEndChild(new_element);
-
-	new_element = doc->NewElement("iVolumeAttrition");
-	new_element->SetText(VolumeAttrition->GetText());
-	PriceTable->InsertEndChild(new_element);
+	unit_element->InsertEndChild(root->FirstChildElement("UnitsRequired"));
+	unit_element->InsertEndChild(numUnitsElement);
+	unit_element->InsertEndChild(numUnitsGlobalElement);
+	unit_element->InsertEndChild(trackUnit);
+	unit_element->InsertEndChild(root->FirstChildElement("bUnitsOnPlot"));
+	unit_element->InsertEndChild(root->FirstChildElement("iUnitDamagedWeight"));
+	unit_element->InsertEndChild(root->FirstChildElement("iUnitDistanceWeight"));
+	unit_element->InsertEndChild(root->FirstChildElement("iUnitExperienceWeight"));
 }
 
 // load an xml file, loop through the entries and then write the file
 static void updateXMLFile()
 {
 	CvString filePath = GetDLLPath();
-	filePath.append("/XML/Terrain/CIV4YieldInfos.xml");
+	filePath.append("/XML/Events/CIV4EventTriggerInfos.xml");
 
 	tinyxml2::XMLDocument doc;
 	doc.LoadFile(filePath.c_str());
@@ -2948,11 +2885,14 @@ static void updateXMLFile()
 
 	doc.SaveFile(filePath.c_str());
 }
-
+#define WTP_UPDATE_XML_FILE
 #endif
 
 DllExport bool CvXMLLoadUtility::LoadPlayerOptions()
 {
+#ifdef WTP_UPDATE_XML_FILE
+	updateXMLFile();
+#endif
 	// load order: 1
 	if (!CreateFXml())
 		return false;

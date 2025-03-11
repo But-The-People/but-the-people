@@ -624,7 +624,7 @@ bool isPlotEventTrigger(EventTriggerTypes eTrigger)
 			return true;
 		}
 
-		if (kTrigger.isUnitsOnPlot() && kTrigger.getUnitsRequired().getLength() > 0)
+		if (kTrigger.unitTriggers().OnPlot && kTrigger.unitTriggers().UnitsRequired.getLength() > 0)
 		{
 			return true;
 		}

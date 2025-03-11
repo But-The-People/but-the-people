@@ -14368,7 +14368,7 @@ void CvUnit::getDefenderCombatValues(CvUnit& kDefender, const CvPlot* pPlot, int
 int CvUnit::getTriggerValue(EventTriggerTypes eTrigger, const CvPlot* pPlot, bool bCheckPlot) const
 {
 	CvEventTriggerInfo& kTrigger = GC.getEventTriggerInfo(eTrigger);
-	if (kTrigger.getNumUnits() <= 0)
+	if (kTrigger.unitTriggers().NumUnits <= 0)
 	{
 		return MIN_INT;
 	}
@@ -14397,7 +14397,7 @@ int CvUnit::getTriggerValue(EventTriggerTypes eTrigger, const CvPlot* pPlot, boo
 		}
 	}
 
-	const InfoArray<UnitClassTypes>& ReqUnits = kTrigger.getUnitsRequired();
+	const InfoArray<UnitClassTypes>& ReqUnits = kTrigger.unitTriggers().UnitsRequired;
 	if (ReqUnits.getLength() > 0)
 	{
 		bool bFoundValid = false;
@@ -14406,7 +14406,7 @@ int CvUnit::getTriggerValue(EventTriggerTypes eTrigger, const CvPlot* pPlot, boo
 			if (getUnitClassType() == ReqUnits.getUnitClass(i))
 			{
 				// WTP, ray, trying to fix wrong plot selection for Unit Events - START
-				if (kTrigger.isUnitsOnPlot())
+				if (kTrigger.unitTriggers().OnPlot)
 				{
 					if(plot() == pPlot)
 					{
@@ -14432,7 +14432,7 @@ int CvUnit::getTriggerValue(EventTriggerTypes eTrigger, const CvPlot* pPlot, boo
 
 	if (bCheckPlot && pPlot != NULL)
 	{
-		if (kTrigger.isUnitsOnPlot())
+		if (kTrigger.unitTriggers().OnPlot)
 		{
 			if (!plot()->canTrigger(eTrigger, getOwnerINLINE()))
 			{
@@ -14443,18 +14443,18 @@ int CvUnit::getTriggerValue(EventTriggerTypes eTrigger, const CvPlot* pPlot, boo
 
 	int iValue = 0;
 
-	if (0 == getDamage() && kTrigger.getUnitDamagedWeight() > 0)
+	if (0 == getDamage() && kTrigger.unitTriggers().DamagedWeight > 0)
 	{
 		return MIN_INT;
 	}
 
-	iValue += getDamage() * kTrigger.getUnitDamagedWeight();
+	iValue += getDamage() * kTrigger.unitTriggers().DamagedWeight;
 
-	iValue += getExperience() * kTrigger.getUnitExperienceWeight();
+	iValue += getExperience() * kTrigger.unitTriggers().ExperienceWeight;
 
 	if (NULL != pPlot)
 	{
-		iValue += plotDistance(getX_INLINE(), getY_INLINE(), pPlot->getX_INLINE(), pPlot->getY_INLINE()) * kTrigger.getUnitDistanceWeight();
+		iValue += plotDistance(getX_INLINE(), getY_INLINE(), pPlot->getX_INLINE(), pPlot->getY_INLINE()) * kTrigger.unitTriggers().DistanceWeight;
 	}
 
 	return iValue;

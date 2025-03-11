@@ -4409,13 +4409,29 @@ class CvEventTriggerInfo : public CvInfoBase
 {
 	friend class CvXMLLoadUtility;
 public:
+
+	struct UnitTriggers
+	{
+		UnitTriggers();
+
+		bool Tracked;
+		bool OnPlot;
+		int NumUnits;
+		int NumUnitsGlobal;
+		int DamagedWeight;
+		int DistanceWeight;
+		int ExperienceWeight;
+		InfoArray<UnitClassTypes> UnitsRequired;
+	};
+
 	DllExport CvEventTriggerInfo();
 	virtual ~CvEventTriggerInfo();
+
+	const UnitTriggers& unitTriggers() const;
+
 	int getPercentGamesActive() const;
 	int getProbability() const;
-	int getNumUnits() const;
 	int getNumBuildings() const;
-	int getNumUnitsGlobal() const;
 	int getNumBuildingsGlobal() const;
 	int getNumPlotsRequired() const;
 	const EnumMap<PlotTypes, bool> getPlotTypes() const;
@@ -4428,13 +4444,9 @@ public:
 	int getMinOurLandmass() const;
 	int getMaxOurLandmass() const;
 	HandicapTypes getMinDifficulty() const;
-	int getUnitDamagedWeight() const;
-	int getUnitDistanceWeight() const;
-	int getUnitExperienceWeight() const;
 	int getMinTreasury() const;
 
 	bool canTriggerOnCivCategory(CivCategoryTypes eCategory) const;
-	const InfoArray<UnitClassTypes>& getUnitsRequired() const;
 	const InfoArray<BuildingClassTypes>& getBuildingsRequired() const;
 	const InfoArray<EventTypes>& getEvents() const;
 	const InfoArray<EventTypes>& getPrereqEvents() const;
@@ -4465,7 +4477,6 @@ public:
 	bool isPickCity() const;
 	bool isPickOtherPlayerCity() const;
 	bool isShowPlot() const;
-	bool isUnitsOnPlot() const;
 	bool isOwnPlot() const;
 	bool isProbabilityUnitMultiply() const;
 	bool isProbabilityBuildingMultiply() const;
@@ -4494,9 +4505,7 @@ private:
 
 	int m_iPercentGamesActive;
 	int m_iProbability;
-	int m_iNumUnits;
 	int m_iNumBuildings;
-	int m_iNumUnitsGlobal;
 	int m_iNumBuildingsGlobal;
 	int m_iNumPlotsRequired;
 	EnumMap<PlotTypes, bool> m_em_PlotTypes;
@@ -4509,12 +4518,8 @@ private:
 	int m_iMinOurLandmass;
 	int m_iMaxOurLandmass;
 	HandicapTypes m_eMinDifficulty;
-	int m_iUnitDamagedWeight;
-	int m_iUnitDistanceWeight;
-	int m_iUnitExperienceWeight;
 	int m_iMinTreasury;
 	EnumMap<CivCategoryTypes, bool> m_emAllowedCivCategories;
-	InfoArray<UnitClassTypes> m_info_UnitsRequired;
 	InfoArray<BuildingClassTypes> m_info_BuildingsRequired;
 	InfoArray<EventTypes> m_info_Events;
 	InfoArray<EventTypes> m_info_PrereqEvents;
@@ -4527,6 +4532,8 @@ private:
 	std::vector<CvWString> m_aszWorldNews;
 
 	InfoHelperVector<EventTriggerUnitCount> m_vector_UnitCount;
+
+	UnitTriggers m_UnitTrigger;
 
 	// Start EmperorFool: Events with Images
 	CvString m_szEventArt;
@@ -4544,7 +4551,6 @@ private:
 	bool m_bPickCity;
 	bool m_bPickOtherPlayerCity;
 	bool m_bShowPlot;
-	bool m_bUnitsOnPlot;
 	bool m_bOwnPlot;
 	bool m_bProbabilityUnitMultiply;
 	bool m_bProbabilityBuildingMultiply;

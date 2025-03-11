@@ -316,6 +316,12 @@ BOOST_STATIC_ASSERT(sizeof(CyFatherPointInfo) == sizeof(CvFatherPointInfo));
 class CyEventTriggerInfo : public CvEventTriggerInfo
 {
 public:
+	int getNumUnits() const;
+	int getNumUnitsGlobal() const;
+	int getUnitDamagedWeight() const;
+	int getUnitDistanceWeight() const;
+	int getUnitExperienceWeight() const;
+	bool isUnitsOnPlot() const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyEventTriggerInfo) == sizeof(CvEventTriggerInfo));
 

@@ -14081,23 +14081,23 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 	// WTP, ray, fix for allowing some nice events - START
 	// fixed to trigger some nice City events with still using NumUnits
 	// if (NULL == pUnit && kTrigger.getNumUnits() > 0)
-	if (NULL == pUnit && kTrigger.getNumUnits() > 0 && kTrigger.isUnitsOnPlot())
+	if (NULL == pUnit && kTrigger.unitTriggers().NumUnits > 0 && kTrigger.unitTriggers().OnPlot)
 	{
 		return NULL;
 	}
 
-	else if (kTrigger.getNumUnits() > 0)
+	else if (kTrigger.unitTriggers().NumUnits > 0)
 	{
 		int iNumUnits = 0;
 
-		const InfoArray<UnitClassTypes>& ReqUnits = kTrigger.getUnitsRequired();
+		const InfoArray<UnitClassTypes>& ReqUnits = kTrigger.unitTriggers().UnitsRequired;
 		for (int i = 0; i < ReqUnits.getLength(); ++i)
 		{
 			int iNumUnitsFound = getUnitClassCount(ReqUnits.getUnitClass(i));
 			iNumUnits = iNumUnits + iNumUnitsFound;
 		}
 
-		if (iNumUnits < kTrigger.getNumUnits())
+		if (iNumUnits < kTrigger.unitTriggers().NumUnits)
 		{
 			return NULL;
 		}
@@ -14115,7 +14115,7 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 		return NULL;
 	}
 
-	if (kTrigger.getNumUnitsGlobal() > 0)
+	if (kTrigger.unitTriggers().NumUnitsGlobal > 0)
 	{
 		int iNumUnits = 0;
 		for (int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
@@ -14135,7 +14135,7 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 			}
 		}
 
-		if (iNumUnits < kTrigger.getNumUnitsGlobal())
+		if (iNumUnits < kTrigger.unitTriggers().NumUnitsGlobal)
 		{
 			return NULL;
 		}
@@ -15801,7 +15801,7 @@ int CvPlayer::getEventTriggerWeight(EventTriggerTypes eTrigger) const
 
 	int iProbability = kTrigger.getProbability();
 
-	if (kTrigger.isProbabilityUnitMultiply() && kTrigger.getNumUnits() > 0)
+	if (kTrigger.isProbabilityUnitMultiply() && kTrigger.unitTriggers().NumUnits > 0)
 	{
 		int iNumUnits = 0;
 		int iLoop;

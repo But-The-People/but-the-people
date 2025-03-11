@@ -9569,7 +9569,7 @@ bool CvPlot::canTrigger(EventTriggerTypes eTrigger, PlayerTypes ePlayer) const
 		}
 	}
 
-	if (kTrigger.isUnitsOnPlot())
+	if (kTrigger.unitTriggers().OnPlot)
 	{
 		bool bFoundValid = false;
 

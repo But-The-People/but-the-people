@@ -31,6 +31,7 @@
 		<element type="UnitClass" minOccurs="0" maxOccurs="*"/>
 	</ElementType>
 	<ElementType name="UnitClass" content="textOnly"/>
+	<ElementType name="bTrackUnit" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bUnitsOnPlot" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bOwnPlot" content="textOnly" dt:type="boolean"/>
 	<ElementType name="iNumUnits" content="textOnly" dt:type="int"/>
@@ -211,6 +212,16 @@
 	<ElementType name="RequirementLists" content="eltOnly">
 		<element type="RequiredUnitList" minOccurs="0" />
 	</ElementType>
+	<ElementType name="UnitTriggerConditions" content="eltOnly">
+		<element type="UnitsRequired"/>
+		<element type="iNumUnits"/>
+		<element type="iNumUnitsGlobal"/>
+		<element type="bTrackUnit"/>
+		<element type="bUnitsOnPlot"/>
+		<element type="iUnitDamagedWeight"/>
+		<element type="iUnitDistanceWeight"/>
+		<element type="iUnitExperienceWeight"/>
+	</ElementType>
 	<ElementType name="bPrereqEventPlot" content="textOnly" dt:type="boolean"/>
 	<ElementType name="bFrontPopup" content="textOnly" dt:type="boolean"/>
 	<ElementType name="EventTriggerInfo" content="eltOnly">
@@ -233,13 +244,7 @@
 		<element type="iMinOurLandmass"/>
 		<element type="iMaxOurLandmass"/>
 		<element type="eMinDifficulty"/>
-		<element type="UnitsRequired"/>
-		<element type="iNumUnits"/>
-		<element type="iNumUnitsGlobal"/>
-		<element type="iUnitDamagedWeight"/>
-		<element type="iUnitDistanceWeight"/>
-		<element type="iUnitExperienceWeight"/>
-		<element type="bUnitsOnPlot"/>
+		<element type="UnitTriggerConditions"/>
 		<element type="BuildingsRequired"/>
 		<element type="iNumBuildings"/>
 		<element type="iNumBuildingsGlobal"/>
