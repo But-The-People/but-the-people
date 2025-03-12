@@ -239,7 +239,7 @@
 		<English>A group of eager young adventurers offers to explore this new world in the name of our glorious nation, if we pay for the supplies and equipment needed for this enterprise.</English>
 		<French>Un groupe de jeunes gens ayant soif d'aventure vous propose d'explorer ce nouveau monde au nom de votre nation, si vous payez pour les équipements et les vivre pour cette entreprise.</French>
 		<German>Eine Gruppe junger ehrgeiziger Abenteurer bietet an, für unsere glorreiche Nation diese neue Welt zu erkunden, falls wir für die Vorräte und Ausrüstung dieses Unterfangens aufkommen.</German>
-		<Russian>Группа энергичных юных авантюристов предлагает исследовать этот новый мир во имя нашей славной нации, если мы оплатим припасы и оборудование, необходимые для этого предприятия.</Russian>
+		<Russian>Группа молодых искателей приключений предлагает исследовать этот новый мир во имя нашей славной нации. Разумеется, если мы оплатим припасы и оборудование, необходимые им для этого предприятия.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_FOREST_FIRE</Tag>
@@ -311,7 +311,7 @@
 		<German>Die Männer von [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] haben eine Treibjagd in den nahen Wäldern veranstaltet. Eine große Hirschherde lief den wackeren Waidmännern vor die Flinten.</German>
 		<Italian>I cervi proliferano nella foresta vicino a [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT], e i nostri cacciatori possono procurare carne in più.</Italian>
 		<Spanish>Los ciervos proliferan por el bosque cercano a [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT], lo que ha permitido a los cazadores almacenar una reserva de carne.</Spanish>
-		<Russian>Большие стада оленей в лесах возле [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] позволили нашим охотникам запастись дополнительным мясом.</Russian>
+		<Russian>Благодаря большим стадам мигрирующих оленей в лесах возле [COLOR_SELECTED_TEXT]%s2_city[COLOR_REVERT] охотники заготовили большое количество мяса на зиму.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_WASHED_OUT</Tag>
@@ -690,7 +690,7 @@
 		<German>Ein durchtriebener Hochstapler und Hehler, der in den [COLOR_HIGHLIGHT_TEXT]%s1:2_civ_adjective[COLOR_REVERT] Kolonien gesucht wird, ist von einer unserer Stadtwachen aufgegriffen worden. Möglicherweise verrät er uns, wo er seine Beute versteckt hat.</German>
 		<Italian>È stato catturato nei nostri territori un assassino, ricercato per l'omicidio di un funzionario [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT]. Forse ci dirà dove ha nascosto il suo bottino.</Italian>
 		<Spanish>Hemos atrapado huyendo por nuestra tierra a un asesino buscado por matar a un funcionario [COLOR_HIGHLIGHT_TEXT]%s1:1_civ_adjective[COLOR_REVERT]. Tal vez nos diga dónde escondió su botín.</Spanish>
-		<Russian>Мы поймали хитрого афериста и разыскиваемого в [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT], когда он уходил от правосудия по нашей земле. Мы заставим его рассказать нам, где спрятана его добыча.</Russian>
+		<Russian>Мы поймали мошенника, которого разыскивают [COLOR_HIGHLIGHT_TEXT]%s1_civ_adjective[COLOR_REVERT], когда он пытался скрыться от правосудия на нашей земле. Надо заставить его рассказать нам, где он спрятал свою добычу.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_INFO_FUGITIVE_5</Tag>
@@ -2543,7 +2543,7 @@
 		<English>A farmer, recently arrived, got a big loan to buy land but now he can't pay. He wants to sell everything he has to repay the loan and go back to Europe.</English>
 		<French>Un fermier ayant récemment immigré s'est lourdement endetté pour acheter des terres et il ne peut plus rembourser. Il veut vendre tout ce qui lui reste pour clore ses dettes et rentrer en Europe.</French>
 		<German>Ein kürzlich eingewanderter Farmer hat einen hohen Kredit aufgenommen, um sich etwas Land zu kaufen. Diesen kann er nun nicht mehr zurückzahlen. Daher will er sein gesamtes Habe verkaufen, um damit den Kredit zu begleichen und wieder nach Europa zurückzukehren.</German>
-		<Russian>Недавно приехавший фермер получил большую ссуду на покупку земли, но теперь не может заплатить. Он хочет продать все, что у него есть, чтобы погасить кредит и вернуться в Европу.</Russian>
+		<Russian>Недавно приехавший фермер получил большую ссуду на покупку земли, но переоценил свои силы и теперь не может заплатить. Он хочет продать все, что у него есть, чтобы погасить долг и вернуться в Европу.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_EUROPEAN_CONFLICT_ENDED</Tag>
@@ -2585,7 +2585,7 @@
 		<English>A butcher has arrived in the harbour of one of our cities. He had to flee Europe because he was accused of selling rotten meat. He pleads his innocence and wants a second chance.</English>
 		<French>Un ancien boucher est arrivé au port de l'une de nos villes. Il a fui d'Europe parce qu'il était accusé de vendre de la viande pourrie. Il clâme son innocence et souhaite une deuxième chance ici.</French>
 		<German>Ein Fleischermeister ist im Hafen einer unserer Städte eingetroffen. Er musste aus Europa fliehen, weil er verdorbenes Fleisch verkauft haben soll. Er behauptet aber, unschuldig zu sein, und bittet um eine zweite Chance.</German>
-		<Russian>В порт одного из наших городов прибыл мясник. Ему пришлось бежать из Европы, потому что его обвинили в продаже тухлого мяса. Он заявляет о своей невиновности и хочет получить второй шанс.</Russian>
+		<Russian>На корабле из Европы в наши колонии прибыл мясник. Ему пришлось бежать из-за обвинений в продаже тухлого мяса. Он заявляет о своей невиновности, происках конкурентов и просит дать ему шанс восстановить своё доброе имя.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_DESPERATE_CONQUISTADORES</Tag>
@@ -3782,7 +3782,7 @@
 		<English>Milord, whaling along our coasts promises high profits. In Europe our merchant vessel recently picked up a master train oil cooker who wants to start a new life in the colonies. Shall we hire him?</English>
 		<French>Seigneur, la chasse à la baleine le long de nos côtes promet de gros profits. En Europe, notre navire marchand a récemment recueilli un maître cuiseur d'huile de train, qui veut commencer une nouvelle vie dans les colonies. Devons-nous l'engager ?</French>
 		<German>Milord, der Walfang vor unseren Küsten würde gute Gewinne versprechen. Wie es der Zufall will, hat der Kapitän eines Handelsschiffes in Europa einen Meister-Trankocher an Bord genommen, der hier ein neues Leben beginnen möchte. Sollen wir im eine Anstellung geben?</German>
-		<Russian>Милорд, китобойный промысел у наших берегов сулит большие прибыли. В Европе наше торговое судно недавно подобрало мастера вытопки ворвани, который хочет начать новую жизнь в колониях. Давайте наймём его?</Russian>
+		<Russian>Милорд, китобойный промысел у наших берегов сулит большие прибыли. Недавно в Европе наш торговый агент нашел мастера вытопки ворвани, который хочет начать новую жизнь в колониях. Давайте наймём его?</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_WHALING</Tag>

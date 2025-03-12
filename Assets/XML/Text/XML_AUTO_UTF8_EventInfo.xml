@@ -5,7 +5,7 @@
 		<English>Everybody deserves a second chance. Let him work in his old profession and pay the European authorities to forget about the incident.</English>
 		<French>Tout le monde mérite une deuxième chance. Nous pouvons le laisser exercer sa profession et nous paierons les autorités européennes pour qu'elles oublient l'incident.</French>
 		<German>Jeder verdient eine zweite Chance. Lasst den Mann in seinem alten Beruf arbeiten, und bezahlt die Behörden in der Heimat, diesen Vorfall zu vergessen.</German>
-		<Russian>Каждый заслуживает второго шанса. Пусть работает по старой профессии и платит европейским властям, чтобы они забыли об инциденте.</Russian>
+		<Russian>Каждый заслуживает второго шанса. Пусть работает по своей профессии, а мы уладим его проблему с властями.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_ADMIRAL_1_1</Tag>
@@ -93,21 +93,21 @@
 		<English>We shall help the poor man and buy the remains of his farm.</English>
 		<French>Nous devons aider le pauvre homme et acheter ce qu'il reste de sa ferme.</French>
 		<German>Wir werden dem armen Mann helfen und sein restliches Habe kaufen.</German>
-		<Russian>Мы поможем бедняку и купим остатки его фермы.</Russian>
+		<Russian>Его жалкая лачуга нас не интересует, а вот продовольствие и транспорт пригодятся.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BANKRUPT_FARMER_IGNORE</Tag>
 		<English>This is sad, but it is not our business.</English>
 		<French>C'est triste, mais ce ne sont pas nos affaires.</French>
 		<German>Das ist zwar traurig, betrifft uns aber nicht.</German>
-		<Russian>Печальное событие, но это не наше дело.</Russian>
+		<Russian>Мы будем молиться, чтобы Господь помог этому несчастному.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BANKRUPT_FARMER_PAY_DEBT</Tag>
 		<English>We will pay the poor man's debts if he stays and works for us.</English>
 		<French>Nous paierons pour les dettes du pauvre homme s'il reste et travaille pour nous.</French>
 		<German>Wir werden die Schulden des armen Mannes begleichen, wenn er für uns arbeitet.</German>
-		<Russian>Мы заплатим долги бедняги, если он останется и будет работать на нас.</Russian>
+		<Russian>Мы оплатим все долги бедняги, если он останется и будет работать на нас.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BEER_ROBBERY_1</Tag>
@@ -708,7 +708,7 @@
 		<German>Richtet unseren Nachbarn aus, dass wir sie in unsere Gebete einschließen. Doch nun muss ich nach Haus gehen, um mich zu stärken. Meine junge Köchin will mir aufwarten. Die Künste dieser Frau sind jederzeit eine Sünde wert.</German>
 		<Italian>In questo momento non possiamo aiutarli. Invia le nostre condoglianze ai loro leader.</Italian>
 		<Spanish>Esta vez no podremos ayudarles. Enviad nuestras condolencias a sus líderes.</Spanish>
-		<Russian>В настоящее время мы не можем помочь. Приносим наши соболезнования их лидерам.</Russian>
+		<Russian>В настоящее время мы ничем не можем помочь. Передайте их вождю наши искренние соболезнования.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FAMINE_2</Tag>
@@ -717,7 +717,7 @@
 		<German>Hartherzigkeit würde uns nicht gut zu Gesicht stehen. Also öffnet in Gottes Namen die städtischen Kornspeicher und schickt die Hälfte ihrer Bestände an unsere gebeutelten Nachbarn.Und richtet ihnen aus, dies sei alles, was wir hätten.</German>
 		<Italian>Apri i granai della città e invia metà delle provviste ai nostri vicini in difficoltà.</Italian>
 		<Spanish>Abrid los graneros de la ciudad y enviad la mitad de las reservas a nuestros afligidos vecinos.</Spanish>
-		<Russian>Откройте городские зернохранилища и отправьте половину запасов нашим неблагополучным соседям.</Russian>
+		<Russian>Отправьте этим несчастным половину наших запасов. Будем надеяться, что этого будет достаточно.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FAMINE_3</Tag>
@@ -726,7 +726,7 @@
 		<German>Mir würde mein Griesbrei nicht schmecken, wüsste ich, dass andernorts Menschen Hunger leiden. Schickt ihnen unsere gesamten Nahrungsvorräte! Und sputet Euch!</German>
 		<Italian>Invia tutte le riserve di cibo! Non badiamo a spese per aiutare i nostri amici!</Italian>
 		<Spanish>¡Enviadles todos los alimentos que tengamos almacenados! ¡No escatiméis gastos en ayudar a nuestros amigos!</Spanish>
-		<Russian>Отправить всё продовольстви со складов! Не жалея средств, помогите нашим друзьям!</Russian>
+		<Russian>Помогать обездоленным - богоугодное дело. Отправьте все имеющиеся припасы в эту деревню! И передайте вождю какой-нибудь небольшой подарок.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FAMOUS_ACTORS_1</Tag>
@@ -1059,7 +1059,7 @@
 		<German>Legt den Gefangenen in Eisen und schickt ihm einen Kerkermeister, der ihn zum Reden bringen soll.</German>
 		<Italian>Interroga segretamente il prigioniero, sperando di scoprire informazioni importanti.</Italian>
 		<Spanish>Que se interrogue en secreto al prisionero, a ver si nos enteramos de algo interesante.</Spanish>
-		<Russian>Тайно допросите заключенного. Мы можем узнать конфиденциальную информацию.</Russian>
+		<Russian>Любыми способами узнайте, где он спрятал золото. Деньги никогда не бывают лишними.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FUGITIVE_3</Tag>
@@ -1193,7 +1193,7 @@
 		<German>Wunderbar! Lasst uns die kommende Nacht feiern und fressen.</German>
 		<Italian>Invia le congratulazioni agli abitanti.</Italian>
 		<Spanish>Que se felicite a los ciudadanos.</Spanish>
-		<Russian>Прекрасно! Давайте отпразнуем это чудесное событие и устроим пир.</Russian>
+		<Russian>Замечательно! Скорее несите мясо в амбар. Всем охотникам по кружке эля за счет Губернатора.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_HERBS_1</Tag>
@@ -1661,42 +1661,42 @@
 		<English>Empty talk. These loyal souls would never tamper with my, well, er, I mean His Majesty's property, of course. Away! Do not insult my ear with such tall tales.</English>
 		<French>Bavardages inutiles. Ces âmes loyales ne toucheraient jamais à ma, enfin, euh, je veux dire, bien sûr, à la propriété de sa majesté. Va-t'en ! N'insulte pas mon oreille avec de telles histoires.</French>
 		<German>Leeres Geschwätz. Diese treuen Seelen würden sich nie an meinem, also, ähäm, ich meine natürlich Seiner Majestät Eigentum vergreifen. Hinfort! Beleidigt mein Ohr nicht mit solchen Lügenmärchen.</German>
-		<Russian>Пустой разговор. Эти верные души никогда не станут вмешиваться в мою, ну, э-э, я имею в виду собственность Его Величества, конечно. Прочь! Не оскорбляйте мой слух такими выдумками.</Russian>
+		<Russian>Вздор! Эти люди никогда не посягнут на мою... гхм... э-э-эм... я хотел сказать на собственность Его Величества. Не смейте оскорбляйте мой слух такими выдумками.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PIRATES_2</Tag>
 		<English>Well, that is unfortunately all too true. Take some gold and strengthen the guard. Let us hope that we can send away these greedy rapscallions as quickly as possible.</English>
 		<French>Eh bien, c'est trop vrai, j'en ai peur. Prends de l'or et renforce la garde. Espérons que nous pourrons expédier ces sources d'avidité le plus rapidement possible.</French>
 		<German>Nun, das ist leider nur allzu wahr gesprochen. Nehmt etwas Gold und verstärkt die Wachmannschaften. Lasst uns hoffen, dass wir diese Quellen der Gier so rasch als möglich verschiffen können.</German>
-		<Russian>Что ж, это, к сожалению, слишком верно. Возьмите немного золота и усильте охрану. Будем надеяться, что мы сможем отослать этих жадных негодяев как можно быстрее.</Russian>
+		<Russian>Возможно, вы правы. Возьмите немного золота и усильте охрану. Будем надеяться, что этого будет достаточно.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PIRATES_3</Tag>
 		<English>Gather the people together! Let it be proclaimed at every market that the wealth of the land is immeasurable and that anyone who ventures into its depths with desire and will can pick up gold with his bare hands! Far from our houses and churches lies earthly fortune, far, far behind the hills. Give a horse to every cutthroat whose greed has gone to his head, and do not let him out of your sight until he disappears over the hills. Then peace should return.</English>
 		<French>Rassemblez les gens ! Que l'on proclame sur tous les marchés que les richesses de la terre sont incommensurables, et que quiconque s'aventure dans ses profondeurs avec désir et volonté peut ramasser l'or à mains nues ! Surtout, loin de nos maisons et de nos églises se trouve la fortune terrestre, loin, très loin au-delà des collines. Donnez un cheval à chaque égorgeur dont la cupidité lui est montée à la tête, et ne le perdez pas de vue jusqu'à ce qu'il soit au-delà des collines. Ensuite, tout devrait redevenir calme.</French>
 		<German>Trommelt die Leute zusammen! Lasst auf jedem Markte verkünden, dass der Reichtum des Landes unermesslich sei und jeder, der mit Lust und Wille in seine Tiefen vorstöße, das Gold mit bloßen Händen aufklauben könne! Vor allem fern unserer Häuser und Kirchen liegt das irdische Glück, weit, weit hinter den Hügeln. Gebt darauf jedem Halsabschneider, dem die Gier zu Kopfe gestiegen ist, ein Pferd und lasst ihn nicht aus den Augen, bis er hinter den Hügeln ist. Dann sollte wieder Ruhe einkehren.</German>
-		<Russian>Собери людей вместе! Пусть возвещают на каждой ярмарке, что богатства земли неизмеримы и что всякий, кто с желанием и волей отважится проникнуть в ее недра, может достать золото голыми руками! Далеко от наших домов и церквей лежит земное счастье, далеко-далеко за холмами. Каждому головорезу, у которого жадность вскружила голову, дайте лошадь и не выпускайте его из виду, пока он не скроется за холмами. Тогда должен вернуться покой.</Russian>
+		<Russian>Соберите людей на городской площади. Попробуем убедить их, что богатства этой земли неисчислимы и что всякий, кто не испугается трудностей, сможет добыть золото! Земное счастье не здесь, оно ждёт их вдали от наших домов и церквей, за далёкими горами. И каждому безумцу, которому жадность вскружит голову, дайте лошадь и не выпускайте из виду, пока он не скроется за холмами. И тогда в колонии снова наступит покой.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PIRATES_4</Tag>
 		<English>Surely gutter scum aren't mingling with my good colonists? Well, leave the doors unlocked. Put the word out in the pubs that there's something worth getting. Yes, and if the scum squander their loot and gamble it away, put them in chains and secretly take them to the old barge out in the harbour. There they can choose whether they want to pay off their debt bit by bit or be whipped bloody in the pillory.</English>
 		<French>Eh bien, la racaille du caniveau ne s'est pas mêlée à mes bons colons, n'est-ce pas ? Laissez les portes déverrouillées, dispersez-vous dans les tavernes où il y a quelque chose à prendre. Oui, et quand les racailles dilapident et jouent leur butin, mettez-les aux fers et emmenez-les secrètement à la vieille péniche dans le port. Là, ils peuvent choisir s'ils veulent payer leur dette petit à petit, ou être flagellés au sang cloués pilori.</French>
 		<German>Ei, da hat sich unter meine braven Kolonisten doch nicht der Abschaum der Gosse gemischt? Wohlan, lasst die Türen unverschlossen, streut weiter in den Kneipen, wo es etwas zu holen gibt. Ja, und wenn das Pack seine Beute versaufet und verspielet, dann legt sie in Ketten und bringt sie heimlich auf den alten Kahn im Hafen. Dort dürfen sie dann wählen, ob sie ihre Schuld Prise für Prise abzahlen oder mit Peitsche und Pranger abbluten wollen.</German>
-		<Russian>Неужели к моим добрым колонистам не примешиваются отбросы из водостоков? Сообщите в пабах, что есть что-то стоящее. Да, а если сволочи растратят награбленное и проиграют, заковать их в цепи и тайком отвезти на старую баржу в гавани. Там они могут выбрать, хотят ли они погасить свой долг по крупицам или быть выпоротыми до крови у позорного столба.</Russian>
+		<Russian>Сдаётся мне, все это дело рук разорившихся оборванцев. Давайте попробуем собрать из них отряд и отправим проверить тайники индейцев. Но если эти негодяи вздумают украсть найденное, заковать их в цепи и отвезти на старую баржу в гавани. Свежий морской воздух и кандалы прочистят им мозги и помогут выбрать, погасить свой долг или быть выпоротыми до крови у позорного столба.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_PIRATES_4a</Tag>
 		<English>An old ship sets sail ...</English>
 		<French>Un vieux navire hisse les voiles ...</French>
 		<German>Ein alter Kahn sticht im Schatten der Unruhe unter Kapitän Jakob Spatz in See ...</German>
-		<Russian>Старинный корабль отправляется в плавание...</Russian>
+		<Russian>Старый корабль отправляется в плавание...</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_POLITICAL_REFUGEE_1</Tag>
 		<English>For the sake of variety we need a well-educated man in our colonies. We will not remain a colony of workers and farmers. Issue the bill of exchange!</English>
 		<French>Pour varier les gouts et couleurs nous avons besoin d'un homme bien éduqé au sein de nos colonies. Nous sommes pas une commune d'ouvriers et de paysans. Envoyez la note pour l'échange!</French>
 		<German>Wir könnten zur Abwechslung mal einen Gelehrten brauchen. Wir wollen ja nicht eine Kolonie von Arbeitern und Bauern bleiben. Stellt ihm den Wechsel aus!</German>
-		<Russian>Для разнообразия в наших колониях нужен хорошо образованный человек. Мы не останемся колонией рабочих и крестьян. Выдайте ему вексель!</Russian>
+		<Russian>В наших колониях нужен хорошо образованный человек, хотя бы для разнообразия. Мы не должны становиться колонией рабочих и фермеров. Выдайте ему вексель!</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_POLITICAL_REFUGEE_2</Tag>
@@ -1815,7 +1815,7 @@
 		<English>We will hand this man over to the authorities in Europe.</English>
 		<French>Nous allons extrader cette homme pour le rendre aux autorités qui le demandent en Europe.</French>
 		<German>Wir werden diesen Mann den Behörden in Europa überstellen.</German>
-		<Russian>Мы передадим этого человека властям Европы.</Russian>
+		<Russian>Каков наглец. Заковать его в кандалы и первым же кораблём отправить в Европу.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_REQUISITION_COATS_QUEST</Tag>
@@ -1956,7 +1956,7 @@
 		<English>Ensure that these brave young men get what they require for this enterprise. We must know what this new world offers for us. His Majesty will be delighted.</English>
 		<French>Donnez à ces jeunes gens courageux ce dont il besoin pour cette aventure. Nous devons savoir les richesses offertes par ce Nouveau Monde. Le Roi en sera ravi.</French>
 		<German>Stellt sicher, dass diese mutigen jungen Männer alles erhalten, das sie für dieses Unterfangen benötigen. Wir müssen erfahren, was diese Welt für uns bereit hält. Ihre Majestät wird erfreut sein.</German>
-		<Russian>Убедитесь, что эти отважные молодые люди получат то, что им нужно для этого предприятия. Мы должны знать, что предлагает нам этот новый мир. Его Величество будет в восторге.</Russian>
+		<Russian>Убедитесь, что эти отважные молодые люди получат всё, что им нужно для экспедиции. Мы должны знать, что скрывает от нас этот дивный новый мир. Его Величество будет в восторге.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_THIRDCOLONY_2</Tag>
@@ -1970,7 +1970,7 @@
 		<English>Our colony's finances are in dire straits. What little income we have must be saved for more urgent matters. We regretfully deny our support for this enterprise.</English>
 		<French>Les finances de la colonie sont au plus mal. Les fonds dont nous disposons doivent être affecté à d'autres besoins plus urgents. Nous sommes au regret de refuser de soutenir leur entreprise.</French>
 		<German>Unsere Kolonie ist aktuell in einer schwierigen finanziellen Lage. Wir müssen unsere geringen Einnahmen für wichtigere Investitionen aufsparen und daher unsere Unterstützung verwehren.</German>
-		<Russian>Финансы нашей колонии в плачевном состоянии. Те небольшие доходы, которые у нас есть, должны быть сохранены для более неотложных дел. К сожалению, мы отказываемся от поддержки этого предприятия, но какую-нибудь работу мы им найдем.</Russian>
+		<Russian>Финансы нашей колонии в плачевном состоянии и те скромные доходы, которые у нас есть, будут направлены на более важные дела. Но для тех, кто хочет помочь развитию колоний, мы всегда найдём работу.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SECOND_CHANCE_1</Tag>
@@ -2494,21 +2494,21 @@
 		<English>Well, as long as he can show me on a map where he ran his rotten ship into the whales, nothing at all. But, if not, I've got my sword right here.</English>
 		<French>Et bien, s'il est capable de me montrer la localisation de ce monstre sur une carte, rien du tout. Mais si ce n'est pas le cas, mon épée attend dans son fourreau.</French>
 		<German>Besorgt mehr Rum! Solange er mir auf der Seekarte markieren kann, wo er seinen Seelenverkäufer in die Walherde gelenkt hat, solange soll er erzählen können, was er will. Sollte er sich aber nicht recht erinnern, nun, meinen Degen trage ich bei mir ...</German>
-		<Russian>Что ж, если он сможет отметить на карте место, где он на своем дырявом корыте наткнулся на китов, он может рассказывать любые небылицы, какие захочет. Но если он ошибётся, то мой мечь давно просится из ножен...</Russian>
+		<Russian>Что ж, если он сможет отметить на карте место, где он на своем дырявом корыте наткнулся на китов, он может рассказывать любые небылицы, какие захочет. Но если он ошибётся, то его участи позавидуют даже грешники в аду...</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WHALE_OIL_COOKER_1</Tag>
 		<English>Actually we always wanted to do this, only it was never the right time. Give him the job!</English>
 		<French>Actually we always wanted to do this, only the right time for doing this had never opened up. Give him the job!</French>
 		<German>Perfekt, das wollten wir doch schon lange in Angriff nehmen. Stellt ihn ein!</German>
-		<Russian>На самом деле мы всегда хотели это сделать, но не было подходящего времени. Дайте ему работу!</Russian>
+		<Russian>Какая блестящая мысль! Мы станем богачами! Распорядитесь выделить средства из казны на организацию его переезда.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WHALE_OIL_COOKER_2</Tag>
 		<English>With so many pirates cruising in this area at the moment? We don't have the means to have all our whalers guarded by warships. And without protection, it's a pointless endeavour. We cannot employ him at the moment.</English>
 		<French>Oh my god, what a stupid idea! The pirates cruising along our coasts are already waiting for such fat prey! We have not enough military vessels to protect our whaling ships and without procetion this is a rather senseless endeavor. We cannot employ him.</French>
 		<German>Bei den vielen Piraten, die hier in dieser Gegend zur Zeit kreuzen? Wir haben nicht die Mittel, um alle unsere Walfänger von Kriegschiffen bewachen zu lassen. Und ohne Schutz ist das ein sinnloses Unterfangen. Wir können ihn derzeit nicht gebrauchen.</German>
-		<Russian>С таким количеством пиратов, курсирующих сейчас в этом районе? У нас нет средств, чтобы все наши китобойные суда охранялись военными кораблями. А без защиты это бессмысленное занятие. Мы не можем нанять его в данный момент.</Russian>
+		<Russian>С таким количеством пиратов, курсирующих сейчас в наших водах? У нас нет средств, чтобы обеспечить все наши китобойные суда эскортом. А без флота это бессмысленная трата денег. Займитесь поиском действительно нужных специалистов.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WHALING_1</Tag>

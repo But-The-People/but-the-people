@@ -149,7 +149,7 @@
 		<English>Since [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] has no more settlements and no more settlers, His Majesty has decided to equip some colonists in Europe as settlers. Of course this comes with a tax increase.</English>
 		<French>Puisque [COLOR_SELECTED_TEXT]%s1_player[COLOR_REVERT] n'a ni colonies ni colons fondateurs, Sa Majesté a eu le plaisir d'équiper des colons en Europe pour fonder une nouvelle ville. Bien sûr, ceci vient avec une hausse des taxes.</French>
 		<German>Da [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] keine weiteren Siedlungen und auch keine Siedler mehr hat, hat Seine Majestät entschieden, in Europe einige Kolonisten als Siedler auszurüsten. Das ist natürlich mit einer Steuererhöhung verbunden.</German>
-		<Russian>Поскольку у [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] больше нет ни поселений, ни поселенцев, Его Величество решил сделать некоторых колонистов в Европе поселенцами. Конечно, это приведет к повышению налоговой ставки.</Russian>
+		<Russian>Поскольку у [COLOR_HIGHLIGHT_TEXT]%s1_player[COLOR_REVERT] больше нет ни городов, ни поселенцев, Его Величество решил сделать некоторых колонистов в Европе поселенцами. Конечно, это приведет к повышению налоговой ставки.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FAILED_MISSIONARY_SPAWNED_FROM_FAIL</Tag>
