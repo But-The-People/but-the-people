@@ -13975,10 +13975,7 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 
 			for (int i = 0; i < ReqBuildings.getLength(); ++i)
 			{
-				//if (kTrigger.getBuildingRequired(i) != NO_BUILDINGCLASS)
-				{
 					iFoundValid += getBuildingClassCount(ReqBuildings.getBuildingClass(i));
-				}
 			}
 
 			if (iFoundValid < kTrigger.getNumBuildings())
@@ -14091,7 +14088,7 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 		int iNumUnits = 0;
 
 		const InfoArray<UnitClassTypes>& ReqUnits = kTrigger.unitTriggers().UnitsRequired;
-		for (int i = 0; i < ReqUnits.getLength(); ++i)
+		for (int i = 0; i < ReqUnits.getLength() && iNumUnits < kTrigger.unitTriggers().NumUnits; ++i)
 		{
 			int iNumUnitsFound = getUnitClassCount(ReqUnits.getUnitClass(i));
 			iNumUnits = iNumUnits + iNumUnitsFound;
@@ -14117,15 +14114,16 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 
 	if (kTrigger.unitTriggers().NumUnitsGlobal > 0)
 	{
+		const int iRequredCount = kTrigger.unitTriggers().NumUnitsGlobal;
 		int iNumUnits = 0;
-		for (int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
+		for (PlayerTypes ePlayer = FIRST_PLAYER; ePlayer < NUM_PLAYER_TYPES && iNumUnits < iRequredCount; ++ePlayer)
 		{
-			CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayer);
+			CvPlayer& kLoopPlayer = GET_PLAYER(ePlayer);
 
 			if (kLoopPlayer.isAlive())
 			{
 				int iLoop;
-				for (CvUnit* pLoopUnit = kLoopPlayer.firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = kLoopPlayer.nextUnit(&iLoop))
+				for (CvUnit* pLoopUnit = kLoopPlayer.firstUnit(&iLoop); pLoopUnit != NULL && iNumUnits < iRequredCount; pLoopUnit = kLoopPlayer.nextUnit(&iLoop))
 				{
 					if (MIN_INT != pLoopUnit->getTriggerValue(eEventTrigger, pPlot, true))
 					{
@@ -14135,7 +14133,7 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 			}
 		}
 
-		if (iNumUnits < kTrigger.unitTriggers().NumUnitsGlobal)
+		if (iNumUnits < iRequredCount)
 		{
 			return NULL;
 		}
@@ -14143,25 +14141,23 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 
 	if (kTrigger.getNumBuildingsGlobal() > 0)
 	{
+		const int iRequredCount = kTrigger.getNumBuildingsGlobal();
 		int iNumBuildings = 0;
-		for (int iPlayer = 0; iPlayer < MAX_PLAYERS; ++iPlayer)
+		for (PlayerTypes ePlayer = FIRST_PLAYER; ePlayer < NUM_PLAYER_TYPES && iNumBuildings < iRequredCount; ++ePlayer)
 		{
-			CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayer);
+			CvPlayer& kLoopPlayer = GET_PLAYER(ePlayer);
 
 			if (kLoopPlayer.isAlive())
 			{
 				const InfoArray<BuildingClassTypes>& ReqBuildings = kTrigger.getBuildingsRequired();
 				for (int i = 0; i < ReqBuildings.getLength(); ++i)
 				{
-					//if (kTrigger.getBuildingRequired(i) != NO_BUILDINGCLASS)
-					{
-						iNumBuildings += getBuildingClassCount(ReqBuildings.getBuildingClass(i));
-					}
+					iNumBuildings += getBuildingClassCount(ReqBuildings.getBuildingClass(i));
 				}
 			}
 		}
 
-		if (iNumBuildings < kTrigger.getNumBuildingsGlobal())
+		if (iNumBuildings < iRequredCount)
 		{
 			return NULL;
 		}
@@ -14230,7 +14226,7 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 		pTriggerData->m_iPlotY = (NULL != pPlot) ? pPlot->getY_INLINE() : INVALID_PLOT_COORD;
 		pTriggerData->m_eOtherPlayer = eOtherPlayer;
 		pTriggerData->m_iOtherPlayerCityId = (NULL != pOtherPlayerCity) ? pOtherPlayerCity->getID() : -1;
-		pTriggerData->m_iUnitId = (NULL != pUnit) ? pUnit->getID() : -1;
+		pTriggerData->m_iUnitId = (NULL != pUnit && kTrigger.unitTriggers().Tracked) ? pUnit->getID() : -1;
 		pTriggerData->m_eBuilding = eBuilding;
 	}
 	else
