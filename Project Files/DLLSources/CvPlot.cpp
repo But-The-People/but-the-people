@@ -3475,15 +3475,29 @@ int CvPlot::movementCost(const CvUnit* pUnit, const CvPlot* pFromPlot,
 
 	if (!bAssumeRevealed && !isRevealed(pUnit->getTeam(), false))
 	{
+		// For unrevealed plots we have to return the worst case movement cost
+		if (USE_CLASSIC_MOVEMENT_SYSTEM)
+		{ 
 		if (pUnit->getDomainType() == DOMAIN_SEA)
 		{
-			// Note: Not strictly true due to the introduction of storms which can
-			// "drain" all movement points
 			return GLOBAL_DEFINE_MOVE_DENOMINATOR;
 		}
 		else
 		{
 			return pUnit->maxMoves();
+		}
+	}
+		else
+		{
+			// TODO: Replace hard-coded constants with the highest movement cost in terms of plot/terrain/feature combination
+			if (pUnit->getDomainType() == DOMAIN_SEA)
+			{
+				return 500;
+			}
+			else
+			{
+				return 500;
+			}
 		}
 	}
 
