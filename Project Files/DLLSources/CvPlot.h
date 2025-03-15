@@ -94,7 +94,7 @@ public:
 	DllExport bool isRiverCrossingFlowClockwise(DirectionTypes eDirection) const;
 	bool isRiverSide() const;
 	bool isRiver() const;
-	bool isFreshWater() const; // WTP, ray, Health Overhaul
+	bool isFreshWater(bool bCheckRevealed = false) const; // WTP, ray, Health Overhaul
 	bool isRiverConnection(DirectionTypes eDirection) const;
 
 	CvPlot* getNearestLandPlotInternal(int iDistance) const;
@@ -277,7 +277,7 @@ public:
 	// use InfoArray if searching for multiple as it will be faster
 	template <typename T>
 	typename boost::enable_if<boost::is_enum<T>, bool>::type
-	hasNearbyPlotWith(T eVal, int iRange = 1) const;
+	hasNearbyPlotWith(T eVal, int iRange = 1, bool bCheckRevealed = false) const;
 	//WTP, Nightinggale - Terrain locator - start
 
 	DllExport int getFeatureVariety() const;

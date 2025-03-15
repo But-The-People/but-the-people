@@ -2945,7 +2945,8 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			szString.append(gDLL->getText("TXT_KEY_TERRAIN_BAD_CITY_LOCATION"));
 		}
 
-		if (pPlot->isFreshWater())
+		// Don't give away fresh water status of unrevealed plots
+		if (pPlot->isFreshWater(/*bCheckRevealed*/true))
 		{
 			szString.append(NEWLINE);
 			szString.append(gDLL->getText("TXT_KEY_PLOT_FRESHWATER"));

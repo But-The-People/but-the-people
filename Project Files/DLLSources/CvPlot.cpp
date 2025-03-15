@@ -1277,7 +1277,8 @@ bool CvPlot::isRiver() const
 }
 
 // WTP, ray, Health Overhaul - START
-bool CvPlot::isFreshWater() const
+// Note: bCheckRevealed=true is only to be used when called from gametext. Do not set it for anything that is synced
+bool CvPlot::isFreshWater(bool bCheckRevealed) const
 {
 	// no Water Plots themselves
 	if (isWater())
@@ -1285,7 +1286,10 @@ bool CvPlot::isFreshWater() const
 		return false;
 	}
 
-	return (isRiver() || hasNearbyPlotWith(TERRAIN_LARGE_RIVERS) || hasNearbyPlotWith(TERRAIN_LAKE) || hasNearbyPlotWith(TERRAIN_ICE_LAKE));
+	return (isRiver() ||
+		hasNearbyPlotWith(TERRAIN_LARGE_RIVERS, 1, bCheckRevealed) ||
+		hasNearbyPlotWith(TERRAIN_LAKE, 1, bCheckRevealed) ||
+		hasNearbyPlotWith(TERRAIN_ICE_LAKE, 1, bCheckRevealed));
 }
 // WTP, ray, Health Overhaul - END
 
@@ -4902,12 +4906,12 @@ bool CvPlot::hasNearbyPlotWith(const InfoArray1<T>& kInfo, int iRange, bool bEmp
 		return bEmptyReturnVal;
 	}
 
-	CvMap& kMap = GC.getMap();
+	const CvMap& kMap = GC.getMap();
 	const int iPlotX = getX_INLINE();
 	const int iPlotY = getY_INLINE();
 	LOOP_ADJACENT_PLOTS(iPlotX, iPlotY, iRange)
 	{
-		CvPlot* pLoopPlot = kMap.plotINLINE(iLoopX, iLoopY);
+		CvPlot* const pLoopPlot = kMap.plotINLINE(iLoopX, iLoopY);
 		if (pLoopPlot != NULL)
 		{
 			const T eVal = pLoopPlot->getVariable((T)0);
@@ -4932,16 +4936,20 @@ bool CvPlot::hasNearbyPlotWith(const InfoArray1<T>& kInfo, int iRange, bool bEmp
 
 template <typename T>
 typename boost::enable_if<boost::is_enum<T>, bool>::type
-CvPlot::hasNearbyPlotWith(T eVal, int iRange) const
+// Note: bCheckRevealed=true is only to be used when called from gametext. Do not set it for anything that is synced
+CvPlot::hasNearbyPlotWith(T eVal, int iRange, bool bCheckRevealed) const
 {
-	CvMap& kMap = GC.getMap();
+	const CvMap& kMap = GC.getMap();
 	const int iPlotX = getX_INLINE();
 	const int iPlotY = getY_INLINE();
 	LOOP_ADJACENT_PLOTS(iPlotX, iPlotY, iRange)
 	{
-		CvPlot* pLoopPlot = kMap.plotINLINE(iLoopX, iLoopY);
+		CvPlot* const pLoopPlot = kMap.plotINLINE(iLoopX, iLoopY);
 		if (pLoopPlot != NULL)
 		{
+			if (bCheckRevealed && !pLoopPlot->isRevealed(GC.getGameINLINE().getActiveTeam(), false))
+				continue;
+
 			const T eLoopVal = pLoopPlot->getVariable((T)0);
 			if (eVal == eLoopVal)
 			{
