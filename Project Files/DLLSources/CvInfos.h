@@ -4461,6 +4461,8 @@ public:
 	const CvWString& getWorldNews(int i) const;
 	int getNumWorldNews() const;
 
+	int getMinTurn() const;
+
 	// Start EmperorFool: Events with Images
 	char const* getEventArt() const;				// Exposed to Python
 	// End EmperorFool: Events with Images
@@ -4560,6 +4562,7 @@ private:
 	CvString m_szPythonCanDo;
 	CvString m_szPythonCanDoCity;
 	CvString m_szPythonCanDoUnit;
+	int m_iMinTurn;
 
 public:
 	// functions purely for the python interface

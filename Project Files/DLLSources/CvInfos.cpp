@@ -8231,7 +8231,6 @@ bool CvGoodyInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_bWaterGoody, "bWaterGoody"); // R&R, ray, Goodies on Water
 	pXML->GetChildXmlValByName(&m_bUnique, "bUnique"); // // R&R, ray, Goody Enhancement
 	// WTP, ray, Unit spawning Goodies and Goody Huts - START
-	pXML->GetChildXmlValByName(&m_iMinTurnValid, "iMinTurnValid");
 	pXML->GetChildXmlValByName(&m_iRandNumHostilesSpawned, "iRandNumHostilesSpawned");
 	pXML->GetChildXmlValByName(&m_bSpawnHostileUnitsAsXML, "bSpawnHostileUnitsAsXML");
 	pXML->GetChildXmlValByName(&m_bSpawnHostileAnimals, "bSpawnHostileAnimals");
@@ -14672,7 +14671,8 @@ CvEventTriggerInfo::CvEventTriggerInfo() :
 	m_bProbabilityUnitMultiply(false),
 	m_bProbabilityBuildingMultiply(false),
 	m_bPrereqEventCity(false),
-	m_bFrontPopup(false)
+	m_bFrontPopup(false),
+	m_iMinTurn(0)
 {
 }
 CvEventTriggerInfo::~CvEventTriggerInfo()
@@ -14983,6 +14983,11 @@ const char* CvEventTriggerInfo::getPythonCanDoUnit() const
 {
 	return m_szPythonCanDoUnit;
 }
+int CvEventTriggerInfo::getMinTurn() const
+{
+	FAssert(m_iMinTurn >= 0);
+	return m_iMinTurn;
+}
 void CvEventTriggerInfo::read(FDataStreamBase* stream)
 {
 	int iNumElements;
@@ -15052,11 +15057,14 @@ void CvEventTriggerInfo::read(FDataStreamBase* stream)
 	stream->ReadString(m_szPythonCanDo);
 	stream->ReadString(m_szPythonCanDoCity);
 	stream->ReadString(m_szPythonCanDoUnit);
+	if (uiFlag > 0)
+		stream->Read(&m_iMinTurn);
 }
+
 void CvEventTriggerInfo::write(FDataStreamBase* stream)
 {
 	CvInfoBase::write(stream);
-	uint uiFlag=0;
+	uint uiFlag=1; // Added iMinTurn
 	stream->Write(uiFlag);		// flag for expansion
 	stream->Write(m_iPercentGamesActive);
 	stream->Write(m_iProbability);
@@ -15112,6 +15120,7 @@ void CvEventTriggerInfo::write(FDataStreamBase* stream)
 	stream->WriteString(m_szPythonCanDo);
 	stream->WriteString(m_szPythonCanDoCity);
 	stream->WriteString(m_szPythonCanDoUnit);
+	stream->Write(m_iMinTurn);
 }
 bool CvEventTriggerInfo::read(CvXMLLoadUtility* pXML)
 {
@@ -15286,6 +15295,13 @@ bool CvEventTriggerInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(m_szPythonCanDo, "PythonCanDo");
 	pXML->GetChildXmlValByName(m_szPythonCanDoCity, "PythonCanDoCity");
 	pXML->GetChildXmlValByName(m_szPythonCanDoUnit, "PythonCanDoUnit");
+		
+	 // iMinTurn is optional
+	if (gDLL->getXMLIFace()->SetToChildByTagName(pXML->GetXML(), "iMinTurn"))
+	{
+		pXML->GetXmlVal(&m_iMinTurn, 0);
+		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
+	}
 	return true;
 }
 
