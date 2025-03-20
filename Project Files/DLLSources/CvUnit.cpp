@@ -17064,3 +17064,12 @@ void CvUnit::setAllowDirectPath(bool bNewValue, bool bRefreshUi)
 		}
 	}
 }
+
+// Returns remaining moves after subtracting the PF’s moves expenditure
+// Note: iPFMoves should be provided by the PF's GetFinalMoves()
+int CvUnit::getRemainingMovesAfterPFMoves(int iPFMoves) const
+{
+	const int iCurrentMovesLeft = movesLeft();
+	const int iRemainingMoves = iCurrentMovesLeft - iPFMoves;
+	return USE_CLASSIC_MOVEMENT_SYSTEM ? std::max(0, iRemainingMoves) : iRemainingMoves;
+}

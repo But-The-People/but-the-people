@@ -834,6 +834,9 @@ public:
 
 	bool isAllowDirectPath() const;
 	void setAllowDirectPath(bool bNewValue, bool bRefreshUi = false);
+	
+	bool canChangeProfession() const;
+	int getRemainingMovesAfterPFMoves(int iPFMoves) const;
 
 protected:
 

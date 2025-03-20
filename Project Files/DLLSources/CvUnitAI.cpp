@@ -6855,88 +6855,165 @@ bool CvUnitAI::AI_sailToPortRoyal(bool bMove)
 /// <param name="sth">A helper struct that contains port travel constants required by the AI</param>
 /// <param name="bMove">If true, allows the unit to attempt to generate a path to the closest Euro plot, If false only check the current plot.
 /// in both cases, the unit will sail off to the port if it has at least a single movement point left</param>
-/// <param name="bIgnoreDanger">Optional, defaults to true. Pass the bIgnoreDanger to the underlying pathfinder</param>
+/// <param name="bIgnoreDanger">Optional, defaults to true. Pass MOVE_IGNORE_DANGER to the underlying pathfinder</param>
 bool CvUnitAI::AI_sailTo(const SailToHelper& sth, bool bMove, bool bIgnoreDanger)
 {
+	// Immediate crossing if already in a position to cross.
 	if (canCrossOcean(plot(), sth.unitTravelState))
 	{
 		crossOcean(sth.unitTravelState);
 		if (AI_getUnitAIState() == UNITAI_STATE_SAIL)
-		{
 			AI_setUnitAIState(UNITAI_STATE_DEFAULT);
-		}
-
 		if (getGroup()->getAutomateType() == sth.automateType)
-		{
 			getGroup()->setAutomateType(NO_AUTOMATE);
-		}
 		return true;
 	}
 
 	if (!bMove)
+		return false;
+
+	CvPlot* pBestImmediatePlot = NULL;
+	CvPlot* pBestImmediateMissionPlot = NULL;
+	int iBestImmediateTurns = INT_MAX;
+	int iBestImmediateRemainingMoves = INT_MAX;
+
+	CvPlot* pBestDelayedPlot = NULL;
+	CvPlot* pBestDelayedMissionPlot = NULL;
+	int iBestDelayedTurns = INT_MAX;
+	int iBestDelayedRemainingMoves = INT_MAX;
+
+	// Loop over candidate Europe plots.
+	for (int iI = 0; iI < GC.getMap().numPlotsINLINE(); iI++)
+	{
+		CvPlot* const pLoopPlot = GC.getMap().plotByIndexINLINE(iI);
+		if (!pLoopPlot->isRevealed(getTeam(), false))
+			continue;
+		if (!pLoopPlot->isEurope())
+			continue;
+		if (pLoopPlot->isVisibleEnemyDefender(this))
+			continue;
+		if (!canCrossOcean(pLoopPlot, sth.unitTravelState))
+			continue;
+
+		if (bIgnoreDanger)
+		{
+			// When ignoring danger, use a single PF call.
+			int iPathTurns;
+			const int iFlags = MOVE_BUST_FOG | MOVE_IGNORE_DANGER;
+			if (generatePath(pLoopPlot, iFlags, true, &iPathTurns))
+			{
+				int iPFMoves = getPathFinder().GetFinalMoves();
+				int iRemainingMoves = getRemainingMovesAfterPFMoves(iPFMoves);
+				// Immediate candidate: spare moves available.
+				if (iRemainingMoves > 0)
+				{
+					if (iPathTurns < iBestImmediateTurns ||
+						(iPathTurns == iBestImmediateTurns && iRemainingMoves < iBestImmediateRemainingMoves))
+					{
+						iBestImmediateTurns = iPathTurns;
+						iBestImmediateRemainingMoves = iRemainingMoves;
+						pBestImmediatePlot = getPathEndTurnPlot();
+						pBestImmediateMissionPlot = pLoopPlot;
+					}
+				}
+				// Otherwise treat as delayed.
+				else
+				{
+					if (iPathTurns < iBestDelayedTurns ||
+						(iPathTurns == iBestDelayedTurns && iRemainingMoves < iBestDelayedRemainingMoves))
+					{
+						iBestDelayedTurns = iPathTurns;
+						iBestDelayedRemainingMoves = iRemainingMoves;
+						pBestDelayedPlot = getPathEndTurnPlot();
+						pBestDelayedMissionPlot = pLoopPlot;
+					}
+				}
+			}
+		}
+		else
+		{
+			// We care about danger. Try two PF searches:
+			// 1. Immediate candidate: force ignore danger so we can see if escape into Europe is possible.
+			int iPathTurnsImm;
+			const int iFlagsImmediate = MOVE_BUST_FOG | MOVE_IGNORE_DANGER;
+			if (generatePath(pLoopPlot, iFlagsImmediate, true, &iPathTurnsImm))
+			{
+				int iPFMovesImm = getPathFinder().GetFinalMoves();
+				int iRemainingMovesImm = getRemainingMovesAfterPFMoves(iPFMovesImm);
+				if (iRemainingMovesImm > 0) // Immediate escape candidate.
+				{
+					if (iPathTurnsImm < iBestImmediateTurns ||
+						(iPathTurnsImm == iBestImmediateTurns && iRemainingMovesImm < iBestImmediateRemainingMoves))
+					{
+						iBestImmediateTurns = iPathTurnsImm;
+						iBestImmediateRemainingMoves = iRemainingMovesImm;
+						pBestImmediatePlot = getPathEndTurnPlot();
+						pBestImmediateMissionPlot = pLoopPlot;
+					}
+				}
+			}
+			// 2. Delayed candidate: use safe PF (without ignore danger).
+			int iPathTurnsDel;
+			const int iFlagsDelayed = MOVE_BUST_FOG;
+			if (generatePath(pLoopPlot, iFlagsDelayed, true, &iPathTurnsDel))
+			{
+				int iPFMovesDel = getPathFinder().GetFinalMoves();
+				int iRemainingMovesDel = getRemainingMovesAfterPFMoves(iPFMovesDel);
+				// Only consider if no immediate candidate exists.
+				if (pBestImmediatePlot == NULL)
+				{
+					if (iPathTurnsDel < iBestDelayedTurns ||
+						(iPathTurnsDel == iBestDelayedTurns && iRemainingMovesDel < iBestDelayedRemainingMoves))
+					{
+						iBestDelayedTurns = iPathTurnsDel;
+						iBestDelayedRemainingMoves = iRemainingMovesDel;
+						pBestDelayedPlot = getPathEndTurnPlot();
+						pBestDelayedMissionPlot = pLoopPlot;
+					}
+				}
+			}
+		}
+	}
+
+	CvPlot* pBestPlot = NULL;
+	CvPlot* pBestMissionPlot = NULL;
+	int iMissionFlags = 0;
+	if (pBestImmediatePlot != NULL)
+	{
+		pBestPlot = pBestImmediatePlot;
+		pBestMissionPlot = pBestImmediateMissionPlot;
+		// For an immediate escape, use ignore danger (even if we care about danger).
+		iMissionFlags = MOVE_BUST_FOG | MOVE_IGNORE_DANGER;
+	}
+	else if (pBestDelayedPlot != NULL)
+	{
+		pBestPlot = pBestDelayedPlot;
+		pBestMissionPlot = pBestDelayedMissionPlot;
+		// For delayed candidates, use safe flags when we care about danger.
+		iMissionFlags = (bIgnoreDanger ? (MOVE_BUST_FOG | MOVE_IGNORE_DANGER) : MOVE_BUST_FOG);
+	}
+	else
 	{
 		return false;
 	}
 
-	int iBestValue = 0;
-	CvPlot* pBestPlot = NULL;
-	CvPlot* pBestMissionPlot = NULL;
-	int iBestTurns = INT_MAX;
+	// Push the mission using the same flags as used during PF.
+	getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(),
+		iMissionFlags, false, false, sth.missionAI, pBestMissionPlot);
 
-	for (int iI = 0; iI < GC.getMap().numPlotsINLINE(); iI++)
+	if (plot()->isEurope())
 	{
-		CvPlot* pLoopPlot = GC.getMap().plotByIndexINLINE(iI);
-
-		// Unrevealed plots need not be considered, also removes cheating!
-		if (!pLoopPlot->isRevealed(getTeam(), false))
-			continue;
-
-		// Only a small subset of plots allow sailing to ports
-		if (!pLoopPlot->isEurope())
-			continue;
-
-		// Only consider safe target plots
-		if (pLoopPlot->isVisibleEnemyDefender(this))
-			continue;
-
-		if (canCrossOcean(pLoopPlot, sth.unitTravelState))
+		if (canCrossOcean(plot(), sth.unitTravelState))
 		{
-			int iPathTurns;
-			if (generatePath(pLoopPlot, MOVE_BUST_FOG, true, &iPathTurns/*, bIgnoreDanger*/))
-			{
-				if (iPathTurns < iBestTurns)
-				{
-					iBestTurns = iPathTurns;
-					pBestPlot = getPathEndTurnPlot();
-					pBestMissionPlot = pLoopPlot;
-				}
-			}
+			crossOcean(sth.unitTravelState);
+			if (AI_getUnitAIState() == UNITAI_STATE_SAIL)
+				AI_setUnitAIState(UNITAI_STATE_DEFAULT);
+			if (getGroup()->getAutomateType() == sth.automateType)
+				getGroup()->setAutomateType(NO_AUTOMATE);
 		}
 	}
-
-	if (pBestPlot != NULL)
-	{
-		getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), MOVE_BUST_FOG, false, false, sth.missionAI, pBestMissionPlot);
-		if (plot()->isEurope())
-		{
-			if (canCrossOcean(plot(), sth.unitTravelState))
-			{
-				crossOcean(sth.unitTravelState);
-				if (AI_getUnitAIState() == UNITAI_STATE_SAIL)
-				{
-					AI_setUnitAIState(UNITAI_STATE_DEFAULT);
-				}
-				if (getGroup()->getAutomateType() == sth.automateType)
-				{
-					getGroup()->setAutomateType(NO_AUTOMATE);
-				}
-			}
-		}
-		return true;
-	}
-	return false;
+	return true;
 }
-// R&R, ray, Port Royal - END
 
 // TAC - AI Improved Naval AI - koma13 - START
 CvPlot* CvUnitAI::findNearbyOceanPlot(const CvPlot& kPlot) const
