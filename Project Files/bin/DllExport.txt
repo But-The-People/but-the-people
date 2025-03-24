@@ -431,7 +431,7 @@ CvGlobals.h
 	DllExport std::vector<CvHandicapInfo*>& getHandicapInfo();
 	DllExport CvHandicapInfo& getHandicapInfo(HandicapTypes eHandicapNum);
 	DllExport int getNumGameSpeedInfos();
-	DllExport CvGameSpeedInfo& getGameSpeedInfo(GameSpeedTypes eGameSpeedNum);
+	DllExport CvGameSpeedInfo& getGameSpeedInfo(GameSpeedTypes eGameSpeedNum)
 	DllExport int getNumTurnTimerInfos();
 	DllExport CvTurnTimerInfo& getTurnTimerInfo(TurnTimerTypes eTurnTimerNum);
 	DllExport int getNumBuildingClassInfos();

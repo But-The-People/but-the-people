@@ -5461,18 +5461,13 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, const CvUnit* p
 		}
 
 	}
-	// then we also check min turn - only if not 0
-	if (kGoody.getMinTurnValid() != 0)
-	{
-		int iMinTurnValid = kGoody.getMinTurnValid();
-		int iGameSpeedModifier = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent();
-		int iCurrentTurn = GC.getGameINLINE().getGameTurn();
 
-		if (iCurrentTurn < (iMinTurnValid * iGameSpeedModifier))
+	// then we also check min turn - only if not 0
+	const int iMinTurnValid = kGoody.getMinTurnValid();
+	if (iMinTurnValid > 0 && GC.getGameINLINE().getGameTurn() < GC.scaleByGamespeed(iMinTurnValid))
 		{
 			return false;
 		}
-	}
 	// WTP, ray, Unit spawning Goodies and Goody Huts - END
 
 	return true;
@@ -14213,7 +14208,14 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 		}
 	}
 
-	EventTriggeredData* pTriggerData = addEventTriggered();
+	// then we also check min turn - only if not 0
+	const int iMinTurn = kTrigger.getMinTurn();
+	if (iMinTurn > 0 && GC.getGameINLINE().getGameTurn() < GC.scaleByGamespeed(iMinTurn))
+	{
+		return false;
+	}
+
+	EventTriggeredData* const pTriggerData = addEventTriggered();
 
 	if (NULL != pTriggerData)
 	{
