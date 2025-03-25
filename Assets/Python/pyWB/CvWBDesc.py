@@ -1432,6 +1432,9 @@ class CvWBDesc:
 		for pDesc in self.signDesc:
 			pDesc.apply()
 
+		# Before touching bonuses and features, we first need to ensure that the plots have coast, lake etc set correctly
+		CyMap().updateWaterPlotTerrainTypes()
+
 		if (self.mapDesc.bRandomizeFeatures != "false"): #WTP, ray, Randomize Features Map Option
 			CyMapGenerator().eraseFeaturesOnLand()
 			CyMapGenerator().addFeaturesOnLand()

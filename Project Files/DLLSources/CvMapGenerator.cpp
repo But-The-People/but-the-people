@@ -206,6 +206,9 @@ void CvMapGenerator::addGameElements()
 	addLakes();
 	gDLL->logMemState("CvMapGen after add lakes");
 
+	// make sure terrain types are set correctly like no ocean in lakes etc
+	GC.getMap().updateWaterPlotTerrainTypes();
+
 	addFeatures();
 	gDLL->logMemState("CvMapGen after add features");
 

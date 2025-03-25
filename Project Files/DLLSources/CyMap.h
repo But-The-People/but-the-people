@@ -65,6 +65,8 @@ public:
 	int getNumBonuses(int /* BonusTypes */ eIndex);
 	int getNumBonusesOnLand(int /* BonusTypes */ eIndex);
 
+	void updateWaterPlotTerrainTypes();
+
 	CyPlot* plotByIndex(int iIndex);
 	CyPlot* sPlotByIndex(int iIndex);
 	CyPlot* plot(int iX, int iY);

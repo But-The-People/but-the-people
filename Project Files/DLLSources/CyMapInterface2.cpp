@@ -31,6 +31,7 @@ void CyMapPythonInterface2(python::class_<CyMap>& x)
 
 		.def("getNumBonuses", &CyMap::getNumBonuses, "int () - total bonuses")
 		.def("getNumBonusesOnLand", &CyMap::getNumBonusesOnLand, "int () - total bonuses on land plots")
+		.def("updateWaterPlotTerrainTypes", &CyMap::updateWaterPlotTerrainTypes, "void () - updates water terrain, lakes, coast, ocean etc")
 
 		.def("plotByIndex", &CyMap::plotByIndex, python::return_value_policy<python::manage_new_object>(), "CyPlot (iIndex) - get a plot by its Index")
 		.def("sPlotByIndex", &CyMap::sPlotByIndex, python::return_value_policy<python::reference_existing_object>(), "CyPlot (iIndex) - static - get plot by iIndex")

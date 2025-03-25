@@ -195,6 +195,12 @@ int CyMap::getNumBonusesOnLand(int /* BonusTypes */ eIndex)
 	return m_pMap ? m_pMap->getNumBonusesOnLand((BonusTypes)eIndex) : -1;
 }
 
+void CyMap::updateWaterPlotTerrainTypes()
+{
+	if (m_pMap)
+		m_pMap->updateWaterPlotTerrainTypes();
+}
+
 CyPlot* CyMap::plotByIndex(int iIndex)
 {
 	return m_pMap ? new CyPlot(m_pMap->plotByIndexINLINE(iIndex)) : NULL;

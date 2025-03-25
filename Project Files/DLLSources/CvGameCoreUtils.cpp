@@ -2338,9 +2338,12 @@ void postLoadGameFixes()
 
 	// deal with plots
 	CvMap& kMap = GC.getMap();
-	kMap.updateWaterPlotTerrainTypes(); // autodetect lakes
-	const int iNumPlots = kMap.numPlotsINLINE();
 
+	// set lakes, coast, ocean etc. This might have been called earlier, but call it again just to be safe.
+	// not calling it will cause bugs while calling it more than once will have no effect other than some wasted CPU cycles
+	kMap.updateWaterPlotTerrainTypes();
+
+	const int iNumPlots = kMap.numPlotsINLINE();
 	for (int iI = 0; iI < iNumPlots; ++iI)
 	{
 		kMap.plotByIndexINLINE(iI)->postLoadFixes(0);
