@@ -136,7 +136,7 @@
 		<English>[ICON_BULLET]%d2%F3_Icon[TAB]by Missing Protection</English>
 		<French>[ICON_BULLET]%d2%F3_Icon[TAB]à cause des protections manquantes</French>
 		<German>[ICON_BULLET]%d2%F3_Icon[TAB]durch fehlenden Schutz</German>
-		<Russian>[ICON_BULLET]%d2%F3_Icon[TAB]от отсутствия солдат в гарнизоне</Russian>
+		<Russian>[ICON_BULLET]%d2%F3_Icon[TAB]от недостатка войск в гарнизоне</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNHAPPINES_TAX_RATE</Tag>

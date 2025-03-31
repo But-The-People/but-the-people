@@ -2417,7 +2417,7 @@
 		<English>A disease is spreading in a nearby Native village. The disease broke out after our settlers visited them. Now the Native people need our help.</English>
 		<French>Une maladie est en train de se propager dans un village indigène voisin. Les indigènes croient que cela fait suite à la visite de certains de nos colons et demandent de l'aide.</French>
 		<German>Eine Krankheit breitet sich in einer nahegelegenen Siedlung der Wilden aus. Sie behaupten, die Krankheit sei ausgebrochen, nachdem einige unserer Siedler ihr Dorf besucht hatten. Sie bitten nun um unsere Hilfe.</German>
-		<Russian>В соседней деревне индейцев начали массово болеть жители. Заболевание вспыхнуло после того, как там побывали наши колонисты. Туземцы нуждаются в нашей помощи.</Russian>
+		<Russian>В соседней деревне индейцев начали массово болеть жители. Эпидемия вспыхнула сразу после того, как там побывали наши колонисты. Туземцы нуждаются в нашей помощи.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_SALT_RESOURCE</Tag>
@@ -2767,7 +2767,7 @@
 		<English>Milord, you've built markets in five cities before any other colony could. The private traders now ask which reward they should offer.</English>
 		<French>Seigneur, vous avez été le premier à construire 5 marchés dans vos villes. Les négociants privés vous proposent de choisir votre récompense.</French>
 		<German>Milord, Eure Kolonie konnte vor allen anderen in 5 Städten Märkte errichten. Die Händler aus unseren Städten fragen nun, welche Belohnung Ihr dafür wollt.</German>
-		<Russian>Милорд, вы построили рынки в пяти городах раньше, чем это смогла сделать любая другая колония. Торговцы спрашивают, какое вознаграждение вы желаете получить.</Russian>
+		<Russian>Милорд, вы построили рынки в пяти городах раньше, чем это смогла сделать любая другая колониальная держава. Торговцы, помня своё обещание, спрашивают, какое вознаграждение вы желаете получить.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TRIGGER_FIVE_GRAVEYARDS</Tag>
@@ -2900,7 +2900,7 @@
 		<English>Milord, our ships that return from Europe bring bad news. There have been outbreaks of the plague in major cities of several countries. Our citizens are worried and demand that we build hospitals in at least five cities to be prepared for the worst. They even offer to raise money to hire more doctors.</English>
 		<French>Sire, une bien mauvaise nouvelle arrive d'Europe avec nos navires. Des résurgences de peste ont frappé des villes majeures dans de nombreux paus. Nos citoyens sont inquiest et exigent que nous construisions des hôpitaux dans au moins cinq de nos villes pour être parés au pire. Ils sont prêt à payer pour recruter plus de médecins?</French>
 		<German>Milord, unsere Schiffe die aus Europa zurückkehren bringen schlechte Neuigkeiten. Es scheint, als hätte es Ausbrüche der Pest in den Großstädten mehrerer Länder gegeben. Unsere Bürger sind daher beunruhigt und verlangen, dass wir Krankenhäuser in mindestens fünf Städten bauen, um auf das Schlimmste vorbereitet zu sein. Sie bieten sogar an, Geld für die Anstellung von mehr Ärzten zu sammeln.</German>
-		<Russian>Милорд, наши корабли, возвращающиеся из Европы, приносят плохие новости. Вспышки чумы имели место в крупных городах нескольких стран. Наши граждане обеспокоены и требуют построить дома для врачей как минимум в пяти городах, чтобы быть готовыми к худшему. Они даже предлагают собрать деньги, чтобы нанять больше медиков.</Russian>
+		<Russian>Милорд, наши корабли, возвращающиеся из Европы, приносят плохие новости. В крупных городах нескольких стран происходили вспышки чумы. Наши граждане обеспокоены и требуют построить дома для врачей как минимум в пяти городах, чтобы быть готовыми к худшему. Они даже предлагают собрать деньги, чтобы нанять больше медиков.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_FIVE_MEDICAL_OFFICES_DONE</Tag>
@@ -3320,7 +3320,7 @@
 		<English>Milord, our plantation owners in the colonies are very pleased that we have brought the first slaves to the colonies. Now they want us to enter the profitable slave trade business ourselves rather than leaving it to others. They suggest we acquire [COLOR_HIGHLIGHT_TEXT]two slave barques[COLOR_REVERT] before any other colonial power. If we are the first they promise to pay for experienced [COLOR_HIGHLIGHT_TEXT]slave overseers[COLOR_REVERT].</English>
 		<French>Sire, nos propriétaires de plantations dans les colonies sont très satisfaits des premiers esclaves importés dans nos colonies. Maintenant, ils voudraient se lancer dans le transport d'esclaves eux-même plutôt que de le laisser aux autres. Ils suggèrent d'acquérir [COLOR_HIGHLIGHT_TEXT]deux navires négriers[COLOR_REVERT] avant les autres colonies. Si nous sommes les premiers à le faire, ils promettent de recruter des [COLOR_HIGHLIGHT_TEXT]contre-maîtres d'esclaves[COLOR_REVERT] expérimentés. </French>
 		<German>Milord, unsere Plantagenbesitzer sind sehr zufrieden mit der Arbeitsleistung der ersten Sklaven, die in die Kolonien gebracht wurden. Nun wünschen sie, dass wir selbst in das profitable Geschäft des Slavenhandels einsteigen, anstatt es anderen zu überlassen. Sie schlagen daher vor, dass wir umgehend [COLOR_HIGHLIGHT_TEXT]zwei Slavenschiffe[COLOR_REVERT] erwerben, um den anderen Nationen zuvorzukommen. Sollte uns dies gelingen, versprechen sie sogar die Kosten für die Bezahlung erfahrener [COLOR_HIGHLIGHT_TEXT]Sklavenaufseher[COLOR_REVERT] zu übernehmen.</German>
-		<Russian>Милорд, наши плантаторы в колониях очень довольны тем, что мы привезли в колонии первых рабов. Теперь они хотят, чтобы мы сами занялись прибыльным бизнесом работорговли, а не отдавали его на откуп другим. Они предлагают нам приобрести [COLOR_HIGHLIGHT_TEXT]два невольничьих барка[COLOR_REVERT] прежде, чем любая другая колониальная держава сделает это. Если мы будем первыми, они обещают оплатить услуги опытных [COLOR_HIGHLIGHT_TEXT]надсмоторщиков за рабами[COLOR_REVERT].</Russian>
+		<Russian>Милорд, наши плантаторы в колониях очень довольны тем, что мы привезли в Новый Свет первых рабов. И теперь они хотят, чтобы мы сами занялись таким прибыльным бизнесом, как работорговля, а не отдавали его на откуп другим. Они предлагают нам приобрести [COLOR_HIGHLIGHT_TEXT]два невольничьих барка[COLOR_REVERT] прежде, чем это сделает любая другая колониальная держава. Если мы будем первыми, плантаторы обещают оплатить услуги опытных [COLOR_HIGHLIGHT_TEXT]надсмоторщиков за рабами[COLOR_REVERT].</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENTTRIGGER_SLAVE_TRADER_QUEST_DONE_WORLD</Tag>
