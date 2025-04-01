@@ -200,8 +200,6 @@ void CvCityAI::AI_assignWorkingPlots()
 	and the population numbers being low.
 	*/
 
-	const int iMaxAttemptsPerCitizen = 2;
-	stdext::hash_map<CvUnit*, int> attempts;
 	std::deque<CvUnit*> citizens;
 
 	for (int iPass = 0; iPass < 3; ++iPass)
@@ -211,6 +209,7 @@ void CvCityAI::AI_assignWorkingPlots()
 			CvUnit* pUnit = m_aPopulationUnits[i];
 			if (!pUnit->isColonistLocked())
 			{
+
 				ProfessionTypes eIdealProfession = pUnit->AI_getIdealProfession();
 				if (eIdealProfession != NO_PROFESSION)
 				{
@@ -267,10 +266,9 @@ void CvCityAI::AI_assignWorkingPlots()
 		}
 
 		CvUnit* const pOldUnit = AI_parallelAssignToBestJob(*pUnit);
-		attempts[pUnit]++;
 
 		// Limit the number of attempt for this citizen
-		if (pOldUnit != NULL && attempts[pUnit] > iMaxAttemptsPerCitizen)
+		if (pOldUnit != NULL)
 		{
 			if (std::find(citizens.begin(), citizens.end(), pOldUnit) == citizens.end())
 			{
@@ -323,7 +321,23 @@ void CvCityAI::AI_assignWorkingPlots()
 	{   // TODO: defer to main thread
 		jobMutex.lock();
 		gDLL->getInterfaceIFace()->setDirty(CitizenButtons_DIRTY_BIT, true);
+		gDLL->getInterfaceIFace()->setDirty(CityScreen_DIRTY_BIT, true);
 		jobMutex.unlock();
+	}
+
+	// If we failed to find a job for this citizen, just remove it from the city
+	for (uint i = 0; i < m_aPopulationUnits.size(); ++i)
+	{
+		CvUnit* const pUnit = m_aPopulationUnits[i];
+		const ProfessionTypes eProfession = pUnit->getProfession();
+		if (eProfession == NO_PROFESSION)
+		{
+			// TODO: Check if the citizen is able to leave (movement points etc.)
+			jobMutex.lock();
+			const bool res = removePopulationUnit(CREATE_ASSERT_DATA, pUnit, false, GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getDefaultProfession());
+			jobMutex.unlock();
+			FAssertMsg(res, "Failed to remove NO_PROFESSION citizen");
+		}
 	}
 }
 
