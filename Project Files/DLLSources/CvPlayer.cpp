@@ -25186,3 +25186,30 @@ void CvPlayer::releaseTempUnit()
 	//GC.getGame().logOOSSpecial(10, m_pTempUnit->getID(), INVALID_PLOT_COORD, INVALID_PLOT_COORD);
 	m_pTempUnit->setXY(INVALID_PLOT_COORD, INVALID_PLOT_COORD, true, false);
 }
+
+/*
+*Calculates the off - map Europe travel time for the given Europe type,
+* factoring in game speed and trait modifiers.
+*
+* If the calculated travel time is below 0, an assert is triggered.
+*
+* @param eEurope The Europe type(from CvPlot::getEurope()).
+* @return The total travel time(in turns)
+*/
+int CvPlayer::calculateEuropeTravelTime(EuropeTypes eEurope) const
+{
+	int iTravelTime = GC.getEuropeInfo(eEurope).getTripLength();
+	iTravelTime *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
+	iTravelTime /= 100;
+
+	for (TraitTypes eTrait = FIRST_TRAIT; eTrait < NUM_TRAIT_TYPES; ++eTrait)
+	{
+		if (hasTrait(eTrait))
+		{
+			iTravelTime *= (100 + GC.getTraitInfo(eTrait).getEuropeTravelTimeModifier());
+			iTravelTime /= 100;
+		}
+	}
+	FAssertMsg(iTravelTime >= 0, "Europe travel time cannot be negative");
+	return iTravelTime;
+}

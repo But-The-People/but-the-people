@@ -5101,20 +5101,7 @@ void CvUnit::crossOcean(UnitTravelStates eNewState)
 		return;
 	}
 
-	int iTravelTime = GC.getEuropeInfo(plot()->getEurope()).getTripLength();
-
-	iTravelTime *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
-	iTravelTime /= 100;
-
-	for (int iTrait = 0; iTrait < GC.getNumTraitInfos(); ++iTrait)
-	{
-		TraitTypes eTrait = (TraitTypes) iTrait;
-		if (GET_PLAYER(getOwnerINLINE()).hasTrait(eTrait))
-		{
-			iTravelTime *= 100 + GC.getTraitInfo(eTrait).getEuropeTravelTimeModifier();
-			iTravelTime /= 100;
-		}
-	}
+	const int iTravelTime = GET_PLAYER(getOwnerINLINE()).calculateEuropeTravelTime(plot()->getEurope());
 
 	setUnitTravelState(eNewState, false);
 	if (iTravelTime > 0)
@@ -5185,20 +5172,8 @@ void CvUnit::sailToAfrica(UnitTravelStates eNewState)
 		return;
 	}
 
-	int iTravelTime = GC.getEuropeInfo(plot()->getEurope()).getTripLength();
+	const int iTravelTime = GET_PLAYER(getOwnerINLINE()).calculateEuropeTravelTime(plot()->getEurope());
 
-	iTravelTime *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
-	iTravelTime /= 100;
-
-	for (int iTrait = 0; iTrait < GC.getNumTraitInfos(); ++iTrait)
-	{
-		TraitTypes eTrait = (TraitTypes) iTrait;
-		if (GET_PLAYER(getOwnerINLINE()).hasTrait(eTrait))
-		{
-			iTravelTime *= 100 + GC.getTraitInfo(eTrait).getEuropeTravelTimeModifier();
-			iTravelTime /= 100;
-		}
-	}
 	if (eNewState == NO_UNIT_TRAVEL_STATE)
 	{
 		switch (getUnitTravelState())
@@ -5315,20 +5290,8 @@ void CvUnit::sailToPortRoyal(UnitTravelStates eNewState)
 		return;
 	}
 
-	int iTravelTime = GC.getEuropeInfo(plot()->getEurope()).getTripLength();
+	const int iTravelTime = GET_PLAYER(getOwnerINLINE()).calculateEuropeTravelTime(plot()->getEurope());
 
-	iTravelTime *= GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
-	iTravelTime /= 100;
-
-	for (int iTrait = 0; iTrait < GC.getNumTraitInfos(); ++iTrait)
-	{
-		TraitTypes eTrait = (TraitTypes) iTrait;
-		if (GET_PLAYER(getOwnerINLINE()).hasTrait(eTrait))
-		{
-			iTravelTime *= 100 + GC.getTraitInfo(eTrait).getEuropeTravelTimeModifier();
-			iTravelTime /= 100;
-		}
-	}
 	if (eNewState == NO_UNIT_TRAVEL_STATE)
 	{
 		switch (getUnitTravelState())

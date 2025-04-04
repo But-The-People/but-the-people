@@ -971,6 +971,7 @@ public:
 	CvUnit* buyYieldUnit(YieldTypes eYield, int iAmount, CvUnit* pTransport, TradeLocationTypes eLocation);
 
 	bool is(CivCategoryTypes eCivCategory) const;
+	int calculateEuropeTravelTime(EuropeTypes eEurope) const;
 
 protected:
 

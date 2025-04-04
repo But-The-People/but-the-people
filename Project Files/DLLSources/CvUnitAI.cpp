@@ -6858,7 +6858,7 @@ bool CvUnitAI::AI_sailToPortRoyal(bool bMove)
 /// <param name="bIgnoreDanger">Optional, defaults to true. Pass MOVE_IGNORE_DANGER to the underlying pathfinder</param>
 bool CvUnitAI::AI_sailTo(const SailToHelper& sth, bool bMove, bool bIgnoreDanger)
 {
-	// Immediate crossing if already in a position to cross.
+	// Immediate crossing if we can already cross from our current plot.
 	if (canCrossOcean(plot(), sth.unitTravelState))
 	{
 		crossOcean(sth.unitTravelState);
@@ -6872,14 +6872,15 @@ bool CvUnitAI::AI_sailTo(const SailToHelper& sth, bool bMove, bool bIgnoreDanger
 	if (!bMove)
 		return false;
 
+	// Candidate variables for immediate and delayed moves.
 	CvPlot* pBestImmediatePlot = NULL;
 	CvPlot* pBestImmediateMissionPlot = NULL;
-	int iBestImmediateTurns = INT_MAX;
+	int iBestImmediateTotal = INT_MAX; // Combined on-map turns + off-map travel time (with bonus if immediate)
 	int iBestImmediateRemainingMoves = INT_MAX;
 
 	CvPlot* pBestDelayedPlot = NULL;
 	CvPlot* pBestDelayedMissionPlot = NULL;
-	int iBestDelayedTurns = INT_MAX;
+	int iBestDelayedTotal = INT_MAX;
 	int iBestDelayedRemainingMoves = INT_MAX;
 
 	// Loop over candidate Europe plots.
@@ -6895,34 +6896,40 @@ bool CvUnitAI::AI_sailTo(const SailToHelper& sth, bool bMove, bool bIgnoreDanger
 		if (!canCrossOcean(pLoopPlot, sth.unitTravelState))
 			continue;
 
+		// Compute off-map travel time using our new helper.
+		int iTravelTime = GET_PLAYER(getOwnerINLINE()).calculateEuropeTravelTime(pLoopPlot->getEurope());
+
 		if (bIgnoreDanger)
 		{
-			// When ignoring danger, use a single PF call.
 			int iPathTurns;
 			const int iFlags = MOVE_BUST_FOG | MOVE_IGNORE_DANGER;
 			if (generatePath(pLoopPlot, iFlags, true, &iPathTurns))
 			{
 				int iPFMoves = getPathFinder().GetFinalMoves();
 				int iRemainingMoves = getRemainingMovesAfterPFMoves(iPFMoves);
+				int iTotalTime = iPathTurns + iTravelTime;
+				if (iRemainingMoves > 0)
+					iTotalTime--; // bonus: can start crossing immediately
+
 				// Immediate candidate: spare moves available.
 				if (iRemainingMoves > 0)
 				{
-					if (iPathTurns < iBestImmediateTurns ||
-						(iPathTurns == iBestImmediateTurns && iRemainingMoves < iBestImmediateRemainingMoves))
+					if (iTotalTime < iBestImmediateTotal ||
+						(iTotalTime == iBestImmediateTotal && iRemainingMoves < iBestImmediateRemainingMoves))
 					{
-						iBestImmediateTurns = iPathTurns;
+						iBestImmediateTotal = iTotalTime;
 						iBestImmediateRemainingMoves = iRemainingMoves;
 						pBestImmediatePlot = getPathEndTurnPlot();
 						pBestImmediateMissionPlot = pLoopPlot;
 					}
 				}
-				// Otherwise treat as delayed.
+				// Otherwise, record as a delayed candidate.
 				else
 				{
-					if (iPathTurns < iBestDelayedTurns ||
-						(iPathTurns == iBestDelayedTurns && iRemainingMoves < iBestDelayedRemainingMoves))
+					if (iTotalTime < iBestDelayedTotal ||
+						(iTotalTime == iBestDelayedTotal && iRemainingMoves < iBestDelayedRemainingMoves))
 					{
-						iBestDelayedTurns = iPathTurns;
+						iBestDelayedTotal = iTotalTime;
 						iBestDelayedRemainingMoves = iRemainingMoves;
 						pBestDelayedPlot = getPathEndTurnPlot();
 						pBestDelayedMissionPlot = pLoopPlot;
@@ -6932,40 +6939,44 @@ bool CvUnitAI::AI_sailTo(const SailToHelper& sth, bool bMove, bool bIgnoreDanger
 		}
 		else
 		{
-			// We care about danger. Try two PF searches:
-			// 1. Immediate candidate: force ignore danger so we can see if escape into Europe is possible.
+			// We care about danger. Perform two PF searches per candidate.
+			// 1. Immediate candidate: force ignore danger.
 			int iPathTurnsImm;
 			const int iFlagsImmediate = MOVE_BUST_FOG | MOVE_IGNORE_DANGER;
 			if (generatePath(pLoopPlot, iFlagsImmediate, true, &iPathTurnsImm))
 			{
 				int iPFMovesImm = getPathFinder().GetFinalMoves();
 				int iRemainingMovesImm = getRemainingMovesAfterPFMoves(iPFMovesImm);
-				if (iRemainingMovesImm > 0) // Immediate escape candidate.
+				int iTotalTimeImm = iPathTurnsImm + iTravelTime;
+				if (iRemainingMovesImm > 0)
+					iTotalTimeImm--;
+				if (iRemainingMovesImm > 0)
 				{
-					if (iPathTurnsImm < iBestImmediateTurns ||
-						(iPathTurnsImm == iBestImmediateTurns && iRemainingMovesImm < iBestImmediateRemainingMoves))
+					if (iTotalTimeImm < iBestImmediateTotal ||
+						(iTotalTimeImm == iBestImmediateTotal && iRemainingMovesImm < iBestImmediateRemainingMoves))
 					{
-						iBestImmediateTurns = iPathTurnsImm;
+						iBestImmediateTotal = iTotalTimeImm;
 						iBestImmediateRemainingMoves = iRemainingMovesImm;
 						pBestImmediatePlot = getPathEndTurnPlot();
 						pBestImmediateMissionPlot = pLoopPlot;
 					}
 				}
 			}
-			// 2. Delayed candidate: use safe PF (without ignore danger).
+			// 2. Delayed candidate: use safe PF.
 			int iPathTurnsDel;
 			const int iFlagsDelayed = MOVE_BUST_FOG;
 			if (generatePath(pLoopPlot, iFlagsDelayed, true, &iPathTurnsDel))
 			{
 				int iPFMovesDel = getPathFinder().GetFinalMoves();
 				int iRemainingMovesDel = getRemainingMovesAfterPFMoves(iPFMovesDel);
-				// Only consider if no immediate candidate exists.
+				int iTotalTimeDel = iPathTurnsDel + iTravelTime;
+				// Only consider safe (delayed) candidate if no immediate candidate exists.
 				if (pBestImmediatePlot == NULL)
 				{
-					if (iPathTurnsDel < iBestDelayedTurns ||
-						(iPathTurnsDel == iBestDelayedTurns && iRemainingMovesDel < iBestDelayedRemainingMoves))
+					if (iTotalTimeDel < iBestDelayedTotal ||
+						(iTotalTimeDel == iBestDelayedTotal && iRemainingMovesDel < iBestDelayedRemainingMoves))
 					{
-						iBestDelayedTurns = iPathTurnsDel;
+						iBestDelayedTotal = iTotalTimeDel;
 						iBestDelayedRemainingMoves = iRemainingMovesDel;
 						pBestDelayedPlot = getPathEndTurnPlot();
 						pBestDelayedMissionPlot = pLoopPlot;
@@ -6982,14 +6993,13 @@ bool CvUnitAI::AI_sailTo(const SailToHelper& sth, bool bMove, bool bIgnoreDanger
 	{
 		pBestPlot = pBestImmediatePlot;
 		pBestMissionPlot = pBestImmediateMissionPlot;
-		// For an immediate escape, use ignore danger (even if we care about danger).
+		// For immediate escape, use ignore-danger flags.
 		iMissionFlags = MOVE_BUST_FOG | MOVE_IGNORE_DANGER;
 	}
 	else if (pBestDelayedPlot != NULL)
 	{
 		pBestPlot = pBestDelayedPlot;
 		pBestMissionPlot = pBestDelayedMissionPlot;
-		// For delayed candidates, use safe flags when we care about danger.
 		iMissionFlags = (bIgnoreDanger ? (MOVE_BUST_FOG | MOVE_IGNORE_DANGER) : MOVE_BUST_FOG);
 	}
 	else
@@ -6997,10 +7007,11 @@ bool CvUnitAI::AI_sailTo(const SailToHelper& sth, bool bMove, bool bIgnoreDanger
 		return false;
 	}
 
-	// Push the mission using the same flags as used during PF.
+	// Push the mission with the same PF flags.
 	getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(),
 		iMissionFlags, false, false, sth.missionAI, pBestMissionPlot);
 
+	// If we've reached a Europe plot, try to cross immediately.
 	if (plot()->isEurope())
 	{
 		if (canCrossOcean(plot(), sth.unitTravelState))
