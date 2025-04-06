@@ -1865,7 +1865,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 					else
 					{
 						// TODO: Get the most costly terrain/feature combo path cost from xml and use it as the threshold
-						FAssert(iUnitMoves >= -500); // Note: does not have to be accurate, just enough to detect corruption etc.
+						FAssert(iUnitMoves >= -600); // Note: does not have to be accurate, just enough to detect corruption etc.
 					}
 				}
 				if (USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node))
