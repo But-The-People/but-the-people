@@ -1547,7 +1547,8 @@ void CvGame::updateColoredPlots()
 
 		if (!(GET_PLAYER(getActivePlayer()).isOption(PLAYEROPTION_NO_UNIT_RECOMMENDATIONS)))
 		{
-			if (pHeadSelectedUnit->workRate(true) > 0)
+			// Kludgy but necessary to prevent fishing boats from highlighting the best build recommendations
+			if (pHeadSelectedUnit->workRate(true) > 0 && pHeadSelectedUnit->getDomainType() == DOMAIN_LAND)
 			{
 				if (pHeadSelectedUnit->plot()->getOwnerINLINE() == pHeadSelectedUnit->getOwnerINLINE())
 				{
