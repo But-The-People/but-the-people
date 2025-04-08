@@ -239,4 +239,8 @@
 		<German>Einen Weg wählen, der vielleicht langsamer ist, aber durch Gelände führt, welches keinen Schaden verursacht.</German>
 		<Russian>Запретить юниту пересекать клетки, наносящие урон</Russian>
 	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PLOT_DEFENSIVE_BONUS_OWNED_PLOT</Tag>
+		<English>Potential defense bonus (only if owned): %D1_Mod%%</English>
+	</TEXT>
 </Civ4GameText>

@@ -2866,6 +2866,16 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 			szString.append(NEWLINE);
 		}
 
+		// Some improvements (e.g. river ferry station) require friendly territory to enable the defensive bonus
+		// if this is the case we display the potential bonus if the computed value differs from the generic case above
+		const int iDefenseModifierIfOwnedPlot = pPlot->defenseModifier(GC.getGameINLINE().getActiveTeam(), true);
+
+		if (iDefenseModifier != iDefenseModifierIfOwnedPlot)
+		{
+			szString.append(gDLL->getText("TXT_KEY_PLOT_DEFENSIVE_BONUS_OWNED_PLOT", iDefenseModifierIfOwnedPlot));
+			szString.append(NEWLINE);
+		}
+
 		if (pPlot->getTerrainType() != NO_TERRAIN)
 		{
 			if (pPlot->isPeak())
@@ -9214,9 +9224,9 @@ int CvGameTextMgr::setCityYieldModifierString(CvWStringBuffer& szBuffer, YieldTy
 	// Founding Fathers
 	for (int i = 0; i < GC.getNumTraitInfos(); i++)
 	{
-		if (GET_PLAYER(kCity.getOwnerINLINE()).hasTrait((TraitTypes) i))
+		if (GET_PLAYER(kCity.getOwnerINLINE()).hasTrait((TraitTypes)i))
 		{
-			CvTraitInfo& kTraitInfo = GC.getTraitInfo((TraitTypes) i);
+			CvTraitInfo& kTraitInfo = GC.getTraitInfo((TraitTypes)i);
 
 			int iTraitMod = kTraitInfo.getYieldModifier(eYieldType);
 			if (kTraitInfo.isTaxYieldModifier(eYieldType))
@@ -9257,7 +9267,7 @@ int CvGameTextMgr::setCityYieldModifierString(CvWStringBuffer& szBuffer, YieldTy
 
 		// WTP, ray, Happiness - START
 		// YIELD Modifier Helptext would be here - currently not planned
-		
+
 	}
 	// WTP, ray, trying to fix Rebel Rate Modifier on Happiness for Balancing - END
 
@@ -9270,7 +9280,7 @@ int CvGameTextMgr::setCityYieldModifierString(CvWStringBuffer& szBuffer, YieldTy
 			szBuffer.append(NEWLINE);
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_MONASTERY_BONUS", MonasteryMod, info.getChar()));
 			iBaseModifier += MonasteryMod;
-		}		
+		}
 	}
 	// WTP, ray, Improvements give Bonus to their City - END
 
@@ -9283,7 +9293,7 @@ int CvGameTextMgr::setCityYieldModifierString(CvWStringBuffer& szBuffer, YieldTy
 			szBuffer.append(NEWLINE);
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_WIND_MILL_BONUS", FoodModOfImprovements, info.getChar()));
 			iBaseModifier += FoodModOfImprovements;
-		}		
+		}
 	}
 
 	if (eYieldType == YIELD_HAMMERS)
@@ -9294,7 +9304,7 @@ int CvGameTextMgr::setCityYieldModifierString(CvWStringBuffer& szBuffer, YieldTy
 			szBuffer.append(NEWLINE);
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_SAW_MILL_BONUS", HammersModOfImprovements, info.getChar()));
 			iBaseModifier += HammersModOfImprovements;
-		}		
+		}
 	}
 
 	if (eYieldType == YIELD_TOOLS)
@@ -9305,7 +9315,7 @@ int CvGameTextMgr::setCityYieldModifierString(CvWStringBuffer& szBuffer, YieldTy
 			szBuffer.append(NEWLINE);
 			szBuffer.append(gDLL->getText("TXT_KEY_MISC_HELP_IRON_MILL_BONUS", ToolsModOfImprovements, info.getChar()));
 			iBaseModifier += ToolsModOfImprovements;
-		}		
+		}
 	}
 	// WTP, ray, Improvements give Bonus to their City - PART 2 - END
 
