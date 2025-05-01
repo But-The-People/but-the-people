@@ -936,6 +936,12 @@ void CvCity::doTask(TaskTypes eTask, int iData1, int iData2, bool bOption, bool 
 		break;
 	// auto traderoute - end - Nightinggale
 
+	// bobisback import changes
+	case TASK_IMPORT_CHANGES:
+		if(bOption)
+			handleDemandedImport();
+		break;
+
 	case TASK_CLEAR_SPECIALTY:
 		{
 			CvUnit* pUnit = GET_PLAYER(getOwnerINLINE()).getUnit(iData1);
@@ -12509,17 +12515,6 @@ void CvCity::setAutoExport(YieldTypes eYield, bool bExport)
 
 void CvCity::handleAutoTraderouteSetup(bool bReset, bool bImportAll, bool bAutoExportAll)
 {
-	// reset import/export for any yields that cannot be transported
-	// they might have been accidentally added to import/exports if XML settings were changed inbetween
-	// they cannot be added/removed manually
-	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
-	{
-		if (!GC.getYieldInfo(eYield).isCargo() || !GC.getYieldInfo(eYield).isExportYield())
-		{
-			doTask(TASK_YIELD_TRADEROUTE, eYield, 0, false, false, false, false);
-		}
-	}
-
 	if (bReset)
 	{
 		for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
@@ -12550,11 +12545,42 @@ void CvCity::handleAutoTraderouteSetup(bool bReset, bool bImportAll, bool bAutoE
 				int iMaintainLevel   = getMaintainLevel(eYield);
 				int iImportLimitLevel= getImportsLimit(eYield);
 
-				int iBuffer = iMaintainLevel & 0xFFFF; // lowest 16 bits
-				iBuffer |= (iImportLimitLevel & 0xFFFF) << 16; // next 16 bits
-
-				doTask(TASK_YIELD_TRADEROUTE, eYield, iBuffer, bImport, bExport, bMaintainImport, bAutoExport);
+				NetworkDataTradeRouteInts buffer;
+				buffer.iImportLimitLevel = iImportLimitLevel;
+				buffer.iMaintainLevel    = iMaintainLevel;
+				
+				doTask(TASK_YIELD_TRADEROUTE, eYield, buffer.iNetwork, bImport, bExport, bMaintainImport, bAutoExport);
 			}
+		}
+	}
+}
+
+void CvCity::handleDemandedImport()
+{
+	YieldCargoArray<int> aYields;
+	getYieldDemands(aYields);
+	const InfoArray<YieldTypes>& kYieldArray = GC.getDomesticDemandYieldTypes();
+	for (int i = 0; i < kYieldArray.getLength(); ++i)
+	{
+		const YieldTypes eYield = kYieldArray.get(i);
+
+		FAssert(validEnumRange(eYield));
+		int iAmount = aYields.get(eYield);
+		if (iAmount > 0 && !isExport(eYield)) //if there is demand but if it is an export ignore it. We do not want  to change levels on exports.
+		{
+			bool bImport = true;
+			bool bExport = isExport(eYield);
+			bool bMaintainImport = getImportsMaintain(eYield);
+			bool bAutoExport = isAutoExport(eYield);
+			// TODO: replace with actual halfstack size
+			int iMaintainLevel = std::max(iAmount * GLOBAL_DEFINE_IMPORT_DEMANDED_GOODS_MAINTAIN_AMOUNT, 100);
+			int iImportLimitLevel = std::max(iAmount * GLOBAL_DEFINE_IMPORT_DEMANDED_GOODS_IMPORT_LIMIT_AMOUNT, 200);
+
+			NetworkDataTradeRouteInts buffer;
+			buffer.iImportLimitLevel = iImportLimitLevel;
+			buffer.iMaintainLevel    = iMaintainLevel;
+
+			doTask(TASK_YIELD_TRADEROUTE, eYield, buffer.iNetwork, bImport, bExport, bMaintainImport, bAutoExport);
 		}
 	}
 }
