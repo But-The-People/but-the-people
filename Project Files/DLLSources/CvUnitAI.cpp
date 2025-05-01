@@ -14435,23 +14435,22 @@ bool CvUnitAI::AI_blockade(int iRange)
 
 			// If not already there, try to generate a fresh path
 			if (!bOnTarget)
-				{
+			{
 				if (!generatePath(pLoopPlot, 0, /*bReuse=*/true, &iPathTurns))
 					continue;   // unreachable, skip
 			}
 
 			// compute score
 			int iValue = bOnTarget ? 1200 : 1000;
-						if (pLoopPlot->getBonusType() != NO_BONUS)
-							iValue += 1000;
-						iValue /= 1 + pLoopPlot->plotCount(PUF_canDefend, -1, -1, getOwnerINLINE());
-						iValue += GC.getGameINLINE().getSorenRandNum(100, "AI blockade plot");
+			if (pLoopPlot->getBonusType() != NO_BONUS)
+				iValue += 1000;
+			iValue /= 1 + pLoopPlot->plotCount(PUF_canDefend, -1, -1, getOwnerINLINE());
+			iValue += GC.getGameINLINE().getSorenRandNum(100, "AI blockade plot");
 
 			// record best
-						if (iValue > iBestValue)
-						{
-							iBestValue = iValue;
-
+			if (iValue > iBestValue)
+			{
+				iBestValue = iValue;
 				if (bOnTarget)
 				{
 					// if we're already on the plot, use it directly
@@ -14460,11 +14459,11 @@ bool CvUnitAI::AI_blockade(int iRange)
 				else
 				{
 					// get the actual end-of-turn step for this path
-							pBestPlot = getPathEndTurnPlot();
-						}
-					}
+					pBestPlot = getPathEndTurnPlot();
 				}
 			}
+		}
+	}
 
 	// execute the mission
 	if (pBestPlot != NULL)
@@ -14475,13 +14474,13 @@ bool CvUnitAI::AI_blockade(int iRange)
 				getGroup()->pushMission(MISSION_BOMBARD);
 			else
 				getGroup()->pushMission(MISSION_SKIP);
-			}
+		}
 		else
 		{
 			getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE());
 		}
-			return true;
-		}
+		return true;
+	}
 
 	return false;
 }
@@ -15298,7 +15297,7 @@ bool CvUnitAI::AI_joinCity(int iMaxPath)
 			if (bValid)
 			{
 				ProfessionTypes eProfession;
-				int iValue = pCity->AI_unitJoinCityValue(this, &eProfession);
+				int iValue = pCity->AI().AI_unitJoinCityValueInternal(*this, &eProfession);
 
 				const int iIncoming = kOwner.AI_plotTargetMissionAIs(pLoopPlot, MISSIONAI_FOUND, getGroup());
 				// TAC - AI Economy- koma13 - START
