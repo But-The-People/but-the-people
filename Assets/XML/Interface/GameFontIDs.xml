@@ -5,10 +5,10 @@
 		<BillboardFontSymbolStart>8683</BillboardFontSymbolStart>
 	</Addresses>
 	<Offsets>
-		<Bonus>125</Bonus>
-		<Building>100</Building>
-		<FatherPoint>-25</FatherPoint>
-		<Mission>-31</Mission>
+		<Bonus>150</Bonus>
+		<Building>125</Building>
+		<FatherPoint>0</FatherPoint>
+		<Mission>-6</Mission>
 		<Yield>0</Yield>
 	</Offsets>
 	<BillboardSymbols>

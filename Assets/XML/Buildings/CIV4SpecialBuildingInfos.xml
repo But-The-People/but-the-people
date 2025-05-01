@@ -340,15 +340,6 @@
 			<NatureObject>,Art/Interface/Screens/City_Management/city_nature_altas.dds,4,1</NatureObject>
 		</SpecialBuildingInfo>
 		<SpecialBuildingInfo>
-			<Type>SPECIALBUILDING_POTTERY</Type>
-			<Description>TXT_KEY_SPECIALBUILDING_POTTERY</Description>
-			<bValid>1</bValid>
-			<FontButtonIndex>29</FontButtonIndex>
-			<ProductionTraits/>
-			<Button>Art/Interface/Buttons/Buildings/BombShelters.dds</Button>
-			<NatureObject>,Art/Interface/Screens/City_Management/city_nature_altas.dds,5,1</NatureObject>
-		</SpecialBuildingInfo>
-		<SpecialBuildingInfo>
 			<Type>SPECIALBUILDING_TAILOR</Type>
 			<Description>TXT_KEY_SPECIALBUILDING_TAILOR</Description>
 			<bValid>1</bValid>

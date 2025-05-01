@@ -1,0 +1,222 @@
+digraph {
+"coniferous forest" [color=green]
+"decidious forest" [color=green]
+"dense forest" [color=green]
+"jungle" [color=green]
+"light forest" [color=green]
+"mangroves" [color=green]
+"northern forest" [color=green]
+"tropical grove" [color=green]
+"thicket" [color=green]
+"ancient northern forest" [color=green]
+"desert" [color=green]
+"grassland" [color=green]
+"ice lake" [color=green]
+"lake" [color=green]
+"large river" [color=green]
+"marsh" [color=green]
+"permafrost" [color=green]
+"plains" [color=green]
+"rock steppes" [color=green]
+"savanna" [color=green]
+"shrubland" [color=green]
+"taiga" [color=green]
+"tundra" [color=green]
+"wetland" [color=green]
+"desert hills" [color=green]
+"grassland hills" [color=green]
+"marsh hills" [color=green]
+"permafrost hills" [color=green]
+"tundra hills" [color=green]
+"taiga hills" [color=green]
+"plains hills" [color=green]
+"prairie hills" [color=green]
+"rock steppes hills" [color=green]
+"savanna hills" [color=green]
+"shrubland hills" [color=green]
+"wetland hills" [color=green]
+"peak" [color=green]
+"whales" [color=green]
+"ocean" [color=green]
+"coniferous forest" [color=green,xlabel="3 lumber\n2 fur"]
+"coniferous forest" -> "lumber"
+"coniferous forest" -> "fur"
+"decidious forest" [color=green,xlabel="2 lumber\n2 fur"]
+"decidious forest" -> "lumber"
+"decidious forest" -> "fur"
+"dense forest" [color=green,xlabel="4 lumber\n1 fur"]
+"dense forest" -> "lumber"
+"dense forest" -> "fur"
+"jungle" [color=green,xlabel="4 lumber\n2 exotic wood\n3 coffee berries\n2 premium fur"]
+"jungle" -> "lumber"
+"jungle" -> "exotic wood"
+"jungle" -> "coffee berries"
+"jungle" -> "premium fur"
+"light forest" [color=green,xlabel="1 lumber\n3 fur"]
+"light forest" -> "lumber"
+"light forest" -> "fur"
+"mangroves" [color=green,xlabel="1 lumber\n3 exotic wood"]
+"mangroves" -> "lumber"
+"mangroves" -> "exotic wood"
+"northern forest" [color=green,xlabel="3 lumber\n3 exotic wood\n3 fur\n3 premium fur"]
+"northern forest" -> "lumber"
+"northern forest" -> "exotic wood"
+"northern forest" -> "fur"
+"northern forest" -> "premium fur"
+"tropical grove" [color=green,xlabel="3 lumber\n3 exotic wood"]
+"tropical grove" -> "lumber"
+"tropical grove" -> "exotic wood"
+"thicket" [color=green,xlabel="3 fur\n1 lumber"]
+"thicket" -> "fur"
+"thicket" -> "lumber"
+"ancient northern forest" [color=green,xlabel="4 lumber\n3 exotic wood\n3 fur\n3 premium fur"]
+"ancient northern forest" -> "lumber"
+"ancient northern forest" -> "exotic wood"
+"ancient northern forest" -> "fur"
+"ancient northern forest" -> "premium fur"
+"desert" [color=green,xlabel="3 rock salt"]
+"desert" -> "rock salt"
+"grassland" [color=green,xlabel="2 food\n3 hemp\n2 horses\n3 cattle\n1 chicken\n3 tobacco"]
+"grassland" -> "hemp"
+"grassland" -> "horses"
+"grassland" -> "cattle"
+"grassland" -> "chicken"
+"grassland" -> "tobacco"
+"ice lake" [color=green,xlabel="1 food"]
+"lake" [color=green,xlabel="2 food"]
+"large river" [color=green,xlabel="2 food"]
+"marsh" [color=green,xlabel="3 chicken\n3 food"]
+"marsh" -> "chicken"
+"permafrost" [color=green,xlabel="1 ore\n1 fur"]
+"permafrost" -> "ore"
+"permafrost" -> "fur"
+"plains" [color=green,xlabel="3 food\n1 horses\n1 cattle\n3 barley"]
+"plains" -> "horses"
+"plains" -> "cattle"
+"plains" -> "barley"
+"rock steppes" [color=green,xlabel="3 stone\n1 ore"]
+"rock steppes" -> "stone"
+"rock steppes" -> "ore"
+"savanna" [color=green,xlabel="2 food\n2 cattle\n1 chicken\n3 coffee berries\n3 sugar"]
+"savanna" -> "cattle"
+"savanna" -> "chicken"
+"savanna" -> "coffee berries"
+"savanna" -> "sugar"
+"shrubland" [color=green,xlabel="1 food\n2 chicken"]
+"shrubland" -> "chicken"
+"taiga" [color=green,xlabel="1 food"]
+"tundra" [color=green,xlabel="1 fur\n1 premium fur"]
+"tundra" -> "fur"
+"tundra" -> "premium fur"
+"wetland" [color=green,xlabel="1 chicken\n3 clay\n2 food"]
+"wetland" -> "chicken"
+"wetland" -> "clay"
+"desert hills" [color=green,xlabel="3 ore\n2 rock salt\n3 ore"]
+"desert hills" -> "ore"
+"desert hills" -> "rock salt"
+"desert hills" -> "ore"
+"grassland hills" [color=green,xlabel="2 ore\n2 coal\n1 food\n3 grapes\n3 sheep"]
+"grassland hills" -> "ore"
+"grassland hills" -> "coal"
+"grassland hills" -> "grapes"
+"grassland hills" -> "sheep"
+"marsh hills" [color=green,xlabel="1 food\n2 chicken\n2 clay"]
+"marsh hills" -> "chicken"
+"marsh hills" -> "clay"
+"permafrost hills" [color=green,xlabel="1 ore\n1 fur\n1 coal"]
+"permafrost hills" -> "ore"
+"permafrost hills" -> "fur"
+"permafrost hills" -> "coal"
+"tundra hills" [color=green,xlabel="2 ore\n2 fur\n2 coal"]
+"tundra hills" -> "ore"
+"tundra hills" -> "fur"
+"tundra hills" -> "coal"
+"taiga hills" [color=green,xlabel="2 ore\n2 coal\n1 sheep\n3 maple syrup"]
+"taiga hills" -> "ore"
+"taiga hills" -> "coal"
+"taiga hills" -> "sheep"
+"taiga hills" -> "maple syrup"
+"plains hills" [color=green,xlabel="3 olives\n1 food\n2 sheep\n3 ore\n3 coal"]
+"plains hills" -> "olives"
+"plains hills" -> "sheep"
+"plains hills" -> "ore"
+"plains hills" -> "coal"
+"prairie hills" [color=green,xlabel="3 red pepper\n2 sheep\n3 ore\n3 coal"]
+"prairie hills" -> "red pepper"
+"prairie hills" -> "sheep"
+"prairie hills" -> "ore"
+"prairie hills" -> "coal"
+"rock steppes hills" [color=green,xlabel="3 stone\n3 ore\n2 coal"]
+"rock steppes hills" -> "stone"
+"rock steppes hills" -> "ore"
+"rock steppes hills" -> "coal"
+"savanna hills" [color=green,xlabel="3 coca\n2 sheep\n2 coal\n2 ore\n1 food"]
+"savanna hills" -> "coca"
+"savanna hills" -> "sheep"
+"savanna hills" -> "coal"
+"savanna hills" -> "ore"
+"shrubland hills" [color=green,xlabel="1 food\n1 sheep\n3 ore\n3 coal"]
+"shrubland hills" -> "sheep"
+"shrubland hills" -> "ore"
+"shrubland hills" -> "coal"
+"wetland hills" [color=green,xlabel="1 food\n2 chicken\n2 clay"]
+"wetland hills" -> "chicken"
+"wetland hills" -> "clay"
+"peak" [color=green,xlabel="3 ore\n3 coal\n3 stone"]
+"peak" -> "ore"
+"peak" -> "coal"
+"peak" -> "stone"
+"whales" [color=green,xlabel="3 whale fat"]
+"whales" -> "whale fat"
+"ocean" [color=green,xlabel="2 food"]
+"fur" -> "coats"
+"premium fur" -> "premium coats"
+"lumber" -> "gunpowder"
+"coal" -> "gunpowder"
+"food" -> "provisions"
+"rock salt" -> "salt"
+"salt" -> "provisions"
+"chicken" -> "food"
+"chicken" -> "down"
+"olives" -> "olive oil"
+"ore" -> "tools"
+"coal" -> "tools"
+"ore" -> "muskets"
+"coal" -> "muskets"
+"ore" -> "cannons"
+"coal" -> "cannons"
+"cattle" -> "food"
+"cattle" -> "leather"
+"leather" -> "leather goods"
+"leather" -> "lined leather coats"
+"down" -> "lined leather coats"
+"red pepper" -> "spices"
+"cotton" -> "cloth"
+"cloth" -> "colored cloth"
+"colored cloth" -> "everyday clothes"
+"indigo" -> "colored cloth"
+"indigo" -> "colored wool cloth"
+"sheep" -> "wool"
+"sheep" -> "food"
+"sheep" -> "milk"
+"milk" -> "cheese"
+"cattle" -> "milk"
+"wool" -> "wool cloth"
+"wool cloth" -> "colored wool cloth"
+"colored wool cloth" -> "festive clothes"
+"exotic wood" -> "furniture"
+"exotic wood" -> "upholstered furniture"
+"down" -> "upholstered furniture"
+"exotic wood" -> "household goods"
+"leather" -> "household goods"
+"lumber" -> "fieldworker goods"
+"leather" -> "fieldworker goods"
+"barley" -> "beer"
+"grapes" -> "wine"
+"sugar" -> "rum"
+"coffee berries" -> "coffee"
+"tobacco" -> "cigars"
+"cloth" -> "rigging"
+"hemp" -> "rigging"
+"whale fat" -> "train oil"
+}

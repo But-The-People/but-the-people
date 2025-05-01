@@ -31,18 +31,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_HARDWOOD</Type>
-			<Description>TXT_KEY_EMPHASIZE_HARDWOOD</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_HARDWOOD</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_STONE</Type>
 			<Description>TXT_KEY_EMPHASIZE_STONE</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -103,30 +91,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_RICE</Type>
-			<Description>TXT_KEY_EMPHASIZE_RICE</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_RICE</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_CASSAVA</Type>
-			<Description>TXT_KEY_EMPHASIZE_CASSAVA</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_CASSAVA</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_HEMP</Type>
 			<Description>TXT_KEY_EMPHASIZE_HEMP</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -134,18 +98,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_HEMP</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_FLAX</Type>
-			<Description>TXT_KEY_EMPHASIZE_FLAX</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_FLAX</YieldType>
 					<iYield>1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -175,30 +127,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_KAUTSCHUK</Type>
-			<Description>TXT_KEY_EMPHASIZE_KAUTSCHUK</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_KAUTSCHUK</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_COCOA_FRUITS</Type>
-			<Description>TXT_KEY_EMPHASIZE_COCOA_FRUITS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_COCOA_FRUITS</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_COFFEE_BERRIES</Type>
 			<Description>TXT_KEY_EMPHASIZE_COFFEE_BERRIES</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -206,18 +134,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_COFFEE_BERRIES</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_PEANUTS</Type>
-			<Description>TXT_KEY_EMPHASIZE_PEANUTS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_PEANUTS</YieldType>
 					<iYield>1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -259,18 +175,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_VANILLA_PODS</Type>
-			<Description>TXT_KEY_EMPHASIZE_VANILLA_PODS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_VANILLA_PODS</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_WOOL</Type>
 			<Description>TXT_KEY_EMPHASIZE_WOOL</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -278,30 +182,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_WOOL</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_GOAT_HIDES</Type>
-			<Description>TXT_KEY_EMPHASIZE_GOAT_HIDES</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_GOAT_HIDES</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_PIG_SKIN</Type>
-			<Description>TXT_KEY_EMPHASIZE_PIG_SKIN</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_PIG_SKIN</YieldType>
 					<iYield>1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -326,30 +206,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_INDIGO</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_LOGWOOD</Type>
-			<Description>TXT_KEY_EMPHASIZE_LOGWOOD</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_LOGWOOD</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_COCHINEAL</Type>
-			<Description>TXT_KEY_EMPHASIZE_COCHINEAL</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_COCHINEAL</YieldType>
 					<iYield>1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -427,18 +283,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_FRUITS</Type>
-			<Description>TXT_KEY_EMPHASIZE_FRUITS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_FRUITS</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_GRAPES</Type>
 			<Description>TXT_KEY_EMPHASIZE_GRAPES</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -463,18 +307,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_RAPE</Type>
-			<Description>TXT_KEY_EMPHASIZE_RAPE</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_RAPE</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_TOBACCO</Type>
 			<Description>TXT_KEY_EMPHASIZE_TOBACCO</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -482,18 +314,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_TOBACCO</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_YERBA_LEAVES</Type>
-			<Description>TXT_KEY_EMPHASIZE_YERBA_LEAVES</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_YERBA_LEAVES</YieldType>
 					<iYield>1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -535,42 +355,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_CHAR_COAL</Type>
-			<Description>TXT_KEY_EMPHASIZE_CHAR_COAL</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_CHAR_COAL</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_PEAT</Type>
-			<Description>TXT_KEY_EMPHASIZE_PEAT</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_PEAT</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_COCOA</Type>
-			<Description>TXT_KEY_EMPHASIZE_COCOA</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_COCOA</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_COFFEE</Type>
 			<Description>TXT_KEY_EMPHASIZE_COFFEE</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -578,18 +362,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_COFFEE</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_ROASTED_PEANUTS</Type>
-			<Description>TXT_KEY_EMPHASIZE_ROASTED_PEANUTS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_ROASTED_PEANUTS</YieldType>
 					<iYield>1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -631,30 +403,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_VANILLA</Type>
-			<Description>TXT_KEY_EMPHASIZE_VANILLA</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_VANILLA</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_CHOCOLATE</Type>
-			<Description>TXT_KEY_EMPHASIZE_CHOCOLATE</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_CHOCOLATE</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_WOOL_CLOTH</Type>
 			<Description>TXT_KEY_EMPHASIZE_WOOL_CLOTH</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -686,18 +434,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_EVERYDAY_CLOTHES</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_PIG_LEATHER</Type>
-			<Description>TXT_KEY_EMPHASIZE_PIG_LEATHER</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_PIG_LEATHER</YieldType>
 					<iYield>1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -746,18 +482,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_LEATHER</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_GOAT_HIDE_BOOTS</Type>
-			<Description>TXT_KEY_EMPHASIZE_GOAT_HIDE_BOOTS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_GOAT_HIDE_BOOTS</YieldType>
 					<iYield>1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -823,18 +547,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_HOOCH</Type>
-			<Description>TXT_KEY_EMPHASIZE_HOOCH</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_HOOCH</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_WINE</Type>
 			<Description>TXT_KEY_EMPHASIZE_WINE</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -859,18 +571,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_RAPE_OIL</Type>
-			<Description>TXT_KEY_EMPHASIZE_RAPE_OIL</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_RAPE_OIL</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_CIGARS</Type>
 			<Description>TXT_KEY_EMPHASIZE_CIGARS</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -883,18 +583,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_YERBA_TEA</Type>
-			<Description>TXT_KEY_EMPHASIZE_YERBA_TEA</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_YERBA_TEA</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_WHALE_OIL</Type>
 			<Description>TXT_KEY_EMPHASIZE_WHALE_OIL</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -902,18 +590,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_WHALE_OIL</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_POTTERY</Type>
-			<Description>TXT_KEY_EMPHASIZE_POTTERY</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_POTTERY</YieldType>
 					<iYield>1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -1027,30 +703,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_WILD_FEATHERS</Type>
-			<Description>TXT_KEY_EMPHASIZE_WILD_FEATHERS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_WILD_FEATHERS</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_ROPE</Type>
-			<Description>TXT_KEY_EMPHASIZE_ROPE</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_ROPE</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_SAILCLOTH</Type>
 			<Description>TXT_KEY_EMPHASIZE_SAILCLOTH</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -1075,30 +727,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_GOATS</Type>
-			<Description>TXT_KEY_EMPHASIZE_GOATS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_GOATS</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_PIGS</Type>
-			<Description>TXT_KEY_EMPHASIZE_PIGS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_PIGS</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_CATTLE</Type>
 			<Description>TXT_KEY_EMPHASIZE_CATTLE</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -1118,18 +746,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_CHICKEN</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_GEESE</Type>
-			<Description>TXT_KEY_EMPHASIZE_GEESE</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_GEESE</YieldType>
 					<iYield>1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -1255,18 +871,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_HARDWOOD</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_HARDWOOD</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_HARDWOOD</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_STONE</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_STONE</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -1327,30 +931,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_RICE</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_RICE</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_RICE</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_CASSAVA</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_CASSAVA</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_CASSAVA</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_HEMP</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_HEMP</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -1358,18 +938,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_HEMP</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_FLAX</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_FLAX</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_FLAX</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -1399,30 +967,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_KAUTSCHUK</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_KAUTSCHUK</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_KAUTSCHUK</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_COCOA_FRUITS</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_COCOA_FRUITS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_COCOA_FRUITS</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_COFFEE_BERRIES</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_COFFEE_BERRIES</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -1430,18 +974,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_COFFEE_BERRIES</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_PEANUTS</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_PEANUTS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_PEANUTS</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -1483,18 +1015,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_VANILLA_PODS</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_VANILLA_PODS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_VANILLA_PODS</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_WOOL</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_WOOL</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -1502,30 +1022,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_WOOL</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_GOAT_HIDES</Type>
-			<Description>TXT_KEY_EMPHASIZE_GOAT_HIDES</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_GOAT_HIDES</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_PIG_SKIN</Type>
-			<Description>TXT_KEY_EMPHASIZE_PIG_SKIN</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_PIG_SKIN</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -1550,30 +1046,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_INDIGO</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_LOGWOOD</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_LOGWOOD</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_LOGWOOD</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_COCHINEAL</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_COCHINEAL</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_COCHINEAL</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -1651,18 +1123,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_FRUITS</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_FRUITS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_FRUITS</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_GRAPES</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_GRAPES</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -1687,18 +1147,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_RAPE</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_RAPE</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_RAPE</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_TOBACCO</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_TOBACCO</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -1706,18 +1154,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_TOBACCO</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_YERBA_LEAVES</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_YERBA_LEAVES</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_YERBA_LEAVES</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -1759,42 +1195,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_CHAR_COAL</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_CHAR_COAL</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_CHAR_COAL</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_PEAT</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_PEAT</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_PEAT</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_COCOA</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_COCOA</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_COCOA</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_COFFEE</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_COFFEE</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -1802,18 +1202,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_COFFEE</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_ROASTED_PEANUTS</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_ROASTED_PEANUTS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_ROASTED_PEANUTS</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -1855,30 +1243,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_VANILLA</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_VANILLA</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_VANILLA</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_CHOCOLATE</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_CHOCOLATE</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_CHOCOLATE</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_WOOL_CLOTH</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_WOOL_CLOTH</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -1910,30 +1274,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_EVERYDAY_CLOTHES</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_GOAT_HIDE_BOOTS</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_GOAT_HIDE_BOOTS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_GOAT_HIDE_BOOTS</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_PIG_LEATHER</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_PIG_LEATHER</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_PIG_LEATHER</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -2047,18 +1387,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_HOOCH</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_HOOCH</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_HOOCH</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_WINE</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_WINE</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -2083,18 +1411,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_RAPE_OIL</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_RAPE_OIL</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_RAPE_OIL</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_CIGARS</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_CIGARS</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -2107,18 +1423,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_YERBA_TEA</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_YERBA_TEA</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_YERBA_TEA</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_WHALE_OIL</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_WHALE_OIL</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -2126,18 +1430,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_WHALE_OIL</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_POTTERY</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_POTTERY</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_POTTERY</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -2251,30 +1543,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_WILD_FEATHERS</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_WILD_FEATHERS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_WILD_FEATHERS</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_ROPE</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_ROPE</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_ROPE</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_SAILCLOTH</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_SAILCLOTH</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -2299,30 +1567,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_GOATS</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_GOATS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_GOATS</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_PIGS</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_PIGS</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_PIGS</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_NO_CATTLE</Type>
 			<Description>TXT_KEY_EMPHASIZE_NO_CATTLE</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -2342,18 +1586,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_CHICKEN</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_GEESE</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_GEESE</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_GEESE</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>

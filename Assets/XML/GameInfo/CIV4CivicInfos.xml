@@ -64,24 +64,10 @@
 				<YieldModifier>
 					<YieldType>YIELD_FOOD</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_RICE</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_CASSAVA</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
+				</YieldModifier><YieldModifier>
 					<YieldType>YIELD_LUMBER</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_HARDWOOD</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
+				</YieldModifier><YieldModifier>
 					<YieldType>YIELD_VALUABLE_WOOD</YieldType>
 					<iYield>50</iYield>
 				</YieldModifier>
@@ -96,24 +82,14 @@
 				<YieldModifier>
 					<YieldType>YIELD_HEMP</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_FLAX</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
+				</YieldModifier><YieldModifier>
 					<YieldType>YIELD_ORE</YieldType>
 					<iYield>50</iYield>
 				</YieldModifier>
 				<YieldModifier>
 					<YieldType>YIELD_COAL</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_PEAT</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
+				</YieldModifier><YieldModifier>
 					<YieldType>YIELD_SILVER</YieldType>
 					<iYield>50</iYield>
 				</YieldModifier>
@@ -124,44 +100,20 @@
 				<YieldModifier>
 					<YieldType>YIELD_GEMS</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_COCOA_FRUITS</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
+				</YieldModifier><YieldModifier>
 					<YieldType>YIELD_COFFEE_BERRIES</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_PEANUTS</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
+				</YieldModifier><YieldModifier>
 					<YieldType>YIELD_TOBACCO</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_YERBA_LEAVES</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_LOGWOOD</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
+				</YieldModifier><YieldModifier>
 					<YieldType>YIELD_COTTON</YieldType>
 					<iYield>50</iYield>
 				</YieldModifier>
 				<YieldModifier>
 					<YieldType>YIELD_INDIGO</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_COCHINEAL</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
+				</YieldModifier><YieldModifier>
 					<YieldType>YIELD_FUR</YieldType>
 					<iYield>50</iYield>
 				</YieldModifier>
@@ -176,49 +128,26 @@
 				<YieldModifier>
 					<YieldType>YIELD_RED_PEPPER</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_VANILLA_PODS</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
+				</YieldModifier><YieldModifier>
 					<YieldType>YIELD_BARLEY</YieldType>
 					<iYield>50</iYield>
 				</YieldModifier>
 				<YieldModifier>
 					<YieldType>YIELD_SUGAR</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_FRUITS</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
+				</YieldModifier><YieldModifier>
 					<YieldType>YIELD_GRAPES</YieldType>
 					<iYield>50</iYield>
 				</YieldModifier>
 				<YieldModifier>
 					<YieldType>YIELD_OLIVES</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_RAPE</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_WILD_FEATHERS</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
+				</YieldModifier><YieldModifier>
 					<YieldType>YIELD_COCA_LEAVES</YieldType>
 					<iYield>50</iYield>
 				</YieldModifier>
 				<YieldModifier>
 					<YieldType>YIELD_MAPLE_SIRUP</YieldType>
-					<iYield>50</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_KAUTSCHUK</YieldType>
 					<iYield>50</iYield>
 				</YieldModifier>
 				<YieldModifier>

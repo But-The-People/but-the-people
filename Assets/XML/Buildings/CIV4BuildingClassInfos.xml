@@ -745,24 +745,6 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_POTTERY_HOUSE</Type>
-			<Description>TXT_KEY_BUILDINGCLASS_POTTERY_HOUSE</Description>
-			<DefaultBuilding>BUILDING_POTTERY_HOUSE</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_POTTERY_SHOP</Type>
-			<Description>TXT_KEY_BUILDINGCLASS_POTTERY_SHOP</Description>
-			<DefaultBuilding>BUILDING_POTTERY_SHOP</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_POTTERY_FACTORY</Type>
-			<Description>TXT_KEY_BUILDINGCLASS_POTTERY_FACTORY</Description>
-			<DefaultBuilding>BUILDING_POTTERY_FACTORY</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_TAILOR_HOUSE</Type>
 			<Description>TXT_KEY_BUILDINGCLASS_TAILOR_HOUSE</Description>
 			<DefaultBuilding>BUILDING_TAILOR_HOUSE</DefaultBuilding>

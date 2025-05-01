@@ -1708,7 +1708,7 @@
 				<ProfessionType>PROFESSION_HEAVY_ARTILLERY</ProfessionType>
 				<iNumber>1</iNumber>
 			</NumProfession>
-	    </NumProfessions>	
+	    </NumProfessions>
 		<YieldProduced/>
 	</AchieveInfo>
 	<AchieveInfo>
@@ -3228,37 +3228,6 @@
 		<YieldProduced/>
 	</AchieveInfo>
 	<AchieveInfo>
-		<Type>ACHIEVE_THREE_COCOA_PLANTER</Type>
-		<Description>TXT_KEY_ACHIEVE_THREE_COCOA_PLANTER</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_THREE_COCOA_PLANTER_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_THREE_COCOA_PLANTER_TEXT</BodyTextKey>
-		<PictureFileName>Art/Achievements/cocoa.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_COCOA_PLANTER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-	<AchieveInfo>
 		<Type>ACHIEVE_THREE_PROSPECTOR</Type>
 		<Description>TXT_KEY_ACHIEVE_THREE_PROSPECTOR</Description>
 		<bActive>1</bActive>
@@ -4627,7 +4596,7 @@
 				<ProfessionType>PROFESSION_TOWN_GUARD</ProfessionType>
 				<iNumber>1</iNumber>
 			</NumProfession>
-	    </NumProfessions>	
+	    </NumProfessions>
 		<YieldProduced/>
 	</AchieveInfo>
 	<AchieveInfo>
@@ -5123,7 +5092,7 @@
 				<ProfessionType>PROFESSION_COLONIAL_MILITIA</ProfessionType>
 				<iNumber>15</iNumber>
 			</NumProfession>
-	    </NumProfessions>	
+	    </NumProfessions>
 		<YieldProduced/>
 	</AchieveInfo>
    <AchieveInfo>
@@ -5154,7 +5123,7 @@
 				<ProfessionType>PROFESSION_LINE_INFANTRY</ProfessionType>
 				<iNumber>15</iNumber>
 			</NumProfession>
-	    </NumProfessions>	
+	    </NumProfessions>
 		<YieldProduced/>
 	</AchieveInfo>
    <AchieveInfo>
@@ -5189,7 +5158,7 @@
 				<ProfessionType>PROFESSION_HEAVY_CAVALRY</ProfessionType>
 				<iNumber>15</iNumber>
 			</NumProfession>
-	    </NumProfessions>	
+	    </NumProfessions>
 		<YieldProduced/>
 	</AchieveInfo>
    <AchieveInfo>
@@ -5220,7 +5189,7 @@
 				<ProfessionType>PROFESSION_LIGHT_ARTILLERY</ProfessionType>
 				<iNumber>15</iNumber>
 			</NumProfession>
-	    </NumProfessions>	
+	    </NumProfessions>
 		<YieldProduced/>
 	</AchieveInfo>
    <AchieveInfo>
@@ -5251,7 +5220,7 @@
 				<ProfessionType>PROFESSION_HEAVY_ARTILLERY</ProfessionType>
 				<iNumber>15</iNumber>
 			</NumProfession>
-	    </NumProfessions>	
+	    </NumProfessions>
 		<YieldProduced/>
 	</AchieveInfo>
 	<AchieveInfo>
@@ -5383,7 +5352,7 @@
 				<ProfessionType>PROFESSION_SETTLER</ProfessionType>
 				<iNumber>3</iNumber>
 			</NumProfession>
-	    </NumProfessions>	
+	    </NumProfessions>
 		<YieldProduced/>
 	</AchieveInfo>
 	<AchieveInfo>
@@ -5445,85 +5414,7 @@
 				<iNumber>3</iNumber>
 			</NumUnits>
 			<NumUnits>
-				<UnitType>UNIT_PEANUT_PLANTER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-			<NumUnits>
 				<UnitType>UNIT_COFFEE_PLANTER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-	<AchieveInfo>
-		<Type>ACHIEVE_TEATIME</Type>
-		<Description>TXT_KEY_ACHIEVE_TEATIME</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_TEATIME_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_TEATIME_TEXT</BodyTextKey>
-		<PictureFileName>art/achievements/teatime.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_YERBA_TRADER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_SPICE_TRADER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_RED_PEPPER_PLANTER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_YERBA_PLANTER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-	<AchieveInfo>
-		<Type>ACHIEVE_LOGWOOD_COLLECTORS</Type>
-		<Description>TXT_KEY_ACHIEVE_LOGWOOD_COLLECTORS</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_LOGWOOD_COLLECTORS_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_LOGWOOD_COLLECTORS_TEXT</BodyTextKey>
-		<PictureFileName>art/achievements/logwood.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_LOGWOOD_COLLECTOR</UnitType>
 				<iNumber>3</iNumber>
 			</NumUnits>
 		</NumUnits>
@@ -5628,88 +5519,10 @@
 		<NumBuildings/>
 		<NumUnits>
 			<NumUnits>
-				<UnitType>UNIT_ROPES_MAKER</UnitType>
-				<iNumber>5</iNumber>
-			</NumUnits>
-			<NumUnits>
 				<UnitType>UNIT_SAILCLOTH_MAKER</UnitType>
 				<iNumber>5</iNumber>
 			</NumUnits>
 		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-	<AchieveInfo>
-		<Type>ACHIEVE_CHARCOAL_POWDER</Type>
-		<Description>TXT_KEY_ACHIEVE_CHARCOAL_POWDER</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_CHARCOAL_POWDER_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_CHARCOAL_POWDER_TEXT</BodyTextKey>
-		<PictureFileName>art/achievements/charcoal_powder.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_CHARCOAL_BURNER</UnitType>
-				<iNumber>5</iNumber>
-			</NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_FIREWORKER</UnitType>
-				<iNumber>5</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-	<AchieveInfo>
-		<Type>ACHIEVE_FIREWORKS</Type>
-		<Description>TXT_KEY_ACHIEVE_FIREWORKS</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_FIREWORKS_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_FIREWORKS_TEXT</BodyTextKey>
-		<PictureFileName>Art/Achievements/fireworks.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings>
-			<NumBuilding>
-				<BuildingType>BUILDING_FIREWORKERS_HOUSE</BuildingType>
-				<iNumber>5</iNumber>
-			</NumBuilding>
-			<NumBuilding>
-				<BuildingType>BUILDING_FIREWORKERS_SHOP</BuildingType>
-				<iNumber>4</iNumber>
-			</NumBuilding>
-			<NumBuilding>
-				<BuildingType>BUILDING_FIREWORKERS_FACTORY</BuildingType>
-				<iNumber>3</iNumber>
-			</NumBuilding>
-		</NumBuildings>
-		<NumUnits/>
 		<NumProfessions/>
 		<YieldProduced/>
 	</AchieveInfo>
@@ -5737,7 +5550,7 @@
 		<NumBuildings/>
 		<NumUnits>
 			<NumUnits>
-				<UnitType>UNIT_PEAT_CUTTER</UnitType>
+				<UnitType>UNIT_CLAY_CUTTER</UnitType>
 				<iNumber>3</iNumber>
 			</NumUnits>
 			<NumUnits>
@@ -5884,10 +5697,6 @@
 				<UnitType>UNIT_FARMER</UnitType>
 				<iNumber>10</iNumber>
 			</NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_RICE_FARMER</UnitType>
-				<iNumber>5</iNumber>
-			</NumUnits>
 		</NumUnits>
 		<NumProfessions/>
 		<YieldProduced/>
@@ -6013,10 +5822,6 @@
 		<NumBuildings/>
 		<NumUnits>
 			<NumUnits>
-				<UnitType>UNIT_BREEDER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-			<NumUnits>
 				<UnitType>UNIT_HERDER</UnitType>
 				<iNumber>3</iNumber>
 			</NumUnits>
@@ -6049,10 +5854,6 @@
 		<NumUnits>
 			<NumUnits>
 				<UnitType>UNIT_HOUSEHOLD_TRADER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_POTTER</UnitType>
 				<iNumber>3</iNumber>
 			</NumUnits>
 		</NumUnits>
@@ -6091,99 +5892,6 @@
 		<YieldProduced/>
 	</AchieveInfo>
 	<AchieveInfo>
-		<Type>ACHIEVE_THIRD_EXPERT_CASSAVA_PLANTER</Type>
-		<Description>TXT_KEY_ACHIEVE_THIRD_EXPERT_CASSAVA_PLANTER</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_CASSAVA_PLANTER_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_CASSAVA_PLANTER_TEXT</BodyTextKey>
-		<PictureFileName>Art/Achievements/cassava_planter.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_CASSAVA_PLANTER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-	<AchieveInfo>
-		<Type>ACHIEVE_THIRD_EXPERT_COCHINEAL_COLLECTOR</Type>
-		<Description>TXT_KEY_ACHIEVE_THIRD_EXPERT_COCHINEAL_COLLECTOR</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_COCHINEAL_COLLECTOR_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_COCHINEAL_COLLECTOR_TEXT</BodyTextKey>
-		<PictureFileName>Art/Achievements/cochineal_collector.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_COCHINEAL_COLLECTOR</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-	<AchieveInfo>
-		<Type>ACHIEVE_THIRD_EXPERT_FRUITS_PICKER</Type>
-		<Description>TXT_KEY_ACHIEVE_THIRD_EXPERT_FRUITS_PICKER</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_FRUITS_PICKER_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_FRUITS_PICKER_TEXT</BodyTextKey>
-		<PictureFileName>Art/Achievements/fruits_picker.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_FRUITS_PICKER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-	<AchieveInfo>
 		<Type>ACHIEVE_THIRD_EXPERT_INDIGO_PLANTER</Type>
 		<Description>TXT_KEY_ACHIEVE_THIRD_EXPERT_INDIGO_PLANTER</Description>
 		<bActive>1</bActive>
@@ -6215,37 +5923,6 @@
 		<YieldProduced/>
 	</AchieveInfo>
    <AchieveInfo>
-		<Type>ACHIEVE_THIRD_EXPERT_LINEN_PLANTER</Type>
-		<Description>TXT_KEY_ACHIEVE_THIRD_EXPERT_LINEN_PLANTER</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_LINEN_PLANTER_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_LINEN_PLANTER_TEXT</BodyTextKey>
-		<PictureFileName>Art/Achievements/linen_planter.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_LINEN_PLANTER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-   <AchieveInfo>
 		<Type>ACHIEVE_THIRD_EXPERT_MAPLE_SIRUP_COLLECTOR</Type>
 		<Description>TXT_KEY_ACHIEVE_THIRD_EXPERT_MAPLE_SIRUP_COLLECTOR</Description>
 		<bActive>1</bActive>
@@ -6270,37 +5947,6 @@
 		<NumUnits>
 			<NumUnits>
 				<UnitType>UNIT_MAPLE_SIRUP_COLLECTOR</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-   <AchieveInfo>
-		<Type>ACHIEVE_THIRD_EXPERT_RAPE_PLANTER</Type>
-		<Description>TXT_KEY_ACHIEVE_THIRD_EXPERT_RAPE_PLANTER</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_RAPE_PLANTER_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_RAPE_PLANTER_TEXT</BodyTextKey>
-		<PictureFileName>Art/Achievements/rape_planter.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_RAPE_PLANTER</UnitType>
 				<iNumber>3</iNumber>
 			</NumUnits>
 		</NumUnits>
@@ -6339,37 +5985,6 @@
 		<YieldProduced/>
 	</AchieveInfo>
 	<AchieveInfo>
-		<Type>ACHIEVE_THIRD_EXPERT_VANILLA_COLLECTOR</Type>
-		<Description>TXT_KEY_ACHIEVE_THIRD_EXPERT_VANILLA_COLLECTOR</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_VANILLA_COLLECTOR_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_VANILLA_COLLECTOR_TEXT</BodyTextKey>
-		<PictureFileName>Art/Achievements/vanilla_collector.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_VANILLA_COLLECTOR</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-	<AchieveInfo>
 		<Type>ACHIEVE_THIRD_EXPERT_HEMP_PLANTER</Type>
 		<Description>TXT_KEY_ACHIEVE_THIRD_EXPERT_HEMP_PLANTER</Description>
 		<bActive>1</bActive>
@@ -6394,37 +6009,6 @@
 		<NumUnits>
 			<NumUnits>
 				<UnitType>UNIT_HEMP_PLANTER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-	<AchieveInfo>
-		<Type>ACHIEVE_THIRD_EXPERT_KAUTSCHUK_COLLECTOR</Type>
-		<Description>TXT_KEY_ACHIEVE_THIRD_EXPERT_KAUTSCHUK_COLLECTOR</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_KAUTSCHUK_COLLECTOR_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_THIRD_EXPERT_KAUTSCHUK_COLLECTOR_TEXT</BodyTextKey>
-		<PictureFileName>Art/Achievements/kautschuk_collector.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_KAUTSCHUK_COLLECTOR</UnitType>
 				<iNumber>3</iNumber>
 			</NumUnits>
 		</NumUnits>
@@ -6522,37 +6106,6 @@
 		<NumUnits>
 			<NumUnits>
 				<UnitType>UNIT_DYER</UnitType>
-				<iNumber>3</iNumber>
-			</NumUnits>
-		</NumUnits>
-		<NumProfessions/>
-		<YieldProduced/>
-	</AchieveInfo>
-	<AchieveInfo>
-		<Type>ACHIEVE_THIRD_MASTER_CONFECTIONER</Type>
-		<Description>TXT_KEY_ACHIEVE_THIRD_MASTER_CONFECTIONER</Description>
-		<bActive>1</bActive>
-		<bAfterMove>0</bAfterMove>
-		<HeaderTextKey>TXT_KEY_ACHIEVE_THIRD_MASTER_CONFECTIONER_HEAD</HeaderTextKey>
-		<BodyTextKey>TXT_KEY_ACHIEVE_THIRD_MASTER_CONFECTIONER_TEXT</BodyTextKey>
-		<PictureFileName>Art/Achievements/confectioner.dds</PictureFileName>
-		<iPictureX>360</iPictureX>
-		<iPictureY>240</iPictureY>
-		<iLowTurnNumber>0</iLowTurnNumber>
-		<iHighTurnNumber>10000</iHighTurnNumber>
-		<bLandDiscovered>0</bLandDiscovered>
-		<bDiscoverEast>0</bDiscoverEast>
-		<bDiscoverWest>0</bDiscoverWest>
-		<iNumColonies>0</iNumColonies>
-		<iNumEuroContacts>0</iNumEuroContacts>
-		<iNumNativeContacts>0</iNumNativeContacts>
-		<iNumGoodsTraded>-1</iNumGoodsTraded>
-		<iNumCombatsWonNeeded>-1</iNumCombatsWonNeeded>
-		<iNumSeaCombatsWonNeeded>-1</iNumSeaCombatsWonNeeded>
-		<NumBuildings/>
-		<NumUnits>
-			<NumUnits>
-				<UnitType>UNIT_CONFECTIONER</UnitType>
 				<iNumber>3</iNumber>
 			</NumUnits>
 		</NumUnits>

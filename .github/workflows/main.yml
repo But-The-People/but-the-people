@@ -2,6 +2,7 @@ on:
   push:
     branches:
     - develop
+    - but-the-people
 jobs:
   my_job:
     runs-on: windows-2025
@@ -34,12 +35,13 @@ jobs:
           & "./Get Compiler.bat"
           perl compile.pl
           cd ..
-          git archive --format=zip --prefix=Assets/ --add-file=Assets/CvGameCoreDLL.dll --prefix= -9 head --output ../WeThePeople.zip
+          git archive --format=zip --prefix=Assets/ --add-file=Assets/CvGameCoreDLL.dll --prefix= -9 head --output ../ButThePeople-dev-${env:GITHUB_SHA}.zip
+          ls ..
       - name: release
         uses: "marvinpinto/action-automatic-releases@v1.2.1"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          files: "WeThePeople.zip"
-          automatic_release_tag: "development"
+          files: "ButThePeople-dev-${{ github.sha }}.zip "
+          automatic_release_tag: "${{ github.ref_name }}-development"
           prerelease: true
           title: "development build"

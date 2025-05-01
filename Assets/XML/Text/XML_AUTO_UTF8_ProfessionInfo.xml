@@ -559,98 +559,6 @@
 		<German>[COLOR_UNIT_TEXT]Cocasammler[COLOR_REVERT] können [LINK=YIELD_COCA_LEAVES]Coca-Blätter[\LINK] von Hügeln auf Regionen der [LINK=TERRAIN_SAVANNAH]Savanne[\LINK] sammeln. Der Ertrag ist höher, wenn es auf dem Feld auch die Bonusresource [LINK=BONUS_COCA]Cocapflanzen[\LINK] gibt, und kann noch weiter erhöht werden, wenn man darauf die Geländeverbesserung [LINK=IMPROVEMENT_COLLECTORS_POST2]Cocasammelstelle[\LINK] errichtet. Wenn ein nicht spezialisierter Kolonist lange genug diesen Beruf ausübt, kann er irgendwann zu einem [LINK=UNIT_COCA_COLLECTOR]Erfahrenen Cocasammler[\LINK] werden, der doppelt soviele Coca-Blätter ernten kann.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_COCOA_ROASTER</Tag>
-		<English>
-			<Text>Roaster (Cocoa):Roasters (Cocoa)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</English>
-		<French>
-			<Text>Cacaofévier:Cacaoféviers</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Röster (Kakao):Röster (Kakao)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</German>
-		<Italian>
-			<Text>Torrefattore di cacao:Torrefattori di cacao</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Tostador de cacao:Tostadores de cacao</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
-		<Russian>Обжарщик какао:Обжарщики какао</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_COCOA_ROASTER_HELP</Tag>
-		<English>????</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_COCOA_ROASTER_PEDIA</Tag>
-		<English>The first real European knowledge about chocolate came in the form of a beverage which was introduced to the Spanish at their meeting with Moctezuma in the Aztec capital of Tenochtitlan in 1519. Cortés and others noted the vast quantities of this beverage that the Aztec emperor consumed, and how it was carefully whipped by his attendants beforehand. Examples of cacao beans along with other agricultural products were brought back to Spain at that time, but it seems that the beverage made from cacao was introduced to the Spanish court in 1544 by Kekchi Maya nobles brought from the New World to Spain by Dominican friars to meet Prince Philip. Within a century, the culinary and medical uses of chocolate had spread to France, England and elsewhere in Western Europe. Demand for this beverage led the French to establish cacao plantations in the Caribbean.</English>
-		<French>La première véritable connaissance européenne du chocolat est venue sous la forme d'une boisson qui a été présentée aux Espagnols lors de leur rencontre avec Moctezuma dans la capitale aztèque de Tenochtitlan en 1519. Cortés et d'autres ont noté les grandes quantités de cette boisson que l'empereur aztèque consommait, et la façon dont elle était soigneusement fouettée au préalable par ses serviteurs. Des exemples de fèves de cacao ainsi que d'autres produits agricoles ont été ramenés en Espagne à cette époque, mais il semble que la boisson à base de cacao ait été introduite à la cour espagnole en 1544 par des nobles mayas kekchis amenés du Nouveau Monde en Espagne par des frères dominicains pour rencontrer le prince Philippe. En un siècle, les usages culinaires et médicaux du chocolat se sont répandus en France, en Angleterre et ailleurs en Europe occidentale. La demande de cette boisson a conduit les Français à établir des plantations de cacao dans les Caraïbes.</French>
-		<German>Das erste wirkliche europäische Wissen über Schokolade kam in Form eines Getränks, das den Spaniern bei ihrem Treffen mit Moctezuma in der aztekischen Hauptstadt Tenochtitlan im Jahr 1519 vorgestellt wurde. Cortés und andere bemerkten die riesigen Mengen dieses Getränks, die der Aztekenkaiser konsumierte, und wie es zuvor von seinen Dienern sorgfältig aufgeschlagen wurde. Beispiele von Kakaofrüchten wurden zusammen mit anderen landwirtschaftlichen Produkten zu dieser Zeit nach Spanien gebracht, aber es scheint, daß das aus Kakao hergestellte Getränk 1544 von Kekchi Maya-Adligen, die von Dominikanermönchen aus der Neuen Welt nach Spanien gebracht wurden, um Prinz Philip zu treffen, am spanischen Hof eingeführt wurde. Innerhalb eines Jahrhunderts verbreitete sich die kulinarische und medizinische Verwendung von Schokolade in Frankreich, England und anderswo in Westeuropa. Die Nachfrage nach diesem Getränk veranlasste die Franzosen, Kakaoplantagen in der Karibik anzulegen.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_COCOA_ROASTER_STRATEGY</Tag>
-		<English>Colonists working in the [LINK=BUILDING_ROASTER_HOUSE]roaster's house[\LINK] or one of its upgrades can take up the [COLOR_UNIT_TEXT]cocoa roaster[COLOR_REVERT] profession. Cocoa roasters produce [LINK=YIELD_COCOA]cocoa[\LINK] from [LINK=YIELD_COCOA_FRUITS]cocoa pods[\LINK]. Assigning a [LINK=UNIT_ROASTER]master roaster[\LINK] to this job will generate twice as much cocoa, as long as enough cocoa pods are in stock.</English>
-		<French>Les prairies peuvent toutes produire du [COLOR_HIGHLIGHT_TEXT]Café[COLOR_REVERT] si le colon qui les exploite est assigné à la profession de Planteur de Café. Vos récoltes de Café peuvent être considérablement augmentées en assignant un [COLOR_UNIT_TEXT]Planteur de Café professionnel[COLOR_REVERT] à cette fonction.</French>
-		<German>[COLOR_UNIT_TEXT]Kakaoröster[COLOR_REVERT] rösten [LINK=YIELD_COCOA_FRUITS]Kakaofrüchte[\LINK] um [LINK=YIELD_COCOA]Kakaobohnen[\LINK] zu erhalten. Dieser Prozess ist noch effektiver, wenn Sie dem Beruf einen [LINK=UNIT_ROASTER]Meister Röster[\LINK] zuweisen.</German>
-		<Italian>Le praterie possono ospitare piantagioni di [COLOR_HIGHLIGHT_TEXT]Caffè[COLOR_REVERT], se assegno il lavoro di coltivatore di Caffè ai coloni che lavorano in quelle caselle. Puoi aumentare ulteriormente la produzione di Caffè assegnando lo stesso lavoro a un [COLOR_UNIT_TEXT]coltivatore esperto di Caffè[COLOR_REVERT].</Italian>
-		<Spanish>Las casillas de pradera pueden dar [COLOR_HIGHLIGHT_TEXT]Café[COLOR_REVERT] si asignáis al Colono que trabaja ahí la profesión de Plantador de Café. La cosecha aumentará sustancialmente si ponéis a un [COLOR_UNIT_TEXT]Plantador de Café experto[COLOR_REVERT] en el puesto.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_COCOA_PLANTER</Tag>
-		<English>
-			<Text>Planter (Cocoa):Planters (Cocoa)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</English>
-		<French>
-			<Text>Planteur de cacao:Planteurs de cacao</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>
-			<Text>Kakaopflücker:Kakaopflücker</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</German>
-		<Italian>
-			<Text>Piantatore di cacao:Piantatori di cacao</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Plantador de cacao:Plantadores de cacao</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
-		<Russian>Плантатор какао:Плантаторы какао</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_COCOA_PLANTER_HELP</Tag>
-		<English>????</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_COCOA_PLANTER_PEDIA</Tag>
-		<English>Cultivation, use, and cultural elaboration of cacao were early and extensive in Mesoamerica. Ceramic vessels with residues from the preparation of cacao beverages have been found at archaeological sites dating back to the Early Formative (1900-900 BC) period. For example, one such vessel found at an Olmec archaeological site on the Gulf Coast of Veracruz, Mexico, dates cacao's preparation by pre-Olmec peoples as early as 1750 BC.[PARAGRAPH:1]The initial domestication was probably related to the making of a fermented, thus alcoholic beverage. The Maya believed that the kakaw (cacao) was discovered by the gods in a mountain that also contained other delectable foods to be used by the Maya. The first real European knowledge about chocolate came in the form of a beverage which was introduced to the Spanish at their meeting with Moctezuma in the Aztec capital of Tenochtitlan in 1519. Cortés and others noted the vast quantities of this beverage that the Aztec emperor consumed, and how it was carefully whipped by his attendants beforehand.[PARAGRAPH:1]Examples of cacao beans along with other agricultural products were brought back to Spain at that time, but it seems that the beverage made from cacao was introduced to the Spanish court in 1544 by Kekchi Maya nobles brought from the New World to Spain by Dominican friars to meet Prince Philip. Within a century, the culinary and medical uses of chocolate had spread to France, England and elsewhere in Western Europe. Demand for this beverage led the French to establish cacao plantations in the Caribbean.</English>
-		<French>Le cacao dont le nom vient du nahuatl « cacahuatl » était traditionnellement utilisé par les populations méso-américaines, notamment par les Mayas puis par les Aztèques. Des traces de cacao ont été trouvées dans des récipients retrouvés en Amérique du Nord et datant du XIe et XIIe siècles. Réservé aux nobles, il était consommé dans une boisson, le chocolat, dilué dans l'eau à laquelle on ajoutait du piment, du roucou (pour lui donner une couleur rouge) et battu énergiquement pour former une mousse épaisse à sa surface. Chez les Mayas, il était utilisé principalement lors de cérémonies religieuses. Les Aztèques, qui ne la consommaient pas dans un cadre rituel, diffusèrent la fève, au fil de leur expansion, dans d'autres régions du Mexique. En revanche, les deux civilisations l'utilisaient couramment en guise de monnaie.</French>
-		<German>Bei den Azteken galt die Kakaopflanze als heilig, sie wurde als Geschenk des Gottes Quetzalcoatl verehrt. Die Kakaobohnen wurden als Opfergabe verwendet, als Zahlungsmittel und zur Zubereitung eines Trankes. Das Getränk bestand aus Wasser, Kakao, Mais, Vanille, Cayenne-Pfeffer und etwas Salz und schmeckte weitaus herber als heutzutage. Als die spanischen Konquistadoren Mexiko eroberten und die Azteken unterwarfen, fanden sie in den Schatzkammern Montezumas 25.000 Zentner Kakao, den seine Beamten als Steuer eingezogen hatten. Eine astronomisch hohe Summe - zum Vergleich: ein Sklave kostete zu dieser Zeit gerade einmal einhundert Kakaobohnen. An den europäischen Königshöfen wurde Kakao als exotische Delikatesse serviert. Die Kolonialherren ließen das "Braune Gold" in der Neuen Welt bald in ausgedehnten Plantagen von Sklaven anbauen und ernten.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_COCOA_PLANTER_STRATEGY</Tag>
-		<English>When assigning a citizen to work on a [LINK=FEATURE_JUNGLE]jungle[\LINK] tile, you may opt for your colonist to adopt the [COLOR_HIGHLIGHT_TEXT]cocoa planter[COLOR_REVERT] profession, which will provide your colony with [LINK=YIELD_COCOA_FRUITS]cocoa pods[\LINK].[PARAGRAPH:1]If you assign an [LINK=UNIT_COCOA_PLANTER]expert cocoa planter[\LINK] to this profession, it will significantly increase the number of cocoa pods collected.</English>
-		<French>Lorsque vous assignez un citoyen pour travailler sur une case de [LINK=FEATURE_JUNGLE]jungle[\LINK], vous pouvez opter pour la profession de [COLOR_HIGHLIGHT_TEXT]planteur de cacao[COLOR_REVERT] pour ainsi produire du [LINK=YIELD_COCOA_FRUITS]cacao[\LINK].[PARAGRAPH:2]Si vous assez un [LINK=UNIT_COCOA_PLANTER]expert planteur de cacao[\LINK], celui-ci produira significativement plus de cacao.</French>
-		<German>Auf [LINK=FEATURE_JUNGLE]Dschungelfeldern[\LINK] können Bürger wertvollen [LINK=YIELD_COCOA_FRUITS]Kakaofrüchte[\LINK] für den Export gewinnen. Setzt man im Stadtbildschirm einen Bürger dort zur Arbeit ein, kann man ihm den Beruf des [COLOR_HIGHLIGHT_TEXT]Kakaopflückers[COLOR_REVERT] zuweisen.[PARAGRAPH:2][LINK=UNIT_COCOA_PLANTER]Erfahrene Kakaopflücker[\LINK] sind im Beruf des Kakaopflückers besonders effektiv, denn sie verdoppeln die Erträge.</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_COFFEE_ROASTER</Tag>
 		<English>
 			<Text>Roaster (Coffee):Roasters (Coffee)</Text>
@@ -999,7 +907,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_DISTILLER_STRATEGY</Tag>
-		<English>Assigning a colonist to any rum-producing building will give that colonist the [COLOR_HIGHLIGHT_TEXT]distiller[COLOR_REVERT] profession, turning your colony's [LINK=YIELD_SUGAR]sugar[\LINK] into profitable [LINK=YIELD_RUM]rum[\LINK], or [LINK=YIELD_FRUITS]fruit[\LINK] into tasty [LINK=YIELD_HOOCH]fruit brandy[\LINK]! Assigning a [LINK=UNIT_DISTILLER]master distiller[\LINK] to this profession will multiply the amount of [COLOR_HIGHLIGHT_TEXT]rum[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]fruit brandy[COLOR_REVERT] produced each turn, but will also increase how much [COLOR_HIGHLIGHT_TEXT]sugar[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]fruit[COLOR_REVERT] is consumed.</English>
+		<English>Assigning a colonist to any rum-producing building will give that colonist the [COLOR_HIGHLIGHT_TEXT]distiller[COLOR_REVERT] profession, turning your colony's [LINK=YIELD_SUGAR]sugar[\LINK] into profitable [LINK=YIELD_RUM]rum[\LINK]! Assigning a [LINK=UNIT_DISTILLER]master distiller[\LINK] to this profession will multiply the amount of [COLOR_HIGHLIGHT_TEXT]rum[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]fruit brandy[COLOR_REVERT] produced each turn, but will also increase how much [COLOR_HIGHLIGHT_TEXT]sugar[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]fruit[COLOR_REVERT] is consumed.</English>
 		<French>En assignant un colon à n'importe quel site de production de rhum, vous lui allouerez la profession de distillateur, ce qui vous permettra de transformer le [COLOR_HIGHLIGHT_TEXT]sucre[COLOR_REVERT] en [COLOR_HIGHLIGHT_TEXT]rhum[COLOR_REVERT], dont le commerce est largement plus lucratif ! En assignant un [COLOR_UNIT_TEXT]maître distillateur[COLOR_REVERT] à cette profession, vous augmenterez la quantité de [COLOR_HIGHLIGHT_TEXT]rhum[COLOR_REVERT] produite lors de chaque tour, mais également la quantité de [COLOR_HIGHLIGHT_TEXT]sucre[COLOR_REVERT] consommée.</French>
 		<German>Wenn man einen Bürger anweist, in einer Rumbrennerei zu arbeiten, nimmt dieser Bürger den Rumbrennerberuf an und verarbeitet den [COLOR_HIGHLIGHT_TEXT]Zucker[COLOR_REVERT] der Siedlung zu [COLOR_HIGHLIGHT_TEXT]Rum[COLOR_REVERT]. Wenn man dem Beruf einen [COLOR_UNIT_TEXT]Brennermeister[COLOR_REVERT] zuweist, verdoppelt sich die Menge des produzierten [COLOR_HIGHLIGHT_TEXT]Rums[COLOR_REVERT] und auch entsprechend den Zuckerverbrauch.</German>
 		<Italian>Mandando un colono a lavorare in un qualsiasi edificio per la produzione di rum, questi assumerà la professione di distillatore, trasformando lo [COLOR_HIGHLIGHT_TEXT]zucchero[COLOR_REVERT] in proficuo [COLOR_HIGHLIGHT_TEXT]rum[COLOR_REVERT]! Assegnando a questa professione un [COLOR_UNIT_TEXT]mastro distillatore[COLOR_REVERT] aumenterai la quantità di [COLOR_HIGHLIGHT_TEXT]rum[COLOR_REVERT] prodotto ogni turno, ma anche il consumo di [COLOR_HIGHLIGHT_TEXT]zucchero[COLOR_REVERT].</Italian>
@@ -1103,11 +1011,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_DYER_STRATEGY</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Dyers[COLOR_REVERT] dye [LINK=YIELD_CLOTH]cloth[\LINK] or [LINK=YIELD_WOOL_CLOTH]wool cloth[\LINK] with [LINK=YIELD_INDIGO]indigo[\LINK], [LINK=YIELD_LOGWOOD]logwood[\LINK] or [LINK=YIELD_COCHINEAL]cochineal[\LINK] to make [LINK=YIELD_COLOURED_CLOTH]coloured cloth[\LINK] or [LINK=YIELD_COLOURED_WOOL_CLOTH]coloured wool cloth[\LINK] in the [LINK=BUILDING_DYERS_HOUSE]dyer's house[\LINK] or one of its upgrades. The wizards of this craft are [LINK=UNIT_DYER]master dyers[\LINK], who work twice as fast as long as enough indigo and cloth are available.</English>
-		<French>Les [COLOR_HIGHLIGHT_TEXT]teinturiers[COLOR_REVERT] teignent [LINK=YIELD_CLOTH]tissu[\LINK] ou [LINK=YIELD_WOOL_CLOTH]draps de laine[\LINK] avec [LINK=YIELD_INDIGO]indigo[\LINK], [LINK=YIELD_LOGWOOD]bois rond[\LINK] ou [LINK=YIELD_COCHINEAL]cochenille[\LINK] pour fabriquer [LINK=YIELD_COLOURED_CLOTH]costumes teintés[\LINK] ou [LINK=YIELD_COLOURED_WOOL_CLOTH]tissu de laine coloré[\LINK] dans la [LINK=BUILDING_DYERS_HOUSE]Maison du teinturier[\LINK] ou l'une de ses améliorations. Les maîtres de cet artisanat sont les [LINK=UNIT_DYER]maîtres teinturiers[\LINK], qui travaillent deux fois plus vite tant qu'il y a suffisamment d'indigo et de tissu.</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Leinenfärber[COLOR_REVERT] färben [LINK=YIELD_CLOTH]Stoffe[\LINK] oder [LINK=YIELD_WOOL_CLOTH]Wollstoffe[\LINK] mittels [LINK=YIELD_INDIGO]Indigo[\LINK], [LINK=YIELD_LOGWOOD]Blauholz[\LINK] oder [LINK=YIELD_COCHINEAL]Cochenille[\LINK], wodurch [LINK=YIELD_COLOURED_CLOTH]gefärbte Stoffe[\LINK] oder [LINK=YIELD_COLOURED_WOOL_CLOTH]gefärbtes Wolltuch[\LINK] entstehen. Dieser Prozess findet meist im [LINK=BUILDING_DYERS_HOUSE]Färberhaus[\LINK] oder einer seiner Erweiterungen statt und ist noch effektiver, wenn Sie dem Beruf einen [LINK=UNIT_DYER]Meister-Färber[\LINK] zuweisen, die doppelt so schnell arbeiten, solange genügend Indigo und Stoff vorhanden sind.</German>
-		<Italian>I [COLOR_HIGHLIGHT_TEXT]tintori[COLOR_REVERT] tingono [LINK=YIELD_CLOTH]tessuto[\LINK] o [LINK=YIELD_WOOL_CLOTH]vestiti di lana[\LINK] con [LINK=YIELD_INDIGO]indaco[\LINK], [LINK=YIELD_LOGWOOD]logwood[\LINK] o [LINK=YIELD_COCHINEAL]cocciniglia[\LINK] per fare [LINK=YIELD_COLOURED_CLOTH]tessuti colorati[\LINK] o [LINK=YIELD_COLOURED_WOOL_CLOTH]panno di lana colorato[\LINK] nella [LINK=BUILDING_DYERS_HOUSE]casa del tintore[\LINK] o in uno dei suoi potenziamenti. I maghi di questo mestiere sono [LINK=UNIT_DYER]mastri tintori[\LINK], che lavorano due volte più velocemente finché sono disponibili abbastanza indaco e stoffa.</Italian>
-		<Spanish>[COLOR_HIGHLIGHT_TEXT]Tintoreros[COLOR_REVERT] tiñen [LINK=YIELD_CLOTH]tela[\LINK] o [LINK=YIELD_WOOL_CLOTH]ropa de lana[\LINK] con [LINK=YIELD_INDIGO]índigo[\LINK], [LINK=YIELD_LOGWOOD]leña[\LINK] o [LINK=YIELD_COCHINEAL]cochinilla[\LINK] para hacer [LINK=YIELD_COLOURED_CLOTH]tela de color[\LINK] o [LINK=YIELD_COLOURED_WOOL_CLOTH]tela de lana de colores[\LINK] en la [LINK=BUILDING_DYERS_HOUSE]casa del tintorero[\LINK] o en una de sus mejoras. Los magos de este oficio son [LINK=UNIT_DYER]maestros tintoreros[\LINK], que trabajan el doble de rápido siempre que haya suficiente índigo y tela disponibles.</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Dyers[COLOR_REVERT] dye [LINK=YIELD_CLOTH]cloth[\LINK] or [LINK=YIELD_WOOL_CLOTH]wool cloth[\LINK] with [LINK=YIELD_INDIGO]indigo[\LINK] to make [LINK=YIELD_COLOURED_CLOTH]coloured cloth[\LINK] or [LINK=YIELD_COLOURED_WOOL_CLOTH]coloured wool cloth[\LINK] in the [LINK=BUILDING_DYERS_HOUSE]dyer's house[\LINK] or one of its upgrades. The wizards of this craft are [LINK=UNIT_DYER]master dyers[\LINK], who work twice as fast as long as enough indigo and cloth are available.</English>
+		<French>Les [COLOR_HIGHLIGHT_TEXT]teinturiers[COLOR_REVERT] teignent [LINK=YIELD_CLOTH]tissu[\LINK] ou [LINK=YIELD_WOOL_CLOTH]draps de laine[\LINK] avec [LINK=YIELD_INDIGO]indigo[\LINK] pour fabriquer [LINK=YIELD_COLOURED_CLOTH]costumes teintés[\LINK] ou [LINK=YIELD_COLOURED_WOOL_CLOTH]tissu de laine coloré[\LINK] dans la [LINK=BUILDING_DYERS_HOUSE]Maison du teinturier[\LINK] ou l'une de ses améliorations. Les maîtres de cet artisanat sont les [LINK=UNIT_DYER]maîtres teinturiers[\LINK], qui travaillent deux fois plus vite tant qu'il y a suffisamment d'indigo et de tissu.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Leinenfärber[COLOR_REVERT] färben [LINK=YIELD_CLOTH]Stoffe[\LINK] oder [LINK=YIELD_WOOL_CLOTH]Wollstoffe[\LINK] mittels [LINK=YIELD_INDIGO]Indigo[\LINK], wodurch [LINK=YIELD_COLOURED_CLOTH]gefärbte Stoffe[\LINK] oder [LINK=YIELD_COLOURED_WOOL_CLOTH]gefärbtes Wolltuch[\LINK] entstehen. Dieser Prozess findet meist im [LINK=BUILDING_DYERS_HOUSE]Färberhaus[\LINK] oder einer seiner Erweiterungen statt und ist noch effektiver, wenn Sie dem Beruf einen [LINK=UNIT_DYER]Meister-Färber[\LINK] zuweisen, die doppelt so schnell arbeiten, solange genügend Indigo und Stoff vorhanden sind.</German>
+		<Italian>I [COLOR_HIGHLIGHT_TEXT]tintori[COLOR_REVERT] tingono [LINK=YIELD_CLOTH]tessuto[\LINK] o [LINK=YIELD_WOOL_CLOTH]vestiti di lana[\LINK] con [LINK=YIELD_INDIGO]indaco[\LINK], per fare [LINK=YIELD_COLOURED_CLOTH]tessuti colorati[\LINK] o [LINK=YIELD_COLOURED_WOOL_CLOTH]panno di lana colorato[\LINK] nella [LINK=BUILDING_DYERS_HOUSE]casa del tintore[\LINK] o in uno dei suoi potenziamenti. I maghi di questo mestiere sono [LINK=UNIT_DYER]mastri tintori[\LINK], che lavorano due volte più velocemente finché sono disponibili abbastanza indaco e stoffa.</Italian>
+		<Spanish>[COLOR_HIGHLIGHT_TEXT]Tintoreros[COLOR_REVERT] tiñen [LINK=YIELD_CLOTH]tela[\LINK] o [LINK=YIELD_WOOL_CLOTH]ropa de lana[\LINK] con [LINK=YIELD_INDIGO]índigo[\LINK], para hacer [LINK=YIELD_COLOURED_CLOTH]tela de color[\LINK] o [LINK=YIELD_COLOURED_WOOL_CLOTH]tela de lana de colores[\LINK] en la [LINK=BUILDING_DYERS_HOUSE]casa del tintorero[\LINK] o en una de sus mejoras. Los magos de este oficio son [LINK=UNIT_DYER]maestros tintoreros[\LINK], que trabajan el doble de rápido siempre que haya suficiente índigo y tela disponibles.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_WOOL_DYER</Tag>
@@ -2386,52 +2294,6 @@
 		<German>Hügelfelder in der [LINK=TERRAIN_PLAINS]Prärie[\LINK] können [LINK=YIELD_RED_PEPPER]Roten Pfeffer[\LINK] hervorbringen, wenn dem dort arbeitenden Kolonisten der Beruf [COLOR_HIGHLIGHT_TEXT]Pfefferpflanzer[COLOR_REVERT] zugewiesen wurde. Ihre Pfefferernte kann erheblich gesteigert werden, wenn Sie dem Beruf einen [LINK=UNIT_RED_PEPPER_PLANTER]Erfahrenen Pfefferpflanzer[\LINK] zuweisen.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_ROPES_MAKER</Tag>
-		<English>Roper (Hemp):Ropers (Hemp)</English>
-		<French>
-			<Text>Cordelier (Chanvre):Cordeliers (Chanvre)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>
-			<Text>Reepschläger (Hanf):Reepschläger (Hanf)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</German>
-		<Russian>Канатный мастер (конопля):Канатные мастера (конопля)</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_ROPES_MAKER_FLAX</Tag>
-		<English>Roper (Flax):Ropers (Flax)</English>
-		<French>
-			<Text>Cordelier (Lin):Cordeliers (Lin)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>
-			<Text>Reepschläger (Flachs):Reepschläger (Flachs)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</German>
-		<Russian>Канатный мастер (лен):Канатные мастера (лен)</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_ROPES_MAKER_HELP</Tag>
-		<English>????</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_ROPES_MAKER_PEDIA</Tag>
-		<English>Rope has been an essential tool for hunting, pulling, fastening, attaching, carrying, lifting and climbing since prehistoric times. For five hundred years, until the end of the 18th century, rope making throughout Europe and in European overseas colonies was done in long buildings called ropewalks which allowed teams of rope makers to spread out the hemp fibers, beat them and twist them together to create ropes. The great length of the ropewalks allowed for the creation of ropes measuring up to 300 yards.</English>
-		<French>Depuis la préhistoire, le cordage est un outil essentiel pour chasser, tirer, attacher, fixer, porter, soulever et grimper. Pendant cinq cents ans, jusqu'à la fin du 18e siècle, la fabrication des cordages en Europe et dans les colonies européennes d'outre-mer se faisait dans de longs bâtiments appelés corderie, qui permettaient aux équipes de cordistes d'étaler les fibres de chanvre, de les battre et de les tordre ensemble pour créer des cordages. La grande longueur des trottoirs à cordages permettait de créer des cordages mesurant jusqu'à 300 mètres.</French>
-		<German>Seile sind seit prähistorischen Zeiten ein unverzichtbares Werkzeug zum Jagen, Ziehen, Befestigen, Anbinden, Tragen, Heben und Klettern. Fünfhundert Jahre lang, bis zum Ende des 18. Jahrhunderts, wurde die Seilherstellung in ganz Europa und in den europäischen Überseekolonien in langen Gebäuden, den sogenannten Reeperbahnen, durchgeführt, die es den Reepschlägern ermöglichten, die Hanffasern auszubreiten, sie zu schlagen und zu Seilen zusammenzudrehen. Die große Länge der Reeperbahnen ermöglichte die Herstellung von Seilen mit einer Länge von bis zu 300 Metern.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_ROPES_MAKER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Ropers[COLOR_REVERT] produce [LINK=YIELD_ROPE]ropes[\LINK] from [LINK=YIELD_HEMP]hemp[\LINK] or [LINK=YIELD_FLAX]flax[\LINK]. They can do this in buildings like the [LINK=BUILDING_LANDING_STAGE]pier[\LINK] or one of its upgrades. The most effective colonists for this craft are [LINK=UNIT_ROPES_MAKER]master ropers[\LINK].</English>
-		<French>Les [COLOR_UNIT_TEXT]cordeliers[COLOR_REVERT] produisent de la [LINK=YIELD_ROPE]cordage[\LINK] à partir de [LINK=YIELD_HEMP]chanvre[\LINK] ou [LINK=YIELD_FLAX]lin[\LINK]. Ils travaillent dans les docks et les ports, dans des bâtiments comme la [LINK=BUILDING_LANDING_STAGE]embarcadère[\LINK] ou l'une de ses améliorations. Les colons les plus efficaces pour cet engin sont les [LINK=UNIT_ROPES_MAKER]maîtres cordeliers[\LINK].</French>
-		<German>[COLOR_UNIT_TEXT]Reepschläger[COLOR_REVERT] stellen [LINK=YIELD_ROPE]Seile[\LINK] aus [LINK=YIELD_HEMP]Hanf[\LINK] oder [LINK=YIELD_FLAX]Flachs[\LINK] her. Die Herstellung findet meist in Gebäuden der Hafengegend statt, also dem [LINK=BUILDING_DOCK]Landungssteg[\LINK] oder einer seiner Ausbaustufen. Der effektivste Kolonist in diesem Handwerk ist der [LINK=UNIT_ROPES_MAKER]Seilermeister[\LINK].</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_ROYAL_CAVALRY</Tag>
 		<English>
 			<Text>Royal Cavalry:Royal Cavalry</Text>
@@ -2637,9 +2499,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_SAILCLOTH_MAKER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Sailmakers[COLOR_REVERT] produce [LINK=YIELD_SAILCLOTH]sailcloth[\LINK] from [LINK=YIELD_HEMP]hemp[\LINK] or [LINK=YIELD_FLAX]flax[\LINK]. They do this in buildings like the [LINK=BUILDING_DOCK]dock[\LINK] or one of its upgrades. The most effective units for this craft are [LINK=UNIT_SAILCLOTH_MAKER]master sailmakers[\LINK].</English>
-		<French>Les [COLOR_UNIT_TEXT]voiliers[COLOR_REVERT] produisent des [LINK=YIELD_SAILCLOTH]voiles[\LINK] à partir de [LINK=YIELD_HEMP]chanvre[\LINK] ou [LINK=YIELD_FLAX]chanvre[\LINK]. Ils travaillent dans les docks et les ports, dans des bâtiments comme la [LINK=BUILDING_DOCK]docks[\LINK] ou l'une de ses améliorations. Les colons les plus efficaces pour cet engin sont les [LINK=UNIT_SAILCLOTH_MAKER]maîtres cordeliers[\LINK].</French>
-		<German>[COLOR_UNIT_TEXT]Segelmacher[COLOR_REVERT] verarbeiten [LINK=YIELD_HEMP]Hanf[\LINK] oder [LINK=YIELD_FLAX]Flachs[\LINK] zu [LINK=YIELD_SAILCLOTH]Segeltuch[\LINK]. Die Herstellung findet meist in Gebäuden des [LINK=BUILDING_DOCK]Hafens[\LINK] statt und ist noch effektiver, wenn Sie dem Beruf einen [LINK=UNIT_SAILCLOTH_MAKER]Meister-Segelmacher[\LINK] zuweisen.</German>
+		<English>[COLOR_UNIT_TEXT]Sailmakers[COLOR_REVERT] produce [LINK=YIELD_SAILCLOTH]sailcloth[\LINK] from [LINK=YIELD_HEMP]hemp[\LINK]. They do this in buildings like the [LINK=BUILDING_DOCK]dock[\LINK] or one of its upgrades. The most effective units for this craft are [LINK=UNIT_SAILCLOTH_MAKER]master sailmakers[\LINK].</English>
+		<French>Les [COLOR_UNIT_TEXT]voiliers[COLOR_REVERT] produisent des [LINK=YIELD_SAILCLOTH]voiles[\LINK] à partir de [LINK=YIELD_HEMP]chanvre[\LINK]. Ils travaillent dans les docks et les ports, dans des bâtiments comme la [LINK=BUILDING_DOCK]docks[\LINK] ou l'une de ses améliorations. Les colons les plus efficaces pour cet engin sont les [LINK=UNIT_SAILCLOTH_MAKER]maîtres cordeliers[\LINK].</French>
+		<German>[COLOR_UNIT_TEXT]Segelmacher[COLOR_REVERT] verarbeiten [LINK=YIELD_HEMP]Hanf[\LINK] oder zu [LINK=YIELD_SAILCLOTH]Segeltuch[\LINK]. Die Herstellung findet meist in Gebäuden des [LINK=BUILDING_DOCK]Hafens[\LINK] statt und ist noch effektiver, wenn Sie dem Beruf einen [LINK=UNIT_SAILCLOTH_MAKER]Meister-Segelmacher[\LINK] zuweisen.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_SALT_MINER</Tag>
@@ -3219,7 +3081,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_TOBACCONIST_STRATEGY</Tag>
-		<English>Placing a colonist in a [LINK=BUILDING_TOBACCONISTS_HOUSE]tobacconist's house[\LINK] or [LINK=BUILDING_TOBACCONISTS_SHOP]tobacconist's shop[\LINK] or a [LINK=BUILDING_CIGAR_FACTORY]cigar factory[\LINK] will assign that colonist to the [COLOR_HIGHLIGHT_TEXT]tobacconist[COLOR_REVERT] profession, turning [LINK=YIELD_TOBACCO]tobacco[\LINK] into [LINK=YIELD_CIGARS]cigars[\LINK], or [LINK=YIELD_YERBA_LEAVES] yerba leaves[\LINK] into [LINK=YIELD_YERBA_TEA]yerba maté[\LINK]. Assigning [LINK=UNIT_TOBACCONIST]master tobacconists[\LINK] to this job will increase the output of cigars or yerba maté significantly, but only if they have the extra tobacco or yerba leaves available.</English>
+		<English>Placing a colonist in a [LINK=BUILDING_TOBACCONISTS_HOUSE]tobacconist's house[\LINK] or [LINK=BUILDING_TOBACCONISTS_SHOP]tobacconist's shop[\LINK] or a [LINK=BUILDING_CIGAR_FACTORY]cigar factory[\LINK] will assign that colonist to the [COLOR_HIGHLIGHT_TEXT]tobacconist[COLOR_REVERT] profession, turning [LINK=YIELD_TOBACCO]tobacco[\LINK] into [LINK=YIELD_CIGARS]cigars[\LINK]. Assigning [LINK=UNIT_TOBACCONIST]master tobacconists[\LINK] to this job will increase the output of cigars significantly, but only if they have the extra tobacco available.</English>
 		<French>En plaçant un colon dans un [COLOR_BUILDING_TEXT]atelier du cigarier[COLOR_REVERT], dans une [COLOR_BUILDING_TEXT]boutique de cigarier[COLOR_REVERT] ou une [COLOR_BUILDING_TEXT]usine de cigares[COLOR_REVERT], vous lui allouerez la profession de cigarier, ce qui vous permettra de transformer votre [COLOR_HIGHLIGHT_TEXT]tabac[COLOR_REVERT] en [COLOR_HIGHLIGHT_TEXT]cigares[COLOR_REVERT]. Si vous assignez un [COLOR_UNIT_TEXT]Maître cigarier[COLOR_REVERT] à cette fonction, vous augmenterez considérablement le nombre de [COLOR_HIGHLIGHT_TEXT]cigares[COLOR_REVERT] produits, mais seulement vous disposez d'un excédent de [COLOR_HIGHLIGHT_TEXT]tabac[COLOR_REVERT].</French>
 		<German>Wenn man einen Bürger in ein [COLOR_BUILDING_TEXT]Tabakhaus[COLOR_REVERT], einen [COLOR_BUILDING_TEXT]Tabakwarenbetrieb[COLOR_REVERT] oder eine [COLOR_BUILDING_TEXT]Zigarrenfabrik[COLOR_REVERT] schickt, wird er dem Zigarrendreherberuf zugewiesen. Er verarbeitet nun [COLOR_HIGHLIGHT_TEXT]Tabak[COLOR_REVERT] zu [COLOR_HIGHLIGHT_TEXT]Zigarren[COLOR_REVERT]. Wenn man dem Beruf einen [COLOR_UNIT_TEXT]Meister-Zigarrendreher[COLOR_REVERT] zuweist, erhöhen sich dadurch die Menge der hergestellten [COLOR_HIGHLIGHT_TEXT]Zigarren[COLOR_REVERT] und auch der Verbrauch an Tabak.</German>
 		<Italian>Se mandi un colono a lavorare in una [COLOR_BUILDING_TEXT]casa del tabaccaio[COLOR_REVERT], in un [COLOR_BUILDING_TEXT]negozio del tabaccaio[COLOR_REVERT] o in una [COLOR_BUILDING_TEXT]fabbrica di sigari[COLOR_REVERT] gli assegnerai la professione di tabaccaio e trasformerà [COLOR_HIGHLIGHT_TEXT]tabacco[COLOR_REVERT] in [COLOR_HIGHLIGHT_TEXT]sigari[COLOR_REVERT]. Assegnando questo lavoro a un [COLOR_UNIT_TEXT]mastro tabaccaio[COLOR_REVERT] aumenterai notevolmente la produzione di [COLOR_HIGHLIGHT_TEXT]sigari[COLOR_REVERT], ma solo se hai a disposizione il necessario [COLOR_HIGHLIGHT_TEXT]tabacco[COLOR_REVERT] extra.</Italian>
@@ -3649,7 +3511,7 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_NATIVE_TRADER_STRATEGY</Tag>
-		<English>[LINK=PROFESSION_NATIVE_TRADER]Native traders[\LINK] are special [LINK=CONCEPT_UNITS]units[\LINK] who can establish [COLOR_HIGHLIGHT_TEXT]trading posts[COLOR_REVERT] in [LINK=CONCEPT_NATIVES]Native[\LINK] settlements. They need [LINK=YIELD_TRADE_GOODS]trade goods[\LINK] and [LINK=YIELD_BAKERY_GOODS]provisions[\LINK].[NEWLINE]Over time, trading posts will generate money and create [LINK=UNIT_TREASURE]treasures[\LINK], to be sent back to the colonies.[PARAGRAPH:1]Doing this with an [LINK=UNIT_EXPERT_TRADER]expert trader[\LINK] speeds up the rate at which new [LINK=UNIT_TREASURE]treasures[\LINK] are created. [PARAGRAPH:1]Doing this with a [LINK=UNIT_SEASONED_TRADER]courageous trader[\LINK] means you gather [LINK=UNIT_TREASURE]treasures[\LINK] even quicker. The courageous native trader also moves faster. However, they cannot be acquired as often as you like, but only through special events in the game.</English>
+		<English>[LINK=PROFESSION_NATIVE_TRADER]Native traders[\LINK] are special [LINK=CONCEPT_UNITS]units[\LINK] who can establish [COLOR_HIGHLIGHT_TEXT]trading posts[COLOR_REVERT] in [LINK=CONCEPT_NATIVES]Native[\LINK] settlements. They need [LINK=YIELD_HOUSEHOLD_GOODS]trade goods[\LINK] and [LINK=YIELD_BAKERY_GOODS]provisions[\LINK].[NEWLINE]Over time, trading posts will generate money and create [LINK=UNIT_TREASURE]treasures[\LINK], to be sent back to the colonies.[PARAGRAPH:1]Doing this with an [LINK=UNIT_EXPERT_TRADER]expert trader[\LINK] speeds up the rate at which new [LINK=UNIT_TREASURE]treasures[\LINK] are created. [PARAGRAPH:1]Doing this with a [LINK=UNIT_SEASONED_TRADER]courageous trader[\LINK] means you gather [LINK=UNIT_TREASURE]treasures[\LINK] even quicker. The courageous native trader also moves faster. However, they cannot be acquired as often as you like, but only through special events in the game.</English>
 		<French>Les [LINK=PROFESSION_NATIVE_TRADER]marchands indigènes[\LINK] sont des [LINK=CONCEPT_UNITS]unités[\LINK] spéciales qui peuvent établir des [COLOR_HIGHLIGHT_TEXT]comptoirs de commerce[COLOR_REVERT] dans les villes et villages [LINK=CONCEPT_NATIVES]indigènes[\LINK].[NEWLINE]Au fil du temps, ces comptoirs généreront de l'argent et créeront des [LINK=UNIT_TREASURE]trésors[\LINK], qui seront renvoyés dans les colonies.[PARAGRAPH:1]Faire cela avec un [LINK=UNIT_EXPERT_TRADER]marchand expert[\LINK] accélère la vitesse à laquelle de nouveaux [LINK=UNIT_TREASURE]trésors[\LINK] sont créés.</French>
 		<German>[LINK=PROFESSION_NATIVE_TRADER]Ureinwohnerhändler[\LINK] sind spezielle [LINK=CONCEPT_UNITS]Einheiten[\LINK], die [COLOR_HIGHLIGHT_TEXT]Handelsposten[COLOR_REVERT] in [LINK=CONCEPT_NATIVES]Ureinwohnerdörfern[\LINK] errichten können.[NEWLINE]Von Zeit zu Zeit erzeugen Handelsposten einen [LINK=UNIT_TREASURE]Schatz[\LINK], mit dem das in der Zwischenzeit verdiente Gold zurück in die Kolonien geschickt wird.[PARAGRAPH:1]Nutzt man einen [LINK=UNIT_EXPERT_TRADER]Erfahrenen Ureinwohnerhändler[\LINK], werden deutlich häufiger [LINK=UNIT_TREASURE]Schätze[\LINK] erzeugt.[PARAGRAPH:1]Nutzt man einen [LINK=UNIT_SEASONED_TRADER]Couragierten Ureinwohnerhändler[\LINK], werden noch häufiger [LINK=UNIT_TREASURE]Schätze[\LINK] erzeugt. Der Couragierte Ureinwohnerhändler kann sich außerdem schneller vorwärtsbewegen. Er kann aber nicht beliebig oft erworben werden, sondern nur durch besondere Ereignisse im Spiel.</German>
 	</TEXT>

@@ -90,22 +90,6 @@
 		<Spanish>Favorecer Hojas de coca</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EMPHASIZE_COCOA</Tag>
-		<English>Emphasize Cocoa</English>
-		<French>Privilégier le Cacao torréfié</French>
-		<German>Schwerpunkt Kakao</German>
-		<Italian>Accentuare cacao</Italian>
-		<Spanish>Favorecer Cacao</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EMPHASIZE_COCOA_FRUITS</Tag>
-		<English>Emphasize Cocoa Pods</English>
-		<French>Privilégier les Fèves de cacao</French>
-		<German>Schwerpunkt Kakaofrüchte</German>
-		<Italian>Accentuare frutta di cacao</Italian>
-		<Spanish>Favorecer Fruta del cacao</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EMPHASIZE_COFFEE</Tag>
 		<English>Emphasize Coffee</English>
 		<French>Privilégier le Café torréfié</French>
@@ -346,22 +330,6 @@
 		<Spanish>Desfavorecer Hojas de coca</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EMPHASIZE_NO_COCOA</Tag>
-		<English>Deemphasize Cocoa</English>
-		<French>Minimiser le Cacao torréfié</French>
-		<German>Schwerpunkt Kakao aufheben</German>
-		<Italian>De-accentuare cacao</Italian>
-		<Spanish>Desfavorecer Cacao</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EMPHASIZE_NO_COCOA_FRUITS</Tag>
-		<English>Deemphasize Cocoa Pods</English>
-		<French>Minimiser les Fèves de cacao</French>
-		<German>Schwerpunkt Kakaofrüchte aufheben</German>
-		<Italian>De-accentuare frutta di cacao</Italian>
-		<Spanish>Desfavorecer Fruta del cacao</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EMPHASIZE_NO_COFFEE</Tag>
 		<English>Deemphasize Coffee</English>
 		<French>Minimiser le Café torréfié</French>
@@ -562,14 +530,6 @@
 		<Spanish>Desfavorecer Pimiento rojo</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EMPHASIZE_NO_ROPE</Tag>
-		<English>Deemphasize Ropes</English>
-		<French>Minimiser le Cordage</French>
-		<German>Schwerpunkt Seile aufheben</German>
-		<Italian>De-accentuare corde</Italian>
-		<Spanish>Desfavorecer Cuerdas</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EMPHASIZE_NO_RUM</Tag>
 		<English>Deemphasize Rum</English>
 		<French>Minimiser le Rhum</French>
@@ -728,14 +688,6 @@
 		<German>Schwerpunkt Roter Pfeffer</German>
 		<Italian>Accentuare pepe rosso</Italian>
 		<Spanish>Favorecer Pimiento rojo</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EMPHASIZE_ROPE</Tag>
-		<English>Emphasize Ropes</English>
-		<French>Privilégier le Cordage</French>
-		<German>Schwerpunkt Seile</German>
-		<Italian>Accentuare corde</Italian>
-		<Spanish>Favorecer Cuerdas</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EMPHASIZE_RUM</Tag>

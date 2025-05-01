@@ -4393,36 +4393,26 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 		case YIELD_FOOD:
 		// Strategic resource, no reduction
 		case YIELD_HORSES:
-		case YIELD_COCOA:
 		case YIELD_COFFEE:
-		case YIELD_ROASTED_PEANUTS:
 		case YIELD_CHEESE:
 		case YIELD_CIGARS:
-		case YIELD_YERBA_TEA:
 		case YIELD_CLOTH:
 		case YIELD_COLOURED_CLOTH:
 		case YIELD_FESTIVE_CLOTHES:
 		case YIELD_WOOL_CLOTH:
 		case YIELD_COLOURED_WOOL_CLOTH:
 		case YIELD_EVERYDAY_CLOTHES:
-		case YIELD_PIG_LEATHER:
 		case YIELD_LEATHER:
-		case YIELD_GOAT_HIDE_BOOTS:
 		case YIELD_PADDED_LEATHER_COATS:
 		case YIELD_COATS:
 		case YIELD_PREMIUM_COATS:
 		case YIELD_SALT:
 		case YIELD_SPICES:
-		case YIELD_VANILLA:
-		case YIELD_CHOCOLATE:
 		case YIELD_BEER:
 		case YIELD_RUM:
-		case YIELD_HOOCH:
 		case YIELD_WINE:
 		case YIELD_OLIVE_OIL:
-		case YIELD_RAPE_OIL:
 		case YIELD_WHALE_OIL:
-		case YIELD_POTTERY:
 		case YIELD_FURNITURE:
 		case YIELD_PADDED_FURNITURE:
 		case YIELD_FIELD_WORKER_TOOLS:
@@ -4430,52 +4420,32 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 			break;
 		// We punish overproduction of input yields
 		case YIELD_LUMBER:
-		case YIELD_HARDWOOD:
 		case YIELD_STONE:
 		case YIELD_CLAY:
 		case YIELD_HEMP:
-		case YIELD_FLAX:
 		case YIELD_ORE:
 		case YIELD_COAL:
-		case YIELD_CHAR_COAL:
-		case YIELD_PEAT:
 		case YIELD_SHEEP:
-		case YIELD_GOATS:
-		case YIELD_PIGS:
 		case YIELD_CATTLE:
 		case YIELD_CHICKEN:
-		case YIELD_GEESE:
-		case YIELD_RICE:
-		case YIELD_CASSAVA:
 		case YIELD_COCA_LEAVES:
 		case YIELD_MAPLE_SIRUP:
-		case YIELD_KAUTSCHUK:
-		case YIELD_COCOA_FRUITS:
 		case YIELD_COFFEE_BERRIES:
-		case YIELD_PEANUTS:
 		case YIELD_MILK:
 		case YIELD_TOBACCO:
-		case YIELD_YERBA_LEAVES:
 		case YIELD_COTTON:
 		case YIELD_INDIGO:
-		case YIELD_LOGWOOD:
-		case YIELD_COCHINEAL:
 		case YIELD_WOOL:
-		case YIELD_GOAT_HIDES:
-		case YIELD_PIG_SKIN:
 		case YIELD_HIDES:
 		case YIELD_DOWNS:
 		case YIELD_FUR:
 		case YIELD_PREMIUM_FUR:
 		case YIELD_RAW_SALT:
 		case YIELD_RED_PEPPER:
-		case YIELD_VANILLA_PODS:
 		case YIELD_BARLEY:
 		case YIELD_SUGAR:
-		case YIELD_FRUITS:
 		case YIELD_GRAPES:
 		case YIELD_OLIVES:
-		case YIELD_RAPE:
 		case YIELD_WHALE_BLUBBER:
 		case YIELD_VALUABLE_WOOD:
 			{
@@ -4513,10 +4483,8 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 				}
 			}
 			break;
-		case YIELD_TRADE_GOODS:
 		// These are strategic yields and their price is never reduced
 		case YIELD_BAKERY_GOODS:
-		case YIELD_ROPE:
 		case YIELD_SAILCLOTH:
 			break;
 		case YIELD_TOOLS:
@@ -4534,7 +4502,6 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 		case YIELD_BLADES:
 		case YIELD_MUSKETS:
 		// Previous metals are never reduced in value
-		case YIELD_WILD_FEATHERS:
 		case YIELD_SILVER:
 		case YIELD_GOLD:
 		case YIELD_GEMS:
@@ -5411,7 +5378,7 @@ void CvCityAI::AI_bestPlotBuild(const CvPlot* pPlot, int* piBestValue, BuildType
 			}
 			// R&R, ray, AI builds Improvements wiser - START
 			//else if (eYield != YIELD_FOOD)
-			else if (eYield != YIELD_FOOD && eYield != YIELD_LUMBER && eYield != YIELD_FUR && eYield != YIELD_WILD_FEATHERS)
+			else if (eYield != YIELD_FOOD && eYield != YIELD_LUMBER && eYield != YIELD_FUR)
 			// R&R, ray, AI builds Improvements wiser - END
 			{
 				if (aiCurrentYields[eYield] <= (kOwner.AI_getBestPlotYield(eYield) / 2))
@@ -5526,7 +5493,7 @@ void CvCityAI::AI_bestPlotBuild(const CvPlot* pPlot, int* piBestValue, BuildType
 
 					// R&R, ray, AI builds Improvements wiser - START
 					//else if (eYield != YIELD_FOOD)
-					else if (eYield != YIELD_FOOD && eYield != YIELD_LUMBER && eYield != YIELD_FUR && eYield != YIELD_WILD_FEATHERS)
+					else if (eYield != YIELD_FOOD && eYield != YIELD_LUMBER && eYield != YIELD_FUR)
 					// R&R, ray, AI builds Improvements wiser - END
 					{
 						if (aiFinalYields[eYield] <= (kOwner.AI_getBestPlotYield(eYield) / 2))
