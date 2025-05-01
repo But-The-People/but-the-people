@@ -6563,8 +6563,6 @@ bool CvCityAI::canHaveCitizenProfession(const CvUnit& kUnit, ProfessionTypes ePr
 		}
 	}
 
-	if (AI_isWorkforceHack())
-	{
 		//check if special building has been built
 		if (kNewProfession.getSpecialBuilding() != NO_SPECIALBUILDING)
 		{
@@ -6580,7 +6578,6 @@ bool CvCityAI::canHaveCitizenProfession(const CvUnit& kUnit, ProfessionTypes ePr
 			if (!isAvailableProfessionSlot(eProfession, &kUnit))
 			{
 				return false;
-			}
 		}
 	}
 
