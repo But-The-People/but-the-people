@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Civ4GameText xmlns="http://www.firaxis.com">
 	<TEXT>
-		<Tag>TXT_KEY_BUILD_FRUIT_PLANTATION</Tag>
-		<English>Build a [LINK=IMPROVEMENT_FRUIT_PLANTATION]fruit plantation[\LINK]</English>
-		<French>Construire une [LINK=IMPROVEMENT_FRUIT_PLANTATION]plantation de fruits[\LINK]</French>
-		<German>[LINK=IMPROVEMENT_FRUIT_PLANTATION]Obstplantage[\LINK] bauen</German>
-		<Italian>Costruire una [LINK=IMPROVEMENT_FRUIT_PLANTATION]piantagione di frutos[\LINK]</Italian>
-		<Spanish>Construir una [LINK=IMPROVEMENT_FRUIT_PLANTATION]plantación de frutos[\LINK]</Spanish>
-		<Russian>Построить [COLOR_HIGHLIGHT_TEXT]фруктовую плантацию[COLOR_REVERT]</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILD_FRUIT_PLANTATION_HELP</Tag>
-		<English>????</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BUILD_COLLECTORS_POST</Tag>
 		<English>Build a [LINK=IMPROVEMENT_COLLECTORS_POST]collectors post[\LINK]</English>
 		<French>Construire un [LINK=IMPROVEMENT_COLLECTORS_POST]poste de collection[\LINK]</French>
@@ -238,17 +225,6 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BUILD_QUARRY_HELP</Tag>
-		<English>????</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILD_PEAT_PIT</Tag>
-		<English>Build a [LINK=IMPROVEMENT_QUARRY]peat pit[\LINK]</English>
-		<French>Creuser une [LINK=IMPROVEMENT_QUARRY]fosse à tourbe[\LINK] </French>
-		<German>[LINK=IMPROVEMENT_QUARRY]Torfgrube[\LINK] anlegen</German>
-		<Russian>Построить [COLOR_HIGHLIGHT_TEXT]торфяной карьер[COLOR_REVERT]</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BUILD_PEAT_PIT_HELP</Tag>
 		<English>????</English>
 	</TEXT>
 	<TEXT>

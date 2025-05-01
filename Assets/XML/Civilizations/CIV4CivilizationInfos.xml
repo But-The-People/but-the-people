@@ -3611,20 +3611,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -3658,18 +3645,6 @@
 				</Building>
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
 				<Building>
@@ -3833,12 +3808,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -3871,14 +3841,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -3897,12 +3862,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -4163,18 +4123,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -4183,14 +4137,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -4199,62 +4147,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -4280,7 +4204,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -4746,20 +4670,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -4794,20 +4705,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -4972,12 +4870,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -5010,14 +4903,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -5036,12 +4924,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -5297,18 +5180,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -5317,14 +5194,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -5333,62 +5204,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -5414,7 +5261,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -5884,20 +5731,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -5932,20 +5766,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -6106,12 +5927,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -6144,14 +5960,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -6170,12 +5981,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -6436,18 +6242,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -6456,14 +6256,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -6472,62 +6266,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -6553,7 +6323,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -7023,20 +6793,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -7071,20 +6828,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -7245,12 +6989,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -7283,14 +7022,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -7309,12 +7043,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -7570,18 +7299,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -7590,14 +7313,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -7606,62 +7323,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -7687,7 +7380,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -8157,20 +7850,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -8205,20 +7885,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -8383,12 +8050,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -8421,14 +8083,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -8447,12 +8104,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -8708,18 +8360,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -8728,14 +8374,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -8744,62 +8384,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -8825,7 +8441,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -9295,20 +8911,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -9343,20 +8946,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -9521,12 +9111,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -9559,14 +9144,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -9585,12 +9165,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -9846,18 +9421,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -9866,14 +9435,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -9882,62 +9445,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -9963,7 +9502,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -10433,20 +9972,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -10481,20 +10007,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -10659,12 +10172,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -10697,14 +10205,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -10723,12 +10226,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -10984,18 +10482,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -11004,14 +10496,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -11020,62 +10506,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -11101,7 +10563,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -11571,20 +11033,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -11619,20 +11068,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -11797,12 +11233,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -11835,14 +11266,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -11861,12 +11287,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -12122,18 +11543,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -12142,14 +11557,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -12158,62 +11567,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -12239,7 +11624,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -12709,20 +12094,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -12757,20 +12129,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -12931,12 +12290,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -12969,14 +12323,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -12995,12 +12344,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -13256,18 +12600,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -13276,14 +12614,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -13292,62 +12624,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -13373,7 +12681,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -13839,20 +13147,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -13887,20 +13182,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -14061,12 +13343,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -14099,14 +13376,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -14125,12 +13397,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -14386,18 +13653,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -14406,14 +13667,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -14422,62 +13677,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -14503,7 +13734,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -14969,20 +14200,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -15017,20 +14235,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -15191,12 +14396,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -15229,14 +14429,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -15255,12 +14450,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -15516,18 +14706,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -15536,14 +14720,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -15552,62 +14730,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -15633,7 +14787,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -16099,20 +15253,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -16147,20 +15288,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -16325,12 +15453,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -16363,14 +15486,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -16389,12 +15507,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -16650,18 +15763,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -16670,14 +15777,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -16686,62 +15787,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -16767,7 +15844,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -17233,20 +16310,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -17281,20 +16345,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -17459,12 +16510,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -17497,14 +16543,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -17523,12 +16564,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -17784,18 +16820,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -17804,14 +16834,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -17820,62 +16844,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -17901,7 +16901,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -18371,20 +17371,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -18419,20 +17406,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -18593,12 +17567,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -18631,14 +17600,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -18657,12 +17621,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -18923,18 +17882,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -18943,14 +17896,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -18959,62 +17906,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -19040,7 +17963,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -19506,20 +18429,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -19554,20 +18464,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -19728,12 +18625,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -19766,14 +18658,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -19792,12 +18679,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -20058,18 +18940,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -20078,14 +18954,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -20094,62 +18964,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -20175,7 +19021,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -20641,20 +19487,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -20689,20 +19522,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -20867,12 +19687,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -20905,14 +19720,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -20931,12 +19741,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -21192,18 +19997,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -21212,14 +20011,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -21228,62 +20021,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -21309,7 +20078,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -21779,20 +20548,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -21827,20 +20583,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -22005,12 +20748,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -22043,14 +20781,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -22069,12 +20802,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -22330,18 +21058,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -22350,14 +21072,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -22366,62 +21082,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -22447,7 +21139,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -22917,20 +21609,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -22965,20 +21644,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -23143,12 +21809,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -23181,14 +21842,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -23207,12 +21863,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -23468,18 +22119,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -23488,14 +22133,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -23504,62 +22143,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -23585,7 +22200,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -24051,20 +22666,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -24099,20 +22701,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -24273,12 +22862,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -24311,14 +22895,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -24337,12 +22916,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -24603,18 +23177,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -24623,14 +23191,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -24639,62 +23201,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -24720,7 +23258,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -25190,20 +23728,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -25238,20 +23763,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -25412,12 +23924,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -25450,14 +23957,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -25476,12 +23978,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -25742,18 +24239,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -25762,14 +24253,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -25778,62 +24263,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -25859,7 +24320,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -26329,20 +24790,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -26377,20 +24825,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -26551,12 +24986,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -26589,14 +25019,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -26615,12 +25040,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -26876,18 +25296,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -26896,14 +25310,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -26912,62 +25320,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -26993,7 +25377,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -27463,20 +25847,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -27511,20 +25882,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -27689,12 +26047,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -27727,14 +26080,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -27753,12 +26101,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -28014,18 +26357,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -28034,14 +26371,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -28050,62 +26381,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -28131,7 +26438,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -28601,20 +26908,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -28649,20 +26943,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -28827,12 +27108,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -28865,14 +27141,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -28891,12 +27162,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -29152,18 +27418,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -29172,14 +27432,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -29188,62 +27442,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -29269,7 +27499,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -29739,20 +27969,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -29787,20 +28004,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -29961,12 +28165,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -29999,14 +28198,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -30025,12 +28219,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -30286,18 +28475,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -30306,14 +28489,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -30322,62 +28499,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -30403,7 +28556,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -30873,20 +29026,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -30921,20 +29061,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -31099,12 +29226,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -31137,14 +29259,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -31163,12 +29280,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -31424,18 +29536,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -31444,14 +29550,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -31460,62 +29560,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -31541,7 +29617,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -32011,20 +30087,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -32059,20 +30122,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -32237,12 +30287,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -32275,14 +30320,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -32301,12 +30341,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -32562,18 +30597,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -32582,14 +30611,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -32598,62 +30621,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -32679,7 +30678,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -33145,20 +31144,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -33193,20 +31179,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -33371,12 +31344,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -33409,14 +31377,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -33435,12 +31398,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -33696,18 +31654,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -33716,14 +31668,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -33732,62 +31678,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -33813,7 +31735,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -34283,20 +32205,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -34331,20 +32240,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -34505,12 +32401,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -34543,14 +32434,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -34569,12 +32455,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -34835,18 +32716,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -34855,14 +32730,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -34871,62 +32740,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -34952,7 +32797,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -35418,20 +33263,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -35466,20 +33298,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -35640,12 +33459,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -35678,14 +33492,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -35704,12 +33513,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -35965,18 +33769,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -35985,14 +33783,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -36001,62 +33793,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -36082,7 +33850,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -36548,20 +34316,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -36596,20 +34351,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -36770,12 +34512,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -36808,14 +34545,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -36834,12 +34566,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -37095,18 +34822,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -37115,14 +34836,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -37131,62 +34846,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -37212,7 +34903,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -37682,20 +35373,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_GRAVEYARD</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_CONFECTIONER_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_LEATHER_PADDER_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -37730,20 +35408,7 @@
 				<Building>
 					<BuildingClassType>BUILDINGCLASS_ROASTER_FACTORY</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_HOUSE</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_SHOP</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
-					<BuildingClassType>BUILDINGCLASS_POTTERY_FACTORY</BuildingClassType>
-					<BuildingType>NONE</BuildingType>
-				</Building>
-				<Building>
+				</Building><Building>
 					<BuildingClassType>BUILDINGCLASS_TAILOR_HOUSE</BuildingClassType>
 					<BuildingType>NONE</BuildingType>
 				</Building>
@@ -37908,12 +35573,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -37946,14 +35606,9 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_ROPES_MAKER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
 					<UnitClassType>UNITCLASS_SAILCLOTH_MAKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_FUR_TRADER</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -37972,12 +35627,7 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FIREWORKER</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_CHARCOAL_BURNER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
+				</Unit><Unit>
 					<UnitClassType>UNITCLASS_VETERAN</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -38221,18 +35871,12 @@
 					<UnitClassType>UNITCLASS_TOBACCO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_YERBA_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_HEMP_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LINEN_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COTTON_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -38241,14 +35885,8 @@
 					<UnitClassType>UNITCLASS_INDIGO_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_LOGWOOD_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCHINEAL_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_SUGAR_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
@@ -38257,62 +35895,38 @@
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_COCOA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_COFFEE_PLANTER</UnitClassType>
 					<iWeight>3</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEANUT_PLANTER</UnitClassType>
-					<iWeight>3</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_RED_PEPPER_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_VANILLA_COLLECTOR</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MAPLE_SIRUP_COLLECTOR</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_KAUTSCHUK_COLLECTOR</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FARMER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RICE_FARMER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_CASSAVA_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_GRAPES_PICKER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_FRUITS_PICKER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_OLIVES_PLANTER</UnitClassType>
 					<iWeight>2</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_RAPE_PLANTER</UnitClassType>
-					<iWeight>2</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_TRAPPER</UnitClassType>
 					<iWeight>2</iWeight>
@@ -38338,7 +35952,7 @@
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEAT_CUTTER</UnitClassType>
+					<UnitClassType>UNITCLASS_CLAY_CUTTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>

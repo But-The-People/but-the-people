@@ -2860,7 +2860,7 @@ class CvMainInterface:
 				szBuffer += u"</font>"
 
 				# WTP, ray, adding the Yield Icon for Trade Goods to Storage Capacity
-				szBuffer += u"<font=3>" + u"%c" % (gc.getYieldInfo(YieldTypes.YIELD_TRADE_GOODS).getChar()) + u"</font>"
+				szBuffer += u"<font=3>" + u"%c" % (gc.getYieldInfo(YieldTypes.YIELD_HOUSEHOLD_GOODS).getChar()) + u"</font>"
 				screen.setLabel("StorageCapacityText", "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, xResolution * 90 / 100 , CITY_TITLE_BAR_HEIGHT / 12, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_GENERAL, VET_NEW_CAPACITY, -1 )
 				
 			screen.hide("TimeText")

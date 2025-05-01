@@ -72,9 +72,9 @@
 			<DefaultUnit>UNIT_STONECUTTER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_PEAT_CUTTER</Type>
-			<Description>TXT_KEY_UNITCLASS_PEAT_CUTTER</Description>
-			<DefaultUnit>UNIT_PEAT_CUTTER</DefaultUnit>
+			<Type>UNITCLASS_CLAY_CUTTER</Type>
+			<Description>TXT_KEY_UNITCLASS_CLAY_CUTTER</Description>
+			<DefaultUnit>UNIT_CLAY_CUTTER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_PROSPECTOR</Type>
@@ -92,19 +92,9 @@
 			<DefaultUnit>UNIT_TOBACCO_PLANTER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_YERBA_PLANTER</Type>
-			<Description>TXT_KEY_UNITCLASS_YERBA_PLANTER</Description>
-			<DefaultUnit>UNIT_YERBA_PLANTER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_HEMP_PLANTER</Type>
 			<Description>TXT_KEY_UNITCLASS_HEMP_PLANTER</Description>
 			<DefaultUnit>UNIT_HEMP_PLANTER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_LINEN_PLANTER</Type>
-			<Description>TXT_KEY_UNITCLASS_LINEN_PLANTER</Description>
-			<DefaultUnit>UNIT_LINEN_PLANTER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_COTTON_PLANTER</Type>
@@ -117,16 +107,6 @@
 			<DefaultUnit>UNIT_INDIGO_PLANTER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_LOGWOOD_COLLECTOR</Type>
-			<Description>TXT_KEY_UNITCLASS_LOGWOOD_COLLECTOR</Description>
-			<DefaultUnit>UNIT_LOGWOOD_COLLECTOR</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_COCHINEAL_COLLECTOR</Type>
-			<Description>TXT_KEY_UNITCLASS_COCHINEAL_COLLECTOR</Description>
-			<DefaultUnit>UNIT_COCHINEAL_COLLECTOR</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_SUGAR_PLANTER</Type>
 			<Description>TXT_KEY_UNITCLASS_SUGAR_PLANTER</Description>
 			<DefaultUnit>UNIT_SUGAR_PLANTER</DefaultUnit>
@@ -137,19 +117,9 @@
 			<DefaultUnit>UNIT_COCA_COLLECTOR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_COCOA_PLANTER</Type>
-			<Description>TXT_KEY_UNITCLASS_COCOA_PLANTER</Description>
-			<DefaultUnit>UNIT_COCOA_PLANTER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_COFFEE_PLANTER</Type>
 			<Description>TXT_KEY_UNITCLASS_COFFEE_PLANTER</Description>
 			<DefaultUnit>UNIT_COFFEE_PLANTER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_PEANUT_PLANTER</Type>
-			<Description>TXT_KEY_UNITCLASS_PEANUT_PLANTER</Description>
-			<DefaultUnit>UNIT_PEANUT_PLANTER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_RED_PEPPER_PLANTER</Type>
@@ -157,19 +127,9 @@
 			<DefaultUnit>UNIT_RED_PEPPER_PLANTER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_VANILLA_COLLECTOR</Type>
-			<Description>TXT_KEY_UNITCLASS_VANILLA_COLLECTOR</Description>
-			<DefaultUnit>UNIT_VANILLA_COLLECTOR</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_MAPLE_SIRUP_COLLECTOR</Type>
 			<Description>TXT_KEY_UNITCLASS_MAPLE_SIRUP_COLLECTOR</Description>
 			<DefaultUnit>UNIT_MAPLE_SIRUP_COLLECTOR</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_KAUTSCHUK_COLLECTOR</Type>
-			<Description>TXT_KEY_UNITCLASS_KAUTSCHUK_COLLECTOR</Description>
-			<DefaultUnit>UNIT_KAUTSCHUK_COLLECTOR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_FARMER</Type>
@@ -177,34 +137,14 @@
 			<DefaultUnit>UNIT_FARMER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_RICE_FARMER</Type>
-			<Description>TXT_KEY_UNITCLASS_RICE_FARMER</Description>
-			<DefaultUnit>UNIT_RICE_FARMER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_CASSAVA_PLANTER</Type>
-			<Description>TXT_KEY_UNITCLASS_CASSAVA_PLANTER</Description>
-			<DefaultUnit>UNIT_CASSAVA_PLANTER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_GRAPES_PICKER</Type>
 			<Description>TXT_KEY_UNITCLASS_GRAPES_PICKER</Description>
 			<DefaultUnit>UNIT_GRAPES_PICKER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_FRUITS_PICKER</Type>
-			<Description>TXT_KEY_UNITCLASS_FRUITS_PICKER</Description>
-			<DefaultUnit>UNIT_FRUITS_PICKER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_OLIVES_PLANTER</Type>
 			<Description>TXT_KEY_UNITCLASS_OLIVES_PLANTER</Description>
 			<DefaultUnit>UNIT_OLIVES_PLANTER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_RAPE_PLANTER</Type>
-			<Description>TXT_KEY_UNITCLASS_RAPE_PLANTER</Description>
-			<DefaultUnit>UNIT_RAPE_PLANTER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_TRAPPER</Type>
@@ -240,11 +180,6 @@
 			<Type>UNITCLASS_GUNSMITH</Type>
 			<Description>TXT_KEY_UNITCLASS_GUNSMITH</Description>
 			<DefaultUnit>UNIT_GUNSMITH</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_CHARCOAL_BURNER</Type>
-			<Description>TXT_KEY_UNITCLASS_CHARCOAL_BURNER</Description>
-			<DefaultUnit>UNIT_CHARCOAL_BURNER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_FIREWORKER</Type>
@@ -317,11 +252,6 @@
 			<DefaultUnit>UNIT_ROASTER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_POTTER</Type>
-			<Description>TXT_KEY_UNITCLASS_POTTER</Description>
-			<DefaultUnit>UNIT_POTTER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_MILK_MAID</Type>
 			<Description>TXT_KEY_UNITCLASS_MILK_MAID</Description>
 			<DefaultUnit>UNIT_MILK_MAID</DefaultUnit>
@@ -347,24 +277,9 @@
 			<DefaultUnit>UNIT_HOUSEHOLD_TRADER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_CONFECTIONER</Type>
-			<Description>TXT_KEY_UNITCLASS_CONFECTIONER</Description>
-			<DefaultUnit>UNIT_CONFECTIONER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_TOBACCONIST</Type>
 			<Description>TXT_KEY_UNITCLASS_TOBACCONIST</Description>
 			<DefaultUnit>UNIT_TOBACCONIST</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_YERBA_TRADER</Type>
-			<Description>TXT_KEY_UNITCLASS_YERBA_TRADER</Description>
-			<DefaultUnit>UNIT_YERBA_TRADER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_ROPES_MAKER</Type>
-			<Description>TXT_KEY_UNITCLASS_ROPES_MAKER</Description>
-			<DefaultUnit>UNIT_ROPES_MAKER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_SAILCLOTH_MAKER</Type>
@@ -847,11 +762,6 @@
 			<DefaultUnit>UNIT_LUMBER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_HARDWOOD</Type>
-			<Description>TXT_KEY_YIELD_HARDWOOD</Description>
-			<DefaultUnit>UNIT_HARDWOOD</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_STONE</Type>
 			<Description>TXT_KEY_YIELD_STONE</Description>
 			<DefaultUnit>UNIT_STONE</DefaultUnit>
@@ -871,17 +781,7 @@
 			<Description>TXT_KEY_YIELD_COAL</Description>
 			<DefaultUnit>UNIT_COAL</DefaultUnit>
 		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_CHAR_COAL</Type>
-			<Description>TXT_KEY_YIELD_CHAR_COAL</Description>
-			<DefaultUnit>UNIT_CHAR_COAL</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_PEAT</Type>
-			<Description>TXT_KEY_YIELD_PEAT</Description>
-			<DefaultUnit>UNIT_PEAT</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
+			<UnitClassInfo>
 			<Type>UNITCLASS_SILVER</Type>
 			<Description>TXT_KEY_YIELD_SILVER</Description>
 			<DefaultUnit>UNIT_SILVER</DefaultUnit>
@@ -897,16 +797,6 @@
 			<DefaultUnit>UNIT_GEMS</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_RICE</Type>
-			<Description>TXT_KEY_YIELD_RICE</Description>
-			<DefaultUnit>UNIT_RICE</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_CASSAVA</Type>
-			<Description>TXT_KEY_YIELD_CASSAVA</Description>
-			<DefaultUnit>UNIT_CASSAVA</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_COCA_LEAVES</Type>
 			<Description>TXT_KEY_UNITCLASS_COCA_LEAVES</Description>
 			<DefaultUnit>UNIT_COCA_LEAVES</DefaultUnit>
@@ -917,24 +807,9 @@
 			<DefaultUnit>UNIT_MAPLE_SIRUP</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_KAUTSCHUK</Type>
-			<Description>TXT_KEY_UNITCLASS_KAUTSCHUK</Description>
-			<DefaultUnit>UNIT_KAUTSCHUK</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_COCOA_FRUITS</Type>
-			<Description>TXT_KEY_UNITCLASS_COCOA_FRUITS</Description>
-			<DefaultUnit>UNIT_COCOA_FRUITS</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_COFFEE_BERRIES</Type>
 			<Description>TXT_KEY_UNITCLASS_COFFEE_BERRIES</Description>
 			<DefaultUnit>UNIT_COFFEE_BERRIES</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_PEANUTS</Type>
-			<Description>TXT_KEY_UNITCLASS_PEANUTS</Description>
-			<DefaultUnit>UNIT_PEANUTS</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_MILK</Type>
@@ -952,11 +827,6 @@
 			<DefaultUnit>UNIT_RED_PEPPER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_VANILLA_PODS</Type>
-			<Description>TXT_KEY_UNITCLASS_VANILLA_PODS</Description>
-			<DefaultUnit>UNIT_VANILLA_PODS</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_COTTON</Type>
 			<Description>TXT_KEY_UNITCLASS_COTTON</Description>
 			<DefaultUnit>UNIT_COTTON</DefaultUnit>
@@ -967,44 +837,19 @@
 			<DefaultUnit>UNIT_INDIGO</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_LOGWOOD</Type>
-			<Description>TXT_KEY_UNITCLASS_LOGWOOD</Description>
-			<DefaultUnit>UNIT_LOGWOOD</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_COCHINEAL</Type>
-			<Description>TXT_KEY_UNITCLASS_COCHINEAL</Description>
-			<DefaultUnit>UNIT_COCHINEAL</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_WOOL</Type>
 			<Description>TXT_KEY_UNITCLASS_WOOL</Description>
 			<DefaultUnit>UNIT_WOOL</DefaultUnit>
 		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_GOAT_HIDES</Type>
-			<Description>TXT_KEY_UNITCLASS_GOAT_HIDES</Description>
-			<DefaultUnit>UNIT_GOAT_HIDES</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_PIG_SKIN</Type>
-			<Description>TXT_KEY_UNITCLASS_PIG_SKIN</Description>
-			<DefaultUnit>UNIT_PIG_SKIN</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
+			<UnitClassInfo>
 			<Type>UNITCLASS_HIDES</Type>
 			<Description>TXT_KEY_UNITCLASS_HIDES</Description>
 			<DefaultUnit>UNIT_HIDES</DefaultUnit>
-		</UnitClassInfo>		
+		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_DOWNS</Type>
 			<Description>TXT_KEY_UNITCLASS_DOWNS</Description>
 			<DefaultUnit>UNIT_DOWNS</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_WILD_FEATHERS</Type>
-			<Description>TXT_KEY_UNITCLASS_WILD_FEATHERS</Description>
-			<DefaultUnit>UNIT_WILD_FEATHERS</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_FUR</Type>
@@ -1027,24 +872,14 @@
 			<DefaultUnit>UNIT_SUGAR</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_FRUITS</Type>
-			<Description>TXT_KEY_UNITCLASS_FRUITS</Description>
-			<DefaultUnit>UNIT_FRUITS</DefaultUnit>
-		</UnitClassInfo>		
-		<UnitClassInfo>
 			<Type>UNITCLASS_GRAPES</Type>
 			<Description>TXT_KEY_UNITCLASS_GRAPES</Description>
 			<DefaultUnit>UNIT_GRAPES</DefaultUnit>
-		</UnitClassInfo>		
+		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_OLIVES</Type>
 			<Description>TXT_KEY_UNITCLASS_OLIVES</Description>
 			<DefaultUnit>UNIT_OLIVES</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_RAPE</Type>
-			<Description>TXT_KEY_UNITCLASS_RAPE</Description>
-			<DefaultUnit>UNIT_RAPE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_TOBACCO</Type>
@@ -1052,20 +887,10 @@
 			<DefaultUnit>UNIT_TOBACCO</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_YERBA_LEAVES</Type>
-			<Description>TXT_KEY_UNITCLASS_YERBA_LEAVES</Description>
-			<DefaultUnit>UNIT_YERBA_LEAVES</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_HEMP</Type>
 			<Description>TXT_KEY_YIELD_HEMP</Description>
 			<DefaultUnit>UNIT_HEMP</DefaultUnit>
 		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_FLAX</Type>
-			<Description>TXT_KEY_YIELD_FLAX</Description>
-			<DefaultUnit>UNIT_FLAX</DefaultUnit>
-		</UnitClassInfo>		
 		<UnitClassInfo>
 			<Type>UNITCLASS_WHALE_BLUBBER</Type>
 			<Description>TXT_KEY_UNITCLASS_WHALE_BLUBBER</Description>
@@ -1077,19 +902,9 @@
 			<DefaultUnit>UNIT_VALUABLE_WOOD</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_COCOA</Type>
-			<Description>TXT_KEY_UNITCLASS_COCOA</Description>
-			<DefaultUnit>UNIT_COCOA</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_COFFEE</Type>
 			<Description>TXT_KEY_UNITCLASS_COFFEE</Description>
 			<DefaultUnit>UNIT_COFFEE</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_ROASTED_PEANUTS</Type>
-			<Description>TXT_KEY_UNITCLASS_ROASTED_PEANUTS</Description>
-			<DefaultUnit>UNIT_ROASTED_PEANUTS</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CHEESE</Type>
@@ -1105,16 +920,6 @@
 			<Type>UNITCLASS_SPICES</Type>
 			<Description>TXT_KEY_UNITCLASS_SPICES</Description>
 			<DefaultUnit>UNIT_SPICES</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_VANILLA</Type>
-			<Description>TXT_KEY_UNITCLASS_VANILLA</Description>
-			<DefaultUnit>UNIT_VANILLA</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_CHOCOLATE</Type>
-			<Description>TXT_KEY_UNITCLASS_CHOCOLATE</Description>
-			<DefaultUnit>UNIT_CHOCOLATE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_CLOTH</Type>
@@ -1135,7 +940,7 @@
 			<Type>UNITCLASS_WOOL_CLOTH</Type>
 			<Description>TXT_KEY_UNITCLASS_WOOL_CLOTH</Description>
 			<DefaultUnit>UNIT_WOOL_CLOTH</DefaultUnit>
-		</UnitClassInfo>		
+		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_COLOURED_WOOL_CLOTH</Type>
 			<Description>TXT_KEY_UNITCLASS_COLOURED_WOOL_CLOTH</Description>
@@ -1145,21 +950,11 @@
 			<Type>UNITCLASS_EVERYDAY_CLOTHES</Type>
 			<Description>TXT_KEY_UNITCLASS_EVERYDAY_CLOTHES</Description>
 			<DefaultUnit>UNIT_EVERYDAY_CLOTHES</DefaultUnit>
-		</UnitClassInfo>		
-		<UnitClassInfo>
-			<Type>UNITCLASS_PIG_LEATHER</Type>
-			<Description>TXT_KEY_UNITCLASS_PIG_LEATHER</Description>
-			<DefaultUnit>UNIT_PIG_LEATHER</DefaultUnit>
-		</UnitClassInfo>		
+		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_LEATHER</Type>
 			<Description>TXT_KEY_UNITCLASS_LEATHER</Description>
 			<DefaultUnit>UNIT_LEATHER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_GOAT_HIDE_BOOTS</Type>
-			<Description>TXT_KEY_UNITCLASS_GOAT_HIDE_BOOTS</Description>
-			<DefaultUnit>UNIT_GOAT_HIDE_BOOTS</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_PADDED_LEATHER_COATS</Type>
@@ -1185,41 +980,21 @@
 			<Type>UNITCLASS_RUM</Type>
 			<Description>TXT_KEY_UNITCLASS_RUM</Description>
 			<DefaultUnit>UNIT_RUM</DefaultUnit>
-		</UnitClassInfo>	
-		<UnitClassInfo>
-			<Type>UNITCLASS_HOOCH</Type>
-			<Description>TXT_KEY_UNITCLASS_HOOCH</Description>
-			<DefaultUnit>UNIT_HOOCH</DefaultUnit>
-		</UnitClassInfo>		
+		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_WINE</Type>
 			<Description>TXT_KEY_UNITCLASS_WINE</Description>
 			<DefaultUnit>UNIT_WINE</DefaultUnit>
-		</UnitClassInfo>	
+		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_OLIVE_OIL</Type>
 			<Description>TXT_KEY_UNITCLASS_OLIVE_OIL</Description>
 			<DefaultUnit>UNIT_OLIVE_OIL</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_RAPE_OIL</Type>
-			<Description>TXT_KEY_UNITCLASS_RAPE_OIL</Description>
-			<DefaultUnit>UNIT_RAPE_OIL</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_CIGARS</Type>
 			<Description>TXT_KEY_UNITCLASS_CIGARS</Description>
 			<DefaultUnit>UNIT_CIGARS</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_YERBA_TEA</Type>
-			<Description>TXT_KEY_UNITCLASS_YERBA_TEA</Description>
-			<DefaultUnit>UNIT_YERBA_TEA</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_ROPE</Type>
-			<Description>TXT_KEY_YIELD_ROPE</Description>
-			<DefaultUnit>UNIT_ROPE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_SAILCLOTH</Type>
@@ -1230,11 +1005,6 @@
 			<Type>UNITCLASS_WHALE_OIL</Type>
 			<Description>TXT_KEY_UNITCLASS_WHALE_OIL</Description>
 			<DefaultUnit>UNIT_WHALE_OIL</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_POTTERY</Type>
-			<Description>TXT_KEY_UNITCLASS_POTTERY</Description>
-			<DefaultUnit>UNIT_POTTERY</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_FURNITURE</Type>
@@ -1277,16 +1047,6 @@
 			<DefaultUnit>UNIT_SHEEP</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_GOATS</Type>
-			<Description>TXT_KEY_YIELD_GOATS</Description>
-			<DefaultUnit>UNIT_GOATS</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_PIGS</Type>
-			<Description>TXT_KEY_YIELD_PIGS</Description>
-			<DefaultUnit>UNIT_PIGS</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_CATTLE</Type>
 			<Description>TXT_KEY_YIELD_CATTLE</Description>
 			<DefaultUnit>UNIT_CATTLE</DefaultUnit>
@@ -1295,11 +1055,6 @@
 			<Type>UNITCLASS_CHICKEN</Type>
 			<Description>TXT_KEY_YIELD_CHICKEN</Description>
 			<DefaultUnit>UNIT_CHICKEN</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_GEESE</Type>
-			<Description>TXT_KEY_YIELD_GEESE</Description>
-			<DefaultUnit>UNIT_GEESE</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_HORSES</Type>
@@ -1325,11 +1080,6 @@
 			<Type>UNITCLASS_LUXURY_GOODS</Type>
 			<Description>TXT_KEY_UNITCLASS_LUXURY_GOODS</Description>
 			<DefaultUnit>UNIT_LUXURY_GOODS</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_TRADE_GOODS</Type>
-			<Description>TXT_KEY_UNITCLASS_TRADE_GOODS</Description>
-			<DefaultUnit>UNIT_TRADE_GOODS</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_TREASURE</Type>

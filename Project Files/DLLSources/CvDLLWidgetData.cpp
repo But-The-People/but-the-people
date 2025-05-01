@@ -154,7 +154,7 @@ public:
 			szBuffer.append(gDLL->getText("TXT_KEY_TAX_BAR",
 				kKing.getFullYieldScore(), //apply the Global Ratio
 				kKing.getTaxThresold(), // get a comparable quantity
-				GC.getYieldInfo(YIELD_TRADE_GOODS).getChar(),
+				GC.getYieldInfo(YIELD_LUXURY_GOODS).getChar(),
 				chancePerThousand / 10,	chancePerThousand % 10,
 				GLOBAL_DEFINE_TAX_RATE_RETAINED_FRACTION
 				));

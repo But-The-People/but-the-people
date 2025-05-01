@@ -657,53 +657,6 @@
 		<Russian>Листья коки</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNITCLASS_COCOA</Tag>
-		<English>Cocoa</English>
-		<French>Cacao torréfié</French>
-		<German>
-			<Text>Kakao</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Cacao</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Cacao</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Какао</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNITCLASS_COCOA_FRUITS</Tag>
-		<English>Cocoa Pods</English>
-		<French>
-			<Text>Cacao en cabosses</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Kakaofrüchte</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</German>
-		<Italian>Frutta di cacao</Italian>
-		<Spanish>Fruta del cacao</Spanish>
-		<Russian>Плоды какао</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNITCLASS_COCOA_PLANTER</Tag>
-		<English>Expert Cocoa Planter:Expert Cocoa Planters</English>
-		<French>Expert planteur de cacao:Experts planteurs de cacao</French>
-		<German>Erfahrener Kakaopflücker:Erfahrene Kakaopflücker</German>
-		<Italian>Expert Cocoa Planter:Expert Cocoa Planters</Italian>
-		<Spanish>Expert Cocoa Planter:Expert Cocoa Planters</Spanish>
-		<Russian>Опытный плантатор какао:Опытные плантаторы какао</Russian>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_COFFEE</Tag>
 		<English>Coffee</English>
 		<French>
@@ -2730,31 +2683,6 @@
 		<Russian>Опытный сборщик красного перца:Опытные сборщики красного перца</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNITCLASS_ROPES_MAKER</Tag>
-		<English>Master Roper:Master Ropers</English>
-		<French>
-			<Text>Maître cordelier:Maîtres cordeliers</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>
-			<Text>Seilermeister:Seilermeister</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</German>
-		<Italian>
-			<Text>Master Roper:Master Ropers</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Master Roper:Master Ropers</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
-		<Russian>Мастер плетения канатов:Мастера плетения канатов</Russian>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_ROYAL_CAVALRY</Tag>
 		<English>
 			<Text>Royal Cavalryman:Royal Cavalrymen</Text>
@@ -3469,35 +3397,6 @@
 			<Plural>0:1</Plural>
 		</Spanish>
 		<Russian>Опытный плантатор табака:Опытные плантаторы табака</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNITCLASS_TRADE_GOODS</Tag>
-		<English>
-			<Text>Trade Goods</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</English>
-		<French>
-			<Text>Marchandise:Marchandises</Text>
-			<Gender>Female</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>
-			<Text>Handelsgüter</Text>
-			<Gender>Neuter</Gender>
-			<Plural>1</Plural>
-		</German>
-		<Italian>
-			<Text>Beni commerciali</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Mercancías</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</Spanish>
-		<Russian>Мануфактура</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_TRAIN</Tag>

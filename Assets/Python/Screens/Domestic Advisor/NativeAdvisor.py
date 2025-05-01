@@ -20,7 +20,7 @@ class NativeAdvisor(BaseAdvisorWindow.BaseAdvisorWindow):
 		BaseAdvisorWindow.BaseAdvisorWindow.__init__(self, parent, "NativeStateClass")
 	
 		self.settlementIcon = gc.getBuildingInfo(BuildingTypes.BUILDING_CHICKEE).getButton()
-		self.tradeStationChar = gc.getYieldInfo(YieldTypes.YIELD_TRADE_GOODS).getChar()
+		self.tradeStationChar = gc.getYieldInfo(YieldTypes.YIELD_HOUSEHOLD_GOODS).getChar()
 		self.tradeStationText = u" %c" % self.tradeStationChar
 		
 		# store selected city as the plot

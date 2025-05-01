@@ -3217,7 +3217,7 @@ def canTriggerInitialNativeTrade(argsList):
 	# Read Parameter 1 from the first event and check if enough yield is stored in city
 	eEvent1 = gc.getInfoTypeForString("EVENT_INITIAL_TRADE_WITH_NATIVES_1")
 	event1 = gc.getEventInfo(eEvent1)
-	iYield = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
+	iYield = gc.getInfoTypeForString("YIELD_HOUSEHOLD_GOODS")
 	quantity = event1.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
@@ -3233,7 +3233,7 @@ def applyInitialNativeTrade(argsList):
 	city = player.getCity(kTriggeredData.iCityId)
 	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
 	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
-	iYield = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
+	iYield = gc.getInfoTypeForString("YIELD_HOUSEHOLD_GOODS")
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
@@ -3250,7 +3250,7 @@ def getHelpInitialNativeTrade1(argsList):
 	city = player.getCity(kTriggeredData.iCityId)
 	player2 = gc.getPlayer(kTriggeredData.eOtherPlayer)
 	nativecity = player2.getCity(kTriggeredData.iOtherPlayerCityId)
-	iYield = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
+	iYield = gc.getInfoTypeForString("YIELD_HOUSEHOLD_GOODS")
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
@@ -3272,7 +3272,7 @@ def canApplyInitialNativeTrade3(argsList):
 	if city.isNone():
 		return False
 	# Read Parameter 1 from event and check if enough yield is stored in city
-	iYield = gc.getInfoTypeForString("YIELD_TRADE_GOODS")
+	iYield = gc.getInfoTypeForString("YIELD_HOUSEHOLD_GOODS")
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
@@ -3426,9 +3426,9 @@ def getHelpQuestStartEuropeTradeYieldAndAmount(argsList):
 	# Now we construct the Help Text
 	szHelp = ""
 	if quantity > 0 :
-		if iYield != gc.getInfoTypeForString("YIELD_TRADE_GOODS") and iYield != gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
+		if iYield != gc.getInfoTypeForString("YIELD_HOUSEHOLD_GOODS") and iYield != gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
 			szHelp += "\n" + localText.getText("TXT_KEY_EVENT_EUROPE_TRADE_YIELD_AND_TARGET_AMOUNT_HELP", (quantity, gc.getYieldInfo(iYield).getChar()))
-		elif iYield == gc.getInfoTypeForString("YIELD_TRADE_GOODS") or iYield == gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
+		elif iYield == gc.getInfoTypeForString("YIELD_HOUSEHOLD_GOODS") or iYield == gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
 			szHelp += "\n" + localText.getText("TXT_KEY_EVENT_EUROPE_TRADE_YIELD_AND_TARGET_AMOUNT_HELP_BUY", (quantity, gc.getYieldInfo(iYield).getChar()))
 	return szHelp
 
@@ -4138,7 +4138,7 @@ def canTriggerEuropeTradeQuest_VALUABLE_WOOD_DONE(argsList):
 def canTriggerEuropeTradeQuest_TRADE_GOODS_START(argsList):
 	
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
-	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_TRADE_GOODS_START")
+	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOUSEHOLD_GOODS_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
@@ -4151,7 +4151,7 @@ def canTriggerEuropeTradeQuest_TRADE_GOODS_START(argsList):
 def canTriggerEuropeTradeQuest_TRADE_GOODS_DONE(argsList):
 	
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
-	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_TRADE_GOODS_DONE_1")
+	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOUSEHOLD_GOODS_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
@@ -4814,7 +4814,7 @@ def canTriggerEuropeTradeQuest_LUXURY_GOODS_DONE(argsList):
 def canTriggerEuropeTradeQuest_TRADE_GOODS_START(argsList):
 	
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
-	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_TRADE_GOODS_START")
+	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOUSEHOLD_GOODS_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
@@ -4827,7 +4827,7 @@ def canTriggerEuropeTradeQuest_TRADE_GOODS_START(argsList):
 def canTriggerEuropeTradeQuest_TRADE_GOODS_DONE(argsList):
 	
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
-	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_TRADE_GOODS_DONE_1")
+	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOUSEHOLD_GOODS_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
@@ -6184,9 +6184,9 @@ def getHelpQuestStartAfricaTradeYieldAndAmount(argsList):
 	# Now we construct the Help Text
 	szHelp = ""
 	if quantity > 0 :
-		if iYield != gc.getInfoTypeForString("YIELD_TRADE_GOODS") and iYield != gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
+		if iYield != gc.getInfoTypeForString("YIELD_HOUSEHOLD_GOODS") and iYield != gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
 			szHelp += "\n" + localText.getText("TXT_KEY_EVENT_AFRICA_TRADE_YIELD_AND_TARGET_AMOUNT_HELP", (quantity, gc.getYieldInfo(iYield).getChar()))
-		elif iYield == gc.getInfoTypeForString("YIELD_TRADE_GOODS") or iYield== event.getGenericParameter(2) != gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
+		elif iYield == gc.getInfoTypeForString("YIELD_HOUSEHOLD_GOODS") or iYield== event.getGenericParameter(2) != gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
 			szHelp += "\n" + localText.getText("TXT_KEY_EVENT_AFRICA_TRADE_YIELD_AND_TARGET_AMOUNT_HELP_BUY", (quantity, gc.getYieldInfo(iYield).getChar()))
 	return szHelp
 
@@ -6335,9 +6335,9 @@ def getHelpQuestStartPortRoyalTradeYieldAndAmount(argsList):
 	# Now we construct the Help Text
 	szHelp = ""
 	if quantity > 0 :
-		if iYield != gc.getInfoTypeForString("YIELD_TRADE_GOODS") and iYield != gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
+		if iYield != gc.getInfoTypeForString("YIELD_HOUSEHOLD_GOODS") and iYield != gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
 			szHelp += "\n" + localText.getText("TXT_KEY_EVENT_PORTROYAL_TRADE_YIELD_AND_TARGET_AMOUNT_HELP", (quantity, gc.getYieldInfo(iYield).getChar()))
-		elif iYield == gc.getInfoTypeForString("YIELD_TRADE_GOODS") or iYield == gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
+		elif iYield == gc.getInfoTypeForString("YIELD_HOUSEHOLD_GOODS") or iYield == gc.getInfoTypeForString("YIELD_LUXURY_GOODS"):
 			szHelp += "\n" + localText.getText("TXT_KEY_EVENT_PORTROYAL_TRADE_YIELD_AND_TARGET_AMOUNT_HELP_BUY", (quantity, gc.getYieldInfo(iYield).getChar()))
 	return szHelp
 
