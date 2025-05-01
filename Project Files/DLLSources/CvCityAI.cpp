@@ -6563,21 +6563,21 @@ bool CvCityAI::canHaveCitizenProfession(const CvUnit& kUnit, ProfessionTypes ePr
 		}
 	}
 
-		//check if special building has been built
-		if (kNewProfession.getSpecialBuilding() != NO_SPECIALBUILDING)
+	//check if special building has been built
+	if (kNewProfession.getSpecialBuilding() != NO_SPECIALBUILDING)
+	{
+		if (getProfessionOutput(eProfession, &kUnit) <= 0)
 		{
-			if (getProfessionOutput(eProfession, &kUnit) <= 0)
-			{
-				return false;
-			}
+			return false;
 		}
+	}
 
-		// check against building max
-		if (!bBumpOther)
+	// check against building max
+	if (!bBumpOther)
+	{
+		if (!isAvailableProfessionSlot(eProfession, &kUnit))
 		{
-			if (!isAvailableProfessionSlot(eProfession, &kUnit))
-			{
-				return false;
+			return false;
 		}
 	}
 
