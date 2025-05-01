@@ -14413,64 +14413,78 @@ bool CvUnitAI::AI_blockade(int iRange)
 	int iBestValue = 0;
 
 	// iterate over plots at each range
-	for (int iDX = -(iMaxRange); iDX <= iMaxRange; iDX++)
+	for (int iDX = -iMaxRange; iDX <= iMaxRange; iDX++)
 	{
-		for (int iDY = -(iMaxRange); iDY <= iMaxRange; iDY++)
+		for (int iDY = -iMaxRange; iDY <= iMaxRange; iDY++)
 		{
-			CvPlot* pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+			CvPlot* const pLoopPlot = plotXY(getX_INLINE(), getY_INLINE(), iDX, iDY);
+			if (pLoopPlot == NULL || !AI_plotValid(pLoopPlot))
+				continue;
 
-			if (pLoopPlot != NULL && AI_plotValid(pLoopPlot))
+			CvCity* const pBlockadeCity = pLoopPlot->getWorkingCity();
+			if (pBlockadeCity == NULL ||
+				!isEnemy(pBlockadeCity->getTeam(), pLoopPlot) ||
+				pBlockadeCity->getDefenseDamage() >= GC.getMAX_CITY_DEFENSE_DAMAGE())
 			{
-				CvCity* pBlockadeCity = pLoopPlot->getWorkingCity();
-				if (pBlockadeCity != NULL && isEnemy(pBlockadeCity->getTeam(), pLoopPlot) && pBlockadeCity->getDefenseDamage() < GC.getMAX_CITY_DEFENSE_DAMAGE())
+				continue;
+			}
+
+			// Determine whether we're already on the target
+			const bool bOnTarget = atPlot(pLoopPlot);
+			int iPathTurns = 0;
+
+			// If not already there, try to generate a fresh path
+			if (!bOnTarget)
 				{
-					int iPathTurns;
-					if (atPlot(pLoopPlot) || generatePath(pLoopPlot, 0, true, &iPathTurns))
-					{
-						int iValue = atPlot(pLoopPlot) ? 1200 : 1000;
+				if (!generatePath(pLoopPlot, 0, /*bReuse=*/true, &iPathTurns))
+					continue;   // unreachable, skip
+			}
+
+			// compute score
+			int iValue = bOnTarget ? 1200 : 1000;
 						if (pLoopPlot->getBonusType() != NO_BONUS)
-						{
 							iValue += 1000;
-						}
 						iValue /= 1 + pLoopPlot->plotCount(PUF_canDefend, -1, -1, getOwnerINLINE());
 						iValue += GC.getGameINLINE().getSorenRandNum(100, "AI blockade plot");
 
+			// record best
 						if (iValue > iBestValue)
 						{
 							iBestValue = iValue;
+
+				if (bOnTarget)
+				{
+					// if we're already on the plot, use it directly
+					pBestPlot = pLoopPlot;
+				}
+				else
+				{
+					// get the actual end-of-turn step for this path
 							pBestPlot = getPathEndTurnPlot();
 						}
 					}
 				}
 			}
-		}
-	}
 
+	// execute the mission
 	if (pBestPlot != NULL)
 	{
 		if (atPlot(pBestPlot))
 		{
 			if (canBombard(pBestPlot))
-			{
 				getGroup()->pushMission(MISSION_BOMBARD);
-			}
 			else
-			{
 				getGroup()->pushMission(MISSION_SKIP);
 			}
-			return true;
-		}
 		else
 		{
 			getGroup()->pushMission(MISSION_MOVE_TO, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE());
+		}
 			return true;
 		}
-	}
 
 	return false;
 }
-
-
 
 // Returns true if a mission was pushed...
 bool CvUnitAI::AI_pillage()
