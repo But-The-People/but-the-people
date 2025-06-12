@@ -17,8 +17,8 @@
 				<iPriceChangeThreshold>1000</iPriceChangeThreshold>
 				<iPriceCorrectionPercent>1</iPriceCorrectionPercent>
 				<NativePrice>
-					<iNativeBuyPrice>-1</iNativeBuyPrice>
-					<iNativeSellPrice>4</iNativeSellPrice>
+					<iNativeBuyPrice>4</iNativeBuyPrice>
+					<iNativeSellPrice>-1</iNativeSellPrice>
 					<iNativeConsumptionPercent>-1</iNativeConsumptionPercent>
 					<iNativeHappy>0</iNativeHappy>
 				</NativePrice>
