@@ -1,8 +1,7 @@
 on:
   push:
     branches:
-    - develop
-    - but-the-people
+    - master
 jobs:
   my_job:
     runs-on: windows-2025
