@@ -122,7 +122,7 @@
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_COFFEE_BERRIES</YieldType>
-					<iValue>3</iValue>
+					<iValue>-3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
