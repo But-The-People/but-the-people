@@ -34,7 +34,7 @@ jobs:
           & "./Get Compiler.bat"
           perl compile.pl
           cd ..
-          git archive --format=zip --prefix=Assets/ --add-file=Assets/CvGameCoreDLL.dll --prefix= -9 head --output ../ButThePeople-dev-${env:GITHUB_SHA}.zip
+          git archive --format=zip --prefix=Assets/ --add-file=Assets/CvGameCoreDLL.dll --prefix= -9 head --output ../ButThePeople-${env:GITHUB_REF_NAME}-${env:GITHUB_SHA}.zip
           ls ..
       - name: release
         uses: "marvinpinto/action-automatic-releases@v1.2.1"
