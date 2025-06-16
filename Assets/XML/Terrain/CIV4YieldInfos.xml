@@ -1429,69 +1429,6 @@
 			<Button>Art/interface/buttons/New_Yields_Buttons/Blackpowder_Goods_Button.dds</Button>
 		</YieldInfo>
 		<YieldInfo>
-			<Type>YIELD_CRIME</Type>
-			<Description>TXT_KEY_YIELD_CRIME</Description>
-			<Civilopedia>TXT_KEY_YIELD_CRIME_PEDIA</Civilopedia>
-			<bCargo>0</bCargo>
-			<Prices>
-				<iDomesticPriceBonus>0</iDomesticPriceBonus>
-				<iPriceChangeThreshold>0</iPriceChangeThreshold>
-				<iPriceCorrectionPercent>0</iPriceCorrectionPercent>
-				<NativePrice>
-					<iNativeBuyPrice>-1</iNativeBuyPrice>
-					<iNativeSellPrice>-1</iNativeSellPrice>
-					<iNativeConsumptionPercent>-1</iNativeConsumptionPercent>
-					<iNativeHappy>0</iNativeHappy>
-				</NativePrice>
-				<PriceTables>
-					<PriceTable>
-						<location>TRADE_LOCATION_EUROPE</location>
-						<iBuyLow>0</iBuyLow>
-						<iBuyHigh>0</iBuyHigh>
-						<iBuyLowInit>0</iBuyLowInit>
-						<iBuyHighInit>0</iBuyHighInit>
-						<iSellPriceDifference>0</iSellPriceDifference>
-						<iVolumeAttrition>0</iVolumeAttrition>
-					</PriceTable>
-					<PriceTable>
-						<location>TRADE_LOCATION_AFRICA</location>
-						<iBuyLow>0</iBuyLow>
-						<iBuyHigh>0</iBuyHigh>
-						<iBuyLowInit>0</iBuyLowInit>
-						<iBuyHighInit>0</iBuyHighInit>
-						<iSellPriceDifference>0</iSellPriceDifference>
-						<iVolumeAttrition>0</iVolumeAttrition>
-					</PriceTable>
-					<PriceTable>
-						<location>TRADE_LOCATION_PORT_ROYAL</location>
-						<iBuyLow>0</iBuyLow>
-						<iBuyHigh>0</iBuyHigh>
-						<iBuyLowInit>0</iBuyLowInit>
-						<iBuyHighInit>0</iBuyHighInit>
-						<iSellPriceDifference>0</iSellPriceDifference>
-						<iVolumeAttrition>0</iVolumeAttrition>
-					</PriceTable>
-				</PriceTables>
-			</Prices>
-			<iHillsChange>0</iHillsChange>
-			<iPeakChange>0</iPeakChange>
-			<iLakeChange>0</iLakeChange>
-			<iCityChange>0</iCityChange>
-			<iMinCity>0</iMinCity>
-			<iAIWeightPercent>100</iAIWeightPercent>
-			<iAIBaseValue>0</iAIBaseValue>
-			<iNativeBaseValue>0</iNativeBaseValue>
-			<iPower>0</iPower>
-			<iAsset>0</iAsset>
-			<ColorType>COLOR_YIELD_FOOD</ColorType>
-			<UnitClass>NONE</UnitClass>
-			<iTextureIndex>-1</iTextureIndex>
-			<iWaterTextureIndex>-1</iWaterTextureIndex>
-			<Icon>Art/interface/buttons/New_Yieds_Icons/Crime_Icon.dds</Icon>
-			<HighlightIcon>,Art/Interface/Screens/City_Management/Colonization_Yield_Highlight_Icon_Atlas.dds,1,1</HighlightIcon>
-			<Button>Art/interface/buttons/New_Yields_Buttons/Crime_Button.dds</Button>
-		</YieldInfo>
-		<YieldInfo>
 			<Type>YIELD_COFFEE_BERRIES</Type>
 			<Description>TXT_KEY_YIELD_COFFEE_BERRIES</Description>
 			<Civilopedia>TXT_KEY_YIELD_COFFEE_BERRIES_PEDIA</Civilopedia>
@@ -1554,6 +1491,69 @@
 			<Icon>,Art/colonization_atlas_resources.dds,3,11</Icon>
 			<HighlightIcon>,Art/Interface/Screens/City_Management/Colonization_Yield_Highlight_Icon_Atlas.dds,5,1</HighlightIcon>
 			<Button>,Art/colonization_atlas_resources.dds,3,2</Button>
+		</YieldInfo>
+		<YieldInfo>
+			<Type>YIELD_CRIME</Type>
+			<Description>TXT_KEY_YIELD_CRIME</Description>
+			<Civilopedia>TXT_KEY_YIELD_CRIME_PEDIA</Civilopedia>
+			<bCargo>0</bCargo>
+			<Prices>
+				<iDomesticPriceBonus>0</iDomesticPriceBonus>
+				<iPriceChangeThreshold>0</iPriceChangeThreshold>
+				<iPriceCorrectionPercent>0</iPriceCorrectionPercent>
+				<NativePrice>
+					<iNativeBuyPrice>-1</iNativeBuyPrice>
+					<iNativeSellPrice>-1</iNativeSellPrice>
+					<iNativeConsumptionPercent>-1</iNativeConsumptionPercent>
+					<iNativeHappy>0</iNativeHappy>
+				</NativePrice>
+				<PriceTables>
+					<PriceTable>
+						<location>TRADE_LOCATION_EUROPE</location>
+						<iBuyLow>0</iBuyLow>
+						<iBuyHigh>0</iBuyHigh>
+						<iBuyLowInit>0</iBuyLowInit>
+						<iBuyHighInit>0</iBuyHighInit>
+						<iSellPriceDifference>0</iSellPriceDifference>
+						<iVolumeAttrition>0</iVolumeAttrition>
+					</PriceTable>
+					<PriceTable>
+						<location>TRADE_LOCATION_AFRICA</location>
+						<iBuyLow>0</iBuyLow>
+						<iBuyHigh>0</iBuyHigh>
+						<iBuyLowInit>0</iBuyLowInit>
+						<iBuyHighInit>0</iBuyHighInit>
+						<iSellPriceDifference>0</iSellPriceDifference>
+						<iVolumeAttrition>0</iVolumeAttrition>
+					</PriceTable>
+					<PriceTable>
+						<location>TRADE_LOCATION_PORT_ROYAL</location>
+						<iBuyLow>0</iBuyLow>
+						<iBuyHigh>0</iBuyHigh>
+						<iBuyLowInit>0</iBuyLowInit>
+						<iBuyHighInit>0</iBuyHighInit>
+						<iSellPriceDifference>0</iSellPriceDifference>
+						<iVolumeAttrition>0</iVolumeAttrition>
+					</PriceTable>
+				</PriceTables>
+			</Prices>
+			<iHillsChange>0</iHillsChange>
+			<iPeakChange>0</iPeakChange>
+			<iLakeChange>0</iLakeChange>
+			<iCityChange>0</iCityChange>
+			<iMinCity>0</iMinCity>
+			<iAIWeightPercent>100</iAIWeightPercent>
+			<iAIBaseValue>0</iAIBaseValue>
+			<iNativeBaseValue>0</iNativeBaseValue>
+			<iPower>0</iPower>
+			<iAsset>0</iAsset>
+			<ColorType>COLOR_YIELD_FOOD</ColorType>
+			<UnitClass>NONE</UnitClass>
+			<iTextureIndex>-1</iTextureIndex>
+			<iWaterTextureIndex>-1</iWaterTextureIndex>
+			<Icon>Art/interface/buttons/New_Yieds_Icons/Crime_Icon.dds</Icon>
+			<HighlightIcon>,Art/Interface/Screens/City_Management/Colonization_Yield_Highlight_Icon_Atlas.dds,1,1</HighlightIcon>
+			<Button>Art/interface/buttons/New_Yields_Buttons/Crime_Button.dds</Button>
 		</YieldInfo>
 		<YieldInfo>
 			<Type>YIELD_TOBACCO</Type>
