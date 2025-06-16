@@ -1,9 +1,7 @@
 permissions:
   contents: write
 on:
-  push:
-    branches:
-    - master
+  push: {}
 jobs:
   my_job:
     runs-on: windows-2025
@@ -42,7 +40,7 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@v1.2.1"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          files: "ButThePeople-dev-${{ github.sha }}.zip "
+          files: "ButThePeople-${{ github.ref_name }}-${{ github.sha }}.zip "
           automatic_release_tag: "${{ github.ref_name }}-development"
           prerelease: true
           title: "development build"
