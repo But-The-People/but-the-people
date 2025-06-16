@@ -6,7 +6,7 @@ Fork of excellent [We The People](https://github.com/We-the-People-civ4col-mod/M
 
 ### Yield reduction
 
-The systems present cannot really handle that many yields. Each yield needs a spot in menus, dedicated tile (which often do not really make sense), a specialist, a quest, storage space, more slots for the ships, etc. Thus, playing with this many yields is a headache both for player and AIs. Moreso, many of the WTP yields don't really offer any interesting gameplay choices.
+The systems present cannot really handle that many yields. Each yield needs a spot in menus, dedicated tile (which often do not really make sense), a specialist, a quest, storage space, more slots for the ships, etc. Thus, playing with this many yields is a headache for players, AIs, and developers. Moreso, many of the existing WTP yields don't really offer any interesting gameplay choices.
 
 BTP cuts down the number of resources to the minumum, to avoid clutter and complicated code. Yields that introduce interesting chains to set up, or function in an unique way, are retained.
 
@@ -37,11 +37,16 @@ The following yields are removed:
 * * Wild Bird Feathers
 * * Yerba leaves, Yerba mate
 
-Empty places are generally taken by similar goods, produced at worse rates.
+Empty places are generally taken by similar goods, produced at different rates.
 
-Full intended (not everything is already implemented) [./doc/production-tree.pdf](production tree).
+Full intended (not everything is already implemented) [production tree](./doc/production-tree.pdf).
+
+### Further plans
+
+The fork is going to focus on improving code quality and maintainance. New features are possible, but not if they are going to be implemented in a way that dramatically affects the maintenance (like filling XML files with megabytes of copypasted code to add few more mostly decorative things).
 
 ## Important Installation Instructions
+
 This mod uses Intel Threading Building blocks to achieve concurrent AI calculations in order to speed up the AI (inter)turn. 
 Before you start:
 
