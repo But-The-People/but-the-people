@@ -3733,7 +3733,7 @@
 			<FreePromotionUnitCombats/>
 			<YieldModifiers>
 				<YieldModifier>
-					<YieldType>YIELD_MILK</YieldType>
+					<YieldType>YIELD_CHEESE</YieldType>
 					<iYield>25</iYield>
 				</YieldModifier>
 			</YieldModifiers>

@@ -8244,18 +8244,17 @@
 				<YieldModifier>
 					<YieldType>YIELD_SHEEP</YieldType>
 					<iModifier>50</iModifier>
-				</YieldModifier><YieldModifier>
+				</YieldModifier>
+				<YieldModifier>
 					<YieldType>YIELD_CATTLE</YieldType>
 					<iModifier>50</iModifier>
 				</YieldModifier>
 				<YieldModifier>
 					<YieldType>YIELD_HORSES</YieldType>
 					<iModifier>50</iModifier>
-				</YieldModifier><YieldModifier>
+				</YieldModifier>
+				<YieldModifier>
 					<YieldType>YIELD_CHICKEN</YieldType>
-					<iModifier>50</iModifier>
-				</YieldModifier><YieldModifier>
-					<YieldType>YIELD_MILK</YieldType>
 					<iModifier>50</iModifier>
 				</YieldModifier>
 				<YieldModifier>

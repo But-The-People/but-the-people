@@ -23,6 +23,7 @@ The following yields are removed:
 * * Goats and goat accessories
 * * Hardwood
 * * Logwood
+* * Milk: cheese is produced directly (shipping milk over Atlantic? What a great idea!)
 * * Peanuts, roasted peanuts
 * * Peat
 * * Pigs

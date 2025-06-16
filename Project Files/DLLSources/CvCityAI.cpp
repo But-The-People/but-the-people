@@ -4431,7 +4431,6 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 		case YIELD_COCA_LEAVES:
 		case YIELD_MAPLE_SIRUP:
 		case YIELD_COFFEE_BERRIES:
-		case YIELD_MILK:
 		case YIELD_TOBACCO:
 		case YIELD_COTTON:
 		case YIELD_INDIGO:

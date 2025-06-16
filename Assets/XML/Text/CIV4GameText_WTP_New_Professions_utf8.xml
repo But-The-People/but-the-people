@@ -833,11 +833,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_CATTLE_STRATEGY</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Milkmaids[COLOR_REVERT] can work in the [LINK=BUILDING_STABLE]stable[\LINK] or one of its upgrades to produce [LINK=YIELD_MILK]dairy cow milk[\LINK]. [LINK=UNIT_MILK_MAID]Skilled milkmaids[\LINK] excel at this craft. They dramatically boost your production of cow milk.</English>
-		<French>Les [COLOR_HIGHLIGHT_TEXT]laitières[COLOR_REVERT] peuvent travailler dans la [LINK=BUILDING_STABLE]etable[\LINK] ou dans l'une de ses améliorations pour produire du [LINK=YIELD_MILK]lait de vache[\LINK]. Les [LINK=UNIT_MILK_MAID]laitières qualifiées[\LINK] excellent dans ce domaine. Elles augmentent considérablement votre production de lait de vache.</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Milchmädchen[COLOR_REVERT] können in den [LINK=BUILDING_STABLE]Stallungen[\LINK] oder dessen Erweiterungen arbeiten, um mit dem Melken von Milchkühen [LINK=YIELD_MILK]Milch[\LINK] zu produzieren. [LINK=UNIT_MILK_MAID]Fleißige Milchmädchen[\LINK] beherrschen dieses Handwerk hervorragend. Sie steigern die Produktion von Kuhmilch dramatisch.</German>
-		<Italian>Le [COLOR_HIGHLIGHT_TEXT]lattaie[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_STABLE]stalla[\LINK] o in uno dei suoi potenziamenti per produrre il [LINK=YIELD_MILK]latte di mucca da latte[\LINK]. Le [LINK=UNIT_MILK_MAID]lattaie esperte[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di latte di mucca.</Italian>
-		<Spanish>Las [COLOR_HIGHLIGHT_TEXT]lecheras[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_STABLE]establo[\LINK] o en una de sus mejoras para producir [LINK=YIELD_MILK]leche de vaca[\LINK]. Las [LINK=UNIT_MILK_MAID]lecheras cualificadas[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de leche de vaca.</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Milkmaids[COLOR_REVERT] can work in the [LINK=BUILDING_STABLE]stable[\LINK] or one of its upgrades to produce [LINK=YIELD_CHEESE]cheese[\LINK]. [LINK=UNIT_MILK_MAID]Skilled milkmaids[\LINK] excel at this craft. They dramatically boost your production of cheese.</English>
+		<French>Les [COLOR_HIGHLIGHT_TEXT]laitières[COLOR_REVERT] peuvent travailler dans la [LINK=BUILDING_STABLE]etable[\LINK] ou dans l'une de ses améliorations pour produire du [LINK=YIELD_CHEESE]NEED_TRANSLATION[\LINK]. Les [LINK=UNIT_MILK_MAID]laitières qualifiées[\LINK] excellent dans ce domaine. Elles augmentent considérablement votre production de lait de vache.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Milchmädchen[COLOR_REVERT] können in den [LINK=BUILDING_STABLE]Stallungen[\LINK] oder dessen Erweiterungen arbeiten, um mit dem Melken von Milchkühen [LINK=YIELD_CHEESE]NEED_TRANSLATION[\LINK] zu produzieren. [LINK=UNIT_MILK_MAID]Fleißige Milchmädchen[\LINK] beherrschen dieses Handwerk hervorragend. Sie steigern die Produktion von NEED_TRANSLATION dramatisch.</German>
+		<Italian>Le [COLOR_HIGHLIGHT_TEXT]lattaie[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_STABLE]stalla[\LINK] o in uno dei suoi potenziamenti per produrre il [LINK=YIELD_CHEESE]NEED_TRANSLATION[\LINK]. Le [LINK=UNIT_MILK_MAID]lattaie esperte[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione NEED_TRANSLATION.</Italian>
+		<Spanish>Las [COLOR_HIGHLIGHT_TEXT]lecheras[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_STABLE]establo[\LINK] o en una de sus mejoras para producir [LINK=YIELD_CHEESE]NEED_TRANSLATION[\LINK]. Las [LINK=UNIT_MILK_MAID]lecheras cualificadas[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de NEED_TRANSLATION.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_SHEEP</Tag>
@@ -886,64 +886,11 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_MILKMAID_SHEEP_STRATEGY</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Milkmaids[COLOR_REVERT] can work in the [LINK=BUILDING_STABLE]stable[\LINK] or one of its upgrades to produce [LINK=YIELD_MILK]sheep milk[\LINK]. [LINK=UNIT_MILK_MAID]Skilled milkmaids[\LINK] excel at this craft. They dramatically boost your production of sheep milk.</English>
-		<French>Les [COLOR_HIGHLIGHT_TEXT]laitières[COLOR_REVERT] peuvent travailler dans l'[LINK=BUILDING_STABLE]étable[\LINK] ou l'une de ses améliorations pour produire du [LINK=YIELD_MILK]lait de brebis[\LINK]. Les [LINK=UNIT_MILK_MAID]laitières qualifiées[\LINK] excellent dans ce domaine. Elles augmentent considérablement votre production de lait de brebis.</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Milchmädchen[COLOR_REVERT] können im [LINK=BUILDING_STABLE]Stall[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_MILK]Schafsmilch[\LINK] herzustellen. [LINK=UNIT_MILK_MAID]Fleißige Milchmädchen[\LINK] sind in diesem Handwerk hervorragend. Sie steigern die Produktion von Schafsmilch dramatisch.</German>
-		<Italian>Le [COLOR_HIGHLIGHT_TEXT]lattaie[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_STABLE]stalla[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_MILK]latte di pecora[\LINK]. Le [LINK=UNIT_MILK_MAID]lattaie esperte[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di latte di pecora.</Italian>
-		<Spanish>Las [COLOR_HIGHLIGHT_TEXT]lecheras[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_STABLE]establo[\LINK] o en una de sus mejoras para producir [LINK=YIELD_MILK]leche de oveja[\LINK]. Las [LINK=UNIT_MILK_MAID]lecheras cualificadas[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de leche de oveja.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_CHEESE_MAKER</Tag>
-		<English>
-			<Text>Cheese Maker:Cheese Makers</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</English>
-		<French>
-			<Text>Fromager:Fromagers</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>
-			<Text>Käsemacher:Käsemacher</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</German>
-		<Italian>
-			<Text>Casaro:Casari</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Quesero:Queseros</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
-		<Russian>
-			<Text>Сыровар:Сыровары</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_CHEESE_MAKER_HELP</Tag>
-		<English>????</English>
-	</TEXT>
-		<TEXT>
-		<Tag>TXT_KEY_PROFESSION_CHEESE_MAKER_PEDIA</Tag>
-		<English>Cheese is produced in a wide range of flavours and textures by coagulation of the milk protein casein. It's made up of proteins and fat, usually from the milk of cows, goats, or sheep. During production, milk is acidified and the enzymes of either rennet or other bacterial enzymes are added to cause the casein to coagulate. The solid curds are then separated from the liquid whey and pressed into finished cheese.</English>
-		<French>Le fromage est produit dans une large gamme de saveurs et de textures par la coagulation de la caséine, une protéine du lait. Il est composé de protéines et de matières grasses, provenant généralement du lait de vache, de chèvre ou de brebis. Pendant la production, le lait est acidifié et les enzymes de la présure ou d'autres enzymes bactériennes sont ajoutées pour provoquer la coagulation de la caséine. Le caillé solide est ensuite séparé du petit-lait liquide et pressé en fromage fini.</French>
-		<German>Käse wird durch Gerinnung des Milcheiweißes Kasein in einer breiten Palette von Geschmacksrichtungen und Texturen hergestellt. Er besteht aus Proteinen und Fett und wird normalerweise aus der Milch von Kühen, Ziegen oder Schafen gewonnen. Bei der Herstellung wird die Milch angesäuert und die Enzyme des Labs oder andere bakterielle Enzyme werden hinzugefügt, um das Kasein zur Gerinnung zu bringen. Der feste Käsebruch wird dann von der flüssigen Molke getrennt und zu fertigem Käse gepresst.</German>
-		<Italian>Il formaggio viene prodotto in un'ampia gamma di sapori e consistenze attraverso la coagulazione della proteina del latte, la caseina. È composto da proteine e grassi, solitamente provenienti dal latte di mucca, capra o pecora. Durante la produzione, il latte viene acidificato e vengono aggiunti gli enzimi del caglio o altri enzimi batterici per provocare la coagulazione della caseina. La cagliata solida viene quindi separata dal siero liquido e pressata per ottenere il formaggio finito.</Italian>
-		<Spanish>El queso se produce en una amplia gama de sabores y texturas por coagulación de la proteína láctea caseína. Está compuesto de proteínas y grasa, y suele proceder de la leche de vaca, cabra u oveja. Durante la producción, se acidifica la leche y se añaden las enzimas del cuajo u otras enzimas bacterianas para provocar la coagulación de la caseína. A continuación, la cuajada sólida se separa del suero líquido y se prensa para obtener el queso acabado.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_CHEESE_MAKER_STRATEGY</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Cheesemakers[COLOR_REVERT] can work in the [LINK=BUILDING_STABLE]stable[\LINK] or one of its upgrades to produce [LINK=YIELD_CHEESE]cheese[\LINK] from [LINK=YIELD_MILK]milk[\LINK]. [LINK=UNIT_CHEESE_MAKER]Master cheesemakers[\LINK] excel at this craft. They dramatically boost your production of cheese.</English>
-		<French>Les [COLOR_HIGHLIGHT_TEXT]fromagers[COLOR_REVERT] peuvent travailler dans la [LINK=BUILDING_STABLE]etable[\LINK] ou l'une de ses améliorations pour produire du [LINK=YIELD_CHEESE]fromage[\LINK] à partir de [LINK=YIELD_MILK]lait[\LINK]. Les [LINK=UNIT_CHEESE_MAKER]maîtres fromagers[\LINK] excellent dans ce domaine. Ils augmentent considérablement votre production de fromage.</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Käsemacher[COLOR_REVERT] können in den [LINK=BUILDING_STABLE]Stallungen[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_CHEESE]Käse[\LINK] aus [LINK=YIELD_MILK]Milch[\LINK] herzustellen. [LINK=UNIT_CHEESE_MAKER]Käsemeister[\LINK] beherrschen dieses Handwerk hervorragend. Sie steigern Ihre Käseproduktion dramatisch.</German>
-		<Italian>I [COLOR_HIGHLIGHT_TEXT]Casari[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_STABLE]stalla[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_CHEESE]formaggio[\LINK] dal [LINK=YIELD_MILK]latte[\LINK]. I [LINK=UNIT_CHEESE_MAKER]mastri casari[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di formaggio.</Italian>
-		<Spanish>Los [COLOR_HIGHLIGHT_TEXT]queseros[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_STABLE]establo[\LINK] o en una de sus mejoras para producir [LINK=YIELD_CHEESE]queso[\LINK] a partir de [LINK=YIELD_MILK]leche[\LINK]. Los [LINK=UNIT_CHEESE_MAKER]maestros queseros[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de queso.</Spanish>
+		<English>[COLOR_HIGHLIGHT_TEXT]Milkmaids[COLOR_REVERT] can work in the [LINK=BUILDING_STABLE]stable[\LINK] or one of its upgrades to produce [LINK=YIELD_CHEESE]cheese[\LINK]. [LINK=UNIT_MILK_MAID]Skilled milkmaids[\LINK] excel at this craft. They dramatically boost your production of cheese.</English>
+		<French>Les [COLOR_HIGHLIGHT_TEXT]laitières[COLOR_REVERT] peuvent travailler dans l'[LINK=BUILDING_STABLE]étable[\LINK] ou l'une de ses améliorations pour produire du [LINK=YIELD_CHEESE]NEED_TRANSLATION[\LINK]. Les [LINK=UNIT_MILK_MAID]laitières qualifiées[\LINK] excellent dans ce domaine. Elles augmentent considérablement votre production de lait de brebis.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Milchmädchen[COLOR_REVERT] können im [LINK=BUILDING_STABLE]Stall[\LINK] oder einer seiner Erweiterungen arbeiten, um [LINK=YIELD_CHEESE]NEED_TRANSLATION[\LINK] herzustellen. [LINK=UNIT_MILK_MAID]Fleißige Milchmädchen[\LINK] sind in diesem Handwerk hervorragend. Sie steigern die Produktion von NEED_TRANSLATION dramatisch.</German>
+		<Italian>Le [COLOR_HIGHLIGHT_TEXT]lattaie[COLOR_REVERT] possono lavorare nella [LINK=BUILDING_STABLE]stalla[\LINK] o in uno dei suoi potenziamenti per produrre [LINK=YIELD_CHEESE]NEED_TRANSLATION[\LINK]. Le [LINK=UNIT_MILK_MAID]lattaie esperte[\LINK] eccellono in questo mestiere. Aumentano drasticamente la produzione di NEED_TRANSLATION.</Italian>
+		<Spanish>Las [COLOR_HIGHLIGHT_TEXT]lecheras[COLOR_REVERT] pueden trabajar en el [LINK=BUILDING_STABLE]establo[\LINK] o en una de sus mejoras para producir [LINK=YIELD_CHEESE]NEED_TRANSLATION[\LINK]. Las [LINK=UNIT_MILK_MAID]lecheras cualificadas[\LINK] destacan en este oficio. Aumentan drásticamente tu producción de NEED_TRANSLATION.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_OLIVE_OIL_TRADER</Tag>

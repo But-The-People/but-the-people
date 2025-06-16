@@ -91,16 +91,6 @@
 		<German>Schwerpunkt Alltagskleidung aufheben</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_EMPHASIZE_MILK</Tag>
-		<English>Emphasize Milk</English>
-		<German>Schwerpunkt Milch</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_EMPHASIZE_NO_MILK</Tag>
-		<English>Deemphasize Milk</English>
-		<German>Schwerpunkt Milch aufheben</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_EMPHASIZE_CHEESE</Tag>
 		<English>Emphasize Cheese</English>
 		<German>Schwerpunkt Käse</German>

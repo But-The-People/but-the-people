@@ -139,7 +139,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, Coordinates initCoord, bool bBump
 				}
 
 				// raw
-				else if ( eYield == YIELD_WOOL || eYield == YIELD_HIDES || eYield == YIELD_DOWNS || eYield == YIELD_FUR || eYield == YIELD_PREMIUM_FUR || eYield == YIELD_BARLEY || eYield == YIELD_SUGAR || eYield == YIELD_GRAPES || eYield == YIELD_OLIVES || eYield == YIELD_COFFEE_BERRIES || eYield == YIELD_MILK || eYield == YIELD_RAW_SALT || eYield == YIELD_RED_PEPPER || eYield == YIELD_COTTON || eYield == YIELD_INDIGO || eYield == YIELD_TOBACCO || eYield == YIELD_WHALE_BLUBBER || eYield == YIELD_VALUABLE_WOOD)
+				else if ( eYield == YIELD_WOOL || eYield == YIELD_HIDES || eYield == YIELD_DOWNS || eYield == YIELD_FUR || eYield == YIELD_PREMIUM_FUR || eYield == YIELD_BARLEY || eYield == YIELD_SUGAR || eYield == YIELD_GRAPES || eYield == YIELD_OLIVES || eYield == YIELD_COFFEE_BERRIES || eYield == YIELD_RAW_SALT || eYield == YIELD_RED_PEPPER || eYield == YIELD_COTTON || eYield == YIELD_INDIGO || eYield == YIELD_TOBACCO || eYield == YIELD_WHALE_BLUBBER || eYield == YIELD_VALUABLE_WOOD)
 				{
 					m_em_iCustomHouseSellThreshold.set(eYield, GC.getCUSTOMHOUSE_RAW_SELL_THRESHOLD() * iGameSpeedModifier);
 				}
@@ -5815,7 +5815,7 @@ void CvCity::setUnitWorkingPlot(int iPlotIndex, int iUnitId)
 						iBestYieldAmount = iLoopYieldAmount;
 					}
 				}
-			
+
 				// Erik: No assert since it is possible that a unit would produce 0 yield in any plot profession
 				//FAssert(eBestProfession != NO_PROFESSION);
 				if(eBestProfession != NO_PROFESSION)
@@ -7445,7 +7445,7 @@ void CvCity::doYields()
 					int iLoss = std::max(GC.getCITY_YIELD_DECAY_PERCENT() * iExcess / 100, GC.getMIN_CITY_YIELD_DECAY());
 					iLoss = std::min(iLoss, iExcess);
 					changeYieldStored(eYield, -iLoss);
-					
+
 					// compare possible profits from selling Europe and Africa, and use the best possible
 					const int iEuropeProfit = GET_PLAYER(getOwnerINLINE()).getSellToEuropeProfit(eYield, iLoss);
 					const int iAfricaProfit = GET_PLAYER(getOwnerINLINE()).getSellToAfricaProfit(eYield, iLoss);
@@ -12548,7 +12548,7 @@ void CvCity::handleAutoTraderouteSetup(bool bReset, bool bImportAll, bool bAutoE
 				NetworkDataTradeRouteInts buffer;
 				buffer.iImportLimitLevel = iImportLimitLevel;
 				buffer.iMaintainLevel    = iMaintainLevel;
-				
+
 				doTask(TASK_YIELD_TRADEROUTE, eYield, buffer.iNetwork, bImport, bExport, bMaintainImport, bAutoExport);
 			}
 		}
