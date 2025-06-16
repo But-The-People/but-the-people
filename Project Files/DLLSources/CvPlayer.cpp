@@ -1677,8 +1677,8 @@ void CvPlayer::killUnits()
 {
 	int iLoop;
 	for (CvUnit* pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
-	{ 
-		if (pLoopUnit == NULL) 
+	{
+		if (pLoopUnit == NULL)
 		{
 			FAssertMsg(false, "Unexpected: NULL unit!")
 			continue;
@@ -3090,7 +3090,7 @@ CvCity* CvPlayer::buyUnitFromPlayer(PlayerTypes eSellingPlayer, UnitClassTypes e
 CvCity* CvPlayer::buyUnitFromPlayer(PlayerTypes eSellingPlayer, UnitTypes eUnitType, int iNumUnits, CvWString szMessage, int iPriceToPay, LocationFlags eLocationFlags, bool bReceivePrice, bool bMessageMentionLocation)
 {
 	FAssertMsg(getID() != eSellingPlayer, "Player is trying to sell a unit to itself");
-	
+
 	if (eSellingPlayer == NO_PLAYER)
 	{
 		FAssertMsg(eSellingPlayer != NO_PLAYER, "Buying a unit from a non-existing player");
@@ -10241,7 +10241,7 @@ CvUnit* CvPlayer::nextUnit(int *pIterIdx) const
 	CvUnit* pUnit = nextUnitInternal(pIterIdx);
 	// Loop until a non-temp unit is found or we run out of units.
 	while (pUnit != NULL && isTempUnit(pUnit))
-		{ 
+		{
 			pUnit = nextUnitInternal(pIterIdx);
 		}
 	return pUnit;
@@ -10708,7 +10708,7 @@ EventTriggeredData* CvPlayer::addEventTriggered()
 void CvPlayer::deleteEventTriggered(int iID)
 {
 	// sometimes event triggers from countdown aren't in the regular list and yet they are attempted to be deleted anyway
-	// deleting an ID, which isn't there will trigger an assert (not fassert) and should be avoided 
+	// deleting an ID, which isn't there will trigger an assert (not fassert) and should be avoided
 	//    Nightinggale
 	if (getEventTriggered(iID) != NULL)
 	{
@@ -14556,8 +14556,8 @@ bool CvPlayer::canDoEvent(EventTypes eEvent, const EventTriggeredData& kTriggere
 						}
 					}
 				}
-				
-					
+
+
 				if (iCount < iCountGoal && kTriggerInfo.getCountUnitsOnMap())
 				{
 					CvUnit* pUnit = NULL;
@@ -14652,7 +14652,7 @@ void CvPlayer::applyEvent(EventTypes eEvent, int iEventTriggeredId, bool bUpdate
 		return;
 	}
 	applyEvent(eEvent, *pTriggeredData, bUpdateTrigger);
-	
+
 }
 
 void CvPlayer::applyEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData, bool bUpdateTrigger)
@@ -16142,13 +16142,6 @@ void CvPlayer::setYieldBuyPrice(YieldTypes eYield, int iPrice, bool bMessage)
 					iPrice = getYieldBuyPrice(YIELD_COFFEE_BERRIES) - 1;
 				}
 				break;
-			case YIELD_CHEESE:
-				if (getYieldBuyPrice(eYield) - getYieldBuyPrice(YIELD_MILK) <= price_diff)
-				{
-					eYield = YIELD_MILK;
-					iPrice = getYieldBuyPrice(YIELD_MILK) - 1;
-				}
-				break;
 			case YIELD_CIGARS:
 				if (getYieldBuyPrice(eYield) - getYieldBuyPrice(YIELD_TOBACCO) <= price_diff)
 				{
@@ -16711,7 +16704,7 @@ CvUnit* CvPlayer::buyYieldUnit(YieldTypes eYield, int iAmount, CvUnit* pTranspor
 	return pUnit;
 }
 
-CvUnit* CvPlayer::buyYieldUnitFromEurope(YieldTypes eYield, int iAmount, CvUnit* pTransport) 
+CvUnit* CvPlayer::buyYieldUnitFromEurope(YieldTypes eYield, int iAmount, CvUnit* pTransport)
 {
 	return buyYieldUnit(eYield, iAmount, pTransport, TRADE_LOCATION_EUROPE);
 }
@@ -16848,13 +16841,6 @@ void CvPlayer::setYieldAfricaBuyPrice(YieldTypes eYield, int iPrice, bool bMessa
 				{
 					eYield = YIELD_COFFEE_BERRIES;
 					iPrice = getYieldAfricaBuyPriceNoModifier(YIELD_COFFEE_BERRIES) - 1;
-				}
-				break;
-			case YIELD_CHEESE:
-				if (getYieldAfricaBuyPriceNoModifier(eYield) - getYieldAfricaBuyPriceNoModifier(YIELD_MILK) <= price_diff)
-				{
-					eYield = YIELD_MILK;
-					iPrice = getYieldAfricaBuyPriceNoModifier(YIELD_MILK) - 1;
 				}
 				break;
 			case YIELD_CIGARS:
@@ -17109,7 +17095,7 @@ void CvPlayer::setYieldAfricaBuyPrice(YieldTypes eYield, int iPrice, bool bMessa
 	}
 }
 
-CvUnit* CvPlayer::buyYieldUnitFromAfrica(YieldTypes eYield, int iAmount, CvUnit* pTransport) 
+CvUnit* CvPlayer::buyYieldUnitFromAfrica(YieldTypes eYield, int iAmount, CvUnit* pTransport)
 {
 	return buyYieldUnit(eYield, iAmount, pTransport, TRADE_LOCATION_AFRICA);
 }
@@ -17325,13 +17311,6 @@ void CvPlayer::setYieldPortRoyalBuyPrice(YieldTypes eYield, int iPrice, bool bMe
 				{
 					eYield = YIELD_COFFEE_BERRIES;
 					iPrice = getYieldPortRoyalBuyPriceNoModifier(YIELD_COFFEE_BERRIES) - 1;
-				}
-				break;
-			case YIELD_CHEESE:
-				if (getYieldPortRoyalBuyPriceNoModifier(eYield) - getYieldPortRoyalBuyPriceNoModifier(YIELD_MILK) <= price_diff)
-				{
-					eYield = YIELD_MILK;
-					iPrice = getYieldPortRoyalBuyPriceNoModifier(YIELD_MILK) - 1;
 				}
 				break;
 			case YIELD_CIGARS:
@@ -17586,7 +17565,7 @@ void CvPlayer::setYieldPortRoyalBuyPrice(YieldTypes eYield, int iPrice, bool bMe
 	}
 }
 
-CvUnit* CvPlayer::buyYieldUnitFromPortRoyal(YieldTypes eYield, int iAmount, CvUnit* pTransport) 
+CvUnit* CvPlayer::buyYieldUnitFromPortRoyal(YieldTypes eYield, int iAmount, CvUnit* pTransport)
 {
 	return buyYieldUnit(eYield, iAmount, pTransport, TRADE_LOCATION_PORT_ROYAL);
 }
@@ -18015,7 +17994,7 @@ void CvPlayer::changeYieldTradedCounters(TradeLocationTypes eLocation, YieldType
 {
 	FAssert(is(CIV_CATEGORY_COLONIAL) || is(CIV_CATEGORY_KING));
 
-	// set up players to allow the function to work regardless of if the call is made to king or colonial player	
+	// set up players to allow the function to work regardless of if the call is made to king or colonial player
 	CvPlayer* pColonial = is(CIV_CATEGORY_COLONIAL) ? this : getColonyPlayer();;
 	CvPlayer* pKing = is(CIV_CATEGORY_KING) ? this : getParentPlayer();
 
@@ -18030,7 +18009,7 @@ void CvPlayer::changeYieldTradedCounters(TradeLocationTypes eLocation, YieldType
 		}
 		pKing->changeYieldCountScoreTotal(eYield, iAmountSold*iUnitPrice);
 	}
-	
+
 	pColonial->changeYieldTradedTaxCounter(eLocation, eYield, iAmountSold);
 	pKing->changeYieldTradedTaxCounter(eLocation, eYield, iAmountSold);
 }
@@ -18234,7 +18213,7 @@ void CvPlayer::applyYieldTradedModifier(TradeLocationTypes eLocation, YieldTypes
 	FAssert(isInRange(eLocation));
 	FAssert(eYield >= 0 && eYield < NUM_YIELD_TYPES);
 	FAssert(is(CIV_CATEGORY_KING));
-	
+
 	long long iCountBuffer = m_em_iYieldSoldTotal[eLocation].get(eYield);
 	iCountBuffer *= iMultiplier;
 	iCountBuffer = iCountBuffer >> 10;
@@ -18929,7 +18908,7 @@ void CvPlayer::setProfessionEquipmentModifier(ProfessionTypes eProfession, int i
 			CvArea* pArea = pUnit->area();
 			//FAssertMsg(pArea, "No area assigned");
 			if (pArea != NULL)
-			{	
+			{
 				pArea->changePower(getID(), -iPower);
 			}
 		}
@@ -19362,7 +19341,7 @@ bool CvPlayer::canHurry(HurryTypes eHurry, int iIndex) const
 	{
 		return false;
 	}
-	
+
 	if (kHurry.getGoldPerCross() <= 0)
 	{
 		return true;
@@ -20052,7 +20031,7 @@ bool CvPlayer::checkPopulation() const
 	return (iNumPopulation == getTotalPopulation());
 }
 
-// Returns true if the cached and computed values are different 
+// Returns true if the cached and computed values are different
 bool CvPlayer::checkPower(bool bReset)
 {
 	int iPower = 0;
@@ -20145,7 +20124,7 @@ bool CvPlayer::checkPower(bool bReset)
 	if (iPower != getPower())
 	{
 		if (!bReset)
-		{ 
+		{
 			const int iDifference = iPower - getPower();
 			FAssertMsg(false, CvString::format("Power discrepancy detected! player %d: %d != %d. Difference: %d",
 				getID(), iPower, getPower(), iDifference).c_str());
@@ -20179,7 +20158,7 @@ bool CvPlayer::checkPower(bool bReset)
 		{
 			if (!bReset)
 			{
-				FAssertMsg(false, CvString::format("Area power discrepancy detected for player %d: %d != %d. Difference: %d for area %d", 
+				FAssertMsg(false, CvString::format("Area power discrepancy detected for player %d: %d != %d. Difference: %d for area %d",
 					getID(), mapAreaPower[pArea->getID()], pArea->getPower(getID()), iDifference, pArea->getID()).c_str());
 			}
 			else
@@ -25003,7 +24982,7 @@ void CvPlayer::postLoadFixes()
 			}
 		}
 
-		// Fix for issue that may have caused a ship gotten stuck in PR due to an earlier bug, 
+		// Fix for issue that may have caused a ship gotten stuck in PR due to an earlier bug,
 		for (CvUnit* pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
 		{
 			if (pLoopUnit != NULL && pLoopUnit->getUnitTravelState() == UNIT_TRAVEL_STATE_FROM_PORT_ROYAL)
@@ -25055,7 +25034,7 @@ DirectionTypes CvPlayer::getPreferredStartingDirection() const
 	if (getStartingPlot() == NULL) {
 		return NO_DIRECTION;
 	}
-	
+
 	int startX = getStartingPlot()->getX_INLINE();
 	int startY = getStartingPlot()->getY_INLINE();
 	int score[NUM_DIRECTION_TYPES] = { 0 };
@@ -25216,7 +25195,7 @@ CvUnit* CvPlayer::getOrCreateTempUnit(UnitTypes eUnit, int iX, int iY)
 		removeGroupCycle(m_pTempUnit->getGroup()->getID());
 	}
 
-	//	Set an arbitrary automation type - just need it to be flagged as automated	
+	//	Set an arbitrary automation type - just need it to be flagged as automated
 	m_pTempUnit->getGroup()->setAutomateType(AUTOMATE_FULL);
 
 	return m_pTempUnit;

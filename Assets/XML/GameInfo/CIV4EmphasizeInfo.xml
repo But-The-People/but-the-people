@@ -139,18 +139,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_MILK</Type>
-			<Description>TXT_KEY_EMPHASIZE_MILK</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_MILK</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_RAW_SALT</Type>
 			<Description>TXT_KEY_EMPHASIZE_RAW_SALT</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -974,18 +962,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_COFFEE_BERRIES</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_MILK</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_MILK</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_MILK</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>

@@ -1756,7 +1756,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			}
 			else
 			{
-				iValue *= 80; // found value decreased for stuff like shallow coast or lakes decreased, so it prefers above 
+				iValue *= 80; // found value decreased for stuff like shallow coast or lakes decreased, so it prefers above
 				iValue /= 100;
 			}
 		}
@@ -3644,7 +3644,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 				// here we calculate the price
 				newPrice = newPrice * (100 - iTotalNativeTradeModifier) / 100;
 				// R&R, ray, change for Trait Trader - END
-				
+
 				//setting value to new price
 				pTheirCounter->clear();
 				CLLNode<TradeData>* newNode = pNode;
@@ -8554,7 +8554,7 @@ void CvPlayerAI::AI_nativeTrade(CvUnit* pUnit)
 	{
 		return;
 	}
-	
+
 	YieldTypes eBestYield = getBestYieldForTrade(*pHomeCity, "Native Yield Gift: pick yield");
 	if (eBestYield == NO_YIELD)
 	{
@@ -8629,7 +8629,7 @@ YieldTypes CvPlayerAI::getBestYieldForTrade(const CvCity& city, const char* pszL
 {
 	// Compute the total weight of all items together.
 	int totalYieldsStored = 0;
-	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_CARGO_YIELD_TYPES; ++eYield) 
+	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_CARGO_YIELD_TYPES; ++eYield)
 	{
 		if (isYieldValidForNativeTrade(eYield, city))
 		{
@@ -8639,7 +8639,7 @@ YieldTypes CvPlayerAI::getBestYieldForTrade(const CvCity& city, const char* pszL
 
 	// Choose a random yield with probability weighted on how much yield is stored.
 	int rand = GC.getGameINLINE().getSorenRandNum(totalYieldsStored, pszLog);
-	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_CARGO_YIELD_TYPES; ++eYield) 
+	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_CARGO_YIELD_TYPES; ++eYield)
 	{
 		if (isYieldValidForNativeTrade(eYield, city))
 		{
@@ -8695,7 +8695,6 @@ bool CvPlayerAI::AI_isYieldForSale(YieldTypes eYield) const
 			return !AI_isYieldNeeded(eYield); // R&R, ray, AI improvement for horses - START
 			break;
 		case YIELD_COFFEE_BERRIES:
-		case YIELD_MILK:
 		case YIELD_TOBACCO:
 		case YIELD_COTTON:
 		case YIELD_INDIGO:
@@ -8896,7 +8895,6 @@ bool CvPlayerAI::AI_isYieldFinalProduct(YieldTypes eYield) const
 			bFinal = false;
 			break;
 		case YIELD_COFFEE_BERRIES:
-		case YIELD_MILK:
 		case YIELD_TOBACCO:
 		case YIELD_COTTON:
 		case YIELD_INDIGO:
@@ -9027,7 +9025,6 @@ bool CvPlayerAI::AI_shouldBuyFromEurope(YieldTypes eYield) const
 		case YIELD_COCA_LEAVES:
 		case YIELD_MAPLE_SIRUP:
 		case YIELD_COFFEE_BERRIES:
-		case YIELD_MILK:
 		case YIELD_TOBACCO:
 		case YIELD_COTTON:
 		case YIELD_INDIGO:
@@ -9208,7 +9205,6 @@ int CvPlayerAI::AI_yieldValue(YieldTypes eYield, bool bProduce, int iAmount, boo
 				iValue /= 100;
 				break;
 			case YIELD_COFFEE_BERRIES:
-			case YIELD_MILK:
 			case YIELD_TOBACCO:
 			case YIELD_COTTON:
 			case YIELD_INDIGO:
@@ -9377,7 +9373,6 @@ void CvPlayerAI::AI_updateYieldValues()
 				iValue += kParent.getYieldSellPrice(eYield);
 				break;
 			case YIELD_COFFEE_BERRIES:
-			case YIELD_MILK:
 			case YIELD_TOBACCO:
 			case YIELD_COTTON:
 			case YIELD_INDIGO:

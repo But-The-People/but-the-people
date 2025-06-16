@@ -262,11 +262,6 @@
 			<DefaultUnit>UNIT_BAKER</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_CHEESE_MAKER</Type>
-			<Description>TXT_KEY_UNITCLASS_CHEESE_MAKER</Description>
-			<DefaultUnit>UNIT_CHEESE_MAKER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_SPICE_TRADER</Type>
 			<Description>TXT_KEY_UNITCLASS_SPICE_TRADER</Description>
 			<DefaultUnit>UNIT_SPICE_TRADER</DefaultUnit>

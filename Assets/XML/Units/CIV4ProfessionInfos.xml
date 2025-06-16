@@ -2545,7 +2545,7 @@
 			<YieldEquipedNums/>
 			<FreePromotions/>
 			<YieldsProduced>
-				<YieldType>YIELD_MILK</YieldType>
+				<YieldType>YIELD_CHEESE</YieldType>
 				<YieldType>YIELD_CATTLE</YieldType>
 			</YieldsProduced>
 			<YieldsConsumed>
@@ -2585,7 +2585,7 @@
 			<YieldEquipedNums/>
 			<FreePromotions/>
 			<YieldsProduced>
-				<YieldType>YIELD_MILK</YieldType>
+				<YieldType>YIELD_CHEESE</YieldType>
 				<YieldType>YIELD_SHEEP</YieldType>
 			</YieldsProduced>
 			<YieldsConsumed>
@@ -2594,45 +2594,6 @@
 			<Button>Art/interface/buttons/New_Profession_Buttons/Profession_Milkmaid_Sheep.dds</Button>
 			<bUseLbD>1</bUseLbD>
 			<ExpertUnit>UNITCLASS_MILK_MAID</ExpertUnit>
-			<iLbDLearnLevel>2</iLbDLearnLevel>
-		</ProfessionInfo>
-		<ProfessionInfo>
-			<Type>PROFESSION_CHEESE_MAKER</Type>
-			<Description>TXT_KEY_PROFESSION_CHEESE_MAKER</Description>
-			<Civilopedia>TXT_KEY_PROFESSION_CHEESE_MAKER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROFESSION_CHEESE_MAKER_STRATEGY</Strategy>
-			<Help>TXT_KEY_PROFESSION_CHEESE_MAKER_HELP</Help>
-			<Combat>NONE</Combat>
-			<DefaultUnitAI>NONE</DefaultUnitAI>
-			<SpecialBuilding>SPECIALBUILDING_HORSES</SpecialBuilding>
-			<bWorkPlot>0</bWorkPlot>
-			<bCitizen>1</bCitizen>
-			<bWater>0</bWater>
-			<bScout>0</bScout>
-			<bCanCrossLargeRivers>0</bCanCrossLargeRivers>
-			<bCityDefender>0</bCityDefender>
-			<bCanFound>0</bCanFound>
-			<bUnarmed>0</bUnarmed>
-			<bNoDefensiveBonus>0</bNoDefensiveBonus>
-			<iCombatChange>0</iCombatChange>
-			<iMovesChange>0</iMovesChange>
-			<bMoveIntoPeak>0</bMoveIntoPeak>
-			<iWorkRate>0</iWorkRate>
-			<iMissionaryRate>0</iMissionaryRate>
-			<iNativeTradeRate>0</iNativeTradeRate>
-			<iPower>0</iPower>
-			<iAsset>300</iAsset>
-			<YieldEquipedNums/>
-			<FreePromotions/>
-			<YieldsProduced>
-				<YieldType>YIELD_CHEESE</YieldType>
-			</YieldsProduced>
-			<YieldsConsumed>
-				<YieldType>YIELD_MILK</YieldType>
-			</YieldsConsumed>
-			<Button>Art/interface/buttons/New_Profession_Buttons/Profession_Cheese_Maker.dds</Button>
-			<bUseLbD>1</bUseLbD>
-			<ExpertUnit>UNITCLASS_CHEESE_MAKER</ExpertUnit>
 			<iLbDLearnLevel>2</iLbDLearnLevel>
 		</ProfessionInfo>
 		<ProfessionInfo>
