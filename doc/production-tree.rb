@@ -26,6 +26,7 @@ tiles = {
 	"permafrost" => "1 ore,1 fur",
 
 	"plains" => "3 food,1 horses,1 cattle,3 barley",
+	"prairie" => "2 food,3 horses,2 cattle,3 cotton,3 indigo",
 
 	"rock steppes" => "3 stone,1 ore",
 
@@ -119,8 +120,8 @@ end
 
 	chain("sheep", 'wool')
 	chain("sheep", 'food')
-	chain("sheep", 'milk', 'cheese')
-	chain("cattle", 'milk')
+	chain("sheep", 'cheese')
+	chain("cattle", 'cheese')
 
 	chain("wool", "wool cloth", "colored wool cloth", "festive clothes")
 
@@ -143,19 +144,18 @@ end
 
 	chain("tobacco", "cigars")
 
-	chain("cloth", "rigging")
-	chain("hemp", "rigging")
+	chain("hemp", "sailcloth")
 
 	chain("whale fat", "train oil")
 
 	puts "digraph {"
 
 	tiles.keys.each do |k|
-		puts "\"#{k}\" [color=green]"
+		puts "\"#{k}\" [color=green,shape=box]"
 	end
 	tiles.each do |k, v|
 		yields = v.split(",").map{|yi| yi.scan(/^(\d+)\s+(.+)/)[0]}
-		puts "\"#{k}\" [color=green,xlabel=\"#{yields.map{|yi| yi.join(" ")}.join("\\n")}\"]"
+		puts "\"#{k}\" [color=green,label=\"#{k}\\n\\n#{yields.map{|yi| yi.join(" ")}.join("\\n")}\"]"
 		yields.each do |yi|
 			if yi[1] == "food"
 			else
@@ -167,4 +167,12 @@ end
 	$prodchains.each do |a|
 		puts "\"#{a[0]}\" -> \"#{a[1]}\""
 	end
+
+	tiles.each do |k, v|
+		if k =~ / hills$/
+			basename = k.gsub(/ hills$/,"")
+			puts "subgraph \"cluster #{basename}\" { \"#{k}\"; \"#{basename}\" }"
+		end
+	end
+
 	puts "}"

@@ -45,10 +45,29 @@ Full intended (not everything is already implemented) [production tree](./doc/pr
 
 The fork is going to focus on improving code quality and maintainance. New features are possible, but not if they are going to be implemented in a way that dramatically affects the maintenance (like filling XML files with megabytes of copypasted code to add few more mostly decorative things).
 
-## Important Installation Instructions
+## Installation
 
-This mod uses Intel Threading Building blocks to achieve concurrent AI calculations in order to speed up the AI (inter)turn. 
-Before you start:
+### Using an automatic build
+
+1. First make sure that your colonization game is patched to official patch 1.01f. (Everything else will cause heavy problems.)
+1. Navigate to [releases](https://github.com/But-The-People/but-the-people/releases) page
+2. Choose a pre-release or release, click "assets", download the file that starts with "ButThePeople" (not "Source code" ones)
+3. Go to the game directory. It's the one with Colonization.exe.
+4. Create a folder called Mods if it's not already there.
+5. Create "ButThePeople" folder there
+6. Unpack the archive you downloaded in ButThePeople folder
+7. Doubleclick setup.bat inside (windows might display it as simply setup)
+8. Run Civilization 4 Colonization, choose "Advanced" and "Load Mod", choose "ButThePeople"
+9. Enjoy!
+
+### Building yourself
+
+Download the source code either from a release page or via git, follow [WTP building guide](https://github.com/We-the-People-civ4col-mod/Mod/wiki/How-to-play-the-development-version) roughly.
+
+### Important Installation Instructions
+
+This mod uses Intel Threading Building blocks to achieve concurrent AI calculations in order to speed up the AI (inter)turn.
+Setup.bat should take care of this, but before you start ensure this is done:
 
 **copy tbb.dll and tbbmalloc.dll from "Project Files\tbb" to the directory where Colonization.exe resides!**
 
@@ -57,4 +76,3 @@ Otherwise the mod will not work!
 ## Known Issues
 
 oh boy.
-
