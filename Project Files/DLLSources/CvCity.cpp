@@ -133,7 +133,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, Coordinates initCoord, bool bBump
 					m_em_iCustomHouseSellThreshold.set(eYield, GC.getCUSTOMHOUSE_STRATEGIC_RAW_SELL_THRESHOLD() * iGameSpeedModifier);
 				}
 				// strategic produced
-				else if ( eYield == YIELD_TOOLS || eYield == YIELD_BLADES || eYield == YIELD_MUSKETS || eYield == YIELD_CANNONS || eYield == YIELD_BLACK_POWDER || eYield == YIELD_SHEEP || eYield == YIELD_CATTLE || eYield == YIELD_CHICKEN || eYield == YIELD_HORSES || eYield == YIELD_BAKERY_GOODS || eYield == YIELD_SAILCLOTH|| eYield == YIELD_FIELD_WORKER_TOOLS || eYield == YIELD_HOUSEHOLD_GOODS || eYield == YIELD_LUXURY_GOODS)
+				else if ( eYield == YIELD_TOOLS|| eYield == YIELD_MUSKETS || eYield == YIELD_CANNONS || eYield == YIELD_BLACK_POWDER || eYield == YIELD_SHEEP || eYield == YIELD_CATTLE || eYield == YIELD_CHICKEN || eYield == YIELD_HORSES || eYield == YIELD_BAKERY_GOODS || eYield == YIELD_SAILCLOTH|| eYield == YIELD_FIELD_WORKER_TOOLS || eYield == YIELD_HOUSEHOLD_GOODS || eYield == YIELD_LUXURY_GOODS)
 				{
 					m_em_iCustomHouseSellThreshold.set(eYield, GC.getCUSTOMHOUSE_STRATEGIC_PRODUCED_SELL_THRESHOLD() * iGameSpeedModifier);
 				}
@@ -145,7 +145,7 @@ void CvCity::init(int iID, PlayerTypes eOwner, Coordinates initCoord, bool bBump
 				}
 
 				// produced
-				else if (eYield == YIELD_COCA_LEAVES || eYield == YIELD_MAPLE_SIRUP || eYield == YIELD_SILVER || eYield == YIELD_GOLD || eYield == YIELD_GEMS || eYield == YIELD_COFFEE || eYield == YIELD_CHEESE || eYield == YIELD_SALT || eYield == YIELD_SPICES || eYield == YIELD_CLOTH || eYield == YIELD_COLOURED_CLOTH || eYield == YIELD_FESTIVE_CLOTHES || eYield == YIELD_WOOL_CLOTH || eYield == YIELD_COLOURED_WOOL_CLOTH || eYield == YIELD_EVERYDAY_CLOTHES || eYield == YIELD_LEATHER || eYield == YIELD_PADDED_LEATHER_COATS || eYield == YIELD_COATS || eYield == YIELD_PREMIUM_COATS || eYield == YIELD_BEER || eYield == YIELD_RUM || eYield == YIELD_WINE || eYield == YIELD_OLIVE_OIL || eYield == YIELD_CIGARS || eYield == YIELD_WHALE_OIL || eYield == YIELD_FURNITURE || eYield == YIELD_PADDED_FURNITURE)
+				else if (eYield == YIELD_COCA_LEAVES || eYield == YIELD_MAPLE_SIRUP || eYield == YIELD_GOLD || eYield == YIELD_GEMS || eYield == YIELD_COFFEE || eYield == YIELD_CHEESE || eYield == YIELD_SALT || eYield == YIELD_SPICES || eYield == YIELD_CLOTH || eYield == YIELD_COLOURED_CLOTH || eYield == YIELD_FESTIVE_CLOTHES || eYield == YIELD_WOOL_CLOTH || eYield == YIELD_COLOURED_WOOL_CLOTH || eYield == YIELD_EVERYDAY_CLOTHES || eYield == YIELD_LEATHER || eYield == YIELD_PADDED_LEATHER_COATS || eYield == YIELD_COATS || eYield == YIELD_PREMIUM_COATS || eYield == YIELD_BEER || eYield == YIELD_RUM || eYield == YIELD_WINE || eYield == YIELD_OLIVE_OIL || eYield == YIELD_CIGARS || eYield == YIELD_WHALE_OIL || eYield == YIELD_FURNITURE || eYield == YIELD_PADDED_FURNITURE)
 				{
 					m_em_iCustomHouseSellThreshold.set(eYield, GC.getCUSTOMHOUSE_PRODUCED_SELL_THRESHOLD() * iGameSpeedModifier);
 				}

@@ -4409,7 +4409,7 @@ DenialTypes CvPlayerAI::AI_yieldTrade(YieldTypes eYield, const IDInfo& kTranspor
 		{
 			if (getID() == pCity->getOwnerINLINE())
 			{
-				if (eYield == YIELD_BLADES || eYield == YIELD_MUSKETS || eYield == YIELD_CANNONS || eYield == YIELD_BLACK_POWDER || eYield == YIELD_HORSES)
+				if (eYield == YIELD_MUSKETS || eYield == YIELD_CANNONS || eYield == YIELD_BLACK_POWDER || eYield == YIELD_HORSES)
 				{
 					return DENIAL_NEVER;
 				}
@@ -6426,7 +6426,7 @@ void CvPlayerAI::AI_doTradeRoutes()
 			{
 				yield_dests[eLoopYield] = NULL;
 			}
-			else if ((eLoopYield == YIELD_BLADES) || (eLoopYield == YIELD_MUSKETS) || (eLoopYield == YIELD_CANNONS) || (eLoopYield == YIELD_BLACK_POWDER) || (eLoopYield == YIELD_HORSES))
+			else if ((eLoopYield == YIELD_MUSKETS) || (eLoopYield == YIELD_CANNONS) || (eLoopYield == YIELD_BLACK_POWDER) || (eLoopYield == YIELD_HORSES))
 			{
 				yield_dests[eLoopYield] = NULL;
 			}
@@ -8719,7 +8719,6 @@ bool CvPlayerAI::AI_isYieldForSale(YieldTypes eYield) const
 			break;
 		// Erik: It does the AI little good to sell these yields
 		case YIELD_TOOLS:
-		case YIELD_BLADES:
 		case YIELD_MUSKETS:
 		case YIELD_CANNONS:
 		case YIELD_BLACK_POWDER:
@@ -8727,7 +8726,6 @@ bool CvPlayerAI::AI_isYieldForSale(YieldTypes eYield) const
 			break;
 		case YIELD_COCA_LEAVES:
 		case YIELD_MAPLE_SIRUP:
-		case YIELD_SILVER:
 		case YIELD_GOLD:
 		case YIELD_GEMS:
 		case YIELD_COFFEE:
@@ -8927,7 +8925,6 @@ bool CvPlayerAI::AI_isYieldFinalProduct(YieldTypes eYield) const
 		case YIELD_BAKERY_GOODS:
 		case YIELD_SAILCLOTH:
 		case YIELD_TOOLS:
-		case YIELD_BLADES:
 		case YIELD_MUSKETS:
 		case YIELD_CANNONS:
 		case YIELD_BLACK_POWDER:
@@ -8935,7 +8932,6 @@ bool CvPlayerAI::AI_isYieldFinalProduct(YieldTypes eYield) const
 			break;
 		case YIELD_COCA_LEAVES:
 		case YIELD_MAPLE_SIRUP:
-		case YIELD_SILVER:
 		case YIELD_GOLD:
 		case YIELD_GEMS:
 		case YIELD_COFFEE:
@@ -9048,11 +9044,9 @@ bool CvPlayerAI::AI_shouldBuyFromEurope(YieldTypes eYield) const
 		case YIELD_TOOLS:
 			bBuy = AI_isYieldNeeded(eYield);
 			break;
-		case YIELD_BLADES:
 		case YIELD_MUSKETS:
 		case YIELD_CANNONS:
 		case YIELD_BLACK_POWDER:
-		case YIELD_SILVER:
 		case YIELD_GOLD:
 		case YIELD_GEMS:
 		case YIELD_COFFEE:
@@ -9231,7 +9225,6 @@ int CvPlayerAI::AI_yieldValue(YieldTypes eYield, bool bProduce, int iAmount, boo
 				break;
 			case YIELD_TOOLS:
 				break;
-			case YIELD_BLADES:
 			case YIELD_MUSKETS:
 			case YIELD_CANNONS:
 			case YIELD_BLACK_POWDER:
@@ -9240,7 +9233,6 @@ int CvPlayerAI::AI_yieldValue(YieldTypes eYield, bool bProduce, int iAmount, boo
 				break;
 			case YIELD_COCA_LEAVES:
 			case YIELD_MAPLE_SIRUP:
-			case YIELD_SILVER:
 			case YIELD_GOLD:
 			case YIELD_GEMS:
 			case YIELD_COFFEE:
@@ -9394,7 +9386,6 @@ void CvPlayerAI::AI_updateYieldValues()
 			case YIELD_BAKERY_GOODS:
 			case YIELD_SAILCLOTH:
 			case YIELD_TOOLS:
-			case YIELD_BLADES:
 			case YIELD_MUSKETS:
 			case YIELD_CANNONS:
 			case YIELD_BLACK_POWDER:
@@ -9402,7 +9393,6 @@ void CvPlayerAI::AI_updateYieldValues()
 				break;
 			case YIELD_COCA_LEAVES:
 			case YIELD_MAPLE_SIRUP:
-			case YIELD_SILVER:
 			case YIELD_GOLD:
 			case YIELD_GEMS:
 			case YIELD_COFFEE:

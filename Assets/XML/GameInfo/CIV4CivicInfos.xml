@@ -89,9 +89,6 @@
 				<YieldModifier>
 					<YieldType>YIELD_COAL</YieldType>
 					<iYield>50</iYield>
-				</YieldModifier><YieldModifier>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iYield>50</iYield>
 				</YieldModifier>
 				<YieldModifier>
 					<YieldType>YIELD_GOLD</YieldType>

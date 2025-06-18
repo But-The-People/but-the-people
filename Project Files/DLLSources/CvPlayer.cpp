@@ -11345,7 +11345,7 @@ int CvPlayer::NBMOD_GetColonialMilitaryValue() const
         if (GC.getNBMOD_REF_REAL_WEAPONS() == 1)
         {
             // Falls die Einheit Waffen/Pferde transportiert
-            if (pLoopUnit->getYield() == YIELD_BLADES || pLoopUnit->getYield() == YIELD_MUSKETS || pLoopUnit->getYield() == YIELD_CANNONS || pLoopUnit->getYield() == YIELD_BLACK_POWDER)
+            if (pLoopUnit->getYield() == YIELD_MUSKETS || pLoopUnit->getYield() == YIELD_CANNONS || pLoopUnit->getYield() == YIELD_BLACK_POWDER)
             {
                 iStoredWeapons += pLoopUnit->getYieldStored();
             }
@@ -11375,7 +11375,6 @@ int CvPlayer::NBMOD_GetColonialMilitaryValue() const
 	for (pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
 	    iCities++;
-		iStoredWeapons += pLoopCity->getYieldStored(YIELD_BLADES);
 		iStoredWeapons += pLoopCity->getYieldStored(YIELD_MUSKETS);
 		iStoredWeapons += pLoopCity->getYieldStored(YIELD_CANNONS);
 		iStoredWeapons += pLoopCity->getYieldStored(YIELD_BLACK_POWDER);
@@ -16128,13 +16127,6 @@ void CvPlayer::setYieldBuyPrice(YieldTypes eYield, int iPrice, bool bMessage)
 					iPrice = getYieldBuyPrice(YIELD_HEMP) - 1;
 				}
 				break;
-			case YIELD_GOLD:
-				if (getYieldBuyPrice(eYield) - getYieldBuyPrice(YIELD_SILVER) <= price_diff)
-				{
-					eYield = YIELD_SILVER;
-					iPrice = getYieldBuyPrice(YIELD_SILVER) - 1;
-				}
-				break;
 			case YIELD_COFFEE:
 				if (getYieldBuyPrice(eYield) - getYieldBuyPrice(YIELD_COFFEE_BERRIES) <= price_diff)
 				{
@@ -16829,13 +16821,6 @@ void CvPlayer::setYieldAfricaBuyPrice(YieldTypes eYield, int iPrice, bool bMessa
 					iPrice = getYieldAfricaBuyPriceNoModifier(YIELD_HEMP) - 1;
 				}
 				break;
-			case YIELD_GOLD:
-				if (getYieldAfricaBuyPriceNoModifier(eYield) - getYieldAfricaBuyPriceNoModifier(YIELD_SILVER) <= price_diff)
-				{
-					eYield = YIELD_SILVER;
-					iPrice = getYieldAfricaBuyPriceNoModifier(YIELD_SILVER) - 1;
-				}
-				break;
 			case YIELD_COFFEE:
 				if (getYieldAfricaBuyPriceNoModifier(eYield) - getYieldAfricaBuyPriceNoModifier(YIELD_COFFEE_BERRIES) <= price_diff)
 				{
@@ -17297,13 +17282,6 @@ void CvPlayer::setYieldPortRoyalBuyPrice(YieldTypes eYield, int iPrice, bool bMe
 					// TODO: should be hemp+cotton
 					eYield = YIELD_HEMP;
 					iPrice = getYieldPortRoyalBuyPriceNoModifier(YIELD_HEMP) - 1;
-				}
-				break;
-			case YIELD_GOLD:
-				if (getYieldPortRoyalBuyPriceNoModifier(eYield) - getYieldPortRoyalBuyPriceNoModifier(YIELD_SILVER) <= price_diff)
-				{
-					eYield = YIELD_SILVER;
-					iPrice = getYieldPortRoyalBuyPriceNoModifier(YIELD_SILVER) - 1;
 				}
 				break;
 			case YIELD_COFFEE:

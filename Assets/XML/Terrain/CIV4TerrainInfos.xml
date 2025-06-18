@@ -85,10 +85,6 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
@@ -254,10 +250,6 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
@@ -408,10 +400,6 @@
 					<iValue>-3</iValue>
 				</YieldIntegerPair></Yields>
 				<RiverYieldIncreases>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
@@ -565,10 +553,6 @@
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_CHICKEN</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
@@ -742,10 +726,6 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
@@ -904,10 +884,6 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
@@ -1045,7 +1021,8 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_OLIVES</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_SHEEP</YieldType>
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
@@ -1058,13 +1035,9 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_SHEEP</YieldType>
 					<iValue>1</iValue>
+				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_RED_PEPPER</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
@@ -1245,10 +1218,6 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
@@ -1402,10 +1371,6 @@
 			<RiverYieldIncreases>
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
@@ -1569,10 +1534,6 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
@@ -1730,10 +1691,6 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
@@ -1881,10 +1838,6 @@
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>

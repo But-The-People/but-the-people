@@ -12,6 +12,7 @@ BTP cuts down the number of resources to the minumum, to avoid clutter and compl
 
 The following yields are removed:
 
+* * Blades
 * * Cassava -> Food
 * * Charcoal -> Lumber is used directly for charcoal
 * * Chocolate
@@ -32,6 +33,7 @@ The following yields are removed:
 * * Rice -> Food
 * * Ropes
 * * Rubber
+* * Silver
 * * Trade goods: replace with household goods
 * * Vanilla pods
 * * Wild Bird Feathers

@@ -3167,26 +3167,6 @@
 		<German>"[COLOR_SELECTED_TEXT]Männer, die Neue Welt gehört uns. Seht Euch das an! Eine der sieben Städte von Cibola, ich weiß es, ich bin sicher. Folgt mir![COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Herr, das sieht mir eher wie die Begräbnisstätte eines hohen Königs der Wilden aus. Ich glaube hier werden wir eher nur verstaubte Knochen oder den Tod finden oder beides. Wenn die Wilden uns sehen, sind wir geliefert.[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Was seid ihr, Eroberer oder Feiglinge? Mir nach...ich kann das Gold schon riechen![COLOR_REVERT]"[NEWLINE][NEWLINE]</German>
 		<Russian>"[COLOR_SELECTED_TEXT]Парни, Новый Свет наш. Посмотрите туда! Это один из семи городов Сиболы, я уверен. Следуйте за мной![COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Господи, это больше похоже на место захоронения верховного вождя туземцев. Скорее всего, мы найдем лишь обглоданные кости. А если кто-то из дикарей увидит нас, мы все погибнем...[COLOR_REVERT]"[NEWLINE][NEWLINE]"[COLOR_SELECTED_TEXT]Вы завоеватели или трусы? За мной! Я уже чувствую запах золота!!![COLOR_REVERT]"[NEWLINE][NEWLINE]</Russian>
 	</TEXT>
-   <TEXT>
-		<Tag>TXT_KEY_ACHIEVE_TWENTY_BLADES</Tag>
-		<English>Eager weaponsmiths</English>
-		<French>Des forgerons ardus à la tâche</French>
-		<German>Eifrige Waffenschmiede</German>
-		<Russian>Двадцать клинков</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_ACHIEVE_TWENTY_BLADES_HEAD</Tag>
-		<English>Bladed weapons for the armory</English>
-		<French>Pointes et sabres pour l'armurerie</French>
-		<German>Klingenwaffen für das Waffenlager</German>
-		<Russian>Клинки для оружейной</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_ACHIEVE_TWENTY_BLADES_TEXT</Tag>
-		<English>Sir, your smiths are keeping busy. They've forged plenty of new swords along with other weapons.[NEWLINE][NEWLINE]It's not enough for an army yet, but we can all defend ourselves better now. You could even equip some new units.[NEWLINE][NEWLINE]</English>
-		<German>Sir, Eure Waffenschmiede sind wirklich fleißig. Es wurden reichlich neue Schwerter und andere Klingenwaffen geschmiedet.[NEWLINE][NEWLINE]Es reicht noch nicht für eine Armee, aber Ihr könnt Euch jetzt jedenfalls besser verteidigen und einige neue Einheiten ausrüsten.[NEWLINE][NEWLINE]</German>
-		<Russian>Милорд, ваши кузнецы завалены работой. Они сделали уже много новых клинков и другого оружия.[NEWLINE][NEWLINE]И хоть этого пока недостаточно для большой армии, но теперь мы не беззащитны и даже можем экипировать несколькох колонистов.[NEWLINE][NEWLINE]</Russian>
-	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_FIRST_SMALL_COASTAL_SHIP</Tag>
 		<English>First Small Coastal Ship</English>
