@@ -1373,7 +1373,7 @@ int CvCityAI::AI_buildingValue(BuildingTypes eBuilding, int iFocusFlags) const
 									iTempValue /= 100;
 								}
 
-								if (eYieldProduced == YIELD_HORSES || eYieldProduced == YIELD_BLADES || eYieldProduced == YIELD_MUSKETS || eYieldProduced == YIELD_CANNONS || eYieldProduced == YIELD_BLACK_POWDER || eYieldProduced == YIELD_TOOLS || eYieldProduced == YIELD_FOOD)
+								if (eYieldProduced == YIELD_HORSES || eYieldProduced == YIELD_MUSKETS || eYieldProduced == YIELD_CANNONS || eYieldProduced == YIELD_BLACK_POWDER || eYieldProduced == YIELD_TOOLS || eYieldProduced == YIELD_FOOD)
 								{
 									bIsMilitary = true;
 								}
@@ -1440,7 +1440,7 @@ int CvCityAI::AI_buildingValue(BuildingTypes eBuilding, int iFocusFlags) const
 
 			if (iAdded != 0)
 			{
-				if (eLoopYield == YIELD_HORSES || eLoopYield == YIELD_BLADES || eLoopYield == YIELD_MUSKETS || eLoopYield == YIELD_CANNONS || eLoopYield == YIELD_BLACK_POWDER || eLoopYield == YIELD_TOOLS || eLoopYield == YIELD_FOOD)
+				if (eLoopYield == YIELD_HORSES || eLoopYield == YIELD_MUSKETS || eLoopYield == YIELD_CANNONS || eLoopYield == YIELD_BLACK_POWDER || eLoopYield == YIELD_TOOLS || eLoopYield == YIELD_FOOD)
 				{
 					bIsMilitary = true;
 				}
@@ -4498,10 +4498,8 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 				}
 			}
 			break;
-		case YIELD_BLADES:
 		case YIELD_MUSKETS:
-		// Previous metals are never reduced in value
-		case YIELD_SILVER:
+		// Precious metals are never reduced in value
 		case YIELD_GOLD:
 		case YIELD_GEMS:
 		case YIELD_LUXURY_GOODS:

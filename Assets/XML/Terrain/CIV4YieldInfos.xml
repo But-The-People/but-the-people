@@ -52,7 +52,7 @@
 					</PriceTable>
 				</PriceTables>
 			</Prices>
-			<iHillsChange>-2</iHillsChange>
+			<iHillsChange>-1</iHillsChange>
 			<iPeakChange>0</iPeakChange>
 			<iLakeChange>4</iLakeChange>
 			<iCityChange>2</iCityChange>
@@ -520,70 +520,6 @@
 			<Icon>Art/interface/buttons/New_Yieds_Icons/Coal_Goods_Icon.dds</Icon>
 			<HighlightIcon>,Art/Interface/Screens/City_Management/Colonization_Yield_Highlight_Icon_Atlas.dds,13,1</HighlightIcon>
 			<Button>Art/interface/buttons/New_Yields_Buttons/Coal_Goods_Button.dds</Button>
-		</YieldInfo>
-		<YieldInfo>
-			<Type>YIELD_SILVER</Type>
-			<Description>TXT_KEY_YIELD_SILVER</Description>
-			<Civilopedia>TXT_KEY_YIELD_SILVER_PEDIA</Civilopedia>
-			<bCargo>1</bCargo>
-			<bIsExportYield>1</bIsExportYield>
-			<Prices>
-				<iDomesticPriceBonus>2</iDomesticPriceBonus>
-				<iPriceChangeThreshold>1000</iPriceChangeThreshold>
-				<iPriceCorrectionPercent>5</iPriceCorrectionPercent>
-				<NativePrice>
-					<iNativeBuyPrice>-1</iNativeBuyPrice>
-					<iNativeSellPrice>10</iNativeSellPrice>
-					<iNativeConsumptionPercent>20</iNativeConsumptionPercent>
-					<iNativeHappy>0</iNativeHappy>
-				</NativePrice>
-				<PriceTables>
-					<PriceTable>
-						<location>TRADE_LOCATION_EUROPE</location>
-						<iBuyLow>5</iBuyLow>
-						<iBuyHigh>20</iBuyHigh>
-						<iBuyLowInit>19</iBuyLowInit>
-						<iBuyHighInit>20</iBuyHighInit>
-						<iSellPriceDifference>2</iSellPriceDifference>
-						<iVolumeAttrition>-5</iVolumeAttrition>
-					</PriceTable>
-					<PriceTable>
-						<location>TRADE_LOCATION_AFRICA</location>
-						<iBuyLow>18</iBuyLow>
-						<iBuyHigh>19</iBuyHigh>
-						<iBuyLowInit>18</iBuyLowInit>
-						<iBuyHighInit>19</iBuyHighInit>
-						<iSellPriceDifference>2</iSellPriceDifference>
-						<iVolumeAttrition>-5</iVolumeAttrition>
-					</PriceTable>
-					<PriceTable>
-						<location>TRADE_LOCATION_PORT_ROYAL</location>
-						<iBuyLow>19</iBuyLow>
-						<iBuyHigh>20</iBuyHigh>
-						<iBuyLowInit>19</iBuyLowInit>
-						<iBuyHighInit>20</iBuyHighInit>
-						<iSellPriceDifference>2</iSellPriceDifference>
-						<iVolumeAttrition>-5</iVolumeAttrition>
-					</PriceTable>
-				</PriceTables>
-			</Prices>
-			<iHillsChange>0</iHillsChange>
-			<iPeakChange>0</iPeakChange>
-			<iLakeChange>0</iLakeChange>
-			<iCityChange>0</iCityChange>
-			<iMinCity>0</iMinCity>
-			<iAIWeightPercent>100</iAIWeightPercent>
-			<iAIBaseValue>2</iAIBaseValue>
-			<iNativeBaseValue>2</iNativeBaseValue>
-			<iPower>0</iPower>
-			<iAsset>1</iAsset>
-			<ColorType>COLOR_YIELD_FOOD</ColorType>
-			<UnitClass>UNITCLASS_SILVER</UnitClass>
-			<iTextureIndex>2</iTextureIndex>
-			<iWaterTextureIndex>-1</iWaterTextureIndex>
-			<Icon>,Art/Interface/Buttons/Unit_Resource_Colonization_Atlas.dds,3,14</Icon>
-			<HighlightIcon>,Art/Interface/Screens/City_Management/Colonization_Yield_Highlight_Icon_Atlas.dds,3,1</HighlightIcon>
-			<Button>,Art/Interface/Buttons/Unit_Resource_Colonization_Atlas.dds,3,1</Button>
 		</YieldInfo>
 		<YieldInfo>
 			<Type>YIELD_GOLD</Type>
@@ -1167,71 +1103,6 @@
 			<CombiIcon>,Art/colonization_atlas_resources.dds,1,16</CombiIcon>
 			<HighlightIcon>,Art/Interface/Screens/City_Management/Colonization_Yield_Highlight_Icon_Atlas.dds,5,2</HighlightIcon>
 			<Button>,Art/Interface/Buttons/Unit_Resource_Colonization_Atlas.dds,5,2</Button>
-		</YieldInfo>
-		<YieldInfo>
-			<Type>YIELD_BLADES</Type>
-			<Description>TXT_KEY_YIELD_BLADES</Description>
-			<Civilopedia>TXT_KEY_YIELD_BLADES_PEDIA</Civilopedia>
-			<bCargo>1</bCargo>
-			<bIsExportYield>1</bIsExportYield>
-			<Prices>
-				<iDomesticPriceBonus>2</iDomesticPriceBonus>
-				<iPriceChangeThreshold>600</iPriceChangeThreshold>
-				<iPriceCorrectionPercent>1</iPriceCorrectionPercent>
-				<NativePrice>
-					<iNativeBuyPrice>8</iNativeBuyPrice>
-					<iNativeSellPrice>-1</iNativeSellPrice>
-					<iNativeConsumptionPercent>50</iNativeConsumptionPercent>
-					<iNativeHappy>3</iNativeHappy>
-				</NativePrice>
-				<PriceTables>
-					<PriceTable>
-						<location>TRADE_LOCATION_EUROPE</location>
-						<iBuyLow>3</iBuyLow>
-						<iBuyHigh>7</iBuyHigh>
-						<iBuyLowInit>6</iBuyLowInit>
-						<iBuyHighInit>7</iBuyHighInit>
-						<iSellPriceDifference>2</iSellPriceDifference>
-						<iVolumeAttrition>5</iVolumeAttrition>
-					</PriceTable>
-					<PriceTable>
-						<location>TRADE_LOCATION_AFRICA</location>
-						<iBuyLow>7</iBuyLow>
-						<iBuyHigh>8</iBuyHigh>
-						<iBuyLowInit>7</iBuyLowInit>
-						<iBuyHighInit>8</iBuyHighInit>
-						<iSellPriceDifference>2</iSellPriceDifference>
-						<iVolumeAttrition>5</iVolumeAttrition>
-					</PriceTable>
-					<PriceTable>
-						<location>TRADE_LOCATION_PORT_ROYAL</location>
-						<iBuyLow>7</iBuyLow>
-						<iBuyHigh>8</iBuyHigh>
-						<iBuyLowInit>7</iBuyLowInit>
-						<iBuyHighInit>8</iBuyHighInit>
-						<iSellPriceDifference>2</iSellPriceDifference>
-						<iVolumeAttrition>5</iVolumeAttrition>
-					</PriceTable>
-				</PriceTables>
-			</Prices>
-			<iHillsChange>0</iHillsChange>
-			<iPeakChange>0</iPeakChange>
-			<iLakeChange>0</iLakeChange>
-			<iCityChange>0</iCityChange>
-			<iMinCity>0</iMinCity>
-			<iAIWeightPercent>100</iAIWeightPercent>
-			<iAIBaseValue>2</iAIBaseValue>
-			<iNativeBaseValue>0</iNativeBaseValue>
-			<iPower>0</iPower>
-			<iAsset>1</iAsset>
-			<ColorType>COLOR_YIELD_FOOD</ColorType>
-			<UnitClass>UNITCLASS_BLADES</UnitClass>
-			<iTextureIndex>-1</iTextureIndex>
-			<iWaterTextureIndex>-1</iWaterTextureIndex>
-			<Icon>,Art/colonization_atlas_resources.dds,8,15</Icon>
-			<CombiIcon>,Art/colonization_atlas_resources.dds,1,16</CombiIcon>
-			<HighlightIcon>,Art/Interface/Screens/City_Management/Colonization_Yield_Highlight_Icon_Atlas.dds,5,2</HighlightIcon>
-			<Button>,Art/colonization_atlas_resources.dds,8,6</Button>
 		</YieldInfo>
 		<YieldInfo>
 			<Type>YIELD_MUSKETS</Type>

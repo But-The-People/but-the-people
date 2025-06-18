@@ -574,7 +574,7 @@
 					<iYield>25</iYield>
 				</YieldModifier>
 				<YieldModifier>
-					<YieldType>YIELD_BLADES</YieldType>
+					<YieldType>YIELD_MUSKETS</YieldType>
 					<iYield>25</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -1930,10 +1930,6 @@
 				</FreePromotionUnitCombat>
 			</FreePromotionUnitCombats>
 			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iYield>25</iYield>
-				</YieldModifier>
 				<YieldModifier>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iYield>25</iYield>
@@ -4108,7 +4104,7 @@
 			<CityExtraYields/>
 			<ExtraYieldThresholds>
 				<YieldThreshold>
-					<YieldType>YIELD_SILVER</YieldType>
+					<YieldType>YIELD_GOLD</YieldType>
 					<iYieldThreshold>3</iYieldThreshold>
 				</YieldThreshold>
 			</ExtraYieldThresholds>
@@ -4581,10 +4577,6 @@
 				</YieldModifier>
 				<YieldModifier>
 					<YieldType>YIELD_CANNONS</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-				<YieldModifier>
-					<YieldType>YIELD_BLADES</YieldType>
 					<iYield>1</iYield>
 				</YieldModifier>
 				<YieldModifier>

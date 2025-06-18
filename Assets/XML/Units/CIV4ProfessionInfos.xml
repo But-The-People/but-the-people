@@ -279,45 +279,6 @@
 			<iLbDLearnLevel>1</iLbDLearnLevel>
 		</ProfessionInfo>
 		<ProfessionInfo>
-			<Type>PROFESSION_SILVER_MINER</Type>
-			<Description>TXT_KEY_PROFESSION_SILVER_MINER</Description>
-			<Civilopedia>TXT_KEY_PROFESSION_SILVER_MINER_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROFESSION_SILVER_MINER_STRATEGY</Strategy>
-			<Help>TXT_KEY_PROFESSION_SILVER_MINER_HELP</Help>
-			<Combat>NONE</Combat>
-			<DefaultUnitAI>NONE</DefaultUnitAI>
-			<SpecialBuilding>NONE</SpecialBuilding>
-			<bWorkPlot>1</bWorkPlot>
-			<bCitizen>1</bCitizen>
-			<bWater>0</bWater>
-			<bScout>0</bScout>
-			<bCanCrossLargeRivers>0</bCanCrossLargeRivers>
-			<bCityDefender>0</bCityDefender>
-			<bCanFound>0</bCanFound>
-			<bUnarmed>0</bUnarmed>
-			<bNoDefensiveBonus>0</bNoDefensiveBonus>
-			<iCombatChange>0</iCombatChange>
-			<iMovesChange>0</iMovesChange>
-			<bMoveIntoPeak>0</bMoveIntoPeak>
-			<iWorkRate>0</iWorkRate>
-			<iMissionaryRate>0</iMissionaryRate>
-			<iNativeTradeRate>0</iNativeTradeRate>
-			<iPower>0</iPower>
-			<iAsset>200</iAsset>
-			<YieldEquipedNums/>
-			<FreePromotions/>
-			<YieldsProduced>
-				<YieldType>YIELD_SILVER</YieldType>
-			</YieldsProduced>
-			<YieldsConsumed>
-				<YieldType>NONE</YieldType>
-			</YieldsConsumed>
-			<Button>,Art/Colonization_Civilizations_Leaders.dds,8,7</Button>
-			<bUseLbD>1</bUseLbD>
-			<ExpertUnit>UNITCLASS_PROSPECTOR</ExpertUnit>
-			<iLbDLearnLevel>1</iLbDLearnLevel>
-		</ProfessionInfo>
-		<ProfessionInfo>
 			<Type>PROFESSION_GOLD_MINER</Type>
 			<Description>TXT_KEY_PROFESSION_GOLD_MINER</Description>
 			<Civilopedia>TXT_KEY_PROFESSION_GOLD_MINER_PEDIA</Civilopedia>
@@ -2122,45 +2083,6 @@
 			<iLbDLearnLevel>2</iLbDLearnLevel>
 		</ProfessionInfo>
 		<ProfessionInfo>
-			<Type>PROFESSION_BLADESMITH</Type>
-			<Description>TXT_KEY_PROFESSION_BLADESMITH</Description>
-			<Civilopedia>TXT_KEY_PROFESSION_BLADESMITH_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_PROFESSION_BLADESMITH_STRATEGY</Strategy>
-			<Help>TXT_KEY_PROFESSION_BLADESMITH_HELP</Help>
-			<Combat>NONE</Combat>
-			<DefaultUnitAI>NONE</DefaultUnitAI>
-			<SpecialBuilding>SPECIALBUILDING_TOOLS</SpecialBuilding>
-			<bWorkPlot>0</bWorkPlot>
-			<bCitizen>1</bCitizen>
-			<bWater>0</bWater>
-			<bScout>0</bScout>
-			<bCanCrossLargeRivers>0</bCanCrossLargeRivers>
-			<bCityDefender>0</bCityDefender>
-			<bCanFound>0</bCanFound>
-			<bUnarmed>0</bUnarmed>
-			<bNoDefensiveBonus>0</bNoDefensiveBonus>
-			<iCombatChange>0</iCombatChange>
-			<iMovesChange>0</iMovesChange>
-			<bMoveIntoPeak>0</bMoveIntoPeak>
-			<iWorkRate>0</iWorkRate>
-			<iMissionaryRate>0</iMissionaryRate>
-			<iNativeTradeRate>0</iNativeTradeRate>
-			<iPower>0</iPower>
-			<iAsset>350</iAsset>
-			<YieldEquipedNums/>
-			<FreePromotions/>
-			<YieldsProduced>
-				<YieldType>YIELD_BLADES</YieldType>
-			</YieldsProduced>
-			<YieldsConsumed>
-				<YieldType>YIELD_ORE</YieldType>
-			</YieldsConsumed>
-			<Button>,Art/colonization_atlas_professions_bonus.dds,7,6</Button>
-			<bUseLbD>1</bUseLbD>
-			<ExpertUnit>UNITCLASS_BLACKSMITH</ExpertUnit>
-			<iLbDLearnLevel>2</iLbDLearnLevel>
-		</ProfessionInfo>
-		<ProfessionInfo>
 			<Type>PROFESSION_GUNSMITH</Type>
 			<Description>TXT_KEY_PROFESSION_GUNSMITH</Description>
 			<Civilopedia>TXT_KEY_PROFESSION_GUNSMITH_PEDIA</Civilopedia>
@@ -3455,7 +3377,7 @@
 			<iAsset>0</iAsset>
 			<YieldEquipedNums>
 				<YieldEquipedNum>
-					<YieldType>YIELD_BLADES</YieldType>
+					<YieldType>YIELD_MUSKETS</YieldType>
 					<iYieldAmount>50</iYieldAmount>
 				</YieldEquipedNum>
 				<YieldEquipedNum>
@@ -3509,7 +3431,7 @@
 			<iAsset>0</iAsset>
 			<YieldEquipedNums>
 				<YieldEquipedNum>
-					<YieldType>YIELD_BLADES</YieldType>
+					<YieldType>YIELD_MUSKETS</YieldType>
 					<iYieldAmount>50</iYieldAmount>
 				</YieldEquipedNum>
 				<YieldEquipedNum>
@@ -3613,11 +3535,7 @@
 			<YieldEquipedNums>
 				<YieldEquipedNum>
 					<YieldType>YIELD_MUSKETS</YieldType>
-					<iYieldAmount>80</iYieldAmount>
-				</YieldEquipedNum>
-				<YieldEquipedNum>
-					<YieldType>YIELD_BLADES</YieldType>
-					<iYieldAmount>40</iYieldAmount>
+					<iYieldAmount>120</iYieldAmount>
 				</YieldEquipedNum>
 				<YieldEquipedNum>
 					<YieldType>YIELD_BLACK_POWDER</YieldType>
@@ -3724,11 +3642,7 @@
 			<YieldEquipedNums>
 				<YieldEquipedNum>
 					<YieldType>YIELD_MUSKETS</YieldType>
-					<iYieldAmount>80</iYieldAmount>
-				</YieldEquipedNum>
-				<YieldEquipedNum>
-					<YieldType>YIELD_BLADES</YieldType>
-					<iYieldAmount>40</iYieldAmount>
+					<iYieldAmount>120</iYieldAmount>
 				</YieldEquipedNum>
 				<YieldEquipedNum>
 					<YieldType>YIELD_BLACK_POWDER</YieldType>
@@ -3905,7 +3819,7 @@
 					<iYieldAmount>70</iYieldAmount>
 				</YieldEquipedNum>
 				<YieldEquipedNum>
-					<YieldType>YIELD_BLADES</YieldType>
+					<YieldType>YIELD_MUSKETS</YieldType>
 					<iYieldAmount>100</iYieldAmount>
 				</YieldEquipedNum>
 			</YieldEquipedNums>
@@ -3959,7 +3873,7 @@
 					<iYieldAmount>70</iYieldAmount>
 				</YieldEquipedNum>
 				<YieldEquipedNum>
-					<YieldType>YIELD_BLADES</YieldType>
+					<YieldType>YIELD_MUSKETS</YieldType>
 					<iYieldAmount>100</iYieldAmount>
 				</YieldEquipedNum>
 			</YieldEquipedNums>

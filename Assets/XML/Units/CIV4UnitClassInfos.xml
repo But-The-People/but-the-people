@@ -776,11 +776,6 @@
 			<Description>TXT_KEY_YIELD_COAL</Description>
 			<DefaultUnit>UNIT_COAL</DefaultUnit>
 		</UnitClassInfo>
-			<UnitClassInfo>
-			<Type>UNITCLASS_SILVER</Type>
-			<Description>TXT_KEY_YIELD_SILVER</Description>
-			<DefaultUnit>UNIT_SILVER</DefaultUnit>
-		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_GOLD</Type>
 		   <Description>TXT_KEY_YIELD_GOLD</Description>
@@ -1015,11 +1010,6 @@
 			<Type>UNITCLASS_TOOLS</Type>
 			<Description>TXT_KEY_YIELD_TOOLS</Description>
 			<DefaultUnit>UNIT_TOOLS</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
-			<Type>UNITCLASS_BLADES</Type>
-			<Description>TXT_KEY_YIELD_BLADES</Description>
-			<DefaultUnit>UNIT_BLADES</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
 			<Type>UNITCLASS_MUSKETS</Type>

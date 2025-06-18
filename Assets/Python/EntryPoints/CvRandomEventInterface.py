@@ -210,9 +210,9 @@ def canDoSpeakToChief(argsList):
 				if city.isScoutVisited(player.getTeam()):
 					return False
 				(city, iter) = loopPlayer.nextCity(iter, True)
-	
+
 	return bFoundNative
-	
+
 def canDoSpeakToChiefCompleted(argsList):
 	pTriggeredData = argsList[0]
 	player = gc.getPlayer(pTriggeredData.ePlayer)
@@ -225,9 +225,9 @@ def canDoSpeakToChiefCompleted(argsList):
 				if city.isScoutVisited(player.getTeam()):
 					return True
 				(city, iter) = loopPlayer.nextCity(iter, True)
-	
+
 	return False
-	
+
 def doEventCivilopediaWar(argsList):
 	eEvent = argsList[0]
 	pTriggeredData = argsList[1]
@@ -245,14 +245,14 @@ def canCityTriggerDoOverstock(argsList):
 			return True
 
 	return False
-	
+
 def canDoTaxes(argsList):
 	pTriggeredData = argsList[0]
 	player = gc.getPlayer(pTriggeredData.ePlayer)
 
 	if player.getTaxRate() > 0:
 		return True
-		
+
 	return False
 
 ####### TAC Events ########
@@ -262,21 +262,21 @@ def canDoTaxes(argsList):
 def canTriggerSecondCity(argsList):
 	ePlayer = argsList[1]
 	iCity = argsList[2]
-	
+
 	player = gc.getPlayer(ePlayer)
 	city = player.getCity(iCity)
 
 	if city.isNone():
 		return False
-	
+
 	if not player.isPlayable():
 		return False
-	
+
 	if player.getNumCities() >= 2:
 		return True
 
 	return False
-	
+
 def applySecondCity1(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
@@ -335,7 +335,7 @@ def applySecondCity2(argsList):
 	if not player.isHuman():
 		city = player.firstCity(True)[0]
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	iYield1 = gc.getInfoTypeForString("YIELD_BLADES")
+	iYield1 = gc.getInfoTypeForString("YIELD_MUSKETS")
 	city.changeYieldStored(iYield1, event.getGenericParameter(1)*Speed.getTrainPercent()/100)
 	iYield2 = gc.getInfoTypeForString("YIELD_BAKERY_GOODS")
 	city.changeYieldStored(iYield2, event.getGenericParameter(2)*Speed.getTrainPercent()/100)
@@ -349,7 +349,7 @@ def getHelpSecondCity2(argsList):
 	king = gc.getPlayer(eking)
 	city = player.getCity(kTriggeredData.iCityId)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
-	iYield1 = gc.getInfoTypeForString("YIELD_BLADES")
+	iYield1 = gc.getInfoTypeForString("YIELD_MUSKETS")
 	iYield2 = gc.getInfoTypeForString("YIELD_BAKERY_GOODS")
 	szHelp = localText.getText("TXT_KEY_EVENT_SECONDCOLONY_2_HELP", (king.getCivilizationAdjectiveKey(), ))
 	if event.getGenericParameter(1) <> 0 :
@@ -371,16 +371,16 @@ def getHelpSecondCity2(argsList):
 def canTriggerThirdCity(argsList):
 	ePlayer = argsList[1]
 	iCity = argsList[2]
-	
+
 	player = gc.getPlayer(ePlayer)
 	city = player.getCity(iCity)
 
 	if city.isNone():
 		return False
-	
+
 	if not player.isPlayable():
 		return False
-	
+
 	if player.getNumCities() >= 3:
 		return True
 
@@ -393,12 +393,12 @@ def canTriggerFestivity(argsList):
 	iCity = argsList[2]
 	player = gc.getPlayer(ePlayer)
 	city = player.getCity(iCity)
-	
+
 	if not player.isPlayable():
 		return False
 	if city.isNone():
 		return False
-		
+
 	king = gc.getPlayer(player.getParent())
 	if not king.isEurope():
 		return False
@@ -415,11 +415,11 @@ def canTriggerFestivity(argsList):
 	quantity = event1.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	quantity2 = event2.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity2 = quantity2 * Speed.getStoragePercent()/100
-	
+
 	if city.getYieldStored(iYield1) < -quantity and city.getYieldStored(iYield2) < -quantity2:
 		return False
 	# If player has reached the maximum for max tax rate, do not start event
@@ -456,7 +456,7 @@ def getHelpFestivity1(argsList):
 	if event.getGenericParameter(2) <> 0 :
 		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_RELATION_KING_DECREASE", (event.getGenericParameter(2), king.getCivilizationAdjectiveKey()))
 	return szHelp
-	
+
 def CanDoFestivity2(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
@@ -676,7 +676,7 @@ def getHelpCounterblaste1(argsList):
 	if event.getGenericParameter(3) < 0 :
 		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_RELATION_KING_DECREASE", (event.getGenericParameter(3), king.getCivilizationAdjectiveKey()))
 	return szHelp
-	
+
 def getHelpCounterblaste2(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
@@ -737,7 +737,7 @@ def applyWhaling1(argsList):
 	city.changeYieldStored(iYield, quantity)
 	if event.getGenericParameter(4) == 1 :
 		player.NBMOD_DecreaseMaxTaxRate()
-	
+
 def getHelpWhaling1(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
@@ -764,7 +764,7 @@ def getHelpWhaling1(argsList):
 	if event.getGenericParameter(3) < 0 :
 		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_RELATION_KING_DECREASE", (event.getGenericParameter(3), king.getCivilizationAdjectiveKey()))
 	return szHelp
-	
+
 ######## WINTER ###########
 
 def canTriggerWinter(argsList):
@@ -962,7 +962,7 @@ def canTriggerLostTribe(argsList):
 	if TriggerChance(argsList):
 		return True
 	return False
- 
+
 def canDoLostTribe4(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
@@ -983,7 +983,7 @@ def getHelpLostTribe4(argsList):
 	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum('UNITCLASS_SCOUT'))
 	UnitClass2 = gc.getUnitClassInfo(unit.getUnitClassType())
 	UnitProf1 = gc.getProfessionInfo(unit.getProfession())
-	szHelp += "\n" + localText.getText("TXT_KEY_EVENT_LOST_TRIBE_4_HELP", (UnitClass2.getTextKey(), UnitProf1.getTextKey(), UnitClass.getTextKey())) 
+	szHelp += "\n" + localText.getText("TXT_KEY_EVENT_LOST_TRIBE_4_HELP", (UnitClass2.getTextKey(), UnitProf1.getTextKey(), UnitClass.getTextKey()))
 	if not canDoLostTribe4(argsList):
 		szHelp += "\n\n" + localText.getText("TXT_KEY_EVENT_LOST_TRIBE_4B_HELP", (UnitClass.getTextKey(),))
 	return szHelp
@@ -1006,7 +1006,7 @@ def applyLostTribe4(argsList):
 		(unitnew, iter) = player.nextUnit(iter)
 	unit = player.getUnit(kTriggeredData.iUnitId)
 	unitnew.convert(unit)
- 
+
 ######## Pacific Quest ###########
 
 def canTriggerPacificDone(argsList):
@@ -1026,7 +1026,7 @@ def canTriggerPacificDone(argsList):
 def canApplyVolcano1(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
-	
+
 	iNumImprovements = 0
 	for iDX in range(-1, 2):
 		for iDY in range(-1, 2):
@@ -1041,11 +1041,11 @@ def canApplyVolcano1(argsList):
 def applyVolcano1(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
-	
+
 	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
 	plot.setPlotType(PlotTypes.PLOT_LAND, True, True)
 	plot.setFeatureType(gc.getInfoTypeForString('FEATURE_VOLCANO'), 0)
-	
+
 	listPlots = []
 	for iDX in range(-1, 2):
 		for iDY in range(-1, 2):
@@ -1054,12 +1054,12 @@ def applyVolcano1(argsList):
 				if (iDX != 0 or iDY != 0):
 					if loopPlot.getImprovementType() != -1:
 						listPlots.append(loopPlot)
-					
+
 	listRuins = []
 	listRuins.append(CvUtil.findInfoTypeNum('IMPROVEMENT_FARM'))
 	listRuins.append(CvUtil.findInfoTypeNum('IMPROVEMENT_PLANTATION'))
 
-	
+
 	iRuins = CvUtil.findInfoTypeNum('IMPROVEMENT_CITY_RUINS')
 
 	for i in range(3):
@@ -1073,7 +1073,7 @@ def applyVolcano1(argsList):
 			else:
 				plot.setImprovementType(-1)
 			listPlots.remove(plot)
-			
+
 			if i == 1 and gc.getGame().getSorenRandNum(100, "Volcano event num improvements destroyed") < 50:
 				break
 
@@ -1088,7 +1088,7 @@ def canTriggerVolcanoDormant1(argsList):
 def applyVolcanoDormant1(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
-	
+
 	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
 	plot.setPlotType(PlotTypes.PLOT_PEAK, True, True)
 
@@ -1097,7 +1097,7 @@ def applyVolcanoDormant1(argsList):
 def applyTornado1(argsList):
 	iEvent = argsList[0]
 	kTriggeredData = argsList[1]
-	
+
 	plot = gc.getMap().plot(kTriggeredData.iPlotX, kTriggeredData.iPlotY)
 	plot.setFeatureType(gc.getInfoTypeForString('FEATURE_TORNADO'), 0)
 
@@ -1282,11 +1282,11 @@ def applyRunAway1(argsList):
 
 	# Re-check the event pre-condition (the game state may have changed inbetween canTriggerRunAway
 	#   and applyRunAway1)
-	# Note: This check should help prevent the city from ending up with 
+	# Note: This check should help prevent the city from ending up with
 	#   negative horses
 	if city.getYieldStored(iYield) < -quantity*2 :
 		return
-	
+
 	city.changeYieldStored(iYield, quantity)
 	nativecity.changeYieldStored(iYield, -quantity)
 
@@ -1394,7 +1394,7 @@ def applyCargoSpace(argsList):
 	else:
 		CyInterface().addImmediateMessage(localText.getText("TXT_KEY_EVENT_CARGOSPACE_FAILED", ()), "")
 	if event.getGenericParameter(2) > 0:
-		unit.setImmobileTimer(event.getGenericParameter(2)) 
+		unit.setImmobileTimer(event.getGenericParameter(2))
 
 def helpCargoSpace(argsList):
 	eEvent = argsList[0]
@@ -1637,9 +1637,9 @@ def getHelpNativeNeighborTradeBetrayal(argsList):
 	UnitClass = gc.getUnitClassInfo(CvUtil.findInfoTypeNum('UNITCLASS_TREK'))
 	szHelp = localText.getText("TXT_KEY_EVENT_TRADE_WITH_NATIVE_BETRAYAL_HELP", (UnitClass.getTextKey(), city.getNameKey(), event.getGenericParameter(1)))
 	return szHelp
-	
+
 ####### The Royals Event ########
-	
+
 getHelpTheRoyals1  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_1PYTHON")
 getHelpTheRoyals2  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_2PYTHON")
 getHelpTheRoyals3  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_3PYTHON")
@@ -1647,7 +1647,7 @@ getHelpTheRoyals4  = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_4PYTHON")
 getHelpTheRoyals2a = get_simple_help("TXT_KEY_EVENT_THE_ROYALS_2aPYTHON")
 
 
-	
+
 ####### Pirates Event ########
 
 def canTriggerPirates(argsList):
@@ -1668,7 +1668,7 @@ def CanDoPirates3(argsList):
 	iYield = gc.getInfoTypeForString("YIELD_HORSES")
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	city = player.getCity(kTriggeredData.iCityId)
-	
+
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
@@ -1689,7 +1689,7 @@ def CanDoPirates4(argsList):
 	if city.getYieldStored(iYield) < -quantity :
 		return False
 	return True
-	
+
 def applyPirates3(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
@@ -1728,7 +1728,7 @@ def getHelpPirates3(argsList):
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	szHelp = ""
 	if event.getGenericParameter(1) <> 0 :
 		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
@@ -1744,7 +1744,7 @@ def getHelpPirates4(argsList):
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	szHelp = ""
 	if event.getGenericParameter(1) <> 0 :
 		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
@@ -1802,7 +1802,7 @@ def getHelpSupersitiousPirates2(argsList):
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	szHelp = ""
 	if event.getGenericParameter(1) <> 0 :
 		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
@@ -1872,7 +1872,7 @@ def CheckCarpenter(argsList):
 def countUnitsColonies(argsList, iUnitType):
 	kTriggeredData = argsList[0]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
-	iUnitsCurrent = 0	
+	iUnitsCurrent = 0
 	(city, iter) = player.firstCity(True)
 	while(city):
 		for iCitizen in range(city.getPopulation()):
@@ -1889,8 +1889,8 @@ def countUnitsInCityForCityTrigger(argsList, iUnitType):
 	player = gc.getPlayer(ePlayer)
 	iCity = argsList[2]
 	city = player.getCity(iCity)
-	
-	iUnitsCurrent = 0	
+
+	iUnitsCurrent = 0
 	for iCitizen in range(city.getPopulation()):
 		Unit = city.getPopulationUnitByIndex(iCitizen)
 		if iUnitType == Unit.getUnitType():
@@ -1898,7 +1898,7 @@ def countUnitsInCityForCityTrigger(argsList, iUnitType):
 
 	return iUnitsCurrent
 
-###### Cheese Maker Event ###### 
+###### Cheese Maker Event ######
 def CheckCheesemakerInCity(argsList):
 	ePlayer = argsList[1]
 	player = gc.getPlayer(ePlayer)
@@ -2025,7 +2025,7 @@ def hasAllBuildings(argsList):
 		return False
 	bHasAllBuildings = True
 	i = 0
-	for i in range(iNumTriggerBuildings): 
+	for i in range(iNumTriggerBuildings):
 		iBuilding = trigger.getBuildingRequired(i)
 		eBuilding = gc.getCivilizationInfo(player.getCivilizationType()).getCivilizationBuildings(iBuilding)
 		#CyInterface().addImmediateMessage("iBuilding "+str(iBuilding) + "eBuilding "+str(eBuilding)+str(city.isHasBuilding(eBuilding)) , "")
@@ -2080,7 +2080,7 @@ def hasNoBonus(argsList):
 	if (plot.getBonusType() == -1):
 		return True
 	return False
-	
+
 def hasNoBonusAndIsPlayable(argsList):
 	pTriggeredData = argsList[0]
 	player = gc.getPlayer(pTriggeredData.ePlayer)
@@ -2121,7 +2121,7 @@ def TriggerChance(argsList):
 	if gc.getGame().getSorenRandNum(1000, "(c) TAC 2010 Events") < event.getGenericParameter(3):
 		return True
 	return False
-	
+
 ######## ORLANTH EVENTS ########
 
 def canTriggerKingFurious(argsList):
@@ -2140,7 +2140,7 @@ def canTriggerKingFurious(argsList):
 	if player.isInRevolution():
 		return False
 	return True
-	
+
 def canTriggerKingHappy(argsList):
 	return False
 	ePlayer = argsList[1]
@@ -2201,11 +2201,11 @@ def canTriggerDeliverLumber(argsList):
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	if city.getYieldStored(iYield) < -quantity:
 		return False
 	return True
-	
+
 def canTriggerDeliverCoats(argsList):
 	pTriggeredData = argsList[0]
 	ePlayer = argsList[1]
@@ -2226,7 +2226,7 @@ def canTriggerDeliverCoats(argsList):
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	if city.getYieldStored(iYield) < -quantity:
 		return False
 	return True
@@ -2272,7 +2272,7 @@ def applyRequisitionDeliver(argsList):
 	iChoose = yields[event.getGenericParameter(2)]
 	iYield = gc.getInfoTypeForString(iChoose)
 	iPrice = king.getYieldBuyPrice(iYield)
-	
+
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
@@ -2280,7 +2280,7 @@ def applyRequisitionDeliver(argsList):
 		return
 	city.changeYieldStored(iYield, quantity)
 	king.setYieldBuyPrice(iYield, iPrice+event.getGenericParameter(4), 1)
-	
+
 def getHelpRequisition(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
@@ -2395,7 +2395,7 @@ def canTriggerHorsethief(argsList):
 	if city.getYieldStored(iYield) < -quantity:
 		return False
 	return True
-	
+
 def canTriggerCattlethief(argsList):
 	eEvent = gc.getInfoTypeForString("EVENT_CATTLETHIEF_1")
 	event = gc.getEventInfo(eEvent)
@@ -2429,7 +2429,7 @@ def applyHorsethief_2(argsList):
 		return
 	city.changeYieldStored(iYield, quantity)
 	return True
-	
+
 def applyCattlethief_1(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
@@ -2444,7 +2444,7 @@ def applyCattlethief_1(argsList):
 		return
 	city.changeYieldStored(iYield, quantity)
 	return True
-	
+
 def getHelpHorsethief_2(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
@@ -2455,7 +2455,7 @@ def getHelpHorsethief_2(argsList):
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	szHelp = "Gain 1 Petty Criminal."
 	szHelp += "\n" + localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
 	return szHelp
@@ -2467,7 +2467,7 @@ def getHelpCattlethief_1(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	city = player.getCity(kTriggeredData.iCityId)
 	iYield = gc.getInfoTypeForString("YIELD_CATTLE")
-	
+
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
@@ -2485,7 +2485,7 @@ def canTriggerArchbishopric(argsList):
 		if player.isAchieveGained(iAchieve):
 			return True
 	return False
-	
+
 def canTriggerNativeTrade(argsList):
 	ePlayer = argsList[1]
 	player = gc.getPlayer(ePlayer)
@@ -2590,7 +2590,7 @@ def canTriggerBeerRobbery(argsList):
 	quantity = event1.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	if city.getYieldStored(iYield) < -quantity :
 		return False
 	return True
@@ -2642,7 +2642,7 @@ def canApplyBeerRobbery3(argsList):
 	if city.isNone():
 		return False
 	# Read Parameter 1 from event and check if enough yield is stored in city
-	
+
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
@@ -2681,7 +2681,7 @@ def applyWineTheft1(argsList):
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	city = player.getCity(kTriggeredData.iCityId)
 	iYield = gc.getInfoTypeForString("YIELD_WINE")
-	
+
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
@@ -2703,7 +2703,7 @@ def getHelpWineTheft1(argsList):
 	if event.getGenericParameter(1) <> 0 :
 		szHelp = localText.getText("TXT_KEY_EVENT_YIELD_LOOSE", (quantity,  gc.getYieldInfo(iYield).getChar(), city.getNameKey()))
 	return szHelp
-	
+
 ######## LUXURY GOODS ###########
 
 def canTriggerLuxuryGoods(argsList):
@@ -2774,7 +2774,7 @@ def canTriggerCattleAndSheep(argsList):
 	eEvent1 = gc.getInfoTypeForString("EVENT_CATTLE_AND_SHEEP_1")
 	event1 = gc.getEventInfo(eEvent1)
 	iYield = gc.getInfoTypeForString("YIELD_CATTLE")
-	
+
 	quantity1 = event1.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity1 = quantity1 * Speed.getStoragePercent()/100
@@ -2800,7 +2800,7 @@ def applyCattleAndSheep1(argsList):
 	iYield = gc.getInfoTypeForString("YIELD_CATTLE")
 	iYield2 = gc.getInfoTypeForString("YIELD_FOOD")
 	iYield3 = gc.getInfoTypeForString("YIELD_HIDES")
-	
+
 	quantity = event.getGenericParameter(1)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
@@ -3355,41 +3355,41 @@ def getHelpCocaEvent1(argsList):
 def CanDoEuropeTrade(argsList, iYieldID, iQuantity):
 
 	ePlayer = argsList[1]
-	
+
 	# safety checks to make sure it is a colonial player
 	player = gc.getPlayer(ePlayer)
 	if not player.isPlayable():
 		return False
-	
-	# this here should not be needed because isPlayable but since we have Asserts ... 
+
+	# this here should not be needed because isPlayable but since we have Asserts ...
 	if player.isNative():
 		return False
-	
+
 	king = gc.getPlayer(player.getParent())
 	if not king.isEurope():
 		return False
-	
+
 	# This would break immersion and make event unlogical
 	if player.isInRevolution():
 		return False
-	
+
 	# because we might want to do something with the City
 	iCityId = argsList[2]
 	city = player.getCity(iCityId)
 	if city.isNone():
 		return False
-	
+
 	# here we select the Amount of the Yield from function argument iQuantity
 	quantity = iQuantity
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	# here we check Handicap Setting for AI only to avoid confusing number in texts when Difficulty changes
 	Handicap = gc.getHandicapInfo(CyGame().getHandicapType())
 	#for AI
 	if not player.isHuman():
 		quantity = quantity * Handicap.getAITrainPercent()/100
-	
+
 	# now we check if enough of the Yield has been traded with Europe using function argument iYieldID
 	if player.getYieldSoldTotal(TradeLocationTypes.TRADE_LOCATION_EUROPE, iYieldID) < quantity:
 		return False
@@ -3401,22 +3401,22 @@ def getHelpQuestStartEuropeTradeYieldAndAmount(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[1]
-	
+
 	# getting Player and King
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	eking = player.getParent()
 	king = gc.getPlayer(eking)
-	
-	# we get the Yield as Parameter from Event 
+
+	# we get the Yield as Parameter from Event
 
 	# First we get the Yield for this Event
 	iYield = event.getGenericParameter(2)
-	
+
 	# Second we get the Target Quantity to deliver and of course also consider gamespeed
 	quantity = event.getGenericParameter(3)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	# here we check Handicap Setting for AI only to avoid confusing number in texts
 	Handicap = gc.getHandicapInfo(CyGame().getHandicapType())
 	#for AI
@@ -3438,13 +3438,13 @@ def getHelpQuestDoneEuropeTradePriceAndAttitude(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[1]
-	
+
 	# getting Player and King
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	eking = player.getParent()
 	king = gc.getPlayer(eking)
-	
-	# we get the Yield as Parameter from Event 
+
+	# we get the Yield as Parameter from Event
 	iYield = event.getGenericParameter(2)
 
 	#szHelp = localText.getText("TXT_KEY_EVENT_EUROPE_TRADE_PRICE_AND_ATTITUDE_HELP", ())
@@ -3465,19 +3465,19 @@ def applyQuestDoneEuropeTradePriceAndAttitude(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[1]
-	
+
 	# getting King and Player
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	eking = player.getParent()
 	king = gc.getPlayer(eking)
-	
+
 	# changing the Attitude
 	player.AI_changeAttitudeExtra(eking, event.getGenericParameter(3))
 	king.AI_changeAttitudeExtra(kTriggeredData.ePlayer, event.getGenericParameter(3))
-	
+
 	# getting the Yield for the Price Change
 	iYield = event.getGenericParameter(2)
-	
+
 	# changing the Price
 	iPrice = king.getYieldBuyPrice(iYield)
 	king.setYieldBuyPrice(iYield, iPrice+event.getGenericParameter(4), 1)
@@ -3486,7 +3486,7 @@ def applyQuestDoneEuropeTradePriceAndAttitude(argsList):
 # These are the specific checks for the specific Event Triggers
 
 def canTriggerEuropeTradeQuest_SUGAR_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SUGAR_START")
 	event = gc.getEventInfo(eEvent)
@@ -3495,11 +3495,11 @@ def canTriggerEuropeTradeQuest_SUGAR_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_SUGAR_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SUGAR_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3508,11 +3508,11 @@ def canTriggerEuropeTradeQuest_SUGAR_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_TOBACCO_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_TOBACCO_START")
 	event = gc.getEventInfo(eEvent)
@@ -3521,11 +3521,11 @@ def canTriggerEuropeTradeQuest_TOBACCO_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_TOBACCO_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_TOBACCO_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3534,11 +3534,11 @@ def canTriggerEuropeTradeQuest_TOBACCO_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_FOOD_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FOOD_START")
 	event = gc.getEventInfo(eEvent)
@@ -3547,11 +3547,11 @@ def canTriggerEuropeTradeQuest_FOOD_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_FOOD_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FOOD_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3560,11 +3560,11 @@ def canTriggerEuropeTradeQuest_FOOD_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_LUMBER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_LUMBER_START")
 	event = gc.getEventInfo(eEvent)
@@ -3573,11 +3573,11 @@ def canTriggerEuropeTradeQuest_LUMBER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_LUMBER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_LUMBER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3586,11 +3586,11 @@ def canTriggerEuropeTradeQuest_LUMBER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_ORE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_ORE_START")
 	event = gc.getEventInfo(eEvent)
@@ -3599,11 +3599,11 @@ def canTriggerEuropeTradeQuest_ORE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_ORE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_ORE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3612,11 +3612,11 @@ def canTriggerEuropeTradeQuest_ORE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_STONE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_STONE_START")
 	event = gc.getEventInfo(eEvent)
@@ -3625,11 +3625,11 @@ def canTriggerEuropeTradeQuest_STONE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_STONE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_STONE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3638,11 +3638,11 @@ def canTriggerEuropeTradeQuest_STONE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HEMP_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HEMP_START")
 	event = gc.getEventInfo(eEvent)
@@ -3651,11 +3651,11 @@ def canTriggerEuropeTradeQuest_HEMP_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HEMP_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HEMP_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3664,11 +3664,11 @@ def canTriggerEuropeTradeQuest_HEMP_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_SHEEP_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SHEEP_START")
 	event = gc.getEventInfo(eEvent)
@@ -3677,11 +3677,11 @@ def canTriggerEuropeTradeQuest_SHEEP_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_SHEEP_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SHEEP_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3690,11 +3690,11 @@ def canTriggerEuropeTradeQuest_SHEEP_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CATTLE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CATTLE_START")
 	event = gc.getEventInfo(eEvent)
@@ -3703,11 +3703,11 @@ def canTriggerEuropeTradeQuest_CATTLE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CATTLE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CATTLE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3716,11 +3716,11 @@ def canTriggerEuropeTradeQuest_CATTLE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HORSES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HORSES_START")
 	event = gc.getEventInfo(eEvent)
@@ -3729,11 +3729,11 @@ def canTriggerEuropeTradeQuest_HORSES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HORSES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HORSES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3742,11 +3742,11 @@ def canTriggerEuropeTradeQuest_HORSES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COCOA_FRUITS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COCOA_FRUITS_START")
 	event = gc.getEventInfo(eEvent)
@@ -3755,11 +3755,11 @@ def canTriggerEuropeTradeQuest_COCOA_FRUITS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COCOA_FRUITS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COCOA_FRUITS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3768,11 +3768,11 @@ def canTriggerEuropeTradeQuest_COCOA_FRUITS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COCA_LEAVES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COCA_LEAVES_START")
 	event = gc.getEventInfo(eEvent)
@@ -3781,11 +3781,11 @@ def canTriggerEuropeTradeQuest_COCA_LEAVES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COCA_LEAVES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COCA_LEAVES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3794,11 +3794,11 @@ def canTriggerEuropeTradeQuest_COCA_LEAVES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_FUR_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FUR_START")
 	event = gc.getEventInfo(eEvent)
@@ -3807,11 +3807,11 @@ def canTriggerEuropeTradeQuest_FUR_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_FUR_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FUR_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3820,11 +3820,11 @@ def canTriggerEuropeTradeQuest_FUR_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_WOOL_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WOOL_START")
 	event = gc.getEventInfo(eEvent)
@@ -3833,11 +3833,11 @@ def canTriggerEuropeTradeQuest_WOOL_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_WOOL_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WOOL_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3846,11 +3846,11 @@ def canTriggerEuropeTradeQuest_WOOL_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COTTON_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COTTON_START")
 	event = gc.getEventInfo(eEvent)
@@ -3859,11 +3859,11 @@ def canTriggerEuropeTradeQuest_COTTON_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COTTON_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COTTON_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3872,11 +3872,11 @@ def canTriggerEuropeTradeQuest_COTTON_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_INDIGO_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_INDIGO_START")
 	event = gc.getEventInfo(eEvent)
@@ -3885,11 +3885,11 @@ def canTriggerEuropeTradeQuest_INDIGO_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_INDIGO_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_INDIGO_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3898,11 +3898,11 @@ def canTriggerEuropeTradeQuest_INDIGO_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COFFEE_BERRIES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COFFEE_BERRIES_START")
 	event = gc.getEventInfo(eEvent)
@@ -3911,11 +3911,11 @@ def canTriggerEuropeTradeQuest_COFFEE_BERRIES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COFFEE_BERRIES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COFFEE_BERRIES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3924,11 +3924,11 @@ def canTriggerEuropeTradeQuest_COFFEE_BERRIES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HIDES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HIDES_START")
 	event = gc.getEventInfo(eEvent)
@@ -3937,11 +3937,11 @@ def canTriggerEuropeTradeQuest_HIDES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HIDES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HIDES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3950,11 +3950,11 @@ def canTriggerEuropeTradeQuest_HIDES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PREMIUM_FUR_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PREMIUM_FUR_START")
 	event = gc.getEventInfo(eEvent)
@@ -3963,11 +3963,11 @@ def canTriggerEuropeTradeQuest_PREMIUM_FUR_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PREMIUM_FUR_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PREMIUM_FUR_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -3976,11 +3976,11 @@ def canTriggerEuropeTradeQuest_PREMIUM_FUR_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_RAW_SALT_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RAW_SALT_START")
 	event = gc.getEventInfo(eEvent)
@@ -3989,11 +3989,11 @@ def canTriggerEuropeTradeQuest_RAW_SALT_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_RAW_SALT_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RAW_SALT_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4002,11 +4002,11 @@ def canTriggerEuropeTradeQuest_RAW_SALT_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_RED_PEPPER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RED_PEPPER_START")
 	event = gc.getEventInfo(eEvent)
@@ -4015,11 +4015,11 @@ def canTriggerEuropeTradeQuest_RED_PEPPER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_RED_PEPPER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RED_PEPPER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4028,11 +4028,11 @@ def canTriggerEuropeTradeQuest_RED_PEPPER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_BARLEY_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_BARLEY_START")
 	event = gc.getEventInfo(eEvent)
@@ -4041,11 +4041,11 @@ def canTriggerEuropeTradeQuest_BARLEY_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_BARLEY_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_BARLEY_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4054,11 +4054,11 @@ def canTriggerEuropeTradeQuest_BARLEY_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GRAPES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GRAPES_START")
 	event = gc.getEventInfo(eEvent)
@@ -4067,11 +4067,11 @@ def canTriggerEuropeTradeQuest_GRAPES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GRAPES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GRAPES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4080,11 +4080,11 @@ def canTriggerEuropeTradeQuest_GRAPES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_WHALE_BLUBBER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WHALE_BLUBBER_START")
 	event = gc.getEventInfo(eEvent)
@@ -4093,11 +4093,11 @@ def canTriggerEuropeTradeQuest_WHALE_BLUBBER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_WHALE_BLUBBER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WHALE_BLUBBER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4106,11 +4106,11 @@ def canTriggerEuropeTradeQuest_WHALE_BLUBBER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_VALUABLE_WOOD_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_VALUABLE_WOOD_START")
 	event = gc.getEventInfo(eEvent)
@@ -4119,11 +4119,11 @@ def canTriggerEuropeTradeQuest_VALUABLE_WOOD_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_VALUABLE_WOOD_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_VALUABLE_WOOD_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4132,11 +4132,11 @@ def canTriggerEuropeTradeQuest_VALUABLE_WOOD_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_TRADE_GOODS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOUSEHOLD_GOODS_START")
 	event = gc.getEventInfo(eEvent)
@@ -4145,11 +4145,11 @@ def canTriggerEuropeTradeQuest_TRADE_GOODS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_TRADE_GOODS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOUSEHOLD_GOODS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4158,11 +4158,11 @@ def canTriggerEuropeTradeQuest_TRADE_GOODS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_ROPE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_ROPE_START")
 	event = gc.getEventInfo(eEvent)
@@ -4171,11 +4171,11 @@ def canTriggerEuropeTradeQuest_ROPE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_ROPE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_ROPE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4184,11 +4184,11 @@ def canTriggerEuropeTradeQuest_ROPE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_SAILCLOTH_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SAILCLOTH_START")
 	event = gc.getEventInfo(eEvent)
@@ -4197,11 +4197,11 @@ def canTriggerEuropeTradeQuest_SAILCLOTH_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_SAILCLOTH_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SAILCLOTH_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4210,11 +4210,11 @@ def canTriggerEuropeTradeQuest_SAILCLOTH_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CLOTH_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CLOTH_START")
 	event = gc.getEventInfo(eEvent)
@@ -4223,11 +4223,11 @@ def canTriggerEuropeTradeQuest_CLOTH_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CLOTH_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CLOTH_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4236,11 +4236,11 @@ def canTriggerEuropeTradeQuest_CLOTH_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_TOOLS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_TOOLS_START")
 	event = gc.getEventInfo(eEvent)
@@ -4249,11 +4249,11 @@ def canTriggerEuropeTradeQuest_TOOLS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_TOOLS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_TOOLS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4262,11 +4262,11 @@ def canTriggerEuropeTradeQuest_TOOLS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_BLADES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_BLADES_START")
 	event = gc.getEventInfo(eEvent)
@@ -4275,11 +4275,11 @@ def canTriggerEuropeTradeQuest_BLADES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_BLADES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_BLADES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4288,11 +4288,11 @@ def canTriggerEuropeTradeQuest_BLADES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_MUSKETS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_MUSKETS_START")
 	event = gc.getEventInfo(eEvent)
@@ -4301,11 +4301,11 @@ def canTriggerEuropeTradeQuest_MUSKETS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_MUSKETS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_MUSKETS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4314,11 +4314,11 @@ def canTriggerEuropeTradeQuest_MUSKETS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CANNONS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CANNONS_START")
 	event = gc.getEventInfo(eEvent)
@@ -4327,11 +4327,11 @@ def canTriggerEuropeTradeQuest_CANNONS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CANNONS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CANNONS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4340,11 +4340,11 @@ def canTriggerEuropeTradeQuest_CANNONS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_SILVER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SILVER_START")
 	event = gc.getEventInfo(eEvent)
@@ -4353,11 +4353,11 @@ def canTriggerEuropeTradeQuest_SILVER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_SILVER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SILVER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4366,11 +4366,11 @@ def canTriggerEuropeTradeQuest_SILVER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GOLD_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GOLD_START")
 	event = gc.getEventInfo(eEvent)
@@ -4379,11 +4379,11 @@ def canTriggerEuropeTradeQuest_GOLD_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GOLD_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GOLD_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4392,11 +4392,11 @@ def canTriggerEuropeTradeQuest_GOLD_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COCOA_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COCOA_START")
 	event = gc.getEventInfo(eEvent)
@@ -4405,11 +4405,11 @@ def canTriggerEuropeTradeQuest_COCOA_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COCOA_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COCOA_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4418,11 +4418,11 @@ def canTriggerEuropeTradeQuest_COCOA_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COFFEE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COFFEE_START")
 	event = gc.getEventInfo(eEvent)
@@ -4431,11 +4431,11 @@ def canTriggerEuropeTradeQuest_COFFEE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COFFEE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COFFEE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4444,11 +4444,11 @@ def canTriggerEuropeTradeQuest_COFFEE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CIGARS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CIGARS_START")
 	event = gc.getEventInfo(eEvent)
@@ -4457,11 +4457,11 @@ def canTriggerEuropeTradeQuest_CIGARS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CIGARS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CIGARS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4470,11 +4470,11 @@ def canTriggerEuropeTradeQuest_CIGARS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GEMS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GEMS_START")
 	event = gc.getEventInfo(eEvent)
@@ -4483,11 +4483,11 @@ def canTriggerEuropeTradeQuest_GEMS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GEMS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GEMS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4496,297 +4496,297 @@ def canTriggerEuropeTradeQuest_GEMS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_WOOL_CLOTH_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WOOL_CLOTH_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
-	 
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	 
+
 	return bTrigger
-	
-def canTriggerEuropeTradeQuest_WOOL_CLOTH_DONE(argsList): 
-	
+
+def canTriggerEuropeTradeQuest_WOOL_CLOTH_DONE(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WOOL_CLOTH_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
-	
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COLOURED_CLOTH_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COLOURED_CLOTH_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
-	 
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	 
+
 	return bTrigger
-	
-def canTriggerEuropeTradeQuest_COLOURED_CLOTH_DONE(argsList): 
-	
+
+def canTriggerEuropeTradeQuest_COLOURED_CLOTH_DONE(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COLOURED_CLOTH_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
-	
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
-def canTriggerEuropeTradeQuest_LEATHER_START(argsList): 
-	
+def canTriggerEuropeTradeQuest_LEATHER_START(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_LEATHER_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
-	 
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	 
+
 	return bTrigger
-	
+
 def canTriggerEuropeTradeQuest_LEATHER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_LEATHER_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
-	
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
-def canTriggerEuropeTradeQuest_COATS_START(argsList): 
-	
+def canTriggerEuropeTradeQuest_COATS_START(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COATS_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
-	 
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	 
+
 	return bTrigger
-	
-def canTriggerEuropeTradeQuest_COATS_DONE(argsList): 
-	
+
+def canTriggerEuropeTradeQuest_COATS_DONE(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COATS_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
-	
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PREMIUM_COATS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PREMIUM_COATS_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
-	 
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	 
+
 	return bTrigger
-	
-def canTriggerEuropeTradeQuest_PREMIUM_COATS_DONE(argsList): 
-	
+
+def canTriggerEuropeTradeQuest_PREMIUM_COATS_DONE(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PREMIUM_COATS_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
-	
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_SPICES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SPICES_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
-	 
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	 
+
 	return bTrigger
-	
+
 def canTriggerEuropeTradeQuest_SPICES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SPICES_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
-	
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
-	
+
 def canTriggerEuropeTradeQuest_BEER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_BEER_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
-	 
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	 
+
 	return bTrigger
-	
-def canTriggerEuropeTradeQuest_BEER_DONE(argsList): 
-	
+
+def canTriggerEuropeTradeQuest_BEER_DONE(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_BEER_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
-	
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_WINE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WINE_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
-	 
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	 
+
 	return bTrigger
-	
-def canTriggerEuropeTradeQuest_WINE_DONE(argsList): 
-	
+
+def canTriggerEuropeTradeQuest_WINE_DONE(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WINE_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
-	
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
-def canTriggerEuropeTradeQuest_WHALE_OIL_START(argsList): 
-	
+def canTriggerEuropeTradeQuest_WHALE_OIL_START(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WHALE_OIL_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
-	 
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	 
+
 	return bTrigger
-	
-def canTriggerEuropeTradeQuest_WHALE_OIL_DONE(argsList): 
-	
+
+def canTriggerEuropeTradeQuest_WHALE_OIL_DONE(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WHALE_OIL_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
-	
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
-def canTriggerEuropeTradeQuest_FURNITURE_START(argsList): 
-	
+def canTriggerEuropeTradeQuest_FURNITURE_START(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FURNITURE_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
-	 
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	 
+
 	return bTrigger
-	
+
 def canTriggerEuropeTradeQuest_FURNITURE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FURNITURE_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
-	
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_SALT_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SALT_START")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Start this should be e.g. 200
-	 
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	 
+
 	return bTrigger
-	
-def canTriggerEuropeTradeQuest_SALT_DONE(argsList): 
-	
+
+def canTriggerEuropeTradeQuest_SALT_DONE(argsList):
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_SALT_DONE_1")
 	event = gc.getEventInfo(eEvent)
 	iYieldID = event.getGenericParameter(2)
 	iQuantity = event.getGenericParameter(1) # for Quest Done this should be e.g. 1000
-	
+
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_LUXURY_GOODS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_LUXURY_GOODS_START")
 	event = gc.getEventInfo(eEvent)
@@ -4795,11 +4795,11 @@ def canTriggerEuropeTradeQuest_LUXURY_GOODS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_LUXURY_GOODS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_LUXURY_GOODS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4808,11 +4808,11 @@ def canTriggerEuropeTradeQuest_LUXURY_GOODS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_TRADE_GOODS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOUSEHOLD_GOODS_START")
 	event = gc.getEventInfo(eEvent)
@@ -4821,11 +4821,11 @@ def canTriggerEuropeTradeQuest_TRADE_GOODS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_TRADE_GOODS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOUSEHOLD_GOODS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4834,11 +4834,11 @@ def canTriggerEuropeTradeQuest_TRADE_GOODS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CLAY_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CLAY_START")
 	event = gc.getEventInfo(eEvent)
@@ -4847,11 +4847,11 @@ def canTriggerEuropeTradeQuest_CLAY_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CLAY_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CLAY_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4860,12 +4860,12 @@ def canTriggerEuropeTradeQuest_CLAY_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 
 def canTriggerEuropeTradeQuest_PEAT_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PEAT_START")
 	event = gc.getEventInfo(eEvent)
@@ -4874,11 +4874,11 @@ def canTriggerEuropeTradeQuest_PEAT_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PEAT_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PEAT_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4887,11 +4887,11 @@ def canTriggerEuropeTradeQuest_PEAT_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_RICE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RICE_START")
 	event = gc.getEventInfo(eEvent)
@@ -4900,11 +4900,11 @@ def canTriggerEuropeTradeQuest_RICE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_RICE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RICE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4913,11 +4913,11 @@ def canTriggerEuropeTradeQuest_RICE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CASSAVA_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CASSAVA_START")
 	event = gc.getEventInfo(eEvent)
@@ -4926,11 +4926,11 @@ def canTriggerEuropeTradeQuest_CASSAVA_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CASSAVA_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CASSAVA_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4939,11 +4939,11 @@ def canTriggerEuropeTradeQuest_CASSAVA_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HARDWOOD_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HARDWOOD_START")
 	event = gc.getEventInfo(eEvent)
@@ -4952,11 +4952,11 @@ def canTriggerEuropeTradeQuest_HARDWOOD_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HARDWOOD_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HARDWOOD_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4965,12 +4965,12 @@ def canTriggerEuropeTradeQuest_HARDWOOD_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 
 def canTriggerEuropeTradeQuest_FLAX_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FLAX_START")
 	event = gc.getEventInfo(eEvent)
@@ -4979,11 +4979,11 @@ def canTriggerEuropeTradeQuest_FLAX_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_FLAX_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FLAX_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -4992,11 +4992,11 @@ def canTriggerEuropeTradeQuest_FLAX_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PEANUTS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PEANUTS_START")
 	event = gc.getEventInfo(eEvent)
@@ -5005,11 +5005,11 @@ def canTriggerEuropeTradeQuest_PEANUTS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PEANUTS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PEANUTS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5018,11 +5018,11 @@ def canTriggerEuropeTradeQuest_PEANUTS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_FRUITS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FRUITS_START")
 	event = gc.getEventInfo(eEvent)
@@ -5031,11 +5031,11 @@ def canTriggerEuropeTradeQuest_FRUITS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_FRUITS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FRUITS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5044,11 +5044,11 @@ def canTriggerEuropeTradeQuest_FRUITS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_YERBA_LEAVES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_YERBA_LEAVES_START")
 	event = gc.getEventInfo(eEvent)
@@ -5057,11 +5057,11 @@ def canTriggerEuropeTradeQuest_YERBA_LEAVES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_YERBA_LEAVES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_YERBA_LEAVES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5070,12 +5070,12 @@ def canTriggerEuropeTradeQuest_YERBA_LEAVES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 
 def canTriggerEuropeTradeQuest_LOGWOOD_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_LOGWOOD_START")
 	event = gc.getEventInfo(eEvent)
@@ -5084,11 +5084,11 @@ def canTriggerEuropeTradeQuest_LOGWOOD_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_LOGWOOD_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_LOGWOOD_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5097,11 +5097,11 @@ def canTriggerEuropeTradeQuest_LOGWOOD_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COCHINEAL_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COCHINEAL_START")
 	event = gc.getEventInfo(eEvent)
@@ -5110,11 +5110,11 @@ def canTriggerEuropeTradeQuest_COCHINEAL_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COCHINEAL_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COCHINEAL_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5123,11 +5123,11 @@ def canTriggerEuropeTradeQuest_COCHINEAL_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_VANILLA_PODS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_VANILLA_PODS_START")
 	event = gc.getEventInfo(eEvent)
@@ -5136,11 +5136,11 @@ def canTriggerEuropeTradeQuest_VANILLA_PODS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_VANILLA_PODS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_VANILLA_PODS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5149,11 +5149,11 @@ def canTriggerEuropeTradeQuest_VANILLA_PODS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_MAPLE_SIRUP_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_MAPLE_SIRUP_START")
 	event = gc.getEventInfo(eEvent)
@@ -5162,11 +5162,11 @@ def canTriggerEuropeTradeQuest_MAPLE_SIRUP_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_MAPLE_SIRUP_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_MAPLE_SIRUP_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5175,11 +5175,11 @@ def canTriggerEuropeTradeQuest_MAPLE_SIRUP_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_KAUTSCHUK_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_KAUTSCHUK_START")
 	event = gc.getEventInfo(eEvent)
@@ -5188,11 +5188,11 @@ def canTriggerEuropeTradeQuest_KAUTSCHUK_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_KAUTSCHUK_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_KAUTSCHUK_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5201,11 +5201,11 @@ def canTriggerEuropeTradeQuest_KAUTSCHUK_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COAL_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COAL_START")
 	event = gc.getEventInfo(eEvent)
@@ -5214,11 +5214,11 @@ def canTriggerEuropeTradeQuest_COAL_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COAL_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COAL_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5227,12 +5227,12 @@ def canTriggerEuropeTradeQuest_COAL_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 
 def canTriggerEuropeTradeQuest_CHAR_COAL_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CHAR_COAL_START")
 	event = gc.getEventInfo(eEvent)
@@ -5241,11 +5241,11 @@ def canTriggerEuropeTradeQuest_CHAR_COAL_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CHAR_COAL_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CHAR_COAL_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5254,11 +5254,11 @@ def canTriggerEuropeTradeQuest_CHAR_COAL_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_BAKERY_GOODS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_BAKERY_GOODS_START")
 	event = gc.getEventInfo(eEvent)
@@ -5267,11 +5267,11 @@ def canTriggerEuropeTradeQuest_BAKERY_GOODS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_BAKERY_GOODS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_BAKERY_GOODS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5280,11 +5280,11 @@ def canTriggerEuropeTradeQuest_BAKERY_GOODS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_BLACK_POWDER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_BLACK_POWDER_START")
 	event = gc.getEventInfo(eEvent)
@@ -5293,11 +5293,11 @@ def canTriggerEuropeTradeQuest_BLACK_POWDER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_BLACK_POWDER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_BLACK_POWDER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5306,11 +5306,11 @@ def canTriggerEuropeTradeQuest_BLACK_POWDER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
-	
+
 def canTriggerEuropeTradeQuest_GEESE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GEESE_START")
 	event = gc.getEventInfo(eEvent)
@@ -5319,11 +5319,11 @@ def canTriggerEuropeTradeQuest_GEESE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GEESE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GEESE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5332,11 +5332,11 @@ def canTriggerEuropeTradeQuest_GEESE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CHICKEN_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CHICKEN_START")
 	event = gc.getEventInfo(eEvent)
@@ -5345,11 +5345,11 @@ def canTriggerEuropeTradeQuest_CHICKEN_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CHICKEN_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CHICKEN_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5358,11 +5358,11 @@ def canTriggerEuropeTradeQuest_CHICKEN_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PIGS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PIGS_START")
 	event = gc.getEventInfo(eEvent)
@@ -5371,11 +5371,11 @@ def canTriggerEuropeTradeQuest_PIGS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PIGS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PIGS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5384,11 +5384,11 @@ def canTriggerEuropeTradeQuest_PIGS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GOATS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GOATS_START")
 	event = gc.getEventInfo(eEvent)
@@ -5397,11 +5397,11 @@ def canTriggerEuropeTradeQuest_GOATS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GOATS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GOATS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5410,11 +5410,11 @@ def canTriggerEuropeTradeQuest_GOATS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
-	
+
 def canTriggerEuropeTradeQuest_OLIVES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_OLIVES_START")
 	event = gc.getEventInfo(eEvent)
@@ -5423,11 +5423,11 @@ def canTriggerEuropeTradeQuest_OLIVES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_OLIVES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_OLIVES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5436,12 +5436,12 @@ def canTriggerEuropeTradeQuest_OLIVES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 
 def canTriggerEuropeTradeQuest_RAPE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RAPE_START")
 	event = gc.getEventInfo(eEvent)
@@ -5450,11 +5450,11 @@ def canTriggerEuropeTradeQuest_RAPE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_RAPE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RAPE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5463,11 +5463,11 @@ def canTriggerEuropeTradeQuest_RAPE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_WILD_FEATHERS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WILD_FEATHERS_START")
 	event = gc.getEventInfo(eEvent)
@@ -5476,11 +5476,11 @@ def canTriggerEuropeTradeQuest_WILD_FEATHERS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_WILD_FEATHERS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_WILD_FEATHERS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5489,11 +5489,11 @@ def canTriggerEuropeTradeQuest_WILD_FEATHERS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_MILK_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_MILK_START")
 	event = gc.getEventInfo(eEvent)
@@ -5502,11 +5502,11 @@ def canTriggerEuropeTradeQuest_MILK_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_MILK_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_MILK_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5515,11 +5515,11 @@ def canTriggerEuropeTradeQuest_MILK_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GOAT_HIDES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GOAT_HIDES_START")
 	event = gc.getEventInfo(eEvent)
@@ -5528,11 +5528,11 @@ def canTriggerEuropeTradeQuest_GOAT_HIDES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GOAT_HIDES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GOAT_HIDES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5541,11 +5541,11 @@ def canTriggerEuropeTradeQuest_GOAT_HIDES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PIG_SKIN_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PIG_SKIN_START")
 	event = gc.getEventInfo(eEvent)
@@ -5554,11 +5554,11 @@ def canTriggerEuropeTradeQuest_PIG_SKIN_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PIG_SKIN_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PIG_SKIN_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5567,11 +5567,11 @@ def canTriggerEuropeTradeQuest_PIG_SKIN_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_DOWNS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_DOWNS_START")
 	event = gc.getEventInfo(eEvent)
@@ -5580,11 +5580,11 @@ def canTriggerEuropeTradeQuest_DOWNS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_DOWNS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_DOWNS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5593,11 +5593,11 @@ def canTriggerEuropeTradeQuest_DOWNS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_ROASTED_PEANUTS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_ROASTED_PEANUTS_START")
 	event = gc.getEventInfo(eEvent)
@@ -5606,11 +5606,11 @@ def canTriggerEuropeTradeQuest_ROASTED_PEANUTS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_ROASTED_PEANUTS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_ROASTED_PEANUTS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5619,12 +5619,12 @@ def canTriggerEuropeTradeQuest_ROASTED_PEANUTS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 
 def canTriggerEuropeTradeQuest_CHEESE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CHEESE_START")
 	event = gc.getEventInfo(eEvent)
@@ -5633,11 +5633,11 @@ def canTriggerEuropeTradeQuest_CHEESE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CHEESE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CHEESE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5646,11 +5646,11 @@ def canTriggerEuropeTradeQuest_CHEESE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_YERBA_TEA_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_YERBA_TEA_START")
 	event = gc.getEventInfo(eEvent)
@@ -5659,11 +5659,11 @@ def canTriggerEuropeTradeQuest_YERBA_TEA_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_YERBA_TEA_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_YERBA_TEA_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5672,11 +5672,11 @@ def canTriggerEuropeTradeQuest_YERBA_TEA_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CHOCOLATE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CHOCOLATE_START")
 	event = gc.getEventInfo(eEvent)
@@ -5685,11 +5685,11 @@ def canTriggerEuropeTradeQuest_CHOCOLATE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_CHOCOLATE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_CHOCOLATE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5698,11 +5698,11 @@ def canTriggerEuropeTradeQuest_CHOCOLATE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_RUM_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RUM_START")
 	event = gc.getEventInfo(eEvent)
@@ -5711,11 +5711,11 @@ def canTriggerEuropeTradeQuest_RUM_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_RUM_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RUM_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5724,11 +5724,11 @@ def canTriggerEuropeTradeQuest_RUM_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HOOCH_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOOCH_START")
 	event = gc.getEventInfo(eEvent)
@@ -5737,11 +5737,11 @@ def canTriggerEuropeTradeQuest_HOOCH_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HOOCH_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOOCH_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5750,11 +5750,11 @@ def canTriggerEuropeTradeQuest_HOOCH_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_OLIVE_OIL_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_OLIVE_OIL_START")
 	event = gc.getEventInfo(eEvent)
@@ -5763,11 +5763,11 @@ def canTriggerEuropeTradeQuest_OLIVE_OIL_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_OLIVE_OIL_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_OLIVE_OIL_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5776,11 +5776,11 @@ def canTriggerEuropeTradeQuest_OLIVE_OIL_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_RAPE_OIL_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RAPE_OIL_START")
 	event = gc.getEventInfo(eEvent)
@@ -5789,11 +5789,11 @@ def canTriggerEuropeTradeQuest_RAPE_OIL_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_RAPE_OIL_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_RAPE_OIL_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5802,12 +5802,12 @@ def canTriggerEuropeTradeQuest_RAPE_OIL_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 
 def canTriggerEuropeTradeQuest_EVERYDAY_CLOTHES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_EVERYDAY_CLOTHES_START")
 	event = gc.getEventInfo(eEvent)
@@ -5816,11 +5816,11 @@ def canTriggerEuropeTradeQuest_EVERYDAY_CLOTHES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_EVERYDAY_CLOTHES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_EVERYDAY_CLOTHES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5829,12 +5829,12 @@ def canTriggerEuropeTradeQuest_EVERYDAY_CLOTHES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 
 def canTriggerEuropeTradeQuest_FESTIVE_CLOTHES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FESTIVE_CLOTHES_START")
 	event = gc.getEventInfo(eEvent)
@@ -5843,11 +5843,11 @@ def canTriggerEuropeTradeQuest_FESTIVE_CLOTHES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_FESTIVE_CLOTHES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FESTIVE_CLOTHES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5856,11 +5856,11 @@ def canTriggerEuropeTradeQuest_FESTIVE_CLOTHES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COLOURED_WOOL_CLOTH_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COLOURED_WOOL_CLOTH_START")
 	event = gc.getEventInfo(eEvent)
@@ -5869,11 +5869,11 @@ def canTriggerEuropeTradeQuest_COLOURED_WOOL_CLOTH_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_COLOURED_WOOL_CLOTH_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_COLOURED_WOOL_CLOTH_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5882,11 +5882,11 @@ def canTriggerEuropeTradeQuest_COLOURED_WOOL_CLOTH_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GOAT_HIDE_BOOTS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GOAT_HIDE_BOOTS_START")
 	event = gc.getEventInfo(eEvent)
@@ -5895,11 +5895,11 @@ def canTriggerEuropeTradeQuest_GOAT_HIDE_BOOTS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_GOAT_HIDE_BOOTS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_GOAT_HIDE_BOOTS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5908,11 +5908,11 @@ def canTriggerEuropeTradeQuest_GOAT_HIDE_BOOTS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PIG_LEATHER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PIG_LEATHER_START")
 	event = gc.getEventInfo(eEvent)
@@ -5921,11 +5921,11 @@ def canTriggerEuropeTradeQuest_PIG_LEATHER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PIG_LEATHER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PIG_LEATHER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5934,11 +5934,11 @@ def canTriggerEuropeTradeQuest_PIG_LEATHER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PADDED_LEATHER_COATS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PADDED_LEATHER_COATS_START")
 	event = gc.getEventInfo(eEvent)
@@ -5947,11 +5947,11 @@ def canTriggerEuropeTradeQuest_PADDED_LEATHER_COATS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PADDED_LEATHER_COATS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PADDED_LEATHER_COATS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5960,11 +5960,11 @@ def canTriggerEuropeTradeQuest_PADDED_LEATHER_COATS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_VANILLA_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_VANILLA_START")
 	event = gc.getEventInfo(eEvent)
@@ -5973,11 +5973,11 @@ def canTriggerEuropeTradeQuest_VANILLA_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_VANILLA_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_VANILLA_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -5986,11 +5986,11 @@ def canTriggerEuropeTradeQuest_VANILLA_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_POTTERY_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_POTTERY_START")
 	event = gc.getEventInfo(eEvent)
@@ -5999,11 +5999,11 @@ def canTriggerEuropeTradeQuest_POTTERY_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_POTTERY_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_POTTERY_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6012,11 +6012,11 @@ def canTriggerEuropeTradeQuest_POTTERY_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PADDED_FURNITURE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PADDED_FURNITURE_START")
 	event = gc.getEventInfo(eEvent)
@@ -6025,11 +6025,11 @@ def canTriggerEuropeTradeQuest_PADDED_FURNITURE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_PADDED_FURNITURE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_PADDED_FURNITURE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6038,11 +6038,11 @@ def canTriggerEuropeTradeQuest_PADDED_FURNITURE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_FIELD_WORKER_TOOLS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FIELD_WORKER_TOOLS_START")
 	event = gc.getEventInfo(eEvent)
@@ -6051,11 +6051,11 @@ def canTriggerEuropeTradeQuest_FIELD_WORKER_TOOLS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_FIELD_WORKER_TOOLS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_FIELD_WORKER_TOOLS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6064,11 +6064,11 @@ def canTriggerEuropeTradeQuest_FIELD_WORKER_TOOLS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HOUSEHOLD_GOODS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOUSEHOLD_GOODS_START")
 	event = gc.getEventInfo(eEvent)
@@ -6077,11 +6077,11 @@ def canTriggerEuropeTradeQuest_HOUSEHOLD_GOODS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerEuropeTradeQuest_HOUSEHOLD_GOODS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_EUROPE_TRADE_QUEST_HOUSEHOLD_GOODS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6090,7 +6090,7 @@ def canTriggerEuropeTradeQuest_HOUSEHOLD_GOODS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoEuropeTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 ######## AFRICA TRADE Events ###########
@@ -6115,41 +6115,41 @@ def canTriggerEuropeTradeQuest_HOUSEHOLD_GOODS_DONE(argsList):
 def CanDoAfricaTrade(argsList, iYieldID, iQuantity):
 
 	ePlayer = argsList[1]
-	
+
 	# safety checks to make sure it is a colonial player
 	player = gc.getPlayer(ePlayer)
 	if not player.isPlayable():
 		return False
-	
-	# this here should not be needed because isPlayable but since we have Asserts ... 
+
+	# this here should not be needed because isPlayable but since we have Asserts ...
 	if player.isNative():
 		return False
-	
+
 	king = gc.getPlayer(player.getParent())
 	if not king.isEurope():
 		return False
-	
+
 	# This would break immersion and make event unlogical
 	if player.isInRevolution():
 		return False
-	
+
 	# because we might want to do something with the City
 	iCityId = argsList[2]
 	city = player.getCity(iCityId)
 	if city.isNone():
 		return False
-	
+
 	# here we select the Amount of the Yield from function argument iQuantity
 	quantity = iQuantity
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	# here we check Handicap Setting for AI only to avoid confusing number in texts when Difficulty changes
 	Handicap = gc.getHandicapInfo(CyGame().getHandicapType())
 	#for AI
 	if not player.isHuman():
 		quantity = quantity * Handicap.getAITrainPercent()/100
-	
+
 	# now we check if enough of the Yield has been traded with Africa using function argument iYieldID
 	if player.getYieldSoldTotal(TradeLocationTypes.TRADE_LOCATION_AFRICA, iYieldID) < quantity:
 		return False
@@ -6161,20 +6161,20 @@ def getHelpQuestStartAfricaTradeYieldAndAmount(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[1]
-	
+
 	# getting Player and King
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	eking = player.getParent()
 	king = gc.getPlayer(eking)
-	
-	# we get the Yield as Parameter from Event 
+
+	# we get the Yield as Parameter from Event
 	iYield = event.getGenericParameter(2)
-	
+
 	# Second we get the Target Quantity to deliver and of course also consider gamespeed
 	quantity = event.getGenericParameter(3)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	# here we check Handicap Setting for AI only to avoid confusing number in texts
 	Handicap = gc.getHandicapInfo(CyGame().getHandicapType())
 	#for AI
@@ -6196,13 +6196,13 @@ def getHelpQuestDoneAfricaTradePriceAndAttitude(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[1]
-	
+
 	# getting Player and King
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	eking = player.getParent()
 	king = gc.getPlayer(eking)
-	
-	# we get the Yield as Parameter from Event 
+
+	# we get the Yield as Parameter from Event
 	iYield = event.getGenericParameter(2)
 
 	#szHelp = localText.getText("TXT_KEY_EVENT_EUROPE_TRADE_PRICE_AND_ATTITUDE_HELP", ())
@@ -6223,16 +6223,16 @@ def applyQuestDoneAfricaTradePriceAndAttitude(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[1]
-	
+
 	# getting King and Player
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	eking = player.getParent()
 	king = gc.getPlayer(eking)
-	
+
 	# changing the Attitude
 	player.AI_changeAttitudeExtra(eking, event.getGenericParameter(3))
 	king.AI_changeAttitudeExtra(kTriggeredData.ePlayer, event.getGenericParameter(3))
-	
+
 	# getting the Yield for the Price Change
 	iYield = event.getGenericParameter(2)
 
@@ -6266,41 +6266,41 @@ def applyQuestDoneAfricaTradePriceAndAttitude(argsList):
 def CanDoPortRoyalTrade(argsList, iYieldID, iQuantity):
 
 	ePlayer = argsList[1]
-	
+
 	# safety checks to make sure it is a colonial player
 	player = gc.getPlayer(ePlayer)
 	if not player.isPlayable():
 		return False
-	
-	# this here should not be needed because isPlayable but since we have Asserts ... 
+
+	# this here should not be needed because isPlayable but since we have Asserts ...
 	if player.isNative():
 		return False
-	
+
 	king = gc.getPlayer(player.getParent())
 	if not king.isEurope():
 		return False
-	
+
 	# For Port Royal this is not needed, because Trade is also possible during Revolution
 	#if player.isInRevolution():
 	#	return False
-	
+
 	# because we might want to do something with the City
 	iCityId = argsList[2]
 	city = player.getCity(iCityId)
 	if city.isNone():
 		return False
-	
+
 	# here we select the Amount of the Yield from function argument iQuantity
 	quantity = iQuantity
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	# here we check Handicap Setting for AI only to avoid confusing number in texts when Difficulty changes
 	Handicap = gc.getHandicapInfo(CyGame().getHandicapType())
 	#for AI
 	if not player.isHuman():
 		quantity = quantity * Handicap.getAITrainPercent()/100
-	
+
 	# now we check if enough of the Yield has been traded with Port Royal using function argument iYieldID
 	if player.getYieldSoldTotal(TradeLocationTypes.TRADE_LOCATION_PORT_ROYAL, iYieldID) < quantity:
 		return False
@@ -6312,20 +6312,20 @@ def getHelpQuestStartPortRoyalTradeYieldAndAmount(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[1]
-	
+
 	# getting Player and King
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	eking = player.getParent()
 	king = gc.getPlayer(eking)
-	
-	# we get the Yield as Parameter from Event 
+
+	# we get the Yield as Parameter from Event
 	iYield = event.getGenericParameter(2)
-	
+
 	# Second we get the Target Quantity to deliver and of course also consider gamespeed
 	quantity = event.getGenericParameter(3)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	quantity = quantity * Speed.getStoragePercent()/100
-	
+
 	# here we check Handicap Setting for AI only to avoid confusing number in texts
 	Handicap = gc.getHandicapInfo(CyGame().getHandicapType())
 	#for AI
@@ -6347,13 +6347,13 @@ def getHelpQuestDonePortRoyalTradePriceAndAttitude(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[1]
-	
+
 	# getting Player and King
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	eking = player.getParent()
 	king = gc.getPlayer(eking)
-	
-	# we get the Yield as Parameter from Event 
+
+	# we get the Yield as Parameter from Event
 	iYield = event.getGenericParameter(2)
 
 	#szHelp = localText.getText("TXT_KEY_EVENT_EUROPE_TRADE_PRICE_AND_ATTITUDE_HELP", ())
@@ -6374,19 +6374,19 @@ def applyQuestDonePortRoyalTradePriceAndAttitude(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
 	kTriggeredData = argsList[1]
-	
+
 	# getting King and Player
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	eking = player.getParent()
 	king = gc.getPlayer(eking)
-	
+
 	# changing the Attitude
 	player.AI_changeAttitudeExtra(eking, event.getGenericParameter(3))
 	king.AI_changeAttitudeExtra(kTriggeredData.ePlayer, event.getGenericParameter(3))
-	
+
 	# getting the Yield for the Price Change
 	iYield = event.getGenericParameter(2)
-	
+
 	# careful, uses Port Royal methods here
 	iPrice = king.getYieldPortRoyalBuyPriceNoModifier(iYield)
 	king.setYieldPortRoyalBuyPrice(iYield, iPrice+event.getGenericParameter(4), 1)
@@ -6395,7 +6395,7 @@ def applyQuestDonePortRoyalTradePriceAndAttitude(argsList):
 # These are the specific checks for the specific Event Triggers
 
 def canTriggerPortRoyalTradeQuest_BLADES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_BLADES_START")
 	event = gc.getEventInfo(eEvent)
@@ -6404,11 +6404,11 @@ def canTriggerPortRoyalTradeQuest_BLADES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_BLADES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_BLADES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6417,11 +6417,11 @@ def canTriggerPortRoyalTradeQuest_BLADES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_SAILCLOTH_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_SAILCLOTH_START")
 	event = gc.getEventInfo(eEvent)
@@ -6430,11 +6430,11 @@ def canTriggerPortRoyalTradeQuest_SAILCLOTH_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_SAILCLOTH_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_SAILCLOTH_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6443,11 +6443,11 @@ def canTriggerPortRoyalTradeQuest_SAILCLOTH_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_CANNONS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_CANNONS_START")
 	event = gc.getEventInfo(eEvent)
@@ -6456,11 +6456,11 @@ def canTriggerPortRoyalTradeQuest_CANNONS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_CANNONS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_CANNONS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6469,10 +6469,10 @@ def canTriggerPortRoyalTradeQuest_CANNONS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 def canTriggerPortRoyalTradeQuest_GUNS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_GUNS_START")
 	event = gc.getEventInfo(eEvent)
@@ -6481,11 +6481,11 @@ def canTriggerPortRoyalTradeQuest_GUNS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_GUNS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_GUNS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6494,11 +6494,11 @@ def canTriggerPortRoyalTradeQuest_GUNS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_ROPES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_ROPES_START")
 	event = gc.getEventInfo(eEvent)
@@ -6507,11 +6507,11 @@ def canTriggerPortRoyalTradeQuest_ROPES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_ROPES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_ROPES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6520,11 +6520,11 @@ def canTriggerPortRoyalTradeQuest_ROPES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_CIGARS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_CIGARS_START")
 	event = gc.getEventInfo(eEvent)
@@ -6533,11 +6533,11 @@ def canTriggerPortRoyalTradeQuest_CIGARS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_CIGARS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_CIGARS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6546,11 +6546,11 @@ def canTriggerPortRoyalTradeQuest_CIGARS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_SPICES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_SPICES_START")
 	event = gc.getEventInfo(eEvent)
@@ -6559,11 +6559,11 @@ def canTriggerPortRoyalTradeQuest_SPICES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_SPICES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_SPICES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6572,11 +6572,11 @@ def canTriggerPortRoyalTradeQuest_SPICES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_SALT_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_SALT_START")
 	event = gc.getEventInfo(eEvent)
@@ -6585,11 +6585,11 @@ def canTriggerPortRoyalTradeQuest_SALT_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_SALT_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_SALT_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6598,11 +6598,11 @@ def canTriggerPortRoyalTradeQuest_SALT_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_RUM_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_RUM_START")
 	event = gc.getEventInfo(eEvent)
@@ -6611,11 +6611,11 @@ def canTriggerPortRoyalTradeQuest_RUM_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_RUM_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_RUM_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6624,11 +6624,11 @@ def canTriggerPortRoyalTradeQuest_RUM_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_GOLD_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_GOLD_START")
 	event = gc.getEventInfo(eEvent)
@@ -6637,11 +6637,11 @@ def canTriggerPortRoyalTradeQuest_GOLD_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_GOLD_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_GOLD_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6650,11 +6650,11 @@ def canTriggerPortRoyalTradeQuest_GOLD_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_GEMS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_GEMS_START")
 	event = gc.getEventInfo(eEvent)
@@ -6663,11 +6663,11 @@ def canTriggerPortRoyalTradeQuest_GEMS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_GEMS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_GEMS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6676,11 +6676,11 @@ def canTriggerPortRoyalTradeQuest_GEMS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_FURNITURE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_FURNITURE_START")
 	event = gc.getEventInfo(eEvent)
@@ -6689,11 +6689,11 @@ def canTriggerPortRoyalTradeQuest_FURNITURE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_FURNITURE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_FURNITURE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6702,11 +6702,11 @@ def canTriggerPortRoyalTradeQuest_FURNITURE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_COFFEE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_COFFEE_START")
 	event = gc.getEventInfo(eEvent)
@@ -6715,11 +6715,11 @@ def canTriggerPortRoyalTradeQuest_COFFEE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_COFFEE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_COFFEE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6728,11 +6728,11 @@ def canTriggerPortRoyalTradeQuest_COFFEE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_COCOA_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_COCOA_START")
 	event = gc.getEventInfo(eEvent)
@@ -6741,11 +6741,11 @@ def canTriggerPortRoyalTradeQuest_COCOA_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_COCOA_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_COCOA_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6754,11 +6754,11 @@ def canTriggerPortRoyalTradeQuest_COCOA_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_COCA_LEAVES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_COCA_LEAVES_START")
 	event = gc.getEventInfo(eEvent)
@@ -6767,11 +6767,11 @@ def canTriggerPortRoyalTradeQuest_COCA_LEAVES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_COCA_LEAVES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_COCA_LEAVES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6780,11 +6780,11 @@ def canTriggerPortRoyalTradeQuest_COCA_LEAVES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
-	
+
 def canTriggerPortRoyalTradeQuest_WINE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_WINE_START")
 	event = gc.getEventInfo(eEvent)
@@ -6793,11 +6793,11 @@ def canTriggerPortRoyalTradeQuest_WINE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_WINE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_WINE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6806,11 +6806,11 @@ def canTriggerPortRoyalTradeQuest_WINE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_SILVER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_SILVER_START")
 	event = gc.getEventInfo(eEvent)
@@ -6819,11 +6819,11 @@ def canTriggerPortRoyalTradeQuest_SILVER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_SILVER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_SILVER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6832,11 +6832,11 @@ def canTriggerPortRoyalTradeQuest_SILVER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_HARDWOOD_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_HARDWOOD_START")
 	event = gc.getEventInfo(eEvent)
@@ -6845,11 +6845,11 @@ def canTriggerPortRoyalTradeQuest_HARDWOOD_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_HARDWOOD_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_HARDWOOD_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6858,11 +6858,11 @@ def canTriggerPortRoyalTradeQuest_HARDWOOD_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_FOOD_START(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_FOOD_START")
 	event = gc.getEventInfo(eEvent)
@@ -6871,11 +6871,11 @@ def canTriggerPortRoyalTradeQuest_FOOD_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_FOOD_DONE(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_FOOD_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6884,11 +6884,11 @@ def canTriggerPortRoyalTradeQuest_FOOD_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_STONE_START(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_STONE_START")
 	event = gc.getEventInfo(eEvent)
@@ -6897,11 +6897,11 @@ def canTriggerPortRoyalTradeQuest_STONE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_STONE_DONE(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_STONE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6910,11 +6910,11 @@ def canTriggerPortRoyalTradeQuest_STONE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_LUMBER_START(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_LUMBER_START")
 	event = gc.getEventInfo(eEvent)
@@ -6923,11 +6923,11 @@ def canTriggerPortRoyalTradeQuest_LUMBER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_LUMBER_DONE(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_LUMBER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6936,11 +6936,11 @@ def canTriggerPortRoyalTradeQuest_LUMBER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_CLAY_START(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_CLAY_START")
 	event = gc.getEventInfo(eEvent)
@@ -6949,11 +6949,11 @@ def canTriggerPortRoyalTradeQuest_CLAY_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_CLAY_DONE(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_CLAY_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6962,11 +6962,11 @@ def canTriggerPortRoyalTradeQuest_CLAY_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_BAKERY_GOODS_START(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_BAKERY_GOODS_START")
 	event = gc.getEventInfo(eEvent)
@@ -6975,11 +6975,11 @@ def canTriggerPortRoyalTradeQuest_BAKERY_GOODS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_BAKERY_GOODS_DONE(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_BAKERY_GOODS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -6988,11 +6988,11 @@ def canTriggerPortRoyalTradeQuest_BAKERY_GOODS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_BEER_START(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_BEER_START")
 	event = gc.getEventInfo(eEvent)
@@ -7001,11 +7001,11 @@ def canTriggerPortRoyalTradeQuest_BEER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_BEER_DONE(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_BEER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7014,11 +7014,11 @@ def canTriggerPortRoyalTradeQuest_BEER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_HOOCH_START(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_HOOCH_START")
 	event = gc.getEventInfo(eEvent)
@@ -7027,11 +7027,11 @@ def canTriggerPortRoyalTradeQuest_HOOCH_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_HOOCH_DONE(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_HOOCH_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7040,12 +7040,12 @@ def canTriggerPortRoyalTradeQuest_HOOCH_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 
 def canTriggerPortRoyalTradeQuest_YERBA_TEA_START(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_YERBA_TEA_START")
 	event = gc.getEventInfo(eEvent)
@@ -7054,11 +7054,11 @@ def canTriggerPortRoyalTradeQuest_YERBA_TEA_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_YERBA_TEA_DONE(argsList):
-	
+
 	# Read Parameters 12 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_YERBA_TEA_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7067,11 +7067,11 @@ def canTriggerPortRoyalTradeQuest_YERBA_TEA_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_BLACK_POWDER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_BLACK_POWDER_START")
 	event = gc.getEventInfo(eEvent)
@@ -7080,11 +7080,11 @@ def canTriggerPortRoyalTradeQuest_BLACK_POWDER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_BLACK_POWDER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_BLACK_POWDER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7093,11 +7093,11 @@ def canTriggerPortRoyalTradeQuest_BLACK_POWDER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_RICE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_RICE_START")
 	event = gc.getEventInfo(eEvent)
@@ -7106,11 +7106,11 @@ def canTriggerPortRoyalTradeQuest_RICE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_RICE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_RICE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7119,11 +7119,11 @@ def canTriggerPortRoyalTradeQuest_RICE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_CASSAVA_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_CASSAVA_START")
 	event = gc.getEventInfo(eEvent)
@@ -7132,11 +7132,11 @@ def canTriggerPortRoyalTradeQuest_CASSAVA_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerPortRoyalTradeQuest_CASSAVA_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_PORTROYAL_TRADE_QUEST_CASSAVA_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7145,11 +7145,11 @@ def canTriggerPortRoyalTradeQuest_CASSAVA_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoPortRoyalTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_FOOD_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_FOOD_START")
 	event = gc.getEventInfo(eEvent)
@@ -7158,11 +7158,11 @@ def canTriggerAfricaTradeQuest_FOOD_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_FOOD_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_FOOD_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7171,11 +7171,11 @@ def canTriggerAfricaTradeQuest_FOOD_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_LUMBER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_LUMBER_START")
 	event = gc.getEventInfo(eEvent)
@@ -7184,11 +7184,11 @@ def canTriggerAfricaTradeQuest_LUMBER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_LUMBER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_LUMBER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7197,11 +7197,11 @@ def canTriggerAfricaTradeQuest_LUMBER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_STONE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_STONE_START")
 	event = gc.getEventInfo(eEvent)
@@ -7210,11 +7210,11 @@ def canTriggerAfricaTradeQuest_STONE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_STONE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_STONE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7223,11 +7223,11 @@ def canTriggerAfricaTradeQuest_STONE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_HORSES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_HORSES_START")
 	event = gc.getEventInfo(eEvent)
@@ -7236,11 +7236,11 @@ def canTriggerAfricaTradeQuest_HORSES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_HORSES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_HORSES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7249,11 +7249,11 @@ def canTriggerAfricaTradeQuest_HORSES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_ORE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_ORE_START")
 	event = gc.getEventInfo(eEvent)
@@ -7262,11 +7262,11 @@ def canTriggerAfricaTradeQuest_ORE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_ORE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_ORE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7275,11 +7275,11 @@ def canTriggerAfricaTradeQuest_ORE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_SILVER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_SILVER_START")
 	event = gc.getEventInfo(eEvent)
@@ -7288,11 +7288,11 @@ def canTriggerAfricaTradeQuest_SILVER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_SILVER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_SILVER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7301,11 +7301,11 @@ def canTriggerAfricaTradeQuest_SILVER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_CATTLE_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_CATTLE_START")
 	event = gc.getEventInfo(eEvent)
@@ -7314,11 +7314,11 @@ def canTriggerAfricaTradeQuest_CATTLE_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_CATTLE_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_CATTLE_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7327,11 +7327,11 @@ def canTriggerAfricaTradeQuest_CATTLE_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_SHEEP_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_SHEEP_START")
 	event = gc.getEventInfo(eEvent)
@@ -7340,11 +7340,11 @@ def canTriggerAfricaTradeQuest_SHEEP_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_SHEEP_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_SHEEP_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7353,11 +7353,11 @@ def canTriggerAfricaTradeQuest_SHEEP_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_TOOLS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_TOOLS_START")
 	event = gc.getEventInfo(eEvent)
@@ -7366,11 +7366,11 @@ def canTriggerAfricaTradeQuest_TOOLS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_TOOLS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_TOOLS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7379,11 +7379,11 @@ def canTriggerAfricaTradeQuest_TOOLS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_GUNS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_GUNS_START")
 	event = gc.getEventInfo(eEvent)
@@ -7392,11 +7392,11 @@ def canTriggerAfricaTradeQuest_GUNS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_GUNS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_GUNS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7405,11 +7405,11 @@ def canTriggerAfricaTradeQuest_GUNS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_CLOTH_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_CLOTH_START")
 	event = gc.getEventInfo(eEvent)
@@ -7418,11 +7418,11 @@ def canTriggerAfricaTradeQuest_CLOTH_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_CLOTH_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_CLOTH_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7431,11 +7431,11 @@ def canTriggerAfricaTradeQuest_CLOTH_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_SALT_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_SALT_START")
 	event = gc.getEventInfo(eEvent)
@@ -7444,11 +7444,11 @@ def canTriggerAfricaTradeQuest_SALT_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_SALT_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_SALT_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7457,11 +7457,11 @@ def canTriggerAfricaTradeQuest_SALT_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_SPICES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_SPICES_START")
 	event = gc.getEventInfo(eEvent)
@@ -7470,11 +7470,11 @@ def canTriggerAfricaTradeQuest_SPICES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_SPICES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_SPICES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7483,11 +7483,11 @@ def canTriggerAfricaTradeQuest_SPICES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_COCA_LEAVES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_COCA_LEAVES_START")
 	event = gc.getEventInfo(eEvent)
@@ -7496,11 +7496,11 @@ def canTriggerAfricaTradeQuest_COCA_LEAVES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_COCA_LEAVES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_COCA_LEAVES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7509,11 +7509,11 @@ def canTriggerAfricaTradeQuest_COCA_LEAVES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_TRADINGGOODS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_TRADINGGOODS_START")
 	event = gc.getEventInfo(eEvent)
@@ -7522,11 +7522,11 @@ def canTriggerAfricaTradeQuest_TRADINGGOODS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_TRADINGGOODS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_TRADINGGOODS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7535,11 +7535,11 @@ def canTriggerAfricaTradeQuest_TRADINGGOODS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_COTTON_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_COTTON_START")
 	event = gc.getEventInfo(eEvent)
@@ -7548,11 +7548,11 @@ def canTriggerAfricaTradeQuest_COTTON_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_COTTON_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_COTTON_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7561,12 +7561,12 @@ def canTriggerAfricaTradeQuest_COTTON_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 
 def canTriggerAfricaTradeQuest_INDIGO_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_INDIGO_START")
 	event = gc.getEventInfo(eEvent)
@@ -7575,11 +7575,11 @@ def canTriggerAfricaTradeQuest_INDIGO_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_INDIGO_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_INDIGO_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7588,11 +7588,11 @@ def canTriggerAfricaTradeQuest_INDIGO_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_LOGWOOD_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_LOGWOOD_START")
 	event = gc.getEventInfo(eEvent)
@@ -7601,11 +7601,11 @@ def canTriggerAfricaTradeQuest_LOGWOOD_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_LOGWOOD_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_LOGWOOD_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7614,11 +7614,11 @@ def canTriggerAfricaTradeQuest_LOGWOOD_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_COCHINEAL_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_COCHINEAL_START")
 	event = gc.getEventInfo(eEvent)
@@ -7627,11 +7627,11 @@ def canTriggerAfricaTradeQuest_COCHINEAL_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_COCHINEAL_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_COCHINEAL_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7640,11 +7640,11 @@ def canTriggerAfricaTradeQuest_COCHINEAL_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_COFFEE_BERRIES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_COFFEE_BERRIES_START")
 	event = gc.getEventInfo(eEvent)
@@ -7653,11 +7653,11 @@ def canTriggerAfricaTradeQuest_COFFEE_BERRIES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_COFFEE_BERRIES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_COFFEE_BERRIES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7666,11 +7666,11 @@ def canTriggerAfricaTradeQuest_COFFEE_BERRIES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_PEANUTS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_PEANUTS_START")
 	event = gc.getEventInfo(eEvent)
@@ -7679,11 +7679,11 @@ def canTriggerAfricaTradeQuest_PEANUTS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_PEANUTS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_PEANUTS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7692,11 +7692,11 @@ def canTriggerAfricaTradeQuest_PEANUTS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_RED_PEPPER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_RED_PEPPER_START")
 	event = gc.getEventInfo(eEvent)
@@ -7705,11 +7705,11 @@ def canTriggerAfricaTradeQuest_RED_PEPPER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_RED_PEPPER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_RED_PEPPER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7718,11 +7718,11 @@ def canTriggerAfricaTradeQuest_RED_PEPPER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_VANILLA_PODS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_VANILLA_PODS_START")
 	event = gc.getEventInfo(eEvent)
@@ -7731,11 +7731,11 @@ def canTriggerAfricaTradeQuest_VANILLA_PODS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_VANILLA_PODS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_VANILLA_PODS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7744,11 +7744,11 @@ def canTriggerAfricaTradeQuest_VANILLA_PODS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_MAPLE_SIRUP_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_MAPLE_SIRUP_START")
 	event = gc.getEventInfo(eEvent)
@@ -7757,11 +7757,11 @@ def canTriggerAfricaTradeQuest_MAPLE_SIRUP_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_MAPLE_SIRUP_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_MAPLE_SIRUP_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7770,11 +7770,11 @@ def canTriggerAfricaTradeQuest_MAPLE_SIRUP_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_KAUTSCHUK_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_KAUTSCHUK_START")
 	event = gc.getEventInfo(eEvent)
@@ -7783,11 +7783,11 @@ def canTriggerAfricaTradeQuest_KAUTSCHUK_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_KAUTSCHUK_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_KAUTSCHUK_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7796,11 +7796,11 @@ def canTriggerAfricaTradeQuest_KAUTSCHUK_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_HARDWOOD_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_HARDWOOD_START")
 	event = gc.getEventInfo(eEvent)
@@ -7809,11 +7809,11 @@ def canTriggerAfricaTradeQuest_HARDWOOD_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_HARDWOOD_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_HARDWOOD_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7822,11 +7822,11 @@ def canTriggerAfricaTradeQuest_HARDWOOD_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_BLACK_POWDER_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_BLACK_POWDER_START")
 	event = gc.getEventInfo(eEvent)
@@ -7835,11 +7835,11 @@ def canTriggerAfricaTradeQuest_BLACK_POWDER_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_BLACK_POWDER_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_BLACK_POWDER_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7848,11 +7848,11 @@ def canTriggerAfricaTradeQuest_BLACK_POWDER_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_BLADES_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_BLADES_START")
 	event = gc.getEventInfo(eEvent)
@@ -7861,11 +7861,11 @@ def canTriggerAfricaTradeQuest_BLADES_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_BLADES_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_BLADES_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7874,11 +7874,11 @@ def canTriggerAfricaTradeQuest_BLADES_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_CANNONS_START(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_CANNONS_START")
 	event = gc.getEventInfo(eEvent)
@@ -7887,11 +7887,11 @@ def canTriggerAfricaTradeQuest_CANNONS_START(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 def canTriggerAfricaTradeQuest_CANNONS_DONE(argsList):
-	
+
 	# Read Parameters 1+2 from the two events and check if enough yield is stored in city
 	eEvent = gc.getInfoTypeForString("EVENT_AFRICA_TRADE_QUEST_CANNONS_DONE_1")
 	event = gc.getEventInfo(eEvent)
@@ -7900,7 +7900,7 @@ def canTriggerAfricaTradeQuest_CANNONS_DONE(argsList):
 
 	# Now we call the Generic Helper Function
 	bTrigger = CanDoAfricaTrade(argsList, iYieldID, iQuantity)
-	
+
 	return bTrigger
 
 #######################################################
@@ -8217,16 +8217,16 @@ getHelpNativeTraderAttack = get_simple_help("TXT_KEY_EVENT_NATIVE_TRADER_ATTACK_
 def canTriggerCriminalsAttackCity(argsList):
 	ePlayer = argsList[1]
 	iCity = argsList[2]
-	
+
 	player = gc.getPlayer(ePlayer)
 	city = player.getCity(iCity)
 
 	if city.isNone():
 		return False
-	
+
 	if not player.isPlayable():
 		return False
-	
+
 	iHappiness = city.getCityHappiness()
 	iUnhappiness = city.getCityUnHappiness()
 
@@ -8284,7 +8284,7 @@ getHelpCriminalsAttackCity = get_simple_help("TXT_KEY_EVENT_CRIMINALS_REVOLT_HEL
 getHelpOfficerDuel = get_simple_help("TXT_KEY_EVENT_OFFICER_DUEL_HELP")
 
 getHelpOfficerNoDuel = get_simple_help("TXT_KEY_EVENT_OFFICER_NODUEL_HELP")
-	
+
 ######## Bailiffs search for Architect and attack city ###########
 
 getHelpBailiffsAttackCity = get_simple_help("TXT_KEY_EVENT_ARCHITECT_BAILIFF_HELP")
@@ -8475,7 +8475,7 @@ canTriggerAtCityPopulationOf10 = checkCityAbovePopulation(10)
 canTriggerAtCityPopulationOf20 = checkCityAbovePopulation(20)
 
 ###### Revolutionary Events Start Event ######
- 
+
 def CheckNobleInCity(argsList):
 	ePlayer = argsList[1]
 	player = gc.getPlayer(ePlayer)
@@ -8485,11 +8485,11 @@ def CheckNobleInCity(argsList):
 
 	if player.isNative():
 		return False
-	
+
 	king = gc.getPlayer(player.getParent())
 	if not king.isEurope():
 		return False
-	
+
 	if player.isInRevolution():
 		return False
 
@@ -8500,7 +8500,7 @@ def CheckNobleInCity(argsList):
 		return False
 
 	return True
-   
+
 def isExpiredRevolutionaryQuest(argsList):
 	eEvent = argsList[0]
 	event = gc.getEventInfo(eEvent)
@@ -8566,12 +8566,12 @@ def getHelpRevolution1(argsList):
 	if event.getGenericParameter(2) <> 0 :
 		szHelp += "\n" + localText.getText("TXT_KEY_EVENT_RELATION_KING_DECREASE", (event.getGenericParameter(2), king.getCivilizationAdjectiveKey()))
 	return szHelp
-    
+
 ######## Infantry Mutiny Event ###########
-    
+
 getHelpInfantryMutiny = get_simple_help("TXT_KEY_EVENT_INFANTRY_MUTINY_HELP")
 
-###### Liberty or Death Event ###### 
+###### Liberty or Death Event ######
 def CheckJudgeInCity(argsList):
 	ePlayer = argsList[1]
 	player = gc.getPlayer(ePlayer)
@@ -8595,11 +8595,11 @@ def CheckInfantryTheRoyals(argsList):
 
 	if player.isNative():
 		return False
-	
+
 	king = gc.getPlayer(player.getParent())
 	if not king.isEurope():
 		return False
-	
+
 	if player.isInRevolution():
 		return False
 
@@ -8675,7 +8675,7 @@ def CheckAfricanSlaveInCity(argsList):
 	iUnitsCurrent = countUnitsInCityForCityTrigger(argsList, iUnitType)
 	if not iUnitsCurrent > 3:
 		return False
-        
+
 	iUnitType = CvUtil.findInfoTypeNum('UNIT_VETERAN_DRAGOON')
 	iUnitsCurrent = countUnitsInCityForCityTrigger(argsList, iUnitType)
 	if not iUnitsCurrent == 0:

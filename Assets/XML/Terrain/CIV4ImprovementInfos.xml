@@ -2267,10 +2267,6 @@
 					<YieldType>YIELD_COAL</YieldType>
 					<iValue>2</iValue>
 				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
 			</YieldIncreases>
 			<RiverSideYieldChanges/>
 			<HillsYieldChanges/>
@@ -2358,17 +2354,6 @@
 					<YieldChanges>
 						<YieldIntegerPair>
 							<YieldType>YIELD_RAW_SALT</YieldType>
-							<iValue>1</iValue>
-						</YieldIntegerPair>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<BonusTypeStruct>
-					<BonusType>BONUS_SILVER</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<YieldIntegerPair>
-							<YieldType>YIELD_SILVER</YieldType>
 							<iValue>1</iValue>
 						</YieldIntegerPair>
 					</YieldChanges>
@@ -4057,10 +4042,6 @@
 					<YieldType>YIELD_RAW_SALT</YieldType>
 					<iValue>3</iValue>
 				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iValue>2</iValue>
-				</YieldIntegerPair>
 			</YieldIncreases>
 			<RiverSideYieldChanges/>
 			<HillsYieldChanges/>
@@ -4130,17 +4111,6 @@
 					<YieldChanges>
 						<YieldIntegerPair>
 							<YieldType>YIELD_RAW_SALT</YieldType>
-							<iValue>2</iValue>
-						</YieldIntegerPair>
-					</YieldChanges>
-				</BonusTypeStruct>
-				<BonusTypeStruct>
-					<BonusType>BONUS_SILVER</BonusType>
-					<bBonusMakesValid>1</bBonusMakesValid>
-					<iDiscoverRand>0</iDiscoverRand>
-					<YieldChanges>
-						<YieldIntegerPair>
-							<YieldType>YIELD_SILVER</YieldType>
 							<iValue>2</iValue>
 						</YieldIntegerPair>
 					</YieldChanges>

@@ -55,18 +55,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_SILVER</Type>
-			<Description>TXT_KEY_EMPHASIZE_SILVER</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_SILVER</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_GOLD</Type>
 			<Description>TXT_KEY_EMPHASIZE_GOLD</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -643,18 +631,6 @@
 			</YieldModifiers>
 		</EmphasizeInfo>
 		<EmphasizeInfo>
-			<Type>EMPHASIZE_BLADES</Type>
-			<Description>TXT_KEY_EMPHASIZE_BLADES</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_BLADES</YieldType>
-					<iYield>1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
 			<Type>EMPHASIZE_MUSKETS</Type>
 			<Description>TXT_KEY_EMPHASIZE_MUSKETS</Description>
 			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
@@ -878,18 +854,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_CLAY</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_SILVER</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_SILVER</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_SILVER</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
@@ -1466,18 +1430,6 @@
 			<YieldModifiers>
 				<YieldModifier>
 					<YieldType>YIELD_TOOLS</YieldType>
-					<iYield>-1</iYield>
-				</YieldModifier>
-			</YieldModifiers>
-		</EmphasizeInfo>
-		<EmphasizeInfo>
-			<Type>EMPHASIZE_NO_BLADES</Type>
-			<Description>TXT_KEY_EMPHASIZE_NO_BLADES</Description>
-			<Button>Art/Interface/Buttons/Governor/Food.dds</Button>
-			<bAvoidGrowth>0</bAvoidGrowth>
-			<YieldModifiers>
-				<YieldModifier>
-					<YieldType>YIELD_BLADES</YieldType>
 					<iYield>-1</iYield>
 				</YieldModifier>
 			</YieldModifiers>
