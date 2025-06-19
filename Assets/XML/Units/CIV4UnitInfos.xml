@@ -7735,7 +7735,7 @@
 				</BonusYieldChange>
 			</BonusYieldChanges>
 			<bLandYieldChanges>1</bLandYieldChanges>
-			<bWaterYieldChanges>0</bWaterYieldChanges>
+			<bWaterYieldChanges>1</bWaterYieldChanges>
 			<iBombardRate>0</iBombardRate>
 			<SpecialCargo>NONE</SpecialCargo>
 			<DomainCargo>NONE</DomainCargo>
