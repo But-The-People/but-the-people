@@ -2537,7 +2537,7 @@
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_LUMBER</YieldType>
-					<iValue>1</iValue>
+					<iValue>2</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_VALUABLE_WOOD</YieldType>
