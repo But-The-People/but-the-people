@@ -551,6 +551,10 @@
 					<YieldType>YIELD_CLAY</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
+					<YieldIntegerPair>
+					<YieldType>YIELD_LUMBER</YieldType>
+					<iValue>1</iValue>
+				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_CHICKEN</YieldType>
 					<iValue>1</iValue>
