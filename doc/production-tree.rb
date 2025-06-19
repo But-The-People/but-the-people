@@ -38,7 +38,7 @@ tiles = {
 
 	"tundra" => "1 fur,1 premium fur",
 
-	"wetland" => "1 chicken,3 clay,2 food",
+	"wetland" => "1 chicken,1 clay,2 food",
 
 	# hills
 
@@ -46,7 +46,7 @@ tiles = {
 
 	"grassland hills" => "2 ore,2 coal,1 food,3 grapes,3 sheep",
 
-	"marsh hills" => "1 food,2 chicken,2 clay",
+	"marsh hills" => "2 food,2 chicken,3 clay",
 
 	"permafrost hills" => "1 ore,1 fur,1 coal",
 
