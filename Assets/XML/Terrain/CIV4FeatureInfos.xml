@@ -4068,6 +4068,10 @@
 					<iValue>3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
+					<YieldType>YIELD_LUMBER</YieldType>
+					<iValue>2</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_COTTON</YieldType>
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
@@ -4146,6 +4150,10 @@
 			<RiverYieldIncreases>
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
+					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_LUMBER</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
