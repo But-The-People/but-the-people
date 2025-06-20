@@ -4137,5 +4137,45 @@
 			<ExpertUnit>UNITCLASS_COLONIST</ExpertUnit>
 			<iLbDLearnLevel>1</iLbDLearnLevel>
 		</ProfessionInfo>
+			<ProfessionInfo>
+			<Type>PROFESSION_FIREWORKER</Type>
+			<Description>TXT_KEY_PROFESSION_FIREWORKER</Description>
+			<Civilopedia>TXT_KEY_PROFESSION_FIREWORKER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROFESSION_FIREWORKER_STRATEGY</Strategy>
+			<Help>TXT_KEY_PROFESSION_FIREWORKER_HELP</Help>
+			<Combat>NONE</Combat>
+			<DefaultUnitAI>NONE</DefaultUnitAI>
+			<SpecialBuilding>SPECIALBUILDING_BLACK_POWDER</SpecialBuilding>
+			<bWorkPlot>0</bWorkPlot>
+			<bCitizen>1</bCitizen>
+			<bWater>0</bWater>
+			<bScout>0</bScout>
+			<bCanCrossLargeRivers>0</bCanCrossLargeRivers>
+			<bCityDefender>0</bCityDefender>
+			<bCanFound>0</bCanFound>
+			<bUnarmed>0</bUnarmed>
+			<bNoDefensiveBonus>0</bNoDefensiveBonus>
+			<iCombatChange>0</iCombatChange>
+			<iMovesChange>0</iMovesChange>
+			<bMoveIntoPeak>0</bMoveIntoPeak>
+			<iWorkRate>0</iWorkRate>
+			<iMissionaryRate>0</iMissionaryRate>
+			<iNativeTradeRate>0</iNativeTradeRate>
+			<iPower>0</iPower>
+			<iAsset>350</iAsset>
+			<YieldEquipedNums/>
+			<FreePromotions/>
+			<YieldsProduced>
+					<YieldType>YIELD_BLACK_POWDER</YieldType>
+			</YieldsProduced>
+			<YieldsConsumed>
+					<YieldType>YIELD_LUMBER</YieldType>
+					<YieldType>YIELD_COAL</YieldType>
+			</YieldsConsumed>
+			<Button>Art/interface/buttons/New_Profession_Buttons/Profession_Blackpowder_Maker_Button.dds</Button>
+			<bUseLbD>1</bUseLbD>
+			<ExpertUnit>UNITCLASS_FIREWORKER</ExpertUnit>
+			<iLbDLearnLevel>2</iLbDLearnLevel>
+		</ProfessionInfo>
 	</ProfessionInfos>
 </Civ4ProfessionInfos>
