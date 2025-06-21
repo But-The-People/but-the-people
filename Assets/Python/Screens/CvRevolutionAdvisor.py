@@ -137,7 +137,7 @@ class CvRevolutionAdvisor:
 
 		## R&R, Robert Surcouf,  Revolution Advisor Screen, Cannons, Start
 		#CityCount, iHorses, iMuskets = 0, 0, 0
-		CityCount, iHorses, iMuskets, iCannons, iBlackpowder = 0, 0, 0, 0, 0, 0
+		CityCount, iHorses, iMuskets, iCannons, iBlackpowder = 0, 0, 0, 0, 0
 		(city, iter) = self.player.firstCity(True)
 		while(city):
 			iHorses += city.getYieldStored(YieldTypes.YIELD_HORSES)
