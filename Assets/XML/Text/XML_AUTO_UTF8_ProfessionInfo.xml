@@ -2459,33 +2459,18 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_SAILCLOTH_MAKER</Tag>
-		<English>Sailmaker (Flax):Sailmakers (Flax)</English>
+		<English>Sailmaker:Sailmakers</English>
 		<French>
-			<Text>Voilier (Lin):Voiliers (Lin)</Text>
+			<Text>Voilier:Voiliers</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</French>
 		<German>
-			<Text>Segelmacher (Flachs):Segelmacher (Flachs)</Text>
+			<Text>Segelmacher:Segelmacher</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</German>
-		<Russian>Парусный мастер (лен):Парусные мастера (лен)</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_SAILCLOTH_MAKER_HEMP</Tag>
-		<English>Sailmaker (Hemp):Sailmakers (Hemp)</English>
-		<French>
-			<Text>Voilier (Chanvre):Voiliers (Chanvre)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>
-			<Text>Segelmacher (Hanf):Segelmacher (Hanf)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</German>
-		<Russian>Парусный мастер (конопля):Парусные мастера (конопля)</Russian>
+		<Russian>Парусный мастер:Парусные мастера</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_SAILCLOTH_MAKER_HELP</Tag>

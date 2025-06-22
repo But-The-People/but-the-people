@@ -1838,7 +1838,6 @@
 			</YieldsProduced>
 			<YieldsConsumed>
 				<YieldType>YIELD_HEMP</YieldType>
-				<YieldType>YIELD_COTTON</YieldType>
 			</YieldsConsumed>
 			<Button>,Art/colonization_atlas_professions_bonus.dds,3,6</Button>
 			<bUseLbD>1</bUseLbD>
