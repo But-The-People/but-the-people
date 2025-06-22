@@ -47,7 +47,7 @@ class CvPediaProfession:
 		self.Y_PROFESSION_PANE = y
 		self.W_PROFESSION_PANE = (w * 30 / 100)
 		self.H_PROFESSION_PANE = self.W_PROFESSION_PANE
-		
+
 		self.X_ROTATION_UNIT_ANIMATION = -20
 		self.Z_ROTATION_UNIT_ANIMATION = 30
 		self.SCALE_ANIMATION = 1.0
@@ -55,7 +55,7 @@ class CvPediaProfession:
 		self.W_ICON = self.W_PROFESSION_PANE * 2 / 3
 		self.H_ICON = self.H_PROFESSION_PANE * 2 / 3
 		self.X_ICON = x + (self.W_PROFESSION_PANE / 2) - (self.W_ICON / 2)
-		
+
 		self.ICON_SIZE = self.W_ICON / 2
 		self.W_PROFESSION_PANE = (w * 60 / 100)
 
@@ -120,10 +120,10 @@ class CvPediaProfession:
 
 		#Find the Best Unit fit for this Profession
 		Profession = gc.getProfessionInfo(iProfession)
-		
+
 		# First priority, whatever is set in PediaUnitGraphics in xml (if anything)
 		iExpertUnit = Profession.getPediaUnitGraphics()
-		
+
 		# Use whatever LbD results in
 		if iExpertUnit == -1:
 			UnitClass = Profession.LbD_getExpert()
@@ -133,7 +133,7 @@ class CvPediaProfession:
 				if Civilization.isValidProfession(iProfession):
 					iExpertUnit = Civilization.getCivilizationUnits(UnitClass)
 
-		# rely on default profession if it's useful 
+		# rely on default profession if it's useful
 		if iExpertUnit == -1:
 			for iUnit in range(gc.getNumUnitInfos()):
 				if (gc.getUnitInfo(iUnit).getDefaultProfession() == iProfession):
@@ -158,12 +158,12 @@ class CvPediaProfession:
 				Civilization = gc.getCivilizationInfo(iCiv)
 				if Civilization.isValidProfession(iProfession):
 					break
-				
+
 			iDefaultPopulationUnit = Civilization.getCivilizationUnits(UnitClassTypes.DEFAULT_POPULATION_UNIT)
 			if gc.getUnitInfo(iDefaultPopulationUnit).getDefaultProfession() != ProfessionTypes.NO_PROFESSION:
 				iExpertUnit = iDefaultPopulationUnit
 		# TAC - Profession unit graphic fix - koma13 - END
-		
+
 		if (iExpertUnit == -1 and Profession.getCombatChange() > 0):
 			for iCiv in range(gc.getNumCivilizationInfos()):
 				Civilization = gc.getCivilizationInfo(iCiv)
@@ -234,7 +234,7 @@ class CvPediaProfession:
 		if (iCombat != -1):
 			screen.appendListBoxStringNoUpdate(panelName, u" ", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
 			screen.appendListBoxStringNoUpdate(panelName, u"<font=4>" + gc.getUnitCombatInfo(iCombat).getDescription() + u"</font>", WidgetTypes.WIDGET_GENERAL, 0, 0, CvUtil.FONT_LEFT_JUSTIFY)
-		
+
 		screen.updateListBox(panelName)
 
 	def placeBuildings(self):
@@ -268,7 +268,7 @@ class CvPediaProfession:
 			if iLearnLevel == 1: 	szSpecialText += "\n" + localText.getText("TXT_KEY_PROF_LBD1", ())
 			if iLearnLevel == 2: 	szSpecialText += "\n" + localText.getText("TXT_KEY_PROF_LBD2", ())
 			if iLearnLevel >= 3: 	szSpecialText += "\n" + localText.getText("TXT_KEY_PROF_LBD3", ())
-		
+
 		# TAC/Ronnar End
 		screen.addMultilineText(listName, szSpecialText, self.X_REQUIRES + 15, self.Y_REQUIRES + 40, self.W_REQUIRES - 30, self.H_REQUIRES - 50, WidgetTypes.WIDGET_GENERAL, -1, -1, CvUtil.FONT_LEFT_JUSTIFY)
 
@@ -297,15 +297,14 @@ class CvPediaProfession:
 			screen.clearListBoxGFC(self.top.LIST_ID)
 
 		# sort Units alphabetically
-		
+
 		# TAC - Hide Whaling Profession - koma13 - START
 		# RaR - Fishing Boat Profession - ray - START
-		ProfessionList=[(0,0)]*(gc.getNumProfessionInfos() - 2)
+		ProfessionList=[(0,0)]*(gc.getNumProfessionInfos())
 		for j in range(gc.getNumProfessionInfos()):
-			if not self.isWhalingProfession(j):
-				ProfessionList[j] = (gc.getProfessionInfo(j).getDescription(), j)
+			ProfessionList[j] = (gc.getProfessionInfo(j).getDescription(), j)
 		# TAC - Hide Whaling Profession - koma13 - END
-		
+
 		ProfessionList.sort()
 
 		iSelected = 0
@@ -319,7 +318,7 @@ class CvPediaProfession:
 					iSelected = iI
 					i += 1
 			# TAC - Hide Whaling Profession - koma13 - END
-			
+
 		if bRedraw:
 			screen.updateListBox(self.top.LIST_ID)
 
@@ -335,7 +334,6 @@ class CvPediaProfession:
 		return (iProfession == ProfessionTypes.PROFESSION_WHALING_BOAT_WORKING or iProfession == ProfessionTypes.PROFESSION_FISHING_BOAT_WORKING)
 		#return (iProfession == gc.getInfoTypeForString("PROFESSION_WHALING_BOAT_WORKING"))
 	# TAC - Hide Whaling Profession - koma13 - END
-	
-	
-	
-	
+
+
+
