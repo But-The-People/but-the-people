@@ -1003,6 +1003,10 @@
 					<iValue>2</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
+					<YieldType>YIELD_SHEEP</YieldType>
+					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_RED_PEPPER</YieldType>
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
@@ -1024,10 +1028,6 @@
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_OLIVES</YieldType>
-					<iValue>-3</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SHEEP</YieldType>
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
 			</Yields>
