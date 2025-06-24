@@ -1,4 +1,7 @@
-production-tree.pdf: production-tree.dot
+all: production-tree.pdf production-tree.png
+production-tree.png: production-tree.dot
+	dot -Tpng production-tree.dot > production-tree.png
+pproduction-tree.pdf: production-tree.dot
 	dot -Tpdf production-tree.dot > production-tree.pdf
 production-tree.dot: production-tree.rb
 	ruby production-tree.rb > production-tree.dot

@@ -9,33 +9,33 @@ digraph {
 "tropical grove" [color=green,shape=box]
 "thicket" [color=green,shape=box]
 "ancient northern forest" [color=green,shape=box]
-"desert" [color=green,shape=box]
 "grassland" [color=green,shape=box]
+"grassland hills" [color=green,shape=box]
+"plains" [color=green,shape=box]
+"plains hills" [color=green,shape=box]
+"rock steppes" [color=green,shape=box]
+"rock steppes hills" [color=green,shape=box]
+"wetland" [color=green,shape=box]
+"wetland hills" [color=green,shape=box]
+"prairie" [color=green,shape=box]
+"prairie hills" [color=green,shape=box]
+"desert" [color=green,shape=box]
+"desert hills" [color=green,shape=box]
+"shrubland" [color=green,shape=box]
+"shrubland hills" [color=green,shape=box]
+"savannah" [color=green,shape=box]
+"savannah hills" [color=green,shape=box]
+"marsh" [color=green,shape=box]
+"marsh hills" [color=green,shape=box]
+"taiga" [color=green,shape=box]
+"taiga hills" [color=green,shape=box]
+"tundra" [color=green,shape=box]
+"tundra hills" [color=green,shape=box]
+"permafrost" [color=green,shape=box]
+"permafrost hills" [color=green,shape=box]
 "ice lake" [color=green,shape=box]
 "lake" [color=green,shape=box]
 "large river" [color=green,shape=box]
-"marsh" [color=green,shape=box]
-"permafrost" [color=green,shape=box]
-"plains" [color=green,shape=box]
-"prairie" [color=green,shape=box]
-"rock steppes" [color=green,shape=box]
-"savanna" [color=green,shape=box]
-"shrubland" [color=green,shape=box]
-"taiga" [color=green,shape=box]
-"tundra" [color=green,shape=box]
-"wetland" [color=green,shape=box]
-"desert hills" [color=green,shape=box]
-"grassland hills" [color=green,shape=box]
-"marsh hills" [color=green,shape=box]
-"permafrost hills" [color=green,shape=box]
-"tundra hills" [color=green,shape=box]
-"taiga hills" [color=green,shape=box]
-"plains hills" [color=green,shape=box]
-"prairie hills" [color=green,shape=box]
-"rock steppes hills" [color=green,shape=box]
-"savanna hills" [color=green,shape=box]
-"shrubland hills" [color=green,shape=box]
-"wetland hills" [color=green,shape=box]
 "peak" [color=green,shape=box]
 "whales" [color=green,shape=box]
 "ocean" [color=green,shape=box]
@@ -48,7 +48,7 @@ digraph {
 "dense forest" [color=green,label="dense forest\n\n4 lumber\n1 fur"]
 "dense forest" -> "lumber"
 "dense forest" -> "fur"
-"jungle" [color=green,label="jungle\n\n4 lumber\n2 exotic wood\n3 coffee berries\n2 premium fur"]
+"jungle" [color=green,label="jungle\n\n2 lumber\n2 exotic wood\n3 coffee berries\n2 premium fur"]
 "jungle" -> "lumber"
 "jungle" -> "exotic wood"
 "jungle" -> "coffee berries"
@@ -75,99 +75,105 @@ digraph {
 "ancient northern forest" -> "exotic wood"
 "ancient northern forest" -> "fur"
 "ancient northern forest" -> "premium fur"
-"desert" [color=green,label="desert\n\n3 rock salt"]
-"desert" -> "rock salt"
-"grassland" [color=green,label="grassland\n\n2 food\n3 hemp\n2 horses\n3 cattle\n1 chicken\n3 tobacco"]
+"grassland" [color=green,label="grassland\n\n2 food\n3 hemp\n3 horses\n3 sheep\n3 tobacco"]
 "grassland" -> "hemp"
 "grassland" -> "horses"
-"grassland" -> "cattle"
-"grassland" -> "chicken"
+"grassland" -> "sheep"
 "grassland" -> "tobacco"
-"ice lake" [color=green,label="ice lake\n\n1 food"]
-"lake" [color=green,label="lake\n\n2 food"]
-"large river" [color=green,label="large river\n\n2 food"]
-"marsh" [color=green,label="marsh\n\n3 chicken\n3 food"]
-"marsh" -> "chicken"
-"permafrost" [color=green,label="permafrost\n\n1 ore\n1 fur"]
-"permafrost" -> "ore"
-"permafrost" -> "fur"
-"plains" [color=green,label="plains\n\n3 food\n1 horses\n1 cattle\n3 barley"]
-"plains" -> "horses"
-"plains" -> "cattle"
-"plains" -> "barley"
-"prairie" [color=green,label="prairie\n\n2 food\n3 horses\n2 cattle\n3 cotton\n3 indigo"]
-"prairie" -> "horses"
-"prairie" -> "cattle"
-"prairie" -> "cotton"
-"prairie" -> "indigo"
-"rock steppes" [color=green,label="rock steppes\n\n3 stone\n1 ore"]
-"rock steppes" -> "stone"
-"rock steppes" -> "ore"
-"savanna" [color=green,label="savanna\n\n2 food\n2 cattle\n1 chicken\n3 coffee berries\n3 sugar"]
-"savanna" -> "cattle"
-"savanna" -> "chicken"
-"savanna" -> "coffee berries"
-"savanna" -> "sugar"
-"shrubland" [color=green,label="shrubland\n\n1 food\n2 chicken"]
-"shrubland" -> "chicken"
-"taiga" [color=green,label="taiga\n\n1 food"]
-"tundra" [color=green,label="tundra\n\n1 fur\n1 premium fur"]
-"tundra" -> "fur"
-"tundra" -> "premium fur"
-"wetland" [color=green,label="wetland\n\n1 chicken\n3 clay\n2 food"]
-"wetland" -> "chicken"
-"wetland" -> "clay"
-"desert hills" [color=green,label="desert hills\n\n3 ore\n2 rock salt\n3 ore"]
-"desert hills" -> "ore"
-"desert hills" -> "rock salt"
-"desert hills" -> "ore"
-"grassland hills" [color=green,label="grassland hills\n\n2 ore\n2 coal\n1 food\n3 grapes\n3 sheep"]
+"grassland hills" [color=green,label="grassland hills\n\n2 ore\n2 coal\n1 food\n3 grapes\n2 sheep\n2 horses"]
 "grassland hills" -> "ore"
 "grassland hills" -> "coal"
 "grassland hills" -> "grapes"
 "grassland hills" -> "sheep"
-"marsh hills" [color=green,label="marsh hills\n\n1 food\n2 chicken\n2 clay"]
-"marsh hills" -> "chicken"
-"marsh hills" -> "clay"
-"permafrost hills" [color=green,label="permafrost hills\n\n1 ore\n1 fur\n1 coal"]
-"permafrost hills" -> "ore"
-"permafrost hills" -> "fur"
-"permafrost hills" -> "coal"
-"tundra hills" [color=green,label="tundra hills\n\n2 ore\n2 fur\n2 coal"]
-"tundra hills" -> "ore"
-"tundra hills" -> "fur"
-"tundra hills" -> "coal"
-"taiga hills" [color=green,label="taiga hills\n\n2 ore\n2 coal\n1 sheep\n3 maple syrup"]
-"taiga hills" -> "ore"
-"taiga hills" -> "coal"
-"taiga hills" -> "sheep"
-"taiga hills" -> "maple syrup"
-"plains hills" [color=green,label="plains hills\n\n3 olives\n1 food\n2 sheep\n3 ore\n3 coal"]
+"grassland hills" -> "horses"
+"plains" [color=green,label="plains\n\n3 food\n2 horses\n2 cattle\n3 barley"]
+"plains" -> "horses"
+"plains" -> "cattle"
+"plains" -> "barley"
+"plains hills" [color=green,label="plains hills\n\n3 olives\n2 food\n1 cattle\n1 horses\n3 ore\n3 coal"]
 "plains hills" -> "olives"
-"plains hills" -> "sheep"
+"plains hills" -> "cattle"
+"plains hills" -> "horses"
 "plains hills" -> "ore"
 "plains hills" -> "coal"
-"prairie hills" [color=green,label="prairie hills\n\n3 red pepper\n2 sheep\n3 ore\n3 coal"]
-"prairie hills" -> "red pepper"
-"prairie hills" -> "sheep"
-"prairie hills" -> "ore"
-"prairie hills" -> "coal"
-"rock steppes hills" [color=green,label="rock steppes hills\n\n3 stone\n3 ore\n2 coal"]
+"rock steppes" [color=green,label="rock steppes\n\n3 stone\n1 ore\n1 coal"]
+"rock steppes" -> "stone"
+"rock steppes" -> "ore"
+"rock steppes" -> "coal"
+"rock steppes hills" [color=green,label="rock steppes hills\n\n3 stone\n4 ore\n4 coal"]
 "rock steppes hills" -> "stone"
 "rock steppes hills" -> "ore"
 "rock steppes hills" -> "coal"
-"savanna hills" [color=green,label="savanna hills\n\n3 coca\n2 sheep\n2 coal\n2 ore\n1 food"]
-"savanna hills" -> "coca"
-"savanna hills" -> "sheep"
-"savanna hills" -> "coal"
-"savanna hills" -> "ore"
-"shrubland hills" [color=green,label="shrubland hills\n\n1 food\n1 sheep\n3 ore\n3 coal"]
-"shrubland hills" -> "sheep"
-"shrubland hills" -> "ore"
-"shrubland hills" -> "coal"
-"wetland hills" [color=green,label="wetland hills\n\n1 food\n2 chicken\n2 clay"]
+"wetland" [color=green,label="wetland\n\n2 chicken\n1 clay\n2 food"]
+"wetland" -> "chicken"
+"wetland" -> "clay"
+"wetland hills" [color=green,label="wetland hills\n\n1 food\n1 chicken\n2 clay"]
 "wetland hills" -> "chicken"
 "wetland hills" -> "clay"
+"prairie" [color=green,label="prairie\n\n2 food\n2 horses\n3 cattle\n3 cotton\n3 indigo"]
+"prairie" -> "horses"
+"prairie" -> "cattle"
+"prairie" -> "cotton"
+"prairie" -> "indigo"
+"prairie hills" [color=green,label="prairie hills\n\n3 red pepper\n3 ore\n3 coal"]
+"prairie hills" -> "red pepper"
+"prairie hills" -> "ore"
+"prairie hills" -> "coal"
+"desert" [color=green,label="desert\n\n3 rock salt\n1 premium fur"]
+"desert" -> "rock salt"
+"desert" -> "premium fur"
+"desert hills" [color=green,label="desert hills\n\n3 ore\n2 rock salt\n3 coal"]
+"desert hills" -> "ore"
+"desert hills" -> "rock salt"
+"desert hills" -> "coal"
+"shrubland" [color=green,label="shrubland\n\n1 food\n1 cattle\n1 chicken"]
+"shrubland" -> "cattle"
+"shrubland" -> "chicken"
+"shrubland hills" [color=green,label="shrubland hills\n\n3 ore\n3 coal"]
+"shrubland hills" -> "ore"
+"shrubland hills" -> "coal"
+"savannah" [color=green,label="savannah\n\n2 food\n2 cattle\n2 sheep\n3 coffee berries\n3 sugar"]
+"savannah" -> "cattle"
+"savannah" -> "sheep"
+"savannah" -> "coffee berries"
+"savannah" -> "sugar"
+"savannah hills" [color=green,label="savannah hills\n\n3 coca\n1 sheep\n2 coal\n2 ore\n1 food"]
+"savannah hills" -> "coca"
+"savannah hills" -> "sheep"
+"savannah hills" -> "coal"
+"savannah hills" -> "ore"
+"marsh" [color=green,label="marsh\n\n2 chicken\n2 food\n2 clay"]
+"marsh" -> "chicken"
+"marsh" -> "clay"
+"marsh hills" [color=green,label="marsh hills\n\n1 food\n1 chicken\n3 clay"]
+"marsh hills" -> "chicken"
+"marsh hills" -> "clay"
+"taiga" [color=green,label="taiga\n\n1 food\n1 chicken\n1 sheep"]
+"taiga" -> "chicken"
+"taiga" -> "sheep"
+"taiga hills" [color=green,label="taiga hills\n\n2 ore\n2 coal\n3 maple syrup"]
+"taiga hills" -> "ore"
+"taiga hills" -> "coal"
+"taiga hills" -> "maple syrup"
+"tundra" [color=green,label="tundra\n\n1 fur\n1 premium fur"]
+"tundra" -> "fur"
+"tundra" -> "premium fur"
+"tundra hills" [color=green,label="tundra hills\n\n2 ore\n1 fur\n1 premium fur\n2 coal"]
+"tundra hills" -> "ore"
+"tundra hills" -> "fur"
+"tundra hills" -> "premium fur"
+"tundra hills" -> "coal"
+"permafrost" [color=green,label="permafrost\n\n1 ore\n1 coal\n1 premium fur"]
+"permafrost" -> "ore"
+"permafrost" -> "coal"
+"permafrost" -> "premium fur"
+"permafrost hills" [color=green,label="permafrost hills\n\n4 ore\n1 premium fur\n4 coal"]
+"permafrost hills" -> "ore"
+"permafrost hills" -> "premium fur"
+"permafrost hills" -> "coal"
+"ice lake" [color=green,label="ice lake\n\n1 food"]
+"lake" [color=green,label="lake\n\n2 food"]
+"large river" [color=green,label="large river\n\n2 food"]
 "peak" [color=green,label="peak\n\n3 ore\n3 coal\n3 stone"]
 "peak" -> "ore"
 "peak" -> "coal"
@@ -223,16 +229,16 @@ digraph {
 "tobacco" -> "cigars"
 "hemp" -> "sailcloth"
 "whale fat" -> "train oil"
-subgraph "cluster desert" { "desert hills"; "desert" }
 subgraph "cluster grassland" { "grassland hills"; "grassland" }
-subgraph "cluster marsh" { "marsh hills"; "marsh" }
-subgraph "cluster permafrost" { "permafrost hills"; "permafrost" }
-subgraph "cluster tundra" { "tundra hills"; "tundra" }
-subgraph "cluster taiga" { "taiga hills"; "taiga" }
 subgraph "cluster plains" { "plains hills"; "plains" }
-subgraph "cluster prairie" { "prairie hills"; "prairie" }
 subgraph "cluster rock steppes" { "rock steppes hills"; "rock steppes" }
-subgraph "cluster savanna" { "savanna hills"; "savanna" }
-subgraph "cluster shrubland" { "shrubland hills"; "shrubland" }
 subgraph "cluster wetland" { "wetland hills"; "wetland" }
+subgraph "cluster prairie" { "prairie hills"; "prairie" }
+subgraph "cluster desert" { "desert hills"; "desert" }
+subgraph "cluster shrubland" { "shrubland hills"; "shrubland" }
+subgraph "cluster savannah" { "savannah hills"; "savannah" }
+subgraph "cluster marsh" { "marsh hills"; "marsh" }
+subgraph "cluster taiga" { "taiga hills"; "taiga" }
+subgraph "cluster tundra" { "tundra hills"; "tundra" }
+subgraph "cluster permafrost" { "permafrost hills"; "permafrost" }
 }

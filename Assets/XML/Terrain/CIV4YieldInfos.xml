@@ -761,7 +761,7 @@
 					</PriceTable>
 				</PriceTables>
 			</Prices>
-			<iHillsChange>1</iHillsChange>
+			<iHillsChange>-1</iHillsChange>
 			<iPeakChange>0</iPeakChange>
 			<iLakeChange>0</iLakeChange>
 			<iCityChange>0</iCityChange>
@@ -826,7 +826,7 @@
 					</PriceTable>
 				</PriceTables>
 			</Prices>
-			<iHillsChange>-5</iHillsChange>
+			<iHillsChange>-1</iHillsChange>
 			<iPeakChange>0</iPeakChange>
 			<iLakeChange>0</iLakeChange>
 			<iCityChange>0</iCityChange>
@@ -891,7 +891,7 @@
 					</PriceTable>
 				</PriceTables>
 			</Prices>
-			<iHillsChange>-5</iHillsChange>
+			<iHillsChange>-2</iHillsChange>
 			<iPeakChange>0</iPeakChange>
 			<iLakeChange>0</iLakeChange>
 			<iCityChange>0</iCityChange>
@@ -1926,7 +1926,7 @@
 					</PriceTable>
 				</PriceTables>
 			</Prices>
-			<iHillsChange>0</iHillsChange>
+			<iHillsChange>-1</iHillsChange>
 			<iPeakChange>0</iPeakChange>
 			<iLakeChange>0</iLakeChange>
 			<iCityChange>1</iCityChange>

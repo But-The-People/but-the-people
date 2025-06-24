@@ -25,20 +25,12 @@
 					<iValue>3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_CATTLE</YieldType>
-					<iValue>3</iValue>
-				</YieldIntegerPair>
-					<YieldIntegerPair>
 					<YieldType>YIELD_SHEEP</YieldType>
 					<iValue>3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_HORSES</YieldType>
-					<iValue>2</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_CHICKEN</YieldType>
-					<iValue>1</iValue>
+					<iValue>3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_RED_PEPPER</YieldType>
@@ -55,10 +47,20 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_MAPLE_SIRUP</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_CLAY</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair></Yields>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+			</Yields>
 			<RiverYieldIncreases>
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
@@ -81,11 +83,7 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_CATTLE</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SHEEP</YieldType>
+					<YieldType>YIELD_CHICKEN</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
@@ -93,8 +91,20 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
+					<YieldType>YIELD_SHEEP</YieldType>
+					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_GEMS</YieldType>
@@ -204,20 +214,18 @@
 					<iValue>3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SHEEP</YieldType>
+					<YieldType>YIELD_HORSES</YieldType>
+					<iValue>2</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_CATTLE</YieldType>
 					<iValue>2</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_BARLEY</YieldType>
 					<iValue>3</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
-					<YieldType>YIELD_CATTLE</YieldType>
-					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_HORSES</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
 					<YieldType>YIELD_GRAPES</YieldType>
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
@@ -250,10 +258,6 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SHEEP</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_CATTLE</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
@@ -268,6 +272,14 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_GEMS</YieldType>
 					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
 				</YieldIntegerPair>
 			</RiverYieldIncreases>
 			<bWater>0</bWater>
@@ -369,20 +381,16 @@
 			<ArtDefineTag>ART_DEF_TERRAIN_ROCK_STEPPES</ArtDefineTag>
 			<Yields>
 				<YieldIntegerPair>
-					<YieldType>YIELD_FOOD</YieldType>
-					<iValue>0</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_STONE</YieldType>
 					<iValue>3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_ORE</YieldType>
-					<iValue>3</iValue>
+					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_COAL</YieldType>
-					<iValue>2</iValue>
+					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_RED_PEPPER</YieldType>
@@ -410,8 +418,9 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_SHEEP</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair></Yields>
-				<RiverYieldIncreases>
+				</YieldIntegerPair>
+			</Yields>
+			<RiverYieldIncreases>
 				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
@@ -419,6 +428,18 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_GEMS</YieldType>
 					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_STONE</YieldType>
+					<iValue>-1</iValue>
 				</YieldIntegerPair>
 			</RiverYieldIncreases>
 			<bWater>0</bWater>
@@ -521,7 +542,7 @@
 			<Yields>
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
-					<iValue>0</iValue>
+					<iValue>2</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_CLAY</YieldType>
@@ -529,7 +550,7 @@
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_CHICKEN</YieldType>
-					<iValue>1</iValue>
+					<iValue>2</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_COAL</YieldType>
@@ -553,17 +574,17 @@
 					<YieldType>YIELD_COCA_LEAVES</YieldType>
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SHEEP</YieldType>
-					<iValue>-3</iValue>
-				</YieldIntegerPair>
 			</Yields>
 			<RiverYieldIncreases>
 				<YieldIntegerPair>
 					<YieldType>YIELD_CLAY</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
-					<YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_FOOD</YieldType>
+					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_LUMBER</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
@@ -578,7 +599,8 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_GEMS</YieldType>
 					<iValue>1</iValue>
-				</YieldIntegerPair></RiverYieldIncreases>
+				</YieldIntegerPair>
+			</RiverYieldIncreases>
 			<bWater>0</bWater>
 			<bImpassable>0</bImpassable>
 			<bFound>1</bFound>
@@ -691,12 +713,13 @@
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_CATTLE</YieldType>
-					<iValue>2</iValue>
+					<iValue>3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_HORSES</YieldType>
-					<iValue>3</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
+					<iValue>2</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_GRAPES</YieldType>
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
@@ -715,10 +738,6 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_MAPLE_SIRUP</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SHEEP</YieldType>
-					<iValue>2</iValue>
 				</YieldIntegerPair>
 			</Yields>
 			<RiverYieldIncreases>
@@ -747,16 +766,20 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SHEEP</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_GEMS</YieldType>
 					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
 				</YieldIntegerPair>
 			</RiverYieldIncreases>
 			<bWater>0</bWater>
@@ -858,19 +881,11 @@
 			<ArtDefineTag>ART_DEF_TERRAIN_DESERT</ArtDefineTag>
 			<Yields>
 				<YieldIntegerPair>
-					<YieldType>YIELD_FOOD</YieldType>
-					<iValue>0</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_RAW_SALT</YieldType>
-					<iValue>0</iValue>
+					<iValue>3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_ORE</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_FUR</YieldType>
+					<YieldType>YIELD_PREMIUM_FUR</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
@@ -901,12 +916,12 @@
 				</YieldIntegerPair></Yields>
 			<RiverYieldIncreases>
 				<YieldIntegerPair>
-					<YieldType>YIELD_FUR</YieldType>
+					<YieldType>YIELD_PREMIUM_FUR</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_RAW_SALT</YieldType>
-					<iValue>1</iValue>
+					<iValue>-1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
@@ -915,6 +930,14 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_GEMS</YieldType>
 					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
 				</YieldIntegerPair>
 			</RiverYieldIncreases>
 			<bWater>0</bWater>
@@ -1021,10 +1044,10 @@
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_CHICKEN</YieldType>
-					<iValue>2</iValue>
+					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SHEEP</YieldType>
+					<YieldType>YIELD_CATTLE</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
@@ -1058,7 +1081,11 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_SHEEP</YieldType>
+					<YieldType>YIELD_CHICKEN</YieldType>
+					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_CATTLE</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
@@ -1072,10 +1099,16 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_GEMS</YieldType>
 					<iValue>1</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
-					<YieldType>YIELD_CHICKEN</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair></RiverYieldIncreases>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+			</RiverYieldIncreases>
 			<bWater>0</bWater>
 			<bImpassable>0</bImpassable>
 			<bFound>1</bFound>
@@ -1179,20 +1212,20 @@
 					<iValue>2</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
+					<YieldType>YIELD_CATTLE</YieldType>
+					<iValue>2</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_SHEEP</YieldType>
+					<iValue>3</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_SUGAR</YieldType>
 					<iValue>3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_COFFEE_BERRIES</YieldType>
 					<iValue>3</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_CATTLE</YieldType>
-					<iValue>2</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_CHICKEN</YieldType>
-					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_RED_PEPPER</YieldType>
@@ -1209,10 +1242,20 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_CLAY</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_OLIVES</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair></Yields>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+			</Yields>
 			<RiverYieldIncreases>
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
@@ -1239,16 +1282,20 @@
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_CHICKEN</YieldType>
-					<iValue>1</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_GEMS</YieldType>
 					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
 				</YieldIntegerPair>
 			</RiverYieldIncreases>
 			<bWater>0</bWater>
@@ -1351,23 +1398,15 @@
 			<Yields>
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
-					<iValue>3</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-				<YieldType>YIELD_CLAY</YieldType>
 					<iValue>2</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_ORE</YieldType>
-					<iValue>0</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_CATTLE</YieldType>
-					<iValue>-3</iValue>
+					<YieldType>YIELD_CLAY</YieldType>
+					<iValue>2</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_CHICKEN</YieldType>
-					<iValue>3</iValue>
+					<iValue>2</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_RED_PEPPER</YieldType>
@@ -1384,16 +1423,13 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_COAL</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_COCA_LEAVES</YieldType>
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_OLIVES</YieldType>
-					<iValue>-3</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_SHEEP</YieldType>
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
 			</Yields>
@@ -1413,7 +1449,8 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_GEMS</YieldType>
 					<iValue>1</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_CHICKEN</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
@@ -1519,13 +1556,22 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
 					<iValue>1</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
-					<YieldType>YIELD_CATTLE</YieldType>
-					<iValue>-3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_CHICKEN</YieldType>
-					<iValue>-3</iValue>
+					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_SHEEP</YieldType>
+					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_RED_PEPPER</YieldType>
@@ -1545,12 +1591,14 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_OLIVES</YieldType>
 					<iValue>-3</iValue>
-				</Yields>
+				</YieldIntegerPair>
+			</Yields>
 			<RiverYieldIncreases>
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
 					<iValue>1</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_MAPLE_SIRUP</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
@@ -1560,6 +1608,10 @@
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_SHEEP</YieldType>
+					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_CHICKEN</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
@@ -1573,7 +1625,16 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_GEMS</YieldType>
 					<iValue>1</iValue>
-				</YieldIntegerPair></RiverYieldIncreases>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+			</RiverYieldIncreases>
 			<bWater>0</bWater>
 			<bImpassable>0</bImpassable>
 			<bFound>1</bFound>
@@ -1673,15 +1734,11 @@
 			<ArtDefineTag>ART_DEF_TERRAIN_TUNDRA</ArtDefineTag>
 			<Yields>
 				<YieldIntegerPair>
-					<YieldType>YIELD_FOOD</YieldType>
-					<iValue>0</iValue>
-				</YieldIntegerPair>
-				<YieldIntegerPair>
-					<YieldType>YIELD_FUR</YieldType>
+					<YieldType>YIELD_PREMIUM_FUR</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_PREMIUM_FUR</YieldType>
+					<YieldType>YIELD_FUR</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
@@ -1697,19 +1754,26 @@
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
-					<YieldType>YIELD_COAL</YieldType>
-					<iValue>-3</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
 					<YieldType>YIELD_COCA_LEAVES</YieldType>
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_OLIVES</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_SHEEP</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair></Yields>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+			</Yields>
 			<RiverYieldIncreases>
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
@@ -1730,6 +1794,14 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_GEMS</YieldType>
 					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
 				</YieldIntegerPair>
 			</RiverYieldIncreases>
 			<bWater>0</bWater>
@@ -1831,12 +1903,16 @@
 			<ArtDefineTag>ART_DEF_TERRAIN_SNOW</ArtDefineTag>
 			<Yields>
 				<YieldIntegerPair>
-					<YieldType>YIELD_FUR</YieldType>
+					<YieldType>YIELD_PREMIUM_FUR</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_ORE</YieldType>
-					<iValue>0</iValue>
+					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_RED_PEPPER</YieldType>
@@ -1853,21 +1929,28 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_CLAY</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_COCA_LEAVES</YieldType>
 					<iValue>-3</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_OLIVES</YieldType>
 					<iValue>-3</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
-					<YieldType>YIELD_SHEEP</YieldType>
-					<iValue>-3</iValue>
-				</YieldIntegerPair></Yields>
+				</YieldIntegerPair>
+			</Yields>
 			<RiverYieldIncreases>
 				<YieldIntegerPair>
-					<YieldType>YIELD_FUR</YieldType>
+					<YieldType>YIELD_PREMIUM_FUR</YieldType>
 					<iValue>1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_ORE</YieldType>
+					<iValue>-1</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>-1</iValue>
 				</YieldIntegerPair>
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
