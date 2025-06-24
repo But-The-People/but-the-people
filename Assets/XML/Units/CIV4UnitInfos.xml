@@ -31036,6 +31036,7 @@
 					<iYieldDemand>5</iYieldDemand>
 				</YieldDemand>
 			</YieldDemands>
+			<YieldChanges/>
 			<BonusYieldChanges/>
 			<bLandYieldChanges>1</bLandYieldChanges>
 			<bWaterYieldChanges>1</bWaterYieldChanges>
