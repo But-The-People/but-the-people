@@ -1,0 +1,12 @@
+root = true
+[*]
+end_of_line = lf
+
+[*.cpp,*.h,Makefile,*.xml]
+indent_style = tab
+
+[*.py]
+indent_style = space
+indent_size = 2
+
+

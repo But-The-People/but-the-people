@@ -1,4 +1,4 @@
-﻿// cityAI.cpp
+// cityAI.cpp
 
 #include "CvGameCoreDLL.h"
 #include "CvGlobals.h"

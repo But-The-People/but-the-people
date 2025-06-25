@@ -1,4 +1,4 @@
-﻿// plot.cpp
+// plot.cpp
 
 #include "CvGameCoreDLL.h"
 #include "CvPlot.h"

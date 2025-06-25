@@ -1,4 +1,4 @@
-﻿// buttonPopup.cpp
+// buttonPopup.cpp
 
 #include "CvGameCoreDLL.h"
 #include "CvDLLButtonPopup.h"
