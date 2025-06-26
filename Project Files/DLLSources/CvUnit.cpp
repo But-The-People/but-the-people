@@ -3329,14 +3329,6 @@ bool CvUnit::canMoveInto(CvPlot const& kPlot, bool bAttack, bool bDeclareWar, bo
 		}
 	}
 
-	// WTP, ray, Canal - START
-	// in Canals, which are actually on land plots, we do not want to have any Ships bigger than Coastal Ships or GatherBoats
-	if (getUnitInfo().getDomainType() == DOMAIN_SEA && !kPlot.isWater() && !getUnitInfo().getTerrainImpassable(TERRAIN_OCEAN) && !(getUnitInfo().isGatherBoat() && getUnitInfo().getHarbourSpaceNeeded() == 1) && kPlot.getImprovementType() != NO_IMPROVEMENT && GC.getImprovementInfo(kPlot.getImprovementType()).isCanal())
-	{
-		return false;
-	}
-	// WTP, ray, Canal - END
-
 	const FeatureTypes eFeature = kPlot.getFeatureType();
 
 	// Prevent the AI from moving through storms and sustaining damage
