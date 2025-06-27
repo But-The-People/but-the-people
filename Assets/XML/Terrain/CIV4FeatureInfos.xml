@@ -5695,7 +5695,12 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
 					<iValue>4</iValue>
-				</YieldIntegerPair><YieldIntegerPair>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_BARLEY</YieldType>
+					<iValue>3</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
 					<YieldType>YIELD_GOLD</YieldType>
 					<iValue>-1</iValue>
 				</YieldIntegerPair>
