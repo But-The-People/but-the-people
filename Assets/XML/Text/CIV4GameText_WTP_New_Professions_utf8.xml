@@ -1381,62 +1381,33 @@
 		</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_BAKER_RICE</Tag>
+		<Tag>TXT_KEY_PROFESSION_BAKER_SALT</Tag>
 		<English>
-			<Text>Baker (Rice): Bakers (Rice)</Text>
+			<Text>Baker (Food+Salt): Bakers (Food+Salt)</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</English>
 		<French>
-			<Text>Boulanger (Riz):Boulangers (Riz)</Text>
+			<Text>Boulanger (NEED_TRANSLATION):Boulangers (NEED_TRANSLATION)</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</French>
 		<German>
-			<Text>Bäcker (Reis):Bäcker (Reis)</Text>
+			<Text>Bäcker (NEED_TRANSLATION):Bäcker (NEED_TRANSLATION)</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</German>
 		<Italian>
-			<Text>Panettiere (Riso):Panettieri (Riso)</Text>
+			<Text>Panettiere (NEED_TRANSLATION):Panettieri (NEED_TRANSLATION)</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Italian>
 		<Spanish>
-			<Text>Panadero (Arroz):Panaderos (Arroz)</Text>
+			<Text>Panadero (NEED_TRANSLATION):Panaderos (NEED_TRANSLATION)</Text>
 			<Gender>Male</Gender>
 			<Plural>0:1</Plural>
 		</Spanish>
-		<Russian>Пекарь (рис):Пекари (рис)</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_PROFESSION_BAKER_CASSAVA</Tag>
-		<English>
-			<Text>Baker (Cassava): Bakers (Cassava)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</English>
-		<French>
-			<Text>Boulanger (Manioc):Boulangers (Manioc)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>
-			<Text>Bäcker (Maniok):Bäcker (Maniok)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</German>
-		<Italian>
-			<Text>Panettiere (Cassava):Panettieri (Cassava)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Panadero (Yuca):Panaderos (Yuca)</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
-		<Russian>Пекарь (маниока):Пекари (маниока)</Russian>
+		<Russian>Пекарь (Еда+Соль):Пекари (Еда+Соль)</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_BAKER_HELP</Tag>

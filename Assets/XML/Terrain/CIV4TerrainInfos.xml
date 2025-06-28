@@ -2067,6 +2067,10 @@
 					<YieldType>YIELD_FOOD</YieldType>
 					<iValue>0</iValue>
 				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_SALT</YieldType>
+					<iValue>1</iValue>
+				</YieldIntegerPair>
 			</Yields>
 			<RiverYieldIncreases/>
 			<bWater>1</bWater>
@@ -2170,6 +2174,10 @@
 				<YieldIntegerPair>
 					<YieldType>YIELD_FOOD</YieldType>
 					<iValue>0</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_SALT</YieldType>
+					<iValue>2</iValue>
 				</YieldIntegerPair>
 			</Yields>
 			<RiverYieldIncreases/>

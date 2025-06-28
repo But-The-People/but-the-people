@@ -1099,6 +1099,45 @@
 			<ExpertUnit>UNITCLASS_MINER</ExpertUnit>
 			<iLbDLearnLevel>1</iLbDLearnLevel>
 		</ProfessionInfo>
+			<ProfessionInfo>
+			<Type>PROFESSION_SALT_PANNER</Type>
+			<Description>TXT_KEY_PROFESSION_SALT_PANNER</Description>
+			<Civilopedia>TXT_KEY_PROFESSION_SALT_PANNER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROFESSION_SALT_PANNER_STRATEGY</Strategy>
+			<Help>TXT_KEY_PROFESSION_SALT_PANNER_HELP</Help>
+			<Combat>NONE</Combat>
+			<DefaultUnitAI>NONE</DefaultUnitAI>
+			<SpecialBuilding>NONE</SpecialBuilding>
+			<bWorkPlot>1</bWorkPlot>
+			<bCitizen>1</bCitizen>
+			<bWater>1</bWater>
+			<bScout>0</bScout>
+			<bCanCrossLargeRivers>0</bCanCrossLargeRivers>
+			<bCityDefender>0</bCityDefender>
+			<bCanFound>0</bCanFound>
+			<bUnarmed>0</bUnarmed>
+			<bNoDefensiveBonus>0</bNoDefensiveBonus>
+			<iCombatChange>0</iCombatChange>
+			<iMovesChange>0</iMovesChange>
+			<bMoveIntoPeak>0</bMoveIntoPeak>
+			<iWorkRate>0</iWorkRate>
+			<iMissionaryRate>0</iMissionaryRate>
+			<iNativeTradeRate>0</iNativeTradeRate>
+			<iPower>0</iPower>
+			<iAsset>200</iAsset>
+			<YieldEquipedNums/>
+			<FreePromotions/>
+			<YieldsProduced>
+				<YieldType>YIELD_SALT</YieldType>
+			</YieldsProduced>
+			<YieldsConsumed>
+				<YieldType>NONE</YieldType>
+			</YieldsConsumed>
+			<Button>,Art/colonization_atlas_professions_bonus.dds,5,1</Button>
+			<bUseLbD>1</bUseLbD>
+			<ExpertUnit>UNITCLASS_SPICE_TRADER</ExpertUnit>
+			<iLbDLearnLevel>1</iLbDLearnLevel>
+		</ProfessionInfo>
 		<ProfessionInfo>
 			<Type>PROFESSION_COFFEE_ROASTER</Type>
 			<Description>TXT_KEY_PROFESSION_COFFEE_ROASTER</Description>
@@ -1485,6 +1524,46 @@
 			</YieldsProduced>
 			<YieldsConsumed>
 				<YieldType>YIELD_BARLEY</YieldType>
+			</YieldsConsumed>
+			<Button>Art/interface/buttons/New_Profession_Buttons/Profession_Baker_Barley_Button.dds</Button>
+			<bUseLbD>1</bUseLbD>
+			<ExpertUnit>UNITCLASS_BAKER</ExpertUnit>
+			<iLbDLearnLevel>2</iLbDLearnLevel>
+		</ProfessionInfo>
+		<ProfessionInfo>
+			<Type>PROFESSION_BAKER_SALT</Type>
+			<Description>TXT_KEY_PROFESSION_BAKER_SALT</Description>
+			<Civilopedia>TXT_KEY_PROFESSION_BAKER_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_PROFESSION_BAKER_STRATEGY</Strategy>
+			<Help>TXT_KEY_PROFESSION_BAKER_HELP</Help>
+			<Combat>NONE</Combat>
+			<DefaultUnitAI>NONE</DefaultUnitAI>
+			<SpecialBuilding>SPECIALBUILDING_BAKER</SpecialBuilding>
+			<bWorkPlot>0</bWorkPlot>
+			<bCitizen>1</bCitizen>
+			<bWater>0</bWater>
+			<bScout>0</bScout>
+			<bCanCrossLargeRivers>0</bCanCrossLargeRivers>
+			<bCityDefender>0</bCityDefender>
+			<bCanFound>0</bCanFound>
+			<bUnarmed>0</bUnarmed>
+			<bNoDefensiveBonus>0</bNoDefensiveBonus>
+			<iCombatChange>0</iCombatChange>
+			<iMovesChange>0</iMovesChange>
+			<bMoveIntoPeak>0</bMoveIntoPeak>
+			<iWorkRate>0</iWorkRate>
+			<iMissionaryRate>0</iMissionaryRate>
+			<iNativeTradeRate>0</iNativeTradeRate>
+			<iPower>0</iPower>
+			<iAsset>300</iAsset>
+			<YieldEquipedNums/>
+			<FreePromotions/>
+			<YieldsProduced>
+				<YieldType>YIELD_BAKERY_GOODS</YieldType>
+			</YieldsProduced>
+			<YieldsConsumed>
+				<YieldType>YIELD_FOOD</YieldType>
+				<YieldType>YIELD_SALT</YieldType>
 			</YieldsConsumed>
 			<Button>Art/interface/buttons/New_Profession_Buttons/Profession_Baker_Barley_Button.dds</Button>
 			<bUseLbD>1</bUseLbD>

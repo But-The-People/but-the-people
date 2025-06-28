@@ -39,6 +39,7 @@ digraph {
 "peak" [color=green,shape=box]
 "whales" [color=green,shape=box]
 "ocean" [color=green,shape=box]
+"coast" [color=green,shape=box]
 "coniferous forest" [color=green,label="coniferous forest\n\n3 lumber\n2 fur"]
 "coniferous forest" -> "lumber"
 "coniferous forest" -> "fur"
@@ -181,10 +182,13 @@ digraph {
 "whales" [color=green,label="whales\n\n3 whale fat"]
 "whales" -> "whale fat"
 "ocean" [color=green,label="ocean\n\n2 food"]
+"coast" [color=green,label="coast\n\n2 food\n1 salt"]
+"coast" -> "salt"
 "fur" -> "coats"
 "premium fur" -> "premium coats"
 "lumber" -> "gunpowder"
 "coal" -> "gunpowder"
+"barley" -> "provisions"
 "food" -> "provisions"
 "rock salt" -> "salt"
 "salt" -> "provisions"

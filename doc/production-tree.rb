@@ -82,6 +82,7 @@ tiles = {
 	"peak" => "3 ore,3 coal,3 stone",
 	"whales" => "3 whale fat",
 	"ocean" => "2 food",
+	"coast" => "2 food,1 salt"
 }
 
 $prodchains = []
@@ -97,6 +98,7 @@ end
 	chain("lumber", "gunpowder")
 	chain("coal", "gunpowder")
 
+	chain("barley", "provisions")
 	chain("food", "provisions")
 	chain("rock salt", "salt")
 	chain("salt", "provisions")

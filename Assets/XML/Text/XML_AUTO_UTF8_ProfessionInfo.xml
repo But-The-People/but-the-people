@@ -2489,6 +2489,47 @@
 		<German>[COLOR_UNIT_TEXT]Segelmacher[COLOR_REVERT] verarbeiten [LINK=YIELD_HEMP]Hanf[\LINK] oder zu [LINK=YIELD_SAILCLOTH]Segeltuch[\LINK]. Die Herstellung findet meist in Gebäuden des [LINK=BUILDING_DOCK]Hafens[\LINK] statt und ist noch effektiver, wenn Sie dem Beruf einen [LINK=UNIT_SAILCLOTH_MAKER]Meister-Segelmacher[\LINK] zuweisen.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_PROFESSION_SALT_PANNER</Tag>
+		<English>
+			<Text>Salt panner:Salt panners</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</English>
+		<French>
+			<Text>NEED_TRANSLATION:NEED_TRANSLATION</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>NEED_TRANSLATION:NEED_TRANSLATION</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</German>
+		<Italian>
+			<Text>NEED_TRANSLATION:NEED_TRANSLATION</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>NEED_TRANSLATION:NEED_TRANSLATION</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+		<Russian>Солевар:Солевары</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROFESSION_SALT_PANNER_HELP</Tag>
+		<English>????</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROFESSION_SALT_PANNER_PEDIA</Tag>
+		<English>TXT_KEY_UNIT_SPICE_TRADER_PEDIA</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_PROFESSION_SALT_PANNER_STRATEGY</Tag>
+		<English>By putting a colonist to toil on a [LINK=TERRAIN_COAST]coast[\LINK] tile, you can give him the [COLOR_HIGHLIGHT_TEXT]salt panner[COLOR_REVERT] profession to provide your settlement with useful [LINK=YIELD_SALT]salt[\LINK]. Assigning an [LINK=UNIT_SPICE_TRADER]spice trader[\LINK] to this job will yield more salt.</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_PROFESSION_SALT_MINER</Tag>
 		<English>
 			<Text>Miner (Salt):Miners (Salt)</Text>
