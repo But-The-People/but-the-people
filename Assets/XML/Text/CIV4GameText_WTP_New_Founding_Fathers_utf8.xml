@@ -5,45 +5,6 @@
 <!-- -->
 <!-- Game Text Infos -->
 <Civ4GameText xmlns="http://www.firaxis.com">
-	<!-- CARL_VON_LINNES -->
-	<TEXT>
-		<Tag>TXT_KEY_FATHER_CARL_VON_LINNES</Tag>
-		<English>
-			<Text>Carl von Linné</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</English>
-		<French>
-			<Text>Carl von Linné</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Carl von Linné</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Carl von Linné</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Carl von Linné</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Карл Линней</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_FATHER_CARL_VON_LINNES_PEDIA</Tag>
-		<English>[H1]Carl von Linné[\H1][NEWLINE][BOLD]Lived : [\BOLD]1707 - 1778[NEWLINE][NEWLINE][BOLD]Background :[\BOLD][PARAGRAPH:1:1]Carl von Linné, known as Carl Linnaeus before being knighted in 1761, is the father of modern taxonomy. Born in Rashult in southern Sweden, he was a botanist, zoologist, taxonomist, and physician. His higher education was at Uppsala University. He began giving lectures in botany there in 1730.[PARAGRAPH:2:1]His manuscript on classifying plants was published as "Systema Naturae" (1735). It established binomial nomenclature in Latin as the world standard.[PARAGRAPH:2:1]He admired the child care practices of the Lapps. They had healthier babies than Europeans who employed wet nurses. He became a strong advocate of breast-feeding by mothers. His activism here likely played a role in his choice of the term Mammalia for our class of organisms.</English>
-		<German>[H1]Carl von Linné[\H1][NEWLINE][BOLD]Lebte : [\BOLD]1707 - 1778[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][PARAGRAPH:1:1]Carl von Linné, der vor seiner Ernennung zum Ritter im Jahr 1761 als Carl Linnaeus bekannt war, ist der Vater der modernen Taxonomie. Er wurde in Rashult in Südschweden geboren und war Botaniker, Zoologe, Taxonom und Arzt. Seine höhere Ausbildung erhielt er an der Universität Uppsala. Ab 1730 hielt er dort Vorlesungen in Botanik. 1735 wurde sein Manuskript zur Klassifizierung von Pflanzen als Systema Naturae" veröffentlicht. Es etablierte die binomische Nomenklatur in lateinischer Sprache als Weltstandard.[PARAGRAPH:2:1]Er bewunderte die Kindererziehungsmethoden der Lappen. Sie hatten gesündere Säuglinge als die Europäer, die Ammen beschäftigten. Er wurde ein starker Befürworter des Stillens durch Mütter. Sein Engagement in diesem Bereich spielte wahrscheinlich eine Rolle bei der Wahl des Begriffs Mammalia für unsere Klasse von Organismen.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_FATHER_CARL_VON_LINNES_STRATEGY</Tag>
-		<English>Boost your political progress with [COLOR_TECH_TEXT]Carl von Linné[COLOR_REVERT]. This Founding Father allows you to grow and get oil from [COLOR_HIGHLIGHT_TEXT]peanuts[COLOR_REVERT] in half the normal time.</English>
-	</TEXT>
 	<!-- SIR_THOMAS_GATES -->
 	<TEXT>
 		<Tag>TXT_KEY_FATHER_SIR_THOMAS_GATES</Tag>

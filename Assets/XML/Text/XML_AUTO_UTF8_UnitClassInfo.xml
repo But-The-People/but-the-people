@@ -2323,31 +2323,6 @@
 		<Russian>Воловья упряжь:Воловьи упряжки</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNITCLASS_PEARLS_HUNTER</Tag>
-		<English>Expert Pearl Diver:Expert Pearl Divers</English>
-		<French>
-			<Text>Expert chasseur de perles</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>
-			<Text>Erfahrener Perlentaucher:Erfahrene Perlentaucher</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</German>
-		<Italian>
-			<Text>Expert Pearls Hunter</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Expert Pearls Hunter</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
-		<Russian>Опытный ныряльщик за жемчугом:Опытные ныряльщики за жемчугом</Russian>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_PIONEER</Tag>
 		<English>Hardy Pioneer:Hardy Pioneers</English>
 		<French>

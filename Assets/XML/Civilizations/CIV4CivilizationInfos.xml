@@ -3806,9 +3806,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -4193,10 +4190,6 @@
 				</TeachUnitClass>
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -4868,9 +4861,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -5250,10 +5240,6 @@
 				</TeachUnitClass>
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -5925,9 +5911,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -6312,10 +6295,6 @@
 				</TeachUnitClass>
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -6987,9 +6966,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -7369,10 +7345,6 @@
 				</TeachUnitClass>
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -8048,9 +8020,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -8430,10 +8399,6 @@
 				</TeachUnitClass>
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -9109,9 +9074,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -9491,10 +9453,6 @@
 				</TeachUnitClass>
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -10170,9 +10128,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -10552,10 +10507,6 @@
 				</TeachUnitClass>
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -11231,9 +11182,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -11613,10 +11561,6 @@
 				</TeachUnitClass>
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -12288,9 +12232,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -12670,10 +12611,6 @@
 				</TeachUnitClass>
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -13341,9 +13278,6 @@
 					<UnitType>NONE</UnitType>
 				</Unit>
 				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
-				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
 				</Unit>
@@ -13723,10 +13657,6 @@
 				</TeachUnitClass>
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -14392,10 +14322,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -14776,10 +14702,6 @@
 				</TeachUnitClass>
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
 				<TeachUnitClass>
@@ -15449,10 +15371,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -15835,10 +15753,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -16506,10 +16421,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -16892,10 +16803,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -17563,10 +17471,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -17954,10 +17858,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -18621,10 +18522,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -19012,10 +18909,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -19683,10 +19577,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -20069,10 +19959,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -20744,10 +20631,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -21130,10 +21013,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -21805,10 +21685,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -22191,10 +22067,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -22858,10 +22731,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -23249,10 +23118,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -23920,10 +23786,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -24311,10 +24173,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -24982,10 +24841,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -25368,10 +25223,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -26043,10 +25895,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -26429,10 +26277,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -27104,10 +26949,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -27490,10 +27331,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -28161,10 +27999,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -28547,10 +28381,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -29222,10 +29053,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -29608,10 +29435,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -30283,10 +30107,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -30669,10 +30489,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -31340,10 +31157,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -31726,10 +31539,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -32397,10 +32207,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -32788,10 +32594,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -33455,10 +33258,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -33841,10 +33640,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -34508,10 +34304,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -34894,10 +34686,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>
@@ -35569,10 +35358,6 @@
 				<Unit>
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<UnitType>NONE</UnitType>
-				</Unit>
-				<Unit>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<UnitType>NONE</UnitType>
 				</Unit><Unit>
 					<UnitClassType>UNITCLASS_COCA_COLLECTOR</UnitClassType>
 					<UnitType>NONE</UnitType>
@@ -35943,10 +35728,7 @@
 					<UnitClassType>UNITCLASS_FISHERMAN</UnitClassType>
 					<iWeight>1</iWeight>
 				</TeachUnitClass>
-				<TeachUnitClass>
-					<UnitClassType>UNITCLASS_PEARLS_HUNTER</UnitClassType>
-					<iWeight>1</iWeight>
-				</TeachUnitClass>
+
 				<TeachUnitClass>
 					<UnitClassType>UNITCLASS_MINER</UnitClassType>
 					<iWeight>1</iWeight>

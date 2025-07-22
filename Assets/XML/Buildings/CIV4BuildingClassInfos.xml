@@ -673,24 +673,6 @@
 			<VictoryThresholds/>
 		</BuildingClassInfo>
 		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CONFECTIONER_HOUSE</Type>
-			<Description>TXT_KEY_BUILDINGCLASS_CONFECTIONER_HOUSE</Description>
-			<DefaultBuilding>BUILDING_CONFECTIONER_HOUSE</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CONFECTIONER_SHOP</Type>
-			<Description>TXT_KEY_BUILDINGCLASS_CONFECTIONER_SHOP</Description>
-			<DefaultBuilding>BUILDING_CONFECTIONER_SHOP</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
-			<Type>BUILDINGCLASS_CONFECTIONER_FACTORY</Type>
-			<Description>TXT_KEY_BUILDINGCLASS_CONFECTIONER_FACTORY</Description>
-			<DefaultBuilding>BUILDING_CONFECTIONER_FACTORY</DefaultBuilding>
-			<VictoryThresholds/>
-		</BuildingClassInfo>
-		<BuildingClassInfo>
 			<Type>BUILDINGCLASS_LEATHER_PADDER_HOUSE</Type>
 			<Description>TXT_KEY_BUILDINGCLASS_LEATHER_PADDER_HOUSE</Description>
 			<DefaultBuilding>BUILDING_LEATHER_PADDER_HOUSE</DefaultBuilding>

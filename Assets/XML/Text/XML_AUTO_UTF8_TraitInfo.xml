@@ -2152,35 +2152,6 @@
 		<Russian>Хуан Бермудес</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_TRAIT_JUAN_DE_SEPULVEDA</Tag>
-		<English>
-			<Text>Juan Ginés de Sepúlveda</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</English>
-		<French>
-			<Text>Juan Ginés de Sepúlveda</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Juan Ginés de Sepúlveda</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Juan Ginés de Sepúlveda</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Juan Ginés de Sepúlveda</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Хуан Хинес де Сепульведа</Russian>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_TRAIT_JUNIPERO_SERRA</Tag>
 		<English>
 			<Text>Junípero Serra</Text>
@@ -3336,7 +3307,7 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Пит Питерсон Хайн</Russian>
-	</TEXT>	
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_JUAN_PONCE_DE_LEON</Tag>
 		<English>
@@ -3568,35 +3539,6 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Бенджамин Киссам</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_TRAIT_CARL_VON_LINNES</Tag>
-		<English>
-			<Text>Carl von Linné</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</English>
-		<French>
-			<Text>Carl von Linné</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Carl von Linné</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Carl von Linné</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Carl von Linné</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Карл Линней</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TRAIT_SIR_THOMAS_GATES</Tag>

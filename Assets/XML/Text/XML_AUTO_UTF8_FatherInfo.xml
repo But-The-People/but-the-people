@@ -2564,49 +2564,6 @@
 		<Spanish>Surcaréis los mares con más facilidad cuando [COLOR_TECH_TEXT]Juan Bermúdez[COLOR_REVERT] esté a vuestro lado. Al adoptar a Bermúdez como Padre fundador, todos vuestros [COLOR_UNIT_TEXT]Navíos mercantes[COLOR_REVERT], [COLOR_UNIT_TEXT]Carabelas[COLOR_REVERT] y [COLOR_UNIT_TEXT]Galeones[COLOR_REVERT] recibirán una bonificación al movimiento.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_FATHER_JUAN_DE_SEPULVEDA</Tag>
-		<English>
-			<Text>Juan Ginés de Sepúlveda</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</English>
-		<French>
-			<Text>Juan Ginés de Sepúlveda</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Juan Ginés de Sepúlveda</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Juan Ginés de Sepúlveda</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Juan Ginés de Sepúlveda</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Хуан Хинес де Сепульведа</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_FATHER_JUAN_DE_SEPULVEDA_PEDIA</Tag>
-		<English>[H1]Juan Ginés de Sepúlveda[\H1][NEWLINE][BOLD]Lived : [\BOLD]1490 - 1573[NEWLINE][NEWLINE][BOLD]Background :[\BOLD][PARAGRAPH:1:1]If Bartolomé de Las Casas was the voice of humanism and concern for the Native Americans, Juan Ginés de Sepúlveda was the voice of their domination. A Jesuit priest, Sepúlveda believed the Natives to be natural slaves, not capable of governing themselves. He argued against de Casas at the Valladolid Debate. This debate, organized by King Charles V, was to decide the fate of the Natives within the Spanish colonial system - continued slavery or emancipation. While Sepúlveda lost the debate, and the Crown took a position in favor of Native freedom, the colonists in the New World ignored to a large extent the King's decree, granting the true victory to Sepúlveda.</English>
-		<French>[H1]Juan Ginés de Sepúlveda[\H1][NEWLINE][BOLD]Dates : [\BOLD]1490 - 1573[NEWLINE][NEWLINE][BOLD]Biographie :[\BOLD][PARAGRAPH:1:1]Bartolomé de Las Casas souhaitait que les indigènes d'Amérique soit traitrés humainement, tandis que Juan Ginés de Sepúlveda souhaitait qu'on les domine. Prêtre jésuite, de Sepúlveda pense que les indigènes sont des esclaves nés, incapables de se gouverner. Durant le débat de Valladolid (aujourd'hui appelé Controverse de Valladolid), il s'oppose à de Las Casas. Ce débat, organisé par le roi Charles Quint, doit décider du sort des indigènes dans le système colonial espagnol : la poursuite de l'esclavage ou l'émancipation. De Sepúlveda a le dessous lors de ce débat et la Couronne se prononce naturellement en faveur de la liberté des indigènes, mais les colons du Nouveau Monde ignoreront largement le décret de leur souverain, donnant ainsi la vraie victoire à de Sepúlveda.</French>
-		<German>[H1]Juan Ginés de Sepúlveda[\H1][NEWLINE][BOLD]Lebte : [\BOLD]1490 - 1573[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][PARAGRAPH:1:1]Wenn Bartolomé de Las Casas die Stimme des Humanismus und der Sorge um die amerikanischen Ureinwohner war, so war Juan Ginés de Sepúlveda die Stimme für die Herrschaft über sie. Der Jesuitenpriester Sepúlveda glaubte, dass Ureinwohner für die Sklaverei bestimmt waren, weil sie nicht imstande wären, sich selbst zu regieren. Er führte die Argumentation gegen de Las Casas beim Disput von Valladolid. Dieser Disput, der von König Carlos V. organisiert worden war, sollte über das weitere Schicksal der Ureinwohner innerhalb des spanischen Kolonialreichs entscheiden - zwischen Sklaverei oder Freiheit. Obwohl Sepúlveda die Debatte verlor und das Königshaus sich für die Freiheit der Ureinwohner aussprach, ignorierten die Kolonisten der Neuen Welt die größten Teile des königlichen Dekrets. Der wahre Sieg ging also an Sepúlveda.</German>
-		<Italian>[H1]Juan Ginés de Sepúlveda[\H1][NEWLINE][BOLD]Vita : [\BOLD]1490 - 1573[NEWLINE][NEWLINE][BOLD]Informazioni :[\BOLD][PARAGRAPH:1:1]Se Bartolomé de Las Casas fu la voce della comprensione e della preoccupazione per i nativi americani, Juan Ginés de Sepúlveda fu quella della loro dominazione. Sepúlveda era un frate gesuita e credeva che i nativi fossero degli schiavi naturali, incapaci di governarsi da soli. Partecipò a una disputa con de Las Casas a Valladolid. Il dibattito, organizzato da Re Carlo V, doveva decidere il futuro dei nativi all'interno del sistema coloniale spagnolo: schiavitù o emancipazione. Sepúlveda perse la disputa e la corona prese posizione a favore della libertà dei nativi, ma i coloni nel Nuovo Mondo ignorarono in gran parte il decreto del re, concedendo la vera vittoria a Sepúlveda.</Italian>
-		<Spanish>[H1]Juan Ginés de Sepúlveda[\H1][NEWLINE][BOLD]Vivió : [\BOLD]1490 - 1573[NEWLINE][NEWLINE][BOLD]Biografía :[\BOLD][PARAGRAPH:1:1]Si fray Bartolomé de Las Casas fue la voz del humanismo y de la preocupación por los indígenas americanos, Juan Ginés de Sepúlveda fue la voz de la dominación de estos. Ginés, sacerdote jesuita, creía que los nativos eran esclavos por naturaleza, pues eran incapaces de gobernarse por sí mismos. Discutió con Las Casas en el llamado "Debate de Valladolid". Este debate, organizado por el rey Carlos V, tenía que decidir el destino de los indígenas dentro del sistema colonial español: la continuación de la esclavitud o la emancipación. Aunque Ginés perdió el debate y la Corona se declaró partidaria de la libertad de los nativos, los colonos del Nuevo Mundo ignoraron en gran medida el decreto real, lo que confirió la verdadera victoria a Ginés.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_FATHER_JUAN_DE_SEPULVEDA_STRATEGY</Tag>
-		<English>When [COLOR_TECH_TEXT]Juan Ginés de Sepúlveda[COLOR_REVERT] joins your side as a Founding Father, you will receive two free [COLOR_UNIT_TEXT]Converted Natives[COLOR_REVERT] in your capital! He will also increase production of [COLOR_HIGHLIGHT_TEXT]Cocoa pods[COLOR_REVERT] and [COLOR_HIGHLIGHT_TEXT]Cocoa[COLOR_REVERT].</English>
-		<French>Lorsque [COLOR_TECH_TEXT]Juan Ginés de Sepúlveda[COLOR_REVERT] vous rejoint en tant que Père Fondateur, vous recevez deux [COLOR_UNIT_TEXT]indigènes convertis[COLOR_REVERT] gratuitement dans votre capital ! Sa présence augmentera également la production de [COLOR_HIGHLIGHT_TEXT]fèves de cacao[COLOR_REVERT] et de [COLOR_HIGHLIGHT_TEXT]cacao[COLOR_REVERT].</French>
-		<German>Wenn [COLOR_TECH_TEXT]Juan Ginés de Sepúlveda[COLOR_REVERT] sich Ihnen als Gründervater anschliesst, steigt eure Produktion von [COLOR_HIGHLIGHT_TEXT]Kakaofrüchten[COLOR_REVERT] und [COLOR_HIGHLIGHT_TEXT]Kakao[COLOR_REVERT] und Ihre Hauptstadt erhält unentgeltlich zwei [COLOR_UNIT_TEXT]Konvertierte Ureinwohner[COLOR_REVERT]!</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_FATHER_THOMAS_CHIPPENDALE</Tag>
 		<English>
 			<Text>Thomas Chippendale</Text>

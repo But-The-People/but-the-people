@@ -6954,10 +6954,6 @@ getHelpMilkmaidInNeed = get_simple_help("TXT_KEY_EVENT_MILKMAID_IN_NEED_HELP")
 
 getHelpWhaleAttack = get_simple_help("TXT_KEY_WHALE_ATTACK_HELP")
 
-######## Pig Herder in Need ###########
-
-hasPigBonus = has_plot_this_bonus("BONUS_PIG")
-
 # adjacent Plot
 def spawnBarbarianUnitAdjacentToPlotAndFriendlyOnSamePlot(argsList):
 	eEvent = argsList[0]

@@ -365,40 +365,6 @@
 			<Button>,Art/Interface/Screens/Founding_Fathers/Founding_Fathers_Atlas.dds,6,5</Button>
 		</FatherInfo>
 		<FatherInfo>
-			<Type>FATHER_CARL_VON_LINNES</Type>
-			<Portrait>Art/Interface/Screens/Founding_Fathers/Carl_von_Linnes.dds</Portrait>
-			<Description>TXT_KEY_FATHER_CARL_VON_LINNES</Description>
-			<Civilopedia>TXT_KEY_FATHER_CARL_VON_LINNES_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_FATHER_CARL_VON_LINNES_STRATEGY</Strategy>
-			<FatherCategory>FATHERCATEGORY_EXPLORATION</FatherCategory>
-			<RevealImprovements/>
-			<FreeUnits>
-				<FreeUnit>
-					<UnitClass>UNITCLASS_COFFEE_PLANTER</UnitClass>
-					<iFreeUnits>1</iFreeUnits>
-				</FreeUnit>
-				<FreeUnit>
-					<UnitClass>UNITCLASS_ROASTER</UnitClass>
-					<iFreeUnits>1</iFreeUnits>
-				</FreeUnit>
-			</FreeUnits>
-			<FatherPointCosts>
-				<FatherPointCost>
-					<FatherPointType>FATHER_POINT_EXPLORATION</FatherPointType>
-					<iCost>2500</iCost>
-				</FatherPointCost>
-				<FatherPointCost>
-					<FatherPointType>FATHER_POINT_POLITICAL</FatherPointType>
-					<iCost>2100</iCost>
-				</FatherPointCost>
-			</FatherPointCosts>
-			<Trait>TRAIT_CARL_VON_LINNES</Trait>
-			<Quote>TXT_KEY_FUTURE_QUOTE</Quote>
-			<Sound>AS2D_FUTURE</Sound>
-			<SoundMP>AS2D_MP_FUTURE</SoundMP>
-			<Button>,Art/Interface/Screens/Founding_Fathers/Founding_Fathers_Atlas.dds,1,14</Button>
-		</FatherInfo>
-		<FatherInfo>
 			<Type>FATHER_JAMES_COOK</Type>
 			<Portrait>Art/Interface/Screens/Founding_Fathers/James_Cook.dds</Portrait>
 			<Description>TXT_KEY_FATHER_JAMES_COOK</Description>
@@ -1937,40 +1903,6 @@
 			<Sound>AS2D_FUTURE</Sound>
 			<SoundMP>AS2D_MP_FUTURE</SoundMP>
 			<Button>,Art/Interface/Screens/Founding_Fathers/Founding_Fathers_Atlas.dds,5,5</Button>
-		</FatherInfo>
-		<FatherInfo>
-			<Type>FATHER_JUAN_DE_SEPULVEDA</Type>
-			<Portrait>Art/Interface/Screens/Founding_Fathers/De_Sepulveda.dds</Portrait>
-			<Description>TXT_KEY_FATHER_JUAN_DE_SEPULVEDA</Description>
-			<Civilopedia>TXT_KEY_FATHER_JUAN_DE_SEPULVEDA_PEDIA</Civilopedia>
-			<Strategy>TXT_KEY_FATHER_JUAN_DE_SEPULVEDA_STRATEGY</Strategy>
-			<FatherCategory>FATHERCATEGORY_RELIGION</FatherCategory>
-			<RevealImprovements/>
-			<FreeUnits>
-				<FreeUnit>
-					<UnitClass>UNITCLASS_NATIVE_SLAVE</UnitClass>
-					<iFreeUnits>2</iFreeUnits>
-				</FreeUnit>
-				<FreeUnit>
-					<UnitClass>UNITCLASS_ROASTER</UnitClass>
-					<iFreeUnits>1</iFreeUnits>
-				</FreeUnit>
-			</FreeUnits>
-			<FatherPointCosts>
-				<FatherPointCost>
-					<FatherPointType>FATHER_POINT_RELIGION</FatherPointType>
-					<iCost>4500</iCost>
-				</FatherPointCost>
-				<FatherPointCost>
-					<FatherPointType>FATHER_POINT_POLITICAL</FatherPointType>
-					<iCost>5000</iCost>
-				</FatherPointCost>
-			</FatherPointCosts>
-			<Trait>TRAIT_JUAN_DE_SEPULVEDA</Trait>
-			<Quote>TXT_KEY_FUTURE_QUOTE</Quote>
-			<Sound>AS2D_FUTURE</Sound>
-			<SoundMP>AS2D_MP_FUTURE</SoundMP>
-			<Button>,Art/Interface/Screens/Founding_Fathers/Founding_Fathers_Atlas.dds,5,3</Button>
 		</FatherInfo>
 		<FatherInfo>
 			<Type>FATHER_NATHANIAL_HAWTHORNE</Type>

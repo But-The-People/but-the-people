@@ -661,20 +661,6 @@
 		<German>[BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Kaninchen[COLOR_REVERT] </German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BONUS_PIG</Tag>
-		<English>Pigs</English>
-		<French>Porcs</French>
-		<German>Schweine</German>
-		<Italian>Maiali</Italian>
-		<Spanish>Cerdos</Spanish>
-		<Russian>Свиньи</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BONUS_PIG_PEDIA</Tag>
-		<English>[BOLD]Strategy :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Pigs[COLOR_REVERT] are nature's recyclers, turning kichen waste into meat. They've been domesticated for millenia. They're also a source of hides for leather. [NEWLINE][NEWLINE][BOLD]Background :[\BOLD][NEWLINE]Pigs are native to the Eurasian and African continents, ranging from Europe to the Pacific islands. In the New World the peccary, a medium-sized pig-like mammal, lives wild in Central and South America, Trinidad in the Caribbean, and the southwestern area of North America. The domestic pig is among the world's most populous large mammals. Pigs are omnivores and can consume a wide range of food. Pigs are biologically similar to humans and are thus frequently used for human medical research. Apart from meat, pig skin is turned into leather, and their hairs are used to make brushes.</English>
-		<German>[BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Schweine[COLOR_REVERT] </German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BONUS_CHICKEN</Tag>
 		<English>Chicken</English>
 		<French>Poules</French>
@@ -687,27 +673,6 @@
 		<Tag>TXT_KEY_BONUS_CHICKEN_PEDIA</Tag>
 		<English>[BOLD]Strategy :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Chickens[COLOR_REVERT] can be raised for meat on farms or in the city. Their eggs are a universal protein source. [NEWLINE][NEWLINE][BOLD]Background :[\BOLD][NEWLINE]The chicken is domesticated from red junglefowl originally from Southeastern Asia. There are more chickens in the world than any other bird. Chickens are omnivores. In the wild, they often scratch at the soil to search for seeds, insects and even animals as large as lizards, small snakes or young mice. An unusual variety of chicken that has its origins in South America is the Araucana, bred in southern Chile by the Mapuche people. Araucanas lay blue-green eggs.</English>
 		<German>[BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Hühner[COLOR_REVERT]</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BONUS_DOMESTIC_GOOSE</Tag>
-		<English>Domestic Geese</English>
-		<French>Oies</French>
-		<German>
-			<Text>Hausgänse</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</German>
-		<Italian>Oche</Italian>
-		<Spanish>Gansos</Spanish>
-		<Russian>Домашние гуси</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BONUS_DOMESTIC_GOOSE_PEDIA</Tag>
-		<English>[BOLD]Strategy :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Geese[COLOR_REVERT] are the fastest growers among domestic birds. They're hardy and disease free when given constant care. Geese can be brought up on green pastures, which lowers production cost substantially.</English>
-		<French>[BOLD]Stratégie :[\BOLD][NEWLINE]Les [COLOR_HIGHLIGHT_TEXT]oies[COLOR_REVERT] ont la croissance la plus rapide parmi les oiseaux domestiques. Elles sont rustiques et exemptes de maladies lorsqu'elles reçoivent des soins constants. Les oies peuvent être élevées sur des pâturages verts, ce qui réduit considérablement les coûts de production.</French>
-		<German>[BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Hausgänse[COLOR_REVERT] sind unter den Hausvögeln die am schnellsten wachsenden Tiere. Sie sind widerstandsfähig und bei ständiger Pflege frei von Krankheiten. Gänse können auf grünen Weiden aufgezogen werden, was die Produktionskosten erheblich senkt.</German>
-		<Italian>[BOLD]Strategia :[\BOLD][NEWLINE]Le [COLOR_HIGHLIGHT_TEXT]oche[COLOR_REVERT] sono gli uccelli domestici che crescono più rapidamente. Sono resistenti e prive di malattie se sottoposte a cure costanti. Le oche possono essere allevate su pascoli verdi, il che riduce notevolmente i costi di produzione.</Italian>
-		<Spanish>[BOLD]Estrategia :[\BOLD][NEWLINE]Los [COLOR_HIGHLIGHT_TEXT]gansos[COLOR_REVERT] son las aves domésticas que crecen más rápido. Son resistentes y no padecen enfermedades cuando se les proporcionan cuidados constantes. Los gansos pueden criarse en pastos verdes, lo que reduce considerablemente los costes de producción.</Spanish>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_FISH</Tag>
@@ -1116,22 +1081,6 @@
 		<German>[BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Indigo[COLOR_REVERT] wächst in flacher [LINK=TERRAIN_PLAINS]Prairie[\LINK]. Gelegentlich können besonders gute Anbaugebiete für Indigo auch von [LINK=FEATURE_FOREST]Wald[\LINK] oder [LINK=FEATURE_LIGHT_FOREST]Buschland[\LINK] überwachsen sein.[PARAGRAPH:2][BOLD]Hintergrund :[\BOLD][NEWLINE]Das Färben von Stoffen und Fasern gehört schon seit mehr als drei Jahrtausenden zu den vom Menschen praktizierten Handwerken. Durch das Eintauchen der Materialien in Farbe ließ sich das natürliche Weiß von Seide, Wolle und Baumwolle in verschiedene Farbnuancen einfärben. Natürliche Färbemittel wurden aus unzähligen Quellen, einschließlich Muscheln, Tieren und Pflanzen, gewonnen, obwohl diese nicht immer dauerhaft und meist auch teuer waren. Moderne Färbemittel basieren auf künstlichen oder verarbeiteten Substanzen wie Kohle und anderen Chemikalien. Ein Land mit einer ausgedehnten Färbeindustrie hat den Vorteil, dass die zur Herstellung von Färbemitteln notwendigen Verfahren leicht für andere Zwecke abgewandelt werden können. Während des 1. Weltkrieges zeigte es sich in Deutschland, dass Fabriken, in denen künstliche Färbemittel hergestellt wurden, kurzerhand so umstrukturiert werden konnten, dass sie stattdessen Sprengstoffe, giftiges Gas und anderes Kriegsmaterial produzierten.</German>
 		<Italian>[BOLD]Strategia :[\BOLD][NEWLINE]La colorazione è il processo di applicazione dei colori ai tessuti. Si tratta di una pratica dell'uomo utilizzata da oltre tremila anni, che consente vari tipi di modifica del colore bianco naturale della seta, della lana e del cotone. La tinta naturale è creata da numerosissime fonti, comprese le conchiglie, gli animali e le piante, malgrado questi non siano sempre disponibili e risultino spesso costosi. La tinta moderna si basa su sostanze artificiali o lavorate, come il carbone e altri elementi chimici; una nazione con una solida industria in questo campo beneficia del fatto che i processi implicati nella creazione della tinta possano essere trasformati agevolmente per altri scopi. La Germania ha effettuato questa scoperta durante la Prima Guerra Mondiale, rendendosi conto che le fabbriche di produzione della tinta artificiale potevano essere facilmente modificate per creare esplosivi e altri strumenti bellici.</Italian>
 		<Spanish>[BOLD]Estrategia :[\BOLD][NEWLINE]El tinte es el proceso de aplicar colores a los tejidos. Una práctica humana que, durante más de tres mil años, permitía ampliar el blanco natural de la seda, la lana y el algodón a todo un espectro de colores. Los tintes naturales se crean a partir de miles de sustancias, incluyendo conchas, animales y plantas, aunque estos tintes son frecuentemente caros y no siempre permanentes. Los tintes modernos se basan en sustancias artificiales o procesadas, como el carbón vegetal y otros compuestos químicos. Las naciones que poseen grandes industrias de teñido tienen la ventaja de que los procesos para la creación del tinte se pueden reconvertir fácilmente en otros. Alemania lo descubrió en la Primera Guerra Mundial, cuando se comprobó que las fábricas de tinte artificial podían modificarse fácilmente para fabricar explosivos, gas venenoso y otras herramientas bélicas.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BONUS_BLOODWOOD</Tag>
-		<English>Logwood Trees</English>
-		<French>Bois de campêche</French>
-		<German>
-			<Text>Blauholzbäume</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</German>
-		<Russian>Кампешевые деревья</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BONUS_BLOODWOOD_PEDIA</Tag>
-		<English>[BOLD]Strategy :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Logwood trees[COLOR_REVERT] produce a versatile dye, used for both textiles and paper. It can also be used as a pH indicator, yellow-reddish under acidic conditions and purple when alkaline. The bark and leaves are also used in various medical applications.</English>
-		<German>[BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Blauholzbäume[COLOR_REVERT] produzieren einen vielseitigen Farbstoff, der sowohl für Textilien als auch für Papier verwendet wird. Er kann auch als pH-Indikator verwendet werden, der unter sauren Bedingungen gelb-rot und unter alkalischen Bedingungen violett ist. Die Rinde und die Blätter werden auch für verschiedene medizinische Zwecke verwendet.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_IRON</Tag>
@@ -1644,39 +1593,6 @@
 		<German>[BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Schafe[COLOR_REVERT] gedeihen besonders gut auf hügeligem Gelände der [LINK=TERRAIN_PLAINS]Prärie[\LINK], des [LINK=TERRAIN_GRASS]Graslands[\LINK] oder der [LINK=TERRAIN_SAVANNAH]Savanne[\LINK]. Gelegentlich können besonders gute Zuchtweiden auch von [LINK=FEATURE_LIGHT_FOREST]Buschland[\LINK] überwachsen sein.[PARAGRAPH:2][BOLD]Hintergrund :[\BOLD][NEWLINE]Sehr früh in der Kolonisierung der Neuen Welt wurde Nutzvieh aus Europa eingeführt, darunter auch Schafe.[PARAGRAPH:1]Auch wenn nicht alle Gebiete wegen Krankheiten oder Wassermangel für die Schafhaltung geeignet waren, wurde die Wolle bald zu einem wichtigen Wirtschaftszweig, der viele [LINK=PROFESSION_SHEPHERD]Schäfer[\LINK] beschäftigte.[PARAGRAPH:1]Obwohl Schafe und die damit verbundene Produktion von Wolle und Kleidung nie so bedeutend wie die Rinderzucht waren, wurden sie dennoch ein wichtiger Industriezweig.[PARAGRAPH:1]Die Weidegebiete, in denen Viehzucht möglich war, waren bald sehr begehrt, was auch zu vielen Konflikten zwischen Rinderzüchtern und Schafzüchtern, wie auch mit den Ureinwohnern, führte.[PARAGRAPH:1]Riesige Schafranches entstanden.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_BONUS_SILVER</Tag>
-		<English>Silver deposits</English>
-		<French>
-			<Text>Veine d'argent</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Silbererz</Text>
-			<Gender>Neuter</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Argento</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Plata</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Месторождение серебра</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BONUS_SILVER_PEDIA</Tag>
-		<English>[BOLD]Strategy :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Silver deposits[COLOR_REVERT] can occur on any hill or mountain plots. [NEWLINE][NEWLINE][BOLD]Background :[\BOLD][NEWLINE]Silver has the highest electrical and thermal conductivity of any metal, and is found in mineral deposits and in free form.[PARAGRAPH:1]Slag heaps found in Asia Minor indicate that silver has been known about for a long time, and that it was being separated from lead as early as the fourth millennium BC.</English>
-		<French>[BOLD]Stratégie :[\BOLD][NEWLINE]L'argent est un élément chimique qui apparaît dans le tableau périodique sous le symbole "Ag" et le numéro atomique 47. C'est un métal de transition malléable, blanc et brillant. C'est aussi le métal qui a la plus forte conductivité électrique et thermique. On le trouve dans des gisements miniers ou sous forme libre.[PARAGRAPH:1]La découverte de terrils en Asie Mineure indique que l'argent est connu de longue date, et qu'on le sépare du plomb depuis 6 000 ans.</French>
-		<German>[BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Silbererz[COLOR_REVERT] kommt gelegentlich in besonders hohen Vorkommen auf [COLOR_HIGHLIGHT_TEXT]Hügeln[COLOR_REVERT] und [COLOR_HIGHLIGHT_TEXT]Bergen[COLOR_REVERT] vor.[PARAGRAPH:2][BOLD]Hintergrund :[\BOLD][NEWLINE]Silber ist ein chemisches Element des Periodensystems. Es hat das Symbol "Ag" und die Ordnungszahl 47. Das weiche und glänzende Metall hat die beste elektrische und thermale Leitfähigkeit aller Metalle. Silber kommt in Mineralverbindungen und in reiner Form vor.[PARAGRAPH:1]In Kleinasien entdeckte Aschereste lassen vermuten, dass Silber schon sehr lange bekannt ist und bereits im vierten Jahrtausend vor Christus von Blei getrennt wurde.</German>
-		<Italian>[BOLD]Strategia :[\BOLD][NEWLINE]L'argento è un elemento chimico della tavola periodica, dal simbolo "Ag" e dal numero atomico 47. L'argento è un metallo malleabile, bianco e lucente: è il miglior termo-elettro conduttore. Può essere trovato in giacimenti e in forma libera.[PARAGRAPH:1]Cumuli di scorie trovati in Asia Minore indicano che l'argento era conosciuto da tempo e che veniva separato dal piombo già nel quarto millennio a. C.</Italian>
-		<Spanish>[BOLD]Estrategia :[\BOLD][NEWLINE]La plata es un elemento químico de la tabla periódica que tiene el símbolo "Ag" y el número atómico 47. Un metal de transición blando, blanco y lustroso, tiene la conductividad térmica y eléctrica más alta de todos los metales, y se encuentra en depósitos minerales y en estado puro.[PARAGRAPH:1]Las acumulaciones de escoria encontradas en Asia Menor indican que la plata se conoce desde hace mucho tiempo, y que ya se separaba del plomo en el año 4000 a. C.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_BONUS_STONE</Tag>
 		<English>Limestone</English>
 		<French>
@@ -2170,27 +2086,6 @@
 		<English>[BOLD]Strategy :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Tomatoes[COLOR_REVERT] can be grown in temperate and warm regions, like plains, prairies and grasslands. Once considered poisonous, they are a versatile food and also provide a bit of health to the city when worked. [NEWLINE][NEWLINE][BOLD]Background :[\BOLD][NEWLINE]Tomatoes originated in western South America and Central America. The Nahuatl word tomatl gave rise to the Spanish word tomate, from which the English word tomato derived. Its domestication and use as a cultivated food may have originated with the Indigenous peoples of Mexico. Aztecs used tomatoes in their cooking at the time of the Spanish conquest of the Aztec Empire. The Spanish then brought the plant to Europe. From Spain the tomato was introduced to other parts of the European-colonized world during the 16th century.</English>
 		<French>[BOLD]Stratégie :[\BOLD][NEWLINE]Les [COLOR_HIGHLIGHT_TEXT]tomates[COLOR_REVERT]</French>
 		<German>[BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Tomaten[COLOR_REVERT]</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BONUS_PEANUT</Tag>
-		<English>Peanuts</English>
-		<French>
-			<Text>Arachides</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Erdnüsse</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</German>
-		<Russian>Арахис</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_BONUS_PEANUT_PEDIA</Tag>
-		<English>[BOLD]Strategy :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Peanuts[COLOR_REVERT] can be found in warm plain regions. They are an excellent cash crop, grown on many plantations. [NEWLINE][NEWLINE][BOLD]Background :[\BOLD][NEWLINE]The peanut is a legume grown mainly for its edible seeds. It's widely grown in the tropics and subtropics. Peanuts are valuable both as a grain legume and, due to their high oil content, as an oil crop. Cultivation was well-established in the Americas before the Spanish arrived. Conquistadors found the tlalcacahuatl (the plant's Nahuatl name) being offered for sale in the marketplace of Tenochtitlan.</English>
-		<French>[BOLD]Stratégie :[\BOLD][NEWLINE]Les [COLOR_HIGHLIGHT_TEXT]Arachides[COLOR_REVERT]</French>
-		<German>[BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Erdüsse[COLOR_REVERT]</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_BONUS_TUNDRA_BERRIES</Tag>

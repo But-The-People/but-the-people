@@ -4227,26 +4227,6 @@
 		<Russian>Милорд, наши колонии растут. Города производят все больше и больше товаров. Вы действительно благословенны! Только сегодня мы приветствуем еще одного обученного мастера.[NEWLINE][NEWLINE]Теперь у нас есть три опытных красильщика. Этой колонии суждено стать процветающим центром торговли цветными тканями.[NEWLINE][NEWLINE]</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_ACHIEVE_THIRD_MASTER_CONFECTIONER</Tag>
-		<English>Three master confectioners</English>
-		<French>Trois maitres confiseurs</French>
-		<German>Drei Meister Konditoren</German>
-		<Russian>Три мастера кондитера</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_ACHIEVE_THIRD_MASTER_CONFECTIONER_HEAD</Tag>
-		<English>Cakes and confectionery</English>
-		<French>Gâteaux et gâte-dents</French>
-		<German>Kuchen und Konfekt</German>
-		<Russian>Торты и кондитерские изделия</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_ACHIEVE_THIRD_MASTER_CONFECTIONER_TEXT</Tag>
-		<English>Milord, your colonies are growing! Now you can welcome yet another skilled craftsman. [NEWLINE][NEWLINE]You've succeeded in recruiting three talented master confectioners. Your colony is going to become the main trading center for chocolate and vanilla. Keep up the good work and your citizens will thank you for it.[NEWLINE][NEWLINE]</English>
-		<German>Mylord, Eure Kolonien wachsen und Eure Städte können immer mehr Waren herstellen. Ihr seid wahrlich gesegnet und könnt einen weiteren ausgebildeten Handwerker in den Kolonien begrüßen. [NEWLINE][NEWLINE]Ihr konntet nun bereits drei erfahrene Meister-Konditoren für die Kolonien anwerben. Eure Kolonie wird sich bald zu einem wahren Handelszentrum für Schokolade und Vanille entwickeln. Macht weiter so und Eure braven Bürger werden es Euch danken.[NEWLINE][NEWLINE]</German>
-		<Russian>Милорд, наши колонии растут! Сегодня к нам присоединился еще один искусный мастер.[NEWLINE][NEWLINE]Нам удалось нанять трех талантливых мастеров кондитеров. Наша колония станет главным центром торговли шоколадом и ванилью. Если мы продолжим в том же духе, граждане будут благодарны вам за это.[NEWLINE][NEWLINE]</Russian>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_THIRD_MASTER_FURNITURE_MAKER</Tag>
 		<English>Three master furniture makers</English>
 		<German>Drei Meister Möbelschreiner</German>

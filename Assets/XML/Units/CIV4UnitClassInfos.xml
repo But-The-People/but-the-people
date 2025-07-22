@@ -167,11 +167,6 @@
 			<DefaultUnit>UNIT_FISHERMAN</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
-			<Type>UNITCLASS_PEARLS_HUNTER</Type>
-			<Description>TXT_KEY_UNITCLASS_PEARLS_HUNTER</Description>
-			<DefaultUnit>UNIT_PEARLS_HUNTER</DefaultUnit>
-		</UnitClassInfo>
-		<UnitClassInfo>
 			<Type>UNITCLASS_BLACKSMITH</Type>
 			<Description>TXT_KEY_UNITCLASS_BLACKSMITH</Description>
 			<DefaultUnit>UNIT_BLACKSMITH</DefaultUnit>
