@@ -1,0 +1,59 @@
+permissions:
+  contents: write
+on:
+  workflow_call:
+    inputs:
+      debug:
+        required: false
+        type: number
+      build_type:
+        required: true
+        type: string
+jobs:
+  build:
+    runs-on: windows-2025
+    name: wtp
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          path: build
+      - name: getcompiler
+        uses: actions/checkout@v4
+        with:
+          path: Compiler
+          repository: We-the-People-civ4col-mod/Compiler
+      - name: cache
+        uses: actions/cache@v3
+        with:
+          key: wtpcache
+          path: |
+            perl
+      - name: build
+        env:
+          debug: "${{ inputs.debug }}"
+          build_type: "${{ inputs.build_type }}"
+        run: |
+          $ProgressPreference = 'SilentlyContinue'
+          if (Test-Path perl) {Write-Host "perl is cached"} else { Invoke-WebRequest "https://github.com/StrawberryPerl/Perl-Dist-Strawberry/releases/download/SP_54001_64bit_UCRT/strawberry-perl-5.40.0.1-64bit-portable.zip" -OutFile perl.zip ; Expand-Archive perl.zip perl }
+          $Env:PATH += ";$(Resolve-Path -Path perl\c\bin);$(Resolve-Path -Path perl\perl\bin);$(Resolve-Path -Path perl\perl\site\bin)"
+          cd "build\Project Files"
+          $env:NO_FASTDEP = "1"
+          $env:CI = "1"
+          $env:DEBUGBUILD = "${env:debug}"
+          $env:NONINTERACTIVE = "1"
+          & "./Get Compiler.bat"
+          perl compile.pl
+          cd ..
+          Add-Content -Path .gitattributes -Value '"Project Files" export-ignore'
+          Add-Content -Path .gitattributes -Value '.* export-ignore'
+          git archive --format=zip --prefix=Assets/ --add-file=Assets/CvGameCoreDLL.dll --prefix= --worktree-attributes -9 head --output ../ButThePeople-${env:GITHUB_REF_NAME}-${env:build_type}-${env:GITHUB_SHA}.zip
+          ls ..
+      - name: release
+        uses: "marvinpinto/action-automatic-releases@v1.2.1"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          files: "ButThePeople-${{ github.ref_name }}-${{ inputs.build_type }}-${{ github.sha }}.zip "
+          automatic_release_tag: "${{ github.ref_name }}-${{ inputs.build_type }}"
+          prerelease: true
+          title: "${{ inputs.build_type }} build of branch ${{ github.ref_name }}, revision ${{ github.sha }}"

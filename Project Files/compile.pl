@@ -50,7 +50,12 @@ sub menu
 	my $input;
 	if($ENV{NONINTERACTIVE})
 	{
-		$input = "6"
+		if($ENV{DEBUGBUILD})
+		{
+			$input = "1";
+		} else {
+			$input = "6";
+		}
 	}
 	else
 	{
@@ -108,7 +113,12 @@ sub createBatMenu
 	my $input;
 	if($ENV{NONINTERACTIVE})
 	{
-		$input = "6";
+		if($ENV{DEBUGBUILD})
+		{
+			$input = "1";
+		} else {
+			$input = "6";
+		}
 	}
 	else
 	{
