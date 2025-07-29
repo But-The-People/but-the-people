@@ -439,6 +439,10 @@
 		<Russian>[ICON_BULLET]Обороняющиеся юниты получают %D1%% к силе</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_FEATURE_DAMAGE</Tag>
+		<English>[ICON_BULLET]Units takes [COLOR_RED]%d1%% damage[COLOR_REVERT] each turn</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_IMPASSABLE</Tag>
 		<English>[ICON_BULLET]Impassable terrain</English>
 		<French>[ICON_BULLET]Terrain infranchissable</French>

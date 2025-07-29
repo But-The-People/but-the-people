@@ -2485,7 +2485,7 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 void createTestFontString(CvWStringBuffer& szString)
 {
 	szString.assign(L"!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[?]^_`abcdefghijklmnopqrstuvwxyz\n");
-	szString.append(L"{}~\\????G????T??????????S??F?O????????a??de??????µ???p??st?f???????????«»°???????©®?£??????");
+	szString.append(L"{}~\\????G????T??????????S??F?O????????a??de??????ï¿½???p??st?f???????????ï¿½ï¿½ï¿½???????ï¿½ï¿½?ï¿½??????");
 	szString.append(L"\n");
 	for (YieldTypes iI = FIRST_YIELD;iI<NUM_YIELD_TYPES;++iI)
 		szString.append(CvWString::format(L"%c", GC.getYieldInfo(iI).getChar()));
@@ -8091,7 +8091,7 @@ void CvGameTextMgr::setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeat
 	{
 		return;
 	}
-	CvFeatureInfo& feature = GC.getFeatureInfo(eFeature);
+	const CvFeatureInfo& feature = GC.getFeatureInfo(eFeature);
 
 	int aiYields[NUM_YIELD_TYPES];
 	if (!bCivilopediaText)
@@ -8122,6 +8122,12 @@ void CvGameTextMgr::setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeat
 	{
 		szBuffer.append(NEWLINE);
 		szBuffer.append(gDLL->getText("TXT_KEY_TERRAIN_IMPASSABLE"));
+	}
+
+	if (feature.getTurnDamage() != 0)
+	{
+		szBuffer.append(NEWLINE);
+		szBuffer.append(gDLL->getText("TXT_KEY_FEATURE_DAMAGE", feature.getTurnDamage()));
 	}
 
 	if (feature.isNorthMovementBonus() || feature.isSouthMovementBonus() || feature.isEastMovementBonus()  || feature.isWestMovementBonus() || feature.isNorthEastMovementBonus() || feature.isNorthWestMovementBonus() || feature.isSouthEastMovementBonus() || feature.isSouthWestMovementBonus())
