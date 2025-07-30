@@ -15523,10 +15523,27 @@ bool CvUnit::raidBuilding(CvCity* pCity)
 	// WTP, ray, refactored according to advice of Nightinggale
 	for (BuildingTypes eBuilding = FIRST_BUILDING; eBuilding < NUM_BUILDING_TYPES; eBuilding++)
 	{
-		CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
+		if (!pCity->isHasRealBuilding(eBuilding))
+		{
+			continue;
+		}
+
+		if (!pCity->isDominantSpecialBuilding(eBuilding))
+		{
+			// skip buildings if the city has a higher tier of the same building class
+			// removing a pier if the city has docks results in buggy behavior
+			continue;
+		}
+
+		const CvBuildingInfo& kBuilding = GC.getBuildingInfo(eBuilding);
 		// R&R, ray fix for Buildings with workers destoryed
 		// only buildings without workers possible will be destroyed
-		if (pCity->isHasRealBuilding(eBuilding) && kBuilding.getMaxWorkers() == 0)
+
+		// TODO: add code to handle losing buildings with workers without causing new issues.
+		//  - needs to handle what workers should do if their slots vanishes
+		//  - needs to prevent the last carpenter slot from vanishing because without hammers, no hammer producing building can be constructed
+		// For the time being, skipping buildings with worker slots avoids those issues
+		if (kBuilding.getMaxWorkers() == 0)
 		{
 			aBuildings.push_back(eBuilding);
 		}
@@ -15537,7 +15554,10 @@ bool CvUnit::raidBuilding(CvCity* pCity)
 		return false;
 	}
 
-	BuildingTypes eTargetBuilding = aBuildings[GC.getGameINLINE().getSorenRandNum(aBuildings.size(), "Choose raid building")];
+	BuildingTypes eTargetBuilding = aBuildings.size() == 1
+		? aBuildings[0] // skip using random if there is only one candidate
+		: aBuildings[GC.getGameINLINE().getSorenRandNum(aBuildings.size(), "Choose raid building")];
+
 	pCity->setHasRealBuilding(eTargetBuilding, false);
 
 	GET_TEAM(getTeam()).AI_changeDamages(pCity->getTeam(), -GC.getBuildingInfo(eTargetBuilding).getAssetValue());
