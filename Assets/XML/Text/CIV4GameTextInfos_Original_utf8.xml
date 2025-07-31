@@ -441,6 +441,7 @@
 	<TEXT>
 		<Tag>TXT_KEY_FEATURE_DAMAGE</Tag>
 		<English>[ICON_BULLET]Units takes [COLOR_RED]%d1%% damage[COLOR_REVERT] each turn</English>
+		<Russian>[ICON_BULLET]Каждый ход получает [COLOR_RED]урон[COLOR_REVERT] в [COLOR_RED]%d1%%[COLOR_REVERT] от общего здоровья</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_TERRAIN_IMPASSABLE</Tag>
