@@ -4077,7 +4077,7 @@ bool CvDLLButtonPopup::launchChooseCityPlotYieldPopup(CvPopup* pPopup, CvPopupIn
 bool CvDLLButtonPopup::launchDesyncLogCompletePopup(CvPopup* pPopup, CvPopupInfo &info)
 {
 	int iPlayer = GC.getGameINLINE().getActivePlayer();
-	gDLL->getInterfaceIFace()->popupSetBodyString(pPopup, gDLL->getText("TXT_KEY_DEBUG_DESYNC_LOG_COMPLETE", iPlayer, iPlayer, iPlayer));
+	gDLL->getInterfaceIFace()->popupSetBodyString(pPopup, gDLL->getText("TXT_KEY_DEBUG_DESYNC_LOG_COMPLETE", iPlayer));
 
 	gDLL->getInterfaceIFace()->popupLaunch(pPopup, true, POPUPSTATE_IMMEDIATE);
 
