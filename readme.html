@@ -17,53 +17,53 @@
 	}
 
 	.primaryHeader {
-    --_bg: hsl(0, 0%, 100%);
-    --_LogoColour: hsl(0, 0%, 7%);
-    --_navLinkColour: hsl(228, 81%, 46%);
+	--_bg: hsl(0, 0%, 100%);
+	--_LogoColour: hsl(0, 0%, 7%);
+	--_navLinkColour: hsl(228, 81%, 46%);
 
 	font-size: 3 rem;
 	font-weight: 400;
 
-    padding: 1rem;
-    background: var(--_bg);
+	padding: 1rem;
+	background: var(--_bg);
 
-    position: sticky;
-    top: 0;
+	position: sticky;
+	top: 0;
 }
 
 .primaryHeaderInner {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .primaryHeader a {
-    color: var(--_navLinkColour);
+	color: var(--_navLinkColour);
 }
 
 .primaryHeader a:hover,
 .primaryHeader a:focus {
-    opacity: 0.7;;
+	opacity: 0.7;;
 }
 
 .logo {
-    color: var(--_LogoColour);
+	color: var(--_LogoColour);
 	font-size: 1.5rem;
 	font-weight: 600;
 }
 
 .navList {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 
-    display: flex;
-    gap: clamp(0.5rem, 5vw, 2rem);
+	display: flex;
+	gap: clamp(0.5rem, 5vw, 2rem);
 }
 
 .section {
-    height: 100%;
-    padding-top: 60px; /* Adjust this value as needed */
-    margin-top: -60px;
+	height: 100%;
+	padding-top: 60px; /* Adjust this value as needed */
+	margin-top: -60px;
 }
 
 .mainHead {
@@ -71,7 +71,7 @@
 }
 
 
-    #aboutEnglish,
+	#aboutEnglish,
 	#teamEnglish,
 	#installEnglish,
 	#howtoinstallEnglish,
@@ -106,7 +106,11 @@
 	#aboutRussian,
 	#teamRussian,
 	#installRussian,
+	#howtoinstallRussian,
+	#protonRussian,
+	#graphicsRussian,
 	#multiplayerRussian,
+	#onlysteamgogRussian,
 	#installProblemRussian,
 	#wrongSteamRussian,
 	#moreSiblingsThanMemoryRussian,
@@ -115,10 +119,10 @@
 	#pythonFailedRussian,
 	#gameCoreNotLoadedRussian,
 	#whatRussian {
-        padding-top: 60px; /* Adjust this value as needed */
-        margin-top: -60px;
-        height: 100%;
-    } 
+		padding-top: 60px; /* Adjust this value as needed */
+		margin-top: -60px;
+		height: 100%;
+	} 
 
 </style>
 
@@ -329,7 +333,7 @@
 					<li>If you don't like editing the ini file, then you can delete it to reset all settings back to default</li>
 				</ul>
 			</section>
-		
+            
             <section id="graphicsEnglish">
 				<h4>Setting up graphics for a modern computer</h4>
 				<p>The civilization 4 game engine came out in 2005. This means that while it does work on modern monitor resolutions, it isn't perfect and may require a bit of custom setup for optimal graphics.</p>
@@ -570,8 +574,14 @@
 			<ul>
 				<li><a href="#aboutRussian">О моде We the People</a></li>
 				<li><a href="#teamRussian">Команда WtP</a></li>
-				<li><a href="#installRussian">Как установить мод</a></li>
-				<li><a href="#multiplayerRussian">Настройка многопользовательской игры</a></li>
+				<li><a href="#installRussian">Установка мода</a></li>
+					<ul>
+					<li><a href="#howtoinstallRussian">Как установить мод?</a></li>
+					<li><a href="#protonRussian">Настройка Proton (только для Linux)</a></li>
+					<li><a href="#graphicsRussian">Настройка графики для мощных компьюеров</a></li>
+					<li><a href="#multiplayerRussian">Настройка многопользовательской игры</a></li>
+					<li><a href="#onlysteamgogRussian">Почему только Steam или GOG?</a></li>
+				</ul>
 				<li><a href="#installProblemRussian">Распространенные проблемы при работе мода</a></li>
 				<li><a href="#whatRussian">Что это за мод?</a></li>
 			</ul>
@@ -656,23 +666,40 @@
 		<p>Firaxis и 2Kgames</p>
 		<hr>
 		<section id="installRussian">
-			<h2><strong>Как установить мод?</strong></h2>
-			<p>Сначала установите Colonization. Помимо установки, в зависимости от вашей версии, могут потребоваться дополнительные действия.</p>
-			<p><ul>
-				<li>Стим: переключиться в настройках игры на "Original release". <a href="#wrongSteamRussian">Информация, как это сделать</a>.</li>
-				<li>GOG: ничего не нужно</li>
-				<li>DVD: ничего не нужно</li>
-				<li>CD: установить <a href="https://forums.civfanatics.com/resources/civilization-iv-colonization-patch-v1-01f.11915/">официальный патч 1.01f</a>.</li>
-			</ul></p>
-			<p>Если вы хотите играть на Linux, вам стоит прочитать <a href="https://forums.civfanatics.com/threads/has-anyone-gotten-we-the-people-working-on-steam-deck.681177/#post-16419389">этот пост на форуме о настройках Proton</a>.</p>
-		<p>Установите «We The People», как и любой другой мод. Сначала скачайте архив по ссылке для скачивания соответствующего релиза (например, на GitHub). Затем скопируйте полученный архив в папку «Mods», расположенную в папке игры. Например, C:\Games\Civilization IV Colonization\Mods\. И уже теперь распакуйте архив (обычно, мы пользуемся для этого бесплатной программой 7zip), выбрав пункт «Распаковать в (название архива)». После успешной распаковки архив можно удалить.</p>
-		<p><strong>ВАЖНО!</strong><br>Не устанавливайте мод в папку «Мои документы». Это приводит к различным ошибкам.</p>
-		<p>Запустите файл setup.bat (он расположен в той же папке, что и readme, который вы читаете, и иногда может отображаться как просто setup). При этом в автоматическом режиме будут скопированы некоторые библиотеки, про которые некоторые пользователи забывали и после жаловались на ошибки при запуске мода. Также будет проведено небольшое тестирование на соответствие требованиям расположения мода.</p>
+			<section id="howtoinstallRussian">
+				<h2>Как установить мод?</h2>
+				<p>Сначала установите Colonization. Помимо установки, в зависимости от вашей версии, могут потребоваться дополнительные действия.</p>
+				<p><ul>
+					<li>Стим: переключиться в настройках игры на "Original release". <a href="#wrongSteamRussian">Информация, как это сделать</a>.</li>
+					<li>GOG: ничего не нужно</li>
+					<li>DVD: ничего не нужно</li>
+					<li>CD: установить <a href="https://forums.civfanatics.com/resources/civilization-iv-colonization-patch-v1-01f.11915/">официальный патч 1.01f</a>.</li>
+				</ul></p>
+			</section>
+			<section id="protonRussian">
+				<p>Если вы хотите играть на Linux, вам стоит прочитать <a href="https://forums.civfanatics.com/threads/has-anyone-gotten-we-the-people-working-on-steam-deck.681177/#post-16419389">этот пост на форуме о настройках Proton</a>.</p>
+			</section>
+			<hr>
+			<p>Установите «We The People», как и любой другой мод. Сначала скачайте архив по ссылке для скачивания соответствующего релиза (например, на GitHub). Затем скопируйте полученный архив в папку «Mods», расположенную в папке игры. Например, C:\Games\Civilization IV Colonization\Mods\. И уже теперь распакуйте архив (обычно, мы пользуемся для этого бесплатной программой 7zip), выбрав пункт «Распаковать в (название архива)». После успешной распаковки архив можно удалить.</p>
+			<p><strong>ВАЖНО!</strong><br>Не устанавливайте мод в папку «Мои документы». Это приводит к различным ошибкам.</p>
+			<p>Запустите файл setup.bat (он расположен в той же папке, что и readme, который вы читаете, и иногда может отображаться как просто setup). При этом в автоматическом режиме будут скопированы некоторые библиотеки, про которые некоторые пользователи забывали и после жаловались на ошибки при запуске мода. Также будет проведено небольшое тестирование на соответствие требованиям расположения мода.</p>
 			<p>Для того, чтобы сразу запускать мод, в файле CivilizationIV.ini (располагается в C:\Users\имя пользователя\Documents\my games\Civilization IV Colonization), в строке Mod надо прописать путь к папке с модификацией (например, Mod = Mods\WeThePeople-4.1). Этот способ одинаково подходит и для игроков со Steam-версией, и для тех, кто устанавливал игру каким-либо другим способом.</p>
 			<p>Изначально мод запустится на английском языке. Для активации перевода на русский язык нужно зайти в меню <strong>ADVANCED -> OPTIONS</strong> и в строке <strong>Language</strong> выбрать <strong>Russian</strong>. После этого игра должна быть перезапущена. Это нужно для того, чтобы на билбордах городов отображался русский текст.</p>
-			<p><strong>ВАЖНО!</strong><br> Не пытайтесь использовать игру, переведенную компанией 1С или кем-то еще, для игры на русском языке. Перевод, существующий в моде, несовместим с переводом Vanilla других компаний. Но если вы планируете играть на английском языке, то проблем быть не должно. Хотя это не точно =)</p>
+			<section id="onlysteamgogRussian">
+				<p><strong>ВАЖНО!</strong><br> Не пытайтесь использовать игру, переведенную компанией 1С или кем-то еще, для игры на русском языке. Перевод, существующий в моде, несовместим с переводом стандартной игры от других компаний. Но если вы планируете играть на английском языке, то проблем быть не должно. Хотя это не точно =)</p>
+				<p>Используйте только игры представленные в Steam или GOG - они 100% совместимы с модом.</p>
+			</section>
 			<p><strong>Примечание</strong></p>
 			<p>Время от времени проверяйте <a href="https://forums.civfanatics.com/forums/civ4col-we-the-people.591/">форум</a> на наличие новых версий. Мы также поддерживаем постоянное и продуктивное обсуждение в <a href="https://forums.civfanatics.com/threads/we-the-people-discord-chat.665974/">Discord</a>. Помимо этих двух платформ, мы также поддерживаем внутриигровую Колопедию, насколько это возможно (и когда мы не забываем её обновлять), чтобы информировать игроков об изменениях, вносимых модом. Обратите особое внимание на раздел «Концепции» в Колопедии!</p>
+		</section>
+		<hr>
+		<section id="graphicsRussian">
+				<h4>Настройка графики для современного компьютера</h4>
+				<p>Игровой движок Civilization 4 вышел в 2005 году. Это означает, что, хотя он и работает на современных разрешениях мониторов, он не идеален и может потребовать небольшой индивидуальной настройки для оптимальной графики.</p>
+				<p>В первую очередь рекомендуется включить все графические настройки, так как даже 10-летней интегрированной в процессор видеокарты более чем достаточно для этой игры.</p>
+				<p>Часть игры будет масштабироваться в соответствии с разрешением, в то время как другие будут иметь фиксированный размер пикселей, что означает, что некоторые элементы (особенно всплывающие окна) будут крошечными на 4K-дисплеях. Поэтому для игры рекомендуется разрешение 1920x1080, а если ваш монитор поддерживает большее разрешение, используйте апскейлер, например, Radeon Super Resolution. Это позволит увеличить разрешение даже для тех частей, которые сама игра не может масштабировать. Кроме того, 3D-модели недостаточно детализированы для 4K, поэтому апскейлинг обеспечивает более высокую детализацию, чем изначальное 4K-разрешение.</p>
+				<p>Игра была разработана для дисплеев с соотношением сторон 4:3. Некоторые экраны выглядят некорректно на более широких мониторах, особенно на таких широких, как 22:9. Мы работаем над этим, но это потребует полной переделки каждого игрового экрана. Игра полностью играбельна на сверхшироком мониторе, просто она не везде соответствует нашим стандартам качественной графики.</p>
+				<p>В глобусе мини-карты есть ошибка, из-за которой не все участки карты можно кликнуть, если в игре установлено разрешение 3840x2160. Ошибка заложена в коде, который недоступен для модераторов, поэтому мы не можем её исправить. Единственное решение — не использовать такое высокое разрешение в игре.</p>
 		</section>
 		<hr>
 		<section id="multiplayerRussian">
@@ -681,16 +708,16 @@
 			<p>Команда разработчиков стремилась максимально сократить или полностью устранить рассинхронизацию, но писать код, безопасный для работы в сети и работающий на движке Civ4, сложнее, чем код, который будет корректно работать в одиночной игре. Рассинхронизация — это когда «состояние» вашей игры не совпадает с «состоянием» игры другого игрока, что может привести к внутриигровому сбою. Из-за особенностей многопользовательского режима Civ4 писать надёжный код довольно сложно. Команда делает все возможное, но не гарантирует, что вы не столкнётесь с вполне понятными и раздражающими рассинхронизациями в какой-то момент. Если это произойдет, мы будем признательны за сообщения об ошибках в <a href="https://forums.civfanatics.com/threads/we-the-people-discord-chat.665974/">Discord</a> или на форуме <a href="https://forums.civfanatics.com/forums/civ4col-we-the-people.591/">Civfanatics</a>.</p>
 		</section>
 		<hr>
-		<h3 id="installProblemRussian">Распространенные проблемы при работе мода</h3>
-		<h4 id="wrongSteamRussian">Steam должен использовать бета-версию</h4>
+			<h3 id="installProblemRussian">Распространенные проблемы при работе мода</h3>
+			<h4 id="wrongSteamRussian">Steam должен использовать бета-версию</h4>
 			<p>Если у вас Steam-версия, нужно в свойствах игры перейти на закладку Бета-версии и в верхней строчке выбрать <strong>original_release_unsupported</strong>. Игнорируйте сообщение «не поддерживается». Это не имеет абсолютно никакого значения. Пост на <a href="https://forums.civfanatics.com/threads/important-for-all-steam-users-follow-these-instructions-to-play-wtp-without-bugs.674675/">форуме</a> с картинкой.</p>
 		<hr>
-		<section id="moreSiblingsThanMemoryEnglish">
+		<section id="moreSiblingsThanMemoryRussian">
 				<h3>More siblings than memory allocated error</h3>
 				<p>Это происходит из-за того, что файл setup.bat не запущен в папке мода. We The People требует копирования некоторых файлов в основной каталог Colonization, иначе он не запустится.</p>
 		</section>
 		<hr>
-		<section id="savegameIssuesEnglish">
+		<section id="savegameIssuesRussian">
 				<h3>Проблемы с сохранёнными играми</h3>
 				<p>Сохранённые игры работают только до тех пор, пока имя папки мода совпадает с именем папки мода в сохранённой игре. Это можно исправить, следуя инструкциям к <a href="https://we-the-people-civ4col-mod.github.io/DeveloperNotes/SavegameModRenamingTool/index.html">инструменту для переименования модов сохранённых игр</a>.</p>
 				<p>Мы стараемся не допускать поломки сохранений между релизами, но иногда это неизбежно, чтобы сделать мод более эффективным с точки зрения использования памяти или исправить механику.</p>
@@ -701,12 +728,12 @@
 		<p>Это устаревшая проблема, когда люди использовали 32-битные версии Windows. Система могла обрабатывать только 4 ГБ оперативной памяти, а для защиты Windows от сбоев из-за нехватки памяти приложениям разрешалось использовать только 2 ГБ. Поскольку для правильной работы "We The People" требуется 64-разрядная версия Windows, это больше не проблема. Однако версия на диске по-прежнему имеет эту старую настройку.</p>
 		<p>К счастью, это довольно легко исправить. Просто скачайте <a href="https://ntcore.com/?page_id=371">этот инструмент исправления 4 ГБ</a> и используйте его для исправления Colonization.exe. Неизвестно, нужно ли исправлять Colonization_PitBoss.exe, но это не помешает.</p>
 		<hr>
-		<section id="pythonFailedEnglish">
+		<section id="pythonFailedRussian">
 				<h3>Ошибка инициализации Python</h3>
 				<p>Эта ошибка возникает, когда в INI-файле не включены исключения Python. Это означает, что фактическая ошибка скрыта. Поскольку CvGameCoreDLL.dll принудительно отображает ошибки Python, можно предположить, что файл не загружен. Ниже описано, как решить эту проблему.</p>
 		</section>
 		<hr>
-		<section id="gameCoreNotLoadedEnglish">
+		<section id="gameCoreNotLoadedRussian">
 				<h3>Не найден или не загружен CvGameCoreDLL.dll</h3>
 				<p>Либо этот файл отсутствует, хотя должен находиться в папке WeThePeople\Assets\CvGameCoreDLL.dll, либо вы более продвинутый пользователь, которому, скорее всего, нужно <a href="https://github.com/We-the-People-civ4col-mod/Mod/wiki/How-to-play-the-development-version">скомпилировать этот файл для версии игры разработчиков</a>. Каждый релиз, распространяемый среди игроков, должен содержать файл CvGameCoreDLL.dll. Возможно, он был удалён кем-то или мы забыли его добавить (да, мы тоже люди) и исправим эту проблему сразу после релиза.</p>
 		</section>
