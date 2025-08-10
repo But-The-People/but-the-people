@@ -8230,6 +8230,7 @@ bool CvGoodyInfo::read(CvXMLLoadUtility* pXML)
 	pXML->GetChildXmlValByName(&m_iCityGoodyWeight, "iCityGoodyWeight");
 	pXML->GetChildXmlValByName(&m_bWaterGoody, "bWaterGoody"); // R&R, ray, Goodies on Water
 	pXML->GetChildXmlValByName(&m_bUnique, "bUnique"); // // R&R, ray, Goody Enhancement
+	pXML->GetChildXmlValByName(&m_iMinTurnValid, "iMinTurnValid");
 	// WTP, ray, Unit spawning Goodies and Goody Huts - START
 	pXML->GetChildXmlValByName(&m_iRandNumHostilesSpawned, "iRandNumHostilesSpawned");
 	pXML->GetChildXmlValByName(&m_bSpawnHostileUnitsAsXML, "bSpawnHostileUnitsAsXML");
