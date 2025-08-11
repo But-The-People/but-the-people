@@ -2546,7 +2546,7 @@ void CvTeam::offerFoundingFather(FatherTypes eFather)
 //Further modified later in Jan 2024 to avoid OOS problems.
 void CvTeam::testFoundingFather()
 {
-	std::vector<FatherTypes> vFathersToCourt(NUM_FATHER_TYPES);
+	std::vector<FatherTypes> vFathersToCourt;
 	FatherTypes eFather = FIRST_FATHER;	//Reused in second loop.
 
 	//First loop, iterate through all FFs to see who will get the opportunity to hire them THIS turn.
