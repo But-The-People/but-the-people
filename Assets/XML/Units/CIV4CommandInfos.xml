@@ -589,7 +589,7 @@
 			<bCtrlDownAlt>0</bCtrlDownAlt>
 			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 			<bVisible>1</bVisible>
-			<Button>Art/interface/actions/pathfinder_on.dds</Button>
+			<Button>Art/interface/actions/pathfinder_off.dds</Button>
 		</CommandInfo>
 		<CommandInfo>
 			<Type>COMMAND_DISALLOW_DIRECT_PATH</Type>
@@ -606,7 +606,7 @@
 			<bCtrlDownAlt>0</bCtrlDownAlt>
 			<iHotKeyPriorityAlt>0</iHotKeyPriorityAlt>
 			<bVisible>1</bVisible>
-			<Button>Art/interface/actions/pathfinder_off.dds</Button>
+			<Button>Art/interface/actions/pathfinder_on.dds</Button>
 		</CommandInfo>
 	</CommandInfos>
 </Civ4CommandInfos>
