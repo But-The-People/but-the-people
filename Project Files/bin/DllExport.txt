@@ -1306,7 +1306,7 @@ CvUnit.h
 	DllExport const CvWString getName(uint uiForm = 0) const;
 	DllExport int getSubUnitsAlive() const;
 	DllExport bool isEnemy(TeamTypes eTeam, const CvPlot* pPlot = NULL) const;
-	DllExport bool isOnMap() const;
+	DllExport bool isOnMap() const
 	DllExport const CvArtInfoUnit* getArtInfo(int i) const;
 	DllExport char const* getButton() const;
 CvXMLLoadUtility.h

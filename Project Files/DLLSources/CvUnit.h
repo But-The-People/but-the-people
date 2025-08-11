@@ -730,7 +730,22 @@ public:
 	void setHomeCity(CvCity* pNewValue);
 	CvCity* getHomeCity() const;
 
-	DllExport bool isOnMap() const;
+	DllExport bool isOnMap() const
+	{
+		return isOnMapInternal(); 
+	}
+	
+	bool isOnMapInternal() const
+	{
+		if (getUnitTravelState() != NO_UNIT_TRAVEL_STATE) 
+			return false;
+		if ((getX_INLINE() == INVALID_PLOT_COORD) || (getY_INLINE() == INVALID_PLOT_COORD))
+			return false;
+		if (isTempUnit())
+			return false;
+		return true;
+	}
+
 	const CvArtInfoUnit* getArtInfo(int i) const;
 	DllExport char const* getButton() const;
 	char const* getFullLengthIcon() const;

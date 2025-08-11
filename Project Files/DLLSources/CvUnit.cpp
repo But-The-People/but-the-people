@@ -435,7 +435,7 @@ void CvUnit::convert(CvUnit* pUnit, bool bKill)
 
 	if (bAlive)
 	{
-		if (pUnit->IsSelected() && isOnMap() && getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
+		if (pUnit->IsSelected() && isOnMapInternal() && getOwnerINLINE() == GC.getGameINLINE().getActivePlayer())
 		{
 			gDLL->getInterfaceIFace()->insertIntoSelectionList(this, true, false);
 		}
@@ -805,16 +805,17 @@ void CvUnit::doTurn()
 	// R&R, Robert Surcouf, Damage on Storm plots, Start
 	// R&R, bugfix: we only damage ships on Sea and not the transported units, ray, START
 	// WTP, ray, we also add logic to damage Units on Land by Land Storms like e.g. Blizzard and Sandstorm
-	if (getDomainType() == DOMAIN_SEA || (getDomainType() == DOMAIN_LAND && !plot()->isWater()))
+	// Off map units are immune from turn damage
+	if (isOnMapInternal() && (getDomainType() == DOMAIN_SEA || (getDomainType() == DOMAIN_LAND && !plot()->isWater())))
 	{
-		FeatureTypes eFeature = plot()->getFeatureType();
+		const FeatureTypes eFeature = plot()->getFeatureType();
 		if (NO_FEATURE != eFeature)
 		{
-			int iPotentialDamageFromFeaturePercent = GC.getFeatureInfo(eFeature).getTurnDamage();
+			const int iPotentialDamageFromFeaturePercent = GC.getFeatureInfo(eFeature).getTurnDamage();
 			if (0 != iPotentialDamageFromFeaturePercent)
 			{
 				// R&R, bugfix: we never destroy a unit from feature damage, ray, START
-				int iPotentialDamage = (maxHitPoints() * iPotentialDamageFromFeaturePercent) / 100;
+				const int iPotentialDamage = (maxHitPoints() * iPotentialDamageFromFeaturePercent) / 100;
 				if (currHitPoints() > iPotentialDamage)
 				{
 					//changeDamage(GC.getFeatureInfo(eFeature).getTurnDamage(), NO_PLAYER); Version Beyond The Sword
@@ -2424,11 +2425,11 @@ bool CvUnit::isBetterDefenderThan(const CvUnit* pDefender, const CvUnit* pAttack
 
 	if (iOurDefense == iTheirDefense)
 	{
-		if (isOnMap() && !pDefender->isOnMap())
+		if (isOnMapInternal() && !pDefender->isOnMapInternal())
 		{
 			++iOurDefense;
 		}
-		else if (!isOnMap() && pDefender->isOnMap())
+		else if (!isOnMapInternal() && pDefender->isOnMapInternal())
 		{
 			++iTheirDefense;
 		}
@@ -8966,7 +8967,7 @@ bool CvUnit::canMove() const
 		return false;
 	}
 
-	if (!isOnMap())
+	if (!isOnMapInternal())
 	{
 		return false;
 	}
@@ -9809,7 +9810,7 @@ bool CvUnit::isFortifyable() const
 		return false;
 	}
 
-	if (!isOnMap())
+	if (!isOnMapInternal())
 	{
 		return false;
 	}
@@ -9920,7 +9921,7 @@ bool CvUnit::isRanged() const
 
 bool CvUnit::alwaysInvisible() const
 {
-	if (!isOnMap())
+	if (!isOnMapInternal())
 	{
 		return true;
 	}
@@ -9969,7 +9970,7 @@ bool CvUnit::isNeverInvisible() const
 
 bool CvUnit::isInvisible(TeamTypes eTeam, bool bDebug, bool bCheckCargo) const
 {
-	if (!isOnMap())
+	if (!isOnMapInternal())
 	{
 		return true;
 	}
@@ -10031,7 +10032,7 @@ int CvUnit::getEvasionProbability(const CvUnit& kAttacker) const
 
 CvCity* CvUnit::getEvasionCity() const
 {
-	if (!isOnMap())
+	if (!isOnMapInternal())
 	{
 		return NULL;
 	}
@@ -10678,7 +10679,7 @@ void CvUnit::joinGroup(CvSelectionGroup* pSelectionGroup, bool bRemoveSelected, 
 				}
 			}
 
-			if ((pNewSelectionGroup != NULL) && pNewSelectionGroup->addUnit(this, !isOnMap()))
+			if ((pNewSelectionGroup != NULL) && pNewSelectionGroup->addUnit(this, !isOnMapInternal()))
 			{
 				m_iGroupID = pNewSelectionGroup->getID();
 			}
@@ -11343,7 +11344,7 @@ void CvUnit::setDamage(int iNewValue, CvUnit* pAttacker, bool bNotifyEntity)
 
 	FAssertMsg(currHitPoints() >= 0, "currHitPoints() is expected to be non-negative (invalid Index)");
 
-	if ((iOldValue != getDamage()) && isOnMap())
+	if ((iOldValue != getDamage()) && isOnMapInternal())
 	{
 		if (GC.getGameINLINE().isFinalInitialized() && bNotifyEntity)
 		{
@@ -12130,7 +12131,7 @@ void CvUnit::setFacingDirection(DirectionTypes eFacingDirection)
 			m_eFacingDirection = eFacingDirection;
 		}
 
-		if (isOnMap())
+		if (isOnMapInternal())
 		{
 			//update formation
 			NotifyEntity(NO_MISSION);
@@ -12189,7 +12190,7 @@ bool CvUnit::setProfession(ProfessionTypes eProfession, bool bForce, bool bRemov
 				AI_setOldProfession(getProfession());
 			}
 		}
-		if (isOnMap() && eProfession != NO_PROFESSION && GC.getProfessionInfo(eProfession).isCitizen())
+		if (isOnMapInternal() && eProfession != NO_PROFESSION && GC.getProfessionInfo(eProfession).isCitizen())
 		{
 			CvCity* pCity = plot()->getPlotCity();
 			if (pCity != NULL)
@@ -12429,7 +12430,7 @@ bool CvUnit::canHaveProfession(ProfessionTypes eProfession, bool bBumpOther, con
 			}
 
 			//do not allow leaving empty city
-			if (!kNewProfession.isCitizen() && !isOnMap())
+			if (!kNewProfession.isCitizen() && !isOnMapInternal())
 			{
 				// R&R, ray, Abandon City, START
 				if (pCity->getPopulation() <= 1)
@@ -12481,7 +12482,7 @@ bool CvUnit::canHaveProfession(ProfessionTypes eProfession, bool bBumpOther, con
 				// R&R, ray, Abandon City,  END
 			}
 
-			if (kNewProfession.isCitizen() && isOnMap())
+			if (kNewProfession.isCitizen() && isOnMapInternal())
 			{
 				if (!canJoinCity(pPlot))
 				{
@@ -12497,7 +12498,7 @@ bool CvUnit::canHaveProfession(ProfessionTypes eProfession, bool bBumpOther, con
 			return false;
 		}
 
-		if (isOnMap())
+		if (isOnMapInternal())
 		{
 			//TAC Whaling, ray
 			if (!getUnitInfo().isGatherBoat() && !gDLL->GetWorldBuilderMode())
@@ -14912,7 +14913,7 @@ void CvUnit::setUnitTravelState(UnitTravelStates eState, bool bShowEuropeScreen)
 			}
 		}
 
-		if (!isOnMap())
+		if (!isOnMapInternal())
 		{
 			if (IsSelected())
 			{
@@ -15136,27 +15137,6 @@ CvCity* CvUnit::getHomeCity() const
 {
 	return ::getCity(m_homeCity);
 }
-
-bool CvUnit::isOnMap() const
-{
-	if (getUnitTravelState() != NO_UNIT_TRAVEL_STATE)
-	{
-		return false;
-	}
-
-	if((getX_INLINE() == INVALID_PLOT_COORD) || (getY_INLINE() == INVALID_PLOT_COORD))
-	{
-		return false;
-	}
-
-	if (isTempUnit())
-	{
-		return false;
-	}
-
-	return true;
-}
-
 
 void CvUnit::doUnitTravelTimer()
 {
