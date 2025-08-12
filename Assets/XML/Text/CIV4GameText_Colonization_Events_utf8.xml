@@ -6293,13 +6293,13 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_PROTECTION_2</Tag>
-		<English>I do see the problem, but I beieve arming a few workers to form a [COLOR_HIGHLIGHT_TEXT]militia[COLOR_REVERT] should be enough.</English>
+		<English>I do see the problem, but I believe arming a few workers to form a [COLOR_HIGHLIGHT_TEXT]militia[COLOR_REVERT] should be enough.</English>
 		<German>Ich sehe das Problem, aber es reicht vollkommen aus, wenn wir ein paar Arbeiter bewaffnen und vorübergehend eine [COLOR_HIGHLIGHT_TEXT]Miliz[COLOR_REVERT] bilden lassen.</German>
 		<Russian>Да, это проблема, но вооружить нескольких рабочих, сформировав временное [COLOR_HIGHLIGHT_TEXT]ополчение[COLOR_REVERT], будет вполне достаточно.</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TREASURE_PROTECTION_3</Tag>
-		<English>The wagons will have to get there  on their own. I can't spare men or money for that.</English>
+		<English>The wagons will have to get there on their own. I can't spare men or money for that.</English>
 		<German>Ach was, die Wagen müssen sich so durchschlagen. Dafür kann ich keinen Mann und kein Goldstück entbehren.</German>
 		<Russian>Как не прискорбно, но сейчас у нас нет ни людей, ни золота. Перевозчиками придётся полагаться только на свои силы.</Russian>
 	</TEXT>
@@ -6430,4 +6430,5 @@
 		<Russian>[ICON_BULLET] В течение [COLOR_UNIT_TEXT]10[COLOR_REVERT] ходов отправьте отряд [COLOR_UNIT_TEXT]Ветеран драгун[COLOR_REVERT] или [COLOR_UNIT_TEXT]Ветеран кавалерии[COLOR_REVERT] в колонию для охраны. Это сделает колонистов счастливыми.</Russian>
 	</TEXT>
 </Civ4GameText>
+
 
