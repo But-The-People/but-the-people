@@ -1399,7 +1399,7 @@ void CyXMLEditor::setActiveFile(int iIndex)
 					}
 					else
 					{
-						m_Info->FirstChildElement("root")->InsertFirstChild(m_pFileInfoRoot);
+						prevElement->Parent()->InsertFirstChild(m_pFileInfoRoot);
 					}
 					break;
 				}
