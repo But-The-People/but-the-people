@@ -417,6 +417,37 @@
 		<iEffectProbability/>
 		<iAdvancedStartRemoveCost/>
 	</FeatureInfo>
+	<GoodyInfo>
+		<Type/>
+		<Description/>
+		<Sound/>
+		<AnnounceText/>
+		<ChiefText/>
+		<iGold/>
+		<iGoldRand1/>
+		<iGoldRand2/>
+		<iImmigration/>
+		<iMapOffset/>
+		<iMapRange/>
+		<iMapProb/>
+		<iExperience/>
+		<iHealing/>
+		<iDamagePrereq/>
+		<bBad/>
+		<bWar/>
+		<UnitClass class="Type" type="UnitClassInfo" none="true"/>
+		<TeachUnitClass class="Type" type="UnitClassInfo" none="true"/>
+		<iCityGoodyWeight/>
+		<bWaterGoody/>
+		<bUnique/>
+		<iMinTurnValid/>
+		<iRandNumHostilesSpawned/>
+		<bSpawnHostileUnitsAsXML/>
+		<bSpawnHostileAnimals/>
+		<bSpawnHostileNatives/>
+		<bSpawnHostileCriminals/>
+		<GoodyWeights/>
+	</GoodyInfo>
 	<ImprovementArtInfo>
 		<Type/>
 		<bExtraAnimations/>
