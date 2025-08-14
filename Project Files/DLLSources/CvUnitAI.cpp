@@ -81,15 +81,13 @@ void CvUnitAI::AI_reset()
 }
 
 // AI_update returns true when we should abort the loop and wait until next slice
+// Note that the PF is not reset here anymore since K-Mod PF will do that as needed in KmodPathFinder::SetSettings
 bool CvUnitAI::AI_update()
 {
 	PROFILE_FUNC();
 
 	//FAssertMsg(getUnitTravelState() != NO_UNIT_TRAVEL_STATE || canMove(), "canMove is expected to be true");
 	FAssertMsg(isGroupHead(), "isGroupHead is expected to be true"); // XXX is this a good idea???
-
-	//getGroup()->resetPath();
-	CvSelectionGroup::path_finder.Reset();
 
 	// allow python to handle it
 	if (GC.getUSE_AI_UNIT_UPDATE_CALLBACK()) // K-Mod. block unused python callbacks
