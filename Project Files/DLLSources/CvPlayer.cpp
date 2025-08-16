@@ -14658,7 +14658,7 @@ void CvPlayer::applyEvent(EventTypes eEvent, int iEventTriggeredId, bool bUpdate
 
 void CvPlayer::applyEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData, bool bUpdateTrigger)
 {
-	OOS_LOG("Trigger event", getID() + (1000 * iEventTriggeredId));
+	OOS_LOG("Trigger event", getID() + (1000 * kTriggeredData.getID()));
 	FAssert(eEvent != NO_EVENT);
 
 	int iGrowthPercent = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
