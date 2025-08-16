@@ -1048,10 +1048,8 @@
 			<PythonCanDoCity/>
 			<PythonCanDoUnit/>
 			<PythonCallback/>
-			<iMinTurn>50</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
-			<iMinTurn>50</iMinTurn>
 			<Type>EVENTTRIGGER_FERRY_STATION_ROBBERS</Type>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENTTRIGGER_FERRY_STATION_ROBBERS</Text>
