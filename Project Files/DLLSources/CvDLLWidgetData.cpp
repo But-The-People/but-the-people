@@ -20,6 +20,7 @@
 #include "FProfiler.h"
 
 #include "CvPythonCaller.h"
+#include "DesyncMonitor.h"
 
 
 class WidgetData
@@ -226,6 +227,8 @@ void CvDLLWidgetData::freeInstance()
 
 void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, const CvWidgetDataStruct &widgetDataStruct)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	WidgetData* data = WidgetData::getNew(widgetDataStruct);
 	if (data != NULL)
 	{
@@ -624,6 +627,8 @@ void CvDLLWidgetData::parseHelp(CvWStringBuffer &szBuffer, const CvWidgetDataStr
 // Protected Functions...
 bool CvDLLWidgetData::executeAction(const CvWidgetDataStruct &widgetDataStruct)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	WidgetData* data = WidgetData::getNew(widgetDataStruct);
 	if (data != NULL)
 	{
@@ -901,6 +906,8 @@ bool CvDLLWidgetData::executeAction(const CvWidgetDataStruct &widgetDataStruct)
 //	right clicking action
 bool CvDLLWidgetData::executeAltAction(const CvWidgetDataStruct &widgetDataStruct)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	WidgetData* data = WidgetData::getNew(widgetDataStruct);
 	if (data != NULL)
 	{
@@ -946,6 +953,8 @@ bool CvDLLWidgetData::executeAltAction(const CvWidgetDataStruct &widgetDataStruc
 
 bool CvDLLWidgetData::executeDropOn(const CvWidgetDataStruct& destinationWidgetData, const CvWidgetDataStruct& sourceWidgetData)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	WidgetData* data = WidgetData::getNew(sourceWidgetData);
 	if (data != NULL)
 	{
@@ -1016,6 +1025,8 @@ bool CvDLLWidgetData::executeDropOn(const CvWidgetDataStruct& destinationWidgetD
 //	right clicking action
 bool CvDLLWidgetData::executeDoubleClick(const CvWidgetDataStruct& widgetDataStruct)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	WidgetData* data = WidgetData::getNew(widgetDataStruct);
 	if (data != NULL)
 	{
@@ -1076,6 +1087,8 @@ bool CvDLLWidgetData::executeDoubleClick(const CvWidgetDataStruct& widgetDataStr
 
 bool CvDLLWidgetData::isLink(const CvWidgetDataStruct &widgetDataStruct) const
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	WidgetData* data = WidgetData::getNew(widgetDataStruct);
 	if (data != NULL)
 	{

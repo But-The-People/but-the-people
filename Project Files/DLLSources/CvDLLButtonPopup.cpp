@@ -23,6 +23,7 @@
 #include "CvDLLEngineIFaceBase.h"
 #include "CvDLLEventReporterIFaceBase.h"
 #include "CvPythonCaller.h"
+#include "DesyncMonitor.h"
 
 // Public Functions...
 
@@ -426,6 +427,8 @@ CvDLLButtonPopup::~CvDLLButtonPopup()
 
 void CvDLLButtonPopup::OnAltExecute(CvPopup& popup, const PopupReturn& popupReturn, CvPopupInfo &info)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PopupButtonContainerBase* container = PopupButtonContainerBase::getNew(info.getButtonPopupType());
 	if (container != NULL)
 	{
@@ -454,6 +457,8 @@ void CvDLLButtonPopup::OnAltExecute(CvPopup& popup, const PopupReturn& popupRetu
 
 void CvDLLButtonPopup::OnEscape(CvPopup& popup, CvPopupInfo &info)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PopupButtonContainerBase* container = PopupButtonContainerBase::getNew(info.getButtonPopupType());
 	if (container != NULL)
 	{
@@ -495,6 +500,8 @@ void CvDLLButtonPopup::OnEscape(CvPopup& popup, CvPopupInfo &info)
 
 void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, CvPopupInfo &info)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PopupButtonContainerBase* container = PopupButtonContainerBase::getNew(info.getButtonPopupType());
 	if (container != NULL)
 	{
@@ -1478,6 +1485,8 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 
 void CvDLLButtonPopup::OnFocus(CvPopup* pPopup, CvPopupInfo &info)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	if (gDLL->getInterfaceIFace()->popupIsDying(pPopup))
 	{
 		return;
@@ -1574,6 +1583,8 @@ void CvDLLButtonPopup::OnFocus(CvPopup* pPopup, CvPopupInfo &info)
 // returns false if popup is not launched
 bool CvDLLButtonPopup::launchButtonPopup(CvPopup* pPopup, CvPopupInfo &info)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	bool bLaunched = false;
 
 	PopupButtonContainerBase* container = PopupButtonContainerBase::getNew(info.getButtonPopupType());

@@ -517,6 +517,9 @@
     <ClCompile Include="DLLSources\StaticVariables.cpp">
       <Filter>CV\CPP</Filter>
     </ClCompile>
+    <ClCompile Include="DLLSources\DesyncMonitor.cpp">
+      <Filter>CV\CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DLLSources\CvArea.h">
@@ -995,6 +998,9 @@
     </ClInclude>
     <ClInclude Include="DLLSources\Info\InfoHelpers.h">
       <Filter>Classes\Info\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DLLSources\DesyncMonitor.h">
+      <Filter>CV\Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

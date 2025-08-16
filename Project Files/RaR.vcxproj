@@ -101,6 +101,7 @@
     <ClCompile Include="DLLSources\CyXMLEditor.cpp" />
     <ClCompile Include="DLLSources\CyXMLEditorInterface1.cpp" />
     <ClCompile Include="DLLSources\CyXMLObject.cpp" />
+    <ClCompile Include="DLLSources\DesyncMonitor.cpp" />
     <ClCompile Include="DLLSources\EXE_interface.cpp" />
     <ClCompile Include="DLLSources\Info\EventTriggerInfo.cpp" />
     <ClCompile Include="DLLSources\KmodPathFinder.cpp" />
@@ -266,6 +267,7 @@
     <ClInclude Include="DLLSources\CyXMLAttributes.h" />
     <ClInclude Include="DLLSources\CyXMLEditor.h" />
     <ClInclude Include="DLLSources\CyXMLObject.h" />
+    <ClInclude Include="DLLSources\DesyncMonitor.h" />
     <ClInclude Include="DLLSources\EnumMapSpecializationBool.h" />
     <ClInclude Include="DLLSources\EnumMapCore.h" />
     <ClInclude Include="DLLSources\EnumMapSpecializationInt.h" />

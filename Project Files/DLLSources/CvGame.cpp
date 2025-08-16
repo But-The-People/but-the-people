@@ -23,6 +23,7 @@
 #include "CvReplayInfo.h"
 #include "CyPlot.h"
 #include "CvGameTextMgr.h"
+#include "DesyncMonitor.h"
 
 // interface uses
 #include "CvDLLInterfaceIFaceBase.h"
@@ -6395,6 +6396,7 @@ CvDeal* CvGame::nextDeal(int *pIterIdx, bool bRev)
 
 CvRandom& CvGame::getMapRand()
 {
+	FAssertMsg(CxDesyncMonitor::isSynced(), "CvGame::getMapRand called from async code execution");
 	FAssertMsg(GC.isMainThread(), "Using non-const random while multi threaded (causes OOS)");
 	return m_mapRand;
 }
@@ -6407,6 +6409,7 @@ const CvRandom& CvGame::getMapRand() const
 
 int CvGame::getMapRandNum(int iNum, const char* pszLog)
 {
+	FAssertMsg(CxDesyncMonitor::isSynced(), "CvGame::getMapRandNum called from async code execution");
 	FAssertMsg(GC.isMainThread(), "Using non-const random while multi threaded (causes OOS)");
 	return m_mapRand.get(iNum, pszLog);
 }
@@ -6414,6 +6417,7 @@ int CvGame::getMapRandNum(int iNum, const char* pszLog)
 
 CvRandom& CvGame::getSorenRand()
 {
+	FAssertMsg(CxDesyncMonitor::isSynced(), "CvGame::getSorenRand called from async code execution");
 	FAssertMsg(GC.isMainThread(), "Using non-const random while multi threaded (causes OOS)");
 	return m_sorenRand;
 }
@@ -6425,6 +6429,7 @@ const CvRandom& CvGame::getSorenRand() const
 
 int CvGame::getSorenRandNum(int iNum, const char* pszLog)
 {
+	FAssertMsg(CxDesyncMonitor::isSynced(), "CvGame::getSorenRandNum called from async code execution");
 	return m_sorenRand.get(iNum, pszLog);
 }
 
