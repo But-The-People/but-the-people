@@ -2468,7 +2468,7 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 	// for now I additionally also hardcode eBuild (safest)
 	// or can I safely use NO_Route from eRoute
 	// BuildTypes BuildTypesToCompare = (BuildTypes) BUILD_REMOVE_ROAD;
-	if (eRoute == NO_ROUTE && eBuild == 3)
+	if (eRoute == NO_ROUTE && eBuild == BUILD_REMOVE_ROAD)
 	{
 		// never allow this to AI
 		if (!GET_PLAYER(ePlayer).isHuman())
