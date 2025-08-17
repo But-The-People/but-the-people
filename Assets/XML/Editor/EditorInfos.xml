@@ -345,6 +345,72 @@
 		<iGenericParameter3/>
 		<iGenericParameter4/>
 	</EventInfo>
+	<EventTriggerInfo>
+		<Type/>
+		<WorldNewsTexts/>
+		<TriggerTexts/>
+		<bTutorial/>
+		<bSinglePlayer/>
+		<CivCategoriesRequired/>
+		<EventArt/>
+		<iPercentGamesActive/>
+		<iWeight/>
+		<bProbabilityUnitMultiply/>
+		<bProbabilityBuildingMultiply/>
+		<eCivic class="Type" type="CivicInfo" none="true"/>
+		<iMinTreasury/>
+		<iMinPopulation/>
+		<iMaxPopulation/>
+		<iMinMapLandmass/>
+		<iMinOurLandmass/>
+		<iMaxOurLandmass/>
+		<eMinDifficulty class="Type" type="HandicapInfo" none="true"/>
+		<UnitTriggerConditions/>
+		<BuildingsRequired/>
+		<iNumBuildings/>
+		<iNumBuildingsGlobal/>
+		<RequirementLists>
+			<RequiredUnitList>
+				<RequiredUnit/>
+			</RequiredUnitList>
+		</RequirementLists>
+		<iNumPlotsRequired/>
+		<bOwnPlot/>
+		<ePlotType/>
+		<PlotRequirements>
+			<PlotTypes>
+				<ePlotType/>
+			</PlotTypes>
+			<eCanBuildImprovement class="Type" type="ImprovementInfo" help="The randomly selected plot has to be able to build this improvement" none="true"/>
+			<bHasNoImprovement class="Bool" help="Random plot has to not have an improvement"/>
+		</PlotRequirements>
+		<FeaturesRequired/>
+		<TerrainsRequired/>
+		<ImprovementsRequired/>
+		<RoutesRequired/>
+		<Events/>
+		<PrereqEvents/>
+		<bPrereqEventPlot/>
+		<bRecurring/>
+		<bTeam/>
+		<bGlobal/>
+		<bPickPlayer/>
+		<bOtherPlayerWar/>
+		<bOtherPlayerAI/>
+		<bOtherPlayerNative/>
+		<bOtherPlayerPlayable/>
+		<iOtherPlayerShareBorders/>
+		<bPickCity/>
+		<bPickOtherPlayerCity/>
+		<bShowPlot/>
+		<bFrontPopup/>
+		<iCityFoodWeight/>
+		<PythonCanDo/>
+		<PythonCanDoCity/>
+		<PythonCanDoUnit/>
+		<PythonCallback/>
+		<iMinTurn/>
+	</EventTriggerInfo>
 	<FeatureArtInfo class="Dir" child="Button">
 		<Type/>
 		<bAnimated/>

@@ -4410,6 +4410,14 @@ class CvEventTriggerInfo : public CvInfoBase
 	friend class CvXMLLoadUtility;
 public:
 
+	struct PlotTriggers
+	{
+		PlotTriggers();
+
+		ImprovementTypes CanBuildImprovement;
+		bool HasNoImprovement;
+	};
+
 	struct UnitTriggers
 	{
 		UnitTriggers();
@@ -4427,6 +4435,7 @@ public:
 	DllExport CvEventTriggerInfo();
 	virtual ~CvEventTriggerInfo();
 
+	const PlotTriggers& plotTriggers() const;
 	const UnitTriggers& unitTriggers() const;
 
 	int getPercentGamesActive() const;
@@ -4535,6 +4544,7 @@ private:
 
 	InfoHelperVector<EventTriggerUnitCount> m_vector_UnitCount;
 
+	PlotTriggers m_PlotTrigger;
 	UnitTriggers m_UnitTrigger;
 
 	// Start EmperorFool: Events with Images

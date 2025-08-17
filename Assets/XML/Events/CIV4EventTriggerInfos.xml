@@ -34695,6 +34695,10 @@
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
 			<ePlotType>NONE</ePlotType>
+			<PlotRequirements>
+				<eCanBuildImprovement>IMPROVEMENT_MONASTERY</eCanBuildImprovement>
+				<bHasNoImprovement>1</bHasNoImprovement>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_GRASS</TerrainType>

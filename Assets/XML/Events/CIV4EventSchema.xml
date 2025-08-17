@@ -108,8 +108,12 @@
 	<ElementType name="iNumBuildingsGlobal" content="textOnly" dt:type="int"/>
 	<ElementType name="iNumPlotsRequired" content="textOnly" dt:type="int"/>
 	<ElementType name="ePlotType" content="textOnly"/>
+	<ElementType name="eCanBuildImprovement" content="textOnly"/>
+	<ElementType name="bHasNoImprovement" content="textOnly" dt:type="boolean"/>
 	<ElementType name="PlotRequirements" content="eltOnly">
 		<element type="PlotTypes" minOccurs="0"/>
+		<element type="eCanBuildImprovement" minOccurs="0"/>
+		<element type="bHasNoImprovement" minOccurs="0"/>
 	</ElementType>
 	<ElementType name="PlotTypes" content="eltOnly">
 		<element type="ePlotType" maxOccurs="*"/>

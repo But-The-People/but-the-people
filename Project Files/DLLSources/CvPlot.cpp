@@ -9490,6 +9490,10 @@ bool CvPlot::canTrigger(EventTriggerTypes eTrigger, PlayerTypes ePlayer) const
 {
 	FAssert(::isPlotEventTrigger(eTrigger));
 
+	FAssert(ePlayer != NO_PLAYER); // this shouldn't happen, but just to be safe
+
+	const TeamTypes eTeam = ePlayer != NO_PLAYER ? GET_PLAYER(ePlayer).getTeam() : NO_TEAM;
+
 	CvEventTriggerInfo& kTrigger = GC.getEventTriggerInfo(eTrigger);
 
 	if (kTrigger.isOwnPlot() && getOwnerINLINE() != ePlayer)
@@ -9503,6 +9507,19 @@ bool CvPlot::canTrigger(EventTriggerTypes eTrigger, PlayerTypes ePlayer) const
 		{
 			return false;
 		}
+	}
+
+	if (kTrigger.plotTriggers().CanBuildImprovement != NO_IMPROVEMENT)
+	{
+		if (!canHaveImprovement(kTrigger.plotTriggers().CanBuildImprovement, eTeam))
+		{
+			return false;
+		}
+	}
+
+	if (kTrigger.plotTriggers().HasNoImprovement && getImprovementType() != NO_IMPROVEMENT)
+	{
+		return false;
 	}
 
 	const InfoArray<FeatureTypes>& Features = kTrigger.getFeaturesRequired();
