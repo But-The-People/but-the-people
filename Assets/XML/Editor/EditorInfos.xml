@@ -365,8 +365,19 @@
 		<iMinOurLandmass/>
 		<iMaxOurLandmass/>
 		<eMinDifficulty class="Type" type="HandicapInfo" none="true"/>
-		<UnitTriggerConditions/>
-		<BuildingsRequired/>
+		<UnitTriggerConditions>
+			<UnitsRequired/>
+			<iNumUnits/>
+			<iNumUnitsGlobal/>
+			<bTrackUnit/>
+			<bUnitsOnPlot/>
+			<iUnitDamagedWeight/>
+			<iUnitDistanceWeight/>
+			<iUnitExperienceWeight/>
+		</UnitTriggerConditions>
+		<BuildingsRequired class="Dir" child="BuildingClass">
+			<BuildingClass class="Type" type="BuildingClassInfo" none="false"/>
+		</BuildingsRequired>
 		<iNumBuildings/>
 		<iNumBuildingsGlobal/>
 		<RequirementLists>
@@ -376,20 +387,32 @@
 		</RequirementLists>
 		<iNumPlotsRequired/>
 		<bOwnPlot/>
-		<ePlotType/>
+		<ePlotType class="Type" type="PlotType" none="true"/>
 		<PlotRequirements>
-			<PlotTypes>
-				<ePlotType/>
+			<PlotTypes class="Dir">
+				<ePlotType class="Type" type="PlotType" none="false"/>
 			</PlotTypes>
 			<eCanBuildImprovement class="Type" type="ImprovementInfo" help="The randomly selected plot has to be able to build this improvement" none="true"/>
 			<bHasNoImprovement class="Bool" help="Random plot has to not have an improvement"/>
 		</PlotRequirements>
-		<FeaturesRequired/>
-		<TerrainsRequired/>
-		<ImprovementsRequired/>
-		<RoutesRequired/>
-		<Events/>
-		<PrereqEvents/>
+		<FeaturesRequired class="Dir" child="FeatureType">
+			<FeatureType class="Type" type="FeatureInfo" none="false"/>
+		</FeaturesRequired>
+		<TerrainsRequired class="Dir" child="TerrainType">
+			<TerrainType class="Type" type="TerrainInfo" none="false"/>
+		</TerrainsRequired>
+		<ImprovementsRequired class="Dir" child="ImprovementType">
+			<ImprovementType class="Type" type="ImprovementInfo" none="false"/>
+		</ImprovementsRequired>
+		<RoutesRequired class="Dir" child="RouteType">
+			<RouteType class="Type" type="RouteInfo" none="false"/>
+		</RoutesRequired>
+		<Events>
+			<Event class="Type" type="EventInfo" none="false"/>
+		</Events>
+		<PrereqEvents>
+			<Event class="Type" type="EventInfo" none="false"/>
+		</PrereqEvents>
 		<bPrereqEventPlot/>
 		<bRecurring/>
 		<bTeam/>
