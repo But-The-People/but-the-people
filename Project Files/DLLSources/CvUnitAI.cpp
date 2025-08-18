@@ -52,10 +52,6 @@ void CvUnitAI::AI_init(int iBirthmark)
 {
 	AI_reset();
 
-	//--------------------------------
-	// Init other game data
-	AI_setBirthmark(GC.getGameINLINE().getSorenRandNum(10000, "AI Unit Birthmark"));
-
 	// Preserve old AI behavioir that allows dangerous paths until
 	// we ensure that it can work correctly with both settings
 	if (!isHuman())
