@@ -892,6 +892,10 @@ class CvDiplomacy:
 		if DebugLogging:
 			print "CvDiplomacy.handleUserResponse: %s" %(eComment,)
 
+		# tell the DLL that we are in async mode (for OOS detection)
+		# this will automatically declare leaving async mode when the instance goes out of scope
+		DesyncDetectorInstance = gc.startDesyncMonitor()
+
 		diploScreen = CyDiplomacy()
 
 		# If we accept peace
