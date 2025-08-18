@@ -34700,9 +34700,7 @@
 				<bHasNoImprovement>1</bHasNoImprovement>
 			</PlotRequirements>
 			<FeaturesRequired/>
-			<TerrainsRequired>
-				<TerrainType>TERRAIN_GRASS</TerrainType>
-			</TerrainsRequired>
+			<TerrainsRequired/>
 			<ImprovementsRequired/>
 			<RoutesRequired/>
 			<Events>
