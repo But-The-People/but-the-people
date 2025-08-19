@@ -3543,23 +3543,15 @@ CvPlot* CvSelectionGroup::getPathEndTurnPlot() const
 	return path_finder.GetPathEndTurnPlot();
 }
 
-//This number is fairly large
-//1 plot = 100
-int CvSelectionGroup::getPathCost() const
+int CvSelectionGroup::getPathCost() const 
 {
-	FAStarNode* pNode;
-	//pNode = getPathEndTurnPlot();
+	FAStarNode* const pNode = path_finder.GetEndNode();
 
-	pNode = path_finder.GetEndNode();
-
-	if (pNode != NULL)
-	{
-		int iCost = pNode->m_iTotalCost;
-		iCost *= 100;
-		iCost /= (1000 * GLOBAL_DEFINE_MOVE_DENOMINATOR);
-
-		return iCost;
+	if (pNode != NULL) {
+		FAssertMsg(pNode->m_iTotalCost >= 0, "Path cost cannot be negative");
+		return pNode->m_iTotalCost / (10 * GLOBAL_DEFINE_MOVE_DENOMINATOR);
 	}
+	FAssertMsg(false, "getPathCost() called on null node");
 	return MAX_INT;
 }
 
