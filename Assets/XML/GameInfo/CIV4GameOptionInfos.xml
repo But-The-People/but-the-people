@@ -19,14 +19,14 @@
 			<Description>TXT_KEY_GAMEOPTION_TWO_PLOT_CITY_RADIUS</Description>
 			<Help>TXT_KEY_GAMEOPTION_TWO_PLOT_CITY_RADIUS_HELP</Help>
 			<bDefault>1</bDefault>
-			<bVisible>0</bVisible>
+			<bVisible>1</bVisible>
 			<bScenarioOnly>1</bScenarioOnly>
 		</GameOptionInfo>
 		<GameOptionInfo>
 			<Type>GAMEOPTION_NEW_MOVEMENT_COST</Type>
 			<Description>TXT_KEY_GAMEOPTION_NEW_MOVEMENT_COST</Description>
 			<Help>TXT_KEY_GAMEOPTION_NEW_MOVEMENT_COST_HELP</Help>
-			<bDefault>0</bDefault>
+			<bDefault>1</bDefault>
 			<bVisible>1</bVisible>
 		</GameOptionInfo>
 		<GameOptionInfo>
@@ -138,7 +138,7 @@
 			<Type>GAMEOPTION_NO_MORE_VARIABLES_HIDDEN</Type>
 			<Description>TXT_KEY_GAMEOPTION_NO_MORE_VARIABLES_HIDDEN</Description>
 			<Help>TXT_KEY_GAMEOPTION_NO_MORE_VARIABLES_HIDDEN_HELP</Help>
-			<bDefault>0</bDefault>
+			<bDefault>1</bDefault>
 			<bVisible>1</bVisible>
 		</GameOptionInfo>
 		<GameOptionInfo>
@@ -187,7 +187,7 @@
 			<Type>GAMEOPTION_UNREST_TURNS_DEPEND_ON_CITY_SIZE</Type>
 			<Description>TXT_KEY_GAMEOPTION_UNREST_TURNS_DEPEND_ON_CITY_SIZE</Description>
 			<Help>TXT_KEY_GAMEOPTION_UNREST_TURNS_DEPEND_ON_CITY_SIZE_HELP</Help>
-			<bDefault>0</bDefault>
+			<bDefault>1</bDefault>
 			<bVisible>1</bVisible>
 		</GameOptionInfo>
 		<GameOptionInfo>
