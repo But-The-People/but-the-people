@@ -5,6 +5,28 @@
 <!-- -->
 <!-- Game Text Infos -->
 <Civ4GameText xmlns="http://www.firaxis.com">
+	<!-- CHICKEN -->
+	<TEXT>
+		<Tag>TXT_KEY_YIELD_CHICKEN</Tag>
+		<English>Chickens</English>
+		<French>Poules</French>
+		<German>
+			<Text>Hühner</Text>
+			<Gender>Neuter</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Galline</Italian>
+		<Spanish>Gallinas</Spanish>
+		<Russian>Куры</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_YIELD_CHICKEN_PEDIA</Tag>
+		<English>[H1]CHICKENS[\H1][NEWLINE][BOLD]Strategy :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Chickens[COLOR_REVERT] can be raised on [LINK=TERRAIN_MARSH]marshes[\LINK] or [LINK=TERRAIN_SHRUBLAND]shrublands[\LINK] terrain. To make a colonist raise chickens, assign him to the [LINK=PROFESSION_CHICKEN_BREEDER]chicken breeder[\LINK] profession.[NEWLINE][NEWLINE]Chicken production is highest on plots bearing the [LINK=BONUS_CHICKEN]chicken[\LINK] bonus, and can be increased by building [LINK=IMPROVEMENT_PASTURE]pastures[\LINK] on chicken-producing plots and employing [LINK=UNIT_BREEDER]expert poultry breeders[\LINK]. These experts can be trained in Native villages or hired in Europe.[NEWLINE][NEWLINE][BOLD]Background :[\BOLD][NEWLINE]Free-range poultry farming allows chickens to roam during the day, although they are usually confined in coops at night to protect them from predators. They're also kept indoors when the weather is bad.</English>
+		<French>[H1]POULES[\H1][NEWLINE][BOLD]Stratégie :[\BOLD][NEWLINE]Les [COLOR_HIGHLIGHT_TEXT]poulets[COLOR_REVERT] peuvent être élevés sur des terrains plats sur [LINK=TERRAIN_MARSH]marais[\LINK] ou [LINK=TERRAIN_SHRUBLAND]zones arbustives[\LINK]. Pour qu'un colon élève des poulets, affectez-lui la profession de [LINK=PROFESSION_CHICKEN_BREEDER]éleveur de poulets[\LINK].[NEWLINE][NEWLINE]La production de poulets est la plus élevée sur les parcelles portant le bonus [LINK=BONUS_CHICKEN]poulet[\LINK], et peut être augmentée en construisant des [LINK=IMPROVEMENT_PASTURE]pâturages[\LINK] sur les parcelles produisant des poulets et en employant des [LINK=UNIT_BREEDER]experts en élevage de volailles[\LINK]. Ces experts peuvent être formés dans les villages autochtones ou embauchés en Europe.[NEWLINE][NEWLINE][BOLD]Contexte :[\BOLD][NEWLINE]L'élevage de volailles en liberté permet aux poulets de se déplacer pendant la journée, bien qu'ils soient généralement confinés dans des cages la nuit pour les protéger des prédateurs.</French>
+		<German>[H1]Hühner[\H1][NEWLINE][BOLD]Strategie :[\BOLD][NEWLINE][COLOR_HIGHLIGHT_TEXT]Hühner[COLOR_REVERT] können im Flachland in [LINK=TERRAIN_MARSH]Sümpfen[\LINK] oder im [LINK=TERRAIN_SHRUBLAND]Buschland[\LINK] gehalten werden. Um einen Kolonisten Hühner züchten zu lassen, weisen Sie ihm den Beruf [LINK=PROFESSION_CHICKEN_BREEDER]Hühnerzüchter[\LINK] zu.[NEWLINE][NEWLINE]Die Hühnerproduktion ist auf Grundstücken mit dem [LINK=BONUS_CHICKEN]Hühner[\LINK]-Bonus am höchsten und kann durch den Bau von [LINK=IMPROVEMENT_PASTURE]Weiden[\LINK] auf hühnerproduzierenden Grundstücken und die Beschäftigung von [LINK=UNIT_BREEDER]Experten für Hühnerzucht[\LINK] gesteigert werden. Diese Experten können in den Dörfern der Eingeborenen ausgebildet oder in Europa angeworben werden.[NEWLINE][NEWLINE][BOLD]Hintergrund :[\BOLD][NEWLINE]In der Freilandhaltung können sich die Hühner tagsüber frei bewegen, während sie nachts zum Schutz vor Raubtieren normalerweise in Ställen eingesperrt sind.</German>
+		<Italian>[H1]GALLINE[\H1][NEWLINE][BOLD]Strategia :[\BOLD][NEWLINE]I [COLOR_HIGHLIGHT_TEXT]polli[COLOR_REVERT] possono essere allevati in pianura su terreni [LINK=TERRAIN_MARSH]paludosi[\LINK] o [LINK=TERRAIN_SHRUBLAND]arbustivi[\LINK]. Per far sì che un colono allevi polli, assegnategli la professione di [LINK=PROFESSION_CHICKEN_BREEDER]allevatore di polli[\LINK].[NEWLINE][NEWLINE]La produzione di polli è massima nelle parcelle con il bonus [LINK=BONUS_CHICKEN]pollo[\LINK] e può essere aumentata costruendo [LINK=IMPROVEMENT_PASTURE]pascoli[\LINK] nelle parcelle che producono polli e impiegando [LINK=UNIT_BREEDER]esperti allevatori di pollame[\LINK]. Questi esperti possono essere formati nei villaggi nativi o assunti in Europa.[NEWLINE][NEWLINE][BOLD]Sfondo :[\BOLD][NEWLINE]L'allevamento all'aperto consente alle galline di razzolare durante il giorno, anche se di notte sono generalmente confinate in pollai per proteggerle dai predatori.</Italian>
+		<Spanish>[H1]GALLINAS[\H1][NEWLINE][BOLD]Estrategia :[\BOLD][NEWLINE]Los [COLOR_HIGHLIGHT_TEXT]pollos[COLOR_REVERT] se pueden criar en llanuras sobre [LINK=TERRAIN_MARSH]marismas[\LINK] o [LINK=TERRAIN_SHRUBLAND]matorrales[\LINK]. Para que un colono críe pollos, asígnale la profesión [LINK=PROFESSION_CHICKEN_BREEDER]criador de pollos[\LINK].[NEWLINE][NEWLINE]La producción de pollos es mayor en las parcelas que tienen la bonificación [LINK=BONUS_CHICKEN]pollo[\LINK], y puede aumentarse construyendo [LINK=IMPROVEMENT_PASTURE]pastos[\LINK] en las parcelas productoras de pollos y empleando a [LINK=UNIT_BREEDER]expertos criadores de pollos[\LINK]. Estos expertos pueden formarse en los pueblos nativos o contratarse en Europa.[NEWLINE][NEWLINE][BOLD]Antecedentes :[\BOLD][NEWLINE]La avicultura al aire libre permite a las gallinas deambular durante el día, aunque suelen estar confinadas en gallineros por la noche para protegerlas de los depredadores.</Spanish>
+	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CHICKEN_PEDIA</Tag>
 		<English>Can be left empty</English>
@@ -12,6 +34,46 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CHICKEN_STRATEGY</Tag>
 		<English>Can be left empty</English>
+	</TEXT>
+		<!-- DOWNS -->
+	<TEXT>
+		<Tag>TXT_KEY_YIELD_DOWNS</Tag>
+		<English>Down</English>
+		<French>Duvet</French>
+		<German>
+			<Text>Daunen</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Giù</Italian>
+		<Spanish>Abajo</Spanish>
+		<Russian>Пух</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITCLASS_DOWNS</Tag>
+		<English>Down</English>
+		<French>Duvet</French>
+		<German>
+			<Text>Daunen</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Giù</Italian>
+		<Spanish>Abajo</Spanish>
+		<Russian>Пух</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_DOWNS</Tag>
+		<English>Down</English>
+		<French>Duvet</French>
+		<German>
+			<Text>Daunen</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Giù</Italian>
+		<Spanish>Abajo</Spanish>
+		<Russian>Пух</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_YIELD_DOWNS_PEDIA</Tag>
@@ -29,6 +91,33 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_DOWNS_STRATEGY</Tag>
 		<English>Can be left empty</English>
+	</TEXT>
+	<!-- PADDED_FURNITURE -->
+	<TEXT>
+		<Tag>TXT_KEY_YIELD_PADDED_FURNITURE</Tag>
+		<English>Upholstered Furniture</English>
+		<French>Meubles capitonnés</French>
+		<German>
+			<Text>Polstermöbel</Text>
+			<Gender>Neuter</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Mobili imbottiti</Italian>
+		<Spanish>Muebles acolchados</Spanish>
+		<Russian>Мягкая мебель</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITCLASS_PADDED_FURNITURE</Tag>
+		<English>Upholstered Furniture</English>
+		<French>Meubles capitonnés</French>
+		<German>
+			<Text>Polstermöbel</Text>
+			<Gender>Neuter</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Mobili imbottiti</Italian>
+		<Spanish>Muebles acolchados</Spanish>
+		<Russian>Мягкая мебель</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PADDED_FURNITURE</Tag>
@@ -58,6 +147,33 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PADDED_FURNITURE_STRATEGY</Tag>
 		<English>Can be left empty</English>
+	</TEXT>
+	<!-- MAPLE_SIRUP -->
+	<TEXT>
+		<Tag>TXT_KEY_YIELD_MAPLE_SIRUP</Tag>
+		<English>Maple Syrup</English>
+		<French>Sirop d'érable</French>
+		<German>
+			<Text>Ahornsirup</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Sciroppo d'acero</Italian>
+		<Spanish>Sirope de arce</Spanish>
+		<Russian>Кленовый сироп</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNITCLASS_MAPLE_SIRUP</Tag>
+		<English>Maple Syrup</English>
+		<French>Sirop d'érable</French>
+		<German>
+			<Text>Ahornsirup</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Sciroppo d'acero</Italian>
+		<Spanish>Sirope de arce</Spanish>
+		<Russian>Кленовый сироп</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_MAPLE_SIRUP</Tag>
@@ -514,6 +630,20 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FIELD_WORKER_TOOLS_STRATEGY</Tag>
 		<English>Can be left empty</English>
+	</TEXT>
+	<!-- PADDED_LEATHER_COATS -->
+	<TEXT>
+		<Tag>TXT_KEY_YIELD_PADDED_LEATHER_COATS</Tag>
+		<English>Lined Leather Coats</English>
+		<French>Manteaux en cuir matelassés</French>
+		<German>
+			<Text>Gefütterte Ledermäntel</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Cappotti di pelle foderati</Italian>
+		<Spanish>Abrigos de cuero forrados</Spanish>
+		<Russian>Утепленные куртки</Russian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNITCLASS_PADDED_LEATHER_COATS</Tag>
