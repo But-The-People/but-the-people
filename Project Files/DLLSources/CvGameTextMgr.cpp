@@ -30,6 +30,7 @@
 #include "FProfiler.h"
 #include "CyArgsList.h"
 #include "CvDLLPythonIFaceBase.h"
+#include "DesyncMonitor.h"
 
 int shortenID(int iId)
 {
@@ -308,6 +309,8 @@ void CvGameTextMgr::setNetStats(CvWString& szString, PlayerTypes ePlayer)
 
 void CvGameTextMgr::setMinimizePopupHelp(CvWString& szString, const CvPopupInfo & info)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	switch (info.getButtonPopupType())
 	{
 	case BUTTONPOPUP_CHOOSEPRODUCTION:
@@ -377,6 +380,8 @@ void CvGameTextMgr::setMinimizePopupHelp(CvWString& szString, const CvPopupInfo 
 
 void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, bool bOneLine, bool bShort)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	CvWString szTempBuffer;
@@ -1248,6 +1253,8 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szString, const CvUnit* pUnit, 
 
 void CvGameTextMgr::setUnitPromotionHelp(CvWStringBuffer &szString, const CvUnit* pUnit)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	std::vector<PromotionTypes> aPromotions;
 	for (int iPromotion = 0; iPromotion < GC.getNumPromotionInfos(); ++iPromotion)
 	{
@@ -1280,6 +1287,8 @@ void CvGameTextMgr::setUnitPromotionHelp(CvWStringBuffer &szString, const CvUnit
 
 void CvGameTextMgr::setProfessionHelp(CvWStringBuffer &szBuffer, ProfessionTypes eProfession, bool bCivilopediaText, bool bStrategyText)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	CvProfessionInfo& kProfession = GC.getProfessionInfo(eProfession);
 
 	CvWString szTempBuffer;
@@ -1483,6 +1492,8 @@ void CvGameTextMgr::setProfessionHelp(CvWStringBuffer &szBuffer, ProfessionTypes
 
 void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, const CvPlot* pPlot, bool bOneLine, bool bShort)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	int numPromotionInfos = GC.getNumPromotionInfos();
@@ -1943,6 +1954,8 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, const CvPlot* pPl
 // Returns true if help was given...
 bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	CvUnit* pAttacker;
@@ -2508,6 +2521,8 @@ void createTestFontString(CvWStringBuffer& szString)
 
 void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	int iI;
@@ -3217,6 +3232,8 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 // city plot mouse over help - inaiwae - START
 void CvGameTextMgr::setCityPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	CvWString szTempBuffer;
 	BonusTypes eBonus;
 	ImprovementTypes eImprovement;
@@ -3327,6 +3344,8 @@ void CvGameTextMgr::setCityPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 
 void CvGameTextMgr::setCityPlotYieldValueString(CvWStringBuffer &szString, CvCity* pCity, int iIndex, bool bAvoidGrowth, bool bIgnoreGrowth, bool bIgnoreFood)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	CvPlot* pPlot = NULL;
@@ -3351,6 +3370,8 @@ void CvGameTextMgr::setCityPlotYieldValueString(CvWStringBuffer &szString, CvCit
 
 void CvGameTextMgr::setYieldValueString(CvWStringBuffer &szString, int iValue, bool bActive, bool bMakeWhitespace)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	static bool bUseFloats = false;
@@ -3376,6 +3397,8 @@ void CvGameTextMgr::setYieldValueString(CvWStringBuffer &szString, int iValue, b
 
 void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	szString.append(pCity->getName());
@@ -3602,6 +3625,8 @@ void CvGameTextMgr::setCityBarHelp(CvWStringBuffer &szString, CvCity* pCity)
 
 void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait, CivilizationTypes eCivilization, bool bDawnOfMan, bool bIndent)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	CvWString szTempBuffer;
@@ -4540,6 +4565,8 @@ void CvGameTextMgr::parseTraits(CvWStringBuffer &szHelpString, TraitTypes eTrait
 
 void CvGameTextMgr::parseLeaderTraits(CvWStringBuffer &szHelpString, LeaderHeadTypes eLeader, CivilizationTypes eCivilization, bool bDawnOfMan, bool bCivilopediaText)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	CvWString szTempBuffer;	// Formatting
@@ -4669,6 +4696,8 @@ void CvGameTextMgr::parseLeaderTraits(CvWStringBuffer &szHelpString, LeaderHeadT
 
 void CvGameTextMgr::parseLeaderShortTraits(CvWStringBuffer &szHelpString, LeaderHeadTypes eLeader)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	//	Build help string
 	if (eLeader != NO_LEADER)
 	{
@@ -4705,6 +4734,8 @@ void CvGameTextMgr::parseLeaderShortTraits(CvWStringBuffer &szHelpString, Leader
 
 void CvGameTextMgr::parseCivShortTraits(CvWStringBuffer &szHelpString, CivilizationTypes eCiv)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	//	Build help string
 	if (eCiv != NO_CIVILIZATION)
 	{
@@ -4745,6 +4776,8 @@ void CvGameTextMgr::parseCivShortTraits(CvWStringBuffer &szHelpString, Civilizat
 //
 void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes eCivilization, bool bDawnOfMan, bool bLinks)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	CvWString szBuffer;
@@ -4904,6 +4937,8 @@ void CvGameTextMgr::parseCivInfos(CvWStringBuffer &szInfoText, CivilizationTypes
 //
 void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes ePromotion, const wchar* pcNewline)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	CvWString szText, szText2;
@@ -5259,6 +5294,8 @@ void CvGameTextMgr::parsePromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes
 //	Returns:			nothing
 void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivic, bool bCivilopediaText, bool bPlayerContext, bool bSkipName)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	CvWString szFirstBuffer;
@@ -5456,6 +5493,8 @@ void CvGameTextMgr::parseCivicInfo(CvWStringBuffer &szHelpText, CivicTypes eCivi
 
 void CvGameTextMgr::setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool bCivilopediaText)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	CvWString szTempBuffer;
@@ -6127,6 +6166,8 @@ void CvGameTextMgr::setBasicUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit,
 
 void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool bCivilopediaText, bool bStrategyText, CvCity* pCity)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	CvWString szTempBuffer;
@@ -6470,6 +6511,8 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 }
 void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBuilding, bool bCivilopediaText, bool bStrategyText, CvCity* pCity)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PROFILE_FUNC();
 
 	CvWString szFirstBuffer;
@@ -6948,6 +6991,8 @@ void CvGameTextMgr::setBuildingHelp(CvWStringBuffer &szBuffer, BuildingTypes eBu
 }
 void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, BuildingTypes eBuilding, bool bCivilopediaText, const CvCity* pCity)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	bool bFirst;
 	PlayerTypes ePlayer;
 	CvWString szTempBuffer;
@@ -7122,6 +7167,8 @@ void CvGameTextMgr::buildBuildingRequiresString(CvWStringBuffer& szBuffer, Build
 
 void CvGameTextMgr::setFatherPointHelp(CvWStringBuffer &szBuffer, FatherPointTypes eFatherPointType)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	CvFatherPointInfo& kFatherPoint = GC.getFatherPointInfo(eFatherPointType);
 
 	szBuffer.append(CvWString::format( SETCOLR L"%s" ENDCOLR , TEXT_COLOR("COLOR_HIGHLIGHT_TEXT"), kFatherPoint.getDescription()));
@@ -7156,6 +7203,8 @@ void CvGameTextMgr::setFatherPointHelp(CvWStringBuffer &szBuffer, FatherPointTyp
 
 void CvGameTextMgr::setYieldChangeHelp(CvWStringBuffer &szBuffer, const CvWString& szStart, const CvWString& szSpace, const CvWString& szEnd, const int* piYieldChange, bool bPercent, bool bNewLine)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	bool bAllTheSame = true;
 	int iPrevChange = 0;
 	for (int iI = 0; iI < NUM_YIELD_TYPES; ++iI)
@@ -7219,6 +7268,8 @@ void CvGameTextMgr::setYieldChangeHelp(CvWStringBuffer &szBuffer, const CvWStrin
 }
 void CvGameTextMgr::setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, bool bCivilopediaText)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	if (NO_BONUS == eBonus)
 	{
 		return;
@@ -7277,6 +7328,8 @@ void CvGameTextMgr::setBonusHelp(CvWStringBuffer &szBuffer, BonusTypes eBonus, b
 
 void CvGameTextMgr::setPromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes ePromotion, bool bCivilopediaText)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	if (!bCivilopediaText)
 	{
 		CvWString szTempBuffer;
@@ -7296,6 +7349,8 @@ void CvGameTextMgr::setPromotionHelp(CvWStringBuffer &szBuffer, PromotionTypes e
 
 void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTypes eImprovement, bool bCivilopediaText)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	CvWString szTempBuffer;
 	CvWString szFirstBuffer;
 	int iTurns;
@@ -7707,6 +7762,8 @@ void CvGameTextMgr::setImprovementHelp(CvWStringBuffer &szBuffer, ImprovementTyp
 
 void CvGameTextMgr::getDealString(CvWStringBuffer& szBuffer, CvDeal& deal, PlayerTypes ePlayerPerspective)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	PlayerTypes ePlayer1 = deal.getFirstPlayer();
 	PlayerTypes ePlayer2 = deal.getSecondPlayer();
 
@@ -7718,6 +7775,8 @@ void CvGameTextMgr::getDealString(CvWStringBuffer& szBuffer, CvDeal& deal, Playe
 
 void CvGameTextMgr::getDealString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer1, PlayerTypes ePlayer2, const CLinkList<TradeData>* pListPlayer1, const CLinkList<TradeData>* pListPlayer2, PlayerTypes ePlayerPerspective)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	if (NO_PLAYER == ePlayer1 || NO_PLAYER == ePlayer2)
 	{
 		FAssertMsg(false, "Deal needs two parties");
@@ -7804,6 +7863,8 @@ void CvGameTextMgr::getDealString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer
 
 void CvGameTextMgr::getWarplanString(CvWStringBuffer& szString, WarPlanTypes eWarPlan)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	switch (eWarPlan)
 	{
 		case WARPLAN_ATTACKED_RECENT: szString.assign(L"new defensive war"); break;
@@ -7821,6 +7882,8 @@ void CvGameTextMgr::getWarplanString(CvWStringBuffer& szString, WarPlanTypes eWa
 
 void CvGameTextMgr::getAttitudeString(CvWStringBuffer& szBuffer, PlayerTypes ePlayer, PlayerTypes eTargetPlayer)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	CvWString szTempBuffer;
 	int iAttitudeChange;
 	int iPass;
@@ -8048,6 +8111,8 @@ void CvGameTextMgr::getAttitudeString(CvWStringBuffer& szBuffer, PlayerTypes ePl
 
 void CvGameTextMgr::getTradeString(CvWStringBuffer& szBuffer, const TradeData& tradeData, PlayerTypes ePlayer1, PlayerTypes ePlayer2)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	switch (tradeData.m_eItemType)
 	{
 	case TRADE_GOLD:
@@ -8087,6 +8152,8 @@ void CvGameTextMgr::getTradeString(CvWStringBuffer& szBuffer, const TradeData& t
 
 void CvGameTextMgr::setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeature, bool bCivilopediaText)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	if (NO_FEATURE == eFeature)
 	{
 		return;
@@ -8161,6 +8228,8 @@ void CvGameTextMgr::setFeatureHelp(CvWStringBuffer &szBuffer, FeatureTypes eFeat
 
 void CvGameTextMgr::setTerrainHelp(CvWStringBuffer &szBuffer, TerrainTypes eTerrain, bool bCivilopediaText)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	if (NO_TERRAIN == eTerrain)
 	{
 		return;
@@ -8228,6 +8297,8 @@ void CvGameTextMgr::setTerrainHelp(CvWStringBuffer &szBuffer, TerrainTypes eTerr
 
 void CvGameTextMgr::setYieldsHelp(CvWStringBuffer &szBuffer, YieldTypes eYield, bool bCivilopediaText)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	if (NO_YIELD == eYield)
 	{
 		return;
@@ -8239,6 +8310,8 @@ void CvGameTextMgr::setYieldsHelp(CvWStringBuffer &szBuffer, YieldTypes eYield, 
 
 void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	FAssertMsg(NO_PLAYER != city.getOwnerINLINE(), "City must have an owner");
 
 	if (city.getCurrentProductionDifference(true) == 0)
@@ -8350,6 +8423,8 @@ void CvGameTextMgr::setProductionHelp(CvWStringBuffer &szBuffer, CvCity& city)
 
 void CvGameTextMgr::parsePlayerTraits(CvWStringBuffer &szBuffer, PlayerTypes ePlayer)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	CvCivilizationInfo& kCiv = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType());
 	CvLeaderHeadInfo& kLeader = GC.getLeaderHeadInfo(GET_PLAYER(ePlayer).getLeaderType());
 	bool bFirst = true;
@@ -8380,6 +8455,8 @@ void CvGameTextMgr::parsePlayerTraits(CvWStringBuffer &szBuffer, PlayerTypes ePl
 
 void CvGameTextMgr::parseLeaderHeadHelp(CvWStringBuffer &szBuffer, PlayerTypes eThisPlayer, PlayerTypes eOtherPlayer)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	if (NO_PLAYER == eThisPlayer)
 	{
 		return;
@@ -8406,6 +8483,8 @@ void CvGameTextMgr::parseLeaderHeadHelp(CvWStringBuffer &szBuffer, PlayerTypes e
 
 void CvGameTextMgr::parseLeaderLineHelp(CvWStringBuffer &szBuffer, PlayerTypes eThisPlayer, PlayerTypes eOtherPlayer)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	if (NO_PLAYER == eThisPlayer || NO_PLAYER == eOtherPlayer)
 	{
 		return;
@@ -8441,6 +8520,8 @@ void CvGameTextMgr::parseLeaderLineHelp(CvWStringBuffer &szBuffer, PlayerTypes e
 
 void CvGameTextMgr::getActiveDealsString(CvWStringBuffer &szBuffer, PlayerTypes eThisPlayer, PlayerTypes eOtherPlayer)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	int iIndex;
 	CvDeal* pDeal = GC.getGameINLINE().firstDeal(&iIndex);
 	while (NULL != pDeal)
@@ -8458,6 +8539,8 @@ void CvGameTextMgr::getActiveDealsString(CvWStringBuffer &szBuffer, PlayerTypes 
 
 void CvGameTextMgr::buildHintsList(CvWStringBuffer& szBuffer)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	for (int i = 0; i < GC.getNumHints(); i++)
 	{
 		szBuffer.append(CvWString::format(L"%c%s", GC.getSymbolID(BULLET_CHAR), GC.getHints(i).getText()));
@@ -8468,6 +8551,8 @@ void CvGameTextMgr::buildHintsList(CvWStringBuffer& szBuffer)
 
 void CvGameTextMgr::setYieldPriceHelp(CvWStringBuffer &szBuffer, PlayerTypes ePlayer, YieldTypes eYield)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	CvYieldInfo& info = GC.getYieldInfo(eYield);
 	CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 
@@ -8499,6 +8584,8 @@ void CvGameTextMgr::setYieldPriceHelp(CvWStringBuffer &szBuffer, PlayerTypes ePl
 
 void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldTypes eYieldType)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	FAssertMsg(NO_PLAYER != city.getOwnerINLINE(), "City must have an owner");
 
 	if (NO_YIELD == eYieldType)
@@ -9173,6 +9260,8 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 
 int CvGameTextMgr::setCityYieldModifierString(CvWStringBuffer& szBuffer, YieldTypes eYieldType, const CvCity& kCity)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	CvYieldInfo& info = GC.getYieldInfo(eYieldType);
 	CvPlayer& kOwner = GET_PLAYER(kCity.getOwnerINLINE());
 
@@ -9333,6 +9422,8 @@ int CvGameTextMgr::setCityYieldModifierString(CvWStringBuffer& szBuffer, YieldTy
 
 void CvGameTextMgr::parseGreatGeneralHelp(CvWStringBuffer &szBuffer, CvPlayer& kPlayer)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	szBuffer.assign(gDLL->getText("TXT_KEY_MISC_GREAT_GENERAL", kPlayer.getCombatExperience(), kPlayer.greatGeneralThreshold()));
 }
 
@@ -9345,6 +9436,8 @@ int iGameFontDebugChar = -1;
 
 void CvGameTextMgr::buildCityBillboardIconString( CvWStringBuffer& szBuffer, CvCity* pCity)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	szBuffer.clear();
 
 	if (pCity->getMissionaryPlayer() != NO_PLAYER)
@@ -9524,11 +9617,15 @@ void CvGameTextMgr::buildCityBillboardIconString( CvWStringBuffer& szBuffer, CvC
 
 void CvGameTextMgr::buildCityBillboardCityNameString( CvWStringBuffer& szBuffer, CvCity* pCity)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	szBuffer.assign(pCity->getName());
 }
 
 void CvGameTextMgr::buildCityBillboardProductionString( CvWStringBuffer& szBuffer, CvCity* pCity)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	szBuffer.clear();
 
 	PlayerTypes ePlayer = GC.getGameINLINE().getActivePlayer();
@@ -9553,6 +9650,8 @@ void CvGameTextMgr::buildCityBillboardProductionString( CvWStringBuffer& szBuffe
 
 void CvGameTextMgr::buildCityBillboardCitySizeString( CvWStringBuffer& szBuffer, CvCity* pCity, const NiColorA& kColor)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 #define CAPARAMS(c) (int)((c).r * 255.0f), (int)((c).g * 255.0f), (int)((c).b * 255.0f), (int)((c).a * 255.0f)
 	szBuffer.assign(CvWString::format(SETCOLR L"%d" ENDCOLR, CAPARAMS(kColor), pCity->getPopulation()));
 #undef CAPARAMS
@@ -9560,6 +9659,8 @@ void CvGameTextMgr::buildCityBillboardCitySizeString( CvWStringBuffer& szBuffer,
 
 void CvGameTextMgr::setScoreHelp(CvWStringBuffer &szString, PlayerTypes ePlayer)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	if (NO_PLAYER != ePlayer)
 	{
 		CvPlayer& player = GET_PLAYER(ePlayer);
@@ -9625,6 +9726,8 @@ void CvGameTextMgr::setScoreHelp(CvWStringBuffer &szString, PlayerTypes ePlayer)
 
 void CvGameTextMgr::setCitizenHelp(CvWStringBuffer &szString, const CvCity& kCity, const CvUnit& kUnit)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	// WTP, ray, showing Profession Name in Citizen Help instead of Unit Name - START
 	if(kUnit.getProfession() != NO_PROFESSION) 
 	{
@@ -9907,6 +10010,8 @@ void CvGameTextMgr::setCitizenHelp(CvWStringBuffer &szString, const CvCity& kCit
 
 void CvGameTextMgr::setEuropeYieldSoldHelp(CvWStringBuffer &szString, const CvPlayer& kPlayer, YieldTypes eYield, int iAmount, int iCommission)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	FAssert(kPlayer.getParent() != NO_PLAYER);
 	CvPlayer& kPlayerEurope = GET_PLAYER(kPlayer.getParent());
 
@@ -9957,6 +10062,8 @@ void CvGameTextMgr::setEuropeYieldSoldHelp(CvWStringBuffer &szString, const CvPl
 
 void CvGameTextMgr::setEuropeYieldBoughtHelp(CvWStringBuffer &szString, const CvPlayer& kPlayer, YieldTypes eYield, int iAmount)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	FAssert(kPlayer.getParent() != NO_PLAYER);
 	CvPlayer& kPlayerEurope = GET_PLAYER(kPlayer.getParent());
 	int iGross = kPlayerEurope.getYieldSellPrice(eYield) * iAmount;
@@ -9967,6 +10074,8 @@ void CvGameTextMgr::setEuropeYieldBoughtHelp(CvWStringBuffer &szString, const Cv
 // WTP, ray, fixing wrong Trade Log in Port Royal - START
 void CvGameTextMgr::setAfricaYieldSoldHelp(CvWStringBuffer &szString, const CvPlayer& kPlayer, YieldTypes eYield, int iAmount, int iCommission)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	FAssert(kPlayer.getParent() != NO_PLAYER);
 	CvPlayer& kPlayerEurope = GET_PLAYER(kPlayer.getParent());
 
@@ -10017,6 +10126,8 @@ void CvGameTextMgr::setAfricaYieldSoldHelp(CvWStringBuffer &szString, const CvPl
 
 void CvGameTextMgr::setPortRoyalYieldSoldHelp(CvWStringBuffer &szString, const CvPlayer& kPlayer, YieldTypes eYield, int iAmount, int iCommission)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	FAssert(kPlayer.getParent() != NO_PLAYER);
 	CvPlayer& kPlayerEurope = GET_PLAYER(kPlayer.getParent());
 
@@ -10066,6 +10177,8 @@ void CvGameTextMgr::setPortRoyalYieldSoldHelp(CvWStringBuffer &szString, const C
 
 void CvGameTextMgr::setEventHelp(CvWStringBuffer& szBuffer, EventTypes eEvent, int iEventTriggeredId, PlayerTypes ePlayer)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	//Barthoze : TIME IS THE ISSUE
 	int iGrowthPercent = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
 	if (NO_EVENT == eEvent || NO_PLAYER == ePlayer)
@@ -10542,6 +10655,8 @@ void CvGameTextMgr::setEventHelp(CvWStringBuffer& szBuffer, EventTypes eEvent, i
 
 void CvGameTextMgr::eventGoldHelp(CvWStringBuffer& szBuffer, EventTypes eEvent, PlayerTypes ePlayer, PlayerTypes eOtherPlayer)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	CvEventInfo& kEvent = GC.getEventInfo(eEvent);
 	CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 
@@ -10613,6 +10728,8 @@ void CvGameTextMgr::eventGoldHelp(CvWStringBuffer& szBuffer, EventTypes eEvent, 
 
 void CvGameTextMgr::setFatherHelp(CvWStringBuffer &szBuffer, FatherTypes eFather, bool bCivilopediaText)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	CvWString szTempBuffer;
 	CvFatherInfo& kFatherInfo = GC.getFatherInfo(eFather);
 	PlayerTypes ePlayer = GC.getGameINLINE().getActivePlayer();
@@ -10697,6 +10814,8 @@ void CvGameTextMgr::setFatherHelp(CvWStringBuffer &szBuffer, FatherTypes eFather
 // CivEffects - Nightinggale - start
 void CvGameTextMgr::parseCivEffects(CvWStringBuffer &szHelpString, CivEffectTypes eCivEffect, CivilizationTypes eCivilization, bool bDawnOfMan, bool bIndent)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	if (eCivEffect == NO_CIV_EFFECT)
 	{
 		return;
@@ -10738,6 +10857,8 @@ void CvGameTextMgr::parseCivEffects(CvWStringBuffer &szHelpString, CivEffectType
 
 void CvGameTextMgr::getTradeScreenTitleIcon(CvString& szButton, CvWidgetDataStruct& widgetData, PlayerTypes ePlayer)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	szButton = GC.getCivilizationInfo(GET_PLAYER(ePlayer).getCivilizationType()).getButton();
 }
 
@@ -10748,6 +10869,8 @@ void CvGameTextMgr::getTradeScreenIcons(std::vector< std::pair<CvString, CvWidge
 
 void CvGameTextMgr::getTradeScreenHeader(CvWString& szHeader, PlayerTypes ePlayer, PlayerTypes eOtherPlayer, bool bAttitude, CvCity* pCity)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	CvPlayer& kPlayer = GET_PLAYER(ePlayer);
 	if (pCity == NULL || !kPlayer.isNative())
 	{
@@ -10766,6 +10889,8 @@ void CvGameTextMgr::getTradeScreenHeader(CvWString& szHeader, PlayerTypes ePlaye
 
 void CvGameTextMgr::setResourceLayerInfo(ResourceLayerOptions eOption, CvWString& szName, CvString& szButton)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	switch (eOption)
 	{
 	case RESOURCE_LAYER_NATIVE_TRADE:
@@ -10788,6 +10913,8 @@ void CvGameTextMgr::setResourceLayerInfo(ResourceLayerOptions eOption, CvWString
 
 void CvGameTextMgr::setUnitLayerInfo(UnitLayerOptionTypes eOption, CvWString& szName, CvString& szButton)
 {
+	CxDesyncMonitor StartAsyncExecution;
+
 	switch (eOption)
 	{
 	case SHOW_ALL_MILITARY:

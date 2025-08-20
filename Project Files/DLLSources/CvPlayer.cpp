@@ -25,6 +25,7 @@
 #include "CyPlot.h"
 #include "CvTradeRoute.h"
 #include "CvTradeRouteGroup.h" //R&R mod, vetiarvind, trade groups
+#include "DesyncMonitor.h"
 
 #include "CvDLLInterfaceIFaceBase.h"
 #include "CvDLLEntityIFaceBase.h"
@@ -14351,6 +14352,11 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 
 bool CvPlayer::canDoEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData) const
 {
+	// GUI calls this function in async
+	// also calls to random needs to return something consistent
+	// It's no good if it passes random now and then fails when doing the event
+	CxDesyncMonitor StartMonitoring;
+
 	Coordinates coord(kTriggeredData.m_iPlotX, kTriggeredData.m_iPlotY);
 
 	if (eEvent == NO_EVENT)
