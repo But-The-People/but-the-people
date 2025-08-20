@@ -484,22 +484,20 @@ bool CvUnitAI::AI_europeUpdate()
 				{
 					// TAC - AI Assault Sea Fix - koma13 - START
 					if (hasCargo())
-					{
 						AI_europe();
-					}
 					// TAC - AI Assault Sea Fix - koma13 - END
-					crossOcean(UNIT_TRAVEL_STATE_FROM_EUROPE);
+					else
+						crossOcean(UNIT_TRAVEL_STATE_FROM_EUROPE);
 				}
 
 				if (getUnitTravelState() == UNIT_TRAVEL_STATE_IN_AFRICA)
 				{
 					// TAC - AI Assault Sea Fix - koma13 - START
 					if (hasCargo())
-					{
 						AI_africa();
-					}
 					// TAC - AI Assault Sea Fix - koma13 - END
-					crossOcean(UNIT_TRAVEL_STATE_FROM_AFRICA);
+					else
+						crossOcean(UNIT_TRAVEL_STATE_FROM_AFRICA);
 				}
 			}
 			break;
