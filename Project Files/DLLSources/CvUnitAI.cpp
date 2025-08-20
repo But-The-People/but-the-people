@@ -7090,6 +7090,14 @@ bool CvUnitAI::AI_travelToPort(int iMinPercent, int iMaxPath)
 	CvPlot* pBestMissionPlot = NULL;	// TAC - AI Improved Naval AI - koma13
 
 	const CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
+	
+	// Player may not have a parent (e.g. the barbarian team),
+	//   which sometimes ends up getting smuggling ships
+	// Without this check, the parent reference would in the above case
+	// access memory outside the player array at offset -1!
+	if (kOwner.getParent() == NO_PLAYER)
+		return false;
+
 	const CvPlayerAI& kEuropePlayer = GET_PLAYER(kOwner.getParent());
 	int iLoop;
 	for (CvCity* pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
