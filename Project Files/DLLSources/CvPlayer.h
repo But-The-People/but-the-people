@@ -61,7 +61,7 @@ protected:
 	int m_iNumSeaCombatsWon;
 public:
 	bool isAchieveGained(AchieveTypes eAchieve) const;
-	int getAchieveYear(AchieveTypes eAchieve);
+	int getAchieveYear(AchieveTypes eAchieve) const;
 	void gainAchievement(AchieveTypes eAchieve, bool bAnnounce, CvPlot* pPlot, PlayerTypes iPlayer);
 	void doAchievements(bool afterMove);
 	void changeNumCombatsWon(int iChange);
@@ -130,15 +130,15 @@ public:
 	void withDrawAllPrivateersToPortRoyal(); // WTP, ray, Privateers DLL Diplo Event - START
 
 	// R&R, ray, Church Favours - START
-	int getNumChurchFavoursReceived();
+	int getNumChurchFavoursReceived() const;
 	void increaseNumChurchFavoursReceived();
-	int getChurchFavourPrice();
+	int getChurchFavourPrice() const;
 	// R&R, ray, Church Favours - END
 
 	//WTP, ray Kings Used Ship - START
 	int getUsedShipPrice(UnitClassTypes iUsedShipClassType) const;
 	UnitClassTypes getRandomUsedShipClassTypeID() const;
-	bool isKingWillingToTradeUsedShips();
+	bool isKingWillingToTradeUsedShips() const;
 	void decreaseCounterForUsedShipDeals();
 	void doAILogicforUsedShipDeals();
 	void resetCounterForUsedShipDeals();
@@ -148,7 +148,7 @@ public:
 	// WTP, ray, Foreign Kings, buy Immigrants - START
 	int getForeignImmigrantPrice(UnitClassTypes iForeignImmigrantClassType, int iKingID) const;
 	UnitClassTypes getRandomForeignImmigrantClassTypeID(int iKingID) const;
-	bool isForeignKingWillingToTradeImmigrants(int iKingID);
+	bool isForeignKingWillingToTradeImmigrants(int iKingID) const;
 	void decreaseCounterForForeignKingImmigrantsDeals();
 	void doAILogicforForeignImmigrants();
 	void resetCounterForForeignImmigrantsDeals();
@@ -160,7 +160,7 @@ public:
 	bool tryGetNewBargainPriceBuy();
 	// R&R, ray, Bargaining - End
 
-	void toggleMultiRowPlotList(); // TAC - TAC Interface - koma13 - START
+	void toggleMultiRowPlotList() const; // TAC - TAC Interface - koma13 - START
 
 	DllExport void init(PlayerTypes eID);
 	DllExport void setupGraphical();
@@ -284,7 +284,7 @@ public:
 	int countCityFeatures(FeatureTypes eFeature) const;
 	int countNumBuildings(BuildingTypes eBuilding) const;
 	DllExport bool canContact(PlayerTypes ePlayer) const;
-	void contact(PlayerTypes ePlayer);
+	void contact(PlayerTypes ePlayer) const;
 	DllExport void handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer, int iData1, int iData2);
 	bool canTradeWith(PlayerTypes eWhoTo) const;
 	bool canReceiveTradeCity(PlayerTypes eFromPlayer) const;
@@ -745,7 +745,7 @@ public:
 	bool canTradeWithEurope() const;
 	void interceptEuropeUnits();
 
-    int AI_getAttitudeValue(PlayerTypes ePlayer); // R&R, Robert Surcouf, No More Variables Hidden game option START
+    int AI_getAttitudeValue(PlayerTypes ePlayer) const; // R&R, Robert Surcouf, No More Variables Hidden game option START
 	void createEnemyPirates(); // R&R, ray, Pirates - START
 	int getSellToEuropeProfit(YieldTypes eYield, int iAmount) const;
 	int getYieldSellPrice(YieldTypes eYield) const;

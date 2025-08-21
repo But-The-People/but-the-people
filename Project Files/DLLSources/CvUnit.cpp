@@ -2132,7 +2132,7 @@ void CvUnit::updateCombat(bool bQuick)
 }
 
 
-bool CvUnit::isActionRecommended(int iAction)
+bool CvUnit::isActionRecommended(int iAction) const
 {
 	CvCity* pWorkingCity;
 	ImprovementTypes eImprovement;
@@ -2152,7 +2152,7 @@ bool CvUnit::isActionRecommended(int iAction)
 		return false;
 	}
 
-	CyUnit* pyUnit = new CyUnit(this);
+	CyUnit* pyUnit = new CyUnit((CvUnit*)this);
 	CyArgsList argsList;
 	argsList.add(gDLL->getPythonIFace()->makePythonObject(pyUnit));	// pass in unit class
 	argsList.add(iAction);
@@ -2451,7 +2451,7 @@ bool CvUnit::isBetterDefenderThan(const CvUnit* pDefender, const CvUnit* pAttack
 }
 
 
-bool CvUnit::canDoCommand(CommandTypes eCommand, int iData1, int iData2, bool bTestVisible, bool bTestBusy)
+bool CvUnit::canDoCommand(CommandTypes eCommand, int iData1, int iData2, bool bTestVisible, bool bTestBusy) const
 {
 	CvUnit* pUnit;
 
@@ -4234,7 +4234,7 @@ void CvUnit::scrap()
 }
 
 
-bool CvUnit::canGift(bool bTestVisible, bool bTestTransport)
+bool CvUnit::canGift(bool bTestVisible, bool bTestTransport) const
 {
 	CvPlot* pPlot = plot();
 	CvUnit* pTransport = getTransportUnit();
@@ -10725,7 +10725,7 @@ void CvUnit::joinGroup(CvSelectionGroup* pSelectionGroup, bool bRemoveSelected, 
 }
 
 
-int CvUnit::getHotKeyNumber()
+int CvUnit::getHotKeyNumber() const
 {
 	return m_iHotKeyNumber;
 }
@@ -15182,7 +15182,7 @@ void CvUnit::doUnitTravelTimer()
 	}
 }
 
-bool CvUnit::isColonistLocked()
+bool CvUnit::isColonistLocked() const
 {
 	return m_bColonistLocked;
 }

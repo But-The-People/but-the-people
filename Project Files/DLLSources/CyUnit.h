@@ -15,11 +15,12 @@ class CvArtInfoUnit;
 //class CyUnitEntity;
 class CyUnit
 {
+	CvUnit* pointer(AssertCallerData);
 public:
 	CyUnit();
 
 	DllExport CyUnit(CvUnit* pUnit);		// Call from C++
-	CvUnit* getUnit() { return m_pUnit;	};	// Call from C++
+	CvUnit* getUnit() { return (CvUnit*)m_pUnit;	};	// Call from C++
 	const CvUnit* getUnit() const { return m_pUnit;	};	// Call from C++
 	bool isNone() { return (m_pUnit==NULL); }
 	void convert(CyUnit* pUnit);
@@ -307,6 +308,6 @@ public:
 	// Python Helper Functions
 	void centerCamera();
 protected:
-	CvUnit* m_pUnit;
+	const CvUnit* const m_pUnit;
 };
 #endif	// #ifndef CyUnit

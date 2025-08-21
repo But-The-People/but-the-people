@@ -105,10 +105,10 @@ public:
 
 	void updateCombat(bool bQuick = false);
 
-	bool isActionRecommended(int iAction);
+	bool isActionRecommended(int iAction) const;
 	bool isBetterDefenderThan(const CvUnit* pDefender, const CvUnit* pAttacker, bool bBreakTies) const;
 
-	bool canDoCommand(CommandTypes eCommand, int iData1, int iData2, bool bTestVisible = false, bool bTestBusy = true);
+	bool canDoCommand(CommandTypes eCommand, int iData1, int iData2, bool bTestVisible = false, bool bTestBusy = true) const;
 	DllExport void doCommand(CommandTypes eCommand, int iData1, int iData2);
 
 	//FAStarNode* getPathLastNode() const; // disabled by K-Mod
@@ -140,7 +140,7 @@ public:
 	void automate(AutomateTypes eAutomate);
 	bool canScrap() const;
 	void scrap();
-	bool canGift(bool bTestVisible = false, bool bTestTransport = true);
+	bool canGift(bool bTestVisible = false, bool bTestTransport = true) const;
 	void gift(bool bTestTransport = true);
 	bool canLoadUnit(const CvUnit* pTransport, const CvPlot* pPlot, bool bCheckCity) const;
 	void loadUnit(CvUnit* pTransport);
@@ -401,7 +401,7 @@ public:
 	DllExport CvSelectionGroup* getGroup() const;
 	bool canJoinGroup(const CvPlot* pPlot, CvSelectionGroup* pSelectionGroup) const;
 	DllExport void joinGroup(CvSelectionGroup* pSelectionGroup, bool bRemoveSelected = false, bool bRejoin = true);
-	DllExport int getHotKeyNumber();
+	int getHotKeyNumber() const;
 	void setHotKeyNumber(int iNewValue);
 	//TAC Whaling, ray
 	bool isFullToBrim() const;
@@ -750,7 +750,7 @@ public:
 	DllExport char const* getButton() const;
 	char const* getFullLengthIcon() const;
 
-	bool isColonistLocked();
+	bool isColonistLocked() const;
 	void setColonistLocked(bool bNewValue);
 
 	// < JAnimals Mod Start >

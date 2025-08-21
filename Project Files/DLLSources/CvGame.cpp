@@ -3436,7 +3436,7 @@ int CvGame::getAdjustedPopulationPercent(VictoryTypes eVictory) const
 }
 
 
-int CvGame::getProductionPerPopulation(HurryTypes eHurry)
+int CvGame::getProductionPerPopulation(HurryTypes eHurry) const
 {
 	if (NO_HURRY == eHurry)
 	{
@@ -3602,7 +3602,7 @@ int CvGame::countCivPlayerEuropeanAI()
 }
 
 
-int CvGame::countTotalCivPower()
+int CvGame::countTotalCivPower() const
 {
 	int iCount;
 	int iI;
@@ -3662,7 +3662,7 @@ EraTypes CvGame::getCurrentEra() const
 }
 
 
-TeamTypes CvGame::getActiveTeam()
+TeamTypes CvGame::getActiveTeam() const
 {
 	if (getActivePlayer() == NO_PLAYER)
 	{
@@ -3670,12 +3670,12 @@ TeamTypes CvGame::getActiveTeam()
 	}
 	else
 	{
-		return (TeamTypes)GET_PLAYER(getActivePlayer()).getTeam();
+		return GET_PLAYER(getActivePlayer()).getTeam();
 	}
 }
 
 
-CivilizationTypes CvGame::getActiveCivilizationType()
+CivilizationTypes CvGame::getActiveCivilizationType() const
 {
 	if (getActivePlayer() == NO_PLAYER)
 	{
@@ -3757,7 +3757,7 @@ void CvGame::reviveActivePlayer()
 }
 
 
-int CvGame::getNumHumanPlayers()
+int CvGame::getNumHumanPlayers() const
 {
 	return GC.getInitCore().getNumHumans();
 }
@@ -3775,7 +3775,7 @@ void CvGame::incrementEndTurnMessagesSent()
 }
 
 
-int CvGame::getGameTurn()
+int CvGame::getGameTurn() const
 {
 	return GC.getInitCore().getGameTurn();
 }
@@ -3802,14 +3802,14 @@ void CvGame::incrementGameTurn()
 }
 
 
-int CvGame::getTurnYear(int iGameTurn)
+int CvGame::getTurnYear(int iGameTurn) const
 {
 	// moved the body of this method to Game Core Utils so we have access for other games than the current one (replay screen in HOF)
 	return getTurnYearForGame(iGameTurn, getStartYear(), getCalendar(), getGameSpeedType());
 }
 
 
-int CvGame::getGameTurnYear()
+int CvGame::getGameTurnYear() const
 {
 	return getTurnYear(getGameTurn());
 }
@@ -4113,12 +4113,12 @@ int CvGame::getTargetScore() const
 	return GC.getInitCore().getTargetScore();
 }
 
-int CvGame::getNumGameTurnActive()
+int CvGame::getNumGameTurnActive() const
 {
 	return m_iNumGameTurnActive;
 }
 
-int CvGame::countNumHumanGameTurnActive()
+int CvGame::countNumHumanGameTurnActive() const
 {
 	int iCount;
 	int iI;
@@ -4248,7 +4248,7 @@ void CvGame::initScoreCalculation()
 }
 
 
-int CvGame::getAIAutoPlay()
+int CvGame::getAIAutoPlay() const
 {
 	return m_iAIAutoPlay;
 }
@@ -4585,13 +4585,13 @@ void CvGame::setHandicapType(HandicapTypes eHandicap)
 	m_eHandicap = eHandicap;
 }
 
-PlayerTypes CvGame::getPausePlayer()
+PlayerTypes CvGame::getPausePlayer() const
 {
 	return m_ePausePlayer;
 }
 
 
-bool CvGame::isPaused()
+bool CvGame::isPaused() const
 {
 	return (getPausePlayer() != NO_PLAYER);
 }
@@ -4603,7 +4603,7 @@ void CvGame::setPausePlayer(PlayerTypes eNewValue)
 }
 
 
-int CvGame::getBestLandUnitCombat()
+int CvGame::getBestLandUnitCombat() const
 {
 	return m_iBestLandUnitCombat;
 }
@@ -4773,7 +4773,7 @@ CalendarTypes CvGame::getCalendar() const
 }
 
 
-PlayerTypes CvGame::getRankPlayer(int iRank)
+PlayerTypes CvGame::getRankPlayer(int iRank) const
 {
 	FAssertMsg(iRank >= 0, "iRank is expected to be non-negative (invalid Rank)");
 	FAssertMsg(iRank < MAX_PLAYERS, "iRank is expected to be within maximum bounds (invalid Rank)");
@@ -4794,7 +4794,7 @@ void CvGame::setRankPlayer(int iRank, PlayerTypes ePlayer)
 	}
 }
 
-int CvGame::getPlayerScore(PlayerTypes ePlayer)
+int CvGame::getPlayerScore(PlayerTypes ePlayer) const
 {
 	FAssertMsg(ePlayer >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(ePlayer < MAX_PLAYERS, "ePlayer is expected to be within maximum bounds (invalid Index)");
@@ -4817,7 +4817,7 @@ void CvGame::setPlayerScore(PlayerTypes ePlayer, int iScore)
 }
 
 
-TeamTypes CvGame::getRankTeam(int iRank)
+TeamTypes CvGame::getRankTeam(int iRank) const
 {
 	FAssertMsg(iRank >= 0, "iRank is expected to be non-negative (invalid Rank)");
 	FAssertMsg(iRank < MAX_TEAMS, "iRank is expected to be within maximum bounds (invalid Index)");
@@ -4839,7 +4839,7 @@ void CvGame::setRankTeam(int iRank, TeamTypes eTeam)
 }
 
 
-int CvGame::getTeamRank(TeamTypes eTeam)
+int CvGame::getTeamRank(TeamTypes eTeam) const
 {
 	FAssertMsg(eTeam >= 0, "eTeam is expected to be non-negative (invalid Index)");
 	FAssertMsg(eTeam < MAX_TEAMS, "eTeam is expected to be within maximum bounds (invalid Index)");
@@ -4909,7 +4909,7 @@ void CvGame::setForceControl(ForceControlTypes eIndex, bool bEnabled)
 }
 
 
-int CvGame::getUnitCreatedCount(UnitTypes eIndex)
+int CvGame::getUnitCreatedCount(UnitTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumUnitInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -4925,7 +4925,7 @@ void CvGame::incrementUnitCreatedCount(UnitTypes eIndex)
 }
 
 
-int CvGame::getUnitClassCreatedCount(UnitClassTypes eIndex)
+int CvGame::getUnitClassCreatedCount(UnitClassTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumUnitClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -4939,7 +4939,7 @@ void CvGame::incrementUnitClassCreatedCount(UnitClassTypes eIndex)
 	m_em_iUnitClassCreatedCount.add(eIndex, 1);
 }
 
-int CvGame::getBuildingClassCreatedCount(BuildingClassTypes eIndex)
+int CvGame::getBuildingClassCreatedCount(BuildingClassTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumBuildingClassInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -4960,7 +4960,7 @@ bool CvGame::isVictoryValid(VictoryTypes eIndex) const
 	return GC.getInitCore().getVictory(eIndex);
 }
 
-bool CvGame::isSpecialUnitValid(SpecialUnitTypes eIndex)
+bool CvGame::isSpecialUnitValid(SpecialUnitTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumSpecialUnitInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -4976,7 +4976,7 @@ void CvGame::makeSpecialUnitValid(SpecialUnitTypes eIndex)
 }
 
 
-bool CvGame::isSpecialBuildingValid(SpecialBuildingTypes eIndex)
+bool CvGame::isSpecialBuildingValid(SpecialBuildingTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumSpecialBuildingInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -5011,7 +5011,7 @@ void CvGame::makeSpecialBuildingValid(SpecialBuildingTypes eIndex, bool bAnnounc
 
 
 // R&R, ray, Goody Enhancement - START
-bool CvGame::isUniqueGoodyValid(GoodyTypes eIndex)
+bool CvGame::isUniqueGoodyValid(GoodyTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumGoodyInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -5051,7 +5051,7 @@ void CvGame::setScriptData(std::string szNewValue)
 	m_szScriptData = szNewValue;
 }
 
-const CvWString & CvGame::getName()
+const CvWString & CvGame::getName() const
 {
 	return GC.getInitCore().getGameName();
 }
@@ -5127,12 +5127,12 @@ void CvGame::addGreatAdmiralBornName(const CvWString& szName)
 
 
 // < JAnimals Mod Start >
-PlayerTypes CvGame::getBarbarianPlayer()
+PlayerTypes CvGame::getBarbarianPlayer() const
 {
 	return m_eBarbarianPlayer;
 }
 
-bool CvGame::hasBarbarianPlayer()
+bool CvGame::hasBarbarianPlayer() const
 {
 	return (getBarbarianPlayer() != NO_PLAYER);
 }
@@ -5142,7 +5142,7 @@ void CvGame::setBarbarianPlayer(PlayerTypes eNewValue)
 	m_eBarbarianPlayer = eNewValue;
 }
 
-bool CvGame::isBarbarianPlayer(PlayerTypes ePlayer)
+bool CvGame::isBarbarianPlayer(PlayerTypes ePlayer) const
 {
 	return (getBarbarianPlayer() == ePlayer);
 }
@@ -5184,12 +5184,12 @@ PlayerTypes CvGame::getNextPlayerType() const
 
 
 // R&R, ray, the Church - START
-PlayerTypes CvGame::getChurchPlayer()
+PlayerTypes CvGame::getChurchPlayer() const
 {
 	return m_eChurchPlayer;
 }
 
-bool CvGame::hasChurchPlayer()
+bool CvGame::hasChurchPlayer() const
 {
 	return (getChurchPlayer() != NO_PLAYER);
 }
@@ -5199,7 +5199,7 @@ void CvGame::setChurchPlayer(PlayerTypes eNewValue)
 	m_eChurchPlayer = eNewValue;
 }
 
-bool CvGame::isChurchPlayer(PlayerTypes ePlayer)
+bool CvGame::isChurchPlayer(PlayerTypes ePlayer) const
 {
 	return (getChurchPlayer() == ePlayer);
 }
@@ -6352,13 +6352,13 @@ void CvGame::testVictory()
 }
 
 
-int CvGame::getIndexAfterLastDeal()
+int CvGame::getIndexAfterLastDeal() const
 {
 	return m_deals.getIndexAfterLast();
 }
 
 
-int CvGame::getNumDeals()
+int CvGame::getNumDeals() const
 {
 	return m_deals.getCount();
 }
@@ -6433,7 +6433,7 @@ int CvGame::getSorenRandNum(int iNum, const char* pszLog)
 	return m_sorenRand.get(iNum, pszLog);
 }
 
-int CvGame::calculateSyncChecksum(CvString* pLogString)
+int CvGame::calculateSyncChecksum(CvString* pLogString) const
 {
 	// Don't bother with any checksum in a SP game!
 	if (!GC.getGameINLINE().isGameMultiPlayer())
@@ -6599,7 +6599,7 @@ int CvGame::calculateSyncChecksum(CvString* pLogString)
 }
 
 
-int CvGame::calculateOptionsChecksum()
+int CvGame::calculateOptionsChecksum() const
 {
 	PROFILE_FUNC();
 

@@ -205,14 +205,14 @@ public:
 		return m_iGridHeight;
 	}
 
-	int getLandPlots();
+	int getLandPlots() const;
 	void changeLandPlots(int iChange);
-	int getOwnedPlots();
+	int getOwnedPlots() const;
 	void changeOwnedPlots(int iChange);
-	int getTopLatitude();
-	int getBottomLatitude();
+	int getTopLatitude() const;
+	int getBottomLatitude() const;
 
-	int getNextRiverID();
+	int getNextRiverID() const;
 	void incrementNextRiverID();
 
 	DllExport bool isWrapX();
@@ -233,16 +233,16 @@ public:
 		return m_bWrapX || m_bWrapY;
 	}
 
-	DllExport WorldSizeTypes getWorldSize();
-	ClimateTypes getClimate();
-	SeaLevelTypes getSeaLevel();
+	WorldSizeTypes getWorldSize() const;
+	ClimateTypes getClimate() const;
+	SeaLevelTypes getSeaLevel() const;
 
-	int getNumCustomMapOptions();
-	CustomMapOptionTypes getCustomMapOption(int iOption);
+	int getNumCustomMapOptions() const;
+	CustomMapOptionTypes getCustomMapOption(int iOption) const;
 
-	int getNumBonuses(BonusTypes eIndex);
+	int getNumBonuses(BonusTypes eIndex) const;
 	void changeNumBonuses(BonusTypes eIndex, int iChange);
-	int getNumBonusesOnLand(BonusTypes eIndex);
+	int getNumBonusesOnLand(BonusTypes eIndex) const;
 	void changeNumBonusesOnLand(BonusTypes eIndex, int iChange);
 
 	DllExport CvPlot* plotByIndex(int iIndex) const;
@@ -301,9 +301,9 @@ public:
 	} // </advc.inl>
 
 	DllExport CvPlot* pointToPlot(float fX, float fY);
-	int getIndexAfterLastArea();
-	int getNumAreas();
-	int getNumLandAreas();
+	int getIndexAfterLastArea() const;
+	int getNumAreas() const;
+	int getNumLandAreas() const;
 
 	CvArea* getArea(int iID);
 	CvArea* addArea();

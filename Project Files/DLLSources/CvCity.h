@@ -474,7 +474,7 @@ public:
 	void startHeadOrder();
 	void stopHeadOrder();
 	int getOrderQueueLength() const;
-	OrderData* getOrderFromQueue(int iIndex);
+	OrderData* getOrderFromQueue(int iIndex) const;
 	DllExport CLLNode<OrderData>* nextOrderQueueNode(CLLNode<OrderData>* pNode) const;
 	DllExport CLLNode<OrderData>* headOrderQueueNode() const;
 	CLLNode<OrderData>* tailOrderQueueNode() const;

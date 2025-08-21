@@ -7077,7 +7077,7 @@ int CvCity::getOrderQueueLength() const
 }
 
 
-OrderData* CvCity::getOrderFromQueue(int iIndex)
+OrderData* CvCity::getOrderFromQueue(int iIndex) const
 {
 	CLLNode<OrderData>* pOrderNode;
 

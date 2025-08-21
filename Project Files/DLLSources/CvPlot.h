@@ -444,7 +444,7 @@ public:
 	int getBuyCultureAmount(PlayerTypes ePlayer) const;
 	int getBuyPrice(PlayerTypes ePlayer) const;
 	int getFoundValue(PlayerTypes eIndex);
-	bool isBestAdjacentFound(PlayerTypes eIndex);
+	bool isBestAdjacentFound(PlayerTypes eIndex) const;
 	void setFoundValue(PlayerTypes eIndex, int iNewValue);
 	int getPlayerCityRadiusCount(PlayerTypes eIndex) const;
 	bool isPlayerCityRadius(PlayerTypes eIndex) const;

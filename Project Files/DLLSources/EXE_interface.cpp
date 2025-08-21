@@ -1128,22 +1128,33 @@ BOOST_STATIC_ASSERT(sizeof(EXE_CvFractal) == sizeof(CvFractal));
 class EXE_CvGame : public CvGame
 {
 public:
-	/*
-		calculateOptionsChecksum
-			?calculateOptionsChecksum@CvGame@@QAEHXZ=?calculateOptionsChecksum@EXE_CvGame@@QAEHXZ
+	#pragma comment(linker, "/EXPORT:?calculateOptionsChecksum@CvGame@@QAEHXZ=?calculateOptionsChecksum@EXE_CvGame@@QAEHXZ")
+	DllExport int calculateOptionsChecksum()
+	{
+		return CvGame::calculateOptionsChecksum();
+	}
 
-		calculateSyncChecksum
-			?calculateSyncChecksum@CvGame@@QAEHPAVCvString@@@Z=?calculateSyncChecksum@EXE_CvGame@@QAEHPAVCvString@@@Z
-
+	#pragma comment(linker, "/EXPORT:?calculateSyncChecksum@CvGame@@QAEHPAVCvString@@@Z=?calculateSyncChecksum@EXE_CvGame@@QAEHPAVCvString@@@Z")
+	DllExport int calculateSyncChecksum(CvString* pLogString)
+	{
+		return CvGame::calculateSyncChecksum(pLogString);
+	}
+			
+			/*
 		canHandleAction
 			?canHandleAction@CvGame@@QAE_NHPAVCvPlot@@_N1@Z=?canHandleAction@EXE_CvGame@@QAE_NHPAVCvPlot@@_N1@Z
 
 		cityPushOrder
 			?cityPushOrder@CvGame@@QAEXPAVCvCity@@W4OrderTypes@@H_N22@Z=?cityPushOrder@EXE_CvGame@@QAEXPAVCvCity@@W4OrderTypes@@H_N22@Z
+			*/
 
-		countNumHumanGameTurnActive
-			?countNumHumanGameTurnActive@CvGame@@QAEHXZ=?countNumHumanGameTurnActive@EXE_CvGame@@QAEHXZ
+	#pragma comment(linker, "/EXPORT:?countNumHumanGameTurnActive@CvGame@@QAEHXZ=?countNumHumanGameTurnActive@EXE_CvGame@@QAEHXZ")
+	DllExport int countNumHumanGameTurnActive()
+	{
+		return CvGame::countNumHumanGameTurnActive();
+	}
 
+			/*
 		cycleCities
 			?cycleCities@CvGame@@QAEX_N0@Z=?cycleCities@EXE_CvGame@@QAEX_N0@Z
 
@@ -1152,48 +1163,85 @@ public:
 
 		doControl
 			?doControl@CvGame@@QAEXW4ControlTypes@@@Z=?doControl@EXE_CvGame@@QAEXW4ControlTypes@@@Z
+			*/
 
-		getActiveCivilizationType
-			?getActiveCivilizationType@CvGame@@QAE?AW4CivilizationTypes@@XZ=?getActiveCivilizationType@EXE_CvGame@@QAE?AW4CivilizationTypes@@XZ
+	#pragma comment(linker, "/EXPORT:?getActiveCivilizationType@CvGame@@QAE?AW4CivilizationTypes@@XZ=?getActiveCivilizationType@EXE_CvGame@@QAE?AW4CivilizationTypes@@XZ")
+	DllExport CivilizationTypes getActiveCivilizationType()
+	{
+		return CvGame::getActiveCivilizationType();
+	}
 
-		getActivePlayer
-			?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ=?getActivePlayer@EXE_CvGame@@QBE?AW4PlayerTypes@@XZ
+	#pragma comment(linker, "/EXPORT:?getActivePlayer@CvGame@@QBE?AW4PlayerTypes@@XZ=?getActivePlayer@EXE_CvGame@@QBE?AW4PlayerTypes@@XZ")
+	DllExport PlayerTypes getActivePlayer() const
+	{
+		return CvGame::getActivePlayer();
+	}
 
-		getActiveTeam
-			?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ=?getActiveTeam@EXE_CvGame@@QAE?AW4TeamTypes@@XZ
+	#pragma comment(linker, "/EXPORT:?getActiveTeam@CvGame@@QAE?AW4TeamTypes@@XZ=?getActiveTeam@EXE_CvGame@@QAE?AW4TeamTypes@@XZ")
+	DllExport TeamTypes getActiveTeam()
+	{
+		return CvGame::getActiveTeam();
+	}
 
-		getBestLandUnitCombat
-			?getBestLandUnitCombat@CvGame@@QAEHXZ=?getBestLandUnitCombat@EXE_CvGame@@QAEHXZ
+	#pragma comment(linker, "/EXPORT:?getBestLandUnitCombat@CvGame@@QAEHXZ=?getBestLandUnitCombat@EXE_CvGame@@QAEHXZ")
+	DllExport int getBestLandUnitCombat()
+	{
+		return CvGame::getBestLandUnitCombat();
+	}
 
+			/*
 		getDeal
 			?getDeal@CvGame@@QAEPAVCvDeal@@H@Z=?getDeal@EXE_CvGame@@QAEPAVCvDeal@@H@Z
 
 		getGameState
 			?getGameState@CvGame@@QBE?AW4GameStateTypes@@XZ=?getGameState@EXE_CvGame@@QBE?AW4GameStateTypes@@XZ
 
-		getGameTurn
-			?getGameTurn@CvGame@@QAEHXZ=?getGameTurn@EXE_CvGame@@QAEHXZ
+*/
+	#pragma comment(linker, "/EXPORT:?getGameTurn@CvGame@@QAEHXZ=?getGameTurn@EXE_CvGame@@QAEHXZ")
+	DllExport int getGameTurn()
+	{
+		return CvGame::getGameTurn();
+	}
+
+			/*
 
 		getGlobeviewConfigurationParameters
 			?getGlobeviewConfigurationParameters@CvGame@@QAEXW4TeamTypes@@AA_N1@Z=?getGlobeviewConfigurationParameters@EXE_CvGame@@QAEXW4TeamTypes@@AA_N1@Z
 
 		getHotPbemBetweenTurns
 			?getHotPbemBetweenTurns@CvGame@@QBE_NXZ=?getHotPbemBetweenTurns@EXE_CvGame@@QBE_NXZ
+			*/
 
-		getIndexAfterLastDeal
-			?getIndexAfterLastDeal@CvGame@@QAEHXZ=?getIndexAfterLastDeal@EXE_CvGame@@QAEHXZ
+	#pragma comment(linker, "/EXPORT:?getIndexAfterLastDeal@CvGame@@QAEHXZ=?getIndexAfterLastDeal@EXE_CvGame@@QAEHXZ")
+	DllExport int getIndexAfterLastDeal()
+	{
+		return CvGame::getIndexAfterLastDeal();
+	}
 
-		getName
-			?getName@CvGame@@QAEABVCvWString@@XZ=?getName@EXE_CvGame@@QAEABVCvWString@@XZ
+	#pragma comment(linker, "/EXPORT:?getName@CvGame@@QAEABVCvWString@@XZ=?getName@EXE_CvGame@@QAEABVCvWString@@XZ")
+	DllExport const CvWString & getName()
+	{
+		return CvGame::getName();
+	}
 
-		getNumHumanPlayers
-			?getNumHumanPlayers@CvGame@@QAEHXZ=?getNumHumanPlayers@EXE_CvGame@@QAEHXZ
+	#pragma comment(linker, "/EXPORT:?getNumHumanPlayers@CvGame@@QAEHXZ=?getNumHumanPlayers@EXE_CvGame@@QAEHXZ")
+	DllExport int getNumHumanPlayers()
+	{
+		return CvGame::getNumHumanPlayers();
+	}
 
-		getPausePlayer
-			?getPausePlayer@CvGame@@QAE?AW4PlayerTypes@@XZ=?getPausePlayer@EXE_CvGame@@QAE?AW4PlayerTypes@@XZ
+	#pragma comment(linker, "/EXPORT:?getPausePlayer@CvGame@@QAE?AW4PlayerTypes@@XZ=?getPausePlayer@EXE_CvGame@@QAE?AW4PlayerTypes@@XZ")
+	DllExport PlayerTypes getPausePlayer()
+	{
+		return CvGame::getPausePlayer();
+	}
 
-		getPlayerScore
-			?getPlayerScore@CvGame@@QAEHW4PlayerTypes@@@Z=?getPlayerScore@EXE_CvGame@@QAEHW4PlayerTypes@@@Z
+	#pragma comment(linker, "/EXPORT:?getPlayerScore@CvGame@@QAEHW4PlayerTypes@@@Z=?getPlayerScore@EXE_CvGame@@QAEHW4PlayerTypes@@@Z")
+	DllExport int getPlayerScore(PlayerTypes ePlayer)
+	{
+		return CvGame::getPlayerScore(ePlayer);
+	}
+			/*
 
 		getPlotUnit
 			?getPlotUnit@CvGame@@QAEPAVCvUnit@@PBVCvPlot@@H@Z=?getPlotUnit@EXE_CvGame@@QAEPAVCvUnit@@PBVCvPlot@@H@Z
@@ -1257,10 +1305,15 @@ public:
 
 		isNetworkMultiPlayer
 			?isNetworkMultiPlayer@CvGame@@QBE_NXZ=?isNetworkMultiPlayer@EXE_CvGame@@QBE_NXZ
+			*/
 
-		isPaused
-			?isPaused@CvGame@@QAE_NXZ=?isPaused@EXE_CvGame@@QAE_NXZ
+	#pragma comment(linker, "/EXPORT:?isPaused@CvGame@@QAE_NXZ=?isPaused@EXE_CvGame@@QAE_NXZ")
+	DllExport bool isPaused()
+	{
+		return CvGame::isPaused();
+	}
 
+			/*
 		isPbem
 			?isPbem@CvGame@@QBE_NXZ=?isPbem@EXE_CvGame@@QBE_NXZ
 
@@ -2489,7 +2542,7 @@ public:
 
 		getWBMapScript
 			?getWBMapScript@CvInitCore@@QBE_NXZ=?getWBMapScript@EXE_CvInitCore@@QBE_NXZ
-
+			
 		getWorldSizeKey
 			?getWorldSizeKey@CvInitCore@@QBEABVCvWString@@AAV2@@Z=?getWorldSizeKey@EXE_CvInitCore@@QBEABVCvWString@@AAV2@@Z
 
@@ -2781,8 +2834,14 @@ public:
 		getGridWidth
 			?getGridWidth@CvMap@@QBEHXZ=?getGridWidth@EXE_CvMap@@QBEHXZ
 
-		getWorldSize
-			?getWorldSize@CvMap@@QAE?AW4WorldSizeTypes@@XZ=?getWorldSize@EXE_CvMap@@QAE?AW4WorldSizeTypes@@XZ
+			*/			
+			
+	#pragma comment(linker, "/EXPORT:?getWorldSize@CvMap@@QAE?AW4WorldSizeTypes@@XZ=?getWorldSize@EXE_CvMap@@QAE?AW4WorldSizeTypes@@XZ")
+	DllExport WorldSizeTypes getWorldSize()
+	{
+		return CvMap::getWorldSize();
+	}
+			/*
 
 		init
 			?init@CvMap@@QAEXPAUCvMapInitData@@@Z=?init@EXE_CvMap@@QAEXPAUCvMapInitData@@@Z
@@ -3660,21 +3719,40 @@ public:
 		autoMission
 			?autoMission@CvSelectionGroup@@QAEXXZ=?autoMission@EXE_CvSelectionGroup@@QAEXXZ
 
-		canAllMove
-			?canAllMove@CvSelectionGroup@@QAE_NXZ=?canAllMove@EXE_CvSelectionGroup@@QAE_NXZ
+			*/
 
-		canDoInterfaceMode
-			?canDoInterfaceMode@CvSelectionGroup@@QAE_NW4InterfaceModeTypes@@@Z=?canDoInterfaceMode@EXE_CvSelectionGroup@@QAE_NW4InterfaceModeTypes@@@Z
+	#pragma comment(linker, "/EXPORT:?canAllMove@CvSelectionGroup@@QAE_NXZ=?canAllMove@EXE_CvSelectionGroup@@QAE_NXZ")
+	DllExport bool canAllMove()
+	{
+		return CvSelectionGroup::canAllMove();
+	}
 
-		canDoInterfaceModeAt
-			?canDoInterfaceModeAt@CvSelectionGroup@@QAE_NW4InterfaceModeTypes@@PAVCvPlot@@@Z=?canDoInterfaceModeAt@EXE_CvSelectionGroup@@QAE_NW4InterfaceModeTypes@@PAVCvPlot@@@Z
+	#pragma comment(linker, "/EXPORT:?canDoInterfaceMode@CvSelectionGroup@@QAE_NW4InterfaceModeTypes@@@Z=?canDoInterfaceMode@EXE_CvSelectionGroup@@QAE_NW4InterfaceModeTypes@@@Z")
+	DllExport bool canDoInterfaceMode(InterfaceModeTypes eInterfaceMode)
+	{
+		return CvSelectionGroup::canDoInterfaceMode(eInterfaceMode);
+	}
 
-		canMoveInto
-			?canMoveInto@CvSelectionGroup@@QAE_NPAVCvPlot@@_N@Z=?canMoveInto@EXE_CvSelectionGroup@@QAE_NPAVCvPlot@@_N@Z
+	#pragma comment(linker, "/EXPORT:?canDoInterfaceModeAt@CvSelectionGroup@@QAE_NW4InterfaceModeTypes@@PAVCvPlot@@@Z=?canDoInterfaceModeAt@EXE_CvSelectionGroup@@QAE_NW4InterfaceModeTypes@@PAVCvPlot@@@Z")
+	DllExport bool canDoInterfaceModeAt(InterfaceModeTypes eInterfaceMode, CvPlot* pPlot)
+	{
+		return CvSelectionGroup::canDoInterfaceModeAt(eInterfaceMode, pPlot);
+	}
 
-		canMoveOrAttackInto
-			?canMoveOrAttackInto@CvSelectionGroup@@QAE_NPAVCvPlot@@_N@Z=?canMoveOrAttackInto@EXE_CvSelectionGroup@@QAE_NPAVCvPlot@@_N@Z
+	#pragma comment(linker, "/EXPORT:?canMoveInto@CvSelectionGroup@@QAE_NPAVCvPlot@@_N@Z=?canMoveInto@EXE_CvSelectionGroup@@QAE_NPAVCvPlot@@_N@Z")
+	DllExport bool canMoveInto(CvPlot* pPlot, bool bAttack = false)
+	{
+		return CvSelectionGroup::canMoveInto(pPlot, bAttack);
+	}
 
+	#pragma comment(linker, "/EXPORT:?canMoveOrAttackInto@CvSelectionGroup@@QAE_NPAVCvPlot@@_N@Z=?canMoveOrAttackInto@EXE_CvSelectionGroup@@QAE_NPAVCvPlot@@_N@Z")
+	DllExport bool canMoveOrAttackInto(CvPlot* pPlot, bool bDeclareWar = false)
+	{
+		return CvSelectionGroup::canMoveOrAttackInto(pPlot, bDeclareWar);
+	}
+
+			
+			/*
 		clearUnits
 			?clearUnits@CvSelectionGroup@@QAEXXZ=?clearUnits@EXE_CvSelectionGroup@@QAEXXZ
 
@@ -3701,13 +3779,21 @@ public:
 
 		init
 			?init@CvSelectionGroup@@QAEXHW4PlayerTypes@@@Z=?init@EXE_CvSelectionGroup@@QAEXHW4PlayerTypes@@@Z
+			*/
 
-		isBusy
-			?isBusy@CvSelectionGroup@@QAE_NXZ=?isBusy@EXE_CvSelectionGroup@@QAE_NXZ
+	#pragma comment(linker, "/EXPORT:?isBusy@CvSelectionGroup@@QAE_NXZ=?isBusy@EXE_CvSelectionGroup@@QAE_NXZ")
+	DllExport bool isBusy()
+	{
+		return CvSelectionGroup::isBusy();
+	}
 
-		lastMissionPlot
-			?lastMissionPlot@CvSelectionGroup@@QAEPAVCvPlot@@XZ=?lastMissionPlot@EXE_CvSelectionGroup@@QAEPAVCvPlot@@XZ
-
+	#pragma comment(linker, "/EXPORT:?lastMissionPlot@CvSelectionGroup@@QAEPAVCvPlot@@XZ=?lastMissionPlot@EXE_CvSelectionGroup@@QAEPAVCvPlot@@XZ")
+	DllExport CvPlot* lastMissionPlot()
+	{
+		return CvSelectionGroup::lastMissionPlot();
+	}
+			
+			/*
 		nextMissionQueueNode
 			?nextMissionQueueNode@CvSelectionGroup@@QBEPAV?$CLLNode@UMissionData@@@@PAV2@@Z=?nextMissionQueueNode@EXE_CvSelectionGroup@@QBEPAV?$CLLNode@UMissionData@@@@PAV2@@Z
 
@@ -3719,10 +3805,15 @@ public:
 
 		pushMission
 			?pushMission@CvSelectionGroup@@QAEXW4MissionTypes@@HHH_N1W4MissionAITypes@@PAVCvPlot@@PAVCvUnit@@@Z=?pushMission@EXE_CvSelectionGroup@@QAEXW4MissionTypes@@HHH_N1W4MissionAITypes@@PAVCvPlot@@PAVCvUnit@@@Z
+			*/
 
-		readyToSelect
-			?readyToSelect@CvSelectionGroup@@QAE_N_N@Z=?readyToSelect@EXE_CvSelectionGroup@@QAE_N_N@Z
-
+	#pragma comment(linker, "/EXPORT:?readyToSelect@CvSelectionGroup@@QAE_N_N@Z=?readyToSelect@EXE_CvSelectionGroup@@QAE_N_N@Z")
+	DllExport bool readyToSelect(bool bAny = false)
+	{
+		return CvSelectionGroup::readyToSelect(bAny);
+	}	
+			
+			/*
 		reset
 			?reset@CvSelectionGroup@@QAEXHW4PlayerTypes@@_N@Z=?reset@EXE_CvSelectionGroup@@QAEXHW4PlayerTypes@@_N@Z
 
@@ -4023,10 +4114,16 @@ public:
 
 		getGroup
 			?getGroup@CvUnit@@QBEPAVCvSelectionGroup@@XZ=?getGroup@EXE_CvUnit@@QBEPAVCvSelectionGroup@@XZ
+			*/
 
-		getHotKeyNumber
-			?getHotKeyNumber@CvUnit@@QAEHXZ=?getHotKeyNumber@EXE_CvUnit@@QAEHXZ
-
+	#pragma comment(linker, "/EXPORT:?getHotKeyNumber@CvUnit@@QAEHXZ=?getHotKeyNumber@EXE_CvUnit@@QAEHXZ")
+	DllExport int getHotKeyNumber()
+	{
+		return CvUnit::getHotKeyNumber();
+	}
+		
+			
+			/*
 		getID
 			?getID@CvUnit@@QBEHXZ=?getID@EXE_CvUnit@@QBEHXZ
 

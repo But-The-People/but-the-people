@@ -1074,7 +1074,7 @@ void CvPlayerAI::AI_conquerCity(CvCity* pCity)
 }
 
 
-bool CvPlayerAI::AI_acceptUnit(CvUnit* pUnit)
+bool CvPlayerAI::AI_acceptUnit(const CvUnit* pUnit)
 {
 	return true;
 }

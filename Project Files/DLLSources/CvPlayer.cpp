@@ -3030,7 +3030,7 @@ bool CvPlayer::canContact(PlayerTypes ePlayer) const
 }
 
 
-void CvPlayer::contact(PlayerTypes ePlayer)
+void CvPlayer::contact(PlayerTypes ePlayer) const
 {
 	CvDiploParameters* pDiplo;
 
@@ -20236,10 +20236,10 @@ bool CvPlayer::isAchieveGained(AchieveTypes eAchieve) const
 	return (std::find(m_achievesGained.begin(), m_achievesGained.end(), eAchieve) != m_achievesGained.end());
 }
 
-int CvPlayer::getAchieveYear(AchieveTypes eAchieve)
+int CvPlayer::getAchieveYear(AchieveTypes eAchieve) const
 {
 	int iIndex = 0;
-	std::vector<AchieveTypes>::iterator it;
+	std::vector<AchieveTypes>::const_iterator it;
 	for (it = m_achievesGained.begin(); it != m_achievesGained.end(); ++it)
 	{
 		if (*it == eAchieve)
@@ -22842,7 +22842,7 @@ bool CvPlayer::tryGetNewBargainPriceBuy()
 // R&R, ray, Bargaining - End
 
 // TAC - TAC Interface - koma13 - START
-void CvPlayer::toggleMultiRowPlotList()
+void CvPlayer::toggleMultiRowPlotList() const
 {
 	if (isHuman())
 	{
@@ -22852,7 +22852,7 @@ void CvPlayer::toggleMultiRowPlotList()
 // TAC - TAC Interface - koma13 - END
 
 // R&R, Robert Surcouf, No More Variables Hidden game option START
-int CvPlayer::AI_getAttitudeValue(PlayerTypes ePlayer)
+int CvPlayer::AI_getAttitudeValue(PlayerTypes ePlayer) const
 {
 	return GET_PLAYER(ePlayer).AI_getAttitudeVal(getID());
 }
@@ -23353,7 +23353,7 @@ void CvPlayer::checkForChurchContact()
 // R&R, ray, the Church - END
 
 // R&R, ray, Church Favours - START
-int CvPlayer::getNumChurchFavoursReceived()
+int CvPlayer::getNumChurchFavoursReceived() const
 {
 	return m_iChurchFavoursReceived;
 }
@@ -23363,7 +23363,7 @@ void CvPlayer::increaseNumChurchFavoursReceived()
 	m_iChurchFavoursReceived = m_iChurchFavoursReceived + 1;
 }
 
-int CvPlayer::getChurchFavourPrice()
+int CvPlayer::getChurchFavourPrice() const
 {
 	int iChurchFavourPrice = GC.getDefineINT("BASE_CHURCH_FAVOUR_PRICE") + getNumChurchFavoursReceived() * GC.getDefineINT("CHURCH_FAVOUR_PRICE_INCREASE");
 	int gamespeedMod = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent();
@@ -23458,7 +23458,7 @@ UnitClassTypes CvPlayer::getRandomUsedShipClassTypeID() const
 	return eBestUnitClass;
 }
 
-bool CvPlayer::isKingWillingToTradeUsedShips()
+bool CvPlayer::isKingWillingToTradeUsedShips() const
 {
 	if (!isAlive())
 	{
@@ -23774,7 +23774,7 @@ UnitClassTypes CvPlayer::getRandomForeignImmigrantClassTypeID(int iKingID) const
 	return eBestUnitClass;
 }
 
-bool CvPlayer::isForeignKingWillingToTradeImmigrants(int iForeignKingID)
+bool CvPlayer::isForeignKingWillingToTradeImmigrants(int iForeignKingID) const
 {
 	if (!isAlive())
 	{

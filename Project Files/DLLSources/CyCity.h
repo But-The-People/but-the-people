@@ -18,10 +18,11 @@ class CyArea;
 class CyUnit;
 class CyCity
 {
+	CvCity* pointer(AssertCallerData);
 public:
 	CyCity();
 	DllExport CyCity(CvCity* pCity);		// Call from C++
-	CvCity* getCity() { return m_pCity;	}	// Call from C++
+	CvCity* getCity() { return (CvCity*)m_pCity;	}	// Call from C++
 	bool isNone() { return (m_pCity==NULL); }
 	void kill();
 
@@ -379,7 +380,7 @@ public:
 	// WTP, ray, Center Plot specific Backgrounds - END
 
 private:
-	CvCity* m_pCity;
+	const CvCity* const m_pCity;
 };
 
 #endif	// CyCity_h

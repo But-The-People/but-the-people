@@ -1038,7 +1038,7 @@ int CvMap::getGridHeight() const
 }
 
 
-int CvMap::getLandPlots()
+int CvMap::getLandPlots() const
 {
 	return m_iLandPlots;
 }
@@ -1051,7 +1051,7 @@ void CvMap::changeLandPlots(int iChange)
 }
 
 
-int CvMap::getOwnedPlots()
+int CvMap::getOwnedPlots() const
 {
 	return m_iOwnedPlots;
 }
@@ -1064,19 +1064,19 @@ void CvMap::changeOwnedPlots(int iChange)
 }
 
 
-int CvMap::getTopLatitude()
+int CvMap::getTopLatitude() const
 {
 	return m_iTopLatitude;
 }
 
 
-int CvMap::getBottomLatitude()
+int CvMap::getBottomLatitude() const
 {
 	return m_iBottomLatitude;
 }
 
 
-int CvMap::getNextRiverID()
+int CvMap::getNextRiverID() const
 {
 	return m_iNextRiverID;
 }
@@ -1104,38 +1104,38 @@ bool CvMap::isWrap()
 	return isWrapINLINE();
 }
 
-WorldSizeTypes CvMap::getWorldSize()
+WorldSizeTypes CvMap::getWorldSize() const
 {
 	return GC.getInitCore().getWorldSize();
 }
 
 
-ClimateTypes CvMap::getClimate()
+ClimateTypes CvMap::getClimate() const
 {
 	return GC.getInitCore().getClimate();
 }
 
 
-SeaLevelTypes CvMap::getSeaLevel()
+SeaLevelTypes CvMap::getSeaLevel() const
 {
 	return GC.getInitCore().getSeaLevel();
 }
 
 
 
-int CvMap::getNumCustomMapOptions()
+int CvMap::getNumCustomMapOptions() const
 {
 	return GC.getInitCore().getNumCustomMapOptions();
 }
 
 
-CustomMapOptionTypes CvMap::getCustomMapOption(int iOption)
+CustomMapOptionTypes CvMap::getCustomMapOption(int iOption) const
 {
 	return GC.getInitCore().getCustomMapOption(iOption);
 }
 
 
-int CvMap::getNumBonuses(BonusTypes eIndex)
+int CvMap::getNumBonuses(BonusTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumBonusInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -1152,7 +1152,7 @@ void CvMap::changeNumBonuses(BonusTypes eIndex, int iChange)
 }
 
 
-int CvMap::getNumBonusesOnLand(BonusTypes eIndex)
+int CvMap::getNumBonusesOnLand(BonusTypes eIndex) const
 {
 	FAssertMsg(eIndex >= 0, "eIndex is expected to be non-negative (invalid Index)");
 	FAssertMsg(eIndex < GC.getNumBonusInfos(), "eIndex is expected to be within maximum bounds (invalid Index)");
@@ -1187,19 +1187,19 @@ CvPlot* CvMap::pointToPlot(float fX, float fY)
 }
 
 
-int CvMap::getIndexAfterLastArea()
+int CvMap::getIndexAfterLastArea() const
 {
 	return m_areas.getIndexAfterLast();
 }
 
 
-int CvMap::getNumAreas()
+int CvMap::getNumAreas() const
 {
 	return m_areas.getCount();
 }
 
 
-int CvMap::getNumLandAreas()
+int CvMap::getNumLandAreas() const
 {
 	CvArea* pLoopArea;
 	int iNumLandAreas;

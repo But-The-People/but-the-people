@@ -549,7 +549,7 @@ void CvSelectionGroup::updateMission()
 }
 
 
-CvPlot* CvSelectionGroup::lastMissionPlot()
+CvPlot* CvSelectionGroup::lastMissionPlot() const
 {
 	CLLNode<MissionData>* pMissionNode;
 	CvUnit* pTargetUnit;
@@ -604,7 +604,7 @@ CvPlot* CvSelectionGroup::lastMissionPlot()
 }
 
 
-bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvPlot* pPlot, bool bTestVisible, bool bUseCache)
+bool CvSelectionGroup::canStartMission(int iMission, int iData1, int iData2, CvPlot* pPlot, bool bTestVisible, bool bUseCache) const
 {
 	PROFILE_FUNC();
 
@@ -1403,7 +1403,7 @@ void CvSelectionGroup::continueMission(int iSteps)
 }
 
 
-bool CvSelectionGroup::canDoCommand(CommandTypes eCommand, int iData1, int iData2, bool bTestVisible, bool bUseCache)
+bool CvSelectionGroup::canDoCommand(CommandTypes eCommand, int iData1, int iData2, bool bTestVisible, bool bUseCache) const
 {
 	PROFILE_FUNC();
 
@@ -1441,7 +1441,7 @@ bool CvSelectionGroup::canDoCommand(CommandTypes eCommand, int iData1, int iData
 	return false;
 }
 
-bool CvSelectionGroup::canEverDoCommand(CommandTypes eCommand, int iData1, int iData2, bool bTestVisible, bool bUseCache)
+bool CvSelectionGroup::canEverDoCommand(CommandTypes eCommand, int iData1, int iData2, bool bTestVisible, bool bUseCache) const
 {
 	if(eCommand == COMMAND_LOAD)
 	{
@@ -1544,7 +1544,7 @@ void CvSelectionGroup::setupActionCache()
 }
 
 // Returns true if one of the units can support the interface mode...
-bool CvSelectionGroup::canDoInterfaceMode(InterfaceModeTypes eInterfaceMode)
+bool CvSelectionGroup::canDoInterfaceMode(InterfaceModeTypes eInterfaceMode) const
 {
 	PROFILE_FUNC();
 
@@ -1634,7 +1634,7 @@ bool CvSelectionGroup::canDoInterfaceMode(InterfaceModeTypes eInterfaceMode)
 
 
 // Returns true if one of the units can execute the interface mode at the specified plot...
-bool CvSelectionGroup::canDoInterfaceModeAt(InterfaceModeTypes eInterfaceMode, CvPlot* pPlot)
+bool CvSelectionGroup::canDoInterfaceModeAt(InterfaceModeTypes eInterfaceMode, CvPlot* pPlot) const
 {
 	FAssertMsg(eInterfaceMode != NO_INTERFACEMODE, "InterfaceMode is not assigned a valid value");
 
@@ -1660,7 +1660,7 @@ bool CvSelectionGroup::isHuman() const
 }
 
 
-bool CvSelectionGroup::isBusy()
+bool CvSelectionGroup::isBusy() const
 {
 	if (getNumUnits() == 0)
 	{
@@ -1693,7 +1693,7 @@ bool CvSelectionGroup::isBusy()
 }
 
 
-bool CvSelectionGroup::isCargoBusy()
+bool CvSelectionGroup::isCargoBusy() const
 {
 	if (getNumUnits() == 0)
 	{
@@ -1734,7 +1734,7 @@ bool CvSelectionGroup::isCargoBusy()
 }
 
 
-int CvSelectionGroup::baseMoves()
+int CvSelectionGroup::baseMoves() const
 {
 	int iBestValue = MAX_INT;
 
@@ -1778,7 +1778,7 @@ bool CvSelectionGroup::isWaiting() const
 }
 
 
-bool CvSelectionGroup::isFull()
+bool CvSelectionGroup::isFull() const
 {
 	CLLNode<IDInfo>* pUnitNode;
 
@@ -1908,7 +1908,7 @@ bool CvSelectionGroup::buildCargoUnitList(CLinkList<IDInfo>& unitList) const
 	return bUnitAdded;
 }
 
-bool CvSelectionGroup::canAllMove()
+bool CvSelectionGroup::canAllMove() const
 {
 
 	if (getNumUnits() > 0)
@@ -1934,7 +1934,7 @@ bool CvSelectionGroup::canAllMove()
 }
 
 
-bool CvSelectionGroup::canAnyMove()
+bool CvSelectionGroup::canAnyMove() const
 {
 	CLLNode<IDInfo>* pUnitNode;
 	CvUnit* pLoopUnit;
@@ -1955,7 +1955,7 @@ bool CvSelectionGroup::canAnyMove()
 	return false;
 }
 
-bool CvSelectionGroup::hasMoved()
+bool CvSelectionGroup::hasMoved() const
 {
 	CLLNode<IDInfo>* pUnitNode;
 	CvUnit* pLoopUnit;
@@ -2029,8 +2029,7 @@ bool CvSelectionGroup::canEnterArea(PlayerTypes ePlayer, const CvArea* pArea, bo
 	return false;
 }
 
-
-bool CvSelectionGroup::canMoveInto(CvPlot* pPlot, bool bAttack)
+bool CvSelectionGroup::canMoveInto(CvPlot* pPlot, bool bAttack) const
 {
 	CLLNode<IDInfo>* pUnitNode;
 	CvUnit* pLoopUnit;
@@ -2054,7 +2053,7 @@ bool CvSelectionGroup::canMoveInto(CvPlot* pPlot, bool bAttack)
 	return false;
 }
 
-bool CvSelectionGroup::canMoveOrAttackInto(CvPlot* pPlot, bool bDeclareWar)
+bool CvSelectionGroup::canMoveOrAttackInto(CvPlot* pPlot, bool bDeclareWar) const
 {
 	// K-Mod. (hack to avoid breaking the DllExport) advc: 2x const, CvPlot&
 	return canMoveOrAttackInto(*pPlot, bDeclareWar, false);
@@ -2103,7 +2102,7 @@ bool CvSelectionGroup::canMoveThrough(CvPlot const& kPlot, bool bDeclareWar, boo
 }
 
 
-bool CvSelectionGroup::canFight()
+bool CvSelectionGroup::canFight() const
 {
 	CLLNode<IDInfo>* pUnitNode;
 	CvUnit* pLoopUnit;
@@ -2125,7 +2124,7 @@ bool CvSelectionGroup::canFight()
 }
 
 
-bool CvSelectionGroup::canDefend()
+bool CvSelectionGroup::canDefend() const
 {
 	CLLNode<IDInfo>* pUnitNode;
 	CvUnit* pLoopUnit;
@@ -2146,7 +2145,7 @@ bool CvSelectionGroup::canDefend()
 	return false;
 }
 
-bool CvSelectionGroup::canBombard(const CvPlot* pPlot)
+bool CvSelectionGroup::canBombard(const CvPlot* pPlot) const
 {
 	CLLNode<IDInfo>* pUnitNode = headUnitNode();
 	while (pUnitNode != NULL)
@@ -2355,7 +2354,7 @@ bool CvSelectionGroup::isInvisible(TeamTypes eTeam) const
 }
 
 
-int CvSelectionGroup::countNumUnitAIType(UnitAITypes eUnitAI)
+int CvSelectionGroup::countNumUnitAIType(UnitAITypes eUnitAI) const
 {
 	CLLNode<IDInfo>* pUnitNode;
 	CvUnit* pLoopUnit;
@@ -2387,7 +2386,7 @@ int CvSelectionGroup::countNumUnitAIType(UnitAITypes eUnitAI)
 	return iCount;
 }
 
-bool CvSelectionGroup::IsSelected()
+bool CvSelectionGroup::IsSelected() const
 {
 	CLLNode<IDInfo>* pUnitNode;
 	CvUnit* pLoopUnit;
@@ -3260,19 +3259,19 @@ bool CvSelectionGroup::groupAmphibMove(CvPlot* pPlot, int iFlags)
 }
 
 
-bool CvSelectionGroup::readyToSelect(bool bAny)
+bool CvSelectionGroup::readyToSelect(bool bAny) const
 {
 	return (readyToMove(bAny) && !isAutomated() && isOnMap());
 }
 
 
-bool CvSelectionGroup::readyToMove(bool bAny)
+bool CvSelectionGroup::readyToMove(bool bAny) const
 {
 	return (((bAny) ? canAnyMove() : canAllMove()) && (headMissionQueueNode() == NULL) && (getActivityType() == ACTIVITY_AWAKE) && !isBusy() && !isCargoBusy());
 }
 
 
-bool CvSelectionGroup::readyToAuto()
+bool CvSelectionGroup::readyToAuto() const
 {
 	return (canAllMove() && (headMissionQueueNode() != NULL));
 }

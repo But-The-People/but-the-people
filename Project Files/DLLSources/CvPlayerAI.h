@@ -62,7 +62,7 @@ public:
 
 	void AI_conquerCity(CvCity* pCity);
 
-	bool AI_acceptUnit(CvUnit* pUnit);
+	bool AI_acceptUnit(const CvUnit* pUnit);
 	bool AI_captureUnit(UnitTypes eUnit, CvPlot* pPlot);
 
 	DomainTypes AI_unitAIDomainType(UnitAITypes eUnitAI) const;

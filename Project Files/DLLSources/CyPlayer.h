@@ -22,6 +22,7 @@ class CyTradeRouteGroup;
 
 class CyPlayer
 {
+	CvPlayer* pointer(AssertCallerData);
 public:
 
 /** NBMOD TAX **/
@@ -38,7 +39,6 @@ public:
 	// R&R, ray, Bargaining - End
 	CyPlayer();
 	CyPlayer(CvPlayer* pPlayer);		// Call from C++
-	CvPlayer* getPlayer() { return m_pPlayer;	}	// Call from C++
 	// PatchMod: Achievements START
 	bool isAchieveGained(int /*AchieveTypes*/ eAchieve);
 	int getAchieveYear(int /*AchieveTypes*/ eAchieve);
@@ -433,7 +433,7 @@ public:
 	int AI_maxGoldTrade(int iPlayer);
 	void forcePeace(int iPlayer);
 private:
-	CvPlayer* m_pPlayer;
+	const CvPlayer* m_pPlayer;
 	// R&R mod, vetiarvind, trade groups - start
 	int m_lastUpdatedTradegroup; 
 	int m_loadedTradeGroup;

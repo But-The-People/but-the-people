@@ -42,7 +42,7 @@ public:
 	DllExport void shuffleSequence(std::vector<int>& aNumbers, char const* pszLog);
 
 	void reseed(unsigned long ulNewValue);
-	unsigned long getSeed();
+	unsigned long getSeed() const;
 
 	unsigned long peek() const;
 
