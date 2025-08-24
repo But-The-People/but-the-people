@@ -18455,6 +18455,9 @@ void CvPlayer::doAction(PlayerActionTypes eAction, int iData1, int iData2, int i
 	case PLAYER_ACTION_NETWORK_canDoGoody:
 		testOOSanDoGoody((GoodyTypes)iData1, iData2, iData3);
 		break;
+	case PLAYER_ACTION_ASYNC_RANDOM:
+		GC.getGameINLINE().applyNetworkRandomAsync(getID());
+		break;
 	default:
 		FAssertMsg(false, "Unknown action");
 		break;

@@ -48,6 +48,8 @@ public:
 
 	void setSyncedStatus(bool bNewSetting);
 
+	bool hasContent() const { return true; } // for EnumMap savegame compatibility
+
 	// for serialization
 	void read(FDataStreamBase* pStream);
 	void write(FDataStreamBase* pStream);

@@ -312,6 +312,10 @@ public:
 	CvRandom& getSorenRand();
 	const CvRandom& getSorenRand() const;
 	int getSorenRandNum(int iNum, const char* pszLog);
+	
+	int getAsyncRandom(int iNum);
+
+	void applyNetworkRandomAsync(PlayerTypes ePlayer);
 
 	int calculateSyncChecksum(CvString* pLogString) const;
 	int calculateOptionsChecksum() const;
@@ -491,6 +495,7 @@ protected:
 
 	CvRandom m_mapRand;
 	CvRandom m_sorenRand;
+	EnumMap<PlayerTypes, CvRandom> m_em_AsyncRand;
 	ReplayMessageList m_listReplayMessages;
 	CvReplayInfo* m_pReplayInfo;
 

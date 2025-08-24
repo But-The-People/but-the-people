@@ -41,6 +41,9 @@ CvGame::CvGame()
 	m_sorenRand.setSyncedStatus(true);
 	m_mapRand.setSyncedStatus(true);
 
+	// the async randoms should be allocated at all times
+	m_em_AsyncRand.allocate();
+
 	m_pReplayInfo = NULL;
 
 	// PatchMod: Victorys START
@@ -72,6 +75,11 @@ void CvGame::init(HandicapTypes eHandicap)
 
 	m_mapRand.init(GC.getInitCore().getMapRandSeed() % 73637381);
 	m_sorenRand.init(GC.getInitCore().getSyncRandSeed() % 52319761);
+
+	for (PlayerTypes ePlayer = FIRST_PLAYER; ePlayer < NUM_PLAYER_TYPES; ++ePlayer)
+	{
+		m_em_AsyncRand[ePlayer].init(GC.getInitCore().getSyncRandSeed() % (52319761 + (ePlayer * ePlayer)));
+	}
 
 	//--------------------------------
 	// Init non-saved data
@@ -6431,6 +6439,25 @@ int CvGame::getSorenRandNum(int iNum, const char* pszLog)
 {
 	FAssertMsg(CxDesyncMonitor::isSynced(), "CvGame::getSorenRandNum called from async code execution");
 	return m_sorenRand.get(iNum, pszLog);
+}
+
+
+int CvGame::getAsyncRandom(int iNum)
+{
+	FAssertMsg(!CxDesyncMonitor::isSynced(), "CvGame::getAsyncRandom called from synced code execution");
+	gDLL->sendPlayerAction(getActivePlayer(), PLAYER_ACTION_ASYNC_RANDOM, -1, -1, -1);
+	return m_em_AsyncRand[getActivePlayer()].get(iNum);
+}
+
+void CvGame::applyNetworkRandomAsync(PlayerTypes ePlayer)
+{
+	if (ePlayer == getActivePlayer())
+	{
+		// player already advanced in async
+		// now everybody else will have to do it to get the seed back in sync
+		return;
+	}
+	m_em_AsyncRand[ePlayer].get(1);
 }
 
 int CvGame::calculateSyncChecksum(CvString* pLogString) const
