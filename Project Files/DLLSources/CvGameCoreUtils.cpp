@@ -1742,7 +1742,14 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 		// K-Mod. I've moved the code from here into separate functions.
 		iMoves = bMoveMaxMoves ? pSelectionGroup->maxMoves() : pSelectionGroup->movesLeft();
 
-		if ((!USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node)))
+		// The parent check excepts the start node (whose parent is null) from being assigned any other
+		// iTurns than 1 when added. This prevents an assert when using NMS in GetPathEndTurnPlot that triggers 
+		// if a group is out of movement points while resting off movement debt AND it attempts to pathfind to its current plot
+		// Note: These conditions are a bit contrived and it's likely that this is just a symptom of something
+		// that should be addressed elsewhere. Finally, it makes more sense that we should never require more than 1 turn 
+		// to reach the start plot, regardless of debt (Do note that this change does NOT change any pathing calculation,
+		// the debt is fully accounted  for, the init debt (if any) is rather processed on the first child instead
+		if (parent != NULL && (!USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node)))
 		{
 			while (iMoves <= 0)
 			{
