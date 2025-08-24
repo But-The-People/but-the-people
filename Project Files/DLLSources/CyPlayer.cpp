@@ -22,7 +22,7 @@
 
 CvPlayer* CyPlayer::pointer(AssertCallerData data)
 {
-	FAssertWithCaller(data, CxDesyncMonitor::isSynced());
+	FAssertWithCaller(data, CxDesyncMonitor::isAlwaysSync());
 	FAssertWithCaller(data, m_pPlayer != NULL);
 	return (CvPlayer*)m_pPlayer;
 }

@@ -18,7 +18,7 @@
 
 CvMap* CyMap::pointer(AssertCallerData data)
 {
-	FAssertWithCaller(data, CxDesyncMonitor::isSynced());
+	FAssertWithCaller(data, CxDesyncMonitor::isAlwaysSync());
 	FAssertWithCaller(data, m_pMap != NULL);
 	return (CvMap*)m_pMap;
 }

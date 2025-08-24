@@ -13,7 +13,7 @@
 
 CvCity* CyCity::pointer(AssertCallerData data)
 {
-	FAssertWithCaller(data, CxDesyncMonitor::isSynced());
+	FAssertWithCaller(data, CxDesyncMonitor::isAlwaysSync());
 	FAssertWithCaller(data, m_pCity != NULL);
 	return (CvCity*)m_pCity;
 }

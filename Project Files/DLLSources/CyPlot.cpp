@@ -12,7 +12,7 @@
 
 CvPlot* CyPlot::pointer(AssertCallerData data)
 {
-	FAssertWithCaller(data, CxDesyncMonitor::isSynced());
+	FAssertWithCaller(data, CxDesyncMonitor::isAlwaysSync());
 	FAssertWithCaller(data, m_pPlot != NULL);
 	return (CvPlot*)m_pPlot;
 }

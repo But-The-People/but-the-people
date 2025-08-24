@@ -11,7 +11,7 @@
 
 CvTeam* CyTeam::pointer(AssertCallerData data)
 {
-	FAssertWithCaller(data, CxDesyncMonitor::isSynced());
+	FAssertWithCaller(data, CxDesyncMonitor::isAlwaysSync());
 	FAssertWithCaller(data, m_pTeam != NULL);
 	return (CvTeam*)m_pTeam;
 }

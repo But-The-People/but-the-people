@@ -18,7 +18,7 @@
 
 CvUnit* CyUnit::pointer(AssertCallerData data)
 {
-	FAssertWithCaller(data, CxDesyncMonitor::isSynced());
+	FAssertWithCaller(data, CxDesyncMonitor::isAlwaysSync());
 	FAssertWithCaller(data, m_pUnit != NULL);
 	return (CvUnit*)m_pUnit;
 }

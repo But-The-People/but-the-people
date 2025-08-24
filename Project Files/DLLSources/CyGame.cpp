@@ -17,7 +17,7 @@
 
 CvGame* CyGame::pointer(AssertCallerData data)
 {
-	FAssertWithCaller(data, CxDesyncMonitor::isSynced());
+	FAssertWithCaller(data, CxDesyncMonitor::isAlwaysSync());
 	FAssertWithCaller(data, m_pGame != NULL);
 	return (CvGame*)m_pGame;
 }

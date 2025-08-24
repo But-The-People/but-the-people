@@ -16,7 +16,7 @@
 
 CvSelectionGroup* CySelectionGroup::pointer(AssertCallerData data)
 {
-	FAssertWithCaller(data, CxDesyncMonitor::isSynced());
+	FAssertWithCaller(data, CxDesyncMonitor::isAlwaysSync());
 	FAssertWithCaller(data, m_pSelectionGroup != NULL);
 	return (CvSelectionGroup*)m_pSelectionGroup;
 }

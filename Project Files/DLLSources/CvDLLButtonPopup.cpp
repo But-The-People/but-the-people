@@ -999,6 +999,7 @@ void CvDLLButtonPopup::OnOkClicked(CvPopup* pPopup, PopupReturn *pPopupReturn, C
 			{
 				if (NULL != pTriggeredData && GC.getEventTriggerInfo(pTriggeredData->m_eTrigger).isSinglePlayer())
 				{
+					CxDesyncMonitor SyncMonitor(CxDesyncMonitor::TYPE_RESET); // avoid triggering sync asserts due to being triggered from GUI
 					GET_PLAYER(GC.getGameINLINE().getActivePlayer()).doAction(PLAYER_ACTION_APPLY_EVENT, pPopupReturn->getButtonClicked(), info.getData1(), -1);
 				}
 				else

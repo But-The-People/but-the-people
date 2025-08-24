@@ -28,6 +28,7 @@
 
 #include "CvSavegame.h"
 #include "BetterBTSAI.h"
+#include "DesyncMonitor.h"
 
 #pragma push_macro("free")
 #pragma push_macro("new")
@@ -3329,6 +3330,8 @@ int CvPlayerAI::AI_getMemoryAttitude(PlayerTypes ePlayer, MemoryTypes eMemory)
 
 int CvPlayerAI::AI_dealVal(PlayerTypes ePlayer, const CLinkList<TradeData>* pList, bool bIgnoreAnnual, int iChange)
 {
+	FAssert(CxDesyncMonitor::isNeverSync());
+
 	int iValue = 0;
 
 	FAssertMsg(ePlayer != getID(), "shouldn't call this function on ourselves");
@@ -3400,6 +3403,8 @@ bool CvPlayerAI::AI_goldDeal(const CLinkList<TradeData>* pList)
 
 bool CvPlayerAI::AI_considerOffer(PlayerTypes ePlayer, const CLinkList<TradeData>* pTheirList, const CLinkList<TradeData>* pOurList, int iChange)
 {
+	FAssert(CxDesyncMonitor::isNeverSync());
+
 	CLLNode<TradeData>* pNode;
 	int iThreshold;
 
@@ -3554,6 +3559,7 @@ int CvPlayerAI::AI_militaryHelp(PlayerTypes ePlayer, int& iNumUnits, UnitTypes& 
 
 bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeData>* pTheirList, const CLinkList<TradeData>* pOurList, CLinkList<TradeData>* pTheirInventory, CLinkList<TradeData>* pOurInventory, CLinkList<TradeData>* pTheirCounter, CLinkList<TradeData>* pOurCounter, const IDInfo& kTransport)
 {
+	FAssert(CxDesyncMonitor::isNeverSync());
 
 	CLLNode<TradeData>* pNode;
 	CLLNode<TradeData>* pBestNode;

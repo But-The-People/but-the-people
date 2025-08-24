@@ -19,7 +19,7 @@
 
 CvMapGenerator* CyMapGenerator::pointer(AssertCallerData data)
 {
-	FAssertWithCaller(data, CxDesyncMonitor::isSynced());
+	FAssertWithCaller(data, CxDesyncMonitor::isAlwaysSync());
 	FAssertWithCaller(data, m_pMapGenerator != NULL);
 	return (CvMapGenerator*)m_pMapGenerator;
 }
