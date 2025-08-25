@@ -53,7 +53,7 @@ Changes:
 Translations:
 - Too many updates to count properly
 - Updated languages: English, French, German, Russian
-- Baked goods have been renamed to povisions
+- Baked goods have been renamed to provisions
 
 Balance:
 - Adjusted prices for bargaining with natives
