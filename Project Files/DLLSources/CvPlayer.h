@@ -158,6 +158,9 @@ public:
 	// R&R, ray, Bargaining - Start
 	bool tryGetNewBargainPriceSell();
 	bool tryGetNewBargainPriceBuy();
+protected:
+	void applyBargainOutcome(PlayerTypes eColonialPlayer, int iTradeBanTimer, bool bWillingToTrade);
+public:
 	// R&R, ray, Bargaining - End
 
 	void toggleMultiRowPlotList() const; // TAC - TAC Interface - koma13 - START
@@ -445,10 +448,8 @@ public:
 	void setAlive(bool bNewValue);
 
 	// R&R, ray, Bargaining - Start
-	bool isWillingToBargain() const;
-	void setWillingToBargain(bool bNewValue);
-	int getTimeNoTrade() const;
-	void setTimeNoTrade(int bNewValue);
+	bool isWillingToBargain(PlayerTypes eColonialPlayer) const;
+	int getTimeNoTrade(PlayerTypes eColonialPlayer) const;
 	void decreaseTimeNoTrade();
 	// R&R, ray, Bargaining - End
 
@@ -1058,8 +1059,8 @@ protected:
 	bool m_bStrike;
 	bool m_bHuman;
 	// R&R, ray, Bargaining - START
-	bool m_bWillingToBargain;
-	int m_iTimeNoTrade;
+	EnumMap<PlayerTypes, bool> m_em_bWillingToBargain;
+	EnumMap<PlayerTypes, char>  m_em_iTimeNoTrade;
 	// R&R, ray, Bargaining - END
 
 	// R&R, ray, Timers Diplo Events - START

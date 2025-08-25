@@ -3580,20 +3580,22 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 	bTheirGoldDeal = AI_goldDeal(pTheirList);
 	bOurGoldDeal = AI_goldDeal(pOurList);
 
+	CvPlayerAI& kTradingPartner = GET_PLAYER(ePlayer);
+
 
 	// R&R, ray, Bargaining - START
-	bool acceptsBargaining = GET_PLAYER(getID()).isWillingToBargain();
+	bool acceptsBargaining = this->isWillingToBargain(kTradingPartner.getID());
 
 	if(acceptsBargaining)
 	{
 		if (bOurGoldDeal)
 		{
-			int priceIncreaseMax = GC.getDefineINT("PRICE_INCREASE_BARGAIN_SELL");
+			int priceIncreaseMax = GLOBAL_DEFINE_PRICE_INCREASE_BARGAIN_SELL;
 			pNode = pOurInventory->head();
 			if (pNode->m_data.m_eItemType == TRADE_GOLD)
 			{
 				int oldPrice = pNode->m_data.m_iData1;
-				int randomPriceChange = GC.getASyncRand().get(priceIncreaseMax, "Natives Price Change Sell");
+				int randomPriceChange = GC.getGameINLINE().getAsyncRandom(priceIncreaseMax);
 				if (randomPriceChange < priceIncreaseMax / 3)
 				{
 					randomPriceChange = priceIncreaseMax / 3;
@@ -3602,7 +3604,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 
 				// R&R, ray, change for Trait Trader - START
 				// WTP, ray, also consider European Trait
-				int iTotalNativeTradeModifier = GET_PLAYER(getID()).getNativeTradeModifier() + GET_PLAYER(ePlayer).getNativeTradeModifier();
+				int iTotalNativeTradeModifier = GET_PLAYER(getID()).getNativeTradeModifier() + kTradingPartner.getNativeTradeModifier();
 				// safety check to ensure that no numbers do not get too extreme
 				if (iTotalNativeTradeModifier > GLOBAL_DEFINE_MAX_NATIVE_BARGAIN_MODIFIER)
 				{
@@ -3613,7 +3615,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 				// R&R, ray, change for Trait Trader - END
 
 				// R&R, ray, small correction to stop at max gold of player
-				int iGoldAvailable = GET_PLAYER(getID()).AI_maxGoldTrade(ePlayer);
+				int iGoldAvailable = this->AI_maxGoldTrade(ePlayer);
 				if (newPrice >= iGoldAvailable)
 				{
 					newPrice = iGoldAvailable;
@@ -3629,12 +3631,12 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 
 		else if (bTheirGoldDeal)
 		{
-			int priceDecreaseMax = GC.getDefineINT("PRICE_DECREASE_BARGAIN_BUY");
+			int priceDecreaseMax = GLOBAL_DEFINE_PRICE_DECREASE_BARGAIN_BUY;
 			pNode = pTheirInventory->head();
 			if (pNode->m_data.m_eItemType == TRADE_GOLD)
 			{
 				int oldPrice = pNode->m_data.m_iData1;
-				int randomPriceChange = GC.getASyncRand().get(priceDecreaseMax, "Natives Price Change Buy");
+				int randomPriceChange = GC.getGameINLINE().getAsyncRandom(priceDecreaseMax);
 				if (randomPriceChange < priceDecreaseMax / 3)
 				{
 					randomPriceChange = priceDecreaseMax / 3;
@@ -3643,7 +3645,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 
 				// R&R, ray, change for Trait Trader - START
 				// WTP, ray, also consider European Trait
-				int iTotalNativeTradeModifier = GET_PLAYER(getID()).getNativeTradeModifier() + GET_PLAYER(ePlayer).getNativeTradeModifier();
+				int iTotalNativeTradeModifier = this->getNativeTradeModifier() + kTradingPartner.getNativeTradeModifier();
 				// safety check to ensure that no negative numbers occurs
 				if (iTotalNativeTradeModifier > GLOBAL_DEFINE_MAX_NATIVE_BARGAIN_MODIFIER)
 				{
@@ -3662,7 +3664,7 @@ bool CvPlayerAI::AI_counterPropose(PlayerTypes ePlayer, const CLinkList<TradeDat
 		}
 
 		//at the end reset value for Bargaining
-		GET_PLAYER(getID()).setWillingToBargain(false);
+		this->applyBargainOutcome(kTradingPartner.getID(), 0, false);
 		return true;
 	}
 	// R&R, ray, Bargaining - END

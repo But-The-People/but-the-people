@@ -9457,7 +9457,7 @@ void CvGameTextMgr::buildCityBillboardIconString( CvWStringBuffer& szBuffer, CvC
 	CvPlayer& cityOwnerPlayer =	GET_PLAYER(pCity->getOwnerINLINE());
 	if (cityOwnerPlayer.isNative())
 	{
-		int timeNoTrade= cityOwnerPlayer.getTimeNoTrade();
+		int timeNoTrade= cityOwnerPlayer.getTimeNoTrade(GC.getGameINLINE().getActivePlayer());
 		if (timeNoTrade > 0)
 		{
 			szBuffer.append(gDLL->getText("TXT_KEY_CITY_TIME_NO_TRADE", timeNoTrade));

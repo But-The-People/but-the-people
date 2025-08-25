@@ -8143,33 +8143,34 @@ bool CvPlayer::isAlive() const
 }
 
 // R&R, ray, Bargaining - Start
-bool CvPlayer::isWillingToBargain() const
+bool CvPlayer::isWillingToBargain(PlayerTypes eColonialPlayer) const
 {
-	return m_bWillingToBargain;
+	FAssert(isNative());
+	return m_em_bWillingToBargain.get(eColonialPlayer);
 }
 
-void CvPlayer::setWillingToBargain(bool bNewValue)
+int CvPlayer::getTimeNoTrade(PlayerTypes eColonialPlayer) const
 {
-	m_bWillingToBargain = bNewValue;
-}
-
-int CvPlayer::getTimeNoTrade() const
-{
-	 return m_iTimeNoTrade;
-}
-
-void CvPlayer::setTimeNoTrade(int bNewValue)
-{
-	m_iTimeNoTrade = bNewValue;
+	FAssert(isNative());
+	return m_em_iTimeNoTrade.get(eColonialPlayer);
 }
 
 void CvPlayer::decreaseTimeNoTrade()
 {
-	if(m_iTimeNoTrade > 0)
+	if (!m_em_iTimeNoTrade.isAllocated())
 	{
-		m_iTimeNoTrade = (m_iTimeNoTrade - 1);
+		// no need to loop empty arrays
+		return;
 	}
-	return ;
+
+	for (PlayerTypes ePlayer = FIRST_PLAYER; ePlayer < NUM_PLAYER_TYPES; ++ePlayer)
+	{
+		const int iTurns = m_em_iTimeNoTrade.get(ePlayer);
+		if (iTurns > 0)
+		{
+			m_em_iTimeNoTrade.set(ePlayer, iTurns - 1);
+		}
+	}
 }
 // R&R, ray, Bargaining - END
 
@@ -18350,6 +18351,8 @@ int CvPlayer::getSellToEuropeProfit(YieldTypes eYield, int iAmount) const
 
 void CvPlayer::doAction(PlayerActionTypes eAction, int iData1, int iData2, int iData3)
 {
+	CxDesyncMonitor DesyncMarker(CxDesyncMonitor::TYPE_NETWORK_RECEIVE);
+
 	switch (eAction)
 	{
 	case PLAYER_ACTION_BUY_EUROPE_UNIT:
@@ -18454,6 +18457,9 @@ void CvPlayer::doAction(PlayerActionTypes eAction, int iData1, int iData2, int i
 		break;
 	case PLAYER_ACTION_ASYNC_RANDOM:
 		GC.getGameINLINE().applyNetworkRandomAsync(getID());
+		break;
+	case PLAYER_ACTION_UPDATE_NATIVE_BARGAIN_EFFECT:
+		applyBargainOutcome((PlayerTypes)iData1, iData2, iData3);
 		break;
 	default:
 		FAssertMsg(false, "Unknown action");
@@ -22772,72 +22778,94 @@ void CvPlayer::withDrawAllPrivateersToPortRoyal()
 bool CvPlayer::tryGetNewBargainPriceSell()
 {
 	PlayerTypes bargainPartner = (PlayerTypes) gDLL->getDiplomacyPlayer();
-	int chanceToFail = GC.getDefineINT("BASE_CHANCE_BARGAIN_SELL_FAIL");
-	int attitudeChanceImprovement = GC.getDefineINT("CHANCE_IMPROVEMENT_ATTITUDE");
-	int timeNativesAngryMax = GC.getDefineINT("ROUNDS_NO_TALK_BECAUSE_BAD_BARGAINING");
+	const int chanceToFail = GLOBAL_DEFINE_BASE_CHANCE_BARGAIN_SELL_FAIL;
+	const int attitudeChanceImprovement = GLOBAL_DEFINE_CHANCE_IMPROVEMENT_ATTITUDE;
+	const int timeNativesAngryMax = GLOBAL_DEFINE_ROUNDS_NO_TALK_BECAUSE_BAD_BARGAINING;
 
-	int attitudeLevel = GET_PLAYER(bargainPartner).AI_getAttitude(getID(), false);
+	const int attitudeLevel = GET_PLAYER(bargainPartner).AI_getAttitude(getID(), false);
 
-	int randomBase = 1000 + attitudeChanceImprovement * attitudeLevel;
+	const int randomBase = 1000 + attitudeChanceImprovement * attitudeLevel;
 
-	int gamespeedMod = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent();
-	/// random network fix - start - Nightinggale
-	//int randomValue = GC.getGameINLINE().getSorenRandNum(randomBase, "Bargaining Sell");
-	int randomValue = std::rand() % randomBase;
-	/// random network fix - end - Nightinggale
+	const int gamespeedMod = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent();
+	
+	const int randomValue = GC.getGameINLINE().getAsyncRandom(randomBase);
+
+	int iTurns = 0;
+	bool bWillBargain = true;
 
 	//case bargaining fails
 	if (randomValue < chanceToFail)
 	{
-		int randomAngry = GC.getGameINLINE().getSorenRandNum(timeNativesAngryMax, "Natives Angry Buy");
-		GET_PLAYER(bargainPartner).setTimeNoTrade(randomAngry*gamespeedMod/100);
-		GET_PLAYER(bargainPartner).AI_changeAttitudeExtra(getID(), -1);
-		GET_PLAYER(bargainPartner).setWillingToBargain(false);
-		return false;
-	}
-
-	//case bargaining successfull
-	else
+		bWillBargain = false;
+		iTurns = GC.getGameINLINE().getAsyncRandom(timeNativesAngryMax * gamespeedMod / 100);
+		if (iTurns == 0)
 	{
-		GET_PLAYER(bargainPartner).setWillingToBargain(true);
-		return true;
+			// always ensure the number is not 0 as that not only makes no sense, it will also cause issues for applyBargainOutcome()
+			iTurns = 1;
+		}
 	}
 
+	GET_PLAYER(bargainPartner).applyBargainOutcome(getID(), iTurns, bWillBargain);
+
+	return bWillBargain;
 }
 
 bool CvPlayer::tryGetNewBargainPriceBuy()
 {
 	PlayerTypes bargainPartner = (PlayerTypes) gDLL->getDiplomacyPlayer();
-	int chanceToFail = GC.getDefineINT("BASE_CHANCE_BARGAIN_BUY_FAIL");
-	int attitudeChanceImprovement = GC.getDefineINT("CHANCE_IMPROVEMENT_ATTITUDE");
-	int timeNativesAngryMax = GC.getDefineINT("ROUNDS_NO_TALK_BECAUSE_BAD_BARGAINING");
+	const int chanceToFail = GLOBAL_DEFINE_BASE_CHANCE_BARGAIN_BUY_FAIL;
+	const int attitudeChanceImprovement = GLOBAL_DEFINE_CHANCE_IMPROVEMENT_ATTITUDE;
+	const int timeNativesAngryMax = GLOBAL_DEFINE_ROUNDS_NO_TALK_BECAUSE_BAD_BARGAINING;
 
-	int attitudeLevel = GET_PLAYER(bargainPartner).AI_getAttitude(getID(), false);
-	int gamespeedMod = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent();
-	int randomBase = 1000 + attitudeChanceImprovement * attitudeLevel;
+	const int attitudeLevel = GET_PLAYER(bargainPartner).AI_getAttitude(getID(), false);
+	const int gamespeedMod = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getTrainPercent();
+	const int randomBase = 1000 + attitudeChanceImprovement * attitudeLevel;
 
-	/// random network fix - start - Nightinggale
-	//int randomValue = GC.getGameINLINE().getSorenRandNum(randomBase, "Bargaining Buy");
-	int randomValue = std::rand() % randomBase;
-	/// random network fix - end - Nightinggale
+	const int randomValue = GC.getGameINLINE().getAsyncRandom(randomBase);
+
+	int iTurns = 0;
+	bool bWillBargain = true;
 
 	//case bargaining fails
 	if (randomValue < chanceToFail)
 	{
-		int randomAngry = GC.getGameINLINE().getSorenRandNum(timeNativesAngryMax*gamespeedMod/100, "Natives Angry Buy");
-		GET_PLAYER(bargainPartner).setTimeNoTrade(randomAngry);
-		GET_PLAYER(bargainPartner).AI_changeAttitudeExtra(getID(), -1);
-		GET_PLAYER(bargainPartner).setWillingToBargain(false);
-		return false;
-	}
-
-	//case bargaining successfull
-	else
+		bWillBargain = false;
+		iTurns = GC.getGameINLINE().getAsyncRandom(timeNativesAngryMax*gamespeedMod/100);
+		if (iTurns == 0)
 	{
-		GET_PLAYER(bargainPartner).setWillingToBargain(true);
-		return true;
+			// always ensure the number is not 0 as that not only makes no sense, it will also cause issues for applyBargainOutcome()
+			iTurns = 1;
+		}
 	}
 
+	GET_PLAYER(bargainPartner).applyBargainOutcome(getID(), iTurns, bWillBargain);
+
+	return bWillBargain;
+}
+
+void CvPlayer::applyBargainOutcome(PlayerTypes eColonialPlayer, int iTradeBanTimer, bool bWillingToTrade)
+{
+	FAssert(this->isNative());
+
+	if (!CxDesyncMonitor::isCurrentlySync())
+	{
+		gDLL->sendPlayerAction(getID(), PLAYER_ACTION_UPDATE_NATIVE_BARGAIN_EFFECT, eColonialPlayer, iTradeBanTimer, bWillingToTrade);
+	}
+	else if (CxDesyncMonitor::isNetworkReceive())
+	{
+		if (eColonialPlayer == GC.getGameINLINE().getActivePlayer())
+		{
+			// data is already applied when transmitting
+			return;
+		}
+	}
+
+	m_em_bWillingToBargain.set(eColonialPlayer, bWillingToTrade);
+	if (!bWillingToTrade && iTradeBanTimer > 0)
+	{
+		m_em_iTimeNoTrade.set(eColonialPlayer, iTradeBanTimer);
+		AI_changeAttitudeExtra(eColonialPlayer, -1);
+	}
 }
 // R&R, ray, Bargaining - End
 

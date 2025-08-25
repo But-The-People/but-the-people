@@ -310,6 +310,9 @@ enum SavegameVariableTypes
 
 	PlayerSave_TempUnitId,
 
+	PlayerSave_WillingToBargain_Enummap,
+	PlayerSave_TimeNoTrade_Enummap,
+
 	NUM_SAVE_ENUM_VALUES,
 };
 
@@ -508,6 +511,9 @@ const char* getSavedEnumNamePlayer(SavegameVariableTypes eType)
 
 	case PlayerSave_OppressometerDiscriminationModifier: return "PlayerSave_OppressometerDiscriminationModifier";
 	case PlayerSave_OppressometerForcedLaborModifier: return "PlayerSave_OppressometerForcedLaborModifier";
+
+	case PlayerSave_WillingToBargain_Enummap: return "PlayerSave_WillingToBargain_Enummap";
+	case PlayerSave_TimeNoTrade_Enummap: return "PlayerSave_TimeNoTrade_Enummap";
 	}
 	FAssertMsg(0, "Missing case");
 	return "";
@@ -586,12 +592,10 @@ void CvPlayer::resetSavedData(PlayerTypes eID, bool bConstructorCall)
 	m_iKingNumUnitMultiplier = defaultKingNumUnitMultiplier;
 	m_iMissionarySuccessPercent = defaultMissionarySuccessPercent;
 	m_iNativeTradePostSuccessPercent = defaultNativeTradePostSuccessPercent; // WTP, ray, Native Trade Posts - START
-	m_iTimeNoTrade = defaultTimeNoTrade;
 
 	m_iDSecondPlayerFrenchNativeWar = defaultIDSecondPlayerFrenchNativeWar; //WTP, ray, Colonial Intervention In Native War - START
 
 	m_bAlive = defaultAlive;
-	m_bWillingToBargain = defaultWillingToBargain;
 	m_bEverAlive = defaultEverAlive;
 	m_bTurnActive = defaultTurnActive;
 	m_bAutoMoves = defaultAutoMoves;
@@ -718,8 +722,8 @@ void CvPlayer::resetSavedData(PlayerTypes eID, bool bConstructorCall)
 	m_triggersFired.clear();
 
 	// R&R, ray, Bargaining - START
-	m_bWillingToBargain = false;
-	m_iTimeNoTrade = 0;
+	m_em_bWillingToBargain.reset();
+	m_em_iTimeNoTrade.reset();
 	// R&R, ray, Bargaining - END
 
 	m_iDSecondPlayerFrenchNativeWar = 0; //WTP, ray, Colonial Intervention In Native War - START
@@ -848,12 +852,12 @@ void CvPlayer::read(CvSavegameReader reader)
 		case PlayerSave_KingNumUnitMultiplier: reader.Read(m_iKingNumUnitMultiplier); break;
 		case PlayerSave_MissionarySuccessPercent: reader.Read(m_iMissionarySuccessPercent); break;
 		case PlayerSave_NativeTradePostSuccessPercent: reader.Read(m_iNativeTradePostSuccessPercent); break; // WTP, ray, Native Trade Posts - START)
-		case PlayerSave_TimeNoTrade: reader.Read(m_iTimeNoTrade); break;
+		case PlayerSave_TimeNoTrade: reader.Discard<int>(); break;
 
 		case PlayerSave_iDSecondPlayerFrenchNativeWar: reader.Read(m_iDSecondPlayerFrenchNativeWar); break;	// WTP, ray, Big Colonies and Native Allies War - START
 
 		case PlayerSave_Alive: reader.Read(m_bAlive); break;
-		case PlayerSave_WillingToBargain: reader.Read(m_bWillingToBargain); break;
+		case PlayerSave_WillingToBargain: reader.Discard<bool>(); break;
 		case PlayerSave_EverAlive: reader.Read(m_bEverAlive); break;
 		case PlayerSave_TurnActive: reader.Read(m_bTurnActive); break;
 		case PlayerSave_AutoMoves: reader.Read(m_bAutoMoves); break;
@@ -974,6 +978,9 @@ void CvPlayer::read(CvSavegameReader reader)
 		case PlayerSave_OppressometerDiscriminationModifier: reader.Discard<int>(); break;
 		case PlayerSave_OppressometerForcedLaborModifier: reader.Discard<int>(); break;
 
+		case PlayerSave_WillingToBargain_Enummap: reader.Read(m_em_bWillingToBargain); break;
+		case PlayerSave_TimeNoTrade_Enummap: reader.Read(m_em_iTimeNoTrade); break;
+
 		case PlayerSave_CacheUpdate:
 			// Updating cache prior to reading anything, which relies on cache to load properly or set other caches
 			// Cities in particular relies on cached values in CvPlayer
@@ -1088,12 +1095,10 @@ void CvPlayer::write(CvSavegameWriter writer)
 	writer.Write(PlayerSave_KingNumUnitMultiplier, m_iKingNumUnitMultiplier, defaultKingNumUnitMultiplier);
 	writer.Write(PlayerSave_MissionarySuccessPercent, m_iMissionarySuccessPercent, defaultMissionarySuccessPercent);
 	writer.Write(PlayerSave_NativeTradePostSuccessPercent, m_iNativeTradePostSuccessPercent, defaultNativeTradePostSuccessPercent); // WTP, ray, Native Trade Posts - START
-	writer.Write(PlayerSave_TimeNoTrade, m_iTimeNoTrade, defaultTimeNoTrade);
 
 	writer.Write(PlayerSave_iDSecondPlayerFrenchNativeWar, m_iDSecondPlayerFrenchNativeWar, defaultIDSecondPlayerFrenchNativeWar); //WTP, ray, Colonial Intervention In Native War - START
 
 	writer.Write(PlayerSave_Alive, m_bAlive, defaultAlive);
-	writer.Write(PlayerSave_WillingToBargain, m_bWillingToBargain, defaultWillingToBargain);
 	writer.Write(PlayerSave_EverAlive, m_bEverAlive, defaultEverAlive);
 	writer.Write(PlayerSave_TurnActive, m_bTurnActive, defaultTurnActive);
 	writer.Write(PlayerSave_AutoMoves, m_bAutoMoves, defaultAutoMoves);
@@ -1245,6 +1250,9 @@ void CvPlayer::write(CvSavegameWriter writer)
 	writer.Write(PlayerSave_EuropeUnits, m_aEuropeUnits);
 	writer.Write(PlayerSave_AfricaUnits, m_aAfricaUnits);
 	writer.Write(PlayerSave_PortRoyalUnits, m_aPortRoyalUnits);
+
+	writer.Write(PlayerSave_WillingToBargain_Enummap, m_em_bWillingToBargain);
+	writer.Write(PlayerSave_TimeNoTrade_Enummap, m_em_iTimeNoTrade);
 
 	writer.Write(PlayerSave_END);
 }

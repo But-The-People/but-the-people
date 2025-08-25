@@ -4919,7 +4919,7 @@ void CvUnit::tradeYield()
 		pDiplo->setTransport(getIDInfo());
 		pDiplo->setCity(plot()->getPlotCity()->getIDInfo());
 		// R&R, ray, Bargaining - Start
-		if (GET_PLAYER(getOwnerINLINE()).isHuman() && GET_PLAYER(eOtherPlayer).getTimeNoTrade() > 0)
+		if (GET_PLAYER(getOwnerINLINE()).isHuman() && GET_PLAYER(eOtherPlayer).getTimeNoTrade(getOwnerINLINE()) > 0)
 		{
 			CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_TEXT);
 			pInfo->setText(gDLL->getText("NO_TRADE_BECAUSE_BAD_BARGAIN", GET_PLAYER(eOtherPlayer).getCivilizationDescription()));
@@ -5680,7 +5680,7 @@ bool CvUnit::canLearn() const
 		if (!nativePlayer.isHuman())
 		{
 			int currentPlayerAttitude = nativePlayer.AI_getAttitude(getOwnerINLINE(), false);
-			if (currentPlayerAttitude == ATTITUDE_FURIOUS || nativePlayer.getTimeNoTrade() > 0)
+			if (currentPlayerAttitude == ATTITUDE_FURIOUS || nativePlayer.getTimeNoTrade(getOwnerINLINE()) > 0)
 			{
 				return false;
 			}

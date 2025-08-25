@@ -20,6 +20,7 @@ public:
 		TYPE_ASYNC,
 		TYPE_BOTH,   // marking code, which is known to be called both in sync and async
 		TYPE_RESET,  // resets back to "always in sync". Used for network messages and debug
+		TYPE_NETWORK_RECEIVE, // used when receiving data from the network
 	};
 
 	CxDesyncMonitor(TYPE eType = TYPE_ASYNC);
@@ -31,9 +32,11 @@ public:
 	static bool isCurrentlySync();
 	static bool isAlwaysSync();
 	static bool isNeverSync();
+	static bool isNetworkReceive();
 
 
 private:
 	int m_iAsync;
 	int m_iSync;
+	int m_iNetworkReceive;
 };

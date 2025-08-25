@@ -1276,12 +1276,12 @@ int CyPlayer::NBMOD_GetMaxTaxRate() const
 // R&R, ray, Bargaining - Start
 bool CyPlayer::tryGetNewBargainPriceSell()
 {
-	return m_pPlayer ? pointer(CREATE_ASSERT_DATA)->tryGetNewBargainPriceSell() : false;
+	return m_pPlayer ? ((CvPlayer*)m_pPlayer)->tryGetNewBargainPriceSell() : false;
 }
 
 bool CyPlayer::tryGetNewBargainPriceBuy()
 {
-	return m_pPlayer ? pointer(CREATE_ASSERT_DATA)->tryGetNewBargainPriceBuy() : false;
+	return m_pPlayer ? ((CvPlayer*)m_pPlayer)->tryGetNewBargainPriceBuy() : false;
 }
 // R&R, ray, Bargaining - End
 
