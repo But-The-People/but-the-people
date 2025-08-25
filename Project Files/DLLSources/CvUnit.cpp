@@ -11767,7 +11767,8 @@ int CvUnit::getExtraMoves() const
 void CvUnit::changeExtraMoves(int iChange)
 {
 	m_iExtraMoves += iChange;
-	FAssert(getExtraMoves() >= 0 || hasNegativePromotion());
+	// Sanity check for the unit becoming completely immobile
+	FAssert(getExtraMoves() + m_pUnitInfo->getMoves() > 0);
 }
 
 
