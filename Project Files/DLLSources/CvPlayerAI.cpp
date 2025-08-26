@@ -3403,8 +3403,7 @@ bool CvPlayerAI::AI_goldDeal(const CLinkList<TradeData>* pList)
 
 bool CvPlayerAI::AI_considerOffer(PlayerTypes ePlayer, const CLinkList<TradeData>* pTheirList, const CLinkList<TradeData>* pOurList, int iChange)
 {
-	FAssert(CxDesyncMonitor::isNeverSync());
-	CxDesyncMonitor StartMonitoring;
+	CxDesyncMonitor StartMonitoring(CxDesyncMonitor::TYPE_BOTH);
 
 	CLLNode<TradeData>* pNode;
 	int iThreshold;
