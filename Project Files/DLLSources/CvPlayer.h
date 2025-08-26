@@ -13,6 +13,7 @@
 #include "CvTalkingHeadMessage.h"
 #include "CvTradeRouteGroup.h" //R&R mod, vetiarvind, trade groups
 #include "PlayerHelperFunctions.h"
+#include "Events/EventTrigger.h"
 
 #define	UNIT_BIRTHMARK_TEMP_UNIT	20000
 

@@ -102,6 +102,8 @@
     <ClCompile Include="DLLSources\CyXMLEditorInterface1.cpp" />
     <ClCompile Include="DLLSources\CyXMLObject.cpp" />
     <ClCompile Include="DLLSources\DesyncMonitor.cpp" />
+    <ClCompile Include="DLLSources\Events\EventTrigger.cpp" />
+    <ClCompile Include="DLLSources\Events\EventTriggerSavegame.cpp" />
     <ClCompile Include="DLLSources\EXE_interface.cpp" />
     <ClCompile Include="DLLSources\Info\EventTriggerInfo.cpp" />
     <ClCompile Include="DLLSources\KmodPathFinder.cpp" />
@@ -274,6 +276,7 @@
     <ClInclude Include="DLLSources\EnumMapSpecializationInt.h" />
     <ClInclude Include="DLLSources\EnumMapSpecialization.h" />
     <ClInclude Include="DLLSources\EnumMapSpecializationClass.h" />
+    <ClInclude Include="DLLSources\Events\EventTrigger.h" />
     <ClInclude Include="DLLSources\HardcodedEnumSetup.h" />
     <ClInclude Include="DLLSources\Info\EventTriggerInfo.h" />
     <ClInclude Include="DLLSources\Info\InfoHelpers.h" />

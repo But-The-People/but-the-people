@@ -523,6 +523,12 @@
     <ClCompile Include="DLLSources\CyRandomInterface.cpp">
       <Filter>Python\Misc\Random</Filter>
     </ClCompile>
+    <ClCompile Include="DLLSources\Events\EventTrigger.cpp">
+      <Filter>Classes\Event\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="DLLSources\Events\EventTriggerSavegame.cpp">
+      <Filter>Classes\Event\CPP</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DLLSources\CvArea.h">
@@ -1005,6 +1011,9 @@
     <ClInclude Include="DLLSources\CyArtFileMgr.h">
       <Filter>Python\Misc\ArtFileMgr</Filter>
     </ClInclude>
+    <ClInclude Include="DLLSources\Events\EventTrigger.h">
+      <Filter>Classes\Event\header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DLLSources\FVariableSystem.inl">
@@ -1218,6 +1227,15 @@
     </Filter>
     <Filter Include="Python\Misc\Random">
       <UniqueIdentifier>{ad0d33e8-c343-459e-b2d6-80ca26127d3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Event">
+      <UniqueIdentifier>{ec58df68-e418-4a68-8d9e-99fb18133f63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Event\CPP">
+      <UniqueIdentifier>{4d1f112c-8d30-4f78-9860-b65bc8a9319e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Event\header">
+      <UniqueIdentifier>{ab5e143c-138b-47df-81ea-fa1ea43db7ec}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

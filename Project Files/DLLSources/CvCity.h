@@ -495,8 +495,8 @@ public:
 	void setWallOverridePoints(const std::vector< std::pair<float, float> >& kPoints); /* points are given in world space ... i.e. PlotXToPointX, etc */
 	DllExport const std::vector< std::pair<float, float> >& getWallOverridePoints() const;
 	int getTriggerValue(EventTriggerTypes eTrigger) const;
-	bool canApplyEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData) const;
-	void applyEvent(EventTypes eEvent, const EventTriggeredData& kTriggeredData, bool bClear);
+	bool canApplyEvent(EventTypes eEvent, const class EventTriggeredData& kTriggeredData) const;
+	void applyEvent(EventTypes eEvent, const class EventTriggeredData& kTriggeredData, bool bClear);
 	bool isEventOccured(EventTypes eEvent) const;
 	void setEventOccured(EventTypes eEvent, bool bOccured);
 	int getBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield) const;
