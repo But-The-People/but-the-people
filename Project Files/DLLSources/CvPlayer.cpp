@@ -13913,6 +13913,7 @@ void CvPlayer::setTriggerFired(const EventTriggeredData& kTriggeredData, bool bO
 	}
 }
 
+// TODO move into EventTriggeredData and refactor into smaller private functions
 EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger, bool bFire, int iCityId, int iPlotX, int iPlotY, PlayerTypes eOtherPlayer, int iOtherPlayerCityId, int iUnitId, BuildingTypes eBuilding)
 {
 
@@ -14347,6 +14348,9 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 		trigger(*pTriggerData);
 	}
 
+	// add random numbers in sync for use in async later
+	pTriggerData->setRandomNumbers();
+
 	return pTriggerData;
 }
 
@@ -14606,6 +14610,8 @@ bool CvPlayer::canDoEvent(EventTypes eEvent, const EventTriggeredData& kTriggere
 	{
 		// Fastpath for event trigger callbacks:
 		// Before we invoke the slow python callback, check if we can obtain the result directly
+		// TODO: replace some or all of these with xml tags, which can reduce this to bool tests. 
+		// String comparison is more prone to undetected typos/bugs as well as lower performance.
 		if (0 == strcmp(kEvent.getPythonCanDo(), "isPlayable"))
 		{
 			if (!isPlayable())
@@ -14622,7 +14628,7 @@ bool CvPlayer::canDoEvent(EventTypes eEvent, const EventTriggeredData& kTriggere
 		}
 		else if (0 == strcmp(kEvent.getPythonCanDo(), "TriggerChance"))
 		{
-			if (GC.getGameINLINE().getSorenRandNum(1000, "(c) TAC 2010 Events") >= kEvent.getGenericParameter(3))
+			if (kTriggeredData.getRandomNumber(eEvent) < kEvent.getGenericParameter(3))
 			{
 				return false;
 			}

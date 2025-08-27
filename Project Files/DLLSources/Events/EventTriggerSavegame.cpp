@@ -29,6 +29,7 @@ enum SavegameVariableTypes
 	EventTrigger_eBuilding,
 	EventTrigger_szText,
 	EventTrigger_szGlobalText,
+	EventTrigger_RandomNumberVector,
 
 	NUM_EventTrigger_ENUM_VALUES,
 };
@@ -50,6 +51,7 @@ const char* getSavedEnumNameEventTrigger(SavegameVariableTypes eType)
 	case EventTrigger_eBuilding: return "EventTrigger_eBuilding";
 	case EventTrigger_szText: return "EventTrigger_szText";
 	case EventTrigger_szGlobalText: return "EventTrigger_szGlobalText";
+	case EventTrigger_RandomNumberVector: return "EventTrigger_RandomNumberVector";
 	}
 	FAssertMsg(0, "Missing case");
 	return "";
@@ -79,6 +81,7 @@ void EventTriggeredData::resetSavedData()
 	m_eBuilding = default_eBuilding;
 	m_szText.clear();
 	m_szGlobalText.clear();
+	m_RandomNumbers.clear();
 }
 
 void EventTriggeredData::read(CvSavegameReader& reader)
@@ -129,6 +132,7 @@ void EventTriggeredData::read(CvSavegameReader& reader)
 		case EventTrigger_eBuilding: reader.Read(m_eBuilding); break;
 		case EventTrigger_szText: reader.Read(m_szText); break;
 		case EventTrigger_szGlobalText: reader.Read(m_szGlobalText); break;
+		case EventTrigger_RandomNumberVector: reader.Read(m_RandomNumbers); break;
 		}
 
 	}
@@ -150,6 +154,7 @@ void EventTriggeredData::write(CvSavegameWriter& writer) const
 	writer.Write(EventTrigger_eBuilding, m_eBuilding, default_eBuilding);
 	writer.Write(EventTrigger_szText, m_szText);
 	writer.Write(EventTrigger_szGlobalText, m_szGlobalText);
+	writer.Write(EventTrigger_RandomNumberVector, m_RandomNumbers);
 	
 	writer.Write(EventTrigger_END);
 }
@@ -169,4 +174,16 @@ void EventTriggeredData::readVanilla(CvSavegameReader& reader)
 	reader.Read(m_eBuilding);
 	reader.Read(m_szText);
 	reader.Read(m_szGlobalText);
+}
+
+void CvSavegameReader::Read(EventTriggeredData::RandomContainer& container)
+{
+	Read(container.event);
+	Read(container.number);
+}
+
+void CvSavegameWriter::Write(EventTriggeredData::RandomContainer container)
+{
+	Write(container.event);
+	Write(container.number);
 }

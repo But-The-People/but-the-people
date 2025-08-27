@@ -27,10 +27,27 @@ public:
 	int getID() const;
 	void setID(int iID);
 
+	Coordinates coordinates() const;
+
+	// gives the random number for the event in question, returns 0 if event not set/found
+	int getRandomNumber(EventTypes eEvent) const;
+	int getRandomNumberForIndex(int iEventIndexInTriggerInfo) const;
+
+	void setRandomNumbers();
+
 	void resetSavedData();
 
 	void read(CvSavegameReader& reader);
 	void readVanilla(CvSavegameReader& reader);
 	void write(CvSavegameWriter& writer) const;
 
+	struct RandomContainer
+	{
+		EventTypes event;
+		short number;
+	};
+
+private:
+
+	std::vector<RandomContainer> m_RandomNumbers;
 };

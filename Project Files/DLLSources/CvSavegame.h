@@ -13,6 +13,7 @@ struct CvPopupButtonPython;
 #include "CvDiploParameters.h"
 #include "CvPopupInfo.h"
 #include "CvReplayMessage.h"
+#include "Events/EventTrigger.h"
 
 // savegame debugging option
 // note: might not result in usable savegames in case of failure
@@ -127,6 +128,8 @@ public:
 
 	void Read(CvTurnScoreMap& vec);
 	void Read(CvEventMap& vec);
+
+	void Read(EventTriggeredData::RandomContainer& container); // defined in Events/EventTriggerSavegame.cpp
 
 	// workaround because we can't use references on bitfields
 	template<typename T>
@@ -470,6 +473,8 @@ public:
 	void Write(OrderData            &variable) { variable.write(*this); }
 	void Write(PlotExtraYield       &variable) { variable.write(*this); }
 	void Write(TradeData            &variable) { variable.write(*this); }
+
+	void Write(EventTriggeredData::RandomContainer container); // defined in Events/EventTriggerSavegame.cpp
 
 	// get the amount of bytes needed to save the variable in question
 	// also tells the savegame that a conversion table is needed

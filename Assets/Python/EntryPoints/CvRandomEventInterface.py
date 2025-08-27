@@ -1081,7 +1081,8 @@ def applyVolcano1(argsList):
 ######## VOLCANO DORMANT ###########
 
 def canTriggerVolcanoDormant1(argsList):
-	if gc.getGame().getSorenRandNum(100, "Volcano event dormant") < 25:
+	kTriggeredData = argsList[1]
+	if kTriggeredData.getRandomNumberForIndex(0) < 250:
 		return True
 	return False
 
@@ -2100,7 +2101,7 @@ def TriggerChance(argsList):
 	eventtrigger = gc.getEventTriggerInfo(kTriggeredData.eTrigger)
 	eEvent = eventtrigger.getEvent(0)
 	event = gc.getEventInfo(eEvent)
-	if gc.getGame().getSorenRandNum(1000, "(c) TAC 2010 Events") < event.getGenericParameter(3):
+	if kTriggeredData.getRandomNumberForIndex(0) < event.getGenericParameter(3):
 		return True
 	return False
 

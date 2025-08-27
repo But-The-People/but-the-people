@@ -427,20 +427,17 @@
     <ClCompile Include="DLLSources\CyTradeRouteGroupInterface.cpp">
       <Filter>Python\Unit\TradeRouteGroup</Filter>
     </ClCompile>
-    <ClCompile Include="DLLSources\CyArgsList.cpp">
-      <Filter>Python\Misc\Text\Data</Filter>
-    </ClCompile>
     <ClCompile Include="DLLSources\CyData.cpp">
-      <Filter>Python\Misc\Text\Data</Filter>
+      <Filter>Python\Data</Filter>
     </ClCompile>
     <ClCompile Include="DLLSources\CyDataInterface.cpp">
-      <Filter>Python\Misc\Text\Data</Filter>
+      <Filter>Python\Data</Filter>
     </ClCompile>
     <ClCompile Include="DLLSources\CyEnumsInterface.cpp">
-      <Filter>Python\Misc\Text\Data</Filter>
+      <Filter>Python\Data</Filter>
     </ClCompile>
     <ClCompile Include="DLLSources\CyStructsInterface1.cpp">
-      <Filter>Python\Misc\Text\Data</Filter>
+      <Filter>Python\Data</Filter>
     </ClCompile>
     <ClCompile Include="DLLSources\CySelectionGroupInterface.cpp">
       <Filter>Python\Unit\Selection Group</Filter>
@@ -490,9 +487,6 @@
     <ClCompile Include="DLLSources\CyUnitInterface2.cpp">
       <Filter>Python\Unit\Unit</Filter>
     </ClCompile>
-    <ClCompile Include="DLLSources\CyUserSettings.cpp">
-      <Filter>Python\Misc\Text\Data</Filter>
-    </ClCompile>
     <ClCompile Include="DLLSources\CyPlayer.cpp">
       <Filter>Python\Player\Player</Filter>
     </ClCompile>
@@ -528,6 +522,12 @@
     </ClCompile>
     <ClCompile Include="DLLSources\Events\EventTriggerSavegame.cpp">
       <Filter>Classes\Event\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="DLLSources\CyUserSettings.cpp">
+      <Filter>Python\Misc\User Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="DLLSources\CyArgsList.cpp">
+      <Filter>Python\CvPythonCaller\ArgList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -973,10 +973,7 @@
       <Filter>Python\Unit\TradeRouteGroup</Filter>
     </ClInclude>
     <ClInclude Include="DLLSources\CyData.h">
-      <Filter>Python\Misc\Text\Data</Filter>
-    </ClInclude>
-    <ClInclude Include="DLLSources\CyArgsList.h">
-      <Filter>Python\Misc\Text\Data</Filter>
+      <Filter>Python\Data</Filter>
     </ClInclude>
     <ClInclude Include="DLLSources\CySelectionGroup.h">
       <Filter>Python\Unit\Selection Group</Filter>
@@ -1013,6 +1010,9 @@
     </ClInclude>
     <ClInclude Include="DLLSources\Events\EventTrigger.h">
       <Filter>Classes\Event\header</Filter>
+    </ClInclude>
+    <ClInclude Include="DLLSources\CyArgsList.h">
+      <Filter>Python\CvPythonCaller\ArgList</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1204,9 +1204,6 @@
     <Filter Include="Python\Misc\Text">
       <UniqueIdentifier>{7a54a9d3-39f1-4bc0-8e3f-f5575a196afe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Python\Misc\Text\Data">
-      <UniqueIdentifier>{9d9312ef-a8b8-4fdc-9b85-e4de22a8a1e4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Python\Misc\Deal">
       <UniqueIdentifier>{4bc77af6-f6b7-434d-b1ed-0d66b5f63527}</UniqueIdentifier>
     </Filter>
@@ -1236,6 +1233,12 @@
     </Filter>
     <Filter Include="Classes\Event\header">
       <UniqueIdentifier>{ab5e143c-138b-47df-81ea-fa1ea43db7ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Python\Data">
+      <UniqueIdentifier>{9d9312ef-a8b8-4fdc-9b85-e4de22a8a1e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Python\CvPythonCaller\ArgList">
+      <UniqueIdentifier>{5faa2112-43d9-448e-9762-95844185c718}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
