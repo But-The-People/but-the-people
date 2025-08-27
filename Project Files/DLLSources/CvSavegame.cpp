@@ -1041,6 +1041,7 @@ int getNumSavedEnumValuesDeal();
 int getNumSavedEnumValuesReplayMessage();
 int getNumSavedEnumValuesTeam();
 int getNumSavedEnumValuesTeamAI();
+int getNumSavedEnumValuesEventTrigger();
 
 void CvSavegameWriterBase::InitSavegame()
 {
@@ -1084,6 +1085,7 @@ void CvSavegameWriterBase::InitSavegame()
 		case SAVEGAME_CLASS_REPLAYMESSAGE:  iCount = getNumSavedEnumValuesReplayMessage(); break;
 		case SAVEGAME_CLASS_TEAM:  iCount = getNumSavedEnumValuesTeam(); break;
 		case SAVEGAME_CLASS_TEAM_AI:  iCount = getNumSavedEnumValuesTeamAI(); break;
+		case SAVEGAME_CLASS_EVENT_TRIGGER: iCount = getNumSavedEnumValuesEventTrigger(); break;
 
 		default:
 			FAssertMsg(false, "missing case");
