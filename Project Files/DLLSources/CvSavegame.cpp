@@ -85,6 +85,7 @@ const char* getSavedEnumNameDeal(SavegameVariableTypes eType);
 const char* getSavedEnumNameReplayMessage(SavegameVariableTypes eType);
 const char* getSavedEnumNameTeam(SavegameVariableTypes eType);
 const char* getSavedEnumNameTeamAI(SavegameVariableTypes eType);
+const char* getSavedEnumNameEventTrigger(SavegameVariableTypes eType);
 
 const char* getSavedEnumName(SavegameClassTypes eClass, SavegameVariableTypes eType)
 {
@@ -112,6 +113,7 @@ const char* getSavedEnumName(SavegameClassTypes eClass, SavegameVariableTypes eT
 	case SAVEGAME_CLASS_REPLAYMESSAGE: return getSavedEnumNameReplayMessage(eType);
 	case SAVEGAME_CLASS_TEAM: return getSavedEnumNameTeam(eType);
 	case SAVEGAME_CLASS_TEAM_AI: return getSavedEnumNameTeamAI(eType);
+	case SAVEGAME_CLASS_EVENT_TRIGGER: return getSavedEnumNameEventTrigger(eType);
 
 	}
 	FAssertMsg(0, "Missing case");

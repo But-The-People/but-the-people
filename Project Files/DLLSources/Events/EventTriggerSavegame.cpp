@@ -83,6 +83,10 @@ void EventTriggeredData::resetSavedData()
 
 void EventTriggeredData::read(CvSavegameReader& reader)
 {
+	// Init data before load
+	// This will ensure that all variables not included in the savegame will have default values
+	resetSavedData();
+
 	if (reader.getSavegameVersion() < 3)
 	{
 		// backward compatibility
@@ -92,9 +96,6 @@ void EventTriggeredData::read(CvSavegameReader& reader)
 
 	reader.AssignClassType(SAVEGAME_CLASS_EVENT_TRIGGER);
 
-	// Init data before load
-	// This will ensure that all variables not included in the savegame will have default values
-	resetSavedData();
 	// loop read all the variables
 	// As long as each variable has a DealSavegameVariables "header", order doesn't matter.
 	// Variables can be read in any order and any number of variables can be skipped.
@@ -135,6 +136,8 @@ void EventTriggeredData::read(CvSavegameReader& reader)
 
 void EventTriggeredData::write(CvSavegameWriter& writer) const
 {
+	writer.AssignClassType(SAVEGAME_CLASS_EVENT_TRIGGER);
+
 	writer.Write(EventTrigger_iId, m_iId, default_iId);
 	writer.Write(EventTrigger_eTrigger, m_eTrigger, default_eTrigger);
 	writer.Write(EventTrigger_iTurn, m_iTurn, default_iTurn);
@@ -147,6 +150,8 @@ void EventTriggeredData::write(CvSavegameWriter& writer) const
 	writer.Write(EventTrigger_eBuilding, m_eBuilding, default_eBuilding);
 	writer.Write(EventTrigger_szText, m_szText);
 	writer.Write(EventTrigger_szGlobalText, m_szGlobalText);
+	
+	writer.Write(EventTrigger_END);
 }
 
 void EventTriggeredData::readVanilla(CvSavegameReader& reader)
