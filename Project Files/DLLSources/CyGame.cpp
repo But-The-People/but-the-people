@@ -514,7 +514,7 @@ std::string CyGame::getScriptData() const
 void CyGame::setScriptData(std::string szNewValue)
 {
 	if (m_pGame)
-		pointer(CREATE_ASSERT_DATA)->setScriptData(szNewValue);
+		((CvGame*)m_pGame)->setScriptData(szNewValue);
 }
 void CyGame::setName(char const* szNewValue)
 {
