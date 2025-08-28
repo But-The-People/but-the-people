@@ -1388,6 +1388,7 @@ def applyCargoSpace(argsList):
 	kTriggeredData = argsList[1]
 	player = gc.getPlayer(kTriggeredData.ePlayer)
 	unit = player.getUnit(kTriggeredData.iUnitId)
+	# apply is executed in sync, so random will not cause OOS
 	if gc.getGame().getSorenRandNum(100, "(c) TAC 2010 Events") < event.getGenericParameter(3):
 		if event.getGenericParameter(1) >= 0:
 			unit.changeFreePromotionCount(event.getGenericParameter(1), 1)

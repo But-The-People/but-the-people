@@ -4176,12 +4176,7 @@
 			<iAttitudeModifier>0</iAttitudeModifier>
 			<iTheirEnemyAttitudeModifier>0</iTheirEnemyAttitudeModifier>
 			<iPopulationChange>0</iPopulationChange>
-			<AdditionalEvents>
-				<EventChance>
-					<Event>EVENT_END_WINTER</Event>
-					<iEventChance>100</iEventChance>
-				</EventChance>
-			</AdditionalEvents>
+			<AdditionalEvents/>
 			<EventTimes>
 				<EventTime>
 					<Event>EVENT_END_WINTER</Event>
