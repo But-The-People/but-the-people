@@ -8863,7 +8863,10 @@ void CvGameTextMgr::setYieldHelp(CvWStringBuffer &szBuffer, CvCity& city, YieldT
 	}		// R&R, ray , MYCP partially based on code of Aymerick - END
 
 	int iModifiedProduction = city.yields().getBaseRawYieldProduced(eYieldType);
+
+	// unproduced is lost production due to lack of input yields
 	iModifiedProduction -= iUnproduced;
+
 	if (iBaseProduction != 0)
 	{
 		int iModifier = setCityYieldModifierString(szBuffer, eYieldType, city);
