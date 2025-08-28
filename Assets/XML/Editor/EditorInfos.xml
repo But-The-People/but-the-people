@@ -208,6 +208,37 @@
 		<iAICitySize/>
 		<iOrderPriority/>
 	</BuildingInfo>
+	<CivicInfo class="Dir" child="Button">
+		<CivicOptionType class="Type" type="CivicOptionInfo" none="false"/>
+		<Type/>
+		<Description/>
+		<Civilopedia/>
+		<Strategy/>
+		<Help/>
+		<Button class="Button"/>
+		<iAIWeight/>
+		<eCivEffect class="Type" type="CivEffectInfo" none="true"/>
+		<iGreatGeneralRateModifier/>
+		<iDomesticGreatGeneralRateModifier/>
+		<iFreeExperience/>
+		<iWorkerSpeedModifier/>
+		<iImprovementUpgradeRateModifier/>
+		<iMilitaryProductionModifier/>
+		<iExpInBorderModifier/>
+		<iNativeAttitudeChange/>
+		<iNativeCombatModifier/>
+		<iFatherPointModifier/>
+		<bDominateNativeBorders/>
+		<bRevolutionEuropeTrade/>
+		<YieldModifiers/>
+		<CapitalYieldModifiers/>
+		<Hurrys/>
+		<SpecialBuildingNotRequireds/>
+		<ImprovementYieldChanges/>
+		<FreeUnitClasses/>
+		<ProfessionCombatChanges/>
+		<ImmigrationConversion class="Type" type="YieldInfo" none="true"/>
+	</CivicInfo>
 	<CivilizationArtInfo class="Dir" child="Button">
 		<Type/>
 		<Button class="Button"/>
@@ -273,12 +304,68 @@
 		<CivilizationSelectionSound class="Type" type="Script3DSound" none="false"/>
 		<CivilizationActionSound class="Type" type="Script3DSound" none="false"/>
 	</CivilizationInfo>
+	<ClimateInfo>
+		<Type/>
+		<Description/>
+		<iDesertPercentChange/>
+		<iJungleLatitude/>
+		<iHillRange/>
+		<iPeakPercent/>
+		<fSnowLatitudeChange/>
+		<fTundraLatitudeChange/>
+		<fGrassLatitudeChange/>
+		<fDesertBottomLatitudeChange/>
+		<fDesertTopLatitudeChange/>
+		<fRandIceLatitude/>
+	</ClimateInfo>
 	<DefineName>
 		<iDefineIntVal/>
 		<fDefineFloatVal/>
 		<DefineTextVal/>
 	</DefineName>
+	<DiplomacyInfo>
+		<Type/>
+		<Responses/>
+	</DiplomacyInfo>
 	<EntityEventInfo/>
+	<EraInfo>
+		<Type/>
+		<Description/>
+		<Strategy/>
+		<bNoGoodies/>
+		<eCivEffect class="Type" type="CivEffectInfo" none="true"/>
+		<bRevolution/>
+		<iGameTurn/>
+		<iAdvancedStartPoints/>
+		<iStartingUnitMultiplier/>
+		<iStartingDefenseUnits/>
+		<iStartingWorkerUnits/>
+		<iStartingExploreUnits/>
+		<iStartingGold/>
+		<iFreePopulation/>
+		<iStartPercent/>
+		<iGrowthPercent/>
+		<iTrainPercent/>
+		<iConstructPercent/>
+		<iFatherPercent/>
+		<iGreatGeneralPercent/>
+		<iEventChancePerTurn/>
+		<iSoundtrackSpace/>
+		<bFirstSoundtrackFirst/>
+		<EraInfoSoundtracks/>
+		<CitySoundscapes/>
+		<AudioUnitVictoryScript/>
+		<AudioUnitDefeatScript/>
+	</EraInfo>
+	<EuropeInfo>
+		<Type/>
+		<Description/>
+		<Direction/>
+		<bStart/>
+		<iTripLength/>
+		<iMinLandDistance/>
+		<iWidthPercent/>
+	</EuropeInfo>
 	<EventInfo>
 		<Type/>
 		<Description/>

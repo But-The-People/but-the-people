@@ -1116,7 +1116,7 @@
 			<iExperience>2</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_RANGER</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1271,7 +1271,7 @@
 			<iExperience>5</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_REVOLTING_CRIMINAL</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1302,7 +1302,7 @@
 			<iExperience>5</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_MILITIA</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1426,7 +1426,7 @@
 			<iExperience>10</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_REVOLTING_NATIVE_SLAVE</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1457,7 +1457,7 @@
 			<iExperience>10</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_REVOLTING_SLAVE</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1488,7 +1488,7 @@
 			<iExperience>5</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_NATIVE_MERC</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1550,7 +1550,7 @@
 			<iExperience>10</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_PIRATE_FRIGATE</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1581,7 +1581,7 @@
 			<iExperience>10</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_WOLF</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1612,7 +1612,7 @@
 			<iExperience>10</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_GRIZZLY</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1643,7 +1643,7 @@
 			<iExperience>10</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_ALLIGATOR</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1674,7 +1674,7 @@
 			<iExperience>20</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_BEAR_BLACK</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1705,7 +1705,7 @@
 			<iExperience>10</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_BEAR_POLAR</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1736,7 +1736,7 @@
 			<iExperience>5</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_LYNX</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1767,7 +1767,7 @@
 			<iExperience>5</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_JAGUAR</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1798,7 +1798,7 @@
 			<iExperience>5</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_COUGAR</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1829,7 +1829,7 @@
 			<iExperience>5</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_GREATWHITE</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1860,7 +1860,7 @@
 			<iExperience>10</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_HUMPBACK_WHALE</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1891,7 +1891,7 @@
 			<iExperience>10</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_KRAKEN</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
@@ -1922,7 +1922,7 @@
 			<iExperience>10</iExperience>
 			<iHealing>0</iHealing>
 			<iDamagePrereq>0</iDamagePrereq>
-			<bBad>0</bBad>
+			<bBad>1</bBad>
 			<bWar>0</bWar>
 			<UnitClass>UNITCLASS_ORCA</UnitClass>
 			<TeachUnitClass>NONE</TeachUnitClass>
