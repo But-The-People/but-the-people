@@ -36,7 +36,6 @@
 #define PATH_DAMAGE_WEIGHT								(500)
 // R&R, Robert Surcouf, Damage on Storm plots, End
 #define PATH_COMBAT_WEIGHT								(300) // K-Mod. penalty for having to fight along the way.
-#define TURN_PENALTY_WEIGHT								(10000)
 
 CvPlot* plotCity(int iX, int iY, int iIndex)
 {
@@ -1135,15 +1134,29 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 {
 	//PROFILE_FUNC(); // advc.003o
 
+	//CvSelectionGroup* pSelectionGroup = ((CvSelectionGroup *)pointer);
+	// K-Mod
+	CvSelectionGroup* const pSelectionGroup = finder ? (CvSelectionGroup*)pointer : ((CvPathSettings*)pointer)->pGroup;
+	const int iFlags = finder ? gDLL->getFAStarIFace()->GetInfo(finder) : ((CvPathSettings*)pointer)->iFlags;
+	// K-Mod end
+
+	if (finder && !USE_CLASSIC_MOVEMENT_SYSTEM
+		&& !pSelectionGroup->AI_isControlled()
+		&& pSelectionGroup->getAutomateType() == NO_AUTOMATE)
+	{
+		// If the user clicked an adjacent destination, prefer exactly that step.
+		if (parent->m_pParent == NULL) { // first edge from start
+			const int dx = gDLL->getFAStarIFace()->GetDestX(finder);
+			const int dy = gDLL->getFAStarIFace()->GetDestY(finder);
+			if (node->m_iX == dx && node->m_iY == dy) {
+				return PATH_STEP_WEIGHT; // make sure this is the best possible move
+			}
+		}
+	}
+
 	CvMap const& m = GC.getMap(); // advc: ... and use CvPlot references:
 	CvPlot const& kFromPlot = m.getPlot(parent->m_iX, parent->m_iY);
 	CvPlot const& kToPlot = m.getPlot(node->m_iX, node->m_iY);
-
-	//CvSelectionGroup* pSelectionGroup = ((CvSelectionGroup *)pointer);
-	// K-Mod
-	CvSelectionGroup* pSelectionGroup = finder ? (CvSelectionGroup*)pointer : ((CvPathSettings*)pointer)->pGroup;
-	int iFlags = finder ? gDLL->getFAStarIFace()->GetInfo(finder) : ((CvPathSettings*)pointer)->iFlags;
-	// K-Mod end
 
 
 	int iWorstCost = 0;
@@ -1225,24 +1238,7 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 			iWorstMovesLeft = std::min(iWorstMovesLeft, iMovesLeft);
 			//iWorstMaxMoves = std::min(iWorstMaxMoves, iMaxMoves);
 
-			int iCost;
-			if (USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node))
-			{
-				iCost = PATH_MOVEMENT_WEIGHT * (iMovesLeft == 0 ? iMaxMoves : iMoveCost);
-			}
-			else
-			{
-				iCost = PATH_MOVEMENT_WEIGHT * iMoveCost;
-				// For non-classical movement, add extra penalty for additional turns.
-				int baseTurnCost = pLoopUnit->maxMoves() * GLOBAL_DEFINE_MOVE_DENOMINATOR;
-				// Note: iMoveCost here has been scaled by PATH_MOVEMENT_WEIGHT already.
-				// If the cost exceeds what can be paid in one turn, add a penalty.
-				if (iCost > baseTurnCost)
-				{
-					int extraTurns = (iCost - baseTurnCost + baseTurnCost - 1) / baseTurnCost;
-					iCost += extraTurns * TURN_PENALTY_WEIGHT;
-				}
-			}
+			int iCost = PATH_MOVEMENT_WEIGHT * (iMovesLeft == 0 ? iMaxMoves : iMoveCost);
 
 			iCost = (iCost * iExploreModifier) / 3;
 			//iCost = (iCost * iFlipModifier) / iFlipModifierDiv; // advc.035
@@ -1254,45 +1250,7 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 			}
 		}
 	}
-
-	if (!(USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node)))
-	{
-		// Add step penalty as a tie-breaker.
-		// If the move occurs within the same turn, use the computed step count
-		// multiplied by half of PATH_STEP_WEIGHT.
-#if 0 
-		if (parent->m_iData2 == node->m_iData2)
-		{
-			const int iStepCount = computeStepCount(node);
-			iWorstCost += iStepCount * (PATH_STEP_WEIGHT / 2);
-		}
-#endif
-		//else
-		{
-			// If a turn break occurs, use the full step penalty.
-			iWorstCost += PATH_STEP_WEIGHT;
-		}
-
-#if 0
-		#define NON_ROAD_PENALTY 50000  // Tune this value as needed
-
-		// Compute the step count for the candidate route.
-		int stepCount = computeStepCount(node);
-		// If the unit's current plot has no road but the candidate route's final plot shows a road,
-		// and the route is not a single, direct move (i.e. more than one step), then add a penalty.
-		if (kFromPlot.getRevealedRouteType(pSelectionGroup->getHeadTeam(), false) == NO_ROUTE &&
-			kToPlot.getRevealedRouteType(pSelectionGroup->getHeadTeam(), false) != NO_ROUTE &&
-			stepCount > 1)
-		{
-			iWorstCost += NON_ROAD_PENALTY;
-		}
-#endif
 		iWorstCost += PATH_STEP_WEIGHT;
-	}
-	else
-	{		
-		iWorstCost += PATH_STEP_WEIGHT;
-	}
 
 	// symmetry breaking. This is meant to prevent two paths from having equal cost.
 	// (If two paths have equal cost, sometimes the interface shows one path and the units follow the other. This is bad.)
