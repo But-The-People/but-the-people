@@ -512,7 +512,7 @@ public:
 	DllExport std::vector<CvProfessionInfo*>& getProfessionInfo();
 	CvProfessionInfo& getProfessionInfo(ProfessionTypes eProfessionNum);
 
-	DllExport int getNumCivicOptionInfos();
+	int getNumCivicOptionInfos();
 	std::vector<CvInfoBase*>& getCivicOptionInfo();
 	CvInfoBase& getCivicOptionInfo(CivicOptionTypes eCivicOptionNum);
 

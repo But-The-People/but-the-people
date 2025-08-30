@@ -14045,7 +14045,7 @@ bool CvPlayerAI::AI_advancedStartPlaceExploreUnits(bool bLand)
 
 	if (pBestExplorePlot != NULL)
 	{
-		doAdvancedStartAction(ADVANCEDSTARTACTION_UNIT, pBestExplorePlot->getX_INLINE(), pBestExplorePlot->getY_INLINE(), eBestUnitType, true);
+		doAdvancedStartAction(ADVANCEDSTARTACTION_UNIT, pBestExplorePlot->coord(), eBestUnitType, true);
 		return true;
 	}
 	return false;
@@ -14067,7 +14067,7 @@ void CvPlayerAI::AI_advancedStartRevealRadius(CvPlot* pPlot, int iRadius)
 					{
 						if (getAdvancedStartVisibilityCost(true, pLoopPlot) > 0)
 						{
-							doAdvancedStartAction(ADVANCEDSTARTACTION_VISIBILITY, pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), -1, true);
+							doAdvancedStartAction(ADVANCEDSTARTACTION_VISIBILITY, pLoopPlot->coord(), -1, true);
 						}
 					}
 				}
@@ -14080,14 +14080,14 @@ bool CvPlayerAI::AI_advancedStartPlaceCity(CvPlot* pPlot)
 {
 	if (isNative())
 	{
-		doAdvancedStartAction(ADVANCEDSTARTACTION_CITY, pPlot->getX(), pPlot->getY(), -1, true);
+		doAdvancedStartAction(ADVANCEDSTARTACTION_CITY, pPlot->coord(), -1, true);
 		return true;
 	}
 	//If there is already a city, then improve it.
 	CvCity* pCity = pPlot->getPlotCity();
 	if (pCity == NULL)
 	{
-		doAdvancedStartAction(ADVANCEDSTARTACTION_CITY, pPlot->getX(), pPlot->getY(), -1, true);
+		doAdvancedStartAction(ADVANCEDSTARTACTION_CITY, pPlot->coord(), -1, true);
 
 		pCity = pPlot->getPlotCity();
 		if ((pCity == NULL) || (pCity->getOwnerINLINE() != getID()))
@@ -14160,11 +14160,11 @@ bool CvPlayerAI::AI_advancedStartPlaceCity(CvPlot* pPlot)
 		{
 
 			FAssert(pBestPlot != NULL);
-			doAdvancedStartAction(ADVANCEDSTARTACTION_IMPROVEMENT, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), eBestImprovement, true);
+			doAdvancedStartAction(ADVANCEDSTARTACTION_IMPROVEMENT, pBestPlot->coord(), eBestImprovement, true);
 			iPlotsImproved++;
 			if (pCity->getPopulation() < iPlotsImproved)
 			{
-				doAdvancedStartAction(ADVANCEDSTARTACTION_POP, pBestPlot->getX_INLINE(), pBestPlot->getY_INLINE(), -1, true);
+				doAdvancedStartAction(ADVANCEDSTARTACTION_POP, pBestPlot->coord(), -1, true);
 			}
 		}
 		else
@@ -14181,7 +14181,7 @@ bool CvPlayerAI::AI_advancedStartPlaceCity(CvPlot* pPlot)
 		{
 			break;
 		}
-		doAdvancedStartAction(ADVANCEDSTARTACTION_POP, pPlot->getX_INLINE(), pPlot->getY_INLINE(), -1, true);
+		doAdvancedStartAction(ADVANCEDSTARTACTION_POP, pPlot->coord(), -1, true);
 	}
 
 	while (iTargetPopulation > pCity->getPopulation())
@@ -14191,7 +14191,7 @@ bool CvPlayerAI::AI_advancedStartPlaceCity(CvPlot* pPlot)
 		{
 			break;
 		}
-		doAdvancedStartAction(ADVANCEDSTARTACTION_POP, pPlot->getX_INLINE(), pPlot->getY_INLINE(), -1, true);
+		doAdvancedStartAction(ADVANCEDSTARTACTION_POP, pPlot->coord(), -1, true);
 	}
 
 	pCity->AI_updateAssignWork();
@@ -14232,7 +14232,7 @@ bool CvPlayerAI::AI_advancedStartDoRoute(CvPlot* pFromPlot, CvPlot* pToPlot)
 				{
 					return false;
 				}
-				doAdvancedStartAction(ADVANCEDSTARTACTION_ROUTE, pNode->m_iX, pNode->m_iY, eRoute, true);
+				doAdvancedStartAction(ADVANCEDSTARTACTION_ROUTE, pPlot->coord(), eRoute, true);
 			}
 			pNode = pNode->m_pParent;
 		}
@@ -14257,7 +14257,7 @@ void CvPlayerAI::AI_advancedStartRouteTerritory()
 					RouteTypes eRoute = (AI_bestAdvancedStartRoute(pLoopPlot, &iRouteYieldValue));
 					if (eRoute != NO_ROUTE && iRouteYieldValue > 0)
 					{
-						doAdvancedStartAction(ADVANCEDSTARTACTION_ROUTE, pLoopPlot->getX_INLINE(), pLoopPlot->getY_INLINE(), eRoute, true);
+						doAdvancedStartAction(ADVANCEDSTARTACTION_ROUTE, pLoopPlot->coord(), eRoute, true);
 					}
 				}
 			}
@@ -14297,7 +14297,7 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 		}
 		else
 		{
-			doAdvancedStartAction(ADVANCEDSTARTACTION_EXIT, -1, -1, -1, true);
+			doAdvancedStartAction(ADVANCEDSTARTACTION_EXIT, Coordinates(-1, -1), -1, true);
 		}
 	}
 
@@ -14361,7 +14361,7 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 			{
 				if (!bNoExit)
 				{
-					doAdvancedStartAction(ADVANCEDSTARTACTION_EXIT, -1, -1, -1, true);
+					doAdvancedStartAction(ADVANCEDSTARTACTION_EXIT, Coordinates(-1, -1), -1, true);
 				}
 				return;
 			}
@@ -14398,7 +14398,7 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 								}
 								if (iFoodYield >= 2 || pLoopPlot2->isHills() || pLoopPlot2->isPeak() || pLoopPlot2->isRiver())
 								{
-									doAdvancedStartAction(ADVANCEDSTARTACTION_VISIBILITY, pLoopPlot2->getX_INLINE(), pLoopPlot2->getY_INLINE(), -1, true);
+									doAdvancedStartAction(ADVANCEDSTARTACTION_VISIBILITY, pLoopPlot2->coord(), -1, true);
 								}
 							}
 						}
@@ -14511,7 +14511,7 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 					bDoneBuildings = (iLastPointsTotal - (getAdvancedStartPoints() - getAdvancedStartBuildingCost(eBuilding, true, pLoopCity))) > iCityPoints;
 					if (!bDoneBuildings)
 					{
-						doAdvancedStartAction(ADVANCEDSTARTACTION_BUILDING, pLoopCity->getX_INLINE(), pLoopCity->getY_INLINE(), eBuilding, true);
+						doAdvancedStartAction(ADVANCEDSTARTACTION_BUILDING, pLoopCity->coord(), eBuilding, true);
 					}
 					else
 					{
@@ -14548,7 +14548,7 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 						bDone = true;
 						break;
 					}
-					doAdvancedStartAction(ADVANCEDSTARTACTION_POP, pLoopCity->getX(), pLoopCity->getY(), -1, true);
+					doAdvancedStartAction(ADVANCEDSTARTACTION_POP, pLoopCity->coord(), -1, true);
 				}
 				CvPlot* pUnitPlot = pLoopCity->plot();
 				//Token defender
@@ -14561,7 +14561,7 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 						bDone = true;
 						break;
 					}
-					doAdvancedStartAction(ADVANCEDSTARTACTION_UNIT, pUnitPlot->getX(), pUnitPlot->getY(), eBestUnit, true);
+					doAdvancedStartAction(ADVANCEDSTARTACTION_UNIT, pUnitPlot->coord(), eBestUnit, true);
 				}
 			}
 		}
@@ -14569,7 +14569,7 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 
 	if (!bNoExit)
 	{
-		doAdvancedStartAction(ADVANCEDSTARTACTION_EXIT, -1, -1, -1, true);
+		doAdvancedStartAction(ADVANCEDSTARTACTION_EXIT, Coordinates(-1, -1), -1, true);
 	}
 
 }

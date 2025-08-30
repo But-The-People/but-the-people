@@ -528,13 +528,21 @@ public:
 
 		canTrain
 			?canTrain@CvCity@@QBE_NW4UnitTypes@@_N111@Z=?canTrain@EXE_CvCity@@QBE_NW4UnitTypes@@_N111@Z
+			*/
 
-		chooseProduction
-			?chooseProduction@CvCity@@QAEXW4UnitTypes@@W4BuildingTypes@@_N2@Z=?chooseProduction@EXE_CvCity@@QAEXW4UnitTypes@@W4BuildingTypes@@_N2@Z
+	#pragma comment(linker, "/EXPORT:?chooseProduction@CvCity@@QAEXW4UnitTypes@@W4BuildingTypes@@_N2@Z=?chooseProduction@EXE_CvCity@@QAEXW4UnitTypes@@W4BuildingTypes@@_N2@Z")
+	DllExport void chooseProduction(UnitTypes eTrainUnit = NO_UNIT, BuildingTypes eConstructBuilding = NO_BUILDING, bool bFinish = false, bool bFront = false)
+	{
+		CvCity::chooseProduction(eTrainUnit, eConstructBuilding, bFinish, bFront);
+	}
 
-		doTask
-			?doTask@CvCity@@QAEXW4TaskTypes@@HH_N111@Z=?doTask@EXE_CvCity@@QAEXW4TaskTypes@@HH_N111@Z
+	#pragma comment(linker, "/EXPORT:?doTask@CvCity@@QAEXW4TaskTypes@@HH_N111@Z=?doTask@EXE_CvCity@@QAEXW4TaskTypes@@HH_N111@Z")
+	DllExport void doTask(TaskTypes eTask, int iData1 = -1, int iData2 = -1, bool bOption = false, bool bAlt = false, bool bShift = false, bool bCtrl = false)
+	{
+		CvCity::doTask(eTask, iData1, iData2, bOption, bAlt, bShift, bCtrl);
+	}
 
+			/*
 		getCityBillboardBottomBarValues
 			?getCityBillboardBottomBarValues@CvCity@@QBE_NAAM00@Z=?getCityBillboardBottomBarValues@EXE_CvCity@@QBE_NAAM00@Z
 
@@ -546,10 +554,14 @@ public:
 
 		getCityBillboardTopBarValues
 			?getCityBillboardTopBarValues@CvCity@@QBE_NAAM00@Z=?getCityBillboardTopBarValues@EXE_CvCity@@QBE_NAAM00@Z
+			*/
+	#pragma comment(linker, "/EXPORT:?getCityPlotIndex@CvCity@@QBEHPBVCvPlot@@@Z=?getCityPlotIndex@EXE_CvCity@@QBEHPBVCvPlot@@@Z")
+	DllExport int getCityPlotIndex(const CvPlot* pPlot) const
+	{
+		return CvCity::getCityPlotIndex(pPlot);
+	}
 
-		getCityPlotIndex
-			?getCityPlotIndex@CvCity@@QBEHPBVCvPlot@@@Z=?getCityPlotIndex@EXE_CvCity@@QBEHPBVCvPlot@@@Z
-
+			/*
 		getCitySizeType
 			?getCitySizeType@CvCity@@QBE?AW4CitySizeTypes@@XZ=?getCitySizeType@EXE_CvCity@@QBE?AW4CitySizeTypes@@XZ
 
@@ -1918,10 +1930,17 @@ public:
 	/*
 		getNumCameraOverlayInfos
 			?getNumCameraOverlayInfos@CvGlobals@@QAEHXZ=?getNumCameraOverlayInfos@EXE_CvGlobals@@QAEHXZ
+			*/
 
-		getNumCivicOptionInfos
-			?getNumCivicOptionInfos@CvGlobals@@QAEHXZ=?getNumCivicOptionInfos@EXE_CvGlobals@@QAEHXZ
+	#pragma comment(linker, "/EXPORT:?getNumCivicOptionInfos@CvGlobals@@QAEHXZ=?getNumCivicOptionInfos@EXE_CvGlobals@@QAEHXZ")
+	DllExport int getNumCivicOptionInfos()
+	{
+		// this is only used for determining the length of the argument array in CvDLLUtilityIFaceBase::sendUpdateCivics
+		// the exe doesn't care about civics or civic options otherwise
+		return CvGlobals::getNumCivicOptionInfos();
+	}
 
+			/*
 		getNumCivilizationInfos
 			?getNumCivilizationInfos@CvGlobals@@QAEHXZ=?getNumCivilizationInfos@EXE_CvGlobals@@QAEHXZ
 
@@ -3019,13 +3038,21 @@ public:
 
 		changeUnitMoveChange
 			?changeUnitMoveChange@CvPlayer@@QAEXW4UnitClassTypes@@H@Z=?changeUnitMoveChange@EXE_CvPlayer@@QAEXW4UnitClassTypes@@H@Z
+			*/
 
-		doAction
-			?doAction@CvPlayer@@QAEXW4PlayerActionTypes@@HHH@Z=?doAction@EXE_CvPlayer@@QAEXW4PlayerActionTypes@@HHH@Z
+	#pragma comment(linker, "/EXPORT:?doAction@CvPlayer@@QAEXW4PlayerActionTypes@@HHH@Z=?doAction@EXE_CvPlayer@@QAEXW4PlayerActionTypes@@HHH@Z")
+	DllExport void doAction(PlayerActionTypes eAction, int iData1, int iData2, int iData3)
+	{
+		CvPlayer::doAction(eAction, iData1, iData2, iData3);
+	}	
 
-		doAdvancedStartAction
-			?doAdvancedStartAction@CvPlayer@@QAEXW4AdvancedStartActionTypes@@HHH_N@Z=?doAdvancedStartAction@EXE_CvPlayer@@QAEXW4AdvancedStartActionTypes@@HHH_N@Z
-
+	#pragma comment(linker, "/EXPORT:?doAdvancedStartAction@CvPlayer@@QAEXW4AdvancedStartActionTypes@@HHH_N@Z=?doAdvancedStartAction@EXE_CvPlayer@@QAEXW4AdvancedStartActionTypes@@HHH_N@Z")
+	DllExport void doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, int iY, int iData, bool bAdd)
+	{
+		CvPlayer::doAdvancedStartAction(eAction, Coordinates(iX, iY), iData, bAdd);
+	}
+			
+			/*
 		firstCity
 			?firstCity@CvPlayer@@QBEPAVCvCity@@PAH_N@Z=?firstCity@EXE_CvPlayer@@QBEPAVCvCity@@PAH_N@Z
 
@@ -3180,9 +3207,15 @@ public:
 		getWorstEnemyName
 			?getWorstEnemyName@CvPlayer@@QBE?BVCvWString@@XZ=?getWorstEnemyName@EXE_CvPlayer@@QBE?BVCvWString@@XZ
 
-		handleDiploEvent
-			?handleDiploEvent@CvPlayer@@QAEXW4DiploEventTypes@@W4PlayerTypes@@HH@Z=?handleDiploEvent@EXE_CvPlayer@@QAEXW4DiploEventTypes@@W4PlayerTypes@@HH@Z
+			*/
 
+	#pragma comment(linker, "/EXPORT:?handleDiploEvent@CvPlayer@@QAEXW4DiploEventTypes@@W4PlayerTypes@@HH@Z=?handleDiploEvent@EXE_CvPlayer@@QAEXW4DiploEventTypes@@W4PlayerTypes@@HH@Z")
+	DllExport void handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer, int iData1, int iData2)
+	{
+		CvPlayer::handleDiploEvent(eDiploEvent, ePlayer, iData1, iData2);
+	}
+
+			/*
 		hasBusyUnit
 			?hasBusyUnit@CvPlayer@@QBE_NXZ=?hasBusyUnit@EXE_CvPlayer@@QBE_NXZ
 
@@ -3236,10 +3269,22 @@ public:
 
 		reset
 			?reset@CvPlayer@@QAEXW4PlayerTypes@@_N@Z=?reset@EXE_CvPlayer@@QAEXW4PlayerTypes@@_N@Z
+			*/
 
-		setCivic
-			?setCivic@CvPlayer@@QAEXW4CivicOptionTypes@@W4CivicTypes@@@Z=?setCivic@EXE_CvPlayer@@QAEXW4CivicOptionTypes@@W4CivicTypes@@@Z
+	#pragma comment(linker, "/EXPORT:?setCivic@CvPlayer@@QAEXW4CivicOptionTypes@@W4CivicTypes@@@Z=?setCivic@EXE_CvPlayer@@QAEXW4CivicOptionTypes@@W4CivicTypes@@@Z")
+	DllExport void setCivic(CivicOptionTypes eIndex, CivicTypes eNewValue)
+	{
+		// currently unused
+		// exe calls this when receiving network data through CvDLLUtilityIFaceBase::sendUpdateCivics
+		// eIndex goes up to the num civic options exposed to the exe, which doesn't have to be the same as what we have in xml
+		// our code changes civics one at a time with PLAYER_ACTION_SET_CIVIC
+		// the array approach with sendUpdateCivics seems to exclusively be used by BTS civic python screen
 
+		// the this pointer is the active player sending the data
+		CvPlayer::setCivic(eIndex, eNewValue);
+	}
+
+			/*
 		setEndTurn
 			?setEndTurn@CvPlayer@@QAEX_N@Z=?setEndTurn@EXE_CvPlayer@@QAEX_N@Z
 
@@ -3802,10 +3847,13 @@ public:
 
 		plot
 			?plot@CvSelectionGroup@@QBEPAVCvPlot@@XZ=?plot@EXE_CvSelectionGroup@@QBEPAVCvPlot@@XZ
-
-		pushMission
-			?pushMission@CvSelectionGroup@@QAEXW4MissionTypes@@HHH_N1W4MissionAITypes@@PAVCvPlot@@PAVCvUnit@@@Z=?pushMission@EXE_CvSelectionGroup@@QAEXW4MissionTypes@@HHH_N1W4MissionAITypes@@PAVCvPlot@@PAVCvUnit@@@Z
 			*/
+
+	#pragma comment(linker, "/EXPORT:?pushMission@CvSelectionGroup@@QAEXW4MissionTypes@@HHH_N1W4MissionAITypes@@PAVCvPlot@@PAVCvUnit@@@Z=?pushMission@EXE_CvSelectionGroup@@QAEXW4MissionTypes@@HHH_N1W4MissionAITypes@@PAVCvPlot@@PAVCvUnit@@@Z")
+	DllExport void pushMission(MissionTypes eMission, int iData1 = -1, int iData2 = -1, int iFlags = 0, bool bAppend = false, bool bManual = false, MissionAITypes eMissionAI = NO_MISSIONAI, CvPlot* pMissionAIPlot = NULL, CvUnit* pMissionAIUnit = NULL)
+	{
+		return CvSelectionGroup::pushMission(eMission, iData1, iData2, iFlags, bAppend, bManual, eMissionAI, pMissionAIPlot, pMissionAIUnit);
+	}
 
 	#pragma comment(linker, "/EXPORT:?readyToSelect@CvSelectionGroup@@QAE_N_N@Z=?readyToSelect@EXE_CvSelectionGroup@@QAE_N_N@Z")
 	DllExport bool readyToSelect(bool bAny = false)
@@ -4077,10 +4125,13 @@ public:
 
 		currCombatStrFloat
 			?currCombatStrFloat@CvUnit@@QBEMPBVCvPlot@@PBV1@@Z=?currCombatStrFloat@EXE_CvUnit@@QBEMPBVCvPlot@@PBV1@@Z
+			*/
 
-		doCommand
-			?doCommand@CvUnit@@QAEXW4CommandTypes@@HH@Z=?doCommand@EXE_CvUnit@@QAEXW4CommandTypes@@HH@Z
-*/
+	#pragma comment(linker, "/EXPORT:?doCommand@CvUnit@@QAEXW4CommandTypes@@HH@Z=?doCommand@EXE_CvUnit@@QAEXW4CommandTypes@@HH@Z")
+	DllExport void doCommand(CommandTypes eCommand, int iData1, int iData2)
+	{
+		return CvUnit::doCommand(eCommand, iData1,  iData2);
+	}
 
 	#pragma comment(linker, "/EXPORT:?getArtInfo@CvUnit@@QBEPBVCvArtInfoUnit@@H@Z=?getArtInfo@EXE_CvUnit@@QBEPBVCvArtInfoUnit@@H@Z")
 	DllExport const CvArtInfoUnit* getArtInfo(int i) const

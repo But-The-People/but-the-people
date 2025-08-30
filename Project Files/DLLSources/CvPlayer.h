@@ -289,7 +289,7 @@ public:
 	int countNumBuildings(BuildingTypes eBuilding) const;
 	DllExport bool canContact(PlayerTypes ePlayer) const;
 	void contact(PlayerTypes ePlayer) const;
-	DllExport void handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer, int iData1, int iData2);
+	void handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer, int iData1, int iData2);
 	bool canTradeWith(PlayerTypes eWhoTo) const;
 	bool canReceiveTradeCity(PlayerTypes eFromPlayer) const;
 	DllExport bool canTradeItem(PlayerTypes eWhoTo, TradeData item, bool bTestDenial = false) const;
@@ -352,7 +352,6 @@ public:
 	DllExport int getAdvancedStartPoints() const;
 	void setAdvancedStartPoints(int iNewValue);
 	void changeAdvancedStartPoints(int iChange);
-	DllExport void doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, int iY, int iData, bool bAdd);
 	void doAdvancedStartAction(AdvancedStartActionTypes eAction, Coordinates coord, int iData, bool bAdd);
 	DllExport int getAdvancedStartUnitCost(UnitTypes eUnit, bool bAdd, CvPlot* pPlot = NULL);
 	DllExport int getAdvancedStartCityCost(bool bAdd, CvPlot* pPlot = NULL);
@@ -561,7 +560,7 @@ public:
 	bool isSpecialBuildingNotRequired(SpecialBuildingTypes eIndex) const;
 	void changeSpecialBuildingNotRequiredCount(SpecialBuildingTypes eIndex, int iChange);
 	CivicTypes getCivic(CivicOptionTypes eIndex) const;
-	DllExport void setCivic(CivicOptionTypes eIndex, CivicTypes eNewValue);
+	void setCivic(CivicOptionTypes eIndex, CivicTypes eNewValue);
 	int getImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2) const;
 	void changeImprovementYieldChange(ImprovementTypes eIndex1, YieldTypes eIndex2, int iChange);
 	int getBuildingYieldChange(BuildingClassTypes eBuildingClass, YieldTypes eYield) const;
@@ -812,7 +811,7 @@ public:
 	YieldTypes getHighestTradedYield(bool bCalledFrom_hasHighestTradedYield = false) const;
 	int getHighestStoredYieldCityId(YieldTypes eYield) const;
 
-	DllExport void doAction(PlayerActionTypes eAction, int iData1, int iData2, int iData3);
+	void doAction(PlayerActionTypes eAction, int iData1, int iData2, int iData3);
 	int getTradeYieldAmount(YieldTypes eYield, CvUnit* pTransport) const;
 	void setCityBillboardDirty(bool bNewValue);
 	bool isEurope() const;

@@ -109,7 +109,7 @@ public:
 	bool isBetterDefenderThan(const CvUnit* pDefender, const CvUnit* pAttacker, bool bBreakTies) const;
 
 	bool canDoCommand(CommandTypes eCommand, int iData1, int iData2, bool bTestVisible = false, bool bTestBusy = true) const;
-	DllExport void doCommand(CommandTypes eCommand, int iData1, int iData2);
+	void doCommand(CommandTypes eCommand, int iData1, int iData2);
 
 	//FAStarNode* getPathLastNode() const; // disabled by K-Mod
 	CvPlot* getPathEndTurnPlot() const;

@@ -11959,11 +11959,6 @@ void CvPlayer::doCrosses()
 	}
 }
 
-void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, int iX, int iY, int iData, bool bAdd)
-{
-	doAdvancedStartAction(eAction, Coordinates(iX, iY), iData, bAdd);
-}
-
 void CvPlayer::doAdvancedStartAction(AdvancedStartActionTypes eAction, Coordinates coord, int iData, bool bAdd)
 {
 	if (getAdvancedStartPoints() < 0)
