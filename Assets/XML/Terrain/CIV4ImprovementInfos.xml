@@ -2253,6 +2253,14 @@
 					<YieldType>YIELD_ORE</YieldType>
 					<iValue>1</iValue>
 				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_RAW_SALT</YieldType>
+					<iValue>2</iValue>
+				</YieldIntegerPair>
+				<YieldIntegerPair>
+					<YieldType>YIELD_COAL</YieldType>
+					<iValue>2</iValue>
+				</YieldIntegerPair>
 			</PrereqNatureYields>
 			<YieldIncreases>
 				<YieldIntegerPair>
