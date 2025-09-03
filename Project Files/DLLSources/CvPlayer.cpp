@@ -11135,7 +11135,101 @@ void CvPlayer::getTradeRoutes(std::vector<CvTradeRoute*>& aTradeRoutes) const
 
 }
 
+namespace
+{
+	struct IDInfoLessDet
+	{
+		bool operator()(const IDInfo& a, const IDInfo& b) const
+		{
+			if (a.eOwner != b.eOwner) return a.eOwner < b.eOwner;
+			return a.iID < b.iID;
+		}
+	};
 
+	typedef std::pair<IDInfo, IDInfo> TradeKey;
+
+	struct TradeKeyLess
+	{
+		bool operator()(const TradeKey& x, const TradeKey& y) const
+		{
+			IDInfoLessDet less;
+			if (less(x.first, y.first))  return true;
+			if (less(y.first, x.first))  return false;
+			if (less(x.second, y.second)) return true;
+			if (less(y.second, x.second)) return false;
+			return false;
+		}
+	};
+
+	void canonicalizePair(const IDInfo& s, const IDInfo& d,
+		IDInfo& outFirst, IDInfo& outSecond)
+	{
+		IDInfoLessDet less;
+		if (less(d, s)) { outFirst = d; outSecond = s; }
+		else { outFirst = s; outSecond = d; }
+	}
+} // end anon namespace
+
+// Returns a vector of traderoutes that the unit us capable of servicing
+// (Unviable routes are filtered out with CvUnit::canAssignTradeRoute)
+std::vector<CvTradeRoute*> CvPlayer::getViableTradeRoutesForUnit(const CvUnit& kUnit) const
+{
+	std::vector<CvTradeRoute*> out;
+
+	// Only evaluate for this player's unit
+	if (kUnit.getOwnerINLINE() != getID())
+		return out;
+
+	// Bucket pointers by unordered (src,dst)
+	std::map<TradeKey, std::vector<CvTradeRoute*>, TradeKeyLess> buckets;
+	std::vector<TradeKey> order;
+	order.reserve(m_tradeRoutes.size());
+
+	for (CvIdVector<CvTradeRoute>::const_iterator it = m_tradeRoutes.begin();
+		it != m_tradeRoutes.end(); ++it)
+	{
+		CvTradeRoute* const p = it->second;
+		if (!p) continue;
+
+		IDInfo a, b;
+		canonicalizePair(p->getSourceCity(), p->getDestinationCity(), a, b);
+		const TradeKey key(a, b);
+
+		std::map<TradeKey, std::vector<CvTradeRoute*>, TradeKeyLess>::iterator pos = buckets.find(key);
+		if (pos == buckets.end())
+		{
+			std::vector<CvTradeRoute*> vec;
+			vec.reserve(4);
+			vec.push_back(p);
+			buckets.insert(std::make_pair(key, vec));
+			order.push_back(key); // deterministic first-seen order
+		}
+		else
+		{
+			pos->second.push_back(p);
+		}
+	}
+
+	// One costly check per unordered pair using the UNIT
+	// Note: This way we only need to check each unique (src,dst,yield) tuple once
+	for (std::vector<TradeKey>::const_iterator ok = order.begin(); ok != order.end(); ++ok)
+	{
+		const std::map<TradeKey, std::vector<CvTradeRoute*>, TradeKeyLess>::const_iterator b = buckets.find(*ok);
+		if (b == buckets.end() || b->second.empty())
+			continue;
+
+		const int repId = b->second.front()->getID();
+		if (kUnit.canAssignTradeRoute(repId, true))
+		{
+			// The below is needed to expand each viable route to get an entry per yield
+			// Pair is viable: emit all concrete routes (one per yield)
+			for (size_t i = 0; i < b->second.size(); ++i)
+				out.push_back(b->second[i]);
+		}
+	}
+
+	return out;
+}
 
 bool CvPlayer::canLoadYield(PlayerTypes eCityPlayer) const
 {
@@ -25248,3 +25342,4 @@ int CvPlayer::calculateEuropeTravelTime(EuropeTypes eEurope) const
 	FAssertMsg(iTravelTime >= 0, "Europe travel time cannot be negative");
 	return iTravelTime;
 }
+

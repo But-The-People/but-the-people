@@ -973,6 +973,7 @@ public:
 
 	bool is(CivCategoryTypes eCivCategory) const;
 	int calculateEuropeTravelTime(EuropeTypes eEurope) const;
+	std::vector<CvTradeRoute*> getViableTradeRoutesForUnit(const CvUnit& kUnit) const;
 
 protected:
 

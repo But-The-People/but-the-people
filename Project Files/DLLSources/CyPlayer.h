@@ -8,7 +8,9 @@
 //#include "CvEnums.h"
 //#include "CvStructs.h"
 
+#include <boost/python/list.hpp>
 #include <boost/python/tuple.hpp>
+
 namespace python = boost::python;
 
 class CyUnit;
@@ -432,6 +434,8 @@ public:
 	void setScriptData(std::string szNewValue);
 	int AI_maxGoldTrade(int iPlayer);
 	void forcePeace(int iPlayer);
+	python::list getViableTradeRoutesForUnit(CyUnit* pUnit) const;
+
 private:
 	const CvPlayer* m_pPlayer;
 	// R&R mod, vetiarvind, trade groups - start

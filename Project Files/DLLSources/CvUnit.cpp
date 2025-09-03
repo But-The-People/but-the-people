@@ -10424,7 +10424,7 @@ bool CvUnit::canAssignTradeRoute(int iRouteID, bool bReusePath) const
 	const PlayerTypes ePlayer = getOwnerINLINE();
 	FAssert(ePlayer != NO_PLAYER);
 	const CvPlayer& kPlayer = GET_PLAYER(ePlayer);
-	const CvTradeRoute* pTradeRoute = kPlayer.getTradeRoute(iRouteID);
+	const CvTradeRoute* const pTradeRoute = kPlayer.getTradeRoute(iRouteID);
 	
 	if (pTradeRoute == NULL)
 	{
@@ -10455,21 +10455,29 @@ bool CvUnit::canAssignTradeRoute(int iRouteID, bool bReusePath) const
 		}
 	}
 
-	CvCity* const pSource = ::getCity(pTradeRoute->getSourceCity());
+	const CvCity* const pSource = ::getCity(pTradeRoute->getSourceCity());
+	const CvCity* const pDestination = ::getCity(pTradeRoute->getDestinationCity());
+
+	if (pSource == NULL || pDestination == NULL)
+		return false;
+
+	if (getDomainType() == DOMAIN_LAND && pSource->getArea() != pDestination->getArea())
+		// Land units cannot directly cross areas
+		return false;
+
 	// TAC - Trade Routes Advisor - koma13 - START
 	KmodPathFinder alt_finder;
 	const int iFlags = isIgnoreDanger() ? MOVE_IGNORE_DANGER : MOVE_NO_ENEMY_TERRITORY;
 	alt_finder.SetSettings(getGroup(), iFlags);
 	
-	if (pSource == NULL || !alt_finder.GeneratePath(pSource->plot()))
+	if (!alt_finder.GeneratePath(pSource->plot()))
 	// TAC - Trade Routes Advisor - koma13 - END
 	{
 		return false;
 	}
 
-	CvCity* const pDestination = ::getCity(pTradeRoute->getDestinationCity());
 	// TAC - Trade Routes Advisor - koma13 - START
-	if (pDestination != NULL && !alt_finder.GeneratePath(pDestination->plot()))
+	if (!alt_finder.GeneratePath(pDestination->plot()))
 	// TAC - Trade Routes Advisor - koma13 - END
 	{
 		return false;

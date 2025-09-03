@@ -1726,3 +1726,27 @@ unsigned int CyPlayer::getNumUnitsOnDock() const
 {
 	return m_pPlayer ? m_pPlayer->CivEffect().getNumUnitsOnDock() : 0;
 }
+
+python::list CyPlayer::getViableTradeRoutesForUnit(CyUnit* pUnit) const
+{
+	python::list py;
+	if (!m_pPlayer || !pUnit) return py;
+
+	const CvUnit* pCvUnit = pUnit->getUnit();
+	if (!pCvUnit) return py;
+
+	const std::vector<CvTradeRoute*> routes =
+		m_pPlayer->getViableTradeRoutesForUnit(*pCvUnit);
+
+	for (size_t i = 0; i < routes.size(); ++i)
+	{
+		// Sanity: pointer is never expected to be NULL
+		if (routes[i])
+		{
+			// Note: Python owns & deletes the wrapper
+			// (The underlying CvTradeRoute is not affected)
+		   py.append(python::ptr(new CyTradeRoute(routes[i])));
+		}
+	}
+	return py;
+}
