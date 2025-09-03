@@ -1223,39 +1223,23 @@ bool CyPlayer::isKingWillingToTradeUsedShips() const
 {
 	return m_pPlayer ? m_pPlayer->isKingWillingToTradeUsedShips() : false;
 }
-
-void CyPlayer::resetCounterForUsedShipDeals()
-{
-	if (m_pPlayer)
-	{
-		pointer(CREATE_ASSERT_DATA)->resetCounterForUsedShipDeals();
-	}
-}
 //WTP, ray Kings Used Ship - END
 
 
 // WTP, ray, Foreign Kings, buy Immigrants - START
 int CyPlayer::getRandomForeignImmigrantClassTypeID(int iKingID) const
 {
-	return m_pPlayer ? m_pPlayer->getRandomForeignImmigrantClassTypeID(iKingID) : -1;
+	return m_pPlayer ? m_pPlayer->getRandomForeignImmigrantClassTypeID((PlayerTypes)iKingID) : -1;
 }
 
 int CyPlayer::getForeignImmigrantPrice(int /*UnitClassTypes*/ iForeignImmigrantClassType, int iEuropeKingID) const
 {
-	return m_pPlayer ? m_pPlayer->getForeignImmigrantPrice((UnitClassTypes)iForeignImmigrantClassType, iEuropeKingID) : -1;
+	return m_pPlayer ? m_pPlayer->getForeignImmigrantPrice((UnitClassTypes)iForeignImmigrantClassType, (PlayerTypes)iEuropeKingID) : -1;
 }
 
 bool CyPlayer::isForeignKingWillingToTradeImmigrants(int iEuropeKingID) const
 {
-	return m_pPlayer ? m_pPlayer->isForeignKingWillingToTradeImmigrants(iEuropeKingID) : false;
-}
-
-void CyPlayer::resetCounterForForeignImmigrantsDeals()
-{
-	if (m_pPlayer)
-	{
-		pointer(CREATE_ASSERT_DATA)->resetCounterForForeignImmigrantsDeals();
-	}
+	return m_pPlayer ? m_pPlayer->isForeignKingWillingToTradeImmigrants((PlayerTypes)iEuropeKingID) : false;
 }
 // WTP, ray, Foreign Kings, buy Immigrants - END
 

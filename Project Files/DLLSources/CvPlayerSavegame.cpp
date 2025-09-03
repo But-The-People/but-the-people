@@ -62,8 +62,6 @@ const int defaultTimerConquistador = 0;
 const int defaultTimerPirates = 0;
 const int defaultTimerContinentalGuard = 0;
 const int defaultTimerMortar = 0;
-const int defaultTimerUsedShips = 0; //WTP, ray Kings Used Ship - START
-const int defaultTimerForeignImmigrants = 0; // WTP, ray, Foreign Kings, buy Immigrants - START
 const int defaultTimerNativeSlave = 0;
 const int defaultTimerAfricanSlaves = 0;
 const int defaultTimerStealingImmigrant = 0;
@@ -312,6 +310,7 @@ enum SavegameVariableTypes
 
 	PlayerSave_WillingToBargain_Enummap,
 	PlayerSave_TimeNoTrade_Enummap,
+	PlayerSave_TimerUsedShipsAndImmigrants,
 
 	NUM_SAVE_ENUM_VALUES,
 };
@@ -514,6 +513,7 @@ const char* getSavedEnumNamePlayer(SavegameVariableTypes eType)
 
 	case PlayerSave_WillingToBargain_Enummap: return "PlayerSave_WillingToBargain_Enummap";
 	case PlayerSave_TimeNoTrade_Enummap: return "PlayerSave_TimeNoTrade_Enummap";
+	case PlayerSave_TimerUsedShipsAndImmigrants: return "PlayerSave_TimerUsedShipsAndImmigrants";
 	}
 	FAssertMsg(0, "Missing case");
 	return "";
@@ -583,7 +583,6 @@ void CvPlayer::resetSavedData(PlayerTypes eID, bool bConstructorCall)
 	m_iTimerPirates = defaultTimerPirates;
 	m_iTimerContinentalGuard = defaultTimerContinentalGuard;
 	m_iTimerMortar = defaultTimerMortar;
-	m_iTimerUsedShips = defaultTimerUsedShips; //WTP, ray Kings Used Ship
 	m_iTimerNativeSlave = defaultTimerNativeSlave;
 	m_iTimerAfricanSlaves = defaultTimerAfricanSlaves;
 	m_iTimerStealingImmigrant = defaultTimerStealingImmigrant;
@@ -755,12 +754,8 @@ void CvPlayer::resetSavedData(PlayerTypes eID, bool bConstructorCall)
 	m_iChurchFavoursReceived = 0; // R&R, ray, Church Favours
 
 	//WTP, ray Kings Used Ship - START
-	m_iTimerUsedShips = 0;
+	m_em_TimerUsedShipsAndImmigrants.reset();
 	//WTP, ray Kings Used Ship - END
-
-	// WTP, ray, Foreign Kings, buy Immigrants - START
-	m_iTimerForeignImmigrants = 0;
-	// WTP, ray, Foreign Kings, buy Immigrants - END
 }
 
 void CvPlayer::read(CvSavegameReader reader)
@@ -841,8 +836,8 @@ void CvPlayer::read(CvSavegameReader reader)
 		case PlayerSave_TimerPirates: reader.Read(m_iTimerPirates); break;
 		case PlayerSave_TimerContinentalGuard: reader.Read(m_iTimerContinentalGuard); break;
 		case PlayerSave_TimerMortar: reader.Read(m_iTimerMortar); break;
-		case PlayerSave_TimerUsedShips: reader.Read(m_iTimerUsedShips); break;	//WTP, ray Kings Used Ship - START
-		case PlayerSave_TimerForeignImmigrants: reader.Read(m_iTimerForeignImmigrants); break;	// WTP, ray, Foreign Kings, buy Immigrants - START
+		case PlayerSave_TimerUsedShips: reader.Discard<int>(); break;	//WTP, ray Kings Used Ship - START
+		case PlayerSave_TimerForeignImmigrants: reader.Discard<int>(); break;	// WTP, ray, Foreign Kings, buy Immigrants - START
 		case PlayerSave_TimerNativeSlave: reader.Read(m_iTimerNativeSlave); break;
 		case PlayerSave_TimerAfricanSlaves: reader.Read(m_iTimerAfricanSlaves); break;
 		case PlayerSave_TimerStealingImmigrant: reader.Read(m_iTimerStealingImmigrant); break;
@@ -980,6 +975,7 @@ void CvPlayer::read(CvSavegameReader reader)
 
 		case PlayerSave_WillingToBargain_Enummap: reader.Read(m_em_bWillingToBargain); break;
 		case PlayerSave_TimeNoTrade_Enummap: reader.Read(m_em_iTimeNoTrade); break;
+		case PlayerSave_TimerUsedShipsAndImmigrants: reader.Read(m_em_TimerUsedShipsAndImmigrants); break;
 
 		case PlayerSave_CacheUpdate:
 			// Updating cache prior to reading anything, which relies on cache to load properly or set other caches
@@ -1083,8 +1079,6 @@ void CvPlayer::write(CvSavegameWriter writer)
 	writer.Write(PlayerSave_TimerPirates, m_iTimerPirates, defaultTimerPirates);
 	writer.Write(PlayerSave_TimerContinentalGuard, m_iTimerContinentalGuard, defaultTimerContinentalGuard);
 	writer.Write(PlayerSave_TimerMortar, m_iTimerMortar, defaultTimerMortar);
-	writer.Write(PlayerSave_TimerUsedShips, m_iTimerUsedShips, defaultTimerUsedShips); //WTP, ray Kings Used Ship - START
-	writer.Write(PlayerSave_TimerForeignImmigrants, m_iTimerForeignImmigrants , defaultTimerForeignImmigrants); // WTP, ray, Foreign Kings, buy Immigrants - START
 	writer.Write(PlayerSave_TimerNativeSlave, m_iTimerNativeSlave, defaultTimerNativeSlave);
 	writer.Write(PlayerSave_TimerAfricanSlaves, m_iTimerAfricanSlaves, defaultTimerAfricanSlaves);
 	writer.Write(PlayerSave_TimerStealingImmigrant, m_iTimerStealingImmigrant, defaultTimerStealingImmigrant);
@@ -1253,6 +1247,7 @@ void CvPlayer::write(CvSavegameWriter writer)
 
 	writer.Write(PlayerSave_WillingToBargain_Enummap, m_em_bWillingToBargain);
 	writer.Write(PlayerSave_TimeNoTrade_Enummap, m_em_iTimeNoTrade);
+	writer.Write(PlayerSave_TimerUsedShipsAndImmigrants, m_em_TimerUsedShipsAndImmigrants);
 
 	writer.Write(PlayerSave_END);
 }

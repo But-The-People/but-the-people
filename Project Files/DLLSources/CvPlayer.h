@@ -140,19 +140,19 @@ public:
 	int getUsedShipPrice(UnitClassTypes iUsedShipClassType) const;
 	UnitClassTypes getRandomUsedShipClassTypeID() const;
 	bool isKingWillingToTradeUsedShips() const;
-	void decreaseCounterForUsedShipDeals();
+	void decreaseCounterForUsedShipAndForeignImmigrants();
+	void initCounterForUsedShipAndForeignImmigrants();
 	void doAILogicforUsedShipDeals();
-	void resetCounterForUsedShipDeals();
+	void resetCounterForUsedShipDeals(PlayerTypes eKing);
 	void acquireUsedShip(UnitClassTypes iUsedShipClassType, int iPrice);
 	//WTP, ray Kings Used Ship - END
 
 	// WTP, ray, Foreign Kings, buy Immigrants - START
-	int getForeignImmigrantPrice(UnitClassTypes iForeignImmigrantClassType, int iKingID) const;
-	UnitClassTypes getRandomForeignImmigrantClassTypeID(int iKingID) const;
-	bool isForeignKingWillingToTradeImmigrants(int iKingID) const;
-	void decreaseCounterForForeignKingImmigrantsDeals();
+	int getForeignImmigrantPrice(UnitClassTypes iForeignImmigrantClassType, PlayerTypes eKing) const;
+	UnitClassTypes getRandomForeignImmigrantClassTypeID(PlayerTypes eKing) const;
+	bool isForeignKingWillingToTradeImmigrants(PlayerTypes eKing) const;
 	void doAILogicforForeignImmigrants();
-	void resetCounterForForeignImmigrantsDeals();
+	void resetCounterForForeignImmigrantsDeals(PlayerTypes eKing);
 	void acquireForeignImmigrant(UnitClassTypes iForeignImmigrantClassType, int iPrice);
 	// WTP, ray, Foreign Kings, buy Immigrants - START
 
@@ -1091,12 +1091,8 @@ protected:
 	int m_iDSecondPlayerFrenchNativeWar; //WTP, ray, Colonial Intervention In Native War - START
 
 	//WTP, ray Kings Used Ship - START
-	int m_iTimerUsedShips;
+	EnumMap<PlayerTypes, char> m_em_TimerUsedShipsAndImmigrants;
 	//WTP, ray Kings Used Ship - END
-
-	// WTP, ray, Foreign Kings, buy Immigrants - START
-	int m_iTimerForeignImmigrants;
-	// WTP, ray, Foreign Kings, buy Immigrants - END
 
 	int m_iChurchFavoursReceived; // R&R, ray, Church Favours
 

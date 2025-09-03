@@ -2179,15 +2179,8 @@ void CvPlayer::doTurn()
 
 	EXTRA_POWER_CHECK
 
-	// WTP, ray, Foreign Kings, buy Immigrants - START
-	if (isEurope() && isAlive())
-	{
-		decreaseCounterForForeignKingImmigrantsDeals();
-	}
-	// WTP, ray, Foreign Kings, buy Immigrants - END
-
 	// R&R, ray, changes to Wild Animals
-	if (!GC.getGameINLINE().isBarbarianPlayer(getID()) && !GC.getGameINLINE().isChurchPlayer(getID()) && !isNative() && !isEurope() && isAlive())
+	if (isAlive() && is(CIV_CATEGORY_COLONIAL))
 	{
 
 		doCrosses(); // CBM 0.7.020 inserted from above
@@ -2217,7 +2210,7 @@ void CvPlayer::doTurn()
 		//WTP, ray, fixing precalcuated Diplo Event Issue - END
 
 		//WTP, ray Kings Used Ship - START
-		decreaseCounterForUsedShipDeals();
+		decreaseCounterForUsedShipAndForeignImmigrants();
 		//WTP, ray Kings Used Ship - END
 
 		// TAC - AI Economy - Ray - START
@@ -4574,6 +4567,14 @@ void CvPlayer::handleDiploEvent(DiploEventTypes eDiploEvent, PlayerTypes ePlayer
 		{
 			pCity->area()->setTargetCity(getID(), pCity);
 		}
+		break;
+
+	case DIPLOEVENT_ACQUIRE_USED_SHIPS_COUNTER_RESET:
+		GET_PLAYER(ePlayer).resetCounterForUsedShipDeals(getID());
+		break;
+
+	case DIPLOEVENT_ACQUIRE_FOREIGN_IMMIGRANTS_COUNTER_RESET:
+		GET_PLAYER(ePlayer).resetCounterForForeignImmigrantsDeals(getID());
 		break;
 
 	default:
@@ -23498,6 +23499,14 @@ int CvPlayer::getChurchFavourPrice() const
 //WTP, ray Kings Used Ship - START
 int CvPlayer::getUsedShipPrice(UnitClassTypes iUsedShipClassType) const
 {
+	FAssert(is(CIV_CATEGORY_COLONIAL));
+
+	if (!is(CIV_CATEGORY_COLONIAL))
+	{
+		// further down we assume player to have a parent
+		return 0;
+	}
+
 	int iPrice = 0;
 
 	CvRandom aSyncRandom;
@@ -23518,13 +23527,13 @@ int CvPlayer::getUsedShipPrice(UnitClassTypes iUsedShipClassType) const
 		iPrice = getEuropeUnitBuyPrice(eUnit);
 
 		// we now calculate the discount percent
-		int iMinDiscountForNewShipsPercent = GC.getDefineINT("MIN_DISCOUNT_USED_SHIP_PERCENT");
-		int iMaxDiscountForNewShipsPercent = GC.getDefineINT("MAX_DISCOUNT_USED_SHIP_PERCENT");
+		const int iMinDiscountForNewShipsPercent = GLOBAL_DEFINE_MIN_DISCOUNT_USED_SHIP_PERCENT;
+		const int iMaxDiscountForNewShipsPercent = GLOBAL_DEFINE_MAX_DISCOUNT_USED_SHIP_PERCENT;
 
 		int iDiscountRandPercent = std::max(iMinDiscountForNewShipsPercent, (int)aSyncRandom.get(iMaxDiscountForNewShipsPercent));
 
 		// we modify the price by the attitude of the King
-		int iKingsAttitude = GET_PLAYER(getParent()).AI_getAttitudeVal(getID());
+		const int iKingsAttitude = getParentPlayer()->AI_getAttitudeVal(getID());
 		iDiscountRandPercent = iDiscountRandPercent + iKingsAttitude;
 
 		// let us not go above max limit
@@ -23556,7 +23565,7 @@ UnitClassTypes CvPlayer::getRandomUsedShipClassTypeID() const
 
 	for (UnitClassTypes iI = FIRST_UNITCLASS; iI < NUM_UNITCLASS_TYPES; ++iI)
 	{
-		const UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI);
+		const UnitTypes eUnit = getUnitType(iI);
 		if (eUnit != NO_UNIT)
 		{
 			const CvUnitInfo& UnitInfo = GC.getUnitInfo(eUnit);
@@ -23598,17 +23607,8 @@ bool CvPlayer::isKingWillingToTradeUsedShips() const
 		return false;
 	}
 
-	// here we check first turn
-	int iDefaultFirstTurnForNewShips = GC.getDefineINT("FIRST_TURN_USED_SHIPS_AVAILABLE");
-	int iGameSpeedModifier = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getStoragePercent();
-	int iFirstTurnForNewShips = iDefaultFirstTurnForNewShips * iGameSpeedModifier / 100;
-	if (GC.getGameINLINE().getElapsedGameTurns() < iFirstTurnForNewShips)
-	{
-		return false;
-	}
-
 	// here we check since last time bought
-	if (m_iTimerUsedShips > 0)
+	if (m_em_TimerUsedShipsAndImmigrants.get(getParent()) > 0)
 	{
 		return false;
 	}
@@ -23623,17 +23623,62 @@ bool CvPlayer::isKingWillingToTradeUsedShips() const
 	return true;
 }
 
-void CvPlayer::decreaseCounterForUsedShipDeals()
+void CvPlayer::decreaseCounterForUsedShipAndForeignImmigrants()
 {
-	if (m_iTimerUsedShips > 0)
+	if (!is(CIV_CATEGORY_COLONIAL))
 	{
-		m_iTimerUsedShips = m_iTimerUsedShips - 1;
+		return;
+	}
 
+	if (!m_em_TimerUsedShipsAndImmigrants.isAllocated())
+	{
+		return;
+	}
+
+	bool bUnlockedShips = false;
+
+	for (PlayerTypes eKing = FIRST_PLAYER; eKing < NUM_PLAYER_TYPES; ++eKing)
+	{
+		if (m_em_TimerUsedShipsAndImmigrants.get(eKing) > 0)
+		{
+			m_em_TimerUsedShipsAndImmigrants.add(eKing, -1);
+			if (eKing == getParent() && m_em_TimerUsedShipsAndImmigrants.get(eKing) == 0)
+			{
+				bUnlockedShips = true;
+			}
+		}
+	}
+
+	if (bUnlockedShips)
+	{
 		if (isKingWillingToTradeUsedShips())
 		{
 			// we post a message that Used Ships may be available
 			CvWString szBuffer = gDLL->getText("TXT_KEY_USED_SHIP_BARGAIN_AVAILABLE");
 			gDLL->UI().addPlayerMessage(getID(), true, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_POSITIVE_DINK", MESSAGE_TYPE_MINOR_EVENT, NULL, COLOR_WHITE);
+		}
+	}
+}
+
+void CvPlayer::initCounterForUsedShipAndForeignImmigrants()
+{
+	if (!is(CIV_CATEGORY_COLONIAL))
+	{
+		return;
+	}
+
+	const int iGameSpeedModifier = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getStoragePercent();
+	const int iFirstTurnForNewShips = GLOBAL_DEFINE_FIRST_TURN_USED_SHIPS_AVAILABLE * iGameSpeedModifier / 100;
+	const int iFirstTurnForForeignImmigrants = GLOBAL_DEFINE_FIRST_TURN_FOREIGN_IMMIGRANTS_AVAILABLE * iGameSpeedModifier / 100;
+
+	for (PlayerTypes ePlayer = FIRST_PLAYER; ePlayer < NUM_PLAYER_TYPES; ++ePlayer)
+	{
+		CvPlayer& kPlayer = GET_PLAYER(ePlayer);
+
+		if (kPlayer.is(CIV_CATEGORY_KING))
+		{
+			bool bParent = getParent() == getID();
+			m_em_TimerUsedShipsAndImmigrants.set(ePlayer, bParent ? iFirstTurnForNewShips : iFirstTurnForForeignImmigrants);
 		}
 	}
 }
@@ -23689,20 +23734,20 @@ void CvPlayer::doAILogicforUsedShipDeals()
 	}
 
 	// now let us check the Ship and the Price it would cost
-	UnitClassTypes iShipClassTypeID = getRandomUsedShipClassTypeID();
+	UnitClassTypes eShipClassTypeID = getRandomUsedShipClassTypeID();
 
 	// we did not get any ship
-	if (iShipClassTypeID == -1)
+	if (eShipClassTypeID == NO_UNITCLASS)
 	{
 		return;
 	}
 
-	int iShipPrice = getUsedShipPrice(iShipClassTypeID);
+	int iShipPrice = getUsedShipPrice(eShipClassTypeID);
 
 	// now let us check if the need to decide if it should be acquired
 	bool bShipShouldBeAcquired = false;
 
-	UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iShipClassTypeID);
+	UnitTypes eUnit = getUnitType(eShipClassTypeID);
 	if(eUnit != NO_UNIT)
 	{
 		CvUnitInfo& kUnit = GC.getUnitInfo(eUnit);
@@ -23732,21 +23777,20 @@ void CvPlayer::doAILogicforUsedShipDeals()
 	// also reset the counter so AI will also have to wait for next bargain
 	if (bShipShouldBeAcquired)
 	{
-		acquireUsedShip(iShipClassTypeID, iShipPrice);
-		resetCounterForUsedShipDeals();
+		acquireUsedShip(eShipClassTypeID, iShipPrice);
+		resetCounterForUsedShipDeals(getID());
 	}
-
-	return;
 }
 
-void CvPlayer::resetCounterForUsedShipDeals()
+void CvPlayer::resetCounterForUsedShipDeals(PlayerTypes eKing)
 {
-	// we increase the timer, to prevent Ship directly being bought again or save-scumming --> better in Diplo-Event that asks
-	int iDefaultUsedShipTimer = GC.getDefineINT("USED_SHIP_TIMER");
-	int iGameSpeedModifier = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getStoragePercent();
-	m_iTimerUsedShips = iDefaultUsedShipTimer * iGameSpeedModifier / 100;
+	FAssert(is(CIV_CATEGORY_COLONIAL));
 
-	return;
+	// we increase the timer, to prevent Ship directly being bought again or save-scumming
+	int iGameSpeedModifier = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getStoragePercent();
+	const int iTimerUsedShips = GLOBAL_DEFINE_USED_SHIP_TIMER * iGameSpeedModifier / 100;
+
+	m_em_TimerUsedShipsAndImmigrants.set(eKing, iTimerUsedShips);
 }
 
 void CvPlayer::acquireUsedShip(UnitClassTypes iUsedShipClassType, int iPrice)
@@ -23818,32 +23862,32 @@ void CvPlayer::acquireUsedShip(UnitClassTypes iUsedShipClassType, int iPrice)
 
 
 // WTP, ray, Foreign Kings, buy Immigrants - START
-int CvPlayer::getForeignImmigrantPrice(UnitClassTypes iForeignImmigrantClassType, int iForeignKingID) const
+int CvPlayer::getForeignImmigrantPrice(UnitClassTypes iForeignImmigrantClassType, PlayerTypes eKing) const
 {
 	int iPrice = 0;
 
 	CvRandom aSyncRandom;
 	aSyncRandom.reseed(m_ulRandomSeed);
 
-	for (int i = 0; i < iForeignKingID; ++i)
+	for (PlayerTypes i = FIRST_PLAYER; i < eKing; ++i)
 	{
 		aSyncRandom.get(5);
 		aSyncRandom.get(5);
 	}
 
-	UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iForeignImmigrantClassType);
+	UnitTypes eUnit = getUnitType(iForeignImmigrantClassType);
 	if (eUnit != NO_UNIT)
 	{
 		iPrice = getEuropeUnitBuyPrice(eUnit);
 
 		// we now calculate the discount percent
-		int iMinDiscountForeignImmigrantPercent = GC.getDefineINT("MIN_DISCOUNT_FOREIGN_IMMIGRANTS_PERCENT");
-		int iMaxDiscountForeignImmigrantPercent = GC.getDefineINT("MAX_DISCOUNT_FOREIGN_IMMIGRANTS_PERCENT");
+		const int iMinDiscountForeignImmigrantPercent = GLOBAL_DEFINE_MIN_DISCOUNT_FOREIGN_IMMIGRANTS_PERCENT;
+		const int iMaxDiscountForeignImmigrantPercent = GLOBAL_DEFINE_MAX_DISCOUNT_FOREIGN_IMMIGRANTS_PERCENT;
 
 		int iDiscountRandPercent = std::max(iMinDiscountForeignImmigrantPercent, (int)aSyncRandom.get(iMaxDiscountForeignImmigrantPercent));
 
 		// we modify the price by the attitude of the King
-		int iKingsAttitude = GET_PLAYER((PlayerTypes) iForeignKingID).AI_getAttitudeVal(getID());
+		int iKingsAttitude = GET_PLAYER(eKing).AI_getAttitudeVal(getID());
 		iDiscountRandPercent = iDiscountRandPercent + iKingsAttitude;
 
 		// let us not go above max limit
@@ -23858,14 +23902,14 @@ int CvPlayer::getForeignImmigrantPrice(UnitClassTypes iForeignImmigrantClassType
 	return iPrice;
 }
 
-UnitClassTypes CvPlayer::getRandomForeignImmigrantClassTypeID(int iKingID) const
+UnitClassTypes CvPlayer::getRandomForeignImmigrantClassTypeID(PlayerTypes eKing) const
 {
 	UnitClassTypes eBestUnitClass = NO_UNITCLASS;
 	int iBestLastCompareValue = 0;
 
 	CvRandom aSyncRandom;
 	aSyncRandom.reseed(m_ulRandomSeed);
-	for (int i = 0; i < iKingID; i++)
+	for (PlayerTypes i = FIRST_PLAYER; i < eKing; ++i)
 	{
 		// move the random seed a bit
 		aSyncRandom.get(1);
@@ -23878,7 +23922,7 @@ UnitClassTypes CvPlayer::getRandomForeignImmigrantClassTypeID(int iKingID) const
 		int iUnitClassCompareRand = aSyncRandom.get(438);
 		if (iUnitClassCompareRand > iBestLastCompareValue)
 		{
-			UnitTypes eUnit = (UnitTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI);
+			UnitTypes eUnit = GC.getCivilizationInfo(getCivilizationType()).getCivilizationUnits(iI);
 
 			if (eUnit != NULL && GC.getUnitInfo(eUnit).getDomainType() == DOMAIN_LAND && GC.getUnitInfo(eUnit).getEuropeCost() > 0 && getGold() > GC.getUnitInfo(eUnit).getEuropeCost())
 			{
@@ -23897,9 +23941,40 @@ UnitClassTypes CvPlayer::getRandomForeignImmigrantClassTypeID(int iKingID) const
 	return eBestUnitClass;
 }
 
-bool CvPlayer::isForeignKingWillingToTradeImmigrants(int iForeignKingID) const
+bool CvPlayer::isForeignKingWillingToTradeImmigrants(PlayerTypes eKing) const
 {
 	if (!isAlive())
+	{
+		return false;
+	}
+
+	if (!is(CIV_CATEGORY_COLONIAL))
+	{
+		return false;
+	}
+
+	// ensure we got a proper player for the king and not say NO_PLAYER
+	if (!isInRange(eKing))
+	{
+		return false;
+	}
+
+	if (getParent() == eKing)
+	{
+		// king is not foreign
+		return false;
+	}
+
+	// this is the King we are buying the Foreign Immigrants from
+	CvPlayerAI& kKing = GET_PLAYER(eKing);
+
+	if (!kKing.is(CIV_CATEGORY_KING))
+	{
+		return false;
+	}
+
+	// here we check since last time bought from this King
+	if (m_em_TimerUsedShipsAndImmigrants.get(eKing) > 0)
 	{
 		return false;
 	}
@@ -23909,53 +23984,8 @@ bool CvPlayer::isForeignKingWillingToTradeImmigrants(int iForeignKingID) const
 		return false;
 	}
 
-	// just for safety
-	if (iForeignKingID == NO_PLAYER)
-	{
-		return false;
-	}
-
-	// this is the King we are buying the Foreign Immigrants from
-	CvPlayerAI& kForeignKing = GET_PLAYER((PlayerTypes) iForeignKingID);
-
 	// we need to check that we are not at war with its Colonies
-	bool bAtWarWithColoniesOfThatKing = false;
-	for (int iI = 0; iI < MAX_PLAYERS; iI++)
-	{
-		PlayerTypes ePlayer = (PlayerTypes) iI;
-		CvPlayer& kPlayer = GET_PLAYER(ePlayer);
-		if (kPlayer.isAlive() && ePlayer != getID() && kPlayer.isPlayable())
-		{
-			// check if we are talking to the King of the Player
-			if (kPlayer.getParent() == kForeignKing.getID())
-			{
-				// check if we ar at war with that Player
-				if (GET_TEAM(getTeam()).isAtWar(kPlayer.getTeam()))
-				{
-					bAtWarWithColoniesOfThatKing = true;
-					break;
-				}
-			}
-		}
-	}
-
-	// the King does not talk to us if we are at war with his colony
-	if (bAtWarWithColoniesOfThatKing)
-	{
-		return false;
-	}
-
-	// here we check first turn
-	int iDefaultFirstForeignImmigrants = GC.getDefineINT("FIRST_TURN_FOREIGN_IMMIGRANTS_AVAILABLE");
-	int iGameSpeedModifier = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getStoragePercent();
-	int iFirstTurnForForeignImmigrants = iDefaultFirstForeignImmigrants * iGameSpeedModifier / 100;
-	if (GC.getGameINLINE().getElapsedGameTurns() < iFirstTurnForForeignImmigrants)
-	{
-		return false;
-	}
-
-	// here we check since last time bought from this King
-	if (kForeignKing.m_iTimerForeignImmigrants > 0)
+	if (GET_TEAM(getTeam()).isAtWar(kKing.getColonyPlayer()->getTeam()))
 	{
 		return false;
 	}
@@ -23970,23 +24000,12 @@ bool CvPlayer::isForeignKingWillingToTradeImmigrants(int iForeignKingID) const
 	return true;
 }
 
-// this is triggered by the King doTurn itself, thus no ID needed
-void CvPlayer::decreaseCounterForForeignKingImmigrantsDeals()
-{
-	// here we check since last time bought from this King
-	if (m_iTimerForeignImmigrants > 0)
-	{
-		// this may need a public set Method
-		m_iTimerForeignImmigrants = m_iTimerForeignImmigrants - 1;
-	}
-}
-
 void CvPlayer::doAILogicforForeignImmigrants()
 {
 	// comment:
 	// The call to this function already checks that it is not Human
 
-	if(!isPlayable())
+	if (!isHuman() || !is(CIV_CATEGORY_COLONIAL))
 	{
 		return;
 	}
@@ -24001,18 +24020,9 @@ void CvPlayer::doAILogicforForeignImmigrants()
 		return;
 	}
 
-	// here we check since last time bought from this King
-	// in this case we use our own timer and we also need to decrease it
-	if (m_iTimerForeignImmigrants > 0)
-	{
-		m_iTimerForeignImmigrants = m_iTimerForeignImmigrants - 1;
-		return;
-	}
-
 	// here we check first turn
-	int iDefaultFirstForeignImmigrants = GC.getDefineINT("FIRST_TURN_FOREIGN_IMMIGRANTS_AVAILABLE");
 	int iGameSpeedModifier = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getStoragePercent();
-	int iFirstTurnForForeignImmigrants = iDefaultFirstForeignImmigrants * iGameSpeedModifier / 100;
+	int iFirstTurnForForeignImmigrants = GLOBAL_DEFINE_FIRST_TURN_FOREIGN_IMMIGRANTS_AVAILABLE * iGameSpeedModifier / 100;
 	if (GC.getGameINLINE().getElapsedGameTurns() < iFirstTurnForForeignImmigrants)
 	{
 		return;
@@ -24026,8 +24036,33 @@ void CvPlayer::doAILogicforForeignImmigrants()
 		return;
 	}
 
+	std::vector<PlayerTypes> kings;
+
+	for (PlayerTypes ePlayer = FIRST_PLAYER; ePlayer < NUM_PLAYER_TYPES; ++ePlayer)
+	{
+		// this doubles as finding the kings as non-kings will always return false
+		if (isForeignKingWillingToTradeImmigrants(ePlayer))
+		{
+			kings.push_back(ePlayer);
+		}
+	}
+
+	if (kings.size() == 0)
+	{
+		// no valid kings
+		return;
+	}
+
+	PlayerTypes eKing = kings[0];
+
+	if (kings.size() > 1)
+	{
+		eKing = kings[GC.getGameINLINE().getSorenRandNum(kings.size(), "AI: foreign king for immigrants")];
+	}
+
+
 	// now let us check the Immigrant and the Price it would cost
-	UnitClassTypes iForeignImmigrantTypeID = getRandomForeignImmigrantClassTypeID(-1);
+	UnitClassTypes iForeignImmigrantTypeID = getRandomForeignImmigrantClassTypeID(eKing);
 
 	// we did not get any ship
 	if (iForeignImmigrantTypeID == NO_UNITCLASS)
@@ -24036,29 +24071,28 @@ void CvPlayer::doAILogicforForeignImmigrants()
 	}
 
 	// for getting the Price we use the AIs own Parent
-	int iForeignImmigrantPrice = getForeignImmigrantPrice(iForeignImmigrantTypeID, getParent());
+	int iForeignImmigrantPrice = getForeignImmigrantPrice(iForeignImmigrantTypeID, eKing);
 
 	// we acquire if we have at least double the gold
 	// Timers and such ensure that this otherwise does not happen to often anyways
 	if (getGold() > iForeignImmigrantPrice * 2)
 	{
 		acquireForeignImmigrant(iForeignImmigrantTypeID, iForeignImmigrantPrice);
-		resetCounterForForeignImmigrantsDeals(); // here we reset our own timer
+		resetCounterForForeignImmigrantsDeals(eKing); // here we reset our own timer
 	}
-
-	return;
 }
 
 
 // this is the counter at the Foreign King Player, it is reset from Python logic
-void CvPlayer::resetCounterForForeignImmigrantsDeals()
+void CvPlayer::resetCounterForForeignImmigrantsDeals(PlayerTypes eKing)
 {
-	// we increase the timer, to prevent Ship directly being bought again or save-scumming --> better in Diplo-Event that asks
-	int iDefaultForeignImmigrantTimer = GC.getDefineINT("FOREIGN_IMMIGRANTS_TIMER");
-	int iGameSpeedModifier = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getStoragePercent();
-	m_iTimerForeignImmigrants = iDefaultForeignImmigrantTimer * iGameSpeedModifier / 100;
+	FAssert(is(CIV_CATEGORY_COLONIAL));
 
-	return;
+	// we increase the timer, to prevent Ship directly being bought again or save-scumming --> better in Diplo-Event that asks
+	int iGameSpeedModifier = GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getStoragePercent();
+	const int iTimerForeignImmigrants = GLOBAL_DEFINE_FOREIGN_IMMIGRANTS_TIMER * iGameSpeedModifier / 100;
+
+	m_em_TimerUsedShipsAndImmigrants.set(eKing, iTimerForeignImmigrants);
 }
 
 void CvPlayer::acquireForeignImmigrant(UnitClassTypes iForeignImmigrantClassType, int iPrice)

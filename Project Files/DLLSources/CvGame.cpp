@@ -368,6 +368,7 @@ void CvGame::setInitialItems(bool bScenario)
 		if (!kPlayer.isAlive())
 			continue;
 		kPlayer.AI_updateFoundValues();
+		kPlayer.initCounterForUsedShipAndForeignImmigrants();
 	}
 
 	doNewGameErrorTesting();
