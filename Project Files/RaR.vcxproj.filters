@@ -221,7 +221,7 @@
       <Filter>CV\CPP</Filter>
     </ClCompile>
     <ClCompile Include="DLLSources\EXE_interface.cpp">
-      <Filter>Misc\EXE interface</Filter>
+      <Filter>Classes\EXE\EXE interface</Filter>
     </ClCompile>
     <ClCompile Include="DLLSources\CvDLLEngineIFaceBase.cpp">
       <Filter>CV\CPP</Filter>
@@ -528,6 +528,9 @@
     </ClCompile>
     <ClCompile Include="DLLSources\CyArgsList.cpp">
       <Filter>Python\CvPythonCaller\ArgList</Filter>
+    </ClCompile>
+    <ClCompile Include="DLLSources\EXE\Network.cpp">
+      <Filter>Classes\EXE\CPP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1014,6 +1017,9 @@
     <ClInclude Include="DLLSources\CyArgsList.h">
       <Filter>Python\CvPythonCaller\ArgList</Filter>
     </ClInclude>
+    <ClInclude Include="DLLSources\EXE\Network.h">
+      <Filter>Classes\EXE\Interface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DLLSources\FVariableSystem.inl">
@@ -1071,9 +1077,6 @@
     </Filter>
     <Filter Include="Data\Header\EnumMap Internals">
       <UniqueIdentifier>{c674827b-abee-4556-946d-8c81b9471504}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Misc\EXE interface">
-      <UniqueIdentifier>{f2e98b89-d8ca-4626-9e7e-5468e1bccaad}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes">
       <UniqueIdentifier>{73ba73ed-d43d-422d-9d9f-c63bdeb96d1c}</UniqueIdentifier>
@@ -1239,6 +1242,18 @@
     </Filter>
     <Filter Include="Python\CvPythonCaller\ArgList">
       <UniqueIdentifier>{5faa2112-43d9-448e-9762-95844185c718}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\EXE">
+      <UniqueIdentifier>{ca0830de-108c-4feb-9b96-51fd4cbb77da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\EXE\EXE interface">
+      <UniqueIdentifier>{f2e98b89-d8ca-4626-9e7e-5468e1bccaad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\EXE\Interface">
+      <UniqueIdentifier>{bc0df941-f166-45d4-9255-7277567292f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\EXE\CPP">
+      <UniqueIdentifier>{47caa9d8-a1f3-4d6f-b747-f9e6d872a80b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
