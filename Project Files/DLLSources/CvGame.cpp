@@ -2518,7 +2518,7 @@ bool CvGame::canHandleAction(int iAction, CvPlot* pPlot, bool bTestVisible, bool
 
 	if (GC.getActionInfo(iAction).getControlType() != NO_CONTROL)
 	{
-		if (canDoControl((ControlTypes)(GC.getActionInfo(iAction).getControlType())))
+		if (canDoControl(GC.getActionInfo(iAction).getControlType()))
 		{
 			return true;
 		}
@@ -2577,13 +2577,13 @@ bool CvGame::canHandleAction(int iAction, CvPlot* pPlot, bool bTestVisible, bool
 
 				if (GC.getActionInfo(iAction).getCommandType() != NO_COMMAND)
 				{
-					if (pSelectedInterfaceList->canDoCommand(((CommandTypes)(GC.getActionInfo(iAction).getCommandType())), GC.getActionInfo(iAction).getCommandData(), -1, bTestVisible, bUseCache))
+					if (pSelectedInterfaceList->canDoCommand(GC.getActionInfo(iAction).getCommandType(), GC.getActionInfo(iAction).getCommandData(), -1, bTestVisible, bUseCache))
 					{
 						return true;
 					}
 				}
 
-				if (gDLL->getInterfaceIFace()->canDoInterfaceMode(((InterfaceModeTypes)GC.getActionInfo(iAction).getInterfaceModeType()), pSelectedInterfaceList))
+				if (gDLL->getInterfaceIFace()->canDoInterfaceMode(GC.getActionInfo(iAction).getInterfaceModeType(), pSelectedInterfaceList))
 				{
 					return true;
 				}
@@ -2599,9 +2599,10 @@ void CvGame::setupActionCache()
 	gDLL->getInterfaceIFace()->getSelectionList()->setupActionCache();
 }
 
-// WARNING: function is not networked synced
 void CvGame::handleAction(int iAction)
 {
+	CxDesyncMonitor StartMonitoring;
+
 	CvUnit* pHeadSelectedUnit;
 	bool bAlt;
 	bool bShift;
@@ -2625,27 +2626,27 @@ void CvGame::handleAction(int iAction)
 		}
 		else
 		{
-			doControl((ControlTypes)(GC.getActionInfo(iAction).getControlType()));
+			doControl(GC.getActionInfo(iAction).getControlType());
 		}
 	}
 
-	if (gDLL->getInterfaceIFace()->canDoInterfaceMode((InterfaceModeTypes)GC.getActionInfo(iAction).getInterfaceModeType(), gDLL->getInterfaceIFace()->getSelectionList()))
+	if (gDLL->getInterfaceIFace()->canDoInterfaceMode(GC.getActionInfo(iAction).getInterfaceModeType(), gDLL->getInterfaceIFace()->getSelectionList()))
 	{
 		pHeadSelectedUnit = gDLL->getInterfaceIFace()->getHeadSelectedUnit();
 
 		if (pHeadSelectedUnit != NULL)
 		{
-			if (GC.getInterfaceModeInfo((InterfaceModeTypes)GC.getActionInfo(iAction).getInterfaceModeType()).getSelectAll())
+			if (GC.getInterfaceModeInfo(GC.getActionInfo(iAction).getInterfaceModeType()).getSelectAll())
 			{
 				gDLL->getInterfaceIFace()->selectGroup(pHeadSelectedUnit, false, false, true);
 			}
-			else if (GC.getInterfaceModeInfo((InterfaceModeTypes)GC.getActionInfo(iAction).getInterfaceModeType()).getSelectType())
+			else if (GC.getInterfaceModeInfo(GC.getActionInfo(iAction).getInterfaceModeType()).getSelectType())
 			{
 				gDLL->getInterfaceIFace()->selectGroup(pHeadSelectedUnit, false, true, false);
 			}
 		}
 
-		gDLL->getInterfaceIFace()->setInterfaceMode((InterfaceModeTypes)GC.getActionInfo(iAction).getInterfaceModeType());
+		gDLL->getInterfaceIFace()->setInterfaceMode(GC.getActionInfo(iAction).getInterfaceModeType());
 	}
 
 	if (GC.getActionInfo(iAction).getMissionType() != NO_MISSION)

@@ -2486,9 +2486,9 @@ void CvDLLWidgetData::parseActionHelp(const CvWidgetDataStruct &widgetDataStruct
 			}
 			// R&R, ray, High Sea Fishing - END
 
-			if (!isEmpty(GC.getMissionInfo((MissionTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType())).getHelp()))
+			if (!isEmpty(GC.getMissionInfo(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType()).getHelp()))
 			{
-				szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getMissionInfo((MissionTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType())).getHelp()).c_str());
+				szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getMissionInfo(GC.getActionInfo(widgetDataStruct.m_iData1).getMissionType()).getHelp()).c_str());
 			}
 		}
 
@@ -2502,7 +2502,7 @@ void CvDLLWidgetData::parseActionHelp(const CvWidgetDataStruct &widgetDataStruct
 			{
 				GAMETEXT.setBasicUnitHelp(szBuffer, ((UnitTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getCommandData())));
 
-				if (bAlt && GC.getCommandInfo((CommandTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getCommandType())).getAll())
+				if (bAlt && GC.getCommandInfo(GC.getActionInfo(widgetDataStruct.m_iData1).getCommandType()).getAll())
 				{
 					iPrice = GET_PLAYER(pHeadSelectedUnit->getOwnerINLINE()).upgradeAllPrice(((UnitTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getCommandData())), pHeadSelectedUnit->getUnitType());
 				}
@@ -2644,39 +2644,39 @@ void CvDLLWidgetData::parseActionHelp(const CvWidgetDataStruct &widgetDataStruct
 			}
 			// R&R, ray , Stirring Up Natives - END
 
-			if (GC.getCommandInfo((CommandTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getCommandType())).getAll())
+			if (GC.getCommandInfo(GC.getActionInfo(widgetDataStruct.m_iData1).getCommandType()).getAll())
 			{
 				szBuffer.append(gDLL->getText("TXT_KEY_ACTION_ALL_UNITS"));
 			}
 
-			if (!isEmpty(GC.getCommandInfo((CommandTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getCommandType())).getHelp()))
+			if (!isEmpty(GC.getCommandInfo(GC.getActionInfo(widgetDataStruct.m_iData1).getCommandType()).getHelp()))
 			{
-				szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getCommandInfo((CommandTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getCommandType())).getHelp()).c_str());
+				szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getCommandInfo(GC.getActionInfo(widgetDataStruct.m_iData1).getCommandType()).getHelp()).c_str());
 			}
 		}
 
 		if (GC.getActionInfo(widgetDataStruct.m_iData1).getAutomateType() != NO_AUTOMATE)
 		{
-			if (!isEmpty(GC.getAutomateInfo((ControlTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getAutomateType())).getHelp()))
+			if (!isEmpty(GC.getAutomateInfo(GC.getActionInfo(widgetDataStruct.m_iData1).getAutomateType()).getHelp()))
 			{
-				szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getAutomateInfo((ControlTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getAutomateType())).getHelp()).c_str());
+				szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getAutomateInfo(GC.getActionInfo(widgetDataStruct.m_iData1).getAutomateType()).getHelp()).c_str());
 			}
 		}
 	}
 
 	if (GC.getActionInfo(widgetDataStruct.m_iData1).getControlType() != NO_CONTROL)
 	{
-		if (!isEmpty(GC.getControlInfo((ControlTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getControlType())).getHelp()))
+		if (!isEmpty(GC.getControlInfo((GC.getActionInfo(widgetDataStruct.m_iData1).getControlType())).getHelp()))
 		{
-			szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getControlInfo((ControlTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getControlType())).getHelp()).c_str());
+			szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getControlInfo(GC.getActionInfo(widgetDataStruct.m_iData1).getControlType()).getHelp()).c_str());
 		}
 	}
 
 	if (GC.getActionInfo(widgetDataStruct.m_iData1).getInterfaceModeType() != NO_INTERFACEMODE)
 	{
-		if (!isEmpty(GC.getInterfaceModeInfo((InterfaceModeTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getInterfaceModeType())).getHelp()))
+		if (!isEmpty(GC.getInterfaceModeInfo(GC.getActionInfo(widgetDataStruct.m_iData1).getInterfaceModeType()).getHelp()))
 		{
-			szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getInterfaceModeInfo((InterfaceModeTypes)(GC.getActionInfo(widgetDataStruct.m_iData1).getInterfaceModeType())).getHelp()).c_str());
+			szBuffer.append(CvWString::format(L"%s%s", NEWLINE, GC.getInterfaceModeInfo(GC.getActionInfo(widgetDataStruct.m_iData1).getInterfaceModeType()).getHelp()).c_str());
 		}
 	}
 }

@@ -195,6 +195,11 @@ BOOST_STATIC_ASSERT(sizeof(CyAutomateInfo) == sizeof(CvAutomateInfo));
 class CyActionInfo : public CvActionInfo
 {
 public:
+	int getAutomateType() const;
+	int getInterfaceModeType() const;
+	int getMissionType() const;
+	int getCommandType() const;
+	int getControlType() const;
 };
 BOOST_STATIC_ASSERT(sizeof(CyActionInfo) == sizeof(CvActionInfo));
 

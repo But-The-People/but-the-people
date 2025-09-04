@@ -1075,11 +1075,11 @@ int CvPromotionInfo::getDomesticBonusPercent() const
 {
 	return m_iDomesticBonusPercent;
 }
-int CvPromotionInfo::getCommandType() const
+CommandTypes CvPromotionInfo::getCommandType() const
 {
 	return m_iCommandType;
 }
-void CvPromotionInfo::setCommandType(int iNewType)
+void CvPromotionInfo::setCommandType(CommandTypes iNewType)
 {
 	m_iCommandType = iNewType;
 }
@@ -2214,19 +2214,19 @@ m_bVisible(false)
 CvAutomateInfo::~CvAutomateInfo()
 {
 }
-int CvAutomateInfo::getCommand() const
+CommandTypes CvAutomateInfo::getCommand() const
 {
 	return m_iCommand;
 }
-void CvAutomateInfo::setCommand(int i)
+void CvAutomateInfo::setCommand(CommandTypes i)
 {
 	m_iCommand = i;
 }
-int CvAutomateInfo::getAutomate() const
+AutomateTypes CvAutomateInfo::getAutomate() const
 {
 	return m_iAutomate;
 }
-void CvAutomateInfo::setAutomate(int i)
+void CvAutomateInfo::setAutomate(AutomateTypes i)
 {
 	m_iAutomate = i;
 }
@@ -2246,9 +2246,9 @@ bool CvAutomateInfo::read(CvXMLLoadUtility* pXML)
 		return false;
 	}
 	pXML->GetChildXmlValByName(szTextVal, "Command");
-	setCommand(pXML->FindInInfoClass(szTextVal));
+	setCommand((CommandTypes)pXML->FindInInfoClass(szTextVal));
 	pXML->GetChildXmlValByName(szTextVal, "Automate");
-	setAutomate(GC.getInfoTypeForString(szTextVal));
+	setAutomate((AutomateTypes)GC.getInfoTypeForString(szTextVal));
 	pXML->GetChildXmlValByName(&m_bConfirmCommand, "bConfirmCommand");
 	pXML->GetChildXmlValByName(&m_bVisible, "bVisible");
 	return true;
@@ -2309,7 +2309,7 @@ int CvActionInfo::getCommandData() const
 	}
 	return iData;
 }
-int CvActionInfo::getAutomateType() const
+AutomateTypes CvActionInfo::getAutomateType() const
 {
 	if (ACTIONSUBTYPE_AUTOMATE == m_eSubType)
 	{
@@ -2317,31 +2317,31 @@ int CvActionInfo::getAutomateType() const
 	}
 	return NO_AUTOMATE;
 }
-int CvActionInfo::getInterfaceModeType() const
+InterfaceModeTypes CvActionInfo::getInterfaceModeType() const
 {
 	if (ACTIONSUBTYPE_INTERFACEMODE == m_eSubType)
 	{
-		return m_iOriginalIndex;
+		return static_cast<InterfaceModeTypes>(m_iOriginalIndex);
 	}
 	return NO_INTERFACEMODE;
 }
-int CvActionInfo::getMissionType() const
+MissionTypes CvActionInfo::getMissionType() const
 {
 	if (ACTIONSUBTYPE_BUILD == m_eSubType)
 	{
-		return GC.getBuildInfo((BuildTypes)m_iOriginalIndex).getMissionType();
+		return (MissionTypes)GC.getBuildInfo((BuildTypes)m_iOriginalIndex).getMissionType();
 	}
 	else if (ACTIONSUBTYPE_MISSION == m_eSubType)
 	{
-		return m_iOriginalIndex;
+		return static_cast<MissionTypes>(m_iOriginalIndex);
 	}
 	return NO_MISSION;
 }
-int CvActionInfo::getCommandType() const
+CommandTypes CvActionInfo::getCommandType() const
 {
 	if (ACTIONSUBTYPE_COMMAND == m_eSubType)
 	{
-		return m_iOriginalIndex;
+		return static_cast<CommandTypes>(m_iOriginalIndex);
 	}
 	else if (ACTIONSUBTYPE_PROMOTION == m_eSubType)
 	{
@@ -2357,13 +2357,13 @@ int CvActionInfo::getCommandType() const
 	}
 	return NO_COMMAND;
 }
-int CvActionInfo::getControlType() const
+ControlTypes CvActionInfo::getControlType() const
 {
 	if (ACTIONSUBTYPE_CONTROL == m_eSubType)
 	{
-		return m_iOriginalIndex;
+		return static_cast<ControlTypes>(m_iOriginalIndex);
 	}
-	return -1;
+	return NO_CONTROL;
 }
 int CvActionInfo::getOriginalIndex() const
 {
@@ -3421,11 +3421,11 @@ float CvUnitInfo::getUnitPadTime(int iProfession) const
 {
 	return getProfessionMeshGroup(iProfession).getPadTime();
 }
-int CvUnitInfo::getCommandType() const
+CommandTypes CvUnitInfo::getCommandType() const
 {
 	return m_iCommandType;
 }
-void CvUnitInfo::setCommandType(int iNewType)
+void CvUnitInfo::setCommandType(CommandTypes iNewType)
 {
 	m_iCommandType = iNewType;
 }

@@ -1,6 +1,32 @@
 #include "CvGameCoreDLL.h"
 #include "CyInfos.h"
 
+
+int CyActionInfo::getAutomateType() const
+{
+	return CvActionInfo::getAutomateType();
+}
+
+int CyActionInfo::getInterfaceModeType() const
+{
+	return CvActionInfo::getInterfaceModeType();
+}
+
+int CyActionInfo::getMissionType() const
+{
+	return CvActionInfo::getMissionType();
+}
+
+int CyActionInfo::getCommandType() const
+{
+	return CvActionInfo::getCommandType();
+}
+
+int CyActionInfo::getControlType() const
+{
+	return CvActionInfo::getControlType();
+}
+
 int CyCivilizationInfo::getDefaultPlayerColor() const
 {
 	return CvCivilizationInfo::getDefaultPlayerColor();

@@ -236,7 +236,7 @@ void CySelectionGroup::setActivityType(int /*ActivityTypes*/ eNewValue)
 
 int /*AutomateTypes*/ CySelectionGroup::getAutomateType()
 {
-	return m_pSelectionGroup ? (AutomateTypes) m_pSelectionGroup->getAutomateType() : -1;
+	return m_pSelectionGroup ? m_pSelectionGroup->getAutomateType() : NO_AUTOMATE;
 }
 
 bool CySelectionGroup::isAutomated()

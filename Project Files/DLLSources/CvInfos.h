@@ -250,8 +250,8 @@ public:
 	int getHillsAttackPercent() const;
 	int getHillsDefensePercent() const;
 	int getDomesticBonusPercent() const;
-	int getCommandType() const;
-	void setCommandType(int iNewType);
+	CommandTypes getCommandType() const;
+	void setCommandType(CommandTypes iNewType);
 	int getPillageChange() const;
 	int getAnimalGoldChange() const; //WTP, ray, Animal Promotions increase gold from Animals
 	int getSlaveRevoltReductionBonus() const; //WTP, ray, Slave Hunter and Slave Master
@@ -316,7 +316,7 @@ protected:
 	int m_iHillsAttackPercent;
 	int m_iHillsDefensePercent;
 	int m_iDomesticBonusPercent;
-	int m_iCommandType;
+	CommandTypes m_iCommandType;
 	int m_iPillageChange;
 	int m_iAnimalGoldChange; //WTP, ray, Animal Promotions increase gold from Animals
 	int m_iSlaveRevoltReductionBonus; //WTP, ray, Slave Hunter and Slave Master
@@ -560,10 +560,10 @@ class CvAutomateInfo : public CvHotkeyInfo
 public:
 	CvAutomateInfo();
 	virtual ~CvAutomateInfo();
-	int getCommand() const;
-	void setCommand(int i);
-	int getAutomate() const;
-	void setAutomate(int i);
+	CommandTypes getCommand() const;
+	void setCommand(CommandTypes i);
+	AutomateTypes getAutomate() const;
+	void setAutomate(AutomateTypes i);
 	bool getConfirmCommand() const;
 	void setConfirmCommand(bool bVal);
 	bool getVisible() const;
@@ -571,8 +571,8 @@ public:
 	bool read(CvXMLLoadUtility* pXML);
 	//---------------------------------------PROTECTED MEMBER VARIABLES---------------------------------
 protected:
-	int m_iCommand;
-	int m_iAutomate;
+	CommandTypes m_iCommand;
+	AutomateTypes m_iAutomate;
 	bool m_bConfirmCommand;
 	bool m_bVisible;
 };
@@ -593,11 +593,11 @@ public:
 	int getMissionData() const;
 	int getCommandData() const;
 
-	int getAutomateType() const;
-	int getInterfaceModeType() const;
-	int getMissionType() const;
-	int getCommandType() const;
-	int getControlType() const;
+	AutomateTypes getAutomateType() const;
+	InterfaceModeTypes getInterfaceModeType() const;
+	MissionTypes getMissionType() const;
+	CommandTypes getCommandType() const;
+	ControlTypes getControlType() const;
 	int getOriginalIndex() const;
 	void setOriginalIndex(int i);
 	bool isConfirmCommand() const;
@@ -631,7 +631,17 @@ public:
 
 //---------------------------------------PROTECTED MEMBER VARIABLES---------------------------------
 protected:
-	int m_iOriginalIndex;
+	union
+	{
+		int m_iOriginalIndex;
+#ifdef _DEBUG
+		AutomateTypes m_Automate;
+		CommandTypes m_Command;
+		ControlTypes m_Control;
+		InterfaceModeTypes m_InterfaceMode;
+		MissionTypes m_Mission;
+#endif
+	};
 	ActionSubTypes m_eSubType;
 private:
 	CvHotkeyInfo* getHotkeyInfo() const;
@@ -758,8 +768,8 @@ public:
 	int getMeleeWaveSize(int iProfession) const;
 	int getRangedWaveSize(int iProfession) const;
 	int getNumUnitNames() const;
-	int getCommandType() const;
-	void setCommandType(int iNewType);
+	CommandTypes getCommandType() const;
+	void setCommandType(CommandTypes iNewType);
 	int getLearnTime() const;
 	int getStudentWeight() const;
 	int getTeacherWeight() const;
@@ -946,7 +956,7 @@ protected:
 	int m_iInvisibleType;
 	int m_iPrereqBuilding;
 	int m_iNumUnitNames;
-	int m_iCommandType;
+	CommandTypes m_iCommandType;
 	int m_iLeaderExperience;
 	int m_iLearnTime;
 	int m_iStudentWeight;
