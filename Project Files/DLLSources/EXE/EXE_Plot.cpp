@@ -169,7 +169,7 @@ EXE_Plot::EXE_Plot(CvPlot& kPlot)
 {
 }
 
-EXE_Plot::EXE_Plot_YieldSymbol EXE_Plot::FontSymbol()
+EXE_Plot::EXE_Plot_YieldSymbol EXE_Plot::YieldSymbol()
 {
 	return EXE_Plot_YieldSymbol(m_plot);
 }

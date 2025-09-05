@@ -81,7 +81,7 @@ public:
 
 	EXE_Plot(CvPlot&);
 
-	EXE_Plot_YieldSymbol FontSymbol();
+	EXE_Plot_YieldSymbol YieldSymbol();
 	EXE_Plot_EventReporter reportEvent();
 	EXE_Plot_Texture texture();
 
