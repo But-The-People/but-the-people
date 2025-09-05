@@ -532,6 +532,9 @@
     <ClCompile Include="DLLSources\EXE\Network.cpp">
       <Filter>Classes\EXE\CPP</Filter>
     </ClCompile>
+    <ClCompile Include="DLLSources\EXE\EXE_Plot.cpp">
+      <Filter>EXE\Plot</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DLLSources\CvArea.h">
@@ -1020,6 +1023,18 @@
     <ClInclude Include="DLLSources\EXE\Network.h">
       <Filter>Classes\EXE\Interface</Filter>
     </ClInclude>
+    <ClInclude Include="DLLSources\EXE\EXE_Plot.h">
+      <Filter>EXE\Plot</Filter>
+    </ClInclude>
+    <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLInterfaceIFaceBase.h">
+      <Filter>EXE\Vanilla headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLEngineIFaceBase.h">
+      <Filter>EXE\Vanilla headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLEventReporterIFaceBase.h">
+      <Filter>EXE\Vanilla headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DLLSources\FVariableSystem.inl">
@@ -1254,6 +1269,15 @@
     </Filter>
     <Filter Include="Classes\EXE\CPP">
       <UniqueIdentifier>{47caa9d8-a1f3-4d6f-b747-f9e6d872a80b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EXE">
+      <UniqueIdentifier>{2a5de3be-921c-4a52-9d33-5bb3b1fb3d41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EXE\Plot">
+      <UniqueIdentifier>{a73f9fd7-4572-4d60-b79b-5d79842f663d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EXE\Vanilla headers">
+      <UniqueIdentifier>{57dff39f-fba3-427d-9926-baaa2529b868}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

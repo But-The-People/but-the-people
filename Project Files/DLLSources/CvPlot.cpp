@@ -26,6 +26,7 @@
 #include "CyArgsList.h"
 #include "CvDLLPythonIFaceBase.h"
 #include "CvGameTextMgr.h"
+#include "EXE/EXE_Plot.h"
 
 #define STANDARD_MINIMAP_ALPHA		(0.6f)
 
@@ -10733,4 +10734,9 @@ int CvPlot::getTurnDamage() const
 	}
 	
 	return 0;
+}
+
+EXE_Plot CvPlot::EXE()
+{
+	return EXE_Plot(*this);
 }

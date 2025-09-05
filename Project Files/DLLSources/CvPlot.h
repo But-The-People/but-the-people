@@ -26,6 +26,7 @@ class CvFeature;
 class CvUnit;
 class CvSymbol;
 class CvFlagEntity;
+class EXE_Plot;
 
 typedef bool (*ConstPlotUnitFunc)( const CvUnit* pUnit, int iData1, int iData2);
 typedef bool (*PlotUnitFunc)(CvUnit* pUnit, int iData1, int iData2);
@@ -550,6 +551,8 @@ public:
 	void writeDesyncLog(FILE *f);
 
 	int getTurnDamage() const;
+
+	EXE_Plot EXE();
 
 protected:
 

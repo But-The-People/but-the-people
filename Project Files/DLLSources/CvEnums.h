@@ -221,6 +221,9 @@ enum PlotStyles
 	PLOT_STYLE_WAVES = 24,
 	PLOT_STYLE_DOTS,
 	PLOT_STYLE_CIRCLES,
+
+	NUM_PLOT_STYLE_TYPES,
+	FIRST_PLOT_STYLE = 0,
 };
 
 //Warning: these values are used as an index into a fixed array
@@ -242,7 +245,9 @@ enum AreaBorderLayers
 	AREA_BORDER_LAYER_RANGED,
 	AREA_BORDER_LAYER_HIGHLIGHT_PLOT,
 	AREA_BORDER_LAYER_EUROPE,
-	NUM_AREA_BORDER_LAYERS
+
+	NUM_AREA_BORDER_LAYERS,
+	FIRST_AREA_BORDER = 0,
 };
 
 enum InterfaceMessageTypes
