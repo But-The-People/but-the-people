@@ -2208,10 +2208,10 @@ bool CvDLLButtonPopup::launchEducationPopup(CvPopup* pPopup, CvPopupInfo &info)
 
 	int iNumUnits = 0;
 	UnitTypes eLastUnit = NO_UNIT;
-	for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
+	for (UnitTypes eUnitType = FIRST_UNIT; eUnitType < NUM_UNIT_TYPES; ++eUnitType)
 	{
-		CvUnitInfo& kUnit = GC.getUnitInfo((UnitTypes) iI);
-		int iPrice = pCity->getSpecialistTuition((UnitTypes) iI);
+		CvUnitInfo& kUnit = GC.getUnitInfo(eUnitType);
+		int iPrice = pCity->getSpecialistTuition(eUnitType);
 		if (iPrice >= 0 && iPrice <= kPlayer.getGold())
 		{
 			szText.Format(L"%s", kUnit.getDescription());
@@ -2219,9 +2219,9 @@ bool CvDLLButtonPopup::launchEducationPopup(CvPopup* pPopup, CvPopupInfo &info)
 			{
 				szText += CvWString::format(L" (%d%c)", iPrice, GC.getSymbolID(GOLD_CHAR));
 			}
-			gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szText, kUnit.getButton(), iI, WIDGET_GENERAL, -1, -1, true, POPUP_LAYOUT_STRETCH, DLL_FONT_LEFT_JUSTIFY);
+			gDLL->getInterfaceIFace()->popupAddGenericButton(pPopup, szText, kUnit.getButton(), eUnitType, WIDGET_PEDIA_JUMP_TO_UNIT, eUnitType, 1, true, POPUP_LAYOUT_STRETCH, DLL_FONT_LEFT_JUSTIFY);
 			++iNumUnits;
-			eLastUnit = (UnitTypes) iI;
+			eLastUnit = eUnitType;
 		}
 	}
 

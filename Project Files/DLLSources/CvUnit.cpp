@@ -14629,12 +14629,11 @@ void CvUnit::setYieldStored(int iYieldAmount)
 							CvPlayer& kPlayer = GET_PLAYER(GC.getGameINLINE().getActivePlayer());
 							std::vector<UnitTypes> ordered_units;
 							// make a list of ordered units, where the owner can affort training them.
-							for (int iI = 0; iI < GC.getNumUnitInfos(); iI++)
+							for (UnitTypes eUnitType = FIRST_UNIT; eUnitType < NUM_UNIT_TYPES; ++eUnitType)
 							{
-								int iPrice = pCity->getSpecialistTuition((UnitTypes) iI);
+								int iPrice = pCity->getSpecialistTuition(eUnitType);
 								if (iPrice >= 0 && iPrice <= kPlayer.getGold())
 								{
-									UnitTypes eUnitType = (UnitTypes) iI;
 									for(int count = 0; count <	pCity->getOrderedStudents(eUnitType); count++)
 									{
 										// add one for each unit ordered, not just one for each type as a random one is selected in the end.
