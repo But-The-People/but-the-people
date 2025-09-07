@@ -1013,7 +1013,8 @@ int CyPlayer::AI_foundValue(int iX, int iY, int iMinUnitRange/* = -1*/, bool bSt
 }
 bool CyPlayer::AI_demandRebukedWar(int /*PlayerTypes*/ ePlayer)
 {
-	return m_pPlayer ? pointer(CREATE_ASSERT_DATA)->AI_demandRebukedWar((PlayerTypes)ePlayer) : false;
+	// function should be const, but it's a virtual function in CvPlayer, so it's better to not touch it
+	return m_pPlayer ? ((CvPlayerAI*)m_pPlayer)->AI_demandRebukedWar((PlayerTypes)ePlayer) : false;
 }
 AttitudeTypes CyPlayer::AI_getAttitude(int /*PlayerTypes*/ ePlayer)
 {
