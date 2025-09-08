@@ -15507,6 +15507,12 @@ bool CvUnit::raidBuilding(CvCity* pCity)
 			continue;
 		}
 
+		if (pCity->isHasFreeBuilding(eBuilding))
+		{
+			// no point in destroying a building, which will stay because it is free
+			continue;
+		}
+
 		if (!pCity->isDominantSpecialBuilding(eBuilding))
 		{
 			// skip buildings if the city has a higher tier of the same building class
