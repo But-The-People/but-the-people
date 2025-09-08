@@ -14155,6 +14155,16 @@ void CvCity::writeDesyncLog(FILE *f) const
 		}
 	}
 
+	fprintf(f, "\t\tBuildings:\n");
+
+	for (BuildingTypes eBuilding = FIRST_BUILDING; eBuilding < NUM_BUILDING_TYPES; ++eBuilding)
+	{
+		if (isHasBuilding(eBuilding))
+		{
+			fprintf(f, "\t\t\t%s\n", GC.getBuildingInfo(eBuilding).getType());
+		}
+	}
+
 	fprintf(f, "\t\tWarehouse capacity: %d\n", getMaxYieldCapacity());
 
 	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)

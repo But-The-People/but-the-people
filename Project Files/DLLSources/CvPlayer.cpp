@@ -25152,6 +25152,7 @@ void CvPlayer::writeDesyncLog(FILE *f) const
 	fprintf(f, "\tUnits: %d\n", getNumUnits());
 	fprintf(f, "\tNumTradeRoutes: %d\n", getNumTradeRoutes());
 	fprintf(f, "\tPower: %d\n", getPower());
+	fprintf(f, "\tCheck Power: %d\n", ((CvPlayer*)this)->checkPower(false) ? 1 : 0);
 	fprintf(f, "\tTax Rate: %d\n", getTaxRate());
 	fprintf(f, "\tPrizes\n");
 	for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)

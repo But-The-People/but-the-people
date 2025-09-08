@@ -6598,23 +6598,56 @@ int CvGame::calculateSyncChecksum(CvString* pLogString) const
 				kPlayer.calculateTotalYields(aiYields);
 				for (iJ = 0; iJ < NUM_YIELD_TYPES; iJ++)
 				{
+					if (aiYields[iJ] == 0)
+					{
+						continue;
+					}
+
 					*pLogString += CvString::format("%s = %d\n", CvString(GC.getYieldInfo((YieldTypes) iJ).getDescription()).GetCString(), aiYields[iJ]);
 				}
 				for (iJ = 0; iJ < GC.getNumImprovementInfos(); iJ++)
 				{
-					*pLogString += CvString::format("%s = %d\n", CvString(GC.getImprovementInfo((ImprovementTypes) iJ).getDescription()).GetCString(), kPlayer.getImprovementCount((ImprovementTypes)iJ));
+					const int iNumImprovements = kPlayer.getImprovementCount((ImprovementTypes)iJ);
+
+					if (iNumImprovements == 0)
+					{
+						continue;
+					}
+
+					*pLogString += CvString::format("%s = %d\n", CvString(GC.getImprovementInfo((ImprovementTypes) iJ).getDescription()).GetCString(), iNumImprovements);
 				}
 				for (iJ = 0; iJ < GC.getNumBuildingClassInfos(); iJ++)
 				{
-					*pLogString += CvString::format("%s = %d\n", CvString(GC.getBuildingClassInfo((BuildingClassTypes) iJ).getDescription()).GetCString(), kPlayer.getBuildingClassCountPlusMaking((BuildingClassTypes)iJ));
+					const int iNumBuildings = kPlayer.getBuildingClassCountPlusMaking((BuildingClassTypes)iJ);
+
+					if (iNumBuildings == 0)
+					{
+						continue;
+					}
+
+					*pLogString += CvString::format("%s = %d\n", CvString(GC.getBuildingClassInfo((BuildingClassTypes) iJ).getDescription()).GetCString(), iNumBuildings);
 				}
 				for (iJ = 0; iJ < GC.getNumUnitClassInfos(); iJ++)
 				{
-					*pLogString += CvString::format("%s = %d\n", CvString(GC.getUnitClassInfo((UnitClassTypes) iJ).getDescription()).GetCString(), kPlayer.getUnitClassCountPlusMaking((UnitClassTypes)iJ));
+					const int iNumUnits = kPlayer.getUnitClassCountPlusMaking((UnitClassTypes)iJ);
+
+					if (iNumUnits == 0)
+					{
+						continue;
+					}
+
+					*pLogString += CvString::format("%s = %d\n", CvString(GC.getUnitClassInfo((UnitClassTypes) iJ).getDescription()).GetCString(), iNumUnits);
 				}
 				for (iJ = 0; iJ < NUM_UNITAI_TYPES; iJ++)
 				{
-					*pLogString += CvString::format("%s = %d\n", CvString(GC.getUnitAIInfo((UnitAITypes) iJ).getDescription()).GetCString(), kPlayer.AI_totalUnitAIs((UnitAITypes)iJ));
+					const int iNumUnits = kPlayer.AI_totalUnitAIs((UnitAITypes)iJ);
+
+					if (iNumUnits == 0)
+					{
+						continue;
+					}
+
+					*pLogString += CvString::format("%s = %d\n", CvString(GC.getUnitAIInfo((UnitAITypes) iJ).getDescription()).GetCString(), iNumUnits);
 				}
 				for (pLoopUnit = kPlayer.firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = kPlayer.nextUnit(&iLoop))
 				{
