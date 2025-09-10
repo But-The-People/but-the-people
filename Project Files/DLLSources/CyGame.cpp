@@ -146,7 +146,7 @@ bool CyGame::isTeamGame()
 }
 bool CyGame::isModem()
 {
-	return m_pGame ? pointer(CREATE_ASSERT_DATA)->isModem() : true;	// err on the side of caution
+	return m_pGame ? m_pGame->isModem() : true;	// err on the side of caution
 }
 void CyGame::setModem(bool bModem)
 {

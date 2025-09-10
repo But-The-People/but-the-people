@@ -116,7 +116,7 @@ public:
 	DllExport bool isGameMultiPlayer() const;
 	DllExport bool isTeamGame() const;
 
-	bool isModem();
+	bool isModem() const;
 	void setModem(bool bModem);
 	DllExport void reviveActivePlayer();
 
