@@ -535,6 +535,12 @@
     <ClCompile Include="DLLSources\EXE\EXE_Plot.cpp">
       <Filter>EXE\Plot</Filter>
     </ClCompile>
+    <ClCompile Include="DLLSources\XML\XMLupdate.cpp">
+      <Filter>Classes\XML\Updater</Filter>
+    </ClCompile>
+    <ClCompile Include="DLLSources\XML\XMLUpdateEngine.cpp">
+      <Filter>Classes\XML\Updater</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DLLSources\CvArea.h">
@@ -1035,6 +1041,9 @@
     <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLEventReporterIFaceBase.h">
       <Filter>EXE\Vanilla headers</Filter>
     </ClInclude>
+    <ClInclude Include="DLLSources\XML\XMLUpdateEngine.h">
+      <Filter>Classes\XML\Updater</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DLLSources\FVariableSystem.inl">
@@ -1278,6 +1287,9 @@
     </Filter>
     <Filter Include="EXE\Vanilla headers">
       <UniqueIdentifier>{57dff39f-fba3-427d-9926-baaa2529b868}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\XML\Updater">
+      <UniqueIdentifier>{7d29d687-f99d-4a37-b524-1206599f146d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

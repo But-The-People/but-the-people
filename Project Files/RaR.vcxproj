@@ -247,6 +247,8 @@
     <ClCompile Include="DLLSources\TxtReader.cpp" />
     <ClCompile Include="DLLSources\UserSettings.cpp" />
     <ClCompile Include="DLLSources\XMLLengthSet.cpp" />
+    <ClCompile Include="DLLSources\XML\XMLupdate.cpp" />
+    <ClCompile Include="DLLSources\XML\XMLUpdateEngine.cpp" />
     <ClCompile Include="DLLSources\_precompile.cpp" />
     <ClCompile Include="DLLSources\PlayerHelperFunctions.cpp" />
   </ItemGroup>
@@ -417,6 +419,7 @@
     <ClInclude Include="DLLSources\UserSettings.h" />
     <ClInclude Include="DLLSources\xmlFiles.h" />
     <ClInclude Include="DLLSources\PlayerHelperFunctions.h" />
+    <ClInclude Include="DLLSources\XML\XMLUpdateEngine.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DLLSources\FVariableSystem.inl" />
