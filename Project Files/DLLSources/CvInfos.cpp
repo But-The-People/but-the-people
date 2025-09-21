@@ -15174,14 +15174,6 @@ bool CvEventTriggerInfo::read(CvXMLLoadUtility* pXML)
 		gDLL->getXMLIFace()->SetToParent(pXML->GetXML());
 	}
 
-	{
-		PlotTypes ePlot;
-		pXML->GetEnum(getType(), ePlot, "ePlotType", false); 
-		if (ePlot != NO_PLOT)
-		{
-			m_em_PlotTypes.set(ePlot, true);
-		}
-	}
 	pXML->GetEnum(getType(), m_eCivic, "eCivic", false);
 	pXML->GetChildXmlValByName(&m_iOtherPlayerShareBorders, "iOtherPlayerShareBorders");
 	pXML->GetChildXmlValByName(&m_iMinPopulation, "iMinPopulation");

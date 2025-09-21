@@ -256,7 +256,6 @@
 		<element type="RequirementLists" minOccurs="0"/>
 		<element type="iNumPlotsRequired"/>
 		<element type="bOwnPlot"/>
-		<element type="ePlotType"/>
 		<element type="PlotRequirements" minOccurs="0"/>
 		<element type="FeaturesRequired"/>
 		<element type="TerrainsRequired"/>

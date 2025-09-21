@@ -18,16 +18,17 @@ public:
 		XML_tag(tinyxml2::XMLElement*);
 
 
-		XML_tag findChild(const char* name, const char* value = NULL) const;
-		XML_tag findOrCreateChild(const char* name, const char* value = NULL) const;
+		XML_tag findChild(const char* name, const char* text = NULL) const;
+		XML_tag findOrCreateChild(const char* name, const char* text = NULL) const;
 		void rename(const char* newName);
 		void deleteElement();
 		void moveInto(XML_tag newParent);
 		void moveOverwriteInto(XML_tag newParent);
 		bool isPresent() const; // findChild can fail and delete will also remove it
-		const char* getValue() const;
-		void setValue(const char* newValue);
-		bool is(const char* value) const; // like is("NONE")
+		const char* getText() const;
+		void setText(const char* newText);
+		bool is(const char* text) const;
+		bool isNone() const;
 		bool next(); // for lists
 
 

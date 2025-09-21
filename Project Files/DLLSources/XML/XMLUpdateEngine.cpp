@@ -8,18 +8,30 @@ XMLUpdateEngine::XML_tag::XML_tag(tinyxml2::XMLElement* pElement)
 }
 
 
-XMLUpdateEngine::XML_tag XMLUpdateEngine::XML_tag::findChild(const char* name, const char* value) const
+XMLUpdateEngine::XML_tag XMLUpdateEngine::XML_tag::findChild(const char* name, const char* text) const
 {
 	tinyxml2::XMLElement* element = (tinyxml2::XMLElement*)m_pElement->FirstChildElement(name);
 
+	if (text == NULL)
+	{
+		return element;
+	}
+
+	for (; element != NULL; element = element->NextSiblingElement(name))
+	{
+		if (strcmp(element->GetText(), text) == 0)
+		{
+			return element;
+		}
+	}
 
 
 	return XML_tag(NULL);
 }
 
-XMLUpdateEngine::XML_tag XMLUpdateEngine::XML_tag::findOrCreateChild(const char* name, const char* value) const
+XMLUpdateEngine::XML_tag XMLUpdateEngine::XML_tag::findOrCreateChild(const char* name, const char* text) const
 { 
-	XML_tag elementTag = findChild(name, value);
+	XML_tag elementTag = findChild(name, text);
 	if (elementTag.isPresent())
 	{
 		return elementTag;
@@ -27,6 +39,11 @@ XMLUpdateEngine::XML_tag XMLUpdateEngine::XML_tag::findOrCreateChild(const char*
 
 	tinyxml2::XMLElement* element = ((tinyxml2::XMLElement*)m_pElement)->GetDocument()->NewElement(name);
 	((tinyxml2::XMLElement*)m_pElement)->InsertEndChild(element);
+	
+	if (text != NULL)
+	{
+		element->SetText(text);
+	}
 
 	return XML_tag(element);
 }
@@ -69,19 +86,24 @@ bool XMLUpdateEngine::XML_tag::isPresent() const
 	return m_pElement != NULL;
 }
 
-const char* XMLUpdateEngine::XML_tag::getValue() const
+const char* XMLUpdateEngine::XML_tag::getText() const
 {
-	return m_pElement->Value();
+	return m_pElement->GetText();
 }
 
-void XMLUpdateEngine::XML_tag::setValue(const char* newValue)
+void XMLUpdateEngine::XML_tag::setText(const char* newText)
 {
-	m_pElement->SetValue(newValue);
+	m_pElement->SetText(newText);
 }
 
-bool XMLUpdateEngine::XML_tag::is(const char* value) const
+bool XMLUpdateEngine::XML_tag::is(const char* text) const
 {
-	return strcmp(value, getValue()) == 0;
+	return strcmp(text, getText()) == 0;
+}
+
+bool XMLUpdateEngine::XML_tag::isNone() const
+{
+	return is("NONE");
 }
 
 bool XMLUpdateEngine::XML_tag::next()
@@ -112,7 +134,11 @@ XMLUpdateEngine::XMLUpdateEngine(const char* file)
 	for (; loopElement->NextSiblingElement(loopElement->Name()) == NULL; loopElement = loopElement->FirstChildElement())
 	{
 	}
-	updateEntry(loopElement);
+
+	for (; loopElement != NULL; loopElement = loopElement->NextSiblingElement())
+	{
+		updateEntry(loopElement);
+	}
 }
 
 XMLUpdateEngine::~XMLUpdateEngine()

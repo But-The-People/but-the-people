@@ -48,7 +48,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -120,7 +119,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -190,7 +188,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -259,7 +256,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -331,7 +327,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -411,7 +406,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -489,7 +483,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -561,7 +554,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -640,7 +632,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FOREST</FeatureType>
 			</FeaturesRequired>
@@ -722,7 +713,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FOREST</FeatureType>
 			</FeaturesRequired>
@@ -794,7 +784,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -867,7 +856,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -940,7 +928,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -1016,7 +1003,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -1090,7 +1076,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -1164,7 +1149,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -1246,7 +1230,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -1325,7 +1308,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -1398,7 +1380,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_PEAK</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_PEAK</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -1468,7 +1454,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_VOLCANO</FeatureType>
 			</FeaturesRequired>
@@ -1542,7 +1527,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -1620,7 +1604,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -1699,7 +1682,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -1784,7 +1766,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -1866,7 +1847,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -1938,7 +1918,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -2013,7 +1992,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -2085,7 +2063,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -2157,7 +2134,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_JUNGLE</FeatureType>
 				<FeatureType>FEATURE_MANGROVE</FeatureType>
@@ -2236,7 +2212,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -2312,7 +2287,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -2388,7 +2362,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_JUNGLE</FeatureType>
 				<FeatureType>FEATURE_MANGROVE</FeatureType>
@@ -2470,7 +2443,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FOREST</FeatureType>
 				<FeatureType>FEATURE_DENSE_FOREST</FeatureType>
@@ -2546,7 +2518,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_JUNGLE</FeatureType>
 				<FeatureType>FEATURE_MANGROVE</FeatureType>
@@ -2622,7 +2593,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -2701,7 +2671,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_JUNGLE</FeatureType>
 				<FeatureType>FEATURE_MANGROVE</FeatureType>
@@ -2784,7 +2753,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>PLOT_OCEAN</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_OCEAN</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -2853,7 +2826,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -2923,7 +2895,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -2996,7 +2967,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_PLAINS</TerrainType>
@@ -3076,7 +3046,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -3150,7 +3119,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -3224,7 +3192,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -3298,7 +3265,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -3398,7 +3364,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>PLOT_OCEAN</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_OCEAN</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_OCEAN</TerrainType>
@@ -3430,6 +3400,11 @@
 			<PythonCallback/>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<Type>EVENTTRIGGER_HERBS</Type>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENTTRIGGER_HERBS</Text>
@@ -3474,7 +3449,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -3573,7 +3547,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>PLOT_OCEAN</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_OCEAN</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_OCEAN</TerrainType>
@@ -3670,7 +3648,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>PLOT_OCEAN</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_OCEAN</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_OCEAN</TerrainType>
@@ -3742,7 +3724,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -3811,7 +3792,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -3881,7 +3861,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -3955,7 +3934,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -4042,7 +4020,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -4122,7 +4099,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -4198,7 +4174,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -4274,7 +4249,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -4352,7 +4326,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -4428,7 +4401,6 @@
 			<iNumBuildingsGlobal>1</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -4503,7 +4475,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_LAND</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_PLAINS</TerrainType>
@@ -4581,7 +4557,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -4655,7 +4630,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -4731,7 +4705,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -4803,7 +4776,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -4878,7 +4850,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -4950,7 +4921,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -5023,7 +4993,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -5093,7 +5062,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -5165,7 +5133,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -5243,7 +5210,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -5315,7 +5281,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_DESERT</TerrainType>
@@ -5394,7 +5359,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -5470,7 +5434,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_OCEAN</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_OCEAN</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -5539,7 +5507,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_PEAK</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_PEAK</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -5618,7 +5590,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -5692,7 +5663,6 @@
 			<iNumBuildingsGlobal>2</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -5763,7 +5733,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -5834,7 +5803,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -5910,7 +5878,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -5979,7 +5946,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -6054,7 +6020,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -6123,7 +6088,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -6194,7 +6158,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -6268,7 +6231,6 @@
 			<iNumBuildingsGlobal>1</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -6337,7 +6299,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -6409,7 +6370,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -6479,7 +6439,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -6552,7 +6511,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -6622,7 +6580,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -6691,7 +6648,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_OCEAN</TerrainType>
@@ -6762,7 +6718,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_OCEAN</TerrainType>
@@ -6837,7 +6792,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_HILLS</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_HILLS</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_GRASS</TerrainType>
@@ -6912,7 +6871,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_HILLS</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_HILLS</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_PLAINS</TerrainType>
@@ -6987,7 +6950,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_HILLS</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_HILLS</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_DESERT</TerrainType>
@@ -7060,7 +7027,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -7131,7 +7097,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -7203,7 +7168,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_LAND</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -7278,7 +7247,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_LAND</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_JUNGLE</FeatureType>
 				<FeatureType>FEATURE_MANGROVE</FeatureType>
@@ -7356,7 +7329,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_LAND</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -7430,7 +7407,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_LAND</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -7504,7 +7485,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -7578,7 +7558,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>PLOT_LAND</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FOREST</FeatureType>
 			</FeaturesRequired>
@@ -7651,7 +7635,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -7723,7 +7706,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -7803,7 +7785,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -7882,7 +7863,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -7955,7 +7935,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -8026,7 +8005,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -8106,7 +8084,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -8189,7 +8166,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -8272,7 +8248,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -8356,7 +8331,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -8432,7 +8406,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -8509,7 +8482,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -8586,7 +8558,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -8663,7 +8634,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -8737,7 +8707,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>PLOT_OCEAN</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_OCEAN</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_OCEAN</TerrainType>
@@ -8810,7 +8784,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -8885,7 +8858,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -8959,7 +8931,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9033,7 +9004,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9107,7 +9077,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9179,7 +9148,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9251,7 +9219,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9325,7 +9292,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9397,7 +9363,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9471,7 +9436,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9543,7 +9507,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9617,7 +9580,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9689,7 +9651,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9761,7 +9722,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9833,7 +9793,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9905,7 +9864,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -9977,7 +9935,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10049,7 +10006,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10121,7 +10077,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10193,7 +10148,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10265,7 +10219,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10337,7 +10290,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10409,7 +10361,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10481,7 +10432,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10553,7 +10503,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10625,7 +10574,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10699,7 +10647,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10773,7 +10720,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10847,7 +10793,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_PEAK</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_PEAK</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_MARSH</TerrainType>
@@ -10921,7 +10871,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -10993,7 +10942,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11064,7 +11012,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11135,7 +11082,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11211,7 +11157,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11284,7 +11229,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11357,7 +11301,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11428,7 +11371,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11504,7 +11446,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11577,7 +11518,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11648,7 +11588,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11719,7 +11658,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11795,7 +11733,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11868,7 +11805,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -11942,7 +11878,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12019,7 +11954,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12092,7 +12026,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12177,7 +12110,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12255,7 +12187,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12326,7 +12257,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12397,7 +12327,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12474,7 +12403,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12550,7 +12478,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12627,7 +12554,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12704,7 +12630,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12783,7 +12708,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12856,7 +12780,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>PLOT_OCEAN</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_OCEAN</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -12928,7 +12856,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>PLOT_OCEAN</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_OCEAN</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -13002,7 +12934,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>PLOT_OCEAN</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_OCEAN</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -13076,7 +13012,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -13151,7 +13086,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -13255,7 +13189,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -13323,7 +13256,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_FOREST</FeatureType>
 			</FeaturesRequired>
@@ -13396,7 +13328,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_JUNGLE</FeatureType>
 			</FeaturesRequired>
@@ -13477,7 +13408,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -13549,7 +13479,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -13621,7 +13550,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -13698,7 +13626,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -13770,7 +13697,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -13852,7 +13778,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -13932,7 +13857,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14009,7 +13933,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14081,7 +14004,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14166,7 +14088,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14250,7 +14171,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14330,7 +14250,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14409,7 +14328,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14491,7 +14409,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14573,7 +14490,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14652,7 +14568,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14730,7 +14645,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14803,7 +14717,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14877,7 +14790,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -14958,7 +14870,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -15036,7 +14947,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -15112,7 +15022,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -15189,7 +15098,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -15265,7 +15173,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_LARGE_RIVERS</TerrainType>
@@ -15362,7 +15269,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired>
 				<TerrainType>TERRAIN_COAST</TerrainType>
@@ -15434,7 +15340,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -15504,7 +15409,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -15579,7 +15483,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -15649,7 +15552,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -15724,7 +15626,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -15794,7 +15695,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -15870,7 +15770,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -15940,7 +15839,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16016,7 +15914,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16086,7 +15983,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16161,7 +16057,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16231,7 +16126,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16307,7 +16201,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16377,7 +16270,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16451,7 +16343,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16521,7 +16412,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16597,7 +16487,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16667,7 +16556,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16743,7 +16631,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16813,7 +16700,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16889,7 +16775,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -16959,7 +16844,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17034,7 +16918,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17104,7 +16987,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17180,7 +17062,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17250,7 +17131,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17325,7 +17205,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17395,7 +17274,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17470,7 +17348,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17540,7 +17417,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17615,7 +17491,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17685,7 +17560,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17760,7 +17634,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17830,7 +17703,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17905,7 +17777,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -17975,7 +17846,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18050,7 +17920,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18120,7 +17989,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18195,7 +18063,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18265,7 +18132,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18340,7 +18206,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18410,7 +18275,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18485,7 +18349,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18555,7 +18418,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18630,7 +18492,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18700,7 +18561,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18773,7 +18633,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18843,7 +18702,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18918,7 +18776,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -18988,7 +18845,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19065,7 +18921,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19135,7 +18990,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19211,7 +19065,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19281,7 +19134,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19359,7 +19211,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19429,7 +19280,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19507,7 +19357,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19577,7 +19426,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19652,7 +19500,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19722,7 +19569,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19797,7 +19643,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19867,7 +19712,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -19942,7 +19786,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20012,7 +19855,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20087,7 +19929,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20157,7 +19998,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20232,7 +20072,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20302,7 +20141,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20377,7 +20215,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20447,7 +20284,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20522,7 +20358,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20592,7 +20427,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20667,7 +20501,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20737,7 +20570,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20812,7 +20644,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20882,7 +20713,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -20957,7 +20787,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21027,7 +20856,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21102,7 +20930,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21172,7 +20999,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21247,7 +21073,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21317,7 +21142,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21392,7 +21216,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21462,7 +21285,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21537,7 +21359,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21607,7 +21428,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21682,7 +21502,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21752,7 +21571,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21827,7 +21645,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21897,7 +21714,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -21970,7 +21786,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22040,7 +21855,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22116,7 +21930,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22186,7 +21999,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22261,7 +22073,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22331,7 +22142,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22406,7 +22216,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22476,7 +22285,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22552,7 +22360,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22622,7 +22429,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22699,7 +22505,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22769,7 +22574,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22844,7 +22648,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22914,7 +22717,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -22989,7 +22791,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23059,7 +22860,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23134,7 +22934,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23204,7 +23003,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23279,7 +23077,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23349,7 +23146,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23424,7 +23220,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23494,7 +23289,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23569,7 +23363,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23639,7 +23432,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23714,7 +23506,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23784,7 +23575,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23859,7 +23649,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -23929,7 +23718,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24004,7 +23792,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24074,7 +23861,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24149,7 +23935,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24219,7 +24004,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24294,7 +24078,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24364,7 +24147,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24439,7 +24221,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24509,7 +24290,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24584,7 +24364,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24654,7 +24433,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24730,7 +24508,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24800,7 +24577,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24876,7 +24652,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -24946,7 +24721,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25022,7 +24796,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25092,7 +24865,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25168,7 +24940,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25238,7 +25009,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25313,7 +25083,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25383,7 +25152,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25458,7 +25226,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25528,7 +25295,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25604,7 +25370,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25674,7 +25439,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25749,7 +25513,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25819,7 +25582,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25894,7 +25656,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -25964,7 +25725,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26037,7 +25797,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26107,7 +25866,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26182,7 +25940,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26252,7 +26009,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26328,7 +26084,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26398,7 +26153,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26473,7 +26227,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26543,7 +26296,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26618,7 +26370,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26688,7 +26439,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26763,7 +26513,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26833,7 +26582,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26908,7 +26656,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -26978,7 +26725,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27053,7 +26799,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27123,7 +26868,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27199,7 +26943,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27269,7 +27012,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27344,7 +27086,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27414,7 +27155,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27490,7 +27230,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27560,7 +27299,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27636,7 +27374,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27706,7 +27443,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27782,7 +27518,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27852,7 +27587,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27928,7 +27662,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -27998,7 +27731,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28074,7 +27806,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28144,7 +27875,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28220,7 +27950,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28290,7 +28019,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28366,7 +28094,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28436,7 +28163,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28512,7 +28238,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28582,7 +28307,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28658,7 +28382,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28728,7 +28451,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28805,7 +28527,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28875,7 +28596,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -28951,7 +28671,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29021,7 +28740,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29097,7 +28815,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29167,7 +28884,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29243,7 +28959,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29313,7 +29028,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29389,7 +29103,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29459,7 +29172,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29536,7 +29248,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29606,7 +29317,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29682,7 +29392,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29752,7 +29461,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29829,7 +29537,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29899,7 +29606,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -29976,7 +29682,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30046,7 +29751,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30123,7 +29827,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30193,7 +29896,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30270,7 +29972,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30340,7 +30041,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30415,7 +30115,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30485,7 +30184,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30562,7 +30260,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30635,7 +30332,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30712,7 +30408,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30792,7 +30487,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30867,7 +30561,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -30939,7 +30632,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -31009,7 +30701,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -31084,7 +30775,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -31154,7 +30844,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -31229,7 +30918,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -31310,7 +30998,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -31391,7 +31078,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -31464,7 +31150,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -31534,7 +31219,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -31614,7 +31298,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -31696,7 +31379,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -31776,7 +31458,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -31857,7 +31538,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -31946,7 +31626,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<PlotRequirements>
 				<PlotTypes>
 					<ePlotType>PLOT_PEAK</ePlotType>
@@ -32035,7 +31714,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_JUNGLE</FeatureType>
 				<FeatureType>FEATURE_MANGROVE</FeatureType>
@@ -32076,6 +31754,11 @@
 			<iMinTurn>50</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<Type>EVENTTRIGGER_DISCOVERY_EVENTS_ATTACK_TREASURE</Type>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_ATTACK_TREASURE_1</Text>
@@ -32118,7 +31801,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired>
 				<FeatureType>FEATURE_JUNGLE</FeatureType>
 				<FeatureType>FEATURE_MANGROVE</FeatureType>
@@ -32199,7 +31881,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -32274,7 +31955,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_LAND</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -32347,7 +32032,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>PLOT_LAND</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_LAND</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -32421,7 +32110,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -32493,7 +32181,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -32575,7 +32262,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -32658,7 +32344,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -32735,7 +32420,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -32810,7 +32494,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -32885,7 +32568,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -32961,7 +32643,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33038,7 +32719,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33114,7 +32794,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33190,7 +32869,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33266,7 +32944,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33336,7 +33013,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33408,7 +33084,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33478,7 +33153,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33552,7 +33226,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33622,7 +33295,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33697,7 +33369,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33767,7 +33438,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33839,7 +33509,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33909,7 +33578,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -33980,7 +33648,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -34052,7 +33719,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -34127,7 +33793,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -34200,7 +33865,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>PLOT_OCEAN</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_OCEAN</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -34270,7 +33939,11 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>PLOT_OCEAN</ePlotType>
+			<PlotRequirements>
+				<PlotTypes>
+					<ePlotType>PLOT_OCEAN</ePlotType>
+				</PlotTypes>
+			</PlotRequirements>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -34362,7 +34035,6 @@
 			</RequirementLists>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -34448,7 +34120,6 @@
 			</RequirementLists>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<PlotRequirements>
 				<eCanBuildImprovement>IMPROVEMENT_MONASTERY</eCanBuildImprovement>
 				<bHasNoImprovement>1</bHasNoImprovement>
@@ -34523,7 +34194,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>1</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired>
@@ -34597,7 +34267,6 @@
 			<RequirementLists/>
 			<iNumPlotsRequired>0</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>
@@ -34671,7 +34340,6 @@
 			<iNumBuildingsGlobal>0</iNumBuildingsGlobal>
 			<iNumPlotsRequired>1</iNumPlotsRequired>
 			<bOwnPlot>0</bOwnPlot>
-			<ePlotType>NONE</ePlotType>
 			<FeaturesRequired/>
 			<TerrainsRequired/>
 			<ImprovementsRequired/>

@@ -26,5 +26,16 @@ void StartXMLUpdate()
 // note that tag order can be ignored as it's automatically adjusted to match the schema
 void XMLUpdateEngine::updateEntry(const XML_tag rootTag)
 {
-	
+	XML_tag plotType = rootTag.findChild("ePlotType");
+
+	if (!plotType.isPresent())
+	{
+		return;
+	}
+
+	if (!plotType.isNone())
+	{
+		rootTag.findOrCreateChild("PlotRequirements").findOrCreateChild("PlotTypes").findOrCreateChild("ePlotType", plotType.getText());
+	}
+	plotType.deleteElement();
 }
