@@ -1132,25 +1132,36 @@ int pathHeuristic(int iFromX, int iFromY, int iToX, int iToY)
 // This function has been completely rewritten for K-Mod. (the rewrite includes some bug fixes as well as some new features)
 int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer, FAStar* finder)
 {
+	// Note: The UI PF passes a non-NULL finder, so when it is NULL we're called by the K-Mod PF
+	const int hints = (finder == 0 ? data : 0);
+	const bool hintIsGoal = (hints & NF_DESTINATION_NODE) != 0;
+	const bool hintAdjStart = (hints & NF_ADJACENT_TO_START) != 0;
+
 	//PROFILE_FUNC(); // advc.003o
 
-	//CvSelectionGroup* pSelectionGroup = ((CvSelectionGroup *)pointer);
 	// K-Mod
 	CvSelectionGroup* const pSelectionGroup = finder ? (CvSelectionGroup*)pointer : ((CvPathSettings*)pointer)->pGroup;
 	const int iFlags = finder ? gDLL->getFAStarIFace()->GetInfo(finder) : ((CvPathSettings*)pointer)->iFlags;
 	// K-Mod end
 
-	if (finder && !USE_CLASSIC_MOVEMENT_SYSTEM
-		&& !pSelectionGroup->AI_isControlled()
-		&& pSelectionGroup->getAutomateType() == NO_AUTOMATE)
+	// 2a) Prefer exact adjacent goal step for human GUI paths
+	if ((finder != 0 || hints != 0) &&
+		!USE_CLASSIC_MOVEMENT_SYSTEM &&
+		!pSelectionGroup->AI_isControlled() &&
+		pSelectionGroup->getAutomateType() == NO_AUTOMATE)
 	{
-		// If the user clicked an adjacent destination, prefer exactly that step.
-		if (parent->m_pParent == NULL) { // first edge from start
-			const int dx = gDLL->getFAStarIFace()->GetDestX(finder);
-			const int dy = gDLL->getFAStarIFace()->GetDestY(finder);
-			if (node->m_iX == dx && node->m_iY == dy) {
-				return PATH_STEP_WEIGHT; // make sure this is the best possible move
-			}
+		// UI case (finder!=0): use finder�s dest.
+		// K-Mod case (finder==0): rely on hint passed in data arg 
+		const bool isFirstEdge = (parent->m_pParent == NULL);
+		const bool isGoalEdge = (finder != 0
+			? (node->m_iX == gDLL->getFAStarIFace()->GetDestX(finder)
+				&& node->m_iY == gDLL->getFAStarIFace()->GetDestY(finder))
+			: hintIsGoal);
+
+		if (isFirstEdge && isGoalEdge)
+		{
+			if (finder != 0 || hintAdjStart)
+				return PATH_STEP_WEIGHT;
 		}
 	}
 
@@ -1513,8 +1524,36 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 		}
 	}
 
-	FAssert(iWorstCost > 0);
+	// "Rest debt" penalty for arriving at the destination while having negative moves
+	if (!USE_CLASSIC_MOVEMENT_SYSTEM) {
+		const bool isGoal = (finder != 0
+			? (node->m_iX == gDLL->getFAStarIFace()->GetDestX(finder)
+				&& node->m_iY == gDLL->getFAStarIFace()->GetDestY(finder))
+			: (hints & NF_DESTINATION_NODE));
 
+		if (isGoal) {
+			const int PT = pSelectionGroup->baseMoves() * GLOBAL_DEFINE_MOVE_DENOMINATOR; // points/turn
+			const int mEnd = node->m_iData1; // can be <= 0 under NMS
+			if (mEnd <= 0) {
+				// full turns you must wait before you can act (>0 MP)
+				const int waitTurns = (1 - mEnd + PT - 1) / PT; // ceil((1 - mEnd)/PT)
+				const long long oneTurnCost = 1LL * PATH_MOVEMENT_WEIGHT * PT;
+				long long penalty = oneTurnCost * waitTurns;
+
+				// small tie-breaker: prefer routes with more usable MP when you can act
+				const int debt = -mEnd;
+				const int residual = debt % PT;                 // 0..PT-1
+				const int usableOnAct = (residual == 0 ? PT : PT - residual);
+				long long credit = (oneTurnCost * usableOnAct) / (10LL * PT); // <10%
+
+				long long acc = (long long)iWorstCost + penalty - credit;
+				if (acc < PATH_STEP_WEIGHT) acc = PATH_STEP_WEIGHT; // keep positive
+				if (acc > INT_MAX)          acc = INT_MAX;          // saturate
+				iWorstCost = (int)acc;
+			}
+		}
+	}
+	FAssert(iWorstCost > 0);
 	return iWorstCost;
 }
 
