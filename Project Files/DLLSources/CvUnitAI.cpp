@@ -1512,8 +1512,10 @@ void CvUnitAI::AI_settlerMove()
 {
 	PROFILE_FUNC();
 
-	bool bDanger = GET_PLAYER(getOwnerINLINE()).AI_getUnitDanger(this, 2, false, false);
-	int iMinFoundValue = (GC.getGame().getGameTurn() > 20) ? 1 : 2;
+	const bool bDanger = GET_PLAYER(getOwnerINLINE()).AI_getUnitDanger(this, 2, false, false);
+	const int iMinFoundValue = (GC.getGame().getGameTurn() > 20) ? 1 : 2;
+	const CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
+	const bool bFirstCityPhase = (kOwner.getNumCities() == 0);
 
 	if (isNative())
 	{
@@ -1534,7 +1536,7 @@ void CvUnitAI::AI_settlerMove()
 
 	if (isCargo())
 	{
-		if (AI_found(iMinFoundValue))
+		if (AI_found(iMinFoundValue, bFirstCityPhase))
 		{
 			return;
 		}
@@ -1542,14 +1544,32 @@ void CvUnitAI::AI_settlerMove()
 		// If we cannot find any suitable city spot, disembark
 		// so that we don't needlessly occupy a cargo hold
 		// TODO: Check if the ship has other cargo
-		if (canUnload())
-			unload();
+		//if (canUnload())
+		//	unload();
 
 		getGroup()->pushMission(MISSION_SKIP);
 		return;
 	}
 
-	if (!isCargo() && (GET_PLAYER(getOwnerINLINE()).getNumCities() == 0) && (plot()->getNearestEurope() != NO_EUROPE))
+	// When settling the first city, we may be blocked by another civ
+	// If this happens we should load back on the ship without trying to walk
+	// to another spot
+	if (bFirstCityPhase)
+	{
+		if (canFound(plot()))
+		{
+			found();
+			return;
+		}
+
+		// Do not move; signal for pickup right here.
+		// (Avoid AI_requestPickup() if it would try to walk. Advertise the pickup explicitly.)
+		getGroup()->pushMission(MISSION_SKIP, -1, -1, 0, false, false, MISSIONAI_AWAIT_PICKUP, plot());
+		return;
+	}
+
+	// At this point the settler is never cargo
+	if ((GET_PLAYER(getOwnerINLINE()).getNumCities() == 0) && (plot()->getNearestEurope() != NO_EUROPE))
 	{
 		if (canFound(plot()))
 		{
@@ -4677,46 +4697,90 @@ void CvUnitAI::AI_transportCoastMove()
 	return;
 }
 
+void CvUnitAI::AI_transportSettler()
+{
+	CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
+
+	// Exit only AFTER the first city exists and we are not currently carrying a settler
+	if ((kOwner.getNumCities() > 0) && (getUnitAICargo(UNITAI_SETTLER) == 0))
+	{
+		AI_setUnitAIState(UNITAI_STATE_SAIL);
+		return;
+	}
+
+	// If we have a settler on board, let it drive. No distractions.
+	if (getUnitAICargo(UNITAI_SETTLER) > 0)
+	{
+		if (AI_deliverUnits(UNITAI_SETTLER)) // ship adopts cargo MISSIONAI_FOUND
+			return;
+
+		// Minimal reveal to unlock a legal coastal site (first-city only)
+		if (kOwner.getNumCities() == 0 && AI_exploreCoast(1))
+			return;
+
+		if (AI_deliverUnits(UNITAI_SETTLER))
+			return;
+
+		getGroup()->pushMission(MISSION_SKIP);
+		return;
+	}
+
+	// No settler on board:
+	// During first-city phase, pickup anywhere on the map (ultimate priority).
+	if (kOwner.getNumCities() == 0)
+	{
+		// Global pickup: use effectively "infinite" range.
+		// Note: AI_pickup() should already ignore unreachable targets and reserve via MissionAI.
+		//if (AI_pickup(UNITAI_SETTLER, MAX_INT))
+		//	return;
+
+		if (AI_respondToPickup(MAX_INT, UNITAI_SETTLER))
+			return;
+
+		const int iMapSettlers = kOwner.AI_totalUnitAIs(UNITAI_SETTLER); // on-map only
+
+		// Settler has been delivered by has not founded yet, be on standby on the drop-opp
+		// plot in case the founding fails and the settler has to be picked up again
+		if (iMapSettlers > 0) {
+			getGroup()->pushMission(MISSION_SKIP);
+			return;
+		}
+		// If we don't have any cities and
+		// there are no settler in the new world, something may be very wrong.
+		// Check if we have a settler waiting in Europe that we can use to
+		// restart our fledgling empire
+
+		// If no on-map settlers, fetch one from Europe if available.
+		int iEuropeSettlers = 0;
+		for (int i = 0; i < kOwner.getNumEuropeUnits(); ++i)
+		{
+			const CvUnit* pEU = kOwner.getEuropeUnit(i);
+			if (pEU != NULL && pEU->AI_getUnitAIType() == UNITAI_SETTLER)
+				++iEuropeSettlers;
+		}
+		if (iMapSettlers == 0 && iEuropeSettlers > 0)
+		{
+			AI_sailToEurope(true);
+			return;
+		}
+
+		// Last resort: one small coastal reveal to discover a candidate shore
+		if (AI_exploreCoast(1))
+			return;
+
+		getGroup()->pushMission(MISSION_SKIP);
+		return;
+	}
+
+	// If we reach here, we have cities and no settler cargo; the early exit above will flip us next turn.
+	getGroup()->pushMission(MISSION_SKIP);
+	return;
+}
+
+
 void CvUnitAI::AI_transportSeaMove()
 {
 	PROFILE_FUNC();
-
-	CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
-	bool bEmpty = !getGroup()->hasCargo();
-
-	// If we don't have any cities and
-	// there are no settler in the new world, something may be very wrong.
-	// Check if we have a settler waiting in Europe that we can use to
-	// restart our fledgling empire
-	if (kOwner.getNumCities() == 0)
-	{
-		// Note: Does not include units waiting in Europe,
-		//
-		const int iTotalSettlerCount = kOwner.AI_totalUnitAIs(UNITAI_SETTLER);
-		if (iTotalSettlerCount > 0)
-		{
-			int iEuropeSettlerCount = 0;
-
-			for (int i = 0; i < kOwner.getNumEuropeUnits(); ++i)
-			{
-				const CvUnit* pUnit = kOwner.getEuropeUnit(i);
-
-				if (pUnit->AI_getUnitAIType() == UNITAI_SETTLER)
-				{
-					++iEuropeSettlerCount;
-				}
-			}
-
-			if (iTotalSettlerCount == iEuropeSettlerCount)
-			{
-				// All our settlers are in Europe,
-				// Dump all cargo (units) and head straight to Europe
-				AI_sailToEurope(true);
-				return;
-			}
-		}
-
-	}
 
 	// TAC - AI Improved Naval AI - koma13 - START
 	if (AI_retreatFromDanger())
@@ -4725,355 +4789,372 @@ void CvUnitAI::AI_transportSeaMove()
 	}
 	// TAC - AI Improved Naval AI - koma13 - END
 
-	if (AI_goodyRange(baseMoves(), /*bIgnoreCity*/true))
+	if (GC.getGameINLINE().getGameTurn() == GC.getGameINLINE().getStartTurn())
 	{
+		// TODO: Check for settler being present!
+		AI_setUnitAIState(UNITAI_STATE_TRANSPORT_SETTLER);
+		const bool bAnyWoke = AI_wakeCargo(UNITAI_SETTLER, AI_getMovePriority() + 1);
+		FAssert(bAnyWoke);
 		return;
 	}
 
-
-	if (kOwner.AI_totalUnitAIs(UNITAI_TREASURE) > 0)
+	if (AI_getUnitAIState() == UNITAI_STATE_TRANSPORT_SETTLER)
+		AI_transportSettler();
+	else
 	{
-		if (AI_respondToPickup(20, UNITAI_TREASURE))
-		{
-			AI_setUnitAIState(UNITAI_STATE_SAIL);
-			return;
-		}
-	}
+		CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
+		const bool bEmpty = !getGroup()->hasCargo();
 
-	CvCity* pCity = NULL;
-	if (plot()->getPlotCity() != NULL)
-	{
-		if (AI_tradeWithCity())
+		
+		if (AI_goodyRange(baseMoves(), /*bIgnoreCity*/true))
 		{
 			return;
-		}
-
-		if (plot()->getOwner() == getOwner())
-		{
-			pCity = plot()->getPlotCity();
-		}
-	}
-
-	// TAC - AI Improved Naval AI - koma13 - START
-	bool bAtWar = GET_TEAM(getTeam()).getAnyWarPlanCount();
-	int iExtra = (kOwner.AI_isStrategy(STRATEGY_REVOLUTION_PREPARING) && !bAtWar) ? cargoSpace() : 0;
-	bool bPickupUnitsFromEurope = ((kOwner.AI_cargoSpaceToEurope(getGroup()) + iExtra) < kOwner.getNumEuropeUnits());
-	// TAC - AI Improved Naval AI - koma13 - END
-
-	int iGoodsCount = 0;
-	UnitAIStates eStartingState = AI_getUnitAIState();
-	if (AI_getUnitAIState() == UNITAI_STATE_SAIL)
-	{
-		if (AI_deliverUnits(UNITAI_SETTLER))
-		{
-			return;
-		}
-
-		if (AI_deliverUnits(UNITAI_COLONIST))
-		{
-			return;
-		}
-
-		if (AI_deliverUnits())
-		{
-			return;
-		}
-
-		if (AI_continueMission(-1, MISSIONAI_SAIL_TO_EUROPE, MOVE_BUST_FOG))
-		{
-			return;
-		}
-
-		if (AI_continueMission(-1, MISSIONAI_SAIL_TO_AFRICA, MOVE_BUST_FOG))
-		{
-			return;
-		}
-
-		if (bPickupUnitsFromEurope || hasCargo())	// TAC - AI Improved Naval AI - koma13
-		{
-			if (AI_sailToPreferredPort(false))
-			{
-				return;
-			}
-		}
-
-
-		if (kOwner.AI_totalUnitAIs(UNITAI_TREASURE) > 0)
-		{
-			if (AI_respondToPickup(2, UNITAI_TREASURE))
-			{
-				return;
-			}
-		}
-
-		// If we happen to be in a city we own, attempt to load as many goods as possible
-		if (pCity != NULL && pCity->getOwner() == getOwner())
-		{
-			AI_collectGoods();
 		}
 
 		if (kOwner.AI_totalUnitAIs(UNITAI_TREASURE) > 0)
 		{
-			if (AI_respondToPickup(10, UNITAI_TREASURE))
+			if (AI_respondToPickup(20, UNITAI_TREASURE))
 			{
+				AI_setUnitAIState(UNITAI_STATE_SAIL);
 				return;
 			}
 		}
 
-		if (isFull())
+		CvCity* pCity = NULL;
+		if (plot()->getPlotCity() != NULL)
 		{
-			if (AI_sailToPreferredPort(true))
+			if (AI_tradeWithCity())
 			{
 				return;
 			}
-		}
-		// Else we try to pick up more goods
-		else
-		{
-			// Custom_House_Mod Start
-			if (AI_travelToPort(15, 6))
-			{
-				return;
-			}
-			// Custom_House_Mod End
-		}
 
-		// This is the same condition as earlier, but
-		// at this point we may have gained cargo that we should sell
+			if (plot()->getOwner() == getOwner())
+			{
+				pCity = plot()->getPlotCity();
+			}
+		}
 
 		// TAC - AI Improved Naval AI - koma13 - START
-		//if (hasCargo() || (kOwner.getNumEuropeUnits() > 0))
-		if (hasCargo() || bPickupUnitsFromEurope)
-			// TAC - AI Improved Naval AI - koma13 - END
+		bool bAtWar = GET_TEAM(getTeam()).getAnyWarPlanCount();
+		int iExtra = (kOwner.AI_isStrategy(STRATEGY_REVOLUTION_PREPARING) && !bAtWar) ? cargoSpace() : 0;
+		bool bPickupUnitsFromEurope = ((kOwner.AI_cargoSpaceToEurope(getGroup()) + iExtra) < kOwner.getNumEuropeUnits());
+		// TAC - AI Improved Naval AI - koma13 - END
+
+		int iGoodsCount = 0;
+		UnitAIStates eStartingState = AI_getUnitAIState();
+		if (AI_getUnitAIState() == UNITAI_STATE_SAIL)
 		{
-			if (AI_sailToPreferredPort(true))
+			if (AI_deliverUnits(UNITAI_SETTLER))
 			{
 				return;
 			}
-		}
 
-		AI_setUnitAIState(UNITAI_STATE_DEFAULT);
-	}
+			if (AI_deliverUnits(UNITAI_COLONIST))
+			{
+				return;
+			}
 
-	if (AI_deliverUnits())
-		return;
+			if (AI_deliverUnits())
+			{
+				return;
+			}
 
-	if (AI_getUnitAIState() == UNITAI_STATE_PICKUP)
-	{
-		if (AI_respondToPickup(2))
-		{
-			return;
+			if (AI_continueMission(-1, MISSIONAI_SAIL_TO_EUROPE, MOVE_BUST_FOG))
+			{
+				return;
+			}
+
+			if (AI_continueMission(-1, MISSIONAI_SAIL_TO_AFRICA, MOVE_BUST_FOG))
+			{
+				return;
+			}
+
+			if (bPickupUnitsFromEurope || hasCargo())	// TAC - AI Improved Naval AI - koma13
+			{
+				if (AI_sailToPreferredPort(false))
+				{
+					return;
+				}
+			}
+
+
+			if (kOwner.AI_totalUnitAIs(UNITAI_TREASURE) > 0)
+			{
+				if (AI_respondToPickup(2, UNITAI_TREASURE))
+				{
+					return;
+				}
+			}
+
+			// If we happen to be in a city we own, attempt to load as many goods as possible
+			if (pCity != NULL && pCity->getOwner() == getOwner())
+			{
+				AI_collectGoods();
+			}
+
+			if (kOwner.AI_totalUnitAIs(UNITAI_TREASURE) > 0)
+			{
+				if (AI_respondToPickup(10, UNITAI_TREASURE))
+				{
+					return;
+				}
+			}
+
+			if (isFull())
+			{
+				if (AI_sailToPreferredPort(true))
+				{
+					return;
+				}
+			}
+			// Else we try to pick up more goods
+			else
+			{
+				// Custom_House_Mod Start
+				if (AI_travelToPort(15, 6))
+				{
+					return;
+				}
+				// Custom_House_Mod End
+			}
+
+			// This is the same condition as earlier, but
+			// at this point we may have gained cargo that we should sell
+
+			// TAC - AI Improved Naval AI - koma13 - START
+			//if (hasCargo() || (kOwner.getNumEuropeUnits() > 0))
+			if (hasCargo() || bPickupUnitsFromEurope)
+				// TAC - AI Improved Naval AI - koma13 - END
+			{
+				if (AI_sailToPreferredPort(true))
+				{
+					return;
+				}
+			}
+
+			AI_setUnitAIState(UNITAI_STATE_DEFAULT);
 		}
 
 		if (AI_deliverUnits())
-		{
 			return;
+
+		if (AI_getUnitAIState() == UNITAI_STATE_PICKUP)
+		{
+			if (AI_respondToPickup(2))
+			{
+				return;
+			}
+
+			if (AI_deliverUnits())
+			{
+				return;
+			}
+
+			if (bEmpty)
+			{
+				AI_setUnitAIState(UNITAI_STATE_DEFAULT);
+			}
 		}
 
 		if (bEmpty)
 		{
-			AI_setUnitAIState(UNITAI_STATE_DEFAULT);
-		}
-	}
-
-	if (bEmpty)
-	{
-		if (AI_respondToPickup(5))
-		{
-			AI_setUnitAIState(UNITAI_STATE_PICKUP);
-			return;
-		}
-	}
-
-	int iNativeSaleGoods = 0;
-	int iSettlerCount = 0;
-	if (!bEmpty)
-	{
-		CLLNode<IDInfo>* pUnitNode;
-		CvUnit* pLoopUnit;
-		CvPlot* pPlot;
-		int iCount;
-
-		iCount = 0;
-
-		pPlot = plot();
-
-		pUnitNode = pPlot->headUnitNode();
-
-		while (pUnitNode != NULL)
-		{
-			pLoopUnit = pPlot->getUnitNodeLoop(pUnitNode);
-
-			if (pLoopUnit != NULL && pLoopUnit->getTransportUnit() == this)
+			if (AI_respondToPickup(5))
 			{
-				if (pLoopUnit->getYield() != NO_YIELD)
+				AI_setUnitAIState(UNITAI_STATE_PICKUP);
+				return;
+			}
+		}
+
+		int iNativeSaleGoods = 0;
+		int iSettlerCount = 0;
+		if (!bEmpty)
+		{
+			CLLNode<IDInfo>* pUnitNode;
+			CvUnit* pLoopUnit;
+			CvPlot* pPlot;
+			int iCount;
+
+			iCount = 0;
+
+			pPlot = plot();
+
+			pUnitNode = pPlot->headUnitNode();
+
+			while (pUnitNode != NULL)
+			{
+				pLoopUnit = pPlot->getUnitNodeLoop(pUnitNode);
+
+				if (pLoopUnit != NULL && pLoopUnit->getTransportUnit() == this)
 				{
-					FAssert(pLoopUnit->getYieldStored() > 0);
-					iGoodsCount++;
-					if (pLoopUnit->AI_getUnitAIState() == UNITAI_STATE_SELL_TO_NATIVES)
+					if (pLoopUnit->getYield() != NO_YIELD)
 					{
-						iNativeSaleGoods++;
+						FAssert(pLoopUnit->getYieldStored() > 0);
+						iGoodsCount++;
+						if (pLoopUnit->AI_getUnitAIState() == UNITAI_STATE_SELL_TO_NATIVES)
+						{
+							iNativeSaleGoods++;
+						}
+					}
+					if (pLoopUnit->AI_getUnitAIType() == UNITAI_SETTLER)
+					{
+						iSettlerCount++;
 					}
 				}
-				if (pLoopUnit->AI_getUnitAIType() == UNITAI_SETTLER)
+			}
+		}
+
+		if (kOwner.AI_totalUnitAIs(UNITAI_TREASURE) > 0)
+		{
+			if (AI_respondToPickup(MAX_INT, UNITAI_TREASURE))
+			{
+				AI_setUnitAIState(UNITAI_STATE_SAIL);
+				return;
+			}
+
+		}
+
+		if (bEmpty && GC.getGameINLINE().getSorenRandNum(100, "AI Respond to Pickup 1") < 25)
+		{
+			if (AI_respondToPickup())
+			{
+				AI_setUnitAIState(UNITAI_STATE_PICKUP);
+				return;
+			}
+		}
+
+		bool bRoutes = (AI_getUnitAIType() == UNITAI_TRANSPORT_SEA);
+		if (iNativeSaleGoods == 0 && iGoodsCount > 0)
+		{
+			if (getGroup()->AI_tradeRoutes())
+			{
+				return;
+			}
+			bRoutes = false;
+		}
+
+		// TAC - AI Improved Naval AI - koma13 - START
+		//if (iSettlerCount > 0 || iNativeSaleGoods > 0 || ((kOwner.getNumEuropeUnits() == 0) && (kOwner.AI_countYieldWaiting() < 3)))
+		if (iSettlerCount > 0 || iNativeSaleGoods > 0 || (!bPickupUnitsFromEurope && (kOwner.AI_countYieldWaiting() < 3)))
+			// TAC - AI Improved Naval AI - koma13 - END
+		{
+			if (AI_exploreCoast(2))
+			{
+				return;
+			}
+			if (AI_exploreOcean(1))
+			{
+				return;
+			}
+			if (AI_exploreDeep())
+			{
+				return;
+			}
+		}
+
+		int iCargoWaiting = kOwner.AI_countYieldWaiting();
+
+		// TAC - AI Improved Naval AI - koma13 - START
+		//if (iCargoWaiting < (cargoSpace() * GC.getGameINLINE().getCargoYieldCapacity()))
+		if (iCargoWaiting < cargoSpace())
+			// TAC - AI Improved Naval AI - koma13 - END
+		{
+			if (bRoutes)
+			{
+				if (AI_isObsoleteTradeShip())
 				{
-					iSettlerCount++;
+					if (getGroup()->AI_tradeRoutes())
+					{
+						return;
+					}
+					bRoutes = false;
 				}
 			}
 		}
-	}
 
-	if (kOwner.AI_totalUnitAIs(UNITAI_TREASURE) > 0)
-	{
-		if (AI_respondToPickup(MAX_INT, UNITAI_TREASURE))
+		if (pCity != NULL)
 		{
+			if (AI_collectGoods())
+			{
+				AI_setUnitAIState(UNITAI_STATE_SAIL);
+				return;
+			}
+		}
+
+		if (!hasAnyUnitInCargo() && !isFull())
+		{
+			if (AI_travelToPort(40))
+			{
+				AI_setUnitAIState(UNITAI_STATE_SAIL);
+				return;
+			}
+		}
+
+		if (iNativeSaleGoods > 0)
+		{
+			if (AI_exploreCoast(2))
+			{
+				return;
+			}
+			if (AI_exploreDeep())
+			{
+				return;
+			}
+		}
+
+		// TAC - AI Improved Naval AI - koma13 - START
+		//if ((GET_PLAYER(getOwnerINLINE()).getNumEuropeUnits() > 0) || isFull())
+		if (bPickupUnitsFromEurope || isFull())
+			// TAC - AI Improved Naval AI - koma13 - END
+		{
+			FAssert(AI_getUnitAIState() != UNITAI_STATE_SAIL);
 			AI_setUnitAIState(UNITAI_STATE_SAIL);
 			return;
 		}
 
-	}
-
-	if (bEmpty && GC.getGameINLINE().getSorenRandNum(100, "AI Respond to Pickup 1") < 25)
-	{
-		if (AI_respondToPickup())
+		CvArea* pArea = area();
+		if (!pArea->isWater())
 		{
-			AI_setUnitAIState(UNITAI_STATE_PICKUP);
-			return;
+			pArea = plot()->waterArea();
 		}
-	}
-
-	bool bRoutes = (AI_getUnitAIType() == UNITAI_TRANSPORT_SEA);
-	if (iNativeSaleGoods == 0 && iGoodsCount > 0)
-	{
-		if (getGroup()->AI_tradeRoutes())
+		FAssert(pArea != NULL);
+		if (pArea != NULL && pArea->getNumTiles() - pArea->getNumRevealedTiles(getTeam()) > 0)
 		{
-			return;
+			if (AI_exploreCoast(2))
+			{
+				return;
+			}
+			if (AI_exploreDeep())
+			{
+				return;
+			}
 		}
-		bRoutes = false;
-	}
 
-	// TAC - AI Improved Naval AI - koma13 - START
-	//if (iSettlerCount > 0 || iNativeSaleGoods > 0 || ((kOwner.getNumEuropeUnits() == 0) && (kOwner.AI_countYieldWaiting() < 3)))
-	if (iSettlerCount > 0 || iNativeSaleGoods > 0 || (!bPickupUnitsFromEurope && (kOwner.AI_countYieldWaiting() < 3)))
-	// TAC - AI Improved Naval AI - koma13 - END
-	{
-		if (AI_exploreCoast(2))
-		{
-			return;
-		}
-		if (AI_exploreOcean(1))
-		{
-			return;
-		}
-		if (AI_exploreDeep())
-		{
-			return;
-		}
-	}
-
-	int iCargoWaiting = kOwner.AI_countYieldWaiting();
-
-	// TAC - AI Improved Naval AI - koma13 - START
-	//if (iCargoWaiting < (cargoSpace() * GC.getGameINLINE().getCargoYieldCapacity()))
-	if (iCargoWaiting < cargoSpace())
-	// TAC - AI Improved Naval AI - koma13 - END
-	{
 		if (bRoutes)
 		{
-			if (AI_isObsoleteTradeShip())
+			if (getGroup()->AI_tradeRoutes())
 			{
-				if (getGroup()->AI_tradeRoutes())
-				{
-					return;
-				}
-				bRoutes = false;
+				return;
 			}
 		}
-	}
 
-	if (pCity != NULL)
-	{
-		if (AI_collectGoods())
-		{
-			AI_setUnitAIState(UNITAI_STATE_SAIL);
-			return;
-		}
-	}
-
-	if (!hasAnyUnitInCargo() && !isFull())
-	{
-		if (AI_travelToPort(40))
-		{
-			AI_setUnitAIState(UNITAI_STATE_SAIL);
-			return;
-		}
-	}
-
-	if (iNativeSaleGoods > 0)
-	{
-		if (AI_exploreCoast(2))
+		if (AI_retreatToCity(true))
 		{
 			return;
 		}
-		if (AI_exploreDeep())
+
+		if (AI_retreatToCity())
 		{
 			return;
 		}
-	}
 
-	// TAC - AI Improved Naval AI - koma13 - START
-	//if ((GET_PLAYER(getOwnerINLINE()).getNumEuropeUnits() > 0) || isFull())
-	if (bPickupUnitsFromEurope || isFull())
-	// TAC - AI Improved Naval AI - koma13 - END
-	{
-		FAssert(AI_getUnitAIState() != UNITAI_STATE_SAIL);
-		AI_setUnitAIState(UNITAI_STATE_SAIL);
+		if (AI_safety())
+		{
+			return;
+		}
+
+		getGroup()->pushMission(MISSION_SKIP);
 		return;
 	}
-
-	CvArea* pArea = area();
-	if (!pArea->isWater())
-	{
-		pArea = plot()->waterArea();
-	}
-	FAssert(pArea != NULL);
-	if (pArea != NULL && pArea->getNumTiles() - pArea->getNumRevealedTiles(getTeam()) > 0)
-	{
-		if (AI_exploreCoast(2))
-		{
-			return;
-		}
-		if (AI_exploreDeep())
-		{
-			return;
-		}
-	}
-
-	if (bRoutes)
-	{
-		if (getGroup()->AI_tradeRoutes())
-		{
-			return;
-		}
-	}
-
-	if (AI_retreatToCity(true))
-	{
-		return;
-	}
-
-	if (AI_retreatToCity())
-	{
-		return;
-	}
-
-	if (AI_safety())
-	{
-		return;
-	}
-
-	getGroup()->pushMission(MISSION_SKIP);
-	return;
 }
 
 // Attempt to determine if a great admiral is waiting in a city
@@ -15050,7 +15131,7 @@ int CvUnitAI::AI_foundValue(CvPlot* pPlot)
 	}
 
 	int iValue = 0;
-	if ((kOwner.getNumCities() == 0) && (GC.getGameINLINE().getGameTurn() < 20))
+	if ((kOwner.getNumCities() == 0) /* && (GC.getGameINLINE().getGameTurn() < 20)*/)
 	{
 		iValue = kOwner.AI_foundValue(pPlot->getX_INLINE(), pPlot->getY_INLINE());
 	}
@@ -15122,7 +15203,7 @@ int CvUnitAI::AI_foundValue(CvPlot* pPlot)
 }
 
 // Returns true if a mission was pushed...
-bool CvUnitAI::AI_found(int iMinValue)
+bool CvUnitAI::AI_found(int iMinValue, bool bFirstCity)
 {
 	PROFILE_FUNC();
 
@@ -15148,7 +15229,11 @@ bool CvUnitAI::AI_found(int iMinValue)
 		{
 			if (canFound(pLoopPlot))
 			{
-				int iValue = AI_foundValue(pLoopPlot);
+				int iValue = 0;
+				if (bFirstCity)
+					iValue = kOwner.AI_firstCityFoundValue(*pLoopPlot);
+				else
+					iValue = AI_foundValue(pLoopPlot);
 
 				if (iValue > iMinValue)
 				{
@@ -19555,4 +19640,143 @@ void CvUnitAI::AI_unloadUnits(TradeLocationTypes eLocation)
 			kOwner.unloadUnitToAfrica(apUnits[i]);
 		}
 	}
+}
+
+// Find units of eUnitAI that are explicitly requesting pickup on coastal land.
+// Move to the best adjacent water tile and mark MISSIONAI_PICKUP targeting the land plot.
+bool CvUnitAI::AI_pickupStranded(UnitAITypes eUnitAI, int iMaxPathTurns)
+{
+	PROFILE_FUNC();
+
+	if (cargoSpace() <= 0)
+		return false;
+
+	if (isBarbarian())
+		return false;
+
+	CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
+
+	int iBestValue = 0;
+	CvPlot* pBestMovePlot = NULL;   // water plot to sail to
+	CvPlot* pBestPickupPlot = NULL; // land plot where unit waits
+
+	// Iterate all groups/units of this player to find pickup requests
+	int iLoopUnit = -1;
+	for (CvUnit* pU = kOwner.firstUnit(&iLoopUnit); pU != NULL; pU = kOwner.nextUnit(&iLoopUnit))
+	{
+		if (pU->AI_getUnitAIType() != eUnitAI)
+			continue;
+		if (pU->getTransportUnit() != NULL)
+			continue; // already embarked
+
+		CvSelectionGroup* pUG = pU->getGroup();
+		if (pUG == NULL)
+			continue;
+
+		// Only consider units explicitly requesting pickup
+		if (pUG->AI_getMissionAIType() != MISSIONAI_PICKUP)
+			continue;
+
+		CvPlot* pPickupPlot = pUG->AI_getMissionAIPlot();
+		if (pPickupPlot == NULL)
+			continue;
+
+		if (!pPickupPlot->isRevealed(getTeam(), false))
+			continue;
+
+		// Must be coastal land
+		if (!pPickupPlot->isCoastalLand())
+			continue;
+
+		if (pPickupPlot->isVisibleEnemyUnit(this))
+			continue;
+
+		// Count how many matching units are on that plot and can fit
+		int iCountFit = 0;
+		{
+			CLLNode<IDInfo>* pNode = pPickupPlot->headUnitNode();
+			while (pNode != NULL)
+			{
+				CvUnit* pOn = pPickupPlot->getUnitNodeLoop(pNode); // advances pNode
+				if (pOn != NULL && pOn->getOwnerINLINE() == getOwnerINLINE()
+					&& pOn->AI_getUnitAIType() == eUnitAI
+					&& pOn->getTransportUnit() == NULL
+					&& cargoSpace() >= pOn->getUnitInfo().getRequiredTransportSize())
+				{
+					++iCountFit;
+				}
+			}
+		}
+		if (iCountFit <= 0)
+			continue;
+
+		// Avoid dogpiling: how many ships already targeting this pickup
+		int iAlreadyTargeting = kOwner.AI_plotTargetMissionAIs(pPickupPlot, MISSIONAI_PICKUP, getGroup(), 0);
+		// Estimate remaining capacity in whole-ship units
+		int iSlots = (cargoSpace() > 0) ? cargoSpace() : 1;
+		if (iAlreadyTargeting >= (iCountFit + (iSlots - 1)) / iSlots)
+			continue;
+
+		// Find best adjacent water tile we can reach
+		CvPlot* pBestAdjWater = NULL;
+		int iBestAdjTurns = MAX_INT;
+
+		for (int d = 0; d < NUM_DIRECTION_TYPES; ++d)
+		{
+			CvPlot* pAdj = plotDirection(pPickupPlot->getX_INLINE(), pPickupPlot->getY_INLINE(), (DirectionTypes)d);
+			if (pAdj == NULL)
+				continue;
+			if (!pAdj->isWater())
+				continue;
+			if (pAdj->isVisibleEnemyUnit(this))
+				continue;
+
+			int iTurns = 0;
+			if (atPlot(pAdj))
+			{
+				iTurns = 0;
+			}
+			else
+			{
+				if (!generatePath(pAdj, MOVE_BUST_FOG, true, &iTurns, iMaxPathTurns))
+					continue;
+			}
+
+			if (iTurns < iBestAdjTurns)
+			{
+				iBestAdjTurns = iTurns;
+				pBestAdjWater = atPlot(pAdj) ? pAdj : getGroup()->getPathEndTurnPlot();
+			}
+		}
+
+		if (pBestAdjWater == NULL)
+			continue;
+
+		// Score: prefer more units, fewer turns; bonus if explicitly requesting pickup (always true here)
+		int iValue = (iCountFit * 1000) / (iBestAdjTurns + 1);
+
+		if (iValue > iBestValue)
+		{
+			iBestValue = iValue;
+			pBestMovePlot = pBestAdjWater;
+			pBestPickupPlot = pPickupPlot;
+		}
+	}
+
+	if (pBestMovePlot == NULL || pBestPickupPlot == NULL)
+		return false;
+
+	if (atPlot(pBestMovePlot))
+	{
+		// Advertise and yield so land unit can load
+		getGroup()->pushMission(MISSION_SKIP, -1, -1, MOVE_BUST_FOG, false, false,
+			MISSIONAI_PICKUP, pBestPickupPlot);
+		return true;
+	}
+
+	getGroup()->pushMission(MISSION_MOVE_TO,
+		pBestMovePlot->getX_INLINE(), pBestMovePlot->getY_INLINE(),
+		MOVE_BUST_FOG, false, false,
+		MISSIONAI_PICKUP, pBestPickupPlot);
+	return true;
 }

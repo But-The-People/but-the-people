@@ -302,7 +302,7 @@ public:
 
 	// TAC - AI More food - koma13 - START
 	//int AI_yieldValue(YieldTypes eYield, bool bProduce = true, int iAmount = 1);
-	int AI_yieldValue(YieldTypes eYield, bool bProduce = true, int iAmount = 1, bool bFood = false);
+	int AI_yieldValue(YieldTypes eYield, bool bProduce = true, int iAmount = 1, bool bFood = false) const;
 	// TAC - AI More food - koma13 - END
 
 	void AI_updateYieldValues();
@@ -465,6 +465,7 @@ public:
 	int AI_getColonialMilitaryModifier() const;
 	bool AI_shouldHurryUnit() const;
 	int AI_estimateUnemploymentCount() const;
+	int AI_firstCityFoundValue(const CvPlot& cityPlot);
 
 protected:
 

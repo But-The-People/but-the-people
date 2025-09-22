@@ -321,7 +321,7 @@ protected:
 	bool AI_hostileShuffle();
 	bool AI_wanderAroundAimlessly();
 	int AI_foundValue(CvPlot* pPlot);
-	bool AI_found(int iMinValue = 1);
+	bool AI_found(int iMinValue = 1, bool bFirstCity = false);
 	bool AI_foundRange(int iRange, bool bFollow = false);
 	bool AI_joinCityBrave();
 	bool AI_joinCity(int iMaxPath = MAX_INT);
@@ -409,6 +409,8 @@ protected:
 	void AI_sellYieldUnits(TradeLocationTypes eLocation);
 	void AI_unloadUnits(TradeLocationTypes eLocation);
 	void AI_automateSailTo(const SailToHelper& sth);
+	void AI_transportSettler();
+	bool AI_pickupStranded(UnitAITypes eUnitAI = NO_UNITAI, int iMaxPath = MAX_INT);
 
 	// added so under cheat mode we can call protected functions for testing
 	friend class CvGameTextMgr;

@@ -5403,15 +5403,18 @@ bool CvUnit::canUnload() const
 		return false;
 	}
 
-	YieldTypes eYield = getYield();
+	const YieldTypes eYield = getYield();
 	if (eYield != NO_YIELD)
 	{
-		CvCity* pCity = plot()->getPlotCity();
+		CvCity* const pCity = plot()->getPlotCity();
 		FAssert(pCity != NULL);
 		if (pCity == NULL || !GET_PLAYER(getOwnerINLINE()).canUnloadYield(pCity->getOwnerINLINE()))
 		{
 			return false;
 		}
+	
+		// No need to check the space/capacity logic below for yields
+		return true;
 	}
 
 	// WTP, ray, Barracks System, check if there is still enough Barracks Space - START
@@ -9133,6 +9136,16 @@ bool CvUnit::isNoCityCapture() const
 
 bool CvUnit::isRivalTerritory() const
 {
+	// Gameplay rule: before a player has founded their first city, a unit in a
+	// founding profession may enter rival cultural borders
+	// as if it had the RivalTerritory ability. This helps the AI recover
+	// when it loses the settling race and would otherwise get bumped (i.e. teleported somewhere) by rival culture
+	if (getProfession() != NO_PROFESSION)
+	{
+		if (GC.getProfessionInfo(getProfession()).canFound() && GET_PLAYER(getOwnerINLINE()).getNumCities() == 0)
+			return true;
+	}
+
 	return m_pUnitInfo->isRivalTerritory();
 }
 

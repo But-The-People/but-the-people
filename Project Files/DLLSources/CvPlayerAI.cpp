@@ -9107,7 +9107,7 @@ bool CvPlayerAI::AI_shouldBuyFromEurope(YieldTypes eYield) const
 
 // TAC - AI More food - koma13 - START
 //int CvPlayerAI::AI_yieldValue(YieldTypes eYield, bool bProduce, int iAmount)
-int CvPlayerAI::AI_yieldValue(YieldTypes eYield, bool bProduce, int iAmount, bool bFood)
+int CvPlayerAI::AI_yieldValue(YieldTypes eYield, bool bProduce, int iAmount, bool bFood) const
 // TAC - AI More food - koma13 - END
 {
 	int iValue = 0;
@@ -16283,4 +16283,167 @@ int CvPlayerAI::AI_estimateUnemploymentCount() const
 		cnt);
 
 	return cnt;
+}
+
+int CvPlayerAI::AI_firstCityFoundValue(const CvPlot& cityPlot)
+{
+	PROFILE_FUNC();
+
+	if (isNative() || getParent() == NO_PLAYER)
+		return 0;
+
+	if (getNumCities() != 0)
+		return 0;
+
+	const TeamTypes eTeam = getTeam();
+	const CvPlayer& kParent = GET_PLAYER(getParent());
+
+	if (!canFound(Coordinates(cityPlot.getX_INLINE(), cityPlot.getY_INLINE())))
+		return 0;
+
+	if (!cityPlot.isCoastalLand(GC.getMIN_WATER_SIZE_FOR_OCEAN()))
+		return 0;
+	if (cityPlot.getNearestEurope() == NO_EUROPE)
+		return 0;
+
+	// Hard reject if any hostile camp/equivalent exists in BFC
+	for (int i = 0; i < NUM_CITY_PLOTS; ++i)
+	{
+		CvPlot* p = plotCity(cityPlot.getX_INLINE(), cityPlot.getY_INLINE(), i);
+		if (p == NULL) continue;
+
+		if (p->isGoodyForSpawningHostileCriminals() ||
+			p->isGoodyForSpawningHostileNatives() ||
+			p->isGoodyForSpawningHostileAnimals())
+			return 0;
+
+		// Enemy city inside BFC
+		if (p->getPlotCity() != NULL && p->getTeam() != eTeam)
+			return 0;
+	}
+
+	// Approximate ship movement turns from Europe entry to this site.
+	// (If you want the exact ship path, pass the transport instead.)
+	int sailTurns = 0;
+	{
+		int tiles = cityPlot.getDistanceToOcean();
+		if (tiles < 0) tiles = 20;
+		sailTurns = (tiles + 3) / 4;
+		if (sailTurns > 20) sailTurns = 20;
+	}
+
+	// ---------- Production scan over NON-center tiles ----------
+	const int foodPerPop = GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION;
+
+	int bestFood1 = 0;
+	int bestFood2 = 0;
+	bool hasLumber = false;
+
+	long long ringWeightedProduction = 0LL;
+
+	for (int i = 0; i < NUM_CITY_PLOTS; ++i)
+	{
+		if (i == CITY_HOME_PLOT) continue;
+
+		CvPlot* p = plotCity(cityPlot.getX_INLINE(), cityPlot.getY_INLINE(), i);
+		if (p == NULL) continue;
+
+		// Top-2 FOOD
+		const int yFood = p->calculateBestNatureYield(YIELD_FOOD, eTeam);
+		if (yFood > bestFood1) { bestFood2 = bestFood1; bestFood1 = yFood; }
+		else if (yFood > bestFood2) { bestFood2 = yFood; }
+
+		// LUMBER presence
+		if (!hasLumber)
+		{
+			if (p->calculateBestNatureYield(YIELD_LUMBER, eTeam) > 0)
+				hasLumber = true;
+			else
+			{
+				const FeatureTypes f = p->getFeatureType();
+				if (f != NO_FEATURE && GC.getFeatureInfo(f).getYieldChange(YIELD_LUMBER) > 0)
+					hasLumber = true;
+			}
+		}
+
+		// Best weighted yield for this plot
+		long long bestWeightedThisPlot = 0LL;
+
+		for (int iy = 0; iy < NUM_YIELD_TYPES; ++iy)
+		{
+			const YieldTypes eY = (YieldTypes)iy;
+			const int yNat = p->calculateBestNatureYield(eY, eTeam);
+			if (yNat <= 0) continue;
+
+			long long weight = 0LL;
+			if (eY == YIELD_FOOD || eY == YIELD_LUMBER)
+			{
+				const int v = AI_yieldValue(eY);
+				if (v > 0) weight = (long long)yNat * (long long)v;
+			}
+			else
+			{
+				const int iSell = kParent.getYieldBuyPrice(eY);
+				if (iSell > 0)
+					weight = (long long)yNat * (long long)iSell;
+			}
+
+			if (weight > bestWeightedThisPlot)
+				bestWeightedThisPlot = weight;
+		}
+
+		ringWeightedProduction += bestWeightedThisPlot;
+	}
+
+	// Gates
+	if (!hasLumber)
+		return 0;
+
+	const int cityFood = bestFood1 + bestFood2;
+	if (cityFood < 2 * foodPerPop)
+		return 0;
+
+	// ---------- Scoring ----------
+	long long val = 100000LL;
+
+	// Add ring production (scaled)
+	val += ringWeightedProduction * 12LL;
+
+	// Extra food beyond minimum
+	int surplus = cityFood - (2 * foodPerPop);
+	if (surplus > 0)
+	{
+		if (surplus > 6) surplus = 6;
+		val += surplus * 50LL * 100LL;
+	}
+
+	// Mild penalty for dangerous goodies (not camps, those are hard reject)
+	int hostile = 0;
+	for (int i = 0; i < NUM_CITY_PLOTS; ++i)
+	{
+		CvPlot* p = plotCity(cityPlot.getX_INLINE(), cityPlot.getY_INLINE(), i);
+		if (p && (p->isGoodyForSpawningHostileCriminals() ||
+			p->isGoodyForSpawningHostileNatives() ||
+			p->isGoodyForSpawningHostileAnimals()))
+			hostile += 5;
+	}
+	if (hostile > 0)
+	{
+		if (hostile > 50) hostile = 50;
+		val = (val * (100 - hostile)) / 100LL;
+	}
+
+	// Europe distance penalty only (no settler position or reveal-based penalties anymore)
+	const int wSail = 5;
+	long long denom = 100LL;
+	denom += (long long)wSail * (long long)sailTurns * 5LL;
+
+	if (denom < 50LL)   denom = 50LL;
+	if (denom > 5000LL) denom = 5000LL;
+
+	val = (val * 1000LL) / denom;
+
+	if (val < 1LL) val = 1LL;
+	if (val > 2147483647LL) val = 2147483647LL;
+	return static_cast<int>(val);
 }
