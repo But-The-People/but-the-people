@@ -367,6 +367,8 @@ void CvCityAI::AI_updateAssignWork()
 		GET_PLAYER(getOwnerINLINE()).AI_manageEconomy();
 
 		AI_assignWorkingPlots();
+
+		AI_setAssignWorkDirty(false);
 	}
 }
 
