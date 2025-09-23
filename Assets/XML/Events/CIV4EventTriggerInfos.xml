@@ -31665,6 +31665,8 @@
 			<PythonCallback/>
 		</EventTriggerInfo>
 	<EventTriggerInfo>
+			<iWeight>0</iWeight>
+			<iWeight>0</iWeight>
 			<Type>EVENTTRIGGER_DISCOVERY_EVENTS_ATTACKED</Type>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_ATTACKED</Text>
@@ -31679,7 +31681,7 @@
 			<bSinglePlayer>0</bSinglePlayer>
 			<EventArt>,Art/EventImages/scout.dds</EventArt>
 			<iPercentGamesActive>100</iPercentGamesActive>
-			<iWeight>-1</iWeight>
+			<iWeight>0</iWeight>
 			<bProbabilityUnitMultiply>1</bProbabilityUnitMultiply>
 			<bProbabilityBuildingMultiply>0</bProbabilityBuildingMultiply>
 			<eCivic>NONE</eCivic>
@@ -31754,6 +31756,7 @@
 			<iMinTurn>50</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
+			<iWeight>0</iWeight>
 			<PlotRequirements>
 				<PlotTypes>
 					<ePlotType>PLOT_LAND</ePlotType>
