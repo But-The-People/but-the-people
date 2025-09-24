@@ -1,0 +1,3 @@
+*.cpp text=auto
+*.h text=auto
+*.xml text=auto
