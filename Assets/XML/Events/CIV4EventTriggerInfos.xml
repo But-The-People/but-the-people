@@ -3400,11 +3400,6 @@
 			<PythonCallback/>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
-			<PlotRequirements>
-				<PlotTypes>
-					<ePlotType>PLOT_LAND</ePlotType>
-				</PlotTypes>
-			</PlotRequirements>
 			<Type>EVENTTRIGGER_HERBS</Type>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENTTRIGGER_HERBS</Text>
@@ -31665,8 +31660,6 @@
 			<PythonCallback/>
 		</EventTriggerInfo>
 	<EventTriggerInfo>
-			<iWeight>0</iWeight>
-			<iWeight>0</iWeight>
 			<Type>EVENTTRIGGER_DISCOVERY_EVENTS_ATTACKED</Type>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_ATTACKED</Text>
@@ -31756,12 +31749,6 @@
 			<iMinTurn>50</iMinTurn>
 		</EventTriggerInfo>
 		<EventTriggerInfo>
-			<iWeight>0</iWeight>
-			<PlotRequirements>
-				<PlotTypes>
-					<ePlotType>PLOT_LAND</ePlotType>
-				</PlotTypes>
-			</PlotRequirements>
 			<Type>EVENTTRIGGER_DISCOVERY_EVENTS_ATTACK_TREASURE</Type>
 			<WorldNewsTexts>
 				<Text>TXT_KEY_EVENTTRIGGER_DISCOVERY_EVENTS_ATTACK_TREASURE_1</Text>
