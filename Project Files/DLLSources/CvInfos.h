@@ -406,6 +406,8 @@ public:
 	int getNumYieldsConsumed() const;
 	// R&R, ray , MYCP partially based on code of Aymerick - END
 
+	const InfoArray<YieldTypes, int>& getYieldDemands() const;
+
 	bool isWorkSlot() const;
 
 	/// Move Into Peak - start - Nightinggale
@@ -457,6 +459,8 @@ protected:
 	int m_expert;
 	int m_learnLevel;
 	// TAC - LbD - Ray - END
+
+	InfoArray<YieldTypes, int> m_info_YieldDemands;
 
 	struct YieldEquipment
 	{

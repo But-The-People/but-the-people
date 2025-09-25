@@ -1748,6 +1748,11 @@ int CvProfessionInfo::getDefaultUnitAIType() const
     return m_iDefaultUnitAIType;
 }
 
+const InfoArray<YieldTypes, int>& CvProfessionInfo::getYieldDemands() const
+{
+	return m_info_YieldDemands;
+}
+
 bool CvProfessionInfo::isWorkSlot() const
 {
 	return (m_bCitizen && !m_bWorkPlot);
@@ -1938,6 +1943,8 @@ bool CvProfessionInfo::read(CvXMLLoadUtility* pXML)
 
 	pXML->GetChildXmlValByName(&m_bUnarmed, "bUnarmed");
 	pXML->GetChildXmlValByName(&m_bNoDefensiveBonus, "bNoDefensiveBonus");
+
+	readXML(m_info_YieldDemands, "YieldDemands");
 
 	m_aYieldEquipments.clear();
 	int *aiYieldAmounts;

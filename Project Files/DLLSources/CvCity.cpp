@@ -13615,6 +13615,12 @@ void CvCity::getYieldDemands(YieldCargoArray<int> &aYields) const
 		CvUnit* pLoopUnit = m_aPopulationUnits[i];
 		// reuse CivEffect cache code as it's essentially we same we need here: add a bunch of InfoArrays into one JIT array.
 		aYields.addCache(1, GC.getUnitInfo(pLoopUnit->getUnitType()).getYieldDemands());
+
+		const ProfessionTypes eProfession = pLoopUnit->getProfession();
+		if (eProfession != NO_PROFESSION)
+		{
+			aYields.addCache(1, GC.getProfessionInfo(eProfession).getYieldDemands());
+		}
 	}
 
 	// WTP, ray, adjustments to Domestic Market to also consider Defenders on City Plot - START
