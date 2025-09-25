@@ -1877,6 +1877,7 @@ void CvInitCore::read(FDataStreamBase* pStream)
 
 	CvSavegameReaderBase readerbase(pStream, uiSavegameVersion);
 	CvSavegameReader reader(readerbase);
+	reader.assignVersionFixes(szRevision);
 
 	// GAME DATA
 	reader.Read(m_eType);

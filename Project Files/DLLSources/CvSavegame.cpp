@@ -204,6 +204,73 @@ CvSavegameReader::CvSavegameReader(const CvSavegameReader& reader)
 {
 	m_eClassType = NUM_SAVEGAME_CLASS_TYPES;
 }
+void CvSavegameReader::assignVersionFixes(const CvString& versionStr)
+{
+	if (conversion_table[JIT_ARRAY_GAME_OPTION].size() == 0)
+	{
+		// fix a bug where the game option conversion table wasn't saved
+		// luckily it can be recreated based on release string
+		if (versionStr == "4.1")
+		{
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_ADVANCED_START);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_CITY_RAZING);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_AGGRESSIVE_AI);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_LEAD_ANY_CIV);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_PERMANENT_ALLIANCES);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_ALWAYS_WAR);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_ALWAYS_PEACE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_ONE_CITY_CHALLENGE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_CHANGING_WAR_PEACE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NEW_RANDOM_SEED);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_LOCK_MODS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_GOODY_HUTS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_EVENTS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_REDUCED_REF);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_RANDOM_SETTLEMENT_AREAS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_USE_OLD_FOUNDING_FATHER_SYSTEM);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_MORE_VARIABLES_HIDDEN);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_WILD_LAND_ANIMALS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_WILD_SEA_ANIMALS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_REDUCED_CITY_DISTANCE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_ONLY_ONE_COLONIST_PER_VILLAGE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_DEACTIVATE_HEMISPHERE_RESTRICTIONS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_GOODIES_ALWAYS_DISPLAY_COLOURED_CIRCLE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_UNREST_TURNS_DEPEND_ON_CITY_SIZE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_REMOVE_WORLD_BUILDER);
+		}
+		else if (versionStr == "4.2")
+		{
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_ADVANCED_START);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_TWO_PLOT_CITY_RADIUS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NEW_MOVEMENT_COST);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_CITY_RAZING);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_AGGRESSIVE_AI);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_LEAD_ANY_CIV);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_PERMANENT_ALLIANCES);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_ALWAYS_WAR);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_ALWAYS_PEACE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_ONE_CITY_CHALLENGE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_CHANGING_WAR_PEACE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NEW_RANDOM_SEED);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_LOCK_MODS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_GOODY_HUTS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_EVENTS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_REDUCED_REF);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_RANDOM_SETTLEMENT_AREAS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_USE_OLD_FOUNDING_FATHER_SYSTEM);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_MORE_VARIABLES_HIDDEN);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_WILD_LAND_ANIMALS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_NO_WILD_SEA_ANIMALS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_REDUCED_CITY_DISTANCE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_ONLY_ONE_COLONIST_PER_VILLAGE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_DEACTIVATE_HEMISPHERE_RESTRICTIONS);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_GOODIES_ALWAYS_DISPLAY_COLOURED_CIRCLE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_UNREST_TURNS_DEPEND_ON_CITY_SIZE);
+			conversion_table[JIT_ARRAY_GAME_OPTION].push_back(GAMEOPTION_REMOVE_WORLD_BUILDER);
+		}
+	}
+}
+
 
 bool CvSavegameReader::isDebug() const
 {

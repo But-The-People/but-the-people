@@ -68,6 +68,7 @@ class CvSavegameReader
 public:
 	CvSavegameReader(CvSavegameReaderBase& readerBase);
 	CvSavegameReader(const CvSavegameReader& reader);
+	void assignVersionFixes(const CvString& versionStr);
 
 	bool isDebug() const;
 	static unsigned int getSavegameVersion();
