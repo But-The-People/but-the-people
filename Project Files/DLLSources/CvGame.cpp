@@ -294,6 +294,11 @@ void CvGame::setInitialItems(bool bScenario)
 			for (CivilizationTypes eCiv = FIRST_CIVILIZATION; eCiv < NUM_CIVILIZATION_TYPES; ++eCiv)
 			{
 				CvCivilizationInfo& kCiv = GC.getCivilizationInfo(eCiv);
+
+				// only consider native civs when placing natives
+				if (kCiv.getCivCategoryTypes() != CIV_CATEGORY_NATIVE)
+					continue;
+
 				//Check if it would fit to Scenario
 				if (kCiv.isNorthAmericanNative() && !GC.getGame().isWBNorthAmericanNative())
 					continue;
