@@ -3040,7 +3040,7 @@ void CvUnit::doCommand(CommandTypes eCommand, int iData1, int iData2)
 
 		// R&R, ray , Stirring Up Natives - START
 		case COMMAND_STIR_UP_NATIVES:
-			if(isGroupHead())
+			if (isGroupHead())
 			{
 				stirUpNatives();
 			}
@@ -3049,7 +3049,7 @@ void CvUnit::doCommand(CommandTypes eCommand, int iData1, int iData2)
 		// R&R, ray , Stirring Up Natives - END
 
 		case COMMAND_SPEAK_WITH_CHIEF:
-			if(isGroupHead())
+			if (isGroupHead())
 			{
 				getGroup()->speakWithChief();
 			}
@@ -3061,7 +3061,7 @@ void CvUnit::doCommand(CommandTypes eCommand, int iData1, int iData2)
 
 		// TAC - Goto Menu - koma13 - START
 		case COMMAND_GOTO_MENU:
-			if (gDLL->getInterfaceIFace()->getHeadSelectedUnit() == this)
+			if (getOwnerINLINE() == GC.getGameINLINE().getActivePlayer() && gDLL->getInterfaceIFace()->getHeadSelectedUnit() == this)
 			{
 				CvPopupInfo* pInfo = new CvPopupInfo(BUTTONPOPUP_GOTO_MENU);
 				pInfo->setData1(getID());
@@ -3086,7 +3086,7 @@ void CvUnit::doCommand(CommandTypes eCommand, int iData1, int iData2)
 		// WTP, merge Treasures, of Raubwuerger - START
 		// ray, small improvement
 		case COMMAND_MERGE_TREASURES:
-			if(isGroupHead())
+			if (isGroupHead())
 			{
 				mergeTreasures();
 			}
@@ -3095,7 +3095,7 @@ void CvUnit::doCommand(CommandTypes eCommand, int iData1, int iData2)
 
 		// WTP, ray, Construction Supplies - START
 		case COMMAND_USE_CONSTRUCTION_SUPPLIES:
-			if(isGroupHead())
+			if (isGroupHead())
 			{
 				useProductionSupplies();
 			}
@@ -3103,28 +3103,28 @@ void CvUnit::doCommand(CommandTypes eCommand, int iData1, int iData2)
 		// WTP, ray, Construction Supplies - END
 
 		case COMMAND_ALLOW_DANGEROUS_PATH:
-			if (gDLL->getInterfaceIFace()->getHeadSelectedUnit() == this)
+			if (isGroupHead())
 			{
 				setAllowDangerousPath(true, /*bRefreshUi*/true);
 			}
 			break;
 
 		case COMMAND_DISALLOW_DANGEROUS_PATH:
-			if (gDLL->getInterfaceIFace()->getHeadSelectedUnit() == this)
+			if (isGroupHead())
 			{
 				setAllowDangerousPath(false, /*bRefreshUi*/true);
 			}
 			break;
 
 		case COMMAND_ALLOW_DIRECT_PATH:
-			if (gDLL->getInterfaceIFace()->getHeadSelectedUnit() == this)
+			if (isGroupHead())
 			{
 				setAllowDirectPath(true, /*bRefreshUi*/true);
 			}
 			break;
 
 		case COMMAND_DISALLOW_DIRECT_PATH:
-			if (gDLL->getInterfaceIFace()->getHeadSelectedUnit() == this)
+			if (isGroupHead())
 			{
 				setAllowDirectPath(false, /*bRefreshUi*/true);
 			}
@@ -17042,4 +17042,13 @@ int CvUnit::getRemainingMovesAfterPFMoves(int iPFMoves) const
 	const int iCurrentMovesLeft = movesLeft();
 	const int iRemainingMoves = iCurrentMovesLeft - iPFMoves;
 	return USE_CLASSIC_MOVEMENT_SYSTEM ? std::max(0, iRemainingMoves) : iRemainingMoves;
+}
+
+void CvUnit::writeDesyncLog(FILE* f) const
+{
+	fprintf(f, "\tUnit %d (%d,%d) %S\n", getID(), plot()->getX_INLINE(), plot()->getY_INLINE(), getName().c_str());
+	if (m_bAllowDangerousPath)
+	{
+		fprintf(f, "\t\t%Dangerous paths allowed\n");
+	}
 }

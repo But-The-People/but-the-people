@@ -852,6 +852,8 @@ public:
 	
 	int getRemainingMovesAfterPFMoves(int iPFMoves) const;
 
+	void writeDesyncLog(FILE* f) const;
+
 protected:
 
 	void updateVisibilityCache(int iNewRange);

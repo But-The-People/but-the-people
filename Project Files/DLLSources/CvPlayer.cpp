@@ -25170,6 +25170,11 @@ void CvPlayer::writeDesyncLog(FILE *f) const
 		fprintf(f, "\tCity %d %S\n", iLoop, pLoopCity->getName().c_str());
 		pLoopCity->writeDesyncLog(f);
 	}
+
+	for (CvUnit* pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+	{
+		pLoopUnit->writeDesyncLog(f);
+	}
 }
 
 // Function returns preferred direction for initial exploration basing on where starting plot is placed
