@@ -63,7 +63,10 @@ inline void CvSavegameWriter::WriteEnumMap<VARIABLE_TYPE_BOOL>::Write(CvSavegame
 	const int iLength = em.getLength();
 
 	// ensure the index conversion table is saved
-	kWriter.GetXmlByteSize(VARINFO<LengthType>::JIT);
+	if (VARINFO<LengthType>::JIT >= 0 && VARINFO<LengthType>::JIT < NUM_JITarrayTypes)
+	{
+		kWriter.GetXmlByteSize(VARINFO<LengthType>::JIT);
+	}
 
 	LengthType eStart = (LengthType)MAX_INT;
 	LengthType eEnd = (LengthType)MIN_INT;
@@ -179,7 +182,10 @@ inline void CvSavegameWriter::WriteEnumMap<TYPE2>::Write(CvSavegameWriter& kWrit
 	BOOST_STATIC_ASSERT(bValid);
 
 	// ensure the index conversion table is saved
-	kWriter.GetXmlByteSize(VARINFO<LengthType>::JIT);
+	if (VARINFO<LengthType>::JIT >= 0 && VARINFO<LengthType>::JIT < NUM_JITarrayTypes)
+	{
+		kWriter.GetXmlByteSize(VARINFO<LengthType>::JIT);
+	}
 
 	SavegameEnumMapTokenWrite<IndexType, LengthType>* Token = NULL;
 	std::list<SavegameEnumMapTokenWrite<IndexType, LengthType>* > tokens;
@@ -275,7 +281,10 @@ inline void CvSavegameWriter::WriteEnumMap<VARIABLE_TYPE_CLASS>::Write(CvSavegam
 	std::list<SavegameEnumMapTokenWrite<IndexType, LengthType>* > tokens;
 
 	// ensure the index conversion table is saved
-	kWriter.GetXmlByteSize(VARINFO<LengthType>::JIT);
+	if (VARINFO<LengthType>::JIT >= 0 && VARINFO<LengthType>::JIT < NUM_JITarrayTypes)
+	{
+		kWriter.GetXmlByteSize(VARINFO<LengthType>::JIT);
+	}
 
 	FAssertMsg((int)VARINFO<LengthType>::END != 0, CvString::format("Saving EnumMap of length 0. Type: %s", VARINFO<LengthType>::getName()));
 	for (IndexType i = (IndexType)VARINFO<LengthType>::FIRST; i < (IndexType)VARINFO<LengthType>::END; ++i)
