@@ -837,9 +837,9 @@ void CvUnit::doTurn()
 	else
 	{
 		//WTP, ray Negative Promotions - START
-		if(isHuman())
+		if (isHuman())
 		{
-			if (plot()->isCity())
+			if (plot()->isCity(true))
 			{
 				cleanseAllNegativePromotions();
 			}
