@@ -2909,6 +2909,10 @@ DllExport bool CvXMLLoadUtility::LoadPlayerOptions()
 	gDLL->ChangeINIKeyValue("CONFIG", "DisableFileCaching", "1");
 	gDLL->ChangeINIKeyValue("CONFIG", "DisableCaching", "1");
 
+	// remove mapping of PAK files. We aren't using them, so skip scanning for them
+	// reported to remove up to 45 seconds of startup time, through not everybody will notice a difference
+	gDLL->ChangeINIKeyValue("CONFIG", "DisablePAKMemoryMapping", "1");
+
 	// make colonization start this mod next time it starts if no mod argument is given
 	// the mod argument still works, hence MSVC can start debugging another mod than was last run, hence the system still support development on multiple local copies
 	gDLL->ChangeINIKeyValue("CONFIG", "Mod", gDLL->getModName(false));
