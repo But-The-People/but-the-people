@@ -105,6 +105,7 @@
     <ClCompile Include="DLLSources\Events\EventTrigger.cpp" />
     <ClCompile Include="DLLSources\Events\EventTriggerSavegame.cpp" />
     <ClCompile Include="DLLSources\EXE\EXE_Plot.cpp" />
+    <ClCompile Include="DLLSources\EXE\PopupHandler.cpp" />
     <ClCompile Include="DLLSources\EXE\Network.cpp" />
     <ClCompile Include="DLLSources\EXE_interface.cpp" />
     <ClCompile Include="DLLSources\Info\EventTriggerInfo.cpp" />
@@ -281,6 +282,7 @@
     <ClInclude Include="DLLSources\EnumMapSpecialization.h" />
     <ClInclude Include="DLLSources\EnumMapSpecializationClass.h" />
     <ClInclude Include="DLLSources\Events\EventTrigger.h" />
+    <ClInclude Include="DLLSources\EXE\PopupHandler.h" />
     <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLEngineIFaceBase.h" />
     <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLEventReporterIFaceBase.h" />
     <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLInterfaceIFaceBase.h" />
