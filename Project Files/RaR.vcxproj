@@ -288,6 +288,7 @@
     <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLInterfaceIFaceBase.h" />
     <ClInclude Include="DLLSources\EXE\EXE_Plot.h" />
     <ClInclude Include="DLLSources\EXE\Network.h" />
+    <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLUtilityIFaceBase.h" />
     <ClInclude Include="DLLSources\HardcodedEnumSetup.h" />
     <ClInclude Include="DLLSources\Info\EventTriggerInfo.h" />
     <ClInclude Include="DLLSources\Info\InfoHelpers.h" />

@@ -14006,8 +14006,25 @@ void CvPlayer::setTriggerFired(const EventTriggeredData& kTriggeredData, bool bO
 // TODO move into EventTriggeredData and refactor into smaller private functions
 EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger, bool bFire, int iCityId, int iPlotX, int iPlotY, PlayerTypes eOtherPlayer, int iOtherPlayerCityId, int iUnitId, BuildingTypes eBuilding)
 {
-
 	CvEventTriggerInfo& kTrigger = GC.getEventTriggerInfo(eEventTrigger);
+
+	// expire quest events, which allowed this event trigger to fire
+	{
+		const InfoArray<EventTypes>& array = kTrigger.getPrereqEvents();
+		for (int i = 0; i < array.getLength(); ++i)
+		{
+			EventTypes event = array.getEvent(i);
+			if (!isInRange(event) || !GC.getEventInfo(event).isQuest())
+			{
+				continue;
+			}
+			const EventTriggeredData* data = getEventOccured(event);
+			if (data != NULL)
+			{
+				expireEvent(event, *data, false);
+			}
+		}
+	}
 
 	CvCity* pCity = getCity(iCityId);
 	CvCity* pOtherPlayerCity = NULL;
@@ -15395,14 +15412,14 @@ void CvPlayer::doEvents()
 	int gameSpeedMod =  GC.getGameSpeedInfo(GC.getGameINLINE().getGameSpeedType()).getGrowthPercent();
 
 	bool bNewEventEligible = true;
-	if (GC.getGameINLINE().getElapsedGameTurns() < (GC.getDefineINT("FIRST_EVENT_DELAY_TURNS")*gameSpeedMod/100))
+	if (GC.getGameINLINE().getElapsedGameTurns() < (GLOBAL_DEFINE_FIRST_EVENT_DELAY_TURNS * gameSpeedMod)/100)
 	{
 		bNewEventEligible = false;
 	}
 
 	if (bNewEventEligible)
 	{
-		if (GC.getGameINLINE().getSorenRandNum(GC.getDefineINT("EVENT_PROBABILITY_ROLL_SIDES"), "Global event check") >= GC.getEraInfo(getCurrentEra()).getEventChancePerTurn())
+		if (GC.getGameINLINE().getSorenRandNum(GLOBAL_DEFINE_EVENT_PROBABILITY_ROLL_SIDES, "Global event check") >= GC.getEraInfo(getCurrentEra()).getEventChancePerTurn())
 		{
 			bNewEventEligible = false;
 		}
@@ -15410,16 +15427,16 @@ void CvPlayer::doEvents()
 
 	std::vector< std::pair<EventTriggeredData*, int> > aePossibleEventTriggerWeights;
 	int iTotalWeight = 0;
-	for (int i = 0; i < GC.getNumEventTriggerInfos(); ++i)
+	for (EventTriggerTypes eTriggerType = FIRST_EVENTTRIGGER; eTriggerType < NUM_EVENTTRIGGER_TYPES; ++eTriggerType)
 	{
-		int iWeight = getEventTriggerWeight((EventTriggerTypes)i);
+		int iWeight = getEventTriggerWeight(eTriggerType);
 		if (iWeight < 0)
 		{
-			trigger((EventTriggerTypes)i);
+			trigger(eTriggerType);
 		}
 		else if (iWeight > 0 && bNewEventEligible)
 		{
-			EventTriggeredData* pTriggerData = initTriggeredData((EventTriggerTypes)i);
+			EventTriggeredData* pTriggerData = initTriggeredData(eTriggerType);
 			if (NULL != pTriggerData)
 			{
 				iTotalWeight += iWeight;
