@@ -1144,11 +1144,10 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 	const int iFlags = finder ? gDLL->getFAStarIFace()->GetInfo(finder) : ((CvPathSettings*)pointer)->iFlags;
 	// K-Mod end
 
-	// 2a) Prefer exact adjacent goal step for human GUI paths
+	// Prefer exact adjacent goal step for human GUI paths
 	if ((finder != 0 || hints != 0) &&
 		!USE_CLASSIC_MOVEMENT_SYSTEM &&
-		!pSelectionGroup->AI_isControlled() &&
-		pSelectionGroup->getAutomateType() == NO_AUTOMATE)
+		!pSelectionGroup->AI_isControlled())
 	{
 		// UI case (finder!=0): use finder�s dest.
 		// K-Mod case (finder==0): rely on hint passed in data arg 
@@ -1169,10 +1168,12 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 	CvPlot const& kFromPlot = m.getPlot(parent->m_iX, parent->m_iY);
 	CvPlot const& kToPlot = m.getPlot(node->m_iX, node->m_iY);
 
-
 	int iWorstCost = 0;
-	int iWorstMovesLeft = MAX_INT;
-	//int iWorstMaxMoves = MAX_INT; // advc: unused
+	// Track both clamped and raw "moves left" after this edge.
+	//  - afterRaw lets us detect NMS turn-breaks (afterRaw < 0)
+	//  - afterClamp is used by original cost formula (0 when exhausted)
+	int iWorstMovesLeftClamped = MAX_INT;
+	int iWorstAfterRaw = MAX_INT; // min across units of (iMaxMoves - iMoveCost), unclamped
 
 	const TeamTypes eTeam = pSelectionGroup->getHeadTeam();
 	// <advc.035>
@@ -1230,38 +1231,46 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 		}
 	} // </advc.035>
 #endif
+
+	// Per-unit edge cost, take the worst across the group
+	for (CLLNode<IDInfo> const* pUnitNode = pSelectionGroup->headUnitNode();
+		pUnitNode != NULL; pUnitNode = pSelectionGroup->nextUnitNode(pUnitNode))
 	{
-		for (CLLNode<IDInfo> const* pUnitNode = pSelectionGroup->headUnitNode();
-			pUnitNode != NULL; pUnitNode = pSelectionGroup->nextUnitNode(pUnitNode))
+		const CvUnit* pLoopUnit = ::getUnit(pUnitNode->m_data);
+		if (!pLoopUnit) continue;
+
+		const int iMoveCost = kToPlot.movementCost(pLoopUnit, &kFromPlot, false);
+
+		// iMaxMoves for this edge comes from parent state; fallback to unit's max.
+		const int iMaxMoves = (parent->m_iData1 > 0 ? parent->m_iData1 : pLoopUnit->maxMoves());
+		const int afterRaw = iMaxMoves - iMoveCost;     // can be negative in NMS
+		const int afterClamp = std::max(0, afterRaw);     // classic-visible moves left
+
+		// Track mins across group for later gates/tie-breakers
+		if (afterClamp < iWorstMovesLeftClamped) iWorstMovesLeftClamped = afterClamp;
+		if (afterRaw < iWorstAfterRaw)         iWorstAfterRaw = afterRaw;
+
+		int iCost;
+		if (USE_CLASSIC_MOVEMENT_SYSTEM)
 		{
-			CvUnit const* pLoopUnit = ::getUnit(pUnitNode->m_data);
-
-			if (pLoopUnit == NULL)
-				continue;
-
-			const int iMoveCost = kToPlot.movementCost(pLoopUnit, &kFromPlot,
-				false); // advc.001i
-			//FAssert(pLoopUnit->getDomainType() != DOMAIN_AIR);
-			
-			const int iMaxMoves = parent->m_iData1 > 0 ? parent->m_iData1 : pLoopUnit->maxMoves();
-			const int iMovesLeft = std::max(0, (iMaxMoves - iMoveCost));
-
-			iWorstMovesLeft = std::min(iWorstMovesLeft, iMovesLeft);
-			//iWorstMaxMoves = std::min(iWorstMaxMoves, iMaxMoves);
-
-			int iCost = PATH_MOVEMENT_WEIGHT * (iMovesLeft == 0 ? iMaxMoves : iMoveCost);
-
-			iCost = (iCost * iExploreModifier) / 3;
-			//iCost = (iCost * iFlipModifier) / iFlipModifierDiv; // advc.035
-			if (iCost > iWorstCost)
-			{
-				iWorstCost = iCost;
-				iWorstMovesLeft = iMovesLeft;
-				//iWorstMaxMoves = iMaxMoves;
-			}
+			// EXACT classic behavior:
+			iCost = PATH_MOVEMENT_WEIGHT * (afterClamp == 0 ? iMaxMoves : iMoveCost);
 		}
+		else
+		{
+			// NMS: pay the actual step cost; turn-break handling is added elsewhere
+			iCost = PATH_MOVEMENT_WEIGHT * iMoveCost;
+		}
+
+		// Exploration modifier (unchanged)
+		iCost = (iCost * iExploreModifier) / 3;
+
+		if (iCost > iWorstCost)
+			iWorstCost = iCost;
 	}
-		iWorstCost += PATH_STEP_WEIGHT;
+
+	// Base step tie-breaker (original)
+	iWorstCost += PATH_STEP_WEIGHT;
 
 	// symmetry breaking. This is meant to prevent two paths from having equal cost.
 	// (If two paths have equal cost, sometimes the interface shows one path and the units follow the other. This is bad.)
@@ -1405,7 +1414,7 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 		}
 	}
 
-	if (iWorstMovesLeft <= 0)
+	if (iWorstMovesLeftClamped <= 0)
 	{
 		if (eToPlotTeam != eTeam)
 		{
@@ -1525,34 +1534,28 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 	}
 
 	// "Rest debt" penalty for arriving at the destination while having negative moves
-	if (!USE_CLASSIC_MOVEMENT_SYSTEM) {
+	if (!USE_CLASSIC_MOVEMENT_SYSTEM)
+	{
 		const bool isGoal = (finder != 0
 			? (node->m_iX == gDLL->getFAStarIFace()->GetDestX(finder)
 				&& node->m_iY == gDLL->getFAStarIFace()->GetDestY(finder))
-			: (hints & NF_DESTINATION_NODE));
+			: hintIsGoal);
 
-		if (isGoal) {
-			const int PT = pSelectionGroup->baseMoves() * GLOBAL_DEFINE_MOVE_DENOMINATOR; // points/turn
-			const int mEnd = node->m_iData1; // can be <= 0 under NMS
-			if (mEnd <= 0) {
-				// full turns you must wait before you can act (>0 MP)
-				const int waitTurns = (1 - mEnd + PT - 1) / PT; // ceil((1 - mEnd)/PT)
-				const long long oneTurnCost = 1LL * PATH_MOVEMENT_WEIGHT * PT;
-				long long penalty = oneTurnCost * waitTurns;
+		if (isGoal && iWorstAfterRaw <= 0)
+		{
+			// Use group-min per-turn budget to align with iMaxMoves/afterRaw logic.
+			const int PT = pSelectionGroup->maxMoves();
+			if (PT > 0)
+			{
+				// full turns we must wait before we can act (>0 MP)
+				const int waitTurns = (1 - iWorstAfterRaw + PT - 1) / PT; // ceil((1 - afterRaw)/PT)
 
-				// small tie-breaker: prefer routes with more usable MP when you can act
-				const int debt = -mEnd;
-				const int residual = debt % PT;                 // 0..PT-1
-				const int usableOnAct = (residual == 0 ? PT : PT - residual);
-				long long credit = (oneTurnCost * usableOnAct) / (10LL * PT); // <10%
-
-				long long acc = (long long)iWorstCost + penalty - credit;
-				if (acc < PATH_STEP_WEIGHT) acc = PATH_STEP_WEIGHT; // keep positive
-				if (acc > INT_MAX)          acc = INT_MAX;          // saturate
-				iWorstCost = (int)acc;
+				// Keep this light so it never dominates path length or terrain.
+				// One PATH_STEP_WEIGHT per turn of waiting tends to be enough to break ties sanely.
+				iWorstCost += waitTurns * PATH_STEP_WEIGHT;
 			}
 		}
-	}
+	}	
 	FAssert(iWorstCost > 0);
 	return iWorstCost;
 }
@@ -1746,7 +1749,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 		// that should be addressed elsewhere. Finally, it makes more sense that we should never require more than 1 turn 
 		// to reach the start plot, regardless of debt (Do note that this change does NOT change any pathing calculation,
 		// the debt is fully accounted  for, the init debt (if any) is rather processed on the first child instead
-		if (parent != NULL && (!USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node)))
+		if (parent != NULL && !USE_CLASSIC_MOVEMENT_SYSTEM)
 		{
 			while (iMoves <= 0)
 			{
@@ -1776,7 +1779,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 		// K-Mod. The original code would give incorrect results for groups where one unit had more moves but also had higher move cost.
 		// (eg. the most obvious example is when a group with 1-move units and 2-move units is moving on a railroad. - In this situation,
 		//  the original code would consistently underestimate the remaining moves at every step.)
-		if (USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node))
+		if (USE_CLASSIC_MOVEMENT_SYSTEM)
 		{
 			const bool bNewTurn = iMoves == 0;
 
@@ -1821,7 +1824,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 		if (bUniformCost)
 		{
 			// the simple, normal case
-			if (USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node))
+			if (USE_CLASSIC_MOVEMENT_SYSTEM)
 			{
 				iMoves = std::max(0, iMoves - iMoveCost);
 			}
@@ -1862,7 +1865,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 					iUnitMoves -= plot_list[i - 1]->movementCost(pLoopUnit, plot_list[i]/*,
 						false*/); // advc.001i
 
-					if (USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node))
+					if (USE_CLASSIC_MOVEMENT_SYSTEM)
 					{
 						FAssert(iUnitMoves > 0 || i == 1);
 					}
@@ -1872,7 +1875,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 						FAssert(iUnitMoves >= -600); // Note: does not have to be accurate, just enough to detect corruption etc.
 					}
 				}
-				if (USE_CLASSIC_MOVEMENT_SYSTEM || allowDirectPath(*pSelectionGroup, *parent, *node))
+				if (USE_CLASSIC_MOVEMENT_SYSTEM)
 				{
 					iUnitMoves = std::max(iUnitMoves, 0);
 				}
@@ -1882,7 +1885,7 @@ int pathAdd(FAStarNode* parent, FAStarNode* node, int data, const void* pointer,
 		// K-Mod end
 	}
 
-	if (USE_CLASSIC_MOVEMENT_SYSTEM/* || allowDirectPath(*pSelectionGroup, *parent, *node)*/)
+	if (USE_CLASSIC_MOVEMENT_SYSTEM)
 	{
 		FAssertMsg(iMoves >= 0, "iMoves is expected to be non-negative (invalid Index)");
 	}
