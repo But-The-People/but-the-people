@@ -541,6 +541,9 @@
     <ClCompile Include="DLLSources\XML\XMLUpdateEngine.cpp">
       <Filter>Classes\XML\Updater</Filter>
     </ClCompile>
+    <ClCompile Include="DLLSources\EXE\PopupHandler.cpp">
+      <Filter>EXE\PopupHandler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DLLSources\CvArea.h">
@@ -1044,6 +1047,12 @@
     <ClInclude Include="DLLSources\XML\XMLUpdateEngine.h">
       <Filter>Classes\XML\Updater</Filter>
     </ClInclude>
+    <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLUtilityIFaceBase.h">
+      <Filter>EXE\Vanilla headers</Filter>
+    </ClInclude>
+    <ClInclude Include="DLLSources\EXE\PopupHandler.h">
+      <Filter>EXE\PopupHandler</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DLLSources\FVariableSystem.inl">
@@ -1290,6 +1299,9 @@
     </Filter>
     <Filter Include="Classes\XML\Updater">
       <UniqueIdentifier>{7d29d687-f99d-4a37-b524-1206599f146d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EXE\PopupHandler">
+      <UniqueIdentifier>{da21224b-ff46-453d-8705-bed7931f8e13}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

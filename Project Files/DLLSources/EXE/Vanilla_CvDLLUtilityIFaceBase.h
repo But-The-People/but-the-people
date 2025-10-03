@@ -37,6 +37,33 @@ class CvAudioGame;
 struct ProfileSample;
 class CvReplayInfo;
 class CvPopupInfo;
+class NiPoint3;
+
+class CvString;
+class CvWString;
+class TradeData;
+class IDInfo;
+class FDataStreamBase;
+
+#include <vector>
+
+enum AdvancedStartActionTypes;
+enum ChatTargetTypes;
+enum CivicTypes;
+enum CommandTypes;
+enum DiploEventTypes;
+enum GraphicOptionTypes;
+enum MissionTypes;
+enum NetContactTypes;
+enum OrderTypes;
+enum PlayerTypes;
+enum PlayerActionTypes;
+enum PlayerOptionTypes;
+enum SaveGameTypes;
+enum TaskTypes;
+enum TeamTypes;
+enum TradeableItems;
+enum WorldSizeTypes;
 
 class CvDLLUtilityIFaceBase
 {
@@ -182,7 +209,7 @@ public:
 	virtual bool isMPDiplomacyScreenUp() = 0;
 	virtual int getMPDiplomacyPlayer() = 0;
 	virtual const IDInfo getMPDiplomacyTransport() const = 0;
-	virtual void beginMPDiplomacy( PlayerTypes eWhoTalkingTo, bool bRenegotiate = false, bool bSimultaneous = true, IDInfo kTransport = IDInfo()) = 0;
+	virtual void beginMPDiplomacy(PlayerTypes eWhoTalkingTo, bool bRenegotiate, bool bSimultaneous = true, IDInfo kTransport) = 0;
 	virtual void endMPDiplomacy() = 0;
 
 	virtual bool getAudioDisabled() = 0;
