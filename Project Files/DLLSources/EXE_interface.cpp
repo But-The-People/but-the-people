@@ -36,6 +36,8 @@
 #include "CvReplayInfo.h"
 #include "CvXMLLoadUtility.h"
 
+#include "Network/CvNetwork.h"
+
 #include "CyArgsList.h"
 #include "CyPlot.h"
 
@@ -1937,7 +1939,7 @@ public:
 	{
 		// this is only used for determining the length of the argument array in CvDLLUtilityIFaceBase::sendUpdateCivics
 		// the exe doesn't care about civics or civic options otherwise
-		return CvGlobals::getNumCivicOptionInfos();
+		return CvNetwork::iPacketSize;
 	}
 
 			/*
@@ -3274,14 +3276,24 @@ public:
 	#pragma comment(linker, "/EXPORT:?setCivic@CvPlayer@@QAEXW4CivicOptionTypes@@W4CivicTypes@@@Z=?setCivic@EXE_CvPlayer@@QAEXW4CivicOptionTypes@@W4CivicTypes@@@Z")
 	DllExport void setCivic(CivicOptionTypes eIndex, CivicTypes eNewValue)
 	{
-		// currently unused
 		// exe calls this when receiving network data through CvDLLUtilityIFaceBase::sendUpdateCivics
 		// eIndex goes up to the num civic options exposed to the exe, which doesn't have to be the same as what we have in xml
 		// our code changes civics one at a time with PLAYER_ACTION_SET_CIVIC
 		// the array approach with sendUpdateCivics seems to exclusively be used by BTS civic python screen
 
-		// the this pointer is the active player sending the data
-		CvPlayer::setCivic(eIndex, eNewValue);
+		// use a static buffer. The function is called in a loop and messages will never be mixed.
+		static int buffer[CvNetwork::iPacketSize];
+
+		if (eIndex >= 0 && eIndex < CvNetwork::iPacketSize)
+		{
+			buffer[eIndex] = eNewValue;
+
+			// if it's the last index, forward the entire buffer to CvNetwork
+			if (eIndex == (CvNetwork::iPacketSize - 1))
+			{
+				CvNetwork::receive(getID(), buffer);
+			}
+		}
 	}
 
 			/*

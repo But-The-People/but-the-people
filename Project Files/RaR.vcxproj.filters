@@ -541,8 +541,12 @@
     <ClCompile Include="DLLSources\XML\XMLUpdateEngine.cpp">
       <Filter>Classes\XML\Updater</Filter>
     </ClCompile>
-    <ClCompile Include="DLLSources\EXE\PopupHandler.cpp">
-      <Filter>EXE\PopupHandler</Filter>
+    <ClCompile Include="DLLSources\EXE\PopupHandler.cpp" />
+    <ClCompile Include="DLLSources\Network\CvNetwork.cpp">
+      <Filter>Classes\Network\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="DLLSources\Network\CvNetworkMessage.cpp">
+      <Filter>Classes\Network\CPP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1047,11 +1051,13 @@
     <ClInclude Include="DLLSources\XML\XMLUpdateEngine.h">
       <Filter>Classes\XML\Updater</Filter>
     </ClInclude>
-    <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLUtilityIFaceBase.h">
-      <Filter>EXE\Vanilla headers</Filter>
+    <ClInclude Include="DLLSources\EXE\PopupHandler.h" />
+    <ClInclude Include="DLLSources\EXE\Vanilla_CvDLLUtilityIFaceBase.h" />
+    <ClInclude Include="DLLSources\Network\CvNetwork.h">
+      <Filter>Classes\Network\Header</Filter>
     </ClInclude>
-    <ClInclude Include="DLLSources\EXE\PopupHandler.h">
-      <Filter>EXE\PopupHandler</Filter>
+    <ClInclude Include="DLLSources\Network\CvNetworkMessage.h">
+      <Filter>Classes\Network\Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1300,8 +1306,14 @@
     <Filter Include="Classes\XML\Updater">
       <UniqueIdentifier>{7d29d687-f99d-4a37-b524-1206599f146d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="EXE\PopupHandler">
-      <UniqueIdentifier>{da21224b-ff46-453d-8705-bed7931f8e13}</UniqueIdentifier>
+    <Filter Include="Classes\Network">
+      <UniqueIdentifier>{81d20f21-4852-45f7-bb35-ed9928cc7e98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Network\CPP">
+      <UniqueIdentifier>{2fd5b449-7af8-4038-9f36-a58a8ded2547}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Network\Header">
+      <UniqueIdentifier>{c2126a81-fbcc-440a-8977-48882c9f7e47}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
