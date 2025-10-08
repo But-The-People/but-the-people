@@ -14745,8 +14745,8 @@ bool CvPlayer::canDoEvent(EventTypes eEvent, const EventTriggeredData& kTriggere
 			long lResult;
 
 			CyArgsList argsList;
-			argsList.add(eEvent);
 			argsList.add(gDLL->getPythonIFace()->makePythonObject(&kTriggeredData));
+			argsList.add(eEvent);
 
 			gDLL->getPythonIFace()->callFunction(PYRandomEventModule, kEvent.getPythonCanDo(), argsList.makeFunctionArgs(), &lResult);
 
@@ -15167,8 +15167,8 @@ void CvPlayer::applyEvent(EventTypes eEvent, const EventTriggeredData& kTriggere
 		long lResult;
 
 		CyArgsList argsList;
-		argsList.add(eEvent);
 		argsList.add(gDLL->getPythonIFace()->makePythonObject(&kTriggeredData));
+		argsList.add(eEvent);
 
 		gDLL->getPythonIFace()->callFunction(PYRandomEventModule, kEvent.getPythonCallback(), argsList.makeFunctionArgs(), &lResult);
 	}
@@ -15544,8 +15544,8 @@ bool CvPlayer::checkExpireEvent(EventTypes eEvent, const EventTriggeredData& kTr
 		long lResult;
 
 		CyArgsList argsList;
-		argsList.add(eEvent);
 		argsList.add(gDLL->getPythonIFace()->makePythonObject(&kTriggeredData));
+		argsList.add(eEvent);
 
 		gDLL->getPythonIFace()->callFunction(PYRandomEventModule, kEvent.getPythonExpireCheck(), argsList.makeFunctionArgs(), &lResult);
 
