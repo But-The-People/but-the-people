@@ -5022,16 +5022,10 @@ void CvUnitAI::AI_transportSeaMove()
 			}
 		}
 
-		bool bRoutes = (AI_getUnitAIType() == UNITAI_TRANSPORT_SEA);
-		if (iNativeSaleGoods == 0 && iGoodsCount > 0)
-		{
-			if (getGroup()->AI_tradeRoutes())
-			{
-				return;
-			}
-			bRoutes = false;
-		}
-
+		// Don't attempt trade route jobs unless we have no cargo		
+		if (bEmpty && getGroup()->AI_tradeRoutes())
+			return;
+		
 		// TAC - AI Improved Naval AI - koma13 - START
 		//if (iSettlerCount > 0 || iNativeSaleGoods > 0 || ((kOwner.getNumEuropeUnits() == 0) && (kOwner.AI_countYieldWaiting() < 3)))
 		if (iSettlerCount > 0 || iNativeSaleGoods > 0 || (!bPickupUnitsFromEurope && (kOwner.AI_countYieldWaiting() < 3)))
@@ -5053,23 +5047,9 @@ void CvUnitAI::AI_transportSeaMove()
 
 		int iCargoWaiting = kOwner.AI_countYieldWaiting();
 
-		// TAC - AI Improved Naval AI - koma13 - START
-		//if (iCargoWaiting < (cargoSpace() * GC.getGameINLINE().getCargoYieldCapacity()))
-		if (iCargoWaiting < cargoSpace())
-			// TAC - AI Improved Naval AI - koma13 - END
-		{
-			if (bRoutes)
-			{
-				if (AI_isObsoleteTradeShip())
-				{
-					if (getGroup()->AI_tradeRoutes())
-					{
-						return;
-					}
-					bRoutes = false;
-				}
-			}
-		}
+		// Don't attempt trade route jobs unless we have no cargo		
+		if (bEmpty && AI_isObsoleteTradeShip() && getGroup()->AI_tradeRoutes())
+			return;
 
 		if (pCity != NULL)
 		{
@@ -5124,14 +5104,6 @@ void CvUnitAI::AI_transportSeaMove()
 				return;
 			}
 			if (AI_exploreDeep())
-			{
-				return;
-			}
-		}
-
-		if (bRoutes)
-		{
-			if (getGroup()->AI_tradeRoutes())
 			{
 				return;
 			}
