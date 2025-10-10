@@ -1699,7 +1699,7 @@ void CvPlayer::killUnits()
 			pLoopUnit->setYieldStored(0);
 			gDLL->getEventReporterIFace()->unitLost(pLoopUnit);
 			AI().AI_removeUnitFromMoveQueue(pLoopUnit);
-			const bool bUnitDeleted = deleteUnit(getID());
+			const bool bUnitDeleted = deleteUnit(pLoopUnit->getID());
 			FAssert(bUnitDeleted);
 			FAssert(checkPopulation());
 		}
