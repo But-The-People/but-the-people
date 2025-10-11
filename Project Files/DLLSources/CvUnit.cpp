@@ -4777,7 +4777,7 @@ int CvUnit::getMaxLoadYieldAmount(YieldTypes eYield) const
 {
 	int iMaxAmount = GC.getGameINLINE().getCargoYieldCapacity();
 	iMaxAmount = std::min(iMaxAmount, getLoadYieldAmount(eYield));
-	CvCity* pCity = plot()->getPlotCity();
+	CvCity* const pCity = plot()->getPlotCity();
 	if (pCity != NULL)
 	{
 		int iMaxAvailable = pCity->getYieldStored(eYield);
@@ -4796,16 +4796,16 @@ int CvUnit::getMaxLoadYieldAmount(YieldTypes eYield) const
 						{iCargoYields++;}
 				}
 
-				if(iCargoYields > 0)//R&R mod, vetiarvind, max yield import limit
-					iMaxAvailable -= (pCity->getMaintainLevel(eYield) / iCargoYields);
+				if (iCargoYields > 0)//R&R mod, vetiarvind, max yield import limit
+					iMaxAvailable -= pCity->getAutoMaintainThreshold(eYield);
 			}
 			else
-				{
-					//iMaxAvailable -= pCity->getMaintainLevel(eYield);
-					// transport feeder - start - Nightinggale
-					iMaxAvailable -= pCity->getAutoMaintainThreshold(eYield);
-					// transport feeder - end - Nightinggale
-				}
+			{
+				//iMaxAvailable -= pCity->getMaintainLevel(eYield);
+				// transport feeder - start - Nightinggale
+				iMaxAvailable -= pCity->getAutoMaintainThreshold(eYield);
+				// transport feeder - end - Nightinggale
+			}
 		}
 		iMaxAmount = std::min(iMaxAmount, iMaxAvailable);
 	}

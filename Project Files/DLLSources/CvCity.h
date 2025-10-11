@@ -1004,6 +1004,7 @@ public:
 	int getSlaveWorkerProductionBonus() const;
 	//WTP, ray, Slave Hunter and Slave Master
 	void updateSlaveWorkerProductionBonus(int iBonus = 0);
+	int getExportAvailable(YieldTypes eYield) const;
 
 protected:
 	// traderoute popup arrays

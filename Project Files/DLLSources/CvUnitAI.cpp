@@ -6459,7 +6459,7 @@ bool CvUnitAI::AI_europeBuyYields()
 				CvCity* pLoopCity;
 				for (pLoopCity = kOwner.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kOwner.nextCity(&iLoop))
 				{
-					int iNeeded = pLoopCity->getMaintainLevel(eLoopYield);
+					int iNeeded = pLoopCity->getExportAvailable(eLoopYield);
 					iNeeded -= pLoopCity->getYieldStored(eLoopYield);
 					if (iNeeded > 0)
 					{
@@ -7175,7 +7175,7 @@ bool CvUnitAI::AI_travelToPort(int iMinPercent, int iMaxPath)
 							{
 								if (kOwner.AI_isYieldForSale(eYield))
 								{
-									const int iAvailable = std::max(0, pLoopCity->getYieldStored(eYield) - pLoopCity->getMaintainLevel(eYield));
+									const int iAvailable = pLoopCity->getExportAvailable(eYield);
 									if (iAvailable >= ((GC.getGameINLINE().getCargoYieldCapacity() * iMinPercent) / 100))
 									{
 										const int iYieldValue = iAvailable * kEuropePlayer.getYieldBuyPrice(eYield);
@@ -7220,28 +7220,27 @@ bool CvUnitAI::AI_travelToPort(int iMinPercent, int iMaxPath)
 bool CvUnitAI::AI_collectGoods()
 {
 	bool bLoaded = false;
-	CvCity* pCity = plot()->getPlotCity();
+	CvCity* const pCity = plot()->getPlotCity();
 
 	FAssert(pCity != NULL);
 	FAssert(pCity->getOwner() == getOwner()); // team?
 
-	CvPlayerAI& kOwner = GET_PLAYER(getOwner());
-	CvPlayerAI& kEuropePlayer = GET_PLAYER(kOwner.getParent());
+	const CvPlayerAI& kOwner = GET_PLAYER(getOwner());
+	const CvPlayerAI& kEuropePlayer = GET_PLAYER(kOwner.getParent());
+	const int iCargoHold = GC.getGameINLINE().getCargoYieldCapacity();
 
 	//First try and load any additional cargo.
 	for (int i = 0; i < NUM_YIELD_TYPES; i++)
 	{
-		YieldTypes eYield = (YieldTypes)i;
+		const YieldTypes eYield = (YieldTypes)i;
 		if (kOwner.isYieldEuropeTradable(eYield))
 		{
 			if (kOwner.AI_isYieldForSale(eYield))
 			{
-				YieldTypes eYield = (YieldTypes)i;
-				int iYieldStored = getLoadedYieldAmount(eYield) % GC.getGameINLINE().getCargoYieldCapacity();
-
-				if (iYieldStored > 0)
+				const int iRemainder = getLoadedYieldAmount(eYield) % iCargoHold;
+				if (iRemainder > 0)
 				{
-					if (pCity->getYieldStored(eYield) > 0)
+					if (pCity->getExportAvailable(eYield) > 0)
 					{
 						loadYield(eYield, false);
 						bLoaded = true;
@@ -7264,18 +7263,21 @@ bool CvUnitAI::AI_collectGoods()
 			{
 				if (kOwner.AI_isYieldForSale(eYield))
 				{
-					int iStored = getMaxLoadYieldAmount(eYield);
-					if (iStored > (GC.getGameINLINE().getCargoYieldCapacity() / 10))
+					if (pCity->getExportAvailable(eYield) == 0)
+						continue;
+
+					const int iStored = getMaxLoadYieldAmount(eYield);
+					if (iStored > (iCargoHold / 10))
 					{
 						int iYieldValue = iStored * kEuropePlayer.getYieldBuyPrice(eYield);
 						if (iYieldValue > iBestYieldValue)
 						{
 							iBestYieldValue =iYieldValue;
-						eBestYield = eYield;
+							eBestYield = eYield;
+						}
 					}
 				}
 			}
-		}
 		}
 
 		if (eBestYield == NO_YIELD)
@@ -7432,7 +7434,7 @@ CvPlot* CvUnitAI::AI_bestDestinationPlot(bool bIgnoreDanger) const
 						const YieldTypes eYield = pLoopUnit->getYield();
 						if (NO_YIELD != eYield)
 						{
-							iTempValue += 10 + 3 * std::max(0, pCity->getMaintainLevel(pLoopUnit->getYield()) - pCity->getYieldStored(pLoopUnit->getYield()));
+							iTempValue += 10 + 3 * std::max(0, pCity->getExportAvailable(pLoopUnit->getYield()) - pCity->getYieldStored(pLoopUnit->getYield()));
 							iTempValue += pCity->getMaxYieldCapacity() - pCity->getYieldStored(pLoopUnit->getYield());
 						}
 						else
@@ -15764,7 +15766,7 @@ bool CvUnitAI::AI_yieldDestination(int iMaxPath)
 			int iPathTurns;
 			if (pTransportUnit->generatePath(pLoopPlot, 0, true, &iPathTurns, iMaxPath))
 			{
-				int iValue = 10 + 3 * std::max(0, pCity->getMaintainLevel(getYield()) - pCity->getYieldStored(getYield()));
+				int iValue = 10 + 3 * std::max(0, pCity->getExportAvailable(getYield()) - pCity->getYieldStored(getYield()));
 				iValue += pCity->getMaxYieldCapacity() - pCity->getTotalYieldStored();
 				iValue = iValue / (iPathTurns + 3);
 

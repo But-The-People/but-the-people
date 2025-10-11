@@ -14198,3 +14198,14 @@ TerrainTypes CvCity::getCenterPlotTerrainType() const
 }
 // WTP, ray, Center Plot specific Backgrounds - END
 
+// Returns the maximum amount of eYield that the city can export,
+// respecting the auto maintain threshold (and thus indirectly the maintain threshold)
+// AI code should use this function do determine how much of a yield can be picked up
+int CvCity::getExportAvailable(YieldTypes eYield) const
+{
+	if (!GC.getYieldInfo(eYield).isCargo())
+		return 0;
+
+	return std::max(0, getYieldStored(eYield)
+		- getAutoMaintainThreshold(eYield));
+}
