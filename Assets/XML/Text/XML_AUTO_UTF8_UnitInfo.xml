@@ -88,43 +88,6 @@
 		<German></German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARLEY</Tag>
-		<English>Barley</English>
-		<French>
-			<Text>Orge</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Gerste</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Orzo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Cebada</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Ячмень</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARLEY_PEDIA</Tag>
-		<English>Common [COLOR_HIGHLIGHT_TEXT]barley[COLOR_REVERT] (Hordeum vulgare) is a straw cereal, an annual herbaceous plant of the Poaceae family. It is the oldest cultivated cereal. Well adapted to the Mediterranean climate due to its hardiness, it was the main cereal grown in ancient Greece where it was eaten in the form of a wafer or porridge (maza). Barley can grow in the tropics or at an altitude of 4,500 metres in Tibet.[NEWLINE]Barley is very well suited for making [COLOR_HIGHLIGHT_TEXT]beer[COLOR_REVERT].</English>
-		<French>L'orge commune (Hordeum vulgare) est une céréale à paille, plante herbacée annuelle de la famille des poacées. Elle est la plus ancienne céréale cultivée. Bien adaptée au climat méditerranéen du fait de sa rusticité, elle constituait ainsi la principale céréale cultivée dans l'Antiquité grecque et était consommée sous forme de galette ou de bouillie (maza). L'orge pousse aussi bien sous les tropiques qu'à 4 500 m d'altitude au Tibet.</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Gerste[COLOR_REVERT] ist eine der ältesten Getreidesorten, die die Menschheit kennt. Bezüglich des Stärkegehalts und der Mehlerzeugung ist es nicht so ergiebig, wie andere Getreidesorten, so zum Beispiel Weizen, aber es eignet sich hervorragend zur Herstellung von Bier.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_BARLEY_STRATEGY</Tag>
-		<English>When assigning a citizen to work a grassland or plains tile, you may decide that your colonist should adopt the [COLOR_HIGHLIGHT_TEXT]barley farmer[COLOR_REVERT] profession, which gives your colony a [COLOR_HIGHLIGHT_TEXT]barley[COLOR_REVERT] crop. By assigning an [COLOR_UNIT_TEXT]expert farmer[COLOR_REVERT] to this profession, your stores will be full of barley!</English>
-		<French>En assignant un citoyen à travailler sur une plaine ou une prairie, vous pouvez choisir le profession de [COLOR_HIGHLIGHT_TEXT]fermier d'orge[COLOR_REVERT]. Celle-ci permet de produire de l'[COLOR_HIGHLIGHT_TEXT]orge[COLOR_REVERT]. Les [COLOR_HIGHLIGHT_TEXT]experts fermiers[COLOR_REVERT] produisent deux fois plus d'orge que les autres colons.</French>
-		<German>Wenn Sie einen Bürger anweisen, ein Ebenen- oder Grasland-Geländefeld zu bearbeiten, können Sie sich entscheiden, diesen Kolonisten den Beruf [COLOR_HIGHLIGHT_TEXT]Gerstebauer[COLOR_REVERT] zuzuweisen, wodurch Ihre Siedlung eine Menge [COLOR_HIGHLIGHT_TEXT]Gerste[COLOR_REVERT] erhält. Wenn Sie diesem Beruf einen [COLOR_UNIT_TEXT]Erfahrenen Bauern[COLOR_REVERT] zuweisen, werden Ihre Lagerhäuser vor [COLOR_UNIT_TEXT]Gerste[COLOR_REVERT] überquellen!</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_BEAR_BLACK</Tag>
 		<English>Black Bear</English>
 		<French>
@@ -198,18 +161,6 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Пиво</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_BEER_PEDIA</Tag>
-		<English>Beer is an alcoholic beverage produced by the saccharification of starch and fermentation of the resulting sugar.[NEWLINE]The enzymes are derived from malted cereal grains, most commonly malted barley and malted wheat.[NEWLINE]Most beer is also flavoured with hops, which add bitterness and act as a natural preservative, though other flavourings such as herbs or fruit may occasionally be included.[NEWLINE]The preparation of beer is called brewing.[NEWLINE]Beer is the world's most widely consumed alcoholic beverage.[NEWLINE]It is the third-most popular drink overall, after water and tea.</English>
-		<French>La bière est une boisson alcoolisée obtenue par fermentation de matières glucidiques végétales et d'eau. C'est une boisson alcoolisée obtenue par transformation de matières amylacées par voies enzymatiques et microbiologiques. Plus spécifiquement de nos jours, elles est généralement fabriquée à partir d'eau, de malt (céréale germée, principalement de l'orge, parfois additionné d'autres céréales) et depuis le Moyen âge, de houblon. C'est l'une des boissons les plus populaires et consommées au monde.</French>
-		<German>Bier ist ein alkohol- und kohlensäurehaltiges Getränk, das durch Gärung, meist aus den Grundzutaten Wasser, Malz und Hopfen, gewonnen wird. Malz wiederum ist getrocknetes und gekeimtes Getreide, meist Gerste. Bier ist schon seit Jahrtausenden bekannt.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_BEER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Master brewers[COLOR_REVERT] produce double the amount of [COLOR_HIGHLIGHT_TEXT]beer[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]barley[COLOR_REVERT].</English>
-		<French>Les [COLOR_UNIT_TEXT]maîtres brasseurs[COLOR_REVERT] produce deux fois plus de [COLOR_HIGHLIGHT_TEXT]bière[COLOR_REVERT] à partir d'[COLOR_HIGHLIGHT_TEXT]orge[COLOR_REVERT].</French>
-		<German>[COLOR_UNIT_TEXT]Braumeister[COLOR_REVERT] verarbeiten doppelt soviele Gerste in [COLOR_HIGHLIGHT_TEXT]Bier[COLOR_REVERT], wie andere Kolonisten.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BIG_COASTAL_SHIP</Tag>
@@ -288,12 +239,6 @@
 		<English>[COLOR_UNIT_TEXT]Bishops[COLOR_REVERT] are the best source of [LINK=YIELD_CROSSES]crosses[\LINK] a colony could wish for. They are even more effective than [LINK=UNIT_PREACHER]firebrand preachers[\LINK] or [LINK=UNIT_PRIEST]devout priests[\LINK], because they receive a 200% bonus in cross production.[NEWLINE]Your only chance to recruit them is during those rare moments when the [LINK=CONCEPT_CHURCH]Archbishop[\LINK] offers to send you a bishop as a reward for your piety.</English>
 		<French>Les [COLOR_UNIT_TEXT]évêques[COLOR_REVERT] sont la meilleure source de [COLOR_HIGHLIGHT_TEXT]croix[COLOR_REVERT] qu'une colonie peut souhaiter. Ils sont encore plus efficaces que les prédicateurs exaltés, ou les prêtres dévôts mais également très rares.</French>
 		<German>[COLOR_UNIT_TEXT]Bischöfe[COLOR_REVERT] sind die beste Quelle für [LINK=YIELD_CROSSES]Kreuze[\LINK], die sich eine Kolonie wünschen kann. Sie sind sogar noch effektiver als [LINK=UNIT_PREACHER]mitreißende Prediger[\LINK] oder [LINK=UNIT_PRIEST]fromme Priester[\LINK], da sie einen 200%igen Bonus auf die Kreuzproduktion erhalten. Sie sind jedoch sehr selten.[NEWLINE]Du kannst sie rekrutieren, wenn der [LINK=CONCEPT_CHURCH]Erzbischof[\LINK] anbietet, einen Bischof als Belohnung für deine Frömmigkeit zu schicken.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_BLACKBEAR_PEDIA</Tag>
-		<English>[TAB]The American black bear (Ursus americanus) is medium-sized by world standards, but nonetheless the continent's smallest. It is the most common bear species. Black bears are omnivores, with their diets varying greatly depending on season and location. They typically live in forested areas, but do leave forests in search of food. They can be attracted to human communities because of the availability of food. The American black bear is listed by the IUCN as Least Concern, due to the species' widespread distribution with a population estimated to be twice that of all other bear species combined. American black bears often mark trees using their teeth and claws as a form of communication with other bears, a behaviour common to many species of bears.</English>
-		<French>[TAB]L'ours noir (Ursus americanus) est de taille moyenne à l'échelle mondiale, mais est l'ours le plus petit du continent. C'est également le plus commun en Amérique du Nord. Ce sont des omnivores, dont le régime varie fortement suivant la saison et le lieu. Ils vivent le plus souvent en forêt, mais peuvent les quitter à la recherche de nourriture. Ils peuvent être attirés par les regroupements humains à cause de la nourriture. L'ours noir américain est listé dans la catégorie IUCN Préoccupation mineire, en raison de son aire géographique étendue et de sa population estimée à deux fois celle des autres epsèces d'ours réunies.  Les ours noirs américains marquent souvent les arbres à coup de griffes et de mâchoires pour laisser un message aux autres ours, ce qui est comportement commun à biens des espèces d'ours.</French>
-		<German>[TAB]Der Amerikanische Schwarzbär (Ursus americanus), auch Baribal genannt, ist eine in Nord-Amerika lebende Raubtierart aus der Familie der Bären (Ursidae). In seiner Heimat wird er meistens als black bear bezeichnet oder als Baribal. Im Vergleich zum eher gefürchteten Grizzlybär gilt der Schwarzbär als weniger gefährlich. Amerikanische Schwarzbären haben den typischen Körperbau der Bären. Der Rumpf ist massiv, die Gliedmaßen kräftig. Die Pfoten haben je fünf starke Krallen, welche die Bären zum Reißen, Graben und Klettern einsetzen. Der Schwanz ist wie bei allen Bären nur ein kurzer Stummel. Der große Kopf ist durch die eher lange, unbehaarte Schnauze, die kleinen Augen und die runden, aufgerichteten Ohren charakterisiert. Trotz ihres Namens sind nicht alle Amerikanischen Schwarzbären schwarz gefärbt. Es gibt auch silbergraue und rötlichbraune Varianten, und manche Baribals haben eine mit Grizzlies nahezu identische Fellfarbe. Die Färbung des Fells hängt mit dem Lebensraum zusammen: während Tiere, die in dichten Wäldern mit kühlerem Klima (im Norden und Osten des Verbreitungsgebietes) leben, eher schwarz sind, haben die Schwarzbären im südlichen und westlichen Teil des Verbreitungsgebietes, die in offenem, trockenerem Terrain wohnen, eine eher bräunliche Färbung. Das Verbreitungsgebiet der Amerikanischen Schwarzbären umfasst große Teile Nord-Amerikas. Sie leben in nahezu ganz Alaska und Kanada mit Ausnahme des äußersten Nordens, im Kerngebiet der Vereinigten Staaten (den 48 zusammenhängenden Staaten) sind sie ebenfalls weit verbreitet und fehlten ursprünglich nur im südwestlichen, trockenen Landesteil. In Mexiko kommen sie vor allem im Bereich der Gebirgszüge Sierra Madre Oriental und Sierra Madre Occidental vor. Amerikanische Schwarzbären wurden und werden vom Menschen aus verschiedensten Gründen gejagt. Dazu zählen die potenzielle Gefährdung des Menschen, die Angst vor gerissenen Weidetieren und zerstörten Agrarflächen und Bienenstöcken, der Bedarf an Fell und Fleisch sowie die Sportjagd. Untersuchungen haben gezeigt, dass der Schaden bei Weidetieren vernachlässigbar ist, dass sie aber wohl auf landwirtschaftlich genutzten Feldern Schäden anrichten können. Die Sportjagd ist weit verbreitet, nach einer Schätzung aus dem Jahr 1995 werden jedes Jahr rund 40.000 Tiere erlegt. Die Verwendung des Bärenfells und des Fleisches ist heute weitgehend zurückgegangen; bei den Indianern war dies der wichtigste Grund für die Bejagung. Die Bärenfellmützen, die zur Paradeuniform verschiedener britischer Regimenter gehören, werden aber bis heute aus dem Fell kanadischer Schwarzbären hergestellt.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BLACKSMITH</Tag>
@@ -378,14 +323,6 @@
 		<Italian>Il [COLOR_UNIT_TEXT]Järnsmed[COLOR_REVERT] è l'unica unità nazionale della Svezia e sostituisce il [LINK=UNIT_BLACKSMITH]maestro fabbro[\LINK].[NEWLINE]Se impiegato come [LINK=PROFESSION_BLACKSMITH]fabbri[\LINK] o [LINK=PROFESSION_BLADESMITH]fabbri[\LINK] per creare [LINK=YIELD_TOOLS]utensili[\LINK] o [LINK=YIELD_BLADES]lame[\LINK] da [LINK=YIELD_ORE]ore[\LINK], järnsmeder creerà strumenti o lame ancora più velocemente di un mastro fabbro.[PARAGRAPH:1]Järnsmeder può essere assunto in [LINK=CONCEPT_EUROPE]Europa[\LINK] e può anche [LINK=CONCEPT_TRAINING]apprendista[\LINK] in una colonia con un [LINK=BUILDING_COLLEGE]collegio[\LINK] o uno dei suoi potenziamenti.</Italian>
 		<Spanish>El [COLOR_UNIT_TEXT]Järnsmed[COLOR_REVERT] es la única unidad nacional de Suecia y reemplaza al [LINK=UNIT_BLACKSMITH]maestro herrero[\LINK].[NEWLINE]Cuando se emplea como [LINK=PROFESSION_BLACKSMITH]herreros[\LINK] o [LINK=PROFESSION_BLADESMITH]herreros[\LINK] para crear [LINK=YIELD_TOOLS]herramientas[\LINK] o [LINK=YIELD_BLADES]cuchillas[\LINK] de [LINK=YIELD_ORE]ore[\LINK], järnsmeder creará herramientas o cuchillas incluso más rápido que un maestro herrero.[PARAGRAPH:1]Järnsmeder puede ser contratado en [LINK=CONCEPT_EUROPE]Europa[\LINK], y también puede [LINK=CONCEPT_TRAINING]aprendiz[\LINK] en una colonia con una [LINK=BUILDING_COLLEGE]universidad[\LINK] o una de sus actualizaciones.</Spanish>
 		<Russian>[COLOR_UNIT_TEXT]Искусный кузнец[COLOR_REVERT] – уникальная национальная единица Швеции, которая заменяет [LINK=UNIT_BLACKSMITH]мастера кузнеца[\LINK].[NEWLINE]При работе в качестве [LINK=PROFESSION_BLACKSMITH]кузнеца инструментов[\LINK] или [LINK=PROFESSION_BLADESMITH]кузнеца клинков[\LINK] для создания [LINK=YIELD_TOOLS]инструментов[\LINK] или [LINK=YIELD_BLADES]клинков[\LINK] из [LINK=YIELD_ORE]руды[\LINK], искусный кузнец создаст инструменты или клинки еще быстрее, чем мастер кузнец.[PARAGRAPH:1]Искусного кузнеца можно нанять в [LINK=CONCEPT_EUROPE]Европе[\LINK], а также [LINK=CONCEPT_TRAINING]обучить[\LINK] в колонии с [LINK=BUILDING_COLLEGE] колледжом[\LINK] или одном из его улучшении.</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_BLADES_PEDIA</Tag>
-		<English>Blades Background</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_BLADES_STRATEGY</Tag>
-		<English>Blades Strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BREWER</Tag>
@@ -800,16 +737,6 @@
 		<Spanish>The small [COLOR_UNIT_TEXT]Stagecoaches[COLOR_REVERT] and the more spacious [COLOR_UNIT_TEXT]Carriers[COLOR_REVERT] can also transport land units: civilists, troops, even artillery - just no treasures. Units can enter these vehicles in cities only, while unloading is possible everywhere.[PARAGRAPH:2]Stagecoaches can only be built in cities with a [COLOR_BUILDING_TEXT]Wheelwrights Workshop[COLOR_REVERT]. For carriers you even need a [COLOR_BUILDING_TEXT]Great Wheelwrights Workshop[COLOR_REVERT].[PARAGRAPH:2]These vehicles are especially suited for fast troop movements. During the Independence War they can bring reinforcements from the hinterland - for example heavy cavalry or artillery - fast to the beachheads of the Royal Army. These transport vehicles may be produced in any desired number without provoking the King to increase his army strength. Of course they can be used in peacetimes as well - e.g. to bring expert units fast to where they are needed. Please notice that vehicles in general cannot be loaded on ships.[PARAGRAPH:2]If you attack a wagon or trek, you capture it with all transported goods. However, if you attack a stagecoach or carrier a fight emerges - and those combat-weak vehicles will very likely get destroyed including their freight.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_CATTLE_PEDIA</Tag>
-		<English>Early in the colonization of the New World cattle were brought to the plains. Some areas were unsuited for cattle herding, being too arid or disease-ridden, but there was enough good range so that making leather from hides soon became an important industry.[NEWLINE]Professional cattle herders, the cowboys, were soon employed in this industry.[NEWLINE]Good land where cattle could be raised was great demand, leading to conflicts with the Indigenous people.[NEWLINE]Huge cattle ranches spread across good grassland.</English>
-		<French>L'élevage bovin est l'ensemble des opérations visant à reproduire des animaux de l'espèce Bos taurus au profit de l'activité humaine. Il permet de fournir de la viande, du lait, des peaux des animaux reproducteurs, un travail de traction, du fumier et l'entretien des espaces ouverts.</French>
-		<German>Sehr früh in der Kolonisierung der Neuen Welt wurden Rinder aus Europa eingeführt. Obwohl es auch viele Gegenden gab, in denen Rinderzucht aufgrund von Wassermangel oder Krankheiten nicht möglich war, wurde die Rinderzucht und der Verkauf von Lederwaren in die Alte Welt schnell zu einem sehr wichtigen Industriezweig. Eine große Anzahl an Rinderhirten, den Cowboys, war bald in diesem Industriezweig beschäftigt. Die Weidegebiete, in denen Rinderzucht möglich war, waren bald sehr begehrt, was auch zu vielen Konflikten mit den Ureinwohnern führte. Riesige Rinderranches entstanden.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_CATTLE_STRATEGY</Tag>
-		<English>Cattle strategy</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_CHRISTIAN_MISSIONARY</Tag>
 		<English>Jesuit Missionary:Jesuit Missionaries</English>
 		<French>
@@ -974,93 +901,6 @@
 		<French> Quand des [LINK=UNIT_EXPERT_TRADER]marchands experts[\LINK] échouent à établir un comptoir dans un village Indigène, ils ne sont pas tués, mais ruinés.[NEWLINE] Leur déception ruine leur ardeur à la tâche. [NEWLINE]Ils n'ont toutefois pas tout perdu de leur sens des affaires et peuvent se montrer utile dans d'autres professions. [NEWLINE] Ils peuvent se spécialiser à nouveau. </French>
 		<German>Wenn [LINK=UNIT_EXPERT_TRADER]Ureinwohnerhändler[\LINK] scheitern einen Handelsposten in einem Ureinwohnerdorf einzurichgen, werden sie zu Gescheiterten Ureinwohnerhändler. [NEWLINE]Sie entwickeln eine schlechte Arbeitsmoral. [NEWLINE]Da sie aber nicht ihr Wissen verloren haben, wie man Geschäfte macht, können sie immer noch in anderen Berufen nützlich sein. [NEWLINE]Sie können in einem Beruf wieder zu Experten werden.</German>
 		<Russian>Когда [LINK=UNIT_EXPERT_TRADER]опытным торговцам с индейцами[\LINK] не удается открыть торговый пост в деревне индейцев, они становятся неудачливыми торговцами.[NEWLINE]Работают они из рук вон плохо.[NEWLINE]Но, поскольку они не утратили своих знаний о ведении бизнеса, они все еще могут быть полезны в других профессиях.[NEWLINE]Также они могут снова стать экспертами в своей профессии.</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_CIGARS</Tag>
-		<English>Cigars</English>
-		<French>
-			<Text>Cigare:Cigares</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>Zigarren</German>
-		<Italian>
-			<Text>Sigari</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Puros</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
-		<Russian>Сигары</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_CIGARS_PEDIA</Tag>
-		<English>Cigars background</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_CIGARS_STRATEGY</Tag>
-		<English>Cigars strategy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_CLOTH</Tag>
-		<English>Cloth</English>
-		<French>
-			<Text>Tissu:Tissus</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>Stoff</German>
-		<Italian>
-			<Text>Tessuto</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Tejido</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Ткань</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_CLOTH_PEDIA</Tag>
-		<English>Cloth background</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_CLOTH_STRATEGY</Tag>
-		<English>Cloth strategy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_COATS</Tag>
-		<English>Coats</English>
-		<French>
-			<Text>Manteau:Manteaux</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>Pelze</German>
-		<Italian>
-			<Text>Mantelli</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Abrigos</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
-		<Russian>Пальто</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_COATS_PEDIA</Tag>
-		<English>Coats background</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_COATS_STRATEGY</Tag>
-		<English>Coats strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COCA_COLLECTOR</Tag>
@@ -7003,4 +6843,5 @@
 		<German>[COLOR_UNIT_TEXT]Feindselige Ureinwohner[COLOR_REVERT] können nicht erworben werden.[NEWLINE]Sie sind dem Spieler gegenüber feindlich gesonnen und meist nur in [COLOR_HIGHLIGHT_TEXT]feindseligen Ureinwohnerdörfern[COLOR_REVERT] zu finden.[NEWLINE]Sie werden ihr Dorf bis zum Tod verteidigen und greifen den Spieler an, wenn dieses zerstört wird.</German>
 	</TEXT>
 </Civ4GameText>
+
 
