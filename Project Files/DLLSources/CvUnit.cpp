@@ -10392,109 +10392,80 @@ bool CvUnit::canAssignTradeRoute(int iRouteID, bool bReusePath) const
 {
 	PROFILE_FUNC();
 
-	// TAC - Trade Routes Advisor - koma13 - START
-	//if (cargoSpace() < 1 || GET_PLAYER(getOwnerINLINE()).getNumTradeRoutes() < 1)
 	if (cargoSpace() < 1)
-	// TAC - Trade Routes Advisor - koma13 - END
-	{
 		return false;
-	}
 
 	CvSelectionGroup* const pGroup = getGroup();
 	if (pGroup == NULL)
-	{
 		return false;
-	}
 
-	// TAC - Trade Routes Advisor - koma13 - START
-	/*
-	if (iRouteID == -1)
-	{
-		return true;
-	}
-	*/
-
+	// Cargo must be yields
 	CLinkList<IDInfo> listCargo;
 	pGroup->buildCargoUnitList(listCargo);
-	CLLNode<IDInfo>* pUnitNode = listCargo.head();
-	while (pUnitNode != NULL)
+	for (CLLNode<IDInfo>* pNode = listCargo.head(); pNode != NULL; pNode = listCargo.next(pNode))
 	{
-		CvUnit* const pLoopUnit = ::getUnit(pUnitNode->m_data);
-		pUnitNode = listCargo.next(pUnitNode);
-
-		if (pLoopUnit != NULL && pLoopUnit->getYield() == NO_YIELD)
+		if (CvUnit* const pCargo = ::getUnit(pNode->m_data))
 		{
-			return false;
+			if (pCargo->getYield() == NO_YIELD)
+				return false;
 		}
 	}
 
+	// “Any route” probe
 	if (iRouteID == -1)
-	{
 		return true;
-	}
-	// TAC - Trade Routes Advisor - koma13 - END
 
+	// Pull route
 	const PlayerTypes ePlayer = getOwnerINLINE();
 	FAssert(ePlayer != NO_PLAYER);
 	const CvPlayer& kPlayer = GET_PLAYER(ePlayer);
-	const CvTradeRoute* const pTradeRoute = kPlayer.getTradeRoute(iRouteID);
-	
-	if (pTradeRoute == NULL)
-	{
-		return false;
-	}
-
-	if (pTradeRoute->getYield() == NO_YIELD)
-	{
-		return false;
-	}
-
-	if (pTradeRoute->getDestinationCity() == IDInfo(ePlayer, CvTradeRoute::EUROPE_CITY_ID))
-	{
-		// Erik: Coastal transports cannot trade with Europe
-		if (canCrossCoastOnly())
-		{
-			return false;
-		}
-
-		if (getDomainType() != DOMAIN_SEA)
-		{
-			return false;
-		}
-
-		if (!kPlayer.isYieldEuropeTradable(pTradeRoute->getYield()))
-		{
-			return false;
-		}
-	}
-
-	const CvCity* const pSource = ::getCity(pTradeRoute->getSourceCity());
-	const CvCity* const pDestination = ::getCity(pTradeRoute->getDestinationCity());
-
-	if (pSource == NULL || pDestination == NULL)
+	const CvTradeRoute* const pRoute = kPlayer.getTradeRoute(iRouteID);
+	if (pRoute == NULL || pRoute->getYield() == NO_YIELD)
 		return false;
 
-	if (getDomainType() == DOMAIN_LAND && pSource->getArea() != pDestination->getArea())
-		// Land units cannot directly cross areas
+	const IDInfo& kSrc = pRoute->getSourceCity();
+	const IDInfo& kDst = pRoute->getDestinationCity();
+
+	// Source city must exist
+	const CvCity* const pSource = ::getCity(kSrc);
+	if (pSource == NULL)
 		return false;
 
-	// TAC - Trade Routes Advisor - koma13 - START
-	KmodPathFinder alt_finder;
+	KmodPathFinder pf;
 	const int iFlags = isIgnoreDanger() ? MOVE_IGNORE_DANGER : MOVE_NO_ENEMY_TERRITORY;
-	alt_finder.SetSettings(getGroup(), iFlags);
-	
-	if (!alt_finder.GeneratePath(pSource->plot()))
-	// TAC - Trade Routes Advisor - koma13 - END
-	{
+	pf.SetSettings(getGroup(), iFlags);
+
+	// Must be able to reach source
+	if (!pf.GeneratePath(pSource->plot()))
 		return false;
+
+	// Europe destination special case (no map city)
+	if (kDst.iID == CvTradeRoute::EUROPE_CITY_ID)
+	{
+		if (canCrossCoastOnly())
+			return false;
+		if (getDomainType() != DOMAIN_SEA)
+			return false;
+		if (!kPlayer.isYieldEuropeTradable(pRoute->getYield()))
+			return false;
+
+		// TODO: Perform actual pathfinding to a reachable Europe plot
+		return true;
 	}
 
-	// TAC - Trade Routes Advisor - koma13 - START
-	if (!alt_finder.GeneratePath(pDestination->plot()))
-	// TAC - Trade Routes Advisor - koma13 - END
-	{
+	// Normal city to city (i.e. non-Europe dest) case below
+	const CvCity* const pDestination = ::getCity(kDst);
+	if (pDestination == NULL)
 		return false;
-	}
+
+	// Land units can’t cross areas directly. Note that we can't do a similar
+	// optimization for ships since they could potentially cross multiple areas (cities,forts,rivers,lakes etc)
+	if (getDomainType() == DOMAIN_LAND && pSource->getArea() != pDestination->getArea())
+		return false;
+
+	// Check actual reachability to destination
+	if (!pf.GeneratePath(pDestination->plot()))
+		return false;
 
 	return true;
 }

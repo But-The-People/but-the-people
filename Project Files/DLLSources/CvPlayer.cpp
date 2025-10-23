@@ -11165,6 +11165,16 @@ namespace
 	void canonicalizePair(const IDInfo& s, const IDInfo& d,
 		IDInfo& outFirst, IDInfo& outSecond)
 	{
+		// Preserve direction whenever Europe is involved.
+		// Europe uses the special city id: CvTradeRoute::EUROPE_CITY_ID.
+		if (s.iID == CvTradeRoute::EUROPE_CITY_ID || d.iID == CvTradeRoute::EUROPE_CITY_ID)
+		{
+			outFirst = s;   // keep as (source, destination)
+			outSecond = d;
+			return;
+		}
+
+		// Non-Europe: collapse unordered (A,B) == (B,A) to de-dup path checks.
 		IDInfoLessDet less;
 		if (less(d, s)) { outFirst = d; outSecond = s; }
 		else { outFirst = s; outSecond = d; }
@@ -11181,51 +11191,85 @@ std::vector<CvTradeRoute*> CvPlayer::getViableTradeRoutesForUnit(const CvUnit& k
 	if (kUnit.getOwnerINLINE() != getID())
 		return out;
 
-	// Bucket pointers by unordered (src,dst)
+	// Bucket routes by (src,dst) with special handling for Europe.
+	// - For city↔city we canonicalize unordered (A,B) == (B,A) to avoid duplicate PF.
+	// - For Europe we keep (src,Europe) in that order because PF + checks differ.
 	std::map<TradeKey, std::vector<CvTradeRoute*>, TradeKeyLess> buckets;
 	std::vector<TradeKey> order;
 	order.reserve(m_tradeRoutes.size());
 
-	for (CvIdVector<CvTradeRoute>::const_iterator it = m_tradeRoutes.begin();
-		it != m_tradeRoutes.end(); ++it)
+	for (CvIdVector<CvTradeRoute>::const_iterator it = m_tradeRoutes.begin(); it != m_tradeRoutes.end(); ++it)
 	{
-		CvTradeRoute* const p = it->second;
-		if (!p) continue;
+		CvTradeRoute* const pRoute = it->second;
+		if (!pRoute)
+			continue;
 
-		IDInfo a, b;
-		canonicalizePair(p->getSourceCity(), p->getDestinationCity(), a, b);
-		const TradeKey key(a, b);
+		// Build key
+		IDInfo first, second;
+		canonicalizePair(pRoute->getSourceCity(), pRoute->getDestinationCity(), first, second);
+		const TradeKey key(first, second);
 
 		std::map<TradeKey, std::vector<CvTradeRoute*>, TradeKeyLess>::iterator pos = buckets.find(key);
 		if (pos == buckets.end())
 		{
 			std::vector<CvTradeRoute*> vec;
 			vec.reserve(4);
-			vec.push_back(p);
+			vec.push_back(pRoute);
 			buckets.insert(std::make_pair(key, vec));
-			order.push_back(key); // deterministic first-seen order
+			order.push_back(key); // deterministic “first-seen” order
 		}
 		else
 		{
-			pos->second.push_back(p);
+			pos->second.push_back(pRoute);
 		}
 	}
 
-	// One costly check per unordered pair using the UNIT
-	// Note: This way we only need to check each unique (src,dst,yield) tuple once
+	const CvPlayer& kPlayer = *this;
+
+	// One expensive call per key:
+	// - city↔city: any route in bucket is fine (yield doesn’t affect viability)
+	// - src→Europe: pick a route with a **tradable** yield for the probe
 	for (std::vector<TradeKey>::const_iterator ok = order.begin(); ok != order.end(); ++ok)
 	{
 		const std::map<TradeKey, std::vector<CvTradeRoute*>, TradeKeyLess>::const_iterator b = buckets.find(*ok);
 		if (b == buckets.end() || b->second.empty())
 			continue;
 
-		const int repId = b->second.front()->getID();
-		if (kUnit.canAssignTradeRoute(repId, true))
+		const bool bEurope = (ok->second.iID == CvTradeRoute::EUROPE_CITY_ID);
+
+		// Build the list we will emit from this bucket (and the representative ID for the single check)
+		int repId = -1;
+		std::vector<CvTradeRoute*> emit;
+
+		if (!bEurope)
 		{
-			// The below is needed to expand each viable route to get an entry per yield
-			// Pair is viable: emit all concrete routes (one per yield)
+			// City↔city: use the first route as representative (yield-independent checks)
+			repId = b->second.front()->getID();
+			emit = b->second; // emit all routes in the bucket if viable
+		}
+		else
+		{
+			// Europe: only yields tradable to Europe are candidates.
+			emit.reserve(b->second.size());
 			for (size_t i = 0; i < b->second.size(); ++i)
-				out.push_back(b->second[i]);
+			{
+				CvTradeRoute* const r = b->second[i];
+				if (r && kPlayer.isYieldEuropeTradable(r->getYield()))
+					emit.push_back(r);
+			}
+			if (emit.empty())
+				continue; // nothing tradable in this (src→Europe) bucket
+
+			// Representative route must use a tradable yield (so canAssign passes Europe checks)
+			repId = emit.front()->getID();
+		}
+
+		// Single costly viability check for the whole bucket
+		if (kUnit.canAssignTradeRoute(repId, /*bReusePath*/ true))
+		{
+			// Add all concrete routes for this key (filtered in Europe case)
+			for (size_t i = 0; i < emit.size(); ++i)
+				out.push_back(emit[i]);
 		}
 	}
 
