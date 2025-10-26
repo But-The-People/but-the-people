@@ -2910,47 +2910,6 @@
 		<Russian>[COLOR_UNIT_TEXT]Сибирский лесоруб[COLOR_REVERT] — уникальная национальная единица России, заменяющая [LINK=UNIT_LUMBERJACK]опытного лесоруба[\LINK].[NEWLINE]При назначении его [COLOR_HIGHLIGHT_TEXT]лесорубом[COLOR_REVERT] ([LINK=PROFESSION_LUMBERJACK]обычным[\LINK], [LINK=PROFESSION_VALUABLE_WOOD_LUMBERJACK]экзотического дерева[\LINK]) любая обработанная им клетка леса даст дополнительных пять единиц [LINK=YIELD_LUMBER]пиломатериалов[\LINK], [LINK=YIELD_VALUABLE_WOOD]экзотической древесины[\LINK].[PARAGRAPH:1]Сибирских лесорубов можно нанять в [LINK=CONCEPT_EUROPE]Европе[\LINK], а также их можно [LINK=CONCEPT_TRAINING]обучить[\LINK] в колонии со [LINK=BUILDING_SCHOOLHOUSE]школой[\LINK] или одном из её улучшений.</Russian>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_LUXURY_GOODS</Tag>
-		<English>
-			<Text>Luxury Goods</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</English>
-		<French>
-			<Text>Biens de luxe</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>Luxusgüter</Text>
-			<Gender>Neuter</Gender>
-			<Plural>1</Plural>
-		</German>
-		<Italian>
-			<Text>Produits de luxe</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Productos de lujo</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
-		<Russian>Предметы роскоши</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_LUXURY_GOODS_PEDIA</Tag>
-		<English>The colonists of the New World were not only producing and exporting goods to Europe but they were themselves consumers.[NEWLINE]Certain goods that the colonies could not produce themselves, especially luxury goods, were imported and sold for high prices in markets there.[NEWLINE]Some of the shopkeepers and traders became extremely rich.</English>
-		<French>Les colons du Nouveau Monde n'exportaient pas uniquement des marchandises, mais également des consommateurs. Certains biens que les colonies ne pouvaient pas produire elles-mêmes, en particulier les articles de luxe, étaient importés et vendus sur les marchés des colonies. Certains vendeurs et importateurs sont ainsi devenus particulièrement riches.</French>
-		<German>Die Kolonisten der Neuen Welt produzierten und exportierten nicht nur Waren, sondern waren natürlich auch selbst Konsumenten.[NEWLINE]Bestimmte Waren, die die Kolonien nicht selbst herstellen konnnten, vor allem Luxuswaren, wurden importiert und zu hohen Preisen auf Märkten, in Läden und in Handelszentren der Kolonien verkauft.[NEWLINE]Einige der Händler und Ladenbesitzer, die diese Geschäfte betrieben, wurden sehr reich.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_LUXURY_GOODS_STRATEGY</Tag>
-		<English>[COLOR_HIGHLIGHT_TEXT]Luxury goods[COLOR_REVERT] can be sold to colonists.[NEWLINE]Demand depends on the number of citizens of the city and their social status.[NEWLINE]They will pay directly in gold.[NEWLINE]A market is needed to develop domestic economy within a city.</English>
-		<French>Les [COLOR_HIGHLIGHT_TEXT]biens de luxe[COLOR_REVERT] et d'autres biens sont vendus aux colons. Le montant dépend fortement du nombre de citoyens dans la ville et de leur statut social. Ils paieront directement en or. Un [COLOR_HIGHLIGHT_TEXT]marché[COLOR_REVERT] est nécessaire pour activer le marché domestique d'une ville.</French>
-		<German>[COLOR_HIGHLIGHT_TEXT]Luxusgüter[COLOR_REVERT] aus Europa und andere Waren werden an die anderen Kolonisten verkauft. Die Nachfrage hängt zwar stark von der Anzahl reicher Bürger in der Stadt ab, führt aber zu konstanten Einnahmen. Ein [COLOR_UNIT_TEXT]Markt[COLOR_REVERT] ist notwendig um den Handel innerhalb einer Kolonie zu ermöglichen.</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_LYNX</Tag>
 		<English>Lynx</English>
 		<French>
@@ -3271,14 +3230,6 @@
 		<German>[COLOR_UNIT_TEXT]Berittene Konquistadoren[COLOR_REVERT] sind, wie auch [COLOR_UNIT_TEXT]Konquistadoren[COLOR_REVERT], sehr erfahren in Nahkampf-Situationen und eignen sich deshalb hervorragend für den Kampf gegen Ureinwohner oder berittene Einheiten. Allerdings eignen sie sich auf Grund der Pferde nur für den Kampf in offenem Gelände.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_MUSKETS_PEDIA</Tag>
-		<English>Muskets background</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_MUSKETS_STRATEGY</Tag>
-		<English>Muskets strategy</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_NATIVE</Tag>
 		<English>Native:Natives</English>
 		<French>
@@ -3455,14 +3406,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ORCA_STRATEGY</Tag>
 		<English>TXT_KEY_UNIT_ANIMAL_STRATEGY</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_ORE_PEDIA</Tag>
-		<English>Ore background</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_ORE_STRATEGY</Tag>
-		<English>Ore strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OXCART</Tag>
@@ -3709,80 +3652,6 @@
 		<German>Viele Europäer sind in die Neue Welt ausgewandert, weil sie hofften, dort ungehindert ihre religiöse Überzeugung entfalten zu können. Dieses historische Motiv wird durch das Spielfeature der Kreuze nachgebildet.[PARAGRAPH:2]Jeweils ein Kreuz entsteht pro Spielrunde automatisch in jeder Siedlung. Baut man eine [COLOR_BUILDING_TEXT]Kirche[COLOR_REVERT] und teilt ihr ein bis zwei Bürger im Beruf des [COLOR_UNIT_TEXT]Predigers[COLOR_REVERT] zu, entstehen zusätzliche Kreuze. Baut man anschließend eine [COLOR_BUILDING_TEXT]Kathedrale[COLOR_REVERT], entstehen doppelt so viele Kreuze pro predigendem Bürger. Setzt man statt eines einfachen Bürgers einen [COLOR_UNIT_TEXT]Mitreißenden Prediger[COLOR_REVERT] oder [COLOR_UNIT_TEXT]Katholischen Priester[COLOR_REVERT] ein, verdoppelt dies ebenfalls die Zahl der entstehenden Kreuze. Schuldknechte, Konvertierte Ureinwohner und Kleinkriminelle erzeugen dagegen weniger Kreuze.[PARAGRAPH:2]Im Europabildschirm kann man ablesen, wieviele Kreuze bislang zusammengekommen sind. Dabei werden die Kreuze aller Siedlungen addiert. Überschreitet die Zahl von Kreuzen einen bestimmten Schwellenwert, ist ein weiterer Europäer zur Auswanderung überzeugt, und will sein Heil in der Neuen Welt suchen. Er steht dann in Europa zur Überfahrt bereit. Mit jedem neuen Emigranten steigt die Zahl der Kreuze, die man ansparen muss, um einen weiteren Auswanderer zu gewinnen.[PARAGRAPH:2]Im Europabildschirm sind immer vier potentielle Emigranten zu sehen. Wird ein neuer Auswanderer freigeschaltet, wird er zufällig aus ihrem Kreis bestimmt. Durch Zahlung einer Geldprämie kann man die Freischaltung beschleunigen und sich gezielt einen der vier Auswanderungswilligen auswählen. Die Höhe dieser Geldprämie hängt davon ab, wieviele Kreuze noch fehlen.</German>
 		<Italian>I [COLOR_UNIT_TEXT]predicatori fanatici[COLOR_REVERT] sono la migliore fonte di [COLOR_HIGHLIGHT_TEXT]croci[COLOR_REVERT] che una colonia potrebbe volere. Assegnandone uno alla professione di predicatore in una [COLOR_BUILDING_TEXT]chiesa[COLOR_REVERT] o [COLOR_BUILDING_TEXT]cattedrale[COLOR_REVERT] si raddoppia il numero di [COLOR_HIGHLIGHT_TEXT]croci[COLOR_REVERT] prodotte da quell'edificio!</Italian>
 		<Spanish>Los [COLOR_UNIT_TEXT]Predicadores exaltados[COLOR_REVERT] son la mejor fuente de [COLOR_HIGHLIGHT_TEXT]Cruces[COLOR_REVERT] que puede querer una colonia. Asignar a uno de ellos a la profesión de Predicador en una [COLOR_BUILDING_TEXT]Iglesia[COLOR_REVERT] o [COLOR_BUILDING_TEXT]Catedral[COLOR_REVERT] doblará el número de [COLOR_HIGHLIGHT_TEXT]Cruces[COLOR_REVERT] que produzca ese edificio.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_PREMIUM_COATS</Tag>
-		<English>Premium Coats</English>
-		<French>
-			<Text>Manteaux de qualité</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>Teure Pelzkleidung</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</German>
-		<Italian>
-			<Text>Abbigliamento di pelliccia costoso</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Ropa de pieles cara</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
-		<Russian>Премиумные шубы</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_PREMIUM_COATS_PEDIA</Tag>
-		<English>Fur coats, hats, and other garments were highly valued by monarchs and aristocrats even before the discovery of the New World. Rare skins could fetch exorbitant prices for the trapper and coat maker lucky enough to find them. One can imagine the fur industry's reaction upon the discovery of an entirely new continent brimming over with the pelts of animals unlike anything else on earth. So popular were the furs of the New World, beavers especially, that pelts were a form of currency in many remote trading posts.</English>
-		<French>A la découverte du Nouveau Monde, chapeaux, manteaux et autres vêtements en fourrure sont déjà très appréciés par les monarques et les aristocrates. Les peaux rares peuvent rapporter des fortunes aux trappeurs et aux fabricants de manteaux assez chanceux pour mettre la main dessus. Par conséquent, on peut imaginer sans peine la réaction de l'industrie de la fourrure en apprenant la découverte d'un continent rempli d'animaux aux fourrures exceptionnelles. Les fourrures du Nouveau Monde, et en particulier la fourrure de castor, deviendront si populaires que les peaux deviendront une forme de monnaie dans beaucoup de comptoirs commerciaux isolés.</French>
-		<German>Pelzmäntel, Pelzhüte und andere Kleidungsstücke aus Fell wurden von Monarchen und Aristokraten schon vor der Entdeckung der Neuen Welt hoch geschätzt. Für seltene Tierhäute konnten Trapper und Pelzhändler exorbitante Preise verlangen, wenn sie das Glück hatten, an solch ein Fell heranzukommen. Man kann sich die Reaktion der Pelzhändler auf die Entdeckung eines ganzen Kontinents vorstellen, der Felle und Häute von Tieren, die es sonst nirgendwo auf der Erde gab, im Überfluss bot. Diese Produkte aus der Neuen Welt, besonders Biberfelle, waren so beliebt, dass sie für viele abgelegene Handelsposten tatsächlich zu einer Art Währung wurden.</German>
-		<Italian>Mantelli, cappelli e altri capi d'abbigliamento in pelliccia erano altamente apprezzati da monarchi e aristocratici ancor prima della scoperta del Nuovo Mondo. Le pellicce rare potevano procurare un ragguardevole profitto al cacciatore e al pellicciaio abbastanza fortunati da trovarle. È quindi possibile immaginare la reazione dell'industria delle pellicce alla scoperta di un continente completamente nuovo zeppo di animali da pelliccia diversi da tutti quelli conosciuti. Le pellicce del Nuovo Mondo erano così popolari, in particolare quelle dei castori, che divennero una forma di valuta in molti remoti centri commerciali.</Italian>
-		<Spanish>Los sombreros, abrigos y otras prendas de piel eran muy apreciados entre la monarquía y la aristocracia, antes incluso del descubrimiento del Nuevo Mundo. Las pieles raras podían alcanzar precios exorbitantes para el trampero y el confeccionista de abrigos que tuvieran la suerte de encontrarlas. Ya se puede imaginar uno la reacción de la industria tras descubrir un nuevo continente que estaba totalmente repleto de pieles como nunca se habían visto. Tan populares se hicieron las pieles del Nuevo Mundo, especialmente las de los castores, que se convirtieron en moneda de cambio en muchos puestos comerciales apartados de la civilización.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_PREMIUM_COATS_STRATEGY</Tag>
-		<English>Premium coats strategy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_PREMIUM_FUR</Tag>
-		<English>Premium Fur</English>
-		<French>
-			<Text>Fourrure de qualité</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>Hochwertige Pelze</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</German>
-		<Italian>
-			<Text>Pellicce di alta qualità</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Pieles de alta calidad</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</Spanish>
-		<Russian>Премиальный мех</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_PREMIUM_FUR_PEDIA</Tag>
-		<English>The wide variety of exotic fauna in the New World fascinated the citizenry of Europe, but none captured their hearts quite like the beaver. The pelts of this small, semi-aquatic mammal became a highly-valued commodity in French and English colonies. The water-resistant nature of the beaver's fur made it the perfect canvas for the haberdasher - the hat maker - to create clothing which could keep its wearer both fashionable and dry. Beaver skin hats remained popular in Europe until the 19th century.</English>
-		<French>A la découverte du Nouveau Monde, les citoyens européens sont fascinés par sa riche faune exotique et tout particulièrement par le castor. La peau de ce petit mammifère semi-aquatique devient alors une marchandise très prisée dans les colonies anglaises et françaises. En raison de son imperméabilité, la fourrure de castor est une matière parfaite pour les chapeliers, qui créent avec des couvre-chefs permettant d'être à la mode tout en restant au sec. Les chapeaux en fourrure de castor resteront populaires en Europe jusqu'au XIXe siècle.</French>
-		<German>Die große Vielfalt der exotischen Fauna in der Neuen Welt faszinierte die europäischen Bürger, doch vom Biber waren sie ganz besonders angetan. Der Pelz dieses kleinen Säugetiers wurde in den französischen und englischen Kolonien zu einer wertvollen Ware. Da das Fell des Bibers wasserdicht ist, war es das perfekte Material für Hutmacher, die praktische und gleichzeitig modische Kleidungsstücke daraus herstellten. Solche Hüte waren in Europa bis ins 19. Jahrhundert hinein sehr beliebt.</German>
-		<Italian>La grande varietà della fauna esotica del Nuovo Mondo affascinò i cittadini europei, ma nessun animale conquistò i loro cuori come il castoro. Le pellicce di questo piccolo mammifero semi-acquatico divennero un bene di grande valore nelle colonie inglesi e francesi. La natura impermeabile della pelliccia del castoro la rendeva la materia prima ideale per l'haberdasher, il cappellaio, che poteva così creare vestiti alla moda e che allo stesso tempo fossero caldi e impermeabili. I cappelli di pelliccia di castoro rimasero popolari in Europa fino al XIX secolo.</Italian>
-		<Spanish>La gran variedad de fauna exótica del Nuevo Mundo fascinó a los ciudadanos de Europa, pero ningún animal los cautivó más que el castor. La piel de este mamífero semiacuático se convirtió en un bien muy preciado en las colonias francesas e inglesas. La naturaleza impermeable del pelaje del castor lo convirtió en la materia prima ideal para que el "haberdasher" el sombrerero y sastre masculino creara prendas para que su portador fuera seco y a la última moda. Los gorros de piel de castor siguieron siendo populares en Europa hasta el s. XIX.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_PREMIUM_FUR_STRATEGY</Tag>
-		<English>Premium fur strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PRIEST</Tag>
@@ -4081,78 +3950,6 @@
 		<German>[COLOR_UNIT_TEXT]Ranger[COLOR_REVERT] stellen eine [COLOR_HIGHLIGHT_TEXT]Eliteeinheit[COLOR_REVERT] dar und sind Experten für Gelände und versteckte Operationen.[NEWLINE]Man sollte sie weise für Hinterhalte oder für Aktionen tief hinter den feindlichen Linien nutzen.[NEWLINE]Waldläufer erhalten Boni, wenn sie in bewachsenen Gebieten kämpfen.[NEWLINE]Diese Boni genießen Waldläufer sowohl im Angriff als auch in der Verteidigung. Während also die andere auf den Kampf im Wald spezialisierte Einheit, der [LINK=UNIT_NATIVE_MERC]Indianische Söldner[\LINK], besonders stark ist, wenn er in der Wildnis angreift, ist der Waldläufer stärker, wenn er verteidigt.[PARAGRAPH:1]Sie können nur durch [LINK=CONCEPT_EVENTS]Zufallsereignisse[\LINK] erhalten werden.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_RAW_SALT</Tag>
-		<English>Rock Salt</English>
-		<French>
-			<Text>Sel brut</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Steinsalz</Text>
-			<Gender>Neuter</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Salgemma</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Sal gema</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Каменная соль</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_RAW_SALT_PEDIA</Tag>
-		<English>Edible salt is a mineral, one of the few rocks humans eat.[NEWLINE]Salt is necessary for the survival of all living creatures, including humans.[NEWLINE]It helps regulate our body's fluid balance.[NEWLINE]Salt is one of the basic tastes.[NEWLINE]In the past salt was difficult to obtain, but had great importance in food preservation and as a vital food additive.[NEWLINE]Therefore it's been a highly valued trade item throughout history.[NEWLINE]Wars were fought over it; states were formed and destroyed because of it.[NEWLINE]Roman soldiers were partially paid with salt, and this is still evident in the English language as the word 'salary' derives from the Latin word 'salarium' that means payment in salt (Latin sal), as well as the phrase "worth one's salt".[NEWLINE]It was also of high value to the Hebrews, Greeks and other ancient people.[NEWLINE]During the late Roman Empire and throughout the Middle Ages salt was a precious commodity carried along the salt roads into the heartland of the Germanic tribes.[NEWLINE]Cities, states and dukedoms along the salt roads exacted heavy duties and taxes for the salt passing through their territories.[NEWLINE]This practice caused wars.[NEWLINE]It even created cities such as Munich in 1158 when the Duke of Bavaria, Henry XII, called The Lion, decided that the bishops of Freising no longer needed their salt revenue (Wikipedia).</English>
-		<French>Le sel naturel n'est pas raffiné et contient encore tous ses minéraux naturels. Les sels naturels ont donc des propriétés gustatives et un aspect différent suivant la quantité de minéraux qu'ils contiennent. Ainsi, la fleur de sel ou le sel de mer récolté à la main ont une saveur unique qui change d'une région à une autre.</French>
-		<German>Salz zählt seit jeher altersher und überall in der Welt zu den begehrtesten Gewürzen. Viele traditionelle Fleisch- und Milchspeisen können ohne Salz nicht zubereitet werden. In Südamerika wurde Salz häufig durch das Auswaschen, Filtern und Einkochen salziger Erde gewonnen.</German>
-		<Italian>Il sale e anzitutto un esaltatore di sapidita usato in tutte le tradizioni culinarie conosciute ed e ampiamente sfruttato nell'industria conserviera sia come ingrediente che come mezzo di conservazione dei cibi. Quest'ultima proprieta e dovuta all'effetto disidratante che il sale ha sui materiali con cui viene a contatto, da cui estrae l'acqua per osmosi. Sale da cucina additivato di elementi particolari puo essere prescritto per curare o prevenire alcune malattie (ad esempio il sale iodato per il gozzo o addizionato di cloruro di potassio per l'ipertensione). Il sale e anche un reagente usato in chimica, ad esempio per migliorare la precipitazione dei prodotti al termine di una saponificazione. Un uso importante nell'industria chimica e come materia prima negli impianti cloro-soda, in cui viene eseguita l'elettrolisi della salamoia di cloruro di sodio per ottenere cloro gassoso, idrogeno e soda caustica, tutte materie prime fondamentali per l'industria chimica. Il sale trova impiego anche come anti-gelo: sparso sulle superfici ghiacciate, ne provoca lo scioglimento, dato che una miscela di ghiaccio e sale forma un eutettico il cui punto di fusione e inferiore ai meno 10 gradi celsius. - Wikipedia</Italian>
-		<Spanish>La sal se puede emplear en la alimentacion con dos objetivos diferentes, por un lado su capacidad de realzar ciertos sabores hace que sea un condimento muy habitual, por otro lado su capacidad de conservar alimentos hace que sea adecuado para la elaboracion de salazones y encurtidos. Se puede decir que el uso de la sal en la alimentacion se centra en estas dos actividades. Muchos de los alimentos poseen una etimologias que recuerdan a la sal como uno de los ingredientes base, ejemplos de ello son: las ensaladas, las salchichas (proveniente del latin salsus: en sal) y las salsas, el salmorejo, etc. El uso de sal en las elaboraciones de ciertos alimentos ha ido descendiendo desde el siglo XVIII, esta afirmacion puede comprobarse en los libros de recetas en los que puede verse un uso 'excesivo' de sal para los gustos de hoy en dia. Se han realizado investigaciones acerca del consumo de sal en los humanos occidentales, y se ha podido comprobar que el 10% de la sal que se ingiere proviene de forma natural de los alimentos, el 15% proviene de lo que se anade durante la elaboraccion casera de los alimentos y el 75% proviene de lo que anaden las industrias alimentarias en el procesado de los alimentos. Estos estudios muestran que un britanico medio a finales del siglo XX consumia cerca de 10 gramos de sal (en mas detalle 10.7 gramos de sal en un varon y 8.0 gramos para las mujeres). Estos datos indican que una dieta baja en sal debe regularse principalmente en la compra de los productos ademas de reducir su cantidad durante el cocinado. Esta probado que las dietas bajas en sal son pobres en sabores, pudiendo afectar incluso a los aromas. La sal al ser consumida induce a provocar un mayor apetito por los alimentos, este efecto es aprovechado a veces por la industria de alimentacion e incluye a veces un alto contenido de sal en los alimentos con el objeto de que se consuma mas. De todas formas la sal posee ventajas en el procesado de alimentos: resulta barata, potencia sabores, elimina sabores acidos, extiende la vida de los alimentos, hace que pesen mas ya que retiene humedad. Algunos autores han investigado la preferencia animal por la sal desde un fundamento endocrino Uno de los sistemas hormonales para la regulacion del sodio en el cuerpo es angiotensina, se ha demostrado que esta hormona es capaz de regular la sensacion de sed, se sabe que esta hormona puede tener influencia en la preferencia psicologica por la sal. Existen casos investigados en los que un tratamiento hormonal (mediante la adrenomedulina denominada ADM) puede llegar a reducir el apetito por la sal. El apetito innato de los animales (incluido el hombre) por la sal ha despertado numerosas investigaciones acerca del efecto y preferencias por el sabor salado, parece ser que los recien nacidos no parecen distinguir el sabor salado y no es hasta pasados cuatro meses desde su nacimiento cuando empiezan a distinguirlo. De la misma forma se sabe la dependencia de la sal disminuye si se disminuye su consumo, este efecto de dependencia dura solo un par de semanas y posteriormente las personas se acostumbran a una dieta baja en sales. El apetito por la sal puede tener una dependencia climatica, por ejemplo, las personas que viven en climas frios pueden tener en sus gastronomias locales una presencia mayor por los alimentos con fuerte sabor salado. - Wikipedia</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_RAW_SALT_STRATEGY</Tag>
-		<English>Rock salt strategy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_RED_PEPPER</Tag>
-		<English>Red Pepper</English>
-		<French>
-			<Text>Piment rouge</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Roter Pfeffer</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Pepe rosso</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Pimiento rojo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Красный перец</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_RED_PEPPER_PEDIA</Tag>
-		<English>Cayenne pepper, also known as guinea spice or red pepper, is a hot red chili pepper that is used to refine dishes or as a medicine.[NEWLINE]Named for the city of Cayenne in French Guiana, it is a cultivar of Capsicum annuum related to bell peppers, jalapenos, and others.[NEWLINE]The Capsicum genus is in the nightshade family.</English>
-		<French>Capsicum frutescens est un « piment de Cayenne ». Il appartient à la famille des Solanaceae et est cultivé pour ses fruits à la saveur particulièrement piquante. Sur l'échelle de Scoville, il est noté de 30 000 jusqu'à 50 000. Il en existe plusieurs variétés, dont Capsicum frutescens tabasco qui entre dans la composition de la sauce du même nom.</French>
-		<German>Der Cayenne-Pfeffer, auch bekannt als Guinea-Gewürz oder auch Roter Pfeffer, ist ein scharfer roter Chili-Pfeffer, der genutzt wird, um Gerichte zu verfeinern, oder auch als Medizin Anwendung findet. Benannt nach der Stadt Cayenne in Französisch-Guayana, ist sie eine Sorte von Capsicum annuum, verwandt mit Paprika, Jalapenos und anderen. Capsicum genus zählt zu den Nachtschattengewächsen.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_RED_PEPPER_STRATEGY</Tag>
-		<English>Red pepper strategy</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_RED_PEPPER_PLANTER</Tag>
 		<English>
 			<Text>Expert Red Pepper Planter:Expert Red Pepper Planters</Text>
@@ -4445,51 +4242,6 @@
 		<German>Die Landtruppen des Königs verfügen mit der [LINK=PROFESSION_ROYAL_LIGHT_INFANTRY]Königlichen Leichten Infanterie[\LINK] (entspricht der Kolonialmiliz) und der [LINK=PROFESSION_ROYAL_LINE_INFANTRY]Königlichen Linieninfanterie[\LINK] (entspricht der Linieninfanterie) über gleich starke Militärberufe wie die Kolonialnationen. Allerdings sind die Einheiten, die diese Berufe ausüben, stärker: Die [COLOR_UNIT_TEXT]Königliche Leichte Infanterie[COLOR_REVERT] verfügt automatisch über die Beförderungen [LINK=PROMOTION_VETERAN1]Veteran I[\LINK], [LINK=PROMOTION_VETERAN2]Veteran II[\LINK] (und damit insgesamt einem Bonus von 20% auf die Kampfstärke und eine Rückzugswahrscheinlichkeit von 20%). Außerdem besitzt die Königliche Leichte Infanterie einen Bonus von 10% beim Angriff auf Siedlungen. Die [COLOR_UNIT_TEXT]Königliche Linieninfanterie[COLOR_REVERT] verfügt automatisch über die Beförderungen [LINK=PROMOTION_VETERAN1]Veteran I[\LINK], [LINK=PROMOTION_VETERAN2]Veteran II[\LINK] und [LINK=PROMOTION_BAYONET]Bajonettkämpfer[\LINK] (und damit insgesamt einem Bonus von 20% auf die Kampfstärke und je einen Bonus von 20% gegen Nahkampf- und Schießpulvereinheiten). Außerdem hat die Königliche Linieninfanterie einen Bonus von 50% beim Angriff auf Siedlungen.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_RUM</Tag>
-		<English>Rum</English>
-		<French>
-			<Text>Rhum</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Rum</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Rum</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Ron</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Ром</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_RUM_PEDIA</Tag>
-		<English>Rum background</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_RUM_STRATEGY</Tag>
-		<English>Rum strategy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SAILCLOTH_PEDIA</Tag>
-		<English>Sails have been made for all of recorded history.[NEWLINE]Typically sailcloth is made from flax (linen), hemp or cotton in various forms including canvas.[NEWLINE]At the time of the colonization of the New World hemp was the most common raw material.</English>
-		<French>Les voiles ont été fabriquées tout au long de l'histoire.[NEWLINE]Le tissu à voile est généralement fabriqué à partir de lin, de chanvre ou de coton, sous différentes formes, y compris la toile.[NEWLINE]À l'époque de la colonisation du Nouveau Monde, le chanvre était la matière première la plus courante.</French>
-		<German>Segel wurden schon seit der Antike hergestellt.[NEWLINE]Typischerweise wird Segeltuch aus Flachs (Leinen), Hanf oder Baumwolle in verschiedenen Formen einschließlich Leinwand hergestellt.[NEWLINE]Zu Zeiten der Kolonialisierung der Neuen Welt war Hanf der häufigste Rohstoff.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SAILCLOTH_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Master sailmakers[COLOR_REVERT] produce double the amount of [COLOR_HIGHLIGHT_TEXT]sailcloth[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]hemp[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]flax[COLOR_REVERT].</English>
-		<French>Les [COLOR_UNIT_TEXT]maîtres voiliers[COLOR_REVERT] produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]voiles[COLOR_REVERT] à partir de [COLOR_HIGHLIGHT_TEXT]chanvre[COLOR_REVERT].</French>
-		<German>[COLOR_UNIT_TEXT]Meister-Segelmacher[COLOR_REVERT] verarbeiten doppelt soviel [COLOR_HIGHLIGHT_TEXT]Hanf[COLOR_REVERT] zu [COLOR_HIGHLIGHT_TEXT]Segeltuch[COLOR_REVERT], wie andere Kolonisten.</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_SAILCLOTH_MAKER</Tag>
 		<English>
 			<Text>Master Sailmaker:Master Sailmakers</Text>
@@ -4529,45 +4281,6 @@
 		<English>If you need a lot of [LINK=YIELD_SAILCLOTH]sailcloth[\LINK] fast, the [COLOR_UNIT_TEXT]master sailmaker[COLOR_REVERT] will be of great help.[NEWLINE]In the [LINK=PROFESSION_SAILCLOTH_MAKER]sailmaker[\LINK] profession, he makes double what an untrained colonist would from [LINK=YIELD_HEMP]hemp[\LINK] or [LINK=YIELD_FLAX]flax[\LINK].[PARAGRAPH:1]Master sailmakers can be hired in [LINK=CONCEPT_EUROPE]Europe[\LINK], and they can also [LINK=CONCEPT_TRAINING]apprentice[\LINK] in a colony with a [LINK=BUILDING_COLLEGE]college[\LINK] or one of its upgrades.</English>
 		<French>Si vous avez besoin rapidement de beaucoup de [LINK=YIELD_SAILCLOTH]Toile à voile[\LINK], le [COLOR_UNIT_TEXT]Maître voilier[COLOR_REVERT] peut vous être d'une grande aide. Dans la profession de [LINK=PROFESSION_SAILCLOTH_MAKER]Voilier[\LINK], il est capable de créer deux fois plus de ces ressources que les colons ordinaires le feraient à partir de [LINK=YIELD_HEMP]chanvre[\LINK].[PARAGRAPH:1]Les maîtres voiliers peuvent être recrutés en [LINK=CONCEPT_EUROPE]Europe[\LINK], et ils peuvent également être [LINK=CONCEPT_TRAINING]formés[\LINK] dans une colonie possédant un [LINK=BUILDING_COLLEGE]College[\LINK] ou l'une de ses améliorations.</French>
 		<German>Wenn Sie schnell eine Menge [LINK=YIELD_SAILCLOTH]Segeltuch[\LINK] benötigen, kann der [COLOR_UNIT_TEXT]Meister-Segelmacher[COLOR_REVERT] eine große Hilfe sein.[NEWLINE]Im Beruf [LINK=PROFESSION_SAILCLOTH_MAKER]Segelmacher[\LINK] ist er in der Lage, die doppelte Menge dieses Produktes aus [LINK=YIELD_HEMP]Hanf[\LINK] zu erzeugen, als es normale Kolonisten tun würden.[PARAGRAPH:1]Meister-Segelmacher können in [LINK=CONCEPT_EUROPE]Europa[\LINK] rekrutiert werden, und sie können auch in einer Kolonie mit einem [LINK=BUILDING_COLLEGE]College[\LINK] oder einer seiner Erweiterungen [LINK=CONCEPT_TRAINING]ausgebildet[\LINK] werden.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SALT</Tag>
-		<English>Salt</English>
-		<French>
-			<Text>Sel alimentaire</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Salz</Text>
-			<Gender>Neuter</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Sale</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Sal</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Соль</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SALT_PEDIA</Tag>
-		<English>Edible salt is a mineral, one of the few rocks humans eat.[NEWLINE]Salt is necessary for the survival of all living creatures, including humans.[NEWLINE]Salt helps regulate the body's fluid balance.[NEWLINE]Salt is one of the basic tastes.[NEWLINE]In the past salt was difficult to obtain, though it had great importance in food preservation and as a food additive.[NEWLINE]It has been a highly valued trade item throughout history.[NEWLINE]Wars were fought over it; states were formed and destroyed because of it.[NEWLINE]Roman soldiers were partially paid with salt, and this is still evident in the English language as the word 'salary' derives from the Latin 'salarium' that means payment in salt, as well as the phrase "worth one's salt".[NEWLINE]It was also of high value to the Hebrews, Greeks and other ancient people.[NEWLINE]During the late Roman Empire and throughout the Middle Ages salt was a precious commodity carried along the salt roads into the heartland of the Germanic tribes.[NEWLINE]Cities, states and dukedoms along the salt roads exacted heavy duties and taxes for the salt passing through their territories.[NEWLINE]This practice caused wars.[NEWLINE]It even created cities such as Munich in 1158 when the Duke of Bavaria, Henry XII, called The Lion, decided that the bishops of Freising no longer needed their salt revenue (Wikipedia).</English>
-		<French>Le sel de table, sel alimentaire ou sel de cuisine, est composé essentiellement de chlorure de sodium. Il se présente sous différentes formes : gros sel (ou sel gros), sel fin, fleur de sel.</French>
-		<German>Salz zählt von altersher und überall in der Welt zu den begehrtesten Gewürzen. Viele traditionelle Fleisch- und Milchspeisen können ohne Salz nicht zubereitet werden. In Südamerika wurde Salz häufig durch das Auswaschen, Filtern und Einkochen salziger Erde gewonnen.</German>
-		<Italian>Il sale e anzitutto un esaltatore di sapidita usato in tutte le tradizioni culinarie conosciute ed e ampiamente sfruttato nell'industria conserviera sia come ingrediente che come mezzo di conservazione dei cibi. Quest'ultima proprieta e dovuta all'effetto disidratante che il sale ha sui materiali con cui viene a contatto, da cui estrae l'acqua per osmosi. Sale da cucina additivato di elementi particolari puo essere prescritto per curare o prevenire alcune malattie (ad esempio il sale iodato per il gozzo o addizionato di cloruro di potassio per l'ipertensione). Il sale e anche un reagente usato in chimica, ad esempio per migliorare la precipitazione dei prodotti al termine di una saponificazione. Un uso importante nell'industria chimica e come materia prima negli impianti cloro-soda, in cui viene eseguita l'elettrolisi della salamoia di cloruro di sodio per ottenere cloro gassoso, idrogeno e soda caustica, tutte materie prime fondamentali per l'industria chimica. Il sale trova impiego anche come anti-gelo: sparso sulle superfici ghiacciate, ne provoca lo scioglimento, dato che una miscela di ghiaccio e sale forma un eutettico il cui punto di fusione e inferiore ai meno 10 gradi celsius. - Wikipedia</Italian>
-		<Spanish>La sal se puede emplear en la alimentacion con dos objetivos diferentes, por un lado su capacidad de realzar ciertos sabores hace que sea un condimento muy habitual, por otro lado su capacidad de conservar alimentos hace que sea adecuado para la elaboracion de salazones y encurtidos. Se puede decir que el uso de la sal en la alimentacion se centra en estas dos actividades. Muchos de los alimentos poseen una etimologias que recuerdan a la sal como uno de los ingredientes base, ejemplos de ello son: las ensaladas, las salchichas (proveniente del latin salsus: en sal) y las salsas, el salmorejo, etc. El uso de sal en las elaboraciones de ciertos alimentos ha ido descendiendo desde el siglo XVIII, esta afirmacion puede comprobarse en los libros de recetas en los que puede verse un uso 'excesivo' de sal para los gustos de hoy en dia. Se han realizado investigaciones acerca del consumo de sal en los humanos occidentales, y se ha podido comprobar que el 10% de la sal que se ingiere proviene de forma natural de los alimentos, el 15% proviene de lo que se anade durante la elaboraccion casera de los alimentos y el 75% proviene de lo que anaden las industrias alimentarias en el procesado de los alimentos. Estos estudios muestran que un britanico medio a finales del siglo XX consumia cerca de 10 gramos de sal (en mas detalle 10.7 gramos de sal en un varon y 8.0 gramos para las mujeres). Estos datos indican que una dieta baja en sal debe regularse principalmente en la compra de los productos ademas de reducir su cantidad durante el cocinado. Esta probado que las dietas bajas en sal son pobres en sabores, pudiendo afectar incluso a los aromas. La sal al ser consumida induce a provocar un mayor apetito por los alimentos, este efecto es aprovechado a veces por la industria de alimentacion e incluye a veces un alto contenido de sal en los alimentos con el objeto de que se consuma mas. De todas formas la sal posee ventajas en el procesado de alimentos: resulta barata, potencia sabores, elimina sabores acidos, extiende la vida de los alimentos, hace que pesen mas ya que retiene humedad. Algunos autores han investigado la preferencia animal por la sal desde un fundamento endocrino Uno de los sistemas hormonales para la regulacion del sodio en el cuerpo es angiotensina, se ha demostrado que esta hormona es capaz de regular la sensacion de sed, se sabe que esta hormona puede tener influencia en la preferencia psicologica por la sal. Existen casos investigados en los que un tratamiento hormonal (mediante la adrenomedulina denominada ADM) puede llegar a reducir el apetito por la sal. El apetito innato de los animales (incluido el hombre) por la sal ha despertado numerosas investigaciones acerca del efecto y preferencias por el sabor salado, parece ser que los recien nacidos no parecen distinguir el sabor salado y no es hasta pasados cuatro meses desde su nacimiento cuando empiezan a distinguirlo. De la misma forma se sabe la dependencia de la sal disminuye si se disminuye su consumo, este efecto de dependencia dura solo un par de semanas y posteriormente las personas se acostumbran a una dieta baja en sales. El apetito por la sal puede tener una dependencia climatica, por ejemplo, las personas que viven en climas frios pueden tener en sus gastronomias locales una presencia mayor por los alimentos con fuerte sabor salado. - Wikipedia</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_SALT_STRATEGY</Tag>
-		<English>To make the most of a bountiful salt deposit, bring in an [COLOR_UNIT_TEXT]expert salt miner[COLOR_REVERT] to work it.[NEWLINE]Expert salt miners can produce double the quantity of [COLOR_HIGHLIGHT_TEXT]rock salt[COLOR_REVERT] from a salt deposit.</English>
-		<French>Pour produire davantage de sel, utiliser un [COLOR_UNIT_TEXT]expert mineur de sel[COLOR_REVERT]. Les experts mineurs de sel produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]sel brut[COLOR_REVERT] que les autres colons.</French>
-		<German>Um ein Salzvorkommen optimal zu nutzen, sollten Sie einen [COLOR_UNIT_TEXT]Erfahrenen Salzminenarbeiter[COLOR_REVERT] darauf arbeiten lassen.[NEWLINE]Erfahrene Salzminenarbeiter können doppelt so viel [COLOR_HIGHLIGHT_TEXT]Steinsalz[COLOR_REVERT] wie andere Siedler von einem Salzvorkommen fördern!</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SCOUT</Tag>
@@ -6428,6 +6141,7 @@
 		<German>[COLOR_UNIT_TEXT]Feindselige Ureinwohner[COLOR_REVERT] können nicht erworben werden.[NEWLINE]Sie sind dem Spieler gegenüber feindlich gesonnen und meist nur in [COLOR_HIGHLIGHT_TEXT]feindseligen Ureinwohnerdörfern[COLOR_REVERT] zu finden.[NEWLINE]Sie werden ihr Dorf bis zum Tod verteidigen und greifen den Spieler an, wenn dieses zerstört wird.</German>
 	</TEXT>
 </Civ4GameText>
+
 
 
 
