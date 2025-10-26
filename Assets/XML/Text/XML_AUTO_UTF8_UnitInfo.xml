@@ -5000,47 +5000,6 @@
 		<Spanish>Los [COLOR_UNIT_TEXT]Tramperos expertos[COLOR_REVERT] son los mejores cazadores de las más bellas pieles del Nuevo Mundo. Asignar a un Trampero experto a la profesión de Trampero de pieles doblará la cantidad de [COLOR_HIGHLIGHT_TEXT]Pieles[COLOR_REVERT] que se reciban de esa casilla.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_TREASURE</Tag>
-		<English>Treasure</English>
-		<French>
-			<Text>Trésor:Trésors</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</French>
-		<German>
-			<Text>Schatz:Schätze</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</German>
-		<Italian>
-			<Text>Tesoro:Tesori</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Tesoro:Tesoros</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</Spanish>
-		<Russian>Сокровище</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_TREASURE_PEDIA</Tag>
-		<English>Europeans came to the New World looking for a quicker way to access the silks and spices of the Far East.[NEWLINE]While they failed in that respect, they were more than pleased to find that the rulers of many of the Indigenous populations in the New World were draped in gold.[NEWLINE]The Europeans wasted no time trying to acquire as much of it as possible.[NEWLINE]Entire Native villages were emptied and forced to labour in mines to sate the European lust for wealth.[NEWLINE]Others, like Francisco Pizarro, took more creative - if equally ruthless - measures to secure their fortunes.[NEWLINE]In his quest for treasure, Pizarro kidnapped the leader of the Inca Empire, Atahualpa, and ransomed him in return for a room filled with gold.[NEWLINE]As so often happens, once the ransom was paid the victim was killed.</English>
-		<French>Quand ils découvrent le Nouveau Monde, les Européens recherchent en fait un chemin plus rapide pour accéder à la soie et aux épices de l'Extrême-Orient. S'ils n'atteignent pas ce but, ils découvrent en revanche avec plaisir que les chefs de beaucoup de populations indigènes du Nouveau Monde sont drapés d'or. Bien entendu, les Européens tentent aussitôt de s'emparer d'un maximum de ces richesses. Des villages indigènes entiers sont vidés de leur population, leurs habitants sont contraints de travailler dans des mines pour satisfaire la soif de richesses des Européens. D'autres, comme Francisco Pizarro, vont prendre des mesures plus créatives mais tout aussi impitoyables pour s'enrichir. Dans sa quête de trésors, Pizarro enlève l'empereur inca, Atahualpa, et exige une pièce remplie d'or comme rançon. D'après la légende, il aurait obtenu exactement ce qu'il avait demandé.</French>
-		<German>Die Europäer kamen in die Neue Welt, weil sie auf der Suche nach einem schnelleren Seiden- und Gewürzhandelsweg in den Fernen Osten waren. Auch wenn sie in dieser Hinsicht scheiterten, waren sie doch mehr als erfreut festzustellen, dass sich die Herrscher der zahlreichen Ureinwohnerstämme der Neuen Welt in glänzendes Gold hüllten. Die Europäer verschwendeten keine Zeit und versuchten sofort, so viel wie möglich von diesen Schätzen für sich zusammenzuraffen. Komplette Ureinwohnerdörfer wurden versklavt und zur Arbeit in Minen gezwungen, um die Gier der Europäer nach diesem Reichtum zu stillen. Andere, wie etwa Francisco Pizarro, schlugen kreativere - doch gleichermaßen skrupellose - Wege ein, um sich ihren Anteil am Wohlstand zu sichern. In seinem Verlangen nach den Schätzen der Neuen Welt entführte Pizarro den Anführer des Inkareiches Atahualpa und forderte als Lösegeld einen Raum voller Gold. Die Legende besagt, dass diese Forderung erfüllt wurde.</German>
-		<Italian>Gli europei arrivarono nel Nuovo Mondo cercando una via più rapida per arrivare alle sete e alle spezie del lontano oriente. Pur avendo fallito sotto quel punto di vista, furono comunque parecchio contenti di scoprire che molti dei leader delle popolazioni native erano letteralmente ricoperti d'oro. E gli europei non persero certo tempo, cercando di ottenerne il più possibile. Interi villaggi di nativi furono svuotati e gli abitanti costretti a lavorare in miniera per soddisfare la sete di ricchezza degli europei. Altri, come Francisco Pizarro, adottarono misure più creative (anche se ugualmente spietate) per procurarsi una fortuna. Nella sua ricerca di un tesoro, Pizarro rapì il leader dell'impero inca, Atahualpa, e chiese come riscatto una stanza piena d'oro. La leggenda vuole che ricevette esattamente ciò che chiese.</Italian>
-		<Spanish>Los europeos llegaron al Nuevo Mundo en busca de una manera rápida de acceder a las sedas y especias del Lejano Oriente. Aunque no consiguieron su propósito inicial, quedaron muy complacidos al ver que los gobernantes de muchas de las poblaciones indígenas de las Américas vivían rodeados de oro. Y los europeos no perdieron el tiempo en conseguir todo el que pudieron. Aldeas nativas quedaron vacías y se vieron obligadas a trabajar de esclavos para saciar la sed europea de oro. Otros, como Francisco Pizarro, adoptaron medidas más ingeniosas aunque igual de despiadadas para procurarse fortuna. En su búsqueda de tesoros, Pizarro secuestró al líder del Imperio Inca, Atahualpa, y pidió como rescate una habitación llena de oro. Y la leyenda cuenta que fue exactamente eso lo que recibió.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_TREASURE_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Treasures[COLOR_REVERT] represent uncovered caches of New World wealth.[NEWLINE]By sending them to Europe, you can cash in![NEWLINE]There are two ways of doing this: by contacting your [LINK=CONCEPT_RELATIONS_TO_KING]King[\LINK], who will claim 50% of the value to transport it for you, or by loading it into a [LINK=UNIT_GALLEON]galleon[\LINK] and delivering it to [LINK=CONCEPT_EUROPE]Europe[\LINK] yourself.[PARAGRAPH:2]For more information, see [LINK=CONCEPT_CHANGES_TO_TREASURES]Treasures[\LINK].</English>
-		<French>Les [COLOR_UNIT_TEXT]Trésors[COLOR_REVERT] représentent des sources de richesses encore inexplorées. En transportant un [COLOR_UNIT_TEXT]Trésor[COLOR_REVERT] sur un [COLOR_UNIT_TEXT]Galion[COLOR_REVERT] et en l'envoyant en [LINK=CONCEPT_EUROPE]Europe[\LINK], vous pourriez recevoir un énorme bonus financier !</French>
-		<German>[COLOR_UNIT_TEXT]Schatzeinheiten[COLOR_REVERT] belegen 3 Frachtplätze an Bord einer [COLOR_UNIT_TEXT]Galeone[COLOR_REVERT].[PARAGRAPH:2]Die Galeone ist das einzige Schiff, auf dem man Schätze selber nach Europa bringen kann. Dabei fällt nur der übliche Steuersatz an. Alternativ kann man - vorausgesetzt, der Schatz befindet sich in einer Siedlung - den König beauftragen, ihn auf einem seiner Schiffe in die Alte Welt zu transportieren. Der Monarch behält als Transportprämie allerdings die Hälfte der Pretiosen ein.</German>
-		<Italian>Le [COLOR_UNIT_TEXT]unità di tesoro[COLOR_REVERT] rappresentano depositi nascosti di ricchezze del Nuovo Mondo. Portando un'unità di [COLOR_UNIT_TEXT]tesoro[COLOR_REVERT] su un [COLOR_UNIT_TEXT]galeone[COLOR_REVERT] e inviandola in Europa puoi ottenere un enorme bonus di entrate!</Italian>
-		<Spanish>Los [COLOR_UNIT_TEXT]Tesoros[COLOR_REVERT] representan escondrijos sin descubrir de riquezas del Nuevo Mundo. Si lleváis una unidad de [COLOR_UNIT_TEXT]Tesoro[COLOR_REVERT] a un [COLOR_UNIT_TEXT]Galeón[COLOR_REVERT] y lo enviáis a Europa, recibiréis una gran bonificación a los ingresos.</Spanish>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_TREK</Tag>
 		<English>Trek:Treks</English>
 		<French>
@@ -5070,16 +5029,6 @@
 		<German>Wagen können Güter quer durch das Land von einer Siedlung zu einer anderen befördern und damit Ortschaften an das Handelsnetz anschließen, die nicht an der Küste liegen.[PARAGRAPH:2][COLOR_UNIT_TEXT]Planwagen[COLOR_REVERT] können in 2 Transportplätzen jeweils bis zu 100 Güter transportieren. Die gleich teuren [COLOR_UNIT_TEXT]Trecks[COLOR_REVERT] können sogar bis zu 5 Transportplätze nutzen, haben aber im Gegensatz zu den Planwagen nicht zwei, sondern nur einen einzigen Bewegungspunkt. Sie können erst dann gebaut werden, wenn eine Stadt über ein [COLOR_BUILDING_TEXT]Sägewerk[COLOR_REVERT] verfügt.[PARAGRAPH:2]Tipp: Trecks sind insbesondere für Massentransporte zwischen zwei nahegelegenen Städten in der mittleren und späten Spielphase geeignet.[PARAGRAPH:2]Tipp: Bei gedrückter Shift-Taste können die Wagen auch mit Teilmengen beladen werden.[PARAGRAPH:2]Hinweise: Wagen können nicht auf Schiffe geladen werden. Greift man einen Planwagen oder einen Treck an, erobert man ihn mitsamt aller Waren.</German>
 		<Italian>Le [COLOR_UNIT_TEXT]colonne di carovane[COLOR_REVERT] sono preziosi strumenti per il commercio terrestre. Le [COLOR_UNIT_TEXT]colonne di carovane[COLOR_REVERT] possono trasportare i beni tra gli insediamenti via terra, il che significa che possono raggiungere gli insediamenti che non si trovano sulla costa. Sono la chiave per l'espansione verso l'interno del continente.</Italian>
 		<Spanish>Las [COLOR_UNIT_TEXT]Caravanas de carromatos[COLOR_REVERT] son unas herramientas para el comercio terrestre que no tienen precio. Las [COLOR_UNIT_TEXT]Caravanas de carromatos[COLOR_REVERT] pueden transportar mercancías de un asentamiento a otro por tierra, lo cual comporta que no pueden llegar a los que se encuentren en la costa. Son la clave para la expansión hacia el interior del continente.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_VALUABLE_WOOD_PEDIA</Tag>
-		<English>Exotic wood is very hard which, combined with its very high density (it is one of the woods that sink in water), fine texture, and ability to take a polish, has made it valuable as an ornamental wood.[NEWLINE]The species is still frequent in the New World, though threatened by over-harvesting; it is also extensively planted within its native range.</English>
-		<French>Les bois d'ébénisterie, souvent nommés bois précieux peuvent être des bois des régions tempérées ou des bois tropicaux. Ils sont utilisés en ébénisterie, lutherie, marqueterie, sculpture sous forme de bois massif, feuillets ou bois de placage. Le caractère précieux, variable suivant les époques, fait référence à leurs propriétés, leur rareté et leur prix. On les distingue généralement des bois plus courants tels que le frêne, le sapin, l'épicéa ou le peuplier (bois blancs), le pin, le cèdre rouge (bois rouges) et des bois rouges tropicaux dits exotiques, comme le sipo.</French>
-		<German>Edelholz ist sehr hart, hat eine hohe Dichte, feine Texturen und kann sehr glatt geschliffen werden. Daher ist es sehr begehrt, um Verzierungen oder hochwertige Holzprodukte, wie zum Beispiel Möbel, herzustellen.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_VALUABLE_WOOD_STRATEGY</Tag>
-		<English>Valuable wood strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VETERAN_CAVALRY</Tag>
@@ -5360,72 +5309,6 @@
 		<German>Der [COLOR_UNIT_TEXT]Große Westindienfahrer[COLOR_REVERT] ist ein sehr starkes Handelsschiff, welches im Vergleich zur Galeone zwar weniger Frachtraum dafür aber mehr Kanonen hat.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_WHALE_BLUBBER</Tag>
-		<English>Whale Fat</English>
-		<French>
-			<Text>Graisse de baleine</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Walspeck:Walspeck</Text>
-			<Gender>Male</Gender>
-			<Plural>0:1</Plural>
-		</German>
-		<Italian>
-			<Text>Grasso di balena</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Grasa de ballena</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Китовый жир</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WHALE_BLUBBER_PEDIA</Tag>
-		<English>Whale fat background</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WHALE_BLUBBER_STRATEGY</Tag>
-		<English>Whale fat strategy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WHALE_OIL</Tag>
-		<English>Train Oil</English>
-		<French>
-			<Text>Huile de baleine</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Tran</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Olio di balena</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Aceite de ballena</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Ворвань</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WHALE_OIL_PEDIA</Tag>
-		<English>Train oil background</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WHALE_OIL_STRATEGY</Tag>
-		<English>Train oil strategy</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_WHALE_OIL_COOKER</Tag>
 		<English>
 			<Text>Master Train Oil Cooker:Master Train Oil Cookers</Text>
@@ -5506,43 +5389,6 @@
 		<German>Wenn sich ein [COLOR_UNIT_TEXT]Walfänger[COLOR_REVERT] auf einem Feld mit der Bonusressource [COLOR_HIGHLIGHT_TEXT]Wale[COLOR_REVERT] befindet, kann er den Befehl "Waljagd" ausführen. Der Walfänger ist die einzige Einheit, die über diesen Befehl verfügt. Dabei erntet er jede Runde [COLOR_HIGHLIGHT_TEXT]Walspeck[COLOR_REVERT], der so lange im Transportslot des Schiffes landet, bis der Frachtraum voll ist. Auf einer Bonusressource Wale kann immer nur ein Walfänger zur selben Zeit arbeiten. In einer Küstensiedlung kann der Walspeck dann zwecks Verarbeitung zu [COLOR_HIGHLIGHT_TEXT]Tran[COLOR_REVERT] entladen oder direkt in den Europahafen zum Verkauf verschifft werden.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_WINE</Tag>
-		<English>Wine</English>
-		<French>
-			<Text>Vin</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Wein</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Vino</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Vino</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Вино</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WINE_PEDIA</Tag>
-		<English>Wine, a beverage made from fermented grapes, has been produced since 6000 BC.[NEWLINE]Its use spread throughout the Middle East and Egypt, and it was a popular drink in the ancient world.[NEWLINE]Grapes used for wine making are grown in many different regions of the world. Most vineyards are located in the hills and valleys of temperate regions. Wine making as an industry has been perfected over several centuries.[NEWLINE]Many regions such as the Rhine and Loire valleys of Europe are well known for their fine wines, and derive a significant portion of their economy from wine making.</English>
-		<French>Le vin est une boisson obtenue par la fermentation du raisin. Sa production débute dès 6 000 ans av. J.-C. Sa consommation se répand à travers tout le Moyen-Orient et l'Egypte, et il devient rapidement une boisson très populaire dans le monde antique. Le raisin utilisé dans la fabrication du vin est cultivé dans de nombreuses régions du monde. Les vignes sont généralement situées sur les coteaux et dans les vallées des régions tempérées. Les procédés de fabrication du vin ont été perfectionnés au cours des siècles. De nombreuses régions, comme les vallées du Rhin et de la Loire, sont réputées pour leurs bons vins, et une grande partie de leur économie est liée à la fabrication du vin.</French>
-		<German>Der aus fermentierten Trauben hergestellte Wein wurde erstmals um 6000 vor Christus produziert und war im Nahen Osten und in Ägypten weit verbreitet. Das Getränk entwickelte sich schnell zu einem der beliebtesten kulinarischen Genüsse der Antike. Die für die Weinherstellung benötigten Trauben werden in vielen verschiedenen Gebieten der Welt angebaut, die meisten Weinhänge befinden sich jedoch in den Hügeln und Tälern von Regionen mit gemäßigtem Klima. Im Laufe mehrerer Jahrhunderte wurde die industrielle Weinherstellung immer weiter perfektioniert.[PARAGRAPH:1]Viele Anbaugebiete wie die Rhein- und Loiretäler in Europa sind für ihre feinen Weine bekannt und beziehen einen Großteil ihrer wirtschaftlichen Erträge aus der Weinproduktion.</German>
-		<Italian>Realizzato dalla fermentazione dell'uva, il primo vino risale circa al 6000 a. C. e si diffuse rapirdamente attraverso il Medio Oriente e l'Egitto, diventando una delle bevande più popolari del mondo antico. Le qualità d'uva usate per la realizzazione del vino crescono in differenti zone del mondo; la maggior parte delle vigne si possono trovare sulle colline e nelle vallate di regioni dal clima temperato. L'industria del vino è andata perfezionandosi nel corso dei secoli: molte regioni europee, come le vallate del Reno e della Loira, sono rinomate per la produzione di ottimi vini, principale forma di economia della zona.</Italian>
-		<Spanish>El vino, una bebida preparada a partir de uvas fermentadas, se elaboró por vez primera ya en el 6000 a. C. Su consumo se extendió rápidamente por Oriente Medio y Egipto, y pronto se convirtió en una popular bebida en el mundo antiguo. Las uvas empleadas en la fabricación del vino crecen en muchas y muy distintas partes del mundo. La mayoría de las viñas están en colinas y valles de regiones templadas. La vinicultura se ha perfeccionado como industria a lo largo de varios siglos. Muchas regiones, como los valles del Rin y del Loira en Europa, son conocidas por sus grandes vinos y obtienen una parte significativa de sus ingresos de la vinicultura.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WINE_STRATEGY</Tag>
-		<English>Wine strategy</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_WINE_MAKER</Tag>
 		<English>
 			<Text>Master Vintager:Master Vintagers</Text>
@@ -5620,80 +5466,6 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WOLF_STRATEGY</Tag>
 		<English>TXT_KEY_UNIT_ANIMAL_STRATEGY</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WOOL</Tag>
-		<English>Wool</English>
-		<French>
-			<Text>Laine</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Schafswolle</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Lana di pecora</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Lana de oveja</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Шерсть</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WOOL_PEDIA</Tag>
-		<English>Early in the colonization of the New World sheep arrived.[NEWLINE]Even though because of disease or lack of water not all areas were fit for sheep herding, wool soon was an important industry.[NEWLINE]Although never as important as cattle, sheep still had a big impact on industry in the New World, giving work to many shepherds.[NEWLINE]Good sheep farming areas were soon in great demand, leading to range wars between cattle ranchers and sheep herders, as well as with the Indigenous people.[NEWLINE]Huge sheep stations stretched across the hills.</English>
-		<French>Au début de la colonisation du Nouveau Monde, les moutons sont arrivés.[NEWLINE]Même si toutes les régions ne se prêtaient pas à l'élevage de moutons en raison de maladies ou du manque d'eau, la laine est rapidement devenue une industrie importante.[NEWLINE]Bien qu'ils n'aient jamais été aussi importants que les bovins, les moutons ont tout de même eu une grande incidence sur l'industrie du Nouveau Monde, employant de nombreux bergers.[NEWLINE]Les bonnes régions d'élevage de moutons ont rapidement été très recherchées, ce qui a entraîné des guerres de territoire entre les éleveurs de bovins et les éleveurs de moutons, ainsi qu'avec les populations autochtones.[NEWLINE]D'énormes élevages de moutons ont été créées.</French>
-		<German>Sehr früh in der Kolonisierung der Neuen Welt wurde Nutzvieh aus Europa eingeführt, darunter auch Schafe.[NEWLINE]Auch wenn nicht alle Gebiete wegen Krankheiten oder Wassermangel für die Schafhaltung geeignet waren, wurde die Wolle bald zu einem wichtigen Wirtschaftszweig, der viele Schäfer beschäftigte.[NEWLINE]Obwohl Schafe und die damit verbundene Produktion von Wolle und Kleidung nie so bedeutend wie die Rinderzucht waren, wurden sie dennoch ein wichtiger Industriezweig.[NEWLINE]Die Weidegebiete, in denen Viehzucht möglich war, waren bald sehr begehrt, was auch zu vielen Konflikten zwischen Rinderzüchtern und Schafzüchtern, wie auch mit den Ureinwohnern, führte.[NEWLINE]Riesige Schafranches entstanden.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WOOL_STRATEGY</Tag>
-		<English>[LINK=YIELD_WOOL]Wool[\LINK] is produced when a [LINK=PROFESSION_BUTCHER_SHEEP]sheep butcher[\LINK] slaughters [LINK=YIELD_SHEEP]sheep[\LINK] to get [LINK=YIELD_FOOD]mutton[\LINK] and [LINK=UNIT_WOOL]wool[\LINK].</English>
-		<French>La [LINK=YIELD_WOOL]laine[\LINK] est produite à partir d'une [LINK=PROFESSION_BUTCHER_SHEEP]boucherie[\LINK] travaillant le [LINK=YIELD_SHEEP]mouton[\LINK].</French>
-		<German>[LINK=YIELD_WOOL]Wolle[\LINK] wird gewonnen, wenn ein [LINK=PROFESSION_BUTCHER_SHEEP]Schafschlachter[\LINK] [LINK=YIELD_SHEEP]Schafe[\LINK] schlachtet, um sie zu [LINK=YIELD_FOOD]Schafsfleisch[\LINK] und [LINK=UNIT_WOOL]Wolle[\LINK] zu verarbeiten.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WOOL_CLOTH</Tag>
-		<English>Wool Cloth</English>
-		<French>
-			<Text>Draps de laine</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>Wollstoffe</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</German>
-		<Italian>
-			<Text>Vestiti di lana</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Ropa de lana</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
-		<Russian>Шерстяная ткань</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WOOL_CLOTH_PEDIA</Tag>
-		<English>Wool clothes have been worn for thousands of years.[NEWLINE]Once sheep came to the colonies in the New World, wool clothes became quite common.[NEWLINE]Until the middle of the 19th century, in Northern Europe textiles were the most important manufacturing activity.[NEWLINE]During the 18th century wool cloth was the preeminent textile.[NEWLINE]The rise of drapery in the 10th century led to the production of different kinds of woollen fabrics and contributed to the economic revival of the West.[NEWLINE]Textile activity was then concentrated in a few centres such as Flanders from the 11th century, Brabant and Northern Italy from the 13th century and England in the 14th century.</English>
-		<French>Jusqu'au milieu du XIXe siècle, le textile reste l'activité de fabrication la plus importante d'Europe du nord et jusqu'au milieu du XVIIIe siècle, la laine et son principal dérivé, le drap, fut la principale activité textile. L'essor de la draperie au Xe siècle va entraîner la production de différentes sortes de tissus de laine et contribuer au redémarrage économique de l'occident. L'activité textile se concentre alors dans quelques centres tels que la Flandre à partir du XIe siècle, le Brabant et l'Italie du Nord dès le XIIIe siècle ou l'Angleterre au XIVe siècle.</French>
-		<German>Wollkleidung war über Jahrtausende eine der wichtigsten Kleidungsarten in der Alten Welt. Während der Kolonisation wurden größere Mengen an Schafen in die Neue Welt gebracht und dort gezüchtet, wodurch Wollkleidung auch dort üblich wurde.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_WOOL_CLOTH_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Master weavers[COLOR_REVERT] produce double the amount of [COLOR_HIGHLIGHT_TEXT]wool cloth[COLOR_REVERT].</English>
-		<French>Les [COLOR_UNIT_TEXT]maîtres tisserands[COLOR_REVERT] producisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]draps de laine[COLOR_REVERT].</French>
-		<German>[COLOR_UNIT_TEXT]Meister-Weber[COLOR_REVERT] verarbeiten doppelt soviel Wolle in [COLOR_HIGHLIGHT_TEXT]Wollstoffen[COLOR_REVERT], wie andere Kolonisten.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FREED_SLAVE</Tag>
@@ -5957,6 +5729,7 @@
 		<German>[COLOR_UNIT_TEXT]Feindselige Ureinwohner[COLOR_REVERT] können nicht erworben werden.[NEWLINE]Sie sind dem Spieler gegenüber feindlich gesonnen und meist nur in [COLOR_HIGHLIGHT_TEXT]feindseligen Ureinwohnerdörfern[COLOR_REVERT] zu finden.[NEWLINE]Sie werden ihr Dorf bis zum Tod verteidigen und greifen den Spieler an, wenn dieses zerstört wird.</German>
 	</TEXT>
 </Civ4GameText>
+
 
 
 
