@@ -2061,30 +2061,6 @@
 		<German>[COLOR_UNIT_TEXT]Königliche Truppengaleonen[COLOR_REVERT] sind das primäre Transportschiff der [COLOR_HIGHLIGHT_TEXT]Europäischen Könige[COLOR_REVERT] um ihre Truppen zu transportieren, können aber auch Güter befördern.[NEWLINE]Sie haben 6 Frachträume und somit mehr als jedes andere Schiff, außer anderen Galeonen.[NEWLINE]Sie sind stärker als normale [LINK=UNIT_GALLEON]Galleonen[\LINK] und können andere Schiffe auch angreifen.[NEWLINE]Während des [LINK=CONCEPT_INDEPENDENCE_WAR]Unabhängigkeitskrieges[\LINK] können sie den Schiffen der Kolonien einen guten Kampf liefern.[NEWLINE][COLOR_HIGHLIGHT_TEXT]Königliche Truppengaleonen[COLOR_REVERT] stehen nur den Königen Europas zur Verfügung.</German>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_GEMS_PEDIA</Tag>
-		<English>Gemstones, treasured throughout history for their beauty and value, have always been a treasured commodity.[NEWLINE]Most gemstones, such as diamonds, are mined at scattered locations throughout the world, most notably in Africa.[NEWLINE]Some of the most famous gem deposits, however, were found in archeological digs.[NEWLINE]The ruins of ancient civilizations in the jungles of Central and South America sometimes hid large quantities of precious and semi-precious gems, along with gold and other items of value.[NEWLINE]The discovery of such a site can lead to an increase in trade in the areas surrounding the dig, as both professional and amateur treasure hunters swarm to the region to seek their fortune.</English>
-		<French>Les pierres précieuses, extrêmement prisées pour leur beauté et leur valeur, ont toujours été très recherchées. On trouve des pierres précieuses dans différents endroits du monde, mais le plus fréquemment en Afrique. Cependant, certains des gisements les plus importants ont été découverts sur des sites archéologiques. Les vestiges d'anciennes civilisations originaires d'Amérique centrale ou d'Amérique du Sud cachent parfois d'énormes quantités de pierres précieuses ou semi-précieuses, ainsi que de l'or et autres objets de valeur. La découverte d'un tel site conduit parfois à un net accroissement des échanges autour des fouilles, les chasseurs de trésors amateurs et professionnels désireux de tenter leur chance fourmillant alors dans la région.</French>
-		<German>Edelsteine wurden traditionell wegen ihrer Schönheit und ihres Wertes geschätzt und sind bis heute begehrte Schmucksteine. Edelsteine und Diamanten werden in Minen in aller Welt (primär aber in Afrika) abgebaut. Einige der bemerkenswertesten Edelsteinfunde gehen allerdings auf archäologische Ausgrabungen zurück. In den Ruinen alter Zivilisationen in den Urwäldern Mittel- und Südafrikas fanden sich nicht selten große Mengen Edelsteine und Halbedelsteine, Gold und andere wertvolle Artefakte. Die Entdeckung eines derartigen Ortes kann zu einem gesteigerten Handelsaufkommen in den umliegenden Gebieten führen, da professionelle Schatzsucher und Abenteurer in das Gebiet strömen, um dort ihr Glück zu finden.</German>
-		<Italian>Le gemme sono da sempre ricercate per il loro valore e la loro bellezza. La maggior parte delle gemme, come i diamanti, vengono estratte in varie zone del mondo, tra cui l'Africa. Alcuni dei più importanti giacimenti di gemme, tuttavia, sono stati trovati presso diversi scavi archeologici; le rovine nella giungla delle antiche civiltà che abitavano in America meridionale e centrale, per esempio, nascondevano grandi quantità di gemme più o meno preziose, oltre a oro e altri oggetti di valore. La scoperta di luoghi del genere ha portato a un incremento del commercio nelle zone degli scavi, grazie all'arrivo di cercatori di tesori professionisti e amatoriali, in cerca di fortuna.</Italian>
-		<Spanish>Las piedras preciosas, valoradas desde el inicio por su belleza y valor, siempre han sido un bien codiciado. La mayor parte de ellas, como el diamante, se extraen en minas situadas en varias zonas del mundo, en especial África. Sin embargo, algunos de los depósitos más célebres de piedras preciosas se han encontrado en excavaciones arqueológicas. Las ruinas de antiguas civilizaciones de Centroamérica y Sudamérica han ocultado a veces grandes cantidades de piedras preciosas y semipreciosas, así como de oro y otros valiosos artículos. El descubrimiento de tales emplazamientos puede conducir a un aumento del comercio en las zonas que lo rodean, ya que los cazatesoros profesionales y aficionados invaden la región en busca de fortuna.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_GEMS_STRATEGY</Tag>
-		<English>Gems strategy</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_GOLD_PEDIA</Tag>
-		<English>Gold has always been one of the most highly valued metals in the world.[NEWLINE]It is used in the manufacture of everything from jewelry to electronics, and has been established as the basis for monetary systems worldwide.[NEWLINE]What makes gold valuable is its rarity.[NEWLINE]Although gold can be found in many different places, the most valuable deposits are large veins of ore running through mountains.[NEWLINE]When a large deposit is found, mining stimulates the economy in settlements and cities near the mine.[NEWLINE]A historical example of this phenomenon is the California gold rush during the 1800s when many towns grew up and prospered over a relatively short time.</English>
-		<French>L'or a toujours été l'un des métaux les plus recherchés au monde. Il est utilisé dans la fabrication de nombreux produits, allant des bijoux aux appareils électroniques. Il sert aussi de référence pour des systèmes monétaires internationaux. Ce qui donne sa valeur à l'or est sa rareté. Bien que l'on en trouve dans de nombreux endroits, les gisements les plus importants sont des veines de minerai d'or situées sous des massifs montagneux. Lorsqu'un gisement important est découvert, son exploitation stimule considérablement l'économie des villes environnantes. Ainsi, au XIXe siècle, la ruée vers l'or en Californie conduisit en peu de temps à la fondation de nombreuses villes prospères.</French>
-		<German>Gold zählt seit jeher zu den begehrtesten und wertvollsten Metallen der Welt.[NEWLINE]Seine Verwendungszwecke reichen von der Schmuckfertigung bis hin zur Elektronik, und sogar das weltweite Währungssystem basiert auf diesem Edelmetall.[NEWLINE]Die Ursache für den hohen Wert von Gold ist seine Seltenheit.[NEWLINE]Zwar gibt es in vielen Regionen der Welt Goldvorkommen, allerdings sind die wertvollsten großen Goldadern tief im Inneren der Berge.[NEWLINE]Das Auffinden eines großen Vorkommens bedeutet für die Siedlungen und Städte in der Nähe der Mine einen bedeutenden wirtschaftlichen Aufschwung.[NEWLINE]Ein historisches Beispiel für dieses Phänomen sind die vielen Ortschaften, die während des kalifornischen Goldrauschs entstanden und nur eine kurze Blütezeit erlebten.</German>
-		<Italian>L'oro è da sempre uno dei metalli più preziosi del pianeta ed è stato utilizzato per realizzare qualsiasi oggetto, dai gioielli ai componenti elettronici, ponendo le basi per un sistema economico mondiale. L'oro è molto prezioso a causa della sua rarità. Sebbene sia possibile trovare oro in differenti zone del mondo, i giacimenti più ricchi sono all'interno delle montagne. Quando viene scoperto un grande giacimento, l'estrazione dell'oro migliora sensibilmente l'economia degli insediamenti e delle città circostanti. Nel 1800, molte città della California sono prosperate in breve tempo durante la corsa all'oro.</Italian>
-		<Spanish>El oro siempre ha sido uno de los metales más valorados del mundo. Se usa en la fabricación de todo tipo de artículos, desde joyas a electrónica, y constituye la base del sistema monetario mundial. El factor que otorga al oro su valor es su rareza. Aunque se puede encontrar oro en muchas regiones distintas, los yacimientos más valiosos son grandes vetas de mineral de oro situadas en el interior de montañas. Cuando se encuentra un gran yacimiento, la explotación de la veta potencia enormemente la economía en las poblaciones y ciudades que están cerca de la mina. Un ejemplo histórico de este fenómeno son las numerosas ciudades que crecieron y prosperaron en poco tiempo durante la fiebre del oro de California en el siglo XIX.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_GOLD_STRATEGY</Tag>
-		<English>Gold strategy</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_GOVERNOR</Tag>
 		<English>Governor:Governors</English>
 		<French>
@@ -2504,18 +2480,6 @@
 		<Spanish>La unidad del [COLOR_UNIT_TEXT]Cañón[COLOR_REVERT] es la clave para conseguir la victoria en cualquier asedio. Cuando ataca un asentamiento enemigo, su potencia de ataque se dobla, lo cual lo convierte en la unidad más potente que hay disponible. Estas unidades además reciben una bonificación cuando defienden desde dentro de un asentamiento y se pueden emplear para bajar las bonificaciones defensivas de los asentamientos a los que estén atacando.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_HEMP_PEDIA</Tag>
-		<English>Since the Middle Ages, hemp has been one of the most important natural fibres for cloth, ropes and other woven or braided goods.[NEWLINE]During colonization it was brought to the New World where large plantations evolved.[NEWLINE]George Washington grew hemp.[NEWLINE]Textile hemp is a cultivated variety of the Cannabaceae family.[NEWLINE]It is an annual plant, selected for the size of its stem and its low content of THC or other cannabinoids from the species that botanists call cultivated hemp (Cannabis sativa L.).[NEWLINE]Although referring to the same botanical species, 'hemp' is now the preferred term for the industrial plant and its fibre, while 'cannabis' is the scientific name for the recreational or medical form.</English>
-		<French>[TAB]Le chanvre, chanvre textile, chanvre industriel ou chanvre agricole est une variété de plante cultivée de la famille des Cannabaceae. C'est une plante annuelle, sélectionnée pour la taille de sa tige et sa faible teneur en THC ou autres cannabinoïdes à partir de l'espèce que les botanistes nomment le Chanvre cultivé (Cannabis sativa L.). Il est parfois appelé localement « chènevis », comme le nom de la graine de chanvre. Bien que désignant la même espèce botanique, le terme chanvre est désormais utilisé de préférence pour désigner la plante industrielle et sa fibre végétale, tandis que Cannabis est le nom scientifique utilisé aussi pour désigner la forme récréative ou médicale.</French>
-		<German>[TAB]Hanf war bereits im Mittelalter einer der wichtigsten Rohstoffe, um stabile Stoffe, Seile oder andere Güter herzustellen.[NEWLINE]Während der Kolonisierung der Neuen Welt fand auch Hanf seinen Weg in die Plantagen der Kolonien.[NEWLINE]George Washington besass beispielsweise selbst Hanf-Plantagen.[NEWLINE]Textilhanf ist eine kultivierte Sorte aus der Familie der Cannabaceae.[NEWLINE]Es handelt sich um eine einjährige Pflanze, die aufgrund der Größe ihres Stängels und ihres geringen Gehalts an THC oder anderen Cannabinoiden aus der Art ausgewählt wird, die Botaniker als Kulturhanf (Cannabis sativa L.) bezeichnen.[NEWLINE]Obwohl sie sich auf dieselbe botanische Art bezieht, wird der Begriff "Hanf" jetzt bevorzugt für die Industriepflanze und ihre Faser verwendet, während "Cannabis" der wissenschaftliche Name für die Einstiegsdroge und deren medizinische Form ist.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_HEMP_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Expert hemp planters[COLOR_REVERT] are specialists in cultivating [LINK=YIELD_HEMP]hemp[\LINK], the raw material for [LINK=YIELD_SAILCLOTH]sailcloth[\LINK].[NEWLINE]When employed as [LINK=PROFESSION_HEMP_PLANTER]hemp planters[\LINK], they produce double the amount of [COLOR_HIGHLIGHT_TEXT]hemp[COLOR_REVERT] from any tile they work.[PARAGRAPH:1]Expert hemp planters can be trained by [LINK=CONCEPT_NATIVES]Natives[\LINK], and they can also be [LINK=CONCEPT_TRAINING]taught[\LINK] in a colony with a [LINK=BUILDING_COLLEGE]college[\LINK] or one of its upgrades.</English>
-		<French>Les [COLOR_UNIT_TEXT]experts planteurs de chanvre[COLOR_REVERT] produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]chanvre[COLOR_REVERT] qu'un autre colon.</French>
-		<German>[COLOR_UNIT_TEXT]Erfahrene Hanfpflanzer[COLOR_REVERT] sind die besten Arbeiter, wenn es darum geht, [COLOR_HIGHLIGHT_TEXT]Hanf[COLOR_REVERT] anzubauen und große Mengen dieses Rohstoffs zu ernten. Die Produktion an Hanf eines Geländefelds wird verdoppelt, wenn sie darauf arbeiten!</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEMP_PLANTER</Tag>
 		<English>Expert Hemp Planter:Expert Hemp Planters</English>
 		<French>
@@ -2572,51 +2536,6 @@
 		<English>Almost one third of the King's infantry units are [COLOR_UNIT_TEXT]Hessian mercenaries[COLOR_REVERT].[NEWLINE]Hessians are [COLOR_HIGHLIGHT_TEXT]elite soldiers[COLOR_REVERT], meaning that they cannot switch professions or work in settlements.[NEWLINE]Hessian mercenaries fight like the King's [LINK=UNIT_REGULAR]regulars[\LINK], but they don't have the [LINK=PROMOTION_VETERAN2]Veteran II[\LINK] promotion.[NEWLINE]However, the Hessians are very skilled bayonet-fighters.[NEWLINE]Their [LINK=PROMOTION_BAYONET]bayonet[\LINK] promotion grants them a 20% strength bonus against gunpowder units.[NEWLINE]Like regulars, they don't receive defensive bonuses so you'd best try to meet them in the field.[NEWLINE]Hessians appear mostly as enemy units under the command of your King, but there are a few [LINK=CONCEPT_EVENTS]events[\LINK] and [LINK=CONCEPT_FOUNDING_FATHERS]Founding Fathers[\LINK] who can provide Hessians for colonial powers as well.</English>
 		<French>Près d'un tiers des unités d'infanteries royales sont des [COLOR_UNIT_TEXT]mercenaires hessiens[COLOR_REVERT]. Les Hessiens ne peuvent adopter une autre profession, ils ne peuvent que combattre comme c'est également le cas des artilleries. Les hessiens combattent comme des soldats réguliers du Roi, mais ils ne peuvent pas bénéficier de la promotion [LINK=PROMOTION_VETERAN2]Vétéran II[\LINK]. Cela ne les empêche pas d'être de redoutables combattants à la bayonnette. Leur promotion [LINK=PROMOTION_BAYONET]bayonnette[\LINK] leur offre 20% de bonus supplémentaire contre les unités équipés d'armes à feu.</French>
 		<German>[COLOR_UNIT_TEXT]Hessische Söldner[COLOR_REVERT] kämpfen auf Seiten des Königs, sie stellen etwa ein Drittel seiner Fußsoldaten. Die Hessischen Söldner sind [COLOR_HIGHLIGHT_TEXT]Elitesoldaten[COLOR_REVERT], was bedeutet, dass sie nicht den Beruf wechseln oder in Siedlungen arbeiten können, d.h. sie kämpfen ausschließlich als [LINK=CONCEPT_UNITS]Einheit[\LINK]. Hessische Söldner sind so stark wie die normale Infanterie des Königs, verfügen allerdings im Gegensatz zu ihr nicht über die Beförderung [LINK=PROMOTION_VETERAN2]Veteran II[\LINK]. Dafür gibt ihnen die Beförderung [LINK=PROMOTION_BAYONET]Bajonettkämpfer[\LINK] einen gefährlichen Kampfbonus gegen die Kolonialmilizen.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_HIDES</Tag>
-		<English>Cowhides</English>
-		<French>
-			<Text>Peaux de vache</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>Rindshäute</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</German>
-		<Italian>
-			<Text>Pelli di mucca</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Pieles de vaca</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
-		<Russian>Коровьи шкуры</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_HIDES_PEDIA</Tag>
-		<English>A tannery is a workshop where animal skins (beef, sheep, goat, pig) are chemically and mechanically treated for leather production.[NEWLINE]The product used can be of natural origin (tannin from certain forest species such as oak, whose bark is crushed in a tanning mill), or it can be a synthetic chemical product.[NEWLINE]In the tannery the hides are cleaned: on their outside the hairs and dirt are removed; the inner skin is removed.[NEWLINE]The hides are then submerged in basins containing tannin.[NEWLINE]After a good long soaking they are removed, washed and dried.</English>
-		<French>Une tannerie est un atelier où des peaux d'animaux (boeuf, mouton, chèvre, cochon) sont traitées chimiquement et mécaniquement pour la production de cuir. Le produit utilisé peut avoir une origine naturelle (tanin en provenance de certaines essences forestières comme le chêne, dont on broyait les écorces dans un moulin à tan), ou bien être un produit chimique de synthèse. Dans la tannerie, les peaux sont nettoyées : sur leur face extérieure les poils et crasses sont enlevés, sur leur face intérieure la peau intérieure est enlevée. Les peaux sont alors trempées dans des bassins contenant du tanin pendant une certaine période, puis elles sont retirées, lavées puis séchées.</French>
-		<German>Sehr früh in der Kolonisierung der Neuen Welt wurden Rinder aus Europa eingeführt. Obwohl es auch viele Gegenden gab, in denen Rinderzucht aufgrund von Wassermangel oder Krankheiten nicht möglich war, wurde die Rinderzucht und der Verkauf von Lederwaren in die Alte Welt schnell zu einem sehr wichtigen Industriezweig. Eine große Anzahl an Rinderhirten, den Cowboys, war bald in diesem Industriezweig beschäftigt. Die Weidegebiete, in denen Rinderzucht möglich war, waren bald sehr begehrt, was auch zu vielen Konflikten mit den Ureinwohnern führte. Riesige Rinderranches entstanden.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_HIDES_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Hides[COLOR_REVERT] are produced when a butcher slaughters [COLOR_UNIT_TEXT]cattle[COLOR_REVERT] for meat.</English>
-		<French>Les [COLOR_UNIT_TEXT]peaux[COLOR_REVERT] sont produites à partir d'une boucherie travaillant le [COLOR_UNIT_TEXT]bétail[COLOR_REVERT].</French>
-		<German>[COLOR_UNIT_TEXT]Hides[COLOR_REVERT] are produced when a Butcher is slaughtering [COLOR_UNIT_TEXT]Cattle[COLOR_REVERT], to further process them to meat.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_HORSES_PEDIA</Tag>
-		<English>Horses background</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_HORSES_STRATEGY</Tag>
-		<English>Horses strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HUMPBACK_WHALE</Tag>
@@ -2736,43 +2655,6 @@
 		<Spanish>Los [COLOR_UNIT_TEXT]Siervos por deudas[COLOR_REVERT] son polivalentes, igual que los [COLOR_UNIT_TEXT]Colonos libres[COLOR_REVERT]. Pero, a diferencia de ellos, los Siervos por deudas sufren una penalización cuando producen artículos manufacturados, como Tejido, Ron, Campanas de la libertad, etc.</Spanish>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIGO</Tag>
-		<English>Indigo</English>
-		<French>
-			<Text>Indigo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>
-			<Text>Indigo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</German>
-		<Italian>
-			<Text>Indicado</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Indigo</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Индиго</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIGO_PEDIA</Tag>
-		<English>Dyeing is the process of applying colours to fabrics.[NEWLINE]A human practice for over three thousand years, it enabled the natural white colour of silk, wool and cotton to be enhanced with a wider spectrum.[NEWLINE]Natural dyes are created from many sources including shells, animals and plants, though these dyes were frequently expensive and not always permanent.[NEWLINE]Modern dyes are based on artificial or processed substances such as coal and other chemicals.[NEWLINE]One benefit for a nation with an extensive dye industry is that the processes involved in creating dye can be easily retooled.[NEWLINE]Germany took advantage of this in World War I when it discovered that factories producing artificial dye could be easily modified to create explosives, poison gas and other tools of war.</English>
-		<French>La teinture est le procédé de coloration des tissus. Cette pratique, vieille de plus trois mille ans, permet de donner de la couleur aux textiles blancs comme la soie, le coton ou la laine. Les teintures naturelles sont obtenues de multiples façons, que ce soit à partir de coquillages, de plantes ou d'animaux. Mais ces teintures ne sont pas toujours permanentes et sont souvent chères. Les colorants modernes sont à base de produits synthétiques ou traités, comme le charbon ou divers produits chimiques. Un pays possédant une industrie des teintures florissante peut facilement adapter les procédés de fabrication des teintures à d'autres fins. L'Allemagne a ainsi découvert au cours de la Première Guerre mondiale que les usines de fabrication de colorants artificiels pouvaient aisément être transformées pour créer des explosifs, des poisons ou autres instruments de guerre.</French>
-		<German>Das Färben von Stoffen und Fasern gehört schon seit mehr als drei Jahrtausenden zu den vom Menschen praktizierten Handwerken. Durch das Eintauchen der Materialien in Farbe ließ sich das natürliche Weiß von Seide, Wolle und Baumwolle in verschiedene Farbnuancen einfärben. Natürliche Färbemittel wurden aus unzähligen Quellen, einschließlich Muscheln, Tieren und Pflanzen, gewonnen, obwohl diese nicht immer dauerhaft und meist auch teuer waren. Moderne Färbemittel basieren auf künstlichen oder verarbeiteten Substanzen wie Kohle und anderen Chemikalien. Ein Land mit einer ausgedehnten Färbeindustrie hat den Vorteil, dass die zur Herstellung von Färbemitteln notwendigen Verfahren leicht für andere Zwecke abgewandelt werden können. Während des 1. Weltkrieges zeigte es sich in Deutschland, dass Fabriken, in denen künstliche Färbemittel hergestellt wurden, kurzerhand so umstrukturiert werden konnten, dass sie stattdessen Sprengstoffe, giftiges Gas und anderes Kriegsmaterial produzierten.</German>
-		<Italian>La colorazione è il processo di applicazione dei colori ai tessuti. Si tratta di una pratica dell'uomo utilizzata da oltre tremila anni, che consente vari tipi di modifica del colore bianco naturale della seta, della lana e del cotone. La tinta naturale è creata da numerosissime fonti, comprese le conchiglie, gli animali e le piante, malgrado questi non siano sempre disponibili e risultino spesso costosi. La tinta moderna si basa su sostanze artificiali o lavorate, come il carbone e altri elementi chimici; una nazione con una solida industria in questo campo beneficia del fatto che i processi implicati nella creazione della tinta possano essere trasformati agevolmente per altri scopi. La Germania ha effettuato questa scoperta durante la Prima Guerra Mondiale, rendendosi conto che le fabbriche di produzione della tinta artificiale potevano essere facilmente modificate per creare esplosivi e altri strumenti bellici.</Italian>
-		<Spanish>El tinte es el proceso de aplicar colores a los tejidos. Una práctica humana que, durante más de tres mil años, permitía ampliar el blanco natural de la seda, la lana y el algodón a todo un espectro de colores. Los tintes naturales se crean a partir de miles de sustancias, incluyendo conchas, animales y plantas, aunque estos tintes son frecuentemente caros y no siempre permanentes. Los tintes modernos se basan en sustancias artificiales o procesadas, como el carbón vegetal y otros compuestos químicos. Las naciones que poseen grandes industrias de teñido tienen la ventaja de que los procesos para la creación del tinte se pueden reconvertir fácilmente en otros. Alemania lo descubrió en la Primera Guerra Mundial, cuando se comprobó que las fábricas de tinte artificial podían modificarse fácilmente para fabricar explosivos, gas venenoso y otras herramientas bélicas.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_INDIGO_STRATEGY</Tag>
-		<English>Indigo strategy</English>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDIGO_PLANTER</Tag>
 		<English>Expert Indigo Planter:Expert Indigo Planters</English>
 		<French>
@@ -2884,45 +2766,6 @@
 		<English>TXT_KEY_UNIT_ANIMAL_STRATEGY</English>
 	</TEXT>
 	<TEXT>
-		<Tag>TXT_KEY_UNIT_LEATHER</Tag>
-		<English>Leather Goods</English>
-		<French>
-			<Text>Cuir</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</French>
-		<German>
-			<Text>Lederwaren</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</German>
-		<Italian>
-			<Text>Pelletteria</Text>
-			<Gender>Female</Gender>
-			<Plural>1</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Artículos de cuero</Text>
-			<Gender>Male</Gender>
-			<Plural>1</Plural>
-		</Spanish>
-		<Russian>Выделанная кожа</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_LEATHER_PEDIA</Tag>
-		<English>Leather is a durable and flexible material created by tanning of rawhide.[NEWLINE]It can manufactured either by cottage industry or heavy industry.[NEWLINE]Tanning transforms the protein of the rawhide into a stable material which will not putrefy and is suitable for a wide variety of uses.[NEWLINE]The principal difference between rawhides and tanned hides is that rawhides dry into a hard inflexible material that will rot in the rain, unlike tanned leather which dries out to a tough yet flexible form.</English>
-		<French>Le cuir est un matériau durable et flexible obtenu par le tannage de la peau brute et de la peau des animaux, souvent des bovins.[NEWLINE]Il peut être produit par des procédés de fabrication artisanaux ou industriels.[NEWLINE]Lors du tannage, les protéines de la peau brute sont transformées en un matériau stable qui ne pourrit pas.[NEWLINE]La principale différence entre les peaux brutes et les peaux tannées est que les peaux brutes se dessèchent et forment un matériau dur et inflexible qui pourrit lorsqu'il est mouillé, tandis que le matériau tanné reste tenace et flexible.</French>
-		<German>Leder ist ein haltbares und flexibles Material, das durch das Gerben von rohen Tierhäuten, häufig Rindern, hergestellt wird.[NEWLINE]Es kann in handwerklichen oder industriellen Herstellungsverfahren produziert werden.[NEWLINE]Beim Gerben wird das Protein der Rohhaut in ein stabiles Material umgewandelt, das nicht verrottet.[NEWLINE]Der Hauptunterschied zwischen Rohhäuten und gegerbten Häuten besteht darin, dass Rohhäute austrocknen und ein hartes, unflexibles Material bilden, das bei Nässe verrottet, während gegerbtes Material zäh und flexibel bleibt.</German>
-		<Italian>La pelle è un materiale resistente e flessibile ottenuto dalla concia della pelle grezza di animali, spesso bovini.[NEWLINE]Può essere prodotta con processi artigianali o industriali.[NEWLINE]Durante la concia, le proteine della pelle grezza vengono convertite in un materiale stabile che non marcisce.[NEWLINE]La differenza principale tra pelli grezze e pelli conciate è che le pelli grezze si seccano e formano un materiale duro e inflessibile che marcisce se bagnato, mentre il materiale conciato rimane duro e flessibile.</Italian>
-		<Spanish>El cuero es un material duradero y flexible que se obtiene curtiendo la piel cruda de animales, a menudo ganado vacuno.[NEWLINE]Puede producirse mediante procesos de fabricación artesanales o industriales.[NEWLINE]El curtido convierte la proteína del cuero crudo en un material estable que no se pudre.[NEWLINE]La principal diferencia entre las pieles crudas y las curtidas es que las primeras se secan y forman un material duro e inflexible que se pudre cuando se moja, mientras que el material curtido sigue siendo duro y flexible.</Spanish>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_LEATHER_STRATEGY</Tag>
-		<English>[COLOR_UNIT_TEXT]Master tanners[COLOR_REVERT] produce double the amount of [COLOR_HIGHLIGHT_TEXT]leather[COLOR_REVERT]from cattle, or pigskin from pigs. Leather, along with [LINK=YIELD_DOWNS]down[\LINK], is used to make lined leather coats.</English>
-		<French>Les [COLOR_UNIT_TEXT]maîtres tanneurs[COLOR_REVERT] produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]cuir[COLOR_REVERT] à partir de [COLOR_HIGHLIGHT_TEXT]peaux[COLOR_REVERT].</French>
-		<German>[COLOR_UNIT_TEXT]Gerbermeister[COLOR_REVERT] verarbeiten doppelt soviele Rindshäute in [COLOR_HIGHLIGHT_TEXT]Lederwaren[COLOR_REVERT], wie andere Kolonisten.</German>
-	</TEXT>
-	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_ARTILLERY_VETERAN</Tag>
 		<English>
 			<Text>Light Artillery:Light Artilleries</Text>
@@ -2981,35 +2824,6 @@
 		<English>[COLOR_UNIT_TEXT]Light artillery[COLOR_REVERT] can be produced in settlements with an [COLOR_HIGHLIGHT_TEXT]armoury[COLOR_REVERT], where they need a supply of [LINK=YIELD_CANNONS]cannons[\LINK] and [LINK=YIELD_BLACK_POWDER]gunpowder[\LINK], or they can be purchased in [LINK=CONCEPT_EUROPE]Europe[\LINK].[NEWLINE]On the open battlefield or as an assault unit cannon companies are vulnerable.[NEWLINE]But when they are garrisoned in [LINK=CONCEPT_SETTLEMENTS]settlements[\LINK] they are the only siege units that profit from the settlement's [COLOR_HIGHLIGHT_TEXT]defensive bonuses[COLOR_REVERT], added to their own defense bonus of 50%.[NEWLINE]For the protection of important cities it's preferable to employ [LINK=PROFESSION_MUSKETMEN]colonial militia[\LINK], who get better defense bonuses via promotions.[NEWLINE]Each new unit costs more than the previous one.</English>
 		<French>Les [COLOR_UNIT_TEXT]artilleries légères[COLOR_REVERT] peuvent être produits dans les colonies disposant d'une [COLOR_HIGHLIGHT_TEXT]armurerie[COLOR_REVERT]. L'unité est faible en terrain ouvert ou pour un assaut, mais placé en garnison dans une colonie ou un fort, elle est la seule unité d'artillerie à profiter du bonus défensif procuré par les fortifications de vos colonies auquel s'ajoute un bonus supplémentaire de 50%. Pour les colonies de plus grandes tailles, il peut être avisé d'employer malgré tout des fantassins, qui peuvent bénéficier de meilleurs bonus défensifs via promotions.[PARAGRAPH:2]Les canons de garnison peuvent également être acheté en Europe. Son prix augmente alors après chaque achat.</French>
 		<German>[COLOR_UNIT_TEXT]Leichte Artillerie[COLOR_REVERT] kann in Siedlungen mit einer [COLOR_HIGHLIGHT_TEXT]Waffenkammer[COLOR_REVERT] von Zimmerleuten gebaut werden. Auf freiem Feld oder im Angriff sind sie kampfschwach. Stationiert man sie aber in Siedlungen, verfügen sie dort über einen ordentlichen Defensivbonus und können zudem als einzige Artillerieeinheit auch die Verteidigungsboni von Befestigungsanlagen nutzen. Allerdings sollte man zum Schutz wichtiger und gut ausgebauter Städte lieber auf Kolonialmilizen setzen, die - im Gegensatz zu Leichten Artillerien - durch Beförderungen Defensivboni erhalten können. Zudem wirken sich die prozentualen Verteidigungsboni, die durch Verschanztsein, durch Verteidigungsbauwerke oder durch Beförderungen gewährt werden, bei Kolonialmilizen stärker aus als bei Leichten Artillerien, weil die Berechnungsgrundlage dieser Boni - die Basis-Kampfstärke - bei den Infanteristen höher ist.[PARAGRAPH:2]Leichte Artillerien können auch in Europa erworben werden. Beim Kauf kostet jede weitere Einheit mehr Gold als die vorherige.</German>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_LUMBER</Tag>
-		<English>Lumber</English>
-		<French>
-			<Text>Bois</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</French>
-		<German>Holz</German>
-		<Italian>
-			<Text>Legname</Text>
-			<Gender>Male</Gender>
-			<Plural>0</Plural>
-		</Italian>
-		<Spanish>
-			<Text>Madera</Text>
-			<Gender>Female</Gender>
-			<Plural>0</Plural>
-		</Spanish>
-		<Russian>Пиломатериалы</Russian>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_LUMBER_PEDIA</Tag>
-		<English>Lumber background</English>
-	</TEXT>
-	<TEXT>
-		<Tag>TXT_KEY_UNIT_LUMBER_STRATEGY</Tag>
-		<English>Lumber strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LUMBERJACK</Tag>
@@ -6614,6 +6428,7 @@
 		<German>[COLOR_UNIT_TEXT]Feindselige Ureinwohner[COLOR_REVERT] können nicht erworben werden.[NEWLINE]Sie sind dem Spieler gegenüber feindlich gesonnen und meist nur in [COLOR_HIGHLIGHT_TEXT]feindseligen Ureinwohnerdörfern[COLOR_REVERT] zu finden.[NEWLINE]Sie werden ihr Dorf bis zum Tod verteidigen und greifen den Spieler an, wenn dieses zerstört wird.</German>
 	</TEXT>
 </Civ4GameText>
+
 
 
 
