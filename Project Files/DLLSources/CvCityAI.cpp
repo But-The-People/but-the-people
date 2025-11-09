@@ -870,7 +870,7 @@ BuildingTypes CvCityAI::AI_bestBuilding(int iFocusFlags, int iMaxTurns, bool bAs
 bool CvCityAI::AI_hasCoastalRoute() const
 {
 	const CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
-
+	const int iMaxTurns = AI_getTransportMaxTurns(UNITCLASS_SMALL_COASTAL_SHIP);
 	int iLoop;
 	for (CvCity* pLoopCity = kOwner.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kOwner.nextCity(&iLoop))
 	{
@@ -883,7 +883,7 @@ bool CvCityAI::AI_hasCoastalRoute() const
 				FAssert(eShipUnit != NO_UNIT);
 
 				// Check if there's a coastal / cultural route between the cities
-				const bool found = generatePathForHypotheticalUnit(plot(), pLoopCity->plot(), getOwner(), eShipUnit);
+				const bool found = generatePathForHypotheticalUnit(plot(), pLoopCity->plot(), getOwner(), eShipUnit, MOVE_SAFE_TERRITORY, iMaxTurns);
 				if (found)
 					return true;
 			}
@@ -6435,6 +6435,14 @@ void CvCityAI::AI_assignCityPlot()
 	}
 }
 
+// Mostly a stub that returns the max reasonable turns for AI transports
+int CvCityAI::AI_getTransportMaxTurns(UnitClassTypes eUnitClassType) const
+{
+	static const int COASTAL_ROUTE_MAX_TURNS = 5;
+	if (eUnitClassType == UNITCLASS_SMALL_COASTAL_SHIP)
+		return COASTAL_ROUTE_MAX_TURNS;
+	return -1;
+}
 
 //
 //
