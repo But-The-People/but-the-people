@@ -83,7 +83,7 @@ public:
 	ProfessionTypes AI_getIdealProfession() const;
 
 	bool AI_loadAdjacent(CvPlot* pPlot, bool bTestCity);
-	bool AI_allowedToJoin(const CvCity* pCity) const;
+	bool AI_allowedToJoin(const CvCity& kCity) const;
 
 	void read(CvSavegameReader reader);
 	void write(CvSavegameWriter writer);

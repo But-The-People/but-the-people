@@ -2439,7 +2439,7 @@ void CvUnitAI::AI_defensiveMove()
 		{
 			if (isCargo() || pCity->getPopulation() < 3)
 			{
-				if (AI_allowedToJoin(pCity))
+				if (AI_allowedToJoin(*pCity))
 				{
 					pCity->addPopulationUnit(this, NO_PROFESSION);
 					return;
@@ -2448,7 +2448,7 @@ void CvUnitAI::AI_defensiveMove()
 
 			if ((getFortifyTurns() == 0) || (GC.getGameINLINE().getSorenRandNum(10, "AI better job")  == 0))
 			{
-				if (AI_betterJob())
+				if (AI_allowedToJoin(*pCity) && AI_betterJob())
 				{
 					return;
 				}
@@ -2604,7 +2604,7 @@ void CvUnitAI::AI_offensiveMove()
 		{
 			if (isCargo())
 			{
-				if (AI_allowedToJoin(pCity))
+				if (AI_allowedToJoin(*pCity))
 				{
 					pCity->addPopulationUnit(this, NO_PROFESSION);
 					return;
@@ -2613,7 +2613,7 @@ void CvUnitAI::AI_offensiveMove()
 
 			if (!bDanger && ((getFortifyTurns() == 0) || (GC.getGameINLINE().getSorenRandNum(10, "AI better job")  == 0)))
 			{
-				if (AI_betterJob())
+				if (AI_allowedToJoin(*pCity) && AI_betterJob())
 				{
 					return;
 				}
@@ -2667,7 +2667,7 @@ void CvUnitAI::AI_offensiveMove()
 
 	CvCity* pCity = plot()->getPlotCity();
 
-	if (pCity != NULL && AI_allowedToJoin(pCity))
+	if (pCity != NULL && AI_allowedToJoin(*pCity))
 	{
 		pCity->addPopulationUnit(this, NO_PROFESSION);
 		return;
@@ -2716,7 +2716,7 @@ void CvUnitAI::AI_attackCityMove()
 
 		if (pCity != NULL)
 		{
-			if (AI_allowedToJoin(pCity))
+			if (AI_allowedToJoin(*pCity))
 	{
 				pCity->addPopulationUnit(this, NO_PROFESSION);
 				return;
@@ -3277,7 +3277,7 @@ void CvUnitAI::AI_counterMove()
 		{
 			if (isCargo())
 			{
-				if (AI_allowedToJoin(pCity))
+				if (AI_allowedToJoin(*pCity))
 				{
 					pCity->addPopulationUnit(this, NO_PROFESSION);
 					return;
@@ -3286,7 +3286,7 @@ void CvUnitAI::AI_counterMove()
 
 			if (!bDanger && ((getFortifyTurns() == 0) || (GC.getGameINLINE().getSorenRandNum(10, "AI better job")  == 0)))
 			{
-				if (AI_betterJob())
+				if (AI_allowedToJoin(*pCity) && AI_betterJob())
 				{
 					return;
 				}
@@ -3360,7 +3360,7 @@ void CvUnitAI::AI_counterMove()
 
 	CvCity* pCity = plot()->getPlotCity();
 
-	if (pCity != NULL && AI_allowedToJoin(pCity))
+	if (pCity != NULL && AI_allowedToJoin(*pCity))
 	{
 		pCity->addPopulationUnit(this, NO_PROFESSION);
 		return;
@@ -15706,7 +15706,7 @@ bool CvUnitAI::AI_joinCityDefender()
 	{
 		return false;
 	}
-	if (!AI_allowedToJoin(pCity))
+	if (!AI_allowedToJoin(*pCity))
 	{
 		return false;
 	}
@@ -19355,14 +19355,14 @@ bool CvUnitAI::AI_loadAdjacent(CvPlot* pPlot, bool bTestCity)
 	return false;
 }
 
-bool CvUnitAI::AI_allowedToJoin(const CvCity* pCity) const
+bool CvUnitAI::AI_allowedToJoin(const CvCity& kCity) const
 {
-	if (!canJoinCity(pCity->plot()))
+	if (!canJoinCity(kCity.plot()))
 	{
 		return false;
 	}
 
-	if (GC.getGame().getRemainingForcedPeaceTurns() == 0 && canAttack() && pCity->AI_neededDefenders() <= pCity->AI_numDefenders(false, true))
+	if (GC.getGame().getRemainingForcedPeaceTurns() == 0 && canAttack() && kCity.AI_neededDefenders() <= kCity.AI_numDefenders(false, true))
 	{
 		return false;
 	}
