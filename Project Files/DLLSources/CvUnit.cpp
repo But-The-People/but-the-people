@@ -2920,12 +2920,16 @@ void CvUnit::doCommand(CommandTypes eCommand, int iData1, int iData2)
 			}
 			crossOcean((UnitTravelStates) iData1);
 			break;
+
 		/*** TRIANGLETRADE 10/25/08 by DPII ***/
 		case COMMAND_SAIL_TO_AFRICA:
 			sailToAfrica();
+			break;
+
 		// R&R, ray, Port Royal
 		case COMMAND_SAIL_TO_PORT_ROYAL:
 			sailToPortRoyal();
+			break;
 
 		case COMMAND_CHOOSE_TRADE_ROUTES:
 			// TAC - Trade Routes Advisor - koma13 - START
