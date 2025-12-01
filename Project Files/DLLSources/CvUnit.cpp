@@ -16386,13 +16386,18 @@ int CvUnit::getAmountForNativeTrade() const
 // Returns 0 if there are no yield units on the transport to evaluate
 int CvUnit::getCargoValue(TradeLocationTypes eLocation) const
 {
+	const CvPlayer& kOwner = GET_PLAYER(getOwnerINLINE());
+
+	// Sanity check in case the caller does not have a parent
+	if (kOwner.getParent() == NO_PLAYER)
+		return 0;
+
 	CvPlot const* const pPlot = plot();
 
 	// TODO: Determine if the plot can  ever be NULL
 	FAssert(pPlot != NULL);
 
 	CLLNode<IDInfo>* pUnitNode = pPlot->headUnitNode();
-	CvPlayer& kOwner = GET_PLAYER(getOwnerINLINE());
 	CvPlayerAI& kEuropePlayer = GET_PLAYER(kOwner.getParent());
 
 	int sellValue = 0;

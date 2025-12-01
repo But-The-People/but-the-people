@@ -4617,14 +4617,20 @@ bool CvUnitAI::AI_sailToPreferredPort(bool bMove)
 {
 	if (!hasAnyUnitInCargo())
 	{
-		CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
+		const CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
 
 		// In general we should prefer Europe, but we will consider going to Africa if:
 		// 1) We cannot fill our transport ship with more than half the capacity of colonists for the return journey, rounded down
 		//const bool bAfricaRatio = (kOwner.getNumEuropeUnits() / static_cast<double>(cargoSpace()) <= 0.5);
 
+		const int iEuropeValue = getCargoValue(TRADE_LOCATION_EUROPE);
+
+		// Just bail if our stuff is apparently worthless (or the caller may not have a parent)
+		if (iEuropeValue == 0)
+			return false;
+
 		// 2) Our goods must have a higher value in Africa than in Europe
-		const int iAfricaBetterValue = getCargoValue(TRADE_LOCATION_AFRICA) - getCargoValue(TRADE_LOCATION_EUROPE);
+		const int iAfricaBetterValue = getCargoValue(TRADE_LOCATION_AFRICA) - iEuropeValue;
 
 		// 3) The price of a slave must be less than a free colonist
 		const int iPriceDifference = AI_getCostDifferenceFreeVsSlave();
