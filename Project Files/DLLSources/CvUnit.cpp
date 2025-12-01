@@ -7417,12 +7417,6 @@ bool CvUnit::canFound(const CvPlot* pPlot, bool bTestVisible) const
 	}
 	// R&R, ray, changes to Wild Animals - END
 
-	// Erik: Eventually we'll check against a XML tag, but this'll have to do for now
-	if (isPrisonerOrSlave())
-	{
-		return false;
-	}
-
 	if (!m_pUnitInfo->isFound())
 	{
 		return false;
@@ -16782,6 +16776,7 @@ bool CvUnit::isBarbarianUnitOnAdjacentPlotOfUnit(int /*UnitClassTypes*/ iIndex) 
 // WTP, ray, helper methods for Python Event System - Spawning Units and Barbarians on Plots - END
 
 // Erik: We should come up with a XML tag (e.g. bJoin vs. bFound) so that we don't need to hard-code this
+// TODO: Currently unused - delete if not useful ?
 bool CvUnit::isPrisonerOrSlave() const
 {
 	const UnitClassTypes unitClassIntToBeChecked = m_pUnitInfo->getUnitClassType();
