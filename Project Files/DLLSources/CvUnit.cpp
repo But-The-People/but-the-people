@@ -5678,7 +5678,7 @@ bool CvUnit::canLearn() const
 
 	// R&R, ray, Natives do not talk when furious - START
 	// Erik: natives will not teach if a they are still angry due to bargaining
-	if (isHuman() && isAutomated())
+	if (isHuman())
 	{
 		const CvCity *const pCity = plot()->getPlotCity();
 		const PlayerTypes eNativePlayer = pCity->getOwnerINLINE();
