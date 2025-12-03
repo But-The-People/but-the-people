@@ -4441,7 +4441,7 @@ bool CvUnit::canLoadUnit(const CvUnit* pTransport, const CvPlot* pPlot, bool bCh
 
 	// WTP, ray, let us not have Land Transports transport other Land Transports, it feels stupid and might allow exploits - START
 	bool bTransportedUnitIsLandTransport = (getDomainType() == DOMAIN_LAND && getUnitInfo().getCargoSpace() > 0);
-	bool bTransportingUnitIsLandTransport = (pTransport->getDomainType() == DOMAIN_LAND && getUnitInfo().getCargoSpace() > 0);
+	bool bTransportingUnitIsLandTransport = (pTransport->getDomainType() == DOMAIN_LAND && pTransport->getUnitInfo().getCargoSpace() > 0);
 	if (bTransportedUnitIsLandTransport && bTransportingUnitIsLandTransport)
 	{
 		return false;
@@ -4777,40 +4777,28 @@ int CvUnit::loadYieldAmount(YieldTypes eYield, int iAmount, bool bTrade)
 	return iAmount; //R&R mod, vetiarvind, max yield import limit
 }
 
+// Returns how much of eYield the city can safely export (stored minus auto-maintain threshold, clamped to zero).
 int CvUnit::getMaxLoadYieldAmount(YieldTypes eYield) const
 {
-	int iMaxAmount = GC.getGameINLINE().getCargoYieldCapacity();
-	iMaxAmount = std::min(iMaxAmount, getLoadYieldAmount(eYield));
-	CvCity* const pCity = plot()->getPlotCity();
+	// How much this unit can take at all (remaining space)
+	int iMaxAmount = getLoadYieldAmount(eYield);
+
+	const CvCity* const pCity = plot()->getPlotCity();
 	if (pCity != NULL)
 	{
-		int iMaxAvailable = pCity->getYieldStored(eYield);
-		if (!isHuman() || isAutomated())
-		{
-			// R&R, ray, improvement
-			if (!isHuman() && (pCity->getTotalYieldStored() > pCity->getMaxYieldCapacity() / 2))
-			{
-				// ray, making special storage capacity rules for Yields XML configurable
-				int iCargoYields = 0;
-				// for (YieldTypes eLoopYield = YIELD_HEMP; eLoopYield < NUM_YIELD_TYPES; ++eLoopYield)// without YIELD_FOOD, YIELD_LUMBER, YIELD_STONE
-				for (YieldTypes eLoopYield = FIRST_YIELD; eLoopYield < NUM_YIELD_TYPES; ++eLoopYield)
-				{
-					// ray, making special storage capacity rules for Yields XML configurable
-					if ((pCity->getYieldStored(eLoopYield) > 0) && (GC.getYieldInfo(eLoopYield).isCargo()) && !(GC.getYieldInfo(eLoopYield).isIgnoredForStorageCapacity()))
-						{iCargoYields++;}
-				}
+		int iMaxAvailable;
 
-				if (iCargoYields > 0)//R&R mod, vetiarvind, max yield import limit
-					iMaxAvailable -= pCity->getAutoMaintainThreshold(eYield);
-			}
-			else
-			{
-				//iMaxAvailable -= pCity->getMaintainLevel(eYield);
-				// transport feeder - start - Nightinggale
-				iMaxAvailable -= pCity->getAutoMaintainThreshold(eYield);
-				// transport feeder - end - Nightinggale
-			}
+		if (isHuman() && !isAutomated())
+		{
+			// Manual human: no export limit, player decides
+			iMaxAvailable = pCity->getYieldStored(eYield);
 		}
+		else
+		{
+			// AI or automated human: respect auto-maintain threshold
+			iMaxAvailable = pCity->getExportAvailable(eYield);
+		}
+
 		iMaxAmount = std::min(iMaxAmount, iMaxAvailable);
 	}
 
