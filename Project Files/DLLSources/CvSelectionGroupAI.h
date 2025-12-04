@@ -41,7 +41,12 @@ public:
 	bool AI_isControlled() const;
 	bool AI_isDeclareWar(const CvPlot* pPlot = NULL);
 
-	CvPlot* AI_getMissionAIPlot();
+	CvPlot* AI_getMissionAIPlot()
+	{
+		return AI_getMissionAIPlot_();
+	}
+
+	CvPlot* AI_getMissionAIPlot_() const;
 
 	bool AI_isForceSeparate();
 	void AI_makeForceSeparate();

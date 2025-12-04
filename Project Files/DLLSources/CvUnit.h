@@ -853,6 +853,7 @@ public:
 	int getRemainingMovesAfterPFMoves(int iPFMoves) const;
 
 	void writeDesyncLog(FILE* f) const;
+	std::string CvUnit::debugString() const;
 
 protected:
 

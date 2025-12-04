@@ -17015,3 +17015,100 @@ void CvUnit::writeDesyncLog(FILE* f) const
 		fprintf(f, "\t\t%Dangerous paths allowed\n");
 	}
 }
+
+std::string CvUnit::debugString() const
+{
+	std::ostringstream oss;
+
+	// Basic identity
+	oss << "Unit id=" << getID()
+		<< " owner=" << getOwnerINLINE()
+		<< " team=" << GET_PLAYER(getOwnerINLINE()).getTeam()
+		<< " type=";
+
+	// XML type tag, if available (ASCII)
+	const CvUnitInfo& kInfo = getUnitInfo();
+	if (kInfo.getType() != NULL)
+	{
+		oss << kInfo.getType();
+	}
+	else
+	{
+		oss << "(unknown)";
+	}
+
+	// Position
+	oss << " plot=(" << getX_INLINE() << "," << getY_INLINE() << ")";
+
+	const CvPlot* pPlot = plot();
+	if (pPlot != NULL)
+	{
+		oss << " area=" << pPlot->getArea();
+		if (pPlot->isCity())
+		{
+			const CvCity* pCity = pPlot->getPlotCity();
+			if (pCity != NULL)
+			{
+				oss << " cityOwner=" << pCity->getOwnerINLINE()
+					<< " cityID=" << pCity->getID();
+			}
+		}
+	}
+
+	// Movement
+	oss << " movesLeft=" << movesLeft()
+		<< " maxMoves=" << maxMoves()
+		<< " domain=" << getDomainType()
+		<< " damage=" << getDamage();
+
+	// Group and mission info
+	const CvSelectionGroupAI& kGroup = getGroup()->AI();
+
+	{
+		oss << " groupID=" << kGroup.getID()
+			<< " groupSize=" << kGroup.getNumUnits();
+
+		const CvPlot* pMissionPlot = kGroup.AI_getMissionAIPlot_();
+		if (pMissionPlot != NULL)
+		{
+			oss << " missionAIPlot=("
+				<< pMissionPlot->getX_INLINE() << ","
+				<< pMissionPlot->getY_INLINE() << ")";
+		}
+	}
+
+	// Cargo / yield
+	if (isYield())
+	{
+		oss << " yieldType=" << getYield()
+			<< " yieldStored=" << getYieldStored();
+
+		const CvUnit* pTransport = getTransportUnit();
+		if (pTransport != NULL)
+		{
+			oss << " transportID=" << pTransport->getID();
+		}
+		else
+		{
+			oss << " transportID=(none)";
+		}
+	}
+	else if (cargoSpace() > 0)
+	{
+		oss << " cargoSpace=" << cargoSpace()
+			<< " cargoUsed=" << getCargo();
+	}
+
+	// Profession / travel
+	if (getProfession() != NO_PROFESSION)
+	{
+		oss << " profession=" << getProfession();
+	}
+
+	oss << " travelState=" << getUnitTravelState();
+
+	// Basic AI info
+	oss << " unitAIType=" << AI_getUnitAIType();
+
+	return oss.str();
+}

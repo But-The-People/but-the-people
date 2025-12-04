@@ -2687,8 +2687,12 @@ bool CvSelectionGroup::groupDeclareWar(CvPlot* pPlot, bool bForce)
 // Returns true if attack was made...
 bool CvSelectionGroup::groupAttack(AssertCallerData assertData, int iX, int iY, int iFlags, bool& bFailedAlreadyFighting)
 {
-	FAssertWithCaller(assertData, !isBusy()); // K-Mod
-
+	if (isBusy())
+	{
+		CvUnit* const pHead = getHeadUnit();
+		const std::string unitDebug = (pHead != NULL) ? pHead->debugString() : "No head unit!";
+		FAssertMsgWithCaller(assertData, !isBusy(), unitDebug.c_str()); // K-Mod
+	}
 	CvPlot* pDestPlot = GC.getMap().plot(iX, iY);
 
 	// K-Mod. Rather than clearing the existing path data; use a temporary pathfinder.
