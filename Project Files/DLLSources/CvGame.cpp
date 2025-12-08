@@ -4430,6 +4430,135 @@ bool CvGame::isFinalInitialized() const
 	return m_bFinalInitialized;
 }
 
+// Setup caches to support "passthrough yields". Shared by all players
+void CvGame::initPassthroughYieldCache()
+{
+	int i;
+	g_aePassthroughYields.clear();
+	g_aeGatedOutputs.clear();
+
+	for (i = 0; i < NUM_YIELD_TYPES; ++i)
+	{
+		g_aeCapacityYieldsForOutput[i].clear();
+		g_aPassthroughProfsForYield[i].clear();
+	}
+
+	bool abPassthrough[NUM_YIELD_TYPES];
+	bool abOutputRegistered[NUM_YIELD_TYPES];
+	for (i = 0; i < NUM_YIELD_TYPES; ++i)
+	{
+		abPassthrough[i] = false;
+		abOutputRegistered[i] = false;
+	}
+
+	const int iNumProf = GC.getNumProfessionInfos();
+	for (int iProf = 0; iProf < iNumProf; ++iProf)
+	{
+		const CvProfessionInfo& kProf = GC.getProfessionInfo((ProfessionTypes)iProf);
+
+		const int iNumProduced = kProf.getNumYieldsProduced();
+		const int iNumConsumed = kProf.getNumYieldsConsumed();
+		if (iNumProduced <= 0 || iNumConsumed <= 0)
+		{
+			continue;
+		}
+
+		// For each consumed yield, check if it is also produced (passthrough).
+		for (int iC = 0; iC < iNumConsumed; ++iC)
+		{
+			YieldTypes eConsumed = (YieldTypes)kProf.getYieldsConsumed(iC);
+			if (eConsumed == NO_YIELD)
+			{
+				continue;
+			}
+
+			bool bProducedAlso = false;
+			for (int iP = 0; iP < iNumProduced; ++iP)
+			{
+				YieldTypes eProd = (YieldTypes)kProf.getYieldsProduced(iP);
+				if (eProd == eConsumed)
+				{
+					bProducedAlso = true;
+					break;
+				}
+			}
+
+			if (!bProducedAlso)
+			{
+				continue;
+			}
+
+			const int iYIndex = (int)eConsumed;
+			if (iYIndex < 0 || iYIndex >= NUM_YIELD_TYPES)
+			{
+				continue;
+			}
+
+			// Mark global passthrough yield once.
+			if (!abPassthrough[iYIndex])
+			{
+				abPassthrough[iYIndex] = true;
+				g_aePassthroughYields.push_back(eConsumed);
+			}
+
+			// Add this profession as a passthrough profession for this yield.
+			std::vector<ProfessionTypes>& kProfList = g_aPassthroughProfsForYield[iYIndex];
+			bool bHaveProf = false;
+			int iProfIdx;
+			for (iProfIdx = 0; iProfIdx < (int)kProfList.size(); ++iProfIdx)
+			{
+				if (kProfList[iProfIdx] == (ProfessionTypes)iProf)
+				{
+					bHaveProf = true;
+					break;
+				}
+			}
+			if (!bHaveProf)
+			{
+				kProfList.push_back((ProfessionTypes)iProf);
+			}
+
+			// eConsumed is also a capacity yield for other outputs of this profession.
+			for (int iPOut = 0; iPOut < iNumProduced; ++iPOut)
+			{
+				YieldTypes eOutput = (YieldTypes)kProf.getYieldsProduced(iPOut);
+				if (eOutput == NO_YIELD || eOutput == eConsumed)
+				{
+					continue;
+				}
+
+				const int iOutIndex = (int)eOutput;
+				if (iOutIndex < 0 || iOutIndex >= NUM_YIELD_TYPES)
+				{
+					continue;
+				}
+
+				std::vector<YieldTypes>& vCapList = g_aeCapacityYieldsForOutput[iOutIndex];
+
+				bool bHaveCap = false;
+				int iCapIdx;
+				for (iCapIdx = 0; iCapIdx < (int)vCapList.size(); ++iCapIdx)
+				{
+					if (vCapList[iCapIdx] == eConsumed)
+					{
+						bHaveCap = true;
+						break;
+					}
+				}
+				if (!bHaveCap)
+				{
+					vCapList.push_back(eConsumed);
+				}
+
+				if (!abOutputRegistered[iOutIndex])
+				{
+					abOutputRegistered[iOutIndex] = true;
+					g_aeGatedOutputs.push_back(eOutput);
+				}
+			}
+		}
+	}
+}
 
 void CvGame::setFinalInitialized(bool bNewValue)
 {

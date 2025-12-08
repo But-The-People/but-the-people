@@ -1149,7 +1149,7 @@ int pathCost(FAStarNode* parent, FAStarNode* node, int data, const void* pointer
 		!USE_CLASSIC_MOVEMENT_SYSTEM &&
 		!pSelectionGroup->AI_isControlled())
 	{
-		// UI case (finder!=0): use finder�s dest.
+		// UI case (finder!=0): use finders dest.
 		// K-Mod case (finder==0): rely on hint passed in data arg 
 		const bool isFirstEdge = (parent->m_pParent == NULL);
 		const bool isGoalEdge = (finder != 0
@@ -2468,6 +2468,8 @@ void postLoadGameFixes()
 
 #endif
 	GC.getGameINLINE().postLoadFixes();
+
+	GC.getGameINLINE().initPassthroughYieldCache();
 }
 /// post load function - end - Nightinggale
 

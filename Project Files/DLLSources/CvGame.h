@@ -416,6 +416,17 @@ public:
 	// tells if an OOS has been detected this turn
 	bool isNetworkOOSActive() const;
 
+	void initPassthroughYieldCache();
+
+	// Yields which are passthrough in at least one profession (consumed and produced).
+	std::vector<YieldTypes> g_aePassthroughYields;
+	// Outputs which are gated by one or more passthrough yields (capacity-based).
+	std::vector<YieldTypes> g_aeGatedOutputs;
+	// For each output E: passthrough yields Y that provide capacity for producing E.
+	std::vector<YieldTypes> g_aeCapacityYieldsForOutput[NUM_YIELD_TYPES];
+	// For each yield Y: professions that passthrough Y (consume Y and produce Y).
+	std::vector<ProfessionTypes> g_aPassthroughProfsForYield[NUM_YIELD_TYPES];
+
 	static const int PLOT_OCEAN_DISTANCE_IMPASSABLE_THRESHOLD = 1000;
 
 protected:
