@@ -3759,6 +3759,7 @@ CvUnit* CvCityAI::AI_juggleColonist(CvUnit* pUnit)
 
 	if (pBestUnit != NULL)
 	{
+		tbb::mutex::scoped_lock lock(jobMutex);
 		AI_swapUnits(pUnit, pBestUnit);
 	}
 
