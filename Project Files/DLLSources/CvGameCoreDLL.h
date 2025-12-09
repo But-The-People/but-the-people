@@ -17,6 +17,14 @@
 #pragma warning( 3: 4701 ) // local variable used without being initialized
 
 #define WIN32_LEAN_AND_MEAN
+// <advc.fract> Otherwise, classes in the PCH can't have members named "max" and "min".
+#ifndef NOMINMAX
+#define NOMINMAX
+#endif // </advc.fract>
+/*	<advc.make> That's Windows 2000, which is what Civ 4 requires anyway
+	(according to the publisher's website). Enables some more macros;
+	who knows, maybe also more optimized code. */
+#define _WIN32_WINNT 0x0500
 #include <Windows.h>
 #include <MMSystem.h>
 #if defined _DEBUG && !defined USE_MEMMANAGER
@@ -32,6 +40,7 @@
 #include <set>
 #include <deque>
 #include <queue>
+#include <limits>
 
 #define DllExport   __declspec( dllexport )
 
@@ -49,6 +58,7 @@ typedef unsigned long    dword;
 typedef unsigned __int64 qword;
 typedef wchar_t          wchar;
 
+/*
 #define MAX_CHAR                            (0x7f)
 #define MIN_CHAR                            (0x80)
 #define MAX_SHORT                           (0x7fff)
@@ -61,6 +71,7 @@ typedef wchar_t          wchar;
 #define MIN_UNSIGNED_SHORT                  (0x0000)
 #define MAX_UNSIGNED_INT                    (0xffffffff)
 #define MIN_UNSIGNED_INT                    (0x00000000)
+*/
 
 #define SAFE_DELETE(p)       { if(p) { delete (p);     (p)=NULL; } }
 #define SAFE_DELETE_ARRAY(p) { if(p) { delete[] (p);   (p)=NULL; } }
@@ -125,11 +136,15 @@ namespace boost
 // this is usually not needed as it's the working directory
 std::string GetDLLPath(bool bLoadDLLPath = true);
 
-
 #include "NiColorA.h"
 #include "NiPoint2.h"
 #include "NiPoint3.h"
 #include "NiAnimationKey.h"
+
+// ScaledNum port from AdvCiv
+//   These are included before other DLL includes since they replace MIN macros and defs etc.
+#include "TypeChoice.h"
+#include "IntegerTraits.h" // </advc>
 
 #include "BitFunctions.h"
 
@@ -182,6 +197,12 @@ std::string GetDLLPath(bool bLoadDLLPath = true);
 #include "CvCityAI.h"
 #include "CvSelectionGroupAI.h"
 #include "CvUnitAI.h"
+
+// ScaledNum port from AdvCiv
+#include "ArithmeticUtils.h" // advc
+#include "IntegerConversion.h" // advc
+#include "ScaledNum.h"
+//#include "ArithmeticTraits.h"
 
 #ifdef FINAL_RELEASE
 // Undefine OutputDebugString in final release builds

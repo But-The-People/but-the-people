@@ -7313,20 +7313,18 @@ void CvCity::doYields()
 				{
 					iAmount = iAmountForSale;
 				}
-				int iProfit = iAmount * getYieldBuyPrice(eYield);
+				scaled rProfit(iAmount* getYieldBuyPrice(eYield));
+				
+				if (iCityHappinessDomesticMarketGoldModifiers != 0)
+					rProfit *= per100(100 + iCityHappinessDomesticMarketGoldModifiers);
+				
+				if (iCityLawDomesticMarketGoldModifiers != 0)
+					rProfit *= per100(100 + iCityLawDomesticMarketGoldModifiers);
 
-				// WTP, ray, Happiness - START
-				iProfit = iProfit * (100 + iCityHappinessDomesticMarketGoldModifiers) / 100;
-				// WTP, ray, Happiness - END
+				if (iDomesticMarketProfitModifierInPercent != 0)
+					rProfit *= per100(100 + iDomesticMarketProfitModifierInPercent);
 
-				// WTP, ray, Crime and Law - START
-				iProfit = iProfit * (100 + iCityLawDomesticMarketGoldModifiers) / 100;
-				// WTP, ray, Crime and Law - END
-
-				// WTP, ray, Domestic Market Profit Modifier - START
-				iProfit = iProfit * (100 + iDomesticMarketProfitModifierInPercent) / 100;
-				// WTP, ray, Domestic Market Profit Modifier - END
-
+				const int iProfit = rProfit.round();
 				aiYields[eYield] -= iAmount;
 				GET_PLAYER(getOwnerINLINE()).changeGold(iProfit);
 				iTotalProfitFromDomesticMarket = iTotalProfitFromDomesticMarket + iProfit;
