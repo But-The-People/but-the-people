@@ -606,7 +606,7 @@ UnitTypes CvCityAI::AI_bestUnit(bool bAsync, UnitAITypes* peBestUnitAI, bool bPi
 	for (UnitAITypes eUnitAI = FIRST_UNITAI; eUnitAI < NUM_UNITAI_TYPES; ++eUnitAI)
 	{
 		// Erik: Note that no leader is currently making use of this
-		aiUnitAIVal[eUnitAI] *= std::max(0, (GC.getLeaderHeadInfo(getPersonalityType()).getUnitAIWeightModifier(eUnitAI) + 100));
+		aiUnitAIVal[eUnitAI] *= branchless::max(0, (GC.getLeaderHeadInfo(getPersonalityType()).getUnitAIWeightModifier(eUnitAI) + 100));
 		aiUnitAIVal[eUnitAI] /= 100;
 
 		if (!bPickAny)
@@ -842,9 +842,9 @@ UnitTypes CvCityAI::AI_bestUnitAI(UnitAITypes eUnitAI, bool bAsync) const
 						FAssert((MAX_INT / 1000) > iValue);
 						iValue *= 1000;
 
-						iValue /= std::max(1, (4 + getProductionTurnsLeft(eLoopUnit, 0)));
+						iValue /= branchless::max(1, (4 + getProductionTurnsLeft(eLoopUnit, 0)));
 
-						iValue = std::max(1, iValue);
+						iValue = branchless::max(1, iValue);
 
 						if (iValue > iBestValue)
 						{
@@ -936,7 +936,7 @@ BuildingTypes CvCityAI::AI_bestBuildingThreshold(int iFocusFlags, int iMaxTurns,
 					const int iBuildingProduction = getBuildingProduction(eLoopBuilding);
 					const int iTurnsLeft = getProductionTurnsLeft(eLoopBuilding, 0);
 
-					iValue += (iBuildingProduction +  std::max(1, 10 - iTurnsLeft));
+					iValue += (iBuildingProduction + branchless::max(1, 10 - iTurnsLeft));
 
 
 					bool bValid = ((iMaxTurns <= 0) ? true : false);
@@ -1128,8 +1128,8 @@ bool CvCityAI::AI_isProductionBuilding(BuildingTypes eBuilding, bool bMajorCity)
 					int iOutput = pLoopCity->getPotentialProductionOutput(eProfessionConsumed);
 					if (iOutput > 0)
 					{
-						iBestYield = std::max(iBestYield, iOutput);
-						iWorstYield = std::min(iWorstYield, iOutput);
+						iBestYield = branchless::max(iBestYield, iOutput);
+						iWorstYield = branchless::min(iWorstYield, iOutput);
 					}
 				}
 			}
@@ -1208,7 +1208,7 @@ int CvCityAI::AI_buildingValue(BuildingTypes eBuilding, int iFocusFlags) const
 			iExcess = iCoef / 2;
 		}
 		iTotalExcess = (iCityCapacity * iCoef) / iExcess;
-		iHighestPercentFull = std::max(iHighestPercentFull, 100 * getTotalYieldStored() / iCityCapacity);
+		iHighestPercentFull = branchless::max(iHighestPercentFull, 100 * getTotalYieldStored() / iCityCapacity);
 		int iTempValue = kBuildingInfo.getYieldStorage();
 
 		iValue += iTempValue / 3;
@@ -1251,7 +1251,7 @@ int CvCityAI::AI_buildingValue(BuildingTypes eBuilding, int iFocusFlags) const
 				{
 					if (pLoopPlot->isWater())
 					{
-						iValue += 8 * std::max(0, pLoopPlot->getYield(YIELD_FOOD) - GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION);
+						iValue += 8 * branchless::max(0, pLoopPlot->getYield(YIELD_FOOD) - GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION);
 					}
 				}
 			}
@@ -1348,14 +1348,14 @@ int CvCityAI::AI_buildingValue(BuildingTypes eBuilding, int iFocusFlags) const
 
 								if (eYieldConsumed != NO_YIELD)
 								{
-									int iAvailable = getRawYieldProduced(eYieldConsumed) + std::max(0, AI_getTradeBalance(eYieldConsumed));
+									int iAvailable = getRawYieldProduced(eYieldConsumed) + branchless::max(0, AI_getTradeBalance(eYieldConsumed));
 
 									if (iAvailable < iOutput)
 									{
-										int iMax = std::max(1, GC.getGameINLINE().getCargoYieldCapacity());
+										int iMax = branchless::max(1, GC.getGameINLINE().getCargoYieldCapacity());
 
 										int iPercent = 100 * getYieldStored(eYieldConsumed) / iMax;
-										iPercent = std::max(iPercent, 100 * kOwner.AI_getBestPlotYield(eYieldConsumed) / iOutput);
+										iPercent = branchless::max(iPercent, 100 * kOwner.AI_getBestPlotYield(eYieldConsumed) / iOutput);
 
 										if (iPercent > 100)
 										{
@@ -1603,7 +1603,7 @@ int CvCityAI::AI_buildingValue(BuildingTypes eBuilding, int iFocusFlags) const
 			if ((iBuildingCount < iTargetBuildingCount) || (kOwner.getGold() > 25000) || (iFocusFlags & BUILDINGFOCUS_MILITARY))
 			{
 				//iValue += 5 * calculateNetYield(YIELD_HAMMERS);
-				iValue += std::max(10, 5 * calculateNetYield(YIELD_HAMMERS));
+				iValue += branchless::max(10, 5 * calculateNetYield(YIELD_HAMMERS));
 			}
 			// TAC - AI Buildings - koma13 - END
 			bIsMilitary = true;
@@ -1743,7 +1743,7 @@ int CvCityAI::AI_buildingValue(BuildingTypes eBuilding, int iFocusFlags) const
 	}
 
 	//return iValue;
-	return std::max(0, iValue);
+	return branchless::max(0, iValue);
 	// TAC - AI Buildings - koma13 - END
 }
 
@@ -1887,7 +1887,7 @@ int CvCityAI::AI_numPotentialDefenders() const
 			{
 				// TAC - AI City Defense - koma13 - START
 				//int iEquipable = getPopulation();
-				int iEquipable = std::max(0, getPopulation() - 1);
+				int iEquipable = branchless::max(0, getPopulation() - 1);
 				// TAC - AI City Defense - koma13 - END
 				if (kOwner.hasContentsYieldEquipmentAmount(eLoopProfession)) // cache CvPlayer::getYieldEquipmentAmount - Nightinggale
 				{
@@ -1899,14 +1899,14 @@ int CvCityAI::AI_numPotentialDefenders() const
 						{
 							// TAC - AI Buildings - koma13 - START
 							//iEquipable = std::min(iEquipable, getYieldStored((YieldTypes)iYield) / iAmount);
-							int iYieldsAvailabe = std::min(getYieldStored((YieldTypes)iYield), getMaxYieldCapacity() * 60 / 100);
-							iEquipable = std::min(iEquipable, iYieldsAvailabe / iAmount);
+							int iYieldsAvailabe = branchless::min(getYieldStored((YieldTypes)iYield), getMaxYieldCapacity() * 60 / 100);
+							iEquipable = branchless::min(iEquipable, iYieldsAvailabe / iAmount);
 							// TAC - AI Buildings - koma13 - END
 						}
 					}
 				}
 
-				iMaxEquipable = std::max(iEquipable, iMaxEquipable);
+				iMaxEquipable = branchless::max(iEquipable, iMaxEquipable);
 			}
 		}
 	}
@@ -1944,7 +1944,7 @@ void CvCityAI::AI_updateNeededFloatingDefenders()
 {
 	int iFloatingDefenders = GET_PLAYER(getOwnerINLINE()).AI_getTotalFloatingDefendersNeeded(area());
 
-	int iTotalThreat = std::max(1, GET_PLAYER(getOwnerINLINE()).AI_getTotalAreaCityThreat(area()));
+	int iTotalThreat = branchless::max(1, GET_PLAYER(getOwnerINLINE()).AI_getTotalAreaCityThreat(area()));
 
 	iFloatingDefenders -= area()->getCitiesPerPlayer(getOwnerINLINE());
 
@@ -2478,9 +2478,9 @@ void CvCityAI::AI_doNativeTrade()
 	{
 		if (pLoopCity != this)
 		{
-			int iValue = 10 * std::max(0, pLoopCity->AI_getRequiredYieldLevel(eBestYield) - pLoopCity->getYieldStored(eBestYield));
+			int iValue = 10 * branchless::max(0, pLoopCity->AI_getRequiredYieldLevel(eBestYield) - pLoopCity->getYieldStored(eBestYield));
 
-			iValue = std::max(iValue, pLoopCity->getMaxYieldCapacity() - pLoopCity->getTotalYieldStored());
+			iValue = branchless::max(iValue, pLoopCity->getMaxYieldCapacity() - pLoopCity->getTotalYieldStored());
 
 			if (eBestYield == YIELD_HORSES)
 			{
@@ -2522,7 +2522,7 @@ void CvCityAI::AI_doNativeTrade()
 	if (pBestCity->AI_getRequiredYieldLevel(eBestYield) > pBestCity->getYieldStored(eBestYield))
 	{
 		iChange = pBestCity->AI_getRequiredYieldLevel(eBestYield) - pBestCity->getYieldStored(eBestYield);
-		iChange = std::min(iChange, getYieldStored(eBestYield));
+		iChange = branchless::min(iChange, getYieldStored(eBestYield));
 	}
 	else
 	{
@@ -2563,10 +2563,10 @@ void CvCityAI::AI_doNative()
 
 			if (GC.getGame().getSorenRandNum(100, "AI doNative destroy more yield") < (iDestructionModifier / 3))
 			{
-				iAmountLost += std::min(getYieldStored(eYield), getPopulation());
+				iAmountLost += branchless::min(getYieldStored(eYield), getPopulation());
 			}
 
-			iAmountLost = std::min(iAmountLost, getYieldStored(eYield));
+			iAmountLost = branchless::min(iAmountLost, getYieldStored(eYield));
 
 			if (iAmountLost > 0)
 			{
@@ -2699,9 +2699,9 @@ bool CvCityAI::AI_chooseBuild()
 
 					FAssert((MAX_INT / 1000) > iValue);
 					iValue *= 1000;
-					iValue /= std::max(1, (iTurnsLeft + 3));
+					iValue /= branchless::max(1, (iTurnsLeft + 3));
 
-					iValue = std::max(1, iValue);
+					iValue = branchless::max(1, iValue);
 
 					if (iValue > iBestValue)
 					{
@@ -2733,9 +2733,9 @@ bool CvCityAI::AI_chooseBuild()
 				FAssert((MAX_INT / 1000) > iValue);
 				iValue *= 1000;
 
-				iValue /= std::max(1, (4 + getProductionTurnsLeft(eLoopUnit, 0)));
+				iValue /= branchless::max(1, (4 + getProductionTurnsLeft(eLoopUnit, 0)));
 
-				iValue = std::max(1, iValue);
+				iValue = branchless::max(1, iValue);
 
 				if (iValue > iBestValue)
 				{
@@ -2927,7 +2927,7 @@ FatherPointTypes CvCityAI::AI_bestFatherPoint() const
 								iBestValue = iValue;
 								eBestPoint = ePoint;
 							}
-							iTotalValue += std::max(0, iValue);
+							iTotalValue += branchless::max(0, iValue);
 						}
 					}
 				}
@@ -3971,12 +3971,12 @@ int CvCityAI::AI_citizenProfessionValue(
 			{
 				realInput += getProfessionInput(eProfession, pUnit);
 			}
-			int useInput = std::min(realInput, pv.iYieldInput);
+			int useInput = branchless::min(realInput, pv.iYieldInput);
 			iOutputValue = 100
 				* AI_estimateYieldValue(eY, 1)
 				* pv.iYieldOutput
 				* useInput
-				/ std::max(1, pv.iYieldInput);
+				/ branchless::max(1, pv.iYieldInput);
 			// subtract total value of all inputs (assuming single‐type or sum of inYields)
 			int inValue = 0;
 			for (int k = 0; k < numIn; ++k)
@@ -3995,7 +3995,7 @@ int CvCityAI::AI_citizenProfessionValue(
 	for (int j = 0; j < yieldsOut.count && j < MAX_OUTPUT_YIELDS; ++j)
 		combined += vals[j].iNetValue;
 
-	return std::max(0, combined);
+	return branchless::max(0, combined);
 }
 
 int CvCityAI::AI_professionBasicOutput(ProfessionTypes eProfession, UnitTypes eUnit, const CvPlot* pPlot) const
@@ -4022,7 +4022,7 @@ int CvCityAI::AI_professionBasicOutput(ProfessionTypes eProfession, UnitTypes eU
 		iProfessionOutput = pPlot->calculatePotentialYield(eYieldProduced, getOwnerINLINE(), pPlot->getImprovementType(), true, pPlot->getRouteType(), eUnit, false);
 		if (pPlot->getFeatureType() != NO_FEATURE)
 		{
-			iProfessionOutput = std::max(iProfessionOutput, pPlot->calculatePotentialYield(eYieldProduced, getOwnerINLINE(), pPlot->getImprovementType(), false, pPlot->getRouteType(), eUnit, false));
+			iProfessionOutput = branchless::max(iProfessionOutput, pPlot->calculatePotentialYield(eYieldProduced, getOwnerINLINE(), pPlot->getImprovementType(), false, pPlot->getRouteType(), eUnit, false));
 		}
 	}
 	else
@@ -4151,7 +4151,7 @@ int CvCityAI::AI_unitJoinCityValueInternal(const CvUnit& kUnit, ProfessionTypes*
 		CvPlot* pLoopPlot = plotCity(getX_INLINE(), getY_INLINE(), eLoopCityPlot);
 		if (pLoopPlot != NULL)
 		{
-			iFood += std::max(0, pLoopPlot->getYield(YIELD_FOOD) - GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION);
+			iFood += branchless::max(0, pLoopPlot->getYield(YIELD_FOOD) - GLOBAL_DEFINE_FOOD_CONSUMPTION_PER_POPULATION);
 		}
 	}
 	if (iFood < getPopulation())
@@ -4371,7 +4371,7 @@ int CvCityAI::AI_calculateAlarm(PlayerTypes eIndex) const
 						}
 					}
 
-					iPlotAlarm = iPlotAlarm * std::max(0, iRange - iDistance + 1) / std::max(1, iRange + 1);
+					iPlotAlarm = iPlotAlarm * branchless::max(0, iRange - iDistance + 1) / branchless::max(1, iRange + 1);
 
 					iPositiveAlarm += iPlotAlarm;
 				}
@@ -4391,7 +4391,7 @@ int CvCityAI::AI_calculateAlarm(PlayerTypes eIndex) const
 
 	int iModifier = 100;
 	iModifier += GET_PLAYER(eIndex).getNativeAngerModifier();
-	iModifier = std::max(0, iModifier);
+	iModifier = branchless::max(0, iModifier);
 
 	iPositiveAlarm *= iModifier;
 	iPositiveAlarm /= 100;
@@ -4494,11 +4494,11 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 						// decrement the estimated value by 1 to "punish" overproduction
 						// Note: This should only be applied to input yields and
 						// not final products like muskets etc.
-						const int iExcessSurplus = std::max(0, getYieldStored(eYield) - getMaintainLevel(eYield)) - iBaselineAmount;
+						const int iExcessSurplus = branchless::max(0, getYieldStored(eYield) - getMaintainLevel(eYield)) - iBaselineAmount;
 						const int iReductionFactor = iExcessSurplus / 100;
 						// TODO: Consider domestic prices as well
-						const int iBestSellPrice = std::max(kParent.getYieldBuyPrice(eYield), kParent.getYieldAfricaBuyPrice(eYield));
-						iValue = iAmount * std::max(1, iBestSellPrice - iReductionFactor);
+						const int iBestSellPrice = branchless::max(kParent.getYieldBuyPrice(eYield), kParent.getYieldAfricaBuyPrice(eYield));
+						iValue = iAmount * branchless::max(1, iBestSellPrice - iReductionFactor);
 					}
 				}
 			}
@@ -4509,7 +4509,7 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 			break;
 		case YIELD_TOOLS:
 			{
-				const int populationMultiplier = std::max(1U, m_aPopulationUnits.size() / 5);
+				const int populationMultiplier = branchless::max(1U, m_aPopulationUnits.size() / 5);
 				iValue = static_cast<int>(iAmount * YIELD_TOOLS_BASE_VALUE + populationMultiplier);
 
 				if (AI_isPort() || AI_isMajorCity())
@@ -4527,7 +4527,7 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 			break;
 		case YIELD_HAMMERS:
 			{
-				const int populationMultiplier = std::max(1U, m_aPopulationUnits.size() / 5);
+				const int populationMultiplier = branchless::max(1U, m_aPopulationUnits.size() / 5);
 				iValue = static_cast<int>(iAmount * YIELD_HAMMERS_BASE_VALUE + populationMultiplier);
 
 				if (AI_isPort() || AI_isMajorCity())
@@ -4548,7 +4548,7 @@ int CvCityAI::AI_estimateYieldValue(YieldTypes eYield, int iAmount) const
 				// Note that the doubles are necessary for the calculation to round correctly
 				const int rebelPercent = getRebelPercent();
 				const double rebelFactor = (125 - getRebelPercent()) / (double)100;
-				const double populationMultiplier = std::max(1U, m_aPopulationUnits.size() / 5);
+				const double populationMultiplier = branchless::max(1U, m_aPopulationUnits.size() / 5);
 
 				iValue = static_cast<int>(iAmount * ((YIELD_BELLS_BASE_VALUE + populationMultiplier) * (getRebelPercent() < 50 ? rebelFactor : 1.0)));
 			}
@@ -4782,7 +4782,7 @@ void CvCityAI::AI_updateNeededYields()
 					{
 						if (AI_getYieldAdvantage(eYieldProduced) == 100)
 						{
-							m_em_iNeededYield.set(eYieldProduced, std::max(m_em_iNeededYield.get(eYieldProduced), getNumProfessionBuildingSlots(eLoopProfession) * getProfessionInput(eLoopProfession, NULL)));
+							m_em_iNeededYield.set(eYieldProduced, branchless::max(m_em_iNeededYield.get(eYieldProduced), getNumProfessionBuildingSlots(eLoopProfession) * getProfessionInput(eLoopProfession, NULL)));
 						}
 					}
 				}
@@ -5065,7 +5065,7 @@ void CvCityAI::AI_updateRequiredYieldLevels()
 			for (int i = 0; i < NUM_YIELD_TYPES; ++i)
 			{
 				int iAmount = kBuilding.getYieldCost(i);
-				aiLevels[i] = std::max(iAmount, aiLevels[i]);
+				aiLevels[i] = branchless::max(iAmount, aiLevels[i]);
 			}
 		}
 
@@ -5076,7 +5076,7 @@ void CvCityAI::AI_updateRequiredYieldLevels()
 			for (YieldTypes eYield = FIRST_YIELD; eYield < NUM_YIELD_TYPES; ++eYield)
 			{
 				int iAmount = kUnit.getYieldCost(eYield);
-				aiLevels[eYield] = std::max(iAmount, aiLevels[eYield]);
+				aiLevels[eYield] = branchless::max(iAmount, aiLevels[eYield]);
 			}
 		}
 	}
@@ -5091,7 +5091,7 @@ void CvCityAI::AI_updateRequiredYieldLevels()
 
 	for (int i = 0; i < NUM_YIELD_TYPES; ++i)
 	{
-		setMaintainLevel((YieldTypes)i, std::max(getMaintainLevel((YieldTypes)i), aiLevels[i]));
+		setMaintainLevel((YieldTypes)i, branchless::max(getMaintainLevel((YieldTypes)i), aiLevels[i]));
 	}
 }
 
@@ -5271,7 +5271,7 @@ int CvCityAI::AI_plotValue(const CvPlot* pPlot, bool bAvoidGrowth, bool bRemove,
 		{
 			int iUpgradePenalty = (100 * (iUpgradeTime - pPlot->getUpgradeProgress()));
 			iUpgradePenalty *= (iTotalDiff * 5);
-			iUpgradePenalty /= std::max(1, GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent());
+			iUpgradePenalty /= branchless::max(1, GC.getGameSpeedInfo(GC.getGame().getGameSpeedType()).getGrowthPercent());
 			iValue -= iUpgradePenalty;
 		}
 	}
@@ -5317,7 +5317,7 @@ int CvCityAI::AI_plotYieldValue(const CvPlot* pPlot, int* piYields) const
 			}
 
 			iValue += iTempValue;
-			iBestValue = std::max(iBestValue, iTempValue);
+			iBestValue = branchless::max(iBestValue, iTempValue);
 		}
 	}
 	iValue += iBestValue * 2;
@@ -5603,13 +5603,13 @@ void CvCityAI::AI_bestPlotBuild(const CvPlot* pPlot, int* piBestValue, BuildType
 								CvPlot* pBestYieldPlot = kOwner.AI_getBestWorkedYieldPlot(eYield);
 								if (pBestYieldPlot != NULL)
 								{
-									iBestYield = std::max(iBestYield, pBestYieldPlot->calculateBestNatureYield(eYield, getTeam()));
+									iBestYield = branchless::max(iBestYield, pBestYieldPlot->calculateBestNatureYield(eYield, getTeam()));
 								}
 
 								pBestYieldPlot = kOwner.AI_getBestUnworkedYieldPlot(eYield);
 								if (pBestYieldPlot != NULL)
 								{
-									iBestYield = std::max(iBestYield, pBestYieldPlot->calculateBestNatureYield(eYield, getTeam()));
+									iBestYield = branchless::max(iBestYield, pBestYieldPlot->calculateBestNatureYield(eYield, getTeam()));
 								}
 
 								if (pPlot->calculateBestNatureYield(eYield, getTeam()) >= iBestYield)
@@ -5628,7 +5628,7 @@ void CvCityAI::AI_bestPlotBuild(const CvPlot* pPlot, int* piBestValue, BuildType
 					{
 						if (eImprovement != NO_IMPROVEMENT)
 						{
-							iValue *= std::max(0, (GC.getLeaderHeadInfo(getPersonalityType()).getImprovementWeightModifier(eImprovement) + 100));
+							iValue *= branchless::max(0, (GC.getLeaderHeadInfo(getPersonalityType()).getImprovementWeightModifier(eImprovement) + 100));
 							iValue /= 100;
 						}
 					}
@@ -5818,7 +5818,7 @@ int CvCityAI::AI_calculateWaterWorldPercent() const
 	}
 	else
 	{
-		iWaterPercent = 100 - ((iTeamCityCount + iOtherCityCount) * 100) / std::max(1, (GC.getGame().getNumCities()));
+		iWaterPercent = 100 - ((iTeamCityCount + iOtherCityCount) * 100) / branchless::max(1, (GC.getGame().getNumCities()));
 	}
 
 	iWaterPercent *= 50;
@@ -5826,7 +5826,7 @@ int CvCityAI::AI_calculateWaterWorldPercent() const
 
 	iWaterPercent += (50 * (2 + iTeamCityCount)) / (2 + iTeamCityCount + iOtherCityCount);
 
-	iWaterPercent = std::max(1, iWaterPercent);
+	iWaterPercent = branchless::max(1, iWaterPercent);
 
 	return iWaterPercent;
 }
@@ -5957,7 +5957,7 @@ int CvCityAI::AI_buildingSpecialYieldChangeValue(BuildingTypes eBuilding, YieldT
 						int iFood = pLoopPlot->calculatePotentialYield(YIELD_FOOD, NULL, false);
 						iFood += (eYield == YIELD_FOOD) ? iYieldChange : 0;
 
-						iValue += std::max(0, iFood * 2 - 1);
+						iValue += branchless::max(0, iFood * 2 - 1);
 						if (pLoopPlot->isBeingWorked())
 						{
 							iValue += 4;
@@ -6090,7 +6090,7 @@ void CvCityAI::AI_cachePlayerCloseness(int iMaxDistance) const
 
 						//reduce for small islands.
 						int iAreaCityCount = pLoopCity->area()->getNumCities();
-						iTempValue *= std::min(iAreaCityCount, 5);
+						iTempValue *= branchless::min(iAreaCityCount, 5);
 						iTempValue /= 5;
 						if (iAreaCityCount < 3)
 						{
@@ -6098,7 +6098,7 @@ void CvCityAI::AI_cachePlayerCloseness(int iMaxDistance) const
 						}
 
 						iValue += iTempValue;
-						iBestValue = std::max(iBestValue, iTempValue);
+						iBestValue = branchless::max(iBestValue, iTempValue);
 					}
 				}
 			}
@@ -6210,7 +6210,7 @@ int CvCityAI::AI_getWorkersNeeded() const
 void CvCityAI::AI_changeWorkersHave(int iChange)
 {
 	m_iWorkersHave += iChange;
-	m_iWorkersHave = std::max(0, m_iWorkersHave);
+	m_iWorkersHave = branchless::max(0, m_iWorkersHave);
 }
 
 //This needs to be serialized for human workers.
@@ -6262,13 +6262,13 @@ void CvCityAI::AI_updateWorkersNeededHere()
 	}
 	else
 	{
-		m_iWorkersNeeded = std::max(1, iValue / 100);
+		m_iWorkersNeeded = branchless::max(1, iValue / 100);
 	}
 }
 
 BuildingTypes CvCityAI::AI_bestAdvancedStartBuilding(int iPass) const
 {
-	return AI_bestBuildingThreshold(0, 0, std::max(0, 20 - iPass * 5));
+	return AI_bestBuildingThreshold(0, 0, branchless::max(0, 20 - iPass * 5));
 }
 
 void CvCityAI::AI_educateStudent(int iUnitId)

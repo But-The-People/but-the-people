@@ -56,7 +56,6 @@ namespace branchless
 	}
 }
 
-/*
 inline int range(int iNum, int iLow, int iHigh)
 {
 	FAssert(iHigh >= iLow);
@@ -78,7 +77,6 @@ inline float range(float fNum, float fLow, float fHigh)
 		return fHigh;
 	else return fNum;
 }
-*/
 
 // advc.003g:
 inline double dRange(double d, double low, double high)
