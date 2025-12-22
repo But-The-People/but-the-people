@@ -212,4 +212,11 @@ namespace fmath
 	}
 }
 
+// WTP additions
+	
+// Guard against the final modifier becoming negative. Use this with the common (100 + modifier) pattern. 
+inline int clamp_additive_modifier(int modPct) {
+	return branchless::max(modPct, -99); // ensures (100 + modPct) >= 1
+}
+
 #endif

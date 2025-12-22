@@ -5849,12 +5849,20 @@ void CvPlayer::doGoody(CvPlot* pPlot, CvUnit* pUnit)
 							// Water Goodies
 							if (kGoodyInfo.isWaterGoody())
 							{
-								aGoodyFactors[iGoody] = aGoodyFactors[iGoody] * (100 +kTraitInfo.getGoodUniqueGoodyChanceModifierWater()) / 100;
+								aGoodyFactors[iGoody] =
+									range((scaled(aGoodyFactors[iGoody]) *
+										per100(100 + clamp_additive_modifier(kTraitInfo.getGoodUniqueGoodyChanceModifierWater()))
+										).round(),
+										1, INT_MAX);
 							}
 							// Land Goodies
 							else
 							{
-								aGoodyFactors[iGoody] = aGoodyFactors[iGoody] * (100 +kTraitInfo.getGoodUniqueGoodyChanceModifierLand()) / 100;
+								aGoodyFactors[iGoody] =
+									range((scaled(aGoodyFactors[iGoody]) *
+										per100(100 + clamp_additive_modifier(kTraitInfo.getGoodUniqueGoodyChanceModifierLand()))
+										).round(),
+										1, INT_MAX);
 							}
 						}
 						// WTP, ray, Unique Goody Chance Modifiers - END
@@ -9294,97 +9302,57 @@ int CvPlayer::getYieldRate(YieldTypes eIndex) const
 	return iTotalRate;
 }
 
+namespace
+{
+	// pCityGetter: pointer to city getter (e.g., &CvCity::getCityHappiness)
+	// eFreeYield: which free-yield to add from CIV info (e.g., YIELD_HAPPINESS)
+	// Templated to allow inlining
+	template<int (CvCity::* Getter)() const, YieldTypes eFreeYield>
+	inline int avgCityRateCommon(const CvPlayer& kPlayer)
+	{
+		const int n = kPlayer.getNumCities();
+		if (n <= 0)
+			return 0;
+
+		int total = GC.getCivilizationInfo(kPlayer.getCivilizationType()).getFreeYields(eFreeYield);
+
+		int iLoop = 0;
+		for (CvCity* pLoopCity = kPlayer.firstCity(&iLoop);
+			pLoopCity != NULL;
+			pLoopCity = kPlayer.nextCity(&iLoop))
+		{
+			total += (pLoopCity->*Getter)();
+		}
+
+		// we calculate the average because it is supposed to be a percentage later
+		// note: rounded average to avoid truncation bias
+		return intdiv::round(total, n);
+	}
+}
+
 // WTP, ray, Happiness - START
 int CvPlayer::getHappinessRate() const
 {
-	if (getNumCities() == 0)
-	{
-		return 0;
-	}
-
-	int iTotalRate = GC.getCivilizationInfo(getCivilizationType()).getFreeYields(YIELD_HAPPINESS);
-	int iLoop;
-	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		iTotalRate += pLoopCity->getCityHappiness();
-	}
-
-	iTotalRate = iTotalRate / getNumCities(); // we calculate the average because it is supposed to be a percentage later
-
-	return iTotalRate;
+	return avgCityRateCommon<&CvCity::getCityHappiness, YIELD_HAPPINESS>(*this);
 }
 
 int CvPlayer::getUnHappinessRate() const
 {
-	if (getNumCities() == 0)
-	{
-		return 0;
-	}
-
-	// small AI cheat to prevent issues
-	if (!isHuman())
-	{
-		return 0;
-	}
-
-	int iTotalRate = GC.getCivilizationInfo(getCivilizationType()).getFreeYields(YIELD_UNHAPPINESS);
-	int iLoop;
-	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		iTotalRate += pLoopCity->getCityUnHappiness();
-	}
-
-	iTotalRate = iTotalRate / getNumCities(); // we calculate the average because it is supposed to be a percentage later
-
-	return iTotalRate;
+	return avgCityRateCommon<&CvCity::getCityUnHappiness, YIELD_UNHAPPINESS>(*this);
 }
 // WTP, ray, Happiness - END
 
 // WTP, ray, Crime and Law - START
 int CvPlayer::getLawRate() const
 {
-	if (getNumCities() == 0)
-	{
-		return 0;
-	}
-
-	int iTotalRate = GC.getCivilizationInfo(getCivilizationType()).getFreeYields(YIELD_LAW);
-	int iLoop;
-	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		iTotalRate += pLoopCity->getCityLaw();
-	}
-
-	iTotalRate = iTotalRate / getNumCities(); // we calculate the average because it is supposed to be a percentage later
-
-	return iTotalRate;
+	return avgCityRateCommon<&CvCity::getCityLaw, YIELD_LAW>(*this);
 }
 
 int CvPlayer::getCrimeRate() const
 {
-	if (getNumCities() == 0)
-	{
-		return 0;
-	}
-
-	// small AI cheat to prevent issues
-	if (!isHuman())
-	{
-		return 0;
-	}
-
-	int iTotalRate = GC.getCivilizationInfo(getCivilizationType()).getFreeYields(YIELD_CRIME);
-	int iLoop;
-	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
-	{
-		iTotalRate += pLoopCity->getCityCrime();
-	}
-
-	iTotalRate = iTotalRate / getNumCities(); // we calculate the average because it is supposed to be a percentage later
-
-	return iTotalRate;
+	return avgCityRateCommon<&CvCity::getCityCrime, YIELD_CRIME>(*this);
 }
-/// WTP, ray, Crime and Law - END
+// WTP, ray, Crime and Law - END
 
 bool CvPlayer::isYieldEuropeTradable(YieldTypes eYield) const
 {
@@ -10252,7 +10220,7 @@ CvUnit* CvPlayer::nextUnitInternal(int* pIterIdx) const
 	if (it == m_units.end())
 	{
 		return NULL;
-	}
+	}	
 
 	CvUnit* pUnit = it->second;
 
@@ -18355,10 +18323,12 @@ void CvPlayer::applyYieldTradedModifier(TradeLocationTypes eLocation, YieldTypes
 	FAssert(eYield >= 0 && eYield < NUM_YIELD_TYPES);
 	FAssert(is(CIV_CATEGORY_KING));
 
-	long long iCountBuffer = m_em_iYieldSoldTotal[eLocation].get(eYield);
-	iCountBuffer *= iMultiplier;
-	iCountBuffer = iCountBuffer >> 10;
-	m_em_iYieldSoldTotal[eLocation].set(eYield, (int)iCountBuffer);
+	// Prevent negative multipliers and use scaled to avoid overflow and to round properly
+	const int mult1024 = branchless::max(iMultiplier, 0);
+	const int cur = m_em_iYieldSoldTotal[eLocation].get(eYield);
+	const scaled f(mult1024, 1024);
+	int next = (scaled(cur) * f).round();
+	m_em_iYieldSoldTotal[eLocation].set(eYield, next);
 }
 
 int CvPlayer::getCrossesStored() const
