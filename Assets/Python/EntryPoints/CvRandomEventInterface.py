@@ -1153,6 +1153,21 @@ def getHelpBabyBoom(argsList):
 
 ######## Flaute ###########
 
+def isValidUnitTravelStateForTravel(unit):
+	ts = unit.getUnitTravelState()
+	return (ts == UnitTravelStates.UNIT_TRAVEL_STATE_FROM_EUROPE or
+			ts == UnitTravelStates.UNIT_TRAVEL_STATE_TO_EUROPE or
+			ts == UnitTravelStates.UNIT_TRAVEL_STATE_FROM_AFRICA or
+			ts == UnitTravelStates.UNIT_TRAVEL_STATE_TO_AFRICA or
+			ts == UnitTravelStates.UNIT_TRAVEL_STATE_FROM_PORT_ROYAL or
+			ts == UnitTravelStates.UNIT_TRAVEL_STATE_TO_PORT_ROYAL)
+
+def isValidUnitTravelStateForPort(unit):
+	ts = unit.getUnitTravelState()
+	return (ts == UnitTravelStates.UNIT_TRAVEL_STATE_IN_EUROPE or
+			ts == UnitTravelStates.UNIT_TRAVEL_STATE_IN_AFRICA or
+			ts == UnitTravelStates.UNIT_TRAVEL_STATE_IN_PORT_ROYAL)
+
 def canApplyCalm(argsList):
 	eEvent = argsList[1]
 	kTriggeredData = argsList[0]
@@ -1160,7 +1175,7 @@ def canApplyCalm(argsList):
 	unit = player.getUnit(kTriggeredData.iUnitId)
 	if unit.isNone():
 		return False
-	if (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_IN_EUROPE):
+	if (isValidUnitTravelStateForPort(unit)):
 		return False
 	return True
 
@@ -1172,9 +1187,8 @@ def applyCalm(argsList):
 	unit = player.getUnit(kTriggeredData.iUnitId)
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	turn = Speed.getStoragePercent()/100
-	if not unit.isNone():
-		if (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_FROM_EUROPE) or (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_TO_EUROPE):
-			unit.setUnitTravelTimer(unit.getUnitTravelTimer() + turn)
+	if not unit.isNone() and isValidUnitTravelStateForTravel(unit):
+		unit.setUnitTravelTimer(unit.getUnitTravelTimer() + turn)
 
 def getHelpCalm(argsList):
 	eEvent = argsList[1]
@@ -1185,9 +1199,8 @@ def getHelpCalm(argsList):
 	Speed = gc.getGameSpeedInfo(CyGame().getGameSpeedType())
 	turn = Speed.getStoragePercent()/100
 	szHelp = ""
-	if not unit.isNone():
-		if (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_FROM_EUROPE) or (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_TO_EUROPE):
-				szHelp = localText.getText("TXT_KEY_EVENT_CALM_HELP", (turn, unit.getName()))
+	if not unit.isNone() and isValidUnitTravelStateForTravel(unit):
+		szHelp = localText.getText("TXT_KEY_EVENT_CALM_HELP", (turn, unit.getName()))
 	return szHelp
 
 ######## Tailwind ###########
@@ -1202,7 +1215,7 @@ def applyTailwind(argsList):
 	turn = Speed.getStoragePercent()/100
 	if not unit.isNone():
 		if event.getGenericParameter(1) > 0 :
-			if (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_FROM_EUROPE) or (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_TO_EUROPE):
+			if (isValidUnitTravelStateForTravel(unit)):
 				if unit.getUnitTravelTimer() > turn :
 					unit.setUnitTravelTimer(unit.getUnitTravelTimer() - turn)
 				else:
@@ -1219,9 +1232,9 @@ def canApplyTailwind(argsList):
 	turn = Speed.getStoragePercent()/100
 	if unit.isNone():
 		return False
-	if (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_IN_EUROPE):
+	if (isValidUnitTravelStateForPort(unit)):
 		return False
-	if (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_FROM_EUROPE) or (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_TO_EUROPE):
+	if (isValidUnitTravelStateForTravel(unit)):
 		if unit.getUnitTravelTimer() <= 1 :
 			return False
 	return True
@@ -1237,7 +1250,7 @@ def getHelpTailwind(argsList):
 	szHelp = ""
 	if not unit.isNone():
 		if event.getGenericParameter(1) > 0 :
-			if (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_FROM_EUROPE) or (unit.getUnitTravelState() == UnitTravelStates.UNIT_TRAVEL_STATE_TO_EUROPE):
+			if (isValidUnitTravelStateForTravel(unit)):
 				szHelp = localText.getText("TXT_KEY_EVENT_TAILWIND_HELP_2", (turn, unit.getName()))
 			else:
 				szHelp = localText.getText("TXT_KEY_EVENT_TAILWIND_HELP_1", (event.getGenericParameter(1), unit.getName()))
