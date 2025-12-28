@@ -11745,8 +11745,8 @@ int CvUnit::getExtraMoves() const
 void CvUnit::changeExtraMoves(int iChange)
 {
 	m_iExtraMoves += iChange;
-	// Sanity check for the unit becoming completely immobile
-	FAssert(getExtraMoves() + m_pUnitInfo->getMoves() > 0);
+	// Sanity check: unit should not end up completely immobile
+	FAssert(baseMoves() > 0);
 }
 
 
