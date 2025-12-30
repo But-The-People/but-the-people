@@ -8,6 +8,7 @@
 
 //#include "CvEnums.h"
 #include <string>
+#include <boost/python/list.hpp>
 #include <boost/python/tuple.hpp>
 namespace python = boost::python;
 
@@ -200,7 +201,8 @@ public:
 	void setYieldStored(int /*YieldTypes*/ eYield, int iValue);
 	void changeYieldStored(int /*YieldTypes*/ eYield, int iChange);
 	int getYieldRushed(int /*YieldTypes*/ eYield) const;
-	int calculateNetYield(int /*YieldTypes*/ eYield);
+	int calculateNetYield(int /*YieldTypes*/ eYield) const;
+	python::list calculateNetYieldList() const;
 	int calculateActualYieldProduced(int /*YieldTypes*/ eYield) const;
 	int calculateActualYieldConsumed(int /*YieldTypes*/ eYield) const;
 

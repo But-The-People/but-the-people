@@ -836,9 +836,30 @@ int CyCity::getYieldRushed(int /*YieldTypes*/ eYield) const
 	return m_pCity ? m_pCity->getYieldRushed((YieldTypes)eYield) : -1;
 }
 
-int CyCity::calculateNetYield(int /*YieldTypes*/ eYield)
+int CyCity::calculateNetYield(int /*YieldTypes*/ eYield) const
 {
 	return m_pCity ? m_pCity->calculateNetYield((YieldTypes)eYield) : -1;
+}
+
+boost::python::list CyCity::calculateNetYieldList() const
+{
+	boost::python::list result;
+
+	if (m_pCity == NULL)
+	{
+		// Return an empty list
+		return result;
+	}
+
+	int aiYields[NUM_YIELD_TYPES];
+	m_pCity->calculateNetYields(aiYields);
+
+	for (int i = 0; i < NUM_YIELD_TYPES; ++i)
+	{
+		result.append(aiYields[i]);
+	}
+
+	return result;
 }
 
 int CyCity::calculateActualYieldProduced(int /*YieldTypes*/ eYield) const

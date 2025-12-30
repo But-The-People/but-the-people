@@ -89,6 +89,7 @@ __forceinline float MaxFloat() { return DWtoF(0x7f7fffff); }
 #define BOOST_STATIC_ASSERT(x)
 namespace python
 {
+	class list;
 	class tuple;
 }
 class PyObject;

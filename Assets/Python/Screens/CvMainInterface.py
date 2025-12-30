@@ -2633,18 +2633,19 @@ class CvMainInterface:
 				szBuffer = u"<font=3>" + u"%i%c" % (iHammers, gc.getYieldInfo(YieldTypes.YIELD_HAMMERS).getChar()) + u"</font>"
 				screen.setLabel("HammerText", "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, xResolution * 11 / 100 +iXmodifier , CITY_TITLE_BAR_HEIGHT / 12, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_PRODUCTION_MOD_HELP, -1, -1 )
 
+				netYields = list(pHeadSelectedCity.calculateNetYieldList())
 			# CITY LIBERTYBELL PRODUCTION
-				iLiberty = pHeadSelectedCity.calculateNetYield(YieldTypes.YIELD_BELLS)
+				iLiberty = netYields[YieldTypes.YIELD_BELLS]
 				szBuffer = u"<font=3>" + u"%i%c" % (iLiberty, gc.getYieldInfo(YieldTypes.YIELD_BELLS).getChar()) + u"</font>"
 				screen.setLabel("LibertyText", "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, xResolution * 14 / 100 +iXmodifier, CITY_TITLE_BAR_HEIGHT / 12, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_YIELD, YieldTypes.YIELD_BELLS, -1 )
 
 			# CITY CROSS PRODUCTION
-				iCrosses = pHeadSelectedCity.calculateNetYield(YieldTypes.YIELD_CROSSES)
+				iCrosses = netYields[YieldTypes.YIELD_CROSSES]
 				szBuffer = u"<font=3>" + u"%i%c" % (iCrosses, gc.getYieldInfo(YieldTypes.YIELD_CROSSES).getChar()) + u"</font>"
 				screen.setLabel("CrossesText", "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, xResolution * 17 / 100 +iXmodifier, CITY_TITLE_BAR_HEIGHT / 12, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_YIELD, YieldTypes.YIELD_CROSSES, -1 )
 
 			# CITY EDUCATION PRODUCTION
-				iBooks = pHeadSelectedCity.calculateNetYield(YieldTypes.YIELD_EDUCATION)
+				iBooks = netYields[YieldTypes.YIELD_EDUCATION]
 				szBuffer = u"<font=3>" + u"%i%c" % (iBooks, gc.getYieldInfo(YieldTypes.YIELD_EDUCATION).getChar()) + u"</font>"
 				screen.setLabel("EducationText", "Background", szBuffer, CvUtil.FONT_CENTER_JUSTIFY, xResolution * 20 / 100 +iXmodifier, CITY_TITLE_BAR_HEIGHT / 12, -0.3, FontTypes.SMALL_FONT, WidgetTypes.WIDGET_HELP_YIELD, YieldTypes.YIELD_EDUCATION, -1 )
 
@@ -2826,7 +2827,7 @@ class CvMainInterface:
 							if gc.getProfessionInfo(iProfession).getYieldsProduced(0) == iYield: #MultipleYieldsProduced Start
 								iNeedYield = gc.getProfessionInfo(iProfession).getYieldsConsumed(0) #MultipleYieldsProduced Start
 								aiProducedYields[iNeedYield] += iUnproducedYield
-					iProducedYield = pHeadSelectedCity.calculateNetYield(iYield)
+					iProducedYield = netYields[iYield]
 					aiProducedYields[iYield] += iProducedYield
 
 				iProdusedYield = 0
@@ -2928,6 +2929,7 @@ class CvMainInterface:
 
 		pCity = CyInterface().getHeadSelectedCity()
 		if pCity != None:
+			netYields = list(pCity.calculateNetYieldList())
 			for index in range(len(self.TableYields)):
 				if index >= 2 * iNum:
 					xDelta = ixDelta
@@ -2940,8 +2942,7 @@ class CvMainInterface:
 
 				i = self.TableYields[index]
 				iStored = pCity.getYieldStored(i)
-				iRate = pCity.calculateNetYield(i)
-
+				iRate = netYields[i]
 				bIgnoredForStorageCapacity = gc.getYieldInfo(i).isIgnoredForStorageCapacity()
 				szStored = ""
 				if (iStored > pCity.getMaxYieldCapacity() and not bIgnoredForStorageCapacity):
