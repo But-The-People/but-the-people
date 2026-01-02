@@ -355,9 +355,9 @@ void CvPlayer::initFreeUnits()
 		CvPlot* pStartingPlot = getStartingPlot();
 		if (NULL != pStartingPlot)
 		{
-			for (int iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); ++iPlotLoop)
+			for (int iPlotLoop = 0; iPlotLoop < GC.getMap().numPlotsINLINE(); ++iPlotLoop)
 			{
-				CvPlot* pPlot = GC.getMap().plotByIndex(iPlotLoop);
+				CvPlot* pPlot = GC.getMap().plotByIndexINLINE(iPlotLoop);
 
 				if (plotDistance(pPlot, pStartingPlot) <= GC.getDefineINT("ADVANCED_START_SIGHT_RANGE"))
 				{
@@ -1400,7 +1400,7 @@ void CvPlayer::killCities()
 	for (int iI = 0; iI < GC.getMap().numPlotsINLINE(); iI++)
 	{
 		CvPlot* pLoopPlot = GC.getMap().plotByIndexINLINE(iI);
-		if (pLoopPlot != NULL && pLoopPlot->getOwner() == ePlayer) //R&R mod, vetiarvind, super forts merge - added null check
+		if (pLoopPlot != NULL && pLoopPlot->getOwnerINLINE() == ePlayer) //R&R mod, vetiarvind, super forts merge - added null check
 		{
 			pLoopPlot->setOwner(pLoopPlot->calculateCulturalOwner(), true);
 		}
@@ -5253,7 +5253,7 @@ void CvPlayer::disband(CvCity* pCity, bool bAbandon)
 	}
 
 
-	if (pCityPlot->getOwner() == NO_PLAYER)
+	if (pCityPlot->getOwnerINLINE() == NO_PLAYER)
 	{
 		// Remove road if we don't own the plot
 		pCityPlot->setRouteType(NO_ROUTE);
@@ -13110,7 +13110,7 @@ int CvPlayer::getAdvancedStartRouteCost(RouteTypes eRoute, bool bAdd, CvPlot* pP
 		}
 
 		// Must be owned by me
-		if (pPlot->getOwner() != getID())
+		if (pPlot->getOwnerINLINE() != getID())
 		{
 			return -1;
 		}
@@ -13121,9 +13121,9 @@ int CvPlayer::getAdvancedStartRouteCost(RouteTypes eRoute, bool bAdd, CvPlot* pP
 		int iPlotLoop = 0;
 		CvPlot* pPlot;
 
-		for (iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); iPlotLoop++)
+		for (iPlotLoop = 0; iPlotLoop < GC.getMap().numPlotsINLINE(); iPlotLoop++)
 		{
-			pPlot = GC.getMap().plotByIndex(iPlotLoop);
+			pPlot = GC.getMap().plotByIndexINLINE(iPlotLoop);
 
 			if (pPlot->getRouteType() == eRoute)
 			{
@@ -13221,7 +13221,7 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 			}
 		}
 		// Must be owned by me
-		if (pPlot->getOwner() != getID())
+		if (pPlot->getOwnerINLINE() != getID())
 		{
 			return -1;
 		}
@@ -13231,9 +13231,9 @@ int CvPlayer::getAdvancedStartImprovementCost(ImprovementTypes eImprovement, boo
 	{
 		int iPlotLoop = 0;
 		CvPlot* pPlot;
-		for (iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); iPlotLoop++)
+		for (iPlotLoop = 0; iPlotLoop < GC.getMap().numPlotsINLINE(); iPlotLoop++)
 		{
-			pPlot = GC.getMap().plotByIndex(iPlotLoop);
+			pPlot = GC.getMap().plotByIndexINLINE(iPlotLoop);
 			if (pPlot->getImprovementType() == eImprovement)
 			{
 				++iNumImprovements;
@@ -13302,9 +13302,9 @@ int CvPlayer::getAdvancedStartVisibilityCost(bool bAdd, CvPlot* pPlot)
 		int iPlotLoop = 0;
 		CvPlot* pPlot;
 
-		for (iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); iPlotLoop++)
+		for (iPlotLoop = 0; iPlotLoop < GC.getMap().numPlotsINLINE(); iPlotLoop++)
 		{
-			pPlot = GC.getMap().plotByIndex(iPlotLoop);
+			pPlot = GC.getMap().plotByIndexINLINE(iPlotLoop);
 
 			if (pPlot->isRevealed(getTeam(), false))
 			{
@@ -14044,7 +14044,7 @@ EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger,
 	{
 		pOtherPlayerCity = GET_PLAYER(eOtherPlayer).getCity(iOtherPlayerCityId);
 	}
-	CvPlot* pPlot = GC.getMap().plot(iPlotX, iPlotY);
+	CvPlot* pPlot = GC.getMap().plotINLINE(iPlotX, iPlotY);
 	CvUnit* pUnit = getUnit(iUnitId);
 
 	std::vector<CvPlot*> apPlots;

@@ -2349,7 +2349,7 @@ void CvDLLWidgetData::parseActionHelp(const CvWidgetDataStruct &widgetDataStruct
 
 					if (pPlot->isCityRadius())
 					{
-						CvCity* pNearestCity = GC.getMap().findCity(pPlot->getX_INLINE(), pPlot->getY_INLINE(), pPlot->getOwner(), pPlot->getTeam(), false, true);
+						CvCity* pNearestCity = GC.getMap().findCity(pPlot->getX_INLINE(), pPlot->getY_INLINE(), pPlot->getOwnerINLINE(), pPlot->getTeam(), false, true);
 						if (pNearestCity != NULL)
 						{
 							if (pPlot->isBeingWorked())
@@ -2442,7 +2442,7 @@ void CvDLLWidgetData::parseActionHelp(const CvWidgetDataStruct &widgetDataStruct
 
 					if (pPlot->isCityRadius())
 					{
-						CvCity* pNearestCity = GC.getMap().findCity(pPlot->getX_INLINE(), pPlot->getY_INLINE(), pPlot->getOwner(), pPlot->getTeam(), false, true);
+						CvCity* pNearestCity = GC.getMap().findCity(pPlot->getX_INLINE(), pPlot->getY_INLINE(), pPlot->getOwnerINLINE(), pPlot->getTeam(), false, true);
 						if (pNearestCity != NULL)
 						{
 							if (pPlot->isBeingWorked())

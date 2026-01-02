@@ -317,7 +317,7 @@ void CvPlot::doTurn()
 		PlayerTypes BarbarianPlayerType = GC.getGameINLINE().getBarbarianPlayer();
 
 		//remove Animal Goodies in Native Territory
-		if (getOwner() != NO_PLAYER)
+		if (getOwnerINLINE() != NO_PLAYER)
 		{
 			removeGoody();
 		}
@@ -386,7 +386,7 @@ void CvPlot::doTurn()
 		PlayerTypes BarbarianPlayerType = GC.getGameINLINE().getBarbarianPlayer();
 
 		//remove Hostile Native Goodies in Native Territory
-		if (getOwner() != NO_PLAYER)
+		if (getOwnerINLINE() != NO_PLAYER)
 		{
 			removeGoody();
 		}
@@ -417,7 +417,7 @@ void CvPlot::doTurn()
 		PlayerTypes BarbarianPlayerType = GC.getGameINLINE().getBarbarianPlayer();
 
 		//remove Raider Goodies in Native Territory
-		if (getOwner() != NO_PLAYER)
+		if (getOwnerINLINE() != NO_PLAYER)
 		{
 			removeGoody();
 		}
@@ -2440,7 +2440,7 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 				while (pUnitNode != NULL)
 				{
 					CvUnit* const pLoopUnit = getUnitNodeLoop(pUnitNode);
-					if (pLoopUnit != NULL && pLoopUnit->getOwner() != ePlayer)
+					if (pLoopUnit != NULL && pLoopUnit->getOwnerINLINE() != ePlayer)
 					{
 						if(pLoopUnit->getBuildType() != NO_BUILD)
 						{
@@ -4670,7 +4670,7 @@ bool CvPlot::isNorthernHemisphere() const
 
 int CvPlot::getFOWIndex() const
 {
-	return ((((GC.getMap().getGridHeight() - 1) - getY_INLINE()) * GC.getMap().getGridWidth() * LANDSCAPE_FOW_RESOLUTION * LANDSCAPE_FOW_RESOLUTION) + (getX_INLINE() * LANDSCAPE_FOW_RESOLUTION));
+	return ((((GC.getMap().getGridHeightINLINE() - 1) - getY_INLINE()) * GC.getMap().getGridWidthINLINE() * LANDSCAPE_FOW_RESOLUTION * LANDSCAPE_FOW_RESOLUTION) + (getX_INLINE() * LANDSCAPE_FOW_RESOLUTION));
 }
 
 
@@ -9028,7 +9028,7 @@ void CvPlot::doCulture()
 						CvUnit* pLoopUnit = getUnitNodeLoop(pUnitNode);
 						if (pLoopUnit != NULL && pLoopUnit->canDefend(this)) //R&R mod, vetiarvind, super forts merge, added null check
 						{
-							if (pLoopUnit->getOwner() == getOwnerINLINE())
+							if (pLoopUnit->getOwnerINLINE() == getOwnerINLINE())
 							{
 								bDefenderFound = true;
 								break;
@@ -10180,7 +10180,7 @@ void CvPlot::doFort()
 	CvUnit* pDefenseUnit = getFortDefender();
 	if(pDefenseUnit == NULL)
 		return;
-	PlayerTypes FortOwner = pDefenseUnit->getOwner();
+	PlayerTypes FortOwner = pDefenseUnit->getOwnerINLINE();
 
 	bool alreadyFired = false;
 
@@ -10345,11 +10345,11 @@ void CvPlot::doMonastery()
 		return;
 
 	bool hasExpertMissionary = missionaryUnit->getUnitInfo().getMissionaryRateModifier() > 0;
-	PlayerTypes MonasteryOwner = missionaryUnit->getOwner();
+	PlayerTypes MonasteryOwner = missionaryUnit->getOwnerINLINE();
 
 	//WTP, ray, fix for Monasteries not Growing by giving them Culture - START
 	//if(getOwner() == NO_PLAYER)
-	if(getOwner() != MonasteryOwner)
+	if(getOwnerINLINE() != MonasteryOwner)
 	{
 		if (getCulture(MonasteryOwner) < GC.getDefineINT("FREE_CITY_CULTURE"))
 		{

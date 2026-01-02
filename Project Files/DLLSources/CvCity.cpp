@@ -6712,9 +6712,9 @@ void CvCity::pushOrder(OrderData order, bool bPop, bool bAppend, bool bForce)
 				order.unitAI() = (UnitAITypes)GC.getUnitInfo(order.unit()).getDefaultUnitAIType();
 			}
 
-			GET_PLAYER(getOwner()).changeUnitClassMaking(GC.getUnitInfo(order.unit()).getUnitClassType(), 1);
-			area()->changeNumTrainAIUnits(getOwner(), order.unitAI(), 1);
-			GET_PLAYER(getOwner()).AI_changeNumTrainAIUnits(order.unitAI(), 1);
+			GET_PLAYER(getOwnerINLINE()).changeUnitClassMaking(GC.getUnitInfo(order.unit()).getUnitClassType(), 1);
+			area()->changeNumTrainAIUnits(getOwnerINLINE(), order.unitAI(), 1);
+			GET_PLAYER(getOwnerINLINE()).AI_changeNumTrainAIUnits(order.unitAI(), 1);
 
 			bValid = true;
 			gDLL->getEventReporterIFace()->cityBuildingUnit(this, order.unit());

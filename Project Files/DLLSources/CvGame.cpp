@@ -1426,9 +1426,9 @@ void CvGame::updateColoredPlots()
 	// City circles when in Advanced Start
 	if (gDLL->getInterfaceIFace()->isInAdvancedStart())
 	{
-		for (int iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); iPlotLoop++)
+		for (int iPlotLoop = 0; iPlotLoop < GC.getMap().numPlotsINLINE(); iPlotLoop++)
 		{
-			CvPlot* pLoopPlot = GC.getMap().plotByIndex(iPlotLoop);
+			CvPlot* pLoopPlot = GC.getMap().plotByIndexINLINE(iPlotLoop);
 
 			if (pLoopPlot != NULL)
 			{
@@ -1466,9 +1466,9 @@ void CvGame::updateColoredPlots()
 	// WTP, ray, Game Option Goodies always display coloured circle - START
 	if (isOption(GAMEOPTION_GOODIES_ALWAYS_DISPLAY_COLOURED_CIRCLE))
 	{
-		for (int iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); iPlotLoop++)
+		for (int iPlotLoop = 0; iPlotLoop < GC.getMap().numPlotsINLINE(); iPlotLoop++)
 		{
-			CvPlot* pLoopPlot = GC.getMap().plotByIndex(iPlotLoop);
+			CvPlot* pLoopPlot = GC.getMap().plotByIndexINLINE(iPlotLoop);
 			if (pLoopPlot != NULL)
 			{
 				if (pLoopPlot->isGoody() && pLoopPlot->isRevealed(getActiveTeam(), false))
@@ -7144,7 +7144,7 @@ void CvGame::setPlotExtraYield(int iX, int iY, YieldTypes eYield, int iExtraYiel
 		m_aPlotExtraYields.push_back(kExtraYield);
 	}
 
-	CvPlot* pPlot = GC.getMap().plot(iX, iY);
+	CvPlot* const pPlot = GC.getMap().plotINLINE(iX, iY);
 	if (NULL != pPlot)
 	{
 		pPlot->updateYield(true);
@@ -7162,7 +7162,7 @@ void CvGame::removePlotExtraYield(int iX, int iY)
 		}
 	}
 
-	CvPlot* pPlot = GC.getMap().plot(iX, iY);
+	CvPlot* pPlot = GC.getMap().plotINLINE(iX, iY);
 	if (NULL != pPlot)
 	{
 		pPlot->updateYield(true);

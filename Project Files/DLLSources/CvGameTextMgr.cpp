@@ -1746,10 +1746,10 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, const CvPlot* pPl
 							szString.append(NEWLINE);
 							CvWString szTempBuffer;
 
-							CvCity* pTargetCity = pPlot->area()->getTargetCity(pHeadGroup->getOwner());
+							CvCity* pTargetCity = pPlot->area()->getTargetCity(pHeadGroup->getOwnerINLINE());
 							if (pTargetCity != NULL)
 							{
-								szString.append(CvWString::format(L"\nTarget City: %s (%s)", pTargetCity->getName().c_str(), GET_PLAYER(pTargetCity->getOwner()).getName()));
+								szString.append(CvWString::format(L"\nTarget City: %s (%s)", pTargetCity->getName().c_str(), GET_PLAYER(pTargetCity->getOwnerINLINE()).getName()));
 							}
 							else
 							{
@@ -1838,7 +1838,7 @@ void CvGameTextMgr::setPlotListHelp(CvWStringBuffer &szString, const CvPlot* pPl
 
 			if (iNumVisibleUnits > iMaxNumUnits)
 			{
-				int iIndex = pLoopUnit->getUnitType() * MAX_PLAYERS + pLoopUnit->getOwner();
+				int iIndex = pLoopUnit->getUnitType() * MAX_PLAYERS + pLoopUnit->getOwnerINLINE();
 				if (aiUnitNumbers[iIndex] == 0)
 				{
 					++iCount;
@@ -2245,7 +2245,7 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				}
 			}
 
-			if (pPlot->getOwner() == pAttacker->getOwner())
+			if (pPlot->getOwnerINLINE() == pAttacker->getOwnerINLINE())
 			{
 				iModifier = pAttacker->DomesticBonusModifier();
 
@@ -2413,7 +2413,7 @@ bool CvGameTextMgr::setCombatPlotHelp(CvWStringBuffer &szString, CvPlot* pPlot)
 				}
 			}
 
-			if (pPlot->getOwner() == pDefender->getOwner())
+			if (pPlot->getOwnerINLINE() == pDefender->getOwnerINLINE())
 			{
 				iModifier = pDefender->DomesticBonusModifier();
 
@@ -2714,7 +2714,7 @@ void CvGameTextMgr::setPlotHelp(CvWStringBuffer& szString, CvPlot* pPlot)
 		// R&R, ray, Natives raiding party - START
 		if (pPlot->isOwned())
 		{
-			CvCity* pTargetCity = pPlot->area()->getTargetCity(pPlot->getOwner());
+			CvCity* pTargetCity = pPlot->area()->getTargetCity(pPlot->getOwnerINLINE());
 			if (pTargetCity != NULL)
 			{
 				szString.append(CvWString::format(L"\nTarget City: %s", pTargetCity->getName().c_str()));
@@ -6498,7 +6498,7 @@ void CvGameTextMgr::setUnitHelp(CvWStringBuffer &szBuffer, UnitTypes eUnit, bool
 			szBuffer.append(NEWLINE);
 			for (int iUnitAI = 0; iUnitAI < NUM_UNITAI_TYPES; iUnitAI++)
 			{
-				int iTempValue = GET_PLAYER(pCity->getOwner()).AI_unitValue(eUnit, (UnitAITypes)iUnitAI, pCity->area());
+				int iTempValue = GET_PLAYER(pCity->getOwnerINLINE()).AI_unitValue(eUnit, (UnitAITypes)iUnitAI, pCity->area());
 				if (iTempValue != 0)
 				{
 					CvWString szTempString;
@@ -10200,7 +10200,7 @@ void CvGameTextMgr::setEventHelp(CvWStringBuffer& szBuffer, EventTypes eEvent, i
 
 	CvCity* pCity = kActivePlayer.getCity(pTriggeredData->m_iCityId);
 	CvCity* pOtherPlayerCity = NULL;
-	CvPlot* pPlot = GC.getMap().plot(pTriggeredData->m_iPlotX, pTriggeredData->m_iPlotY);
+	CvPlot* const pPlot = GC.getMap().plotINLINE(pTriggeredData->m_iPlotX, pTriggeredData->m_iPlotY);
 	CvUnit* pUnit = kActivePlayer.getUnit(pTriggeredData->m_iUnitId);
 
 	if (NO_PLAYER != pTriggeredData->m_eOtherPlayer)

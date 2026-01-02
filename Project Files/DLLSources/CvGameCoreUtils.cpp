@@ -1604,7 +1604,7 @@ int pathValid_source(FAStarNode* parent, CvSelectionGroup* pSelectionGroup, int 
 		if (kFromPlot.getRevealedRouteType(pSelectionGroup->getHeadTeam(), false) == NO_ROUTE &&
 			!pSelectionGroup->isHuman())
 		{
-			PlayerTypes eOwner = kFromPlot.getOwner();
+			PlayerTypes eOwner = kFromPlot.getOwnerINLINE();
 			if (eOwner != NO_PLAYER && GET_PLAYER(eOwner).isHuman())
 				return FALSE;
 		}

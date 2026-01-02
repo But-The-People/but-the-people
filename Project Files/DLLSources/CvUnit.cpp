@@ -1574,7 +1574,7 @@ void CvUnit::updateCombat(bool bQuick)
 
 			// We only want to have this for Military Combat between Europeans and Kings, and only during War
 			bool bAttackingPlayerInvalid = !kOwner.isPlayable(); // only playable Civs will capture Prisoners of War, to prevent future issues
-			bool bDefendingPlayerInvalid = GET_PLAYER(pDefender->getOwner()).isNative() || GC.getGameINLINE().isBarbarianPlayer(pDefender->getOwner());
+			bool bDefendingPlayerInvalid = GET_PLAYER(pDefender->getOwnerINLINE()).isNative() || GC.getGameINLINE().isBarbarianPlayer(pDefender->getOwnerINLINE());
 			bool bAttackingUnitInvalid = getDomainType() == DOMAIN_SEA || getUnitInfo().isAnimal() || getUnitInfo().isHiddenNationality();
 			bool bDefendingUnitInvalid = pDefender->getDomainType() == DOMAIN_SEA || pDefender->getUnitInfo().isAnimal() || pDefender->isCapturableLandUnit() || pDefender->getUnitInfo().isHiddenNationality();
 			bool bAtWar = GET_TEAM(getTeam()).isAtWar(pDefender->getTeam());
@@ -2216,7 +2216,7 @@ bool CvUnit::isActionRecommended(int iAction) const
 		break;
 
 	case MISSION_BUILD:
-		if (pPlot->getOwner() == getOwnerINLINE())
+		if (pPlot->getOwnerINLINE() == getOwnerINLINE())
 		{
 			eBuild = ((BuildTypes)(GC.getActionInfo(iAction).getMissionData()));
 			FAssert(eBuild != NO_BUILD);
@@ -6599,7 +6599,7 @@ void CvUnit::stirUpNatives()
 		{
 			CvUnit* pUnit = kCityOwner.initUnit(DefaultUnitType, GC.getCivilizationInfo(kCityOwner.getCivilizationType()).getDefaultProfession(), getX_INLINE(), getY_INLINE());
 
-			CvPlayerAI& kNativeAI = GET_PLAYER(pCity->getOwner());
+			CvPlayerAI& kNativeAI = GET_PLAYER(pCity->getOwnerINLINE());
 			if (kNativeAI.AI_hasPotentialRaidTarget())
 			{
 				if (kNativeAI.AI_findTargetCity(pCity->area()) != NULL)
@@ -7994,7 +7994,7 @@ bool CvUnit::build(BuildTypes eBuild)
 		{
 			if(GC.getImprovementInfo((ImprovementTypes)GC.getBuildInfo(eBuild).getImprovement()).isActsAsCity())
 			{
-				if(plot()->getOwner() == NO_PLAYER)
+				if(plot()->getOwnerINLINE() == NO_PLAYER)
 				{
 					plot()->setOwner(getOwnerINLINE(),true);
 				}
@@ -8376,7 +8376,7 @@ int CvUnit::upgradePrice(UnitTypes eUnit) const
 	int iPrice;
 
 	CyArgsList argsList;
-	argsList.add(getOwner());
+	argsList.add(getOwnerINLINE());
 	argsList.add(getID());
 	argsList.add((int) eUnit);
 	long lResult=0;
@@ -9408,7 +9408,7 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 			}
 		}
 
-			if (pPlot->getOwner() == getOwner())
+			if (pPlot->getOwnerINLINE() == getOwnerINLINE())
 		{
 			iExtraModifier = DomesticBonusModifier();
 			iModifier += iExtraModifier;
@@ -9470,7 +9470,7 @@ int CvUnit::maxCombatStr(const CvPlot* pPlot, const CvUnit* pAttacker, CombatDet
 			}
 		}
 
-		if (pAttackedPlot->getOwner() == pAttacker->getOwner())
+		if (pAttackedPlot->getOwnerINLINE() == pAttacker->getOwnerINLINE())
 		{
 			iExtraModifier = -pAttacker->DomesticBonusModifier();
 			iTempModifier += iExtraModifier;
@@ -9848,7 +9848,7 @@ int CvUnit::experienceNeeded() const
 
 		CyArgsList argsList;
 		argsList.add(getLevel());	// pass in the units level
-		argsList.add(getOwner());	// pass in the units
+		argsList.add(getOwnerINLINE());	// pass in the units
 
 		gDLL->getPythonIFace()->callFunction(PYGameModule, "getExperienceNeeded", argsList.makeFunctionArgs(), &lExperienceNeeded);
 
@@ -10951,12 +10951,12 @@ void CvUnit::jumpTo(Coordinates toCoord, bool bGroup, bool bUpdate, bool bShow, 
 		{
 			if(GC.getImprovementInfo(eImprovement).isActsAsCity() && !isNoUnitCapture())
 			{
-				if(pNewPlot->getOwner() != NO_PLAYER)
+				if(pNewPlot->getOwnerINLINE() != NO_PLAYER)
 				{
 					if(isEnemy(pNewPlot->getTeam()) && !canCoexistWithEnemyUnit(pNewPlot->getTeam()) && canFight())
 					{
 						CvWString szBuffer = gDLL->getText("TXT_KEY_MISC_CITY_CAPTURED_BY", GC.getImprovementInfo(eImprovement).getText(), GET_PLAYER(getOwnerINLINE()).getCivilizationDescriptionKey());
-						gDLL->UI().addPlayerMessage(pNewPlot->getOwner(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CITYCAPTURED", MESSAGE_TYPE_MAJOR_EVENT, GC.getImprovementInfo(eImprovement).getButton(), COLOR_RED, pNewPlot->getX_INLINE(), pNewPlot->getY_INLINE(), true, true);
+						gDLL->UI().addPlayerMessage(pNewPlot->getOwnerINLINE(), false, GC.getEVENT_MESSAGE_TIME(), szBuffer, "AS2D_CITYCAPTURED", MESSAGE_TYPE_MAJOR_EVENT, GC.getImprovementInfo(eImprovement).getButton(), COLOR_RED, pNewPlot->getX_INLINE(), pNewPlot->getY_INLINE(), true, true);
 						pNewPlot->setOwner(getOwnerINLINE(),true);
 					}
 				}
@@ -15762,7 +15762,7 @@ bool CvUnit::raidHarbor(CvCity* pCity)
 
 		if (pLoopUnit != NULL && pLoopUnit->getDomainType() == DOMAIN_SEA)
 		{
-			if (pLoopUnit->getOwner() == pCity->getOwner())
+			if (pLoopUnit->getOwnerINLINE() == pCity->getOwnerINLINE())
 			{
 				aShipUnits.push_back(pLoopUnit);
 			}
@@ -16043,7 +16043,7 @@ bool CvUnit::canGatherResource(const CvPlot* ePlot, bool bTestVisible) const
 	}
 	else
 	{
-		pPlot = GC.getMap().plot(ePlot->getX_INLINE(), ePlot->getY_INLINE());
+		pPlot = GC.getMap().plotINLINE(ePlot->getX_INLINE(), ePlot->getY_INLINE());
 	}
 
 	if (pPlot == NULL)
@@ -16077,7 +16077,7 @@ bool CvUnit::canGatherResource(const CvPlot* ePlot, bool bTestVisible) const
 
 		if (pPlot->isCityRadius())
 		{
-			CvCity* pNearestCity = GC.getMap().findCity(pPlot->getX_INLINE(), pPlot->getY_INLINE(), pPlot->getOwner(), pPlot->getTeam(), false, true);
+			CvCity* pNearestCity = GC.getMap().findCity(pPlot->getX_INLINE(), pPlot->getY_INLINE(), pPlot->getOwnerINLINE(), pPlot->getTeam(), false, true);
 
 			if (pNearestCity != NULL)
 			{
@@ -16460,7 +16460,7 @@ bool CvUnit::canMergeTreasures() const
 		pLoopUnit = plot()->getUnitNodeLoop(pUnitNode);
 
 		// we only count our own treasuers and only the ones that are smaller than max gold amount
-		if (pLoopUnit != NULL && pLoopUnit->getUnitInfo().isTreasure() && pLoopUnit->getOwner() == getOwner() && pLoopUnit->getYieldStored() < maxTreasureGold)
+		if (pLoopUnit != NULL && pLoopUnit->getUnitInfo().isTreasure() && pLoopUnit->getOwnerINLINE() == getOwnerINLINE() && pLoopUnit->getYieldStored() < maxTreasureGold)
 		{
 			validTreasuresCounter++;
 		}
@@ -16494,7 +16494,7 @@ void CvUnit::mergeTreasures()
 		// WTP, ray, small improvements
 		// we only count gold of our own treasuers and those that are not yet at max
 		// after that we can directly kill them, so no extra loop is needed
-		if (pLoopUnit != NULL && pLoopUnit->getUnitInfo().isTreasure() && pLoopUnit->getOwner() == getOwner() && pLoopUnit->getYieldStored() < maxTreasureGold)
+		if (pLoopUnit != NULL && pLoopUnit->getUnitInfo().isTreasure() && pLoopUnit->getOwnerINLINE() == getOwnerINLINE() && pLoopUnit->getYieldStored() < maxTreasureGold)
 		{
 			overallAmount += pLoopUnit->getYieldStored();
 			pLoopUnit->kill(true);
@@ -16943,12 +16943,12 @@ void CvUnit::groupTransportedYieldUnits(CvUnit* pYieldUnit)
 
 void CvUnit::changeIdentity(UnitTypes eUnit)
 {
-	reset(getID(), eUnit, getOwner(), false, true);
+	reset(getID(), eUnit, getOwnerINLINE(), false, true);
 }
 
 bool CvUnit::isTempUnit() const
 {
-	return GET_PLAYER(getOwner()).isTempUnit(this);
+	return GET_PLAYER(getOwnerINLINE()).isTempUnit(this);
 }
 
 namespace 

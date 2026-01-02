@@ -276,8 +276,8 @@ public:
 	{
 		if (iX == INVALID_PLOT_COORD || iY == INVALID_PLOT_COORD)
 			return NULL;
-		FAssert(isPlot(iX, iY)); // advc: Assertion added
-		return &(m_pMapPlots[plotNum(iX, iY)]);
+		FAssert(isPlotINLINE(iX, iY)); // advc: Assertion added
+		return &(m_pMapPlots[plotNumINLINE(iX, iY)]);
 	} // <advc.inl> Even faster and less confusingly named; replacing the above in most places.
 
 	__forceinline CvPlot* plotSoren(Coordinates coord) const
@@ -290,9 +290,9 @@ public:
 
 	__forceinline CvPlot& getPlot(int x, int y) const
 	{
-		FAssert(isPlot(x, y));
-		return m_pMapPlots[plotNum(x, y)];
-	} // </advc.inl>
+		FAssert(isPlotINLINE(x, y));
+		return m_pMapPlots[plotNumINLINE(x, y)];
+	} // </advc.inl>/
 
 	__forceinline CvPlot& getPlot(Coordinates coord) const
 	{

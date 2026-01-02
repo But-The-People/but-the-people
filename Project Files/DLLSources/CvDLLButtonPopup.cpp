@@ -125,7 +125,7 @@ public:
 
 			if (bShow)
 			{
-				for (int i = 0; i < GC.getMap().numPlots(); ++i)
+				for (int i = 0; i < GC.getMap().numPlotsINLINE(); ++i)
 				{
 					CvPlot* pPlot = GC.getMap().plotByIndexINLINE(i);
 					if (!pPlot->getScriptData().empty())
@@ -2869,7 +2869,7 @@ bool CvDLLButtonPopup::launchEventPopup(CvPopup* pPopup, CvPopupInfo &info)
 
 	if (kTrigger.isShowPlot())
 	{
-		CvPlot* pPlot = GC.getMap().plot(pTriggeredData->m_iPlotX, pTriggeredData->m_iPlotY);
+		CvPlot* pPlot = GC.getMap().plotINLINE(pTriggeredData->m_iPlotX, pTriggeredData->m_iPlotY);
 		if (NULL != pPlot)
 		{
 			gDLL->getEngineIFace()->addColoredPlot(pPlot->getX_INLINE(), pPlot->getY_INLINE(), GC.getColorInfo(COLOR_WARNING_TEXT).getColor(), PLOT_STYLE_CIRCLE, PLOT_LANDSCAPE_LAYER_RECOMMENDED_PLOTS);

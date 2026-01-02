@@ -76,10 +76,10 @@ bool KmodPathFinder::ValidateNodeMap()
 	if (!GC.getGame().isFinalInitialized())
 		return false;
 
-	if (map_width != GC.getMap().getGridWidth() || map_height != GC.getMap().getGridHeight())
+	if (map_width != GC.getMap().getGridWidthINLINE() || map_height != GC.getMap().getGridHeightINLINE())
 	{
-		map_width = GC.getMap().getGridWidth();
-		map_height = GC.getMap().getGridHeight();
+		map_width = GC.getMap().getGridWidthINLINE();
+		map_height = GC.getMap().getGridHeightINLINE();
 		//node_data = (FAStarNode*)
 		// <advc> According to cppcheck, the above is a "common realloc mistake".
 		FAStarNode* new_node_data = static_cast<FAStarNode*>(
@@ -451,9 +451,9 @@ struct ProcessNodesInternal
 					if (child_node->m_iX == dest_x && child_node->m_iY == dest_y)
 						nodeFlags |= NF_DESTINATION_NODE;
 
-					// “first edge from start” means parent is the start node (no parent)
+					// â€œfirst edge from startâ€ means parent is the start node (no parent)
 					if (parent_node->m_pParent == NULL && (nodeFlags & NF_DESTINATION_NODE)) {
-						// only treat as “adjacent click” if the dest is actually adjacent
+						// only treat as â€œadjacent clickâ€ if the dest is actually adjacent
 						if (abs(child_node->m_iX - start_x) <= 1 && abs(child_node->m_iY - start_y) <= 1)
 							nodeFlags |= NF_ADJACENT_TO_START;
 					}
@@ -641,15 +641,15 @@ void KmodPathFinder::ForwardPropagate(FAStarNode* head, int cost_delta)
 			// the path history for path symmetry breaking.
 			// But anyway, according to the profiler, this is only going to cost us about a milisecond per turn.
 			
-			// Always recompute the edge step-cost — symmetry breaking and “GUI hints”
-			// may change the step-cost even if moves/turns didn’t.
+			// Always recompute the edge step-cost â€” symmetry breaking and â€œGUI hintsâ€
+			// may change the step-cost even if moves/turns didnâ€™t.
 			int nodeFlags = NF_NONE;
 
 			// Destination?
 			if (child->m_iX == dest_x && child->m_iY == dest_y)
 				nodeFlags |= NF_DESTINATION_NODE;
 
-			// “First edge from start” -> prefer exact adjacent goal step
+			// â€œFirst edge from startâ€ -> prefer exact adjacent goal step
 			if (head->m_pParent == NULL && (nodeFlags & NF_DESTINATION_NODE))
 			{
 				if (std::abs(child->m_iX - start_x) <= 1 && std::abs(child->m_iY - start_y) <= 1)

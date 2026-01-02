@@ -1597,7 +1597,7 @@ int CvPlayerAI::AI_foundValue(int iX, int iY, int iMinRivalRange, bool bStarting
 			{
 				iTakenTiles++;
 
-				if (pLoopPlot->getTeam() == getTeam() && pLoopPlot->getOwner() != getID())
+				if (pLoopPlot->getTeam() == getTeam() && pLoopPlot->getOwnerINLINE() != getID())
 				{
 					iTeammateTakenTiles++;
 				}
@@ -8111,7 +8111,7 @@ void CvPlayerAI::AI_doProfessions()
 												iValue /= 100;
 											}
 										}
-										else if (eUnitAI == UNITAI_SCOUT && pLoopCity->plot()->area()->getNumAIUnits(pLoopCity->getOwner(), UNITAI_SCOUT) == 0)
+										else if (eUnitAI == UNITAI_SCOUT && pLoopCity->plot()->area()->getNumAIUnits(pLoopCity->getOwnerINLINE(), UNITAI_SCOUT) == 0)
 										{
 											iValue *= 250;
 											iValue /= 100;
@@ -11930,7 +11930,7 @@ int CvPlayerAI::AI_eventValue(EventTypes eEvent, const EventTriggeredData& kTrig
 
 	int iNumCities = getNumCities();
 	CvCity* pCity = getCity(kTriggeredData.m_iCityId);
-	CvPlot* pPlot = GC.getMap().plot(kTriggeredData.m_iPlotX, kTriggeredData.m_iPlotY);
+	CvPlot* pPlot = GC.getMap().plotINLINE(kTriggeredData.m_iPlotX, kTriggeredData.m_iPlotY);
 	CvUnit* pUnit = getUnit(kTriggeredData.m_iUnitId);
 
 	int aiYields[NUM_YIELD_TYPES];
@@ -12126,7 +12126,7 @@ int CvPlayerAI::AI_eventValue(EventTypes eEvent, const EventTriggeredData& kTrig
 			{
 				if (pPlot->getWorkingCity() != NULL)
 				{
-					FAssertMsg(pPlot->getWorkingCity()->getOwner() == getID(), "Event creates a boni for another player?");
+					FAssertMsg(pPlot->getWorkingCity()->getOwnerINLINE() == getID(), "Event creates a boni for another player?");
 					aiYields[i] += kEvent.getPlotExtraYield(i);
 				}
 				else
@@ -12733,7 +12733,7 @@ void CvPlayerAI::AI_doSuppressRevolution()
 		if (pBest)
 		{
 			AI_setStrategy(STRATEGY_CONCENTRATED_ATTACK,
-				GC.getMap().plotNum(pBest->getX_INLINE(), pBest->getY_INLINE()));
+				GC.getMap().plotNumINLINE(pBest->getX_INLINE(), pBest->getY_INLINE()));
 		}
 	}
 
@@ -14247,7 +14247,7 @@ void CvPlayerAI::AI_advancedStartRouteTerritory()
 	for (iI = 0; iI < GC.getMap().numPlotsINLINE(); iI++)
 	{
 		pLoopPlot = GC.getMap().plotByIndexINLINE(iI);
-		if ((pLoopPlot != NULL) && (pLoopPlot->getOwner() == getID()) && (pLoopPlot->getRouteType() == NO_ROUTE))
+		if ((pLoopPlot != NULL) && (pLoopPlot->getOwnerINLINE() == getID()) && (pLoopPlot->getRouteType() == NO_ROUTE))
 		{
 			if (pLoopPlot->getImprovementType() != NO_IMPROVEMENT)
 			{
@@ -14344,9 +14344,9 @@ void CvPlayerAI::AI_doAdvancedStart(bool bNoExit)
 					CvPlot* pStartingPlot = getStartingPlot();
 					if (NULL != pStartingPlot)
 					{
-						for (int iPlotLoop = 0; iPlotLoop < GC.getMap().numPlots(); ++iPlotLoop)
+						for (int iPlotLoop = 0; iPlotLoop < GC.getMap().numPlotsINLINE(); ++iPlotLoop)
 						{
-							CvPlot* pPlot = GC.getMap().plotByIndex(iPlotLoop);
+							CvPlot* const pPlot = GC.getMap().plotByIndexINLINE(iPlotLoop);
 
 							if (plotDistance(pPlot->getX_INLINE(), pPlot->getY_INLINE(), pStartingPlot->getX_INLINE(), pStartingPlot->getY_INLINE()) <= GC.getDefineINT("ADVANCED_START_SIGHT_RANGE"))
 							{
@@ -15643,7 +15643,7 @@ void CvPlayerAI::AI_updateBestYieldPlots()
 	CvMap& kMap = GC.getMap();
 	for (int i = 0; i < kMap.numPlotsINLINE(); ++i)
 	{
-		CvPlot* pLoopPlot = kMap.plotByIndex(i);
+		const CvPlot* const pLoopPlot = kMap.plotByIndexINLINE(i);
 
 		if (pLoopPlot->isCityRadius() && (pLoopPlot->getOwnerINLINE() == getID()))
 		{

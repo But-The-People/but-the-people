@@ -61,7 +61,7 @@ void CvCityAI::AI_init()
 
 	AI_assignDesiredYield();
 
-	m_iFoundValue = plot()->getFoundValue(getOwner());
+	m_iFoundValue = plot()->getFoundValue(getOwnerINLINE());
 }
 
 
@@ -883,7 +883,7 @@ bool CvCityAI::AI_hasCoastalRoute() const
 				FAssert(eShipUnit != NO_UNIT);
 
 				// Check if there's a coastal / cultural route between the cities
-				const bool found = generatePathForHypotheticalUnit(plot(), pLoopCity->plot(), getOwner(), eShipUnit, MOVE_SAFE_TERRITORY, iMaxTurns);
+				const bool found = generatePathForHypotheticalUnit(plot(), pLoopCity->plot(), getOwnerINLINE(), eShipUnit, MOVE_SAFE_TERRITORY, iMaxTurns);
 				if (found)
 					return true;
 			}
@@ -2471,7 +2471,7 @@ void CvCityAI::AI_doNativeTrade()
 	int iBestCityValue = 0;
 
 	CvYieldInfo& kBestYield = GC.getYieldInfo(eBestYield);
-	CvPlayer& kOwner = GET_PLAYER(getOwner());
+	CvPlayer& kOwner = GET_PLAYER(getOwnerINLINE());
 	int iLoop;
 	CvCity* pLoopCity;
 	for (pLoopCity = kOwner.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kOwner.nextCity(&iLoop))
@@ -2542,7 +2542,7 @@ void CvCityAI::AI_doNative()
 	AI_doNativeTrade();
 
 	FAssert(isNative());
-	CvPlayer& kPlayer = GET_PLAYER(getOwner());
+	CvPlayer& kPlayer = GET_PLAYER(getOwnerINLINE());
 	for (int iI = 0; iI < NUM_YIELD_TYPES; iI++)
 	{
 		YieldTypes eYield = (YieldTypes)iI;
@@ -4364,7 +4364,7 @@ int CvCityAI::AI_calculateAlarm(PlayerTypes eIndex) const
 					CvCity* pLoopCity = pLoopPlot->getPlotCity();
 					if (pLoopCity != NULL)
 					{
-						if (pLoopCity->getOwner() == eIndex)
+						if (pLoopCity->getOwnerINLINE() == eIndex)
 						{
 							iPlotAlarm += kAlarm.getColony();
 							iPlotAlarm += pLoopCity->getPopulation() * kAlarm.getPopulation();
@@ -4984,7 +4984,7 @@ void CvCityAI::AI_updateRequiredYieldLevels()
 	{
 		aiLevels[iI] = 0;
 	}
-	CvPlayerAI& kPlayer = GET_PLAYER(getOwner());
+	CvPlayerAI& kPlayer = GET_PLAYER(getOwnerINLINE());
 
 	// TAC - AI Economy - koma13 - START
 	/*
@@ -6117,7 +6117,7 @@ int CvCityAI::AI_cityThreat(bool bDangerPercent) const
 
 	for (int iI = 0; iI < MAX_PLAYERS; iI++)
 	{
-		if ((iI != getOwner()) && GET_PLAYER((PlayerTypes)iI).isAlive())
+		if ((iI != getOwnerINLINE()) && GET_PLAYER((PlayerTypes)iI).isAlive())
 		{
 			int iTempValue = AI_playerCloseness((PlayerTypes)iI, 5);
 

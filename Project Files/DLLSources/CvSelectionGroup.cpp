@@ -2693,7 +2693,7 @@ bool CvSelectionGroup::groupAttack(AssertCallerData assertData, int iX, int iY, 
 		const std::string unitDebug = (pHead != NULL) ? pHead->debugString() : "No head unit!";
 		FAssertMsgWithCaller(assertData, !isBusy(), unitDebug.c_str()); // K-Mod
 	}
-	CvPlot* pDestPlot = GC.getMap().plot(iX, iY);
+	CvPlot* pDestPlot = GC.getMap().plotINLINE(iX, iY);
 
 	// K-Mod. Rather than clearing the existing path data; use a temporary pathfinder.
 	KmodPathFinder final_path;

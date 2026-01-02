@@ -1445,7 +1445,7 @@ void CvUnitAI::AI_colonistMove()
 	const bool bDanger = GET_PLAYER(getOwnerINLINE()).AI_getPlotDanger(plot(), 2) > 0;
 
 	// Retreat when in danger and outside friendly territory
-	if (bDanger && plot()->getOwner() != getOwner())
+	if (bDanger && plot()->getOwnerINLINE() != getOwnerINLINE())
 	{
 		if (AI_retreatToCity(false, MAX_INT, true))
 			return;
@@ -3394,9 +3394,9 @@ void CvUnitAI::AI_defensiveBraveMove()
 
 	FAssert(eAreaAI == AREAAI_NEUTRAL || eAreaAI == AREAAI_OFFENSIVE || eAreaAI == AREAAI_BALANCED || eAreaAI == AREAAI_DEFENSIVE);
 
-	CvCity* pCity = (plot()->getOwner() == getOwner()) ? plot()->getPlotCity() : NULL;
+	CvCity* pCity = (plot()->getOwnerINLINE() == getOwnerINLINE()) ? plot()->getPlotCity() : NULL;
 
-	CvPlayerAI& kOwner = GET_PLAYER(getOwner());
+	CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
 
 	bool bDanger = kOwner.AI_getPlotDanger(plot(), 2, false);
 
@@ -3463,7 +3463,7 @@ void CvUnitAI::AI_defensiveBraveMove()
 							}
 							else if (GC.getGame().getSorenRandNum(100, "AI native start raiding party") < GC.getRANDOM_NATIVE_RAID_BASECHANCE())
 							{
-								int iRand = GC.getLeaderHeadInfo(GET_PLAYER(getOwner()).getPersonalityType()).getContactRand(CONTACT_NATIVE_RAID);
+								int iRand = GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getContactRand(CONTACT_NATIVE_RAID);
 								//iRand += std::max(0, 40 - GC.getGameINLINE().getGameTurn());
 
 								if (iRand > GC.getGame().getSorenRandNum(100 * iNumRaidingParties, "AI native raiding party"))
@@ -3484,7 +3484,7 @@ void CvUnitAI::AI_defensiveBraveMove()
 						{
 							int iRand = GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getContactRand(CONTACT_YIELD_GIFT);
 							iRand += std::max(0, 40 - GC.getGameINLINE().getGameTurn());
-							if (iRand > GC.getGame().getSorenRandNum(100 * plot()->plotCount(PUF_isUnitAIType, UNITAI_DEFENSIVE, -1, getOwner()), "AI native bear gifts"))
+							if (iRand > GC.getGame().getSorenRandNum(100 * plot()->plotCount(PUF_isUnitAIType, UNITAI_DEFENSIVE, -1, getOwnerINLINE()), "AI native bear gifts"))
 							{
 								AI_setUnitAIState(UNITAI_STATE_BEARING_GIFTS);
 								pCity->AI_setGiftTimer(GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getContactDelay(CONTACT_YIELD_GIFT));
@@ -3495,7 +3495,7 @@ void CvUnitAI::AI_defensiveBraveMove()
 						{
 							int iRandTrade = GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getContactRand(CONTACT_YIELD_GIFT);
 							iRandTrade = iRandTrade * 2;
-							if (iRandTrade > GC.getGame().getSorenRandNum(100 * plot()->plotCount(PUF_isUnitAIType, UNITAI_DEFENSIVE, -1, getOwner()), "AI native trade"))
+							if (iRandTrade > GC.getGame().getSorenRandNum(100 * plot()->plotCount(PUF_isUnitAIType, UNITAI_DEFENSIVE, -1, getOwnerINLINE()), "AI native trade"))
 							{
 								AI_setUnitAIState(UNITAI_STATE_BEARING_TRADE);
 								pCity->AI_setTradeTimer(GC.getLeaderHeadInfo(GET_PLAYER(getOwnerINLINE()).getPersonalityType()).getContactDelay(CONTACT_YIELD_GIFT) / 2);
@@ -3519,7 +3519,7 @@ void CvUnitAI::AI_defensiveBraveMove()
 
 	if (AI_getUnitAIState() == UNITAI_STATE_BEARING_GIFTS)
 	{
-		if (plot()->isCity() && (!GET_PLAYER(plot()->getOwner()).isNative()))
+		if (plot()->isCity() && (!GET_PLAYER(plot()->getOwnerINLINE()).isNative()))
 		{
 			//Make gift and do diplomacy
 			GET_PLAYER(getOwnerINLINE()).AI_nativeYieldGift(this);
@@ -3542,7 +3542,7 @@ void CvUnitAI::AI_defensiveBraveMove()
 	// R&R, ray, Natives Trading -- START
 	if (AI_getUnitAIState() == UNITAI_STATE_BEARING_TRADE)
 	{
-		if (plot()->isCity() && (!GET_PLAYER(plot()->getOwner()).isNative()))
+		if (plot()->isCity() && (!GET_PLAYER(plot()->getOwnerINLINE()).isNative()))
 		{
 			//trade
 			GET_PLAYER(getOwnerINLINE()).AI_nativeTrade(this);
@@ -3707,9 +3707,9 @@ void CvUnitAI::AI_offensiveBraveMove()
 
 	FAssert(eAreaAI == AREAAI_NEUTRAL || eAreaAI == AREAAI_OFFENSIVE || eAreaAI == AREAAI_BALANCED || eAreaAI == AREAAI_DEFENSIVE);
 
-	CvCity* pCity = (plot()->getOwner() == getOwner()) ? plot()->getPlotCity() : NULL;
+	CvCity* pCity = (plot()->getOwnerINLINE() == getOwnerINLINE()) ? plot()->getPlotCity() : NULL;
 
-	CvPlayerAI& kOwner = GET_PLAYER(getOwner());
+	CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
 
 	const int iLoiterDistance = 2;
 
@@ -3873,9 +3873,9 @@ void CvUnitAI::AI_counterBraveMove()
 
 	FAssert(eAreaAI == AREAAI_NEUTRAL || eAreaAI == AREAAI_OFFENSIVE || eAreaAI == AREAAI_BALANCED || eAreaAI == AREAAI_DEFENSIVE);
 
-	CvCity* pCity = (plot()->getOwner() == getOwner()) ? plot()->getPlotCity() : NULL;
+	CvCity* pCity = (plot()->getOwnerINLINE() == getOwnerINLINE()) ? plot()->getPlotCity() : NULL;
 
-	CvPlayerAI& kOwner = GET_PLAYER(getOwner());
+	CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
 
 	const int iLoiterDistance = 2;
 
@@ -3949,7 +3949,7 @@ void CvUnitAI::AI_transportMove()
 	CvCity* pCity = NULL;
 	if (plot()->getPlotCity() != NULL)
 	{
-		if (plot()->getOwner() == getOwner())
+		if (plot()->getOwnerINLINE() == getOwnerINLINE())
 		{
 			pCity = plot()->getPlotCity();
 		}
@@ -4041,7 +4041,7 @@ void CvUnitAI::AI_transportMoveFull()
 void CvUnitAI::AI_imperialShipMove()
 {
 
-	CvPlayerAI& kOwner = GET_PLAYER(getOwner());
+	CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
 	int iMovePriority = AI_getMovePriority();
     bool bHasCargo = getGroup()->hasCargo();
 
@@ -4834,7 +4834,7 @@ void CvUnitAI::AI_transportSeaMove()
 				return;
 			}
 
-			if (plot()->getOwner() == getOwner())
+			if (plot()->getOwnerINLINE() == getOwnerINLINE())
 			{
 				pCity = plot()->getPlotCity();
 			}
@@ -4893,7 +4893,7 @@ void CvUnitAI::AI_transportSeaMove()
 			}
 
 			// If we happen to be in a city we own, attempt to load as many goods as possible
-			if (pCity != NULL && pCity->getOwner() == getOwner())
+			if (pCity != NULL && pCity->getOwnerINLINE() == getOwnerINLINE())
 			{
 				AI_collectGoods();
 			}
@@ -5491,7 +5491,7 @@ void CvUnitAI::AI_assaultSeaMove()
 				if( iCargo > 0 )
 				{
 					CvCity* pAdjacentCity = pAdjacentPlot->getPlotCity();
-					if( pAdjacentCity != NULL && pAdjacentCity->getOwner() == getOwnerINLINE() && pAdjacentCity->getPreviousOwner() != NO_PLAYER )
+					if( pAdjacentCity != NULL && pAdjacentCity->getOwnerINLINE() == getOwnerINLINE() && pAdjacentCity->getPreviousOwner() != NO_PLAYER )
 					{
 						if( (GC.getGameINLINE().getGameTurn() - pAdjacentCity->getGameTurnAcquired()) < 5 )
 						{
@@ -6208,7 +6208,7 @@ bool CvUnitAI::AI_travelToEuropeColonyRaidTarget(int iMinAttitude, int iMaxAttit
 	CvPlot* pBestPlot = NULL;
 	int iBestValue = 0;
 
-	CvPlayer& kOwner = GET_PLAYER(getOwner());
+	CvPlayer& kOwner = GET_PLAYER(getOwnerINLINE());
 
 	for (iX = -iRange; iX <= iRange; iX++)
 	{
@@ -6220,7 +6220,7 @@ bool CvUnitAI::AI_travelToEuropeColonyRaidTarget(int iMinAttitude, int iMaxAttit
 			{
 				if (pLoopPlot->isCity() && !atPlot(pLoopPlot))
 				{
-					CvPlayer& kLoopPlayer = GET_PLAYER(pLoopPlot->getOwner());
+					CvPlayer& kLoopPlayer = GET_PLAYER(pLoopPlot->getOwnerINLINE());
 					if (!kLoopPlayer.isNative())
 					{
 						int iAttitude = kOwner.AI_getAttitude(kLoopPlayer.getID());
@@ -6283,7 +6283,7 @@ bool CvUnitAI::AI_travelToEuropeColony(int iMinAttitude, int iMaxAttitude, int i
 	CvPlot* pBestPlot = NULL;
 	int iBestValue = 0;
 
-	CvPlayer& kOwner = GET_PLAYER(getOwner());
+	CvPlayer& kOwner = GET_PLAYER(getOwnerINLINE());
 
 	for (iX = -iRange; iX <= iRange; iX++)
 	{
@@ -6296,7 +6296,7 @@ bool CvUnitAI::AI_travelToEuropeColony(int iMinAttitude, int iMaxAttitude, int i
 			{
 				if (pLoopPlot->isCity())
 				{
-					CvPlayer& kLoopPlayer = GET_PLAYER(pLoopPlot->getOwner());
+					CvPlayer& kLoopPlayer = GET_PLAYER(pLoopPlot->getOwnerINLINE());
 
 					if (!kLoopPlayer.isNative())
 					{
@@ -7229,9 +7229,9 @@ bool CvUnitAI::AI_collectGoods()
 	CvCity* const pCity = plot()->getPlotCity();
 
 	FAssert(pCity != NULL);
-	FAssert(pCity->getOwner() == getOwner()); // team?
+	FAssert(pCity->getOwnerINLINE() == getOwnerINLINE()); // team?
 
-	const CvPlayerAI& kOwner = GET_PLAYER(getOwner());
+	const CvPlayerAI& kOwner = GET_PLAYER(getOwnerINLINE());
 	const CvPlayerAI& kEuropePlayer = GET_PLAYER(kOwner.getParent());
 	const int iCargoHold = GC.getGameINLINE().getCargoYieldCapacity();
 
@@ -12939,7 +12939,7 @@ bool CvUnitAI::AI_moveToWhale()
 							iPlotValue += 100;
 							iPlotValue += GC.getGameINLINE().getSorenRandNum(10, "AI find seafood deep search");
 							iPlotValue *= 100;
-							iPlotValue /= 100 + GET_PLAYER(getOwner()).AI_cityDistance(pLoopPlot);
+							iPlotValue /= 100 + GET_PLAYER(getOwnerINLINE()).AI_cityDistance(pLoopPlot);
 							iPlotValue *= 10000;
 							iPlotValue /= 100 + getPathCost();
 							if (iPlotValue > iBestValue)
@@ -13021,7 +13021,7 @@ bool CvUnitAI::AI_exploreRessource()
 								iPlotValue += GC.getGameINLINE().getSorenRandNum(10, "AI find seafood deep search");
 
 								iPlotValue *= 100;
-								iPlotValue /= 100 + GET_PLAYER(getOwner()).AI_cityDistance(pLoopPlot);
+								iPlotValue /= 100 + GET_PLAYER(getOwnerINLINE()).AI_cityDistance(pLoopPlot);
 
 								iPlotValue *= 10000;
 								iPlotValue /= 100 + getPathCost();
@@ -14379,7 +14379,7 @@ bool CvUnitAI::AI_leaveAttack(int iRange, int iOddsThreshold, int iStrengthThres
 
 	pCity = plot()->getPlotCity();
 
-	if ((pCity != NULL) && (pCity->getOwner() == getOwner()))
+	if ((pCity != NULL) && (pCity->getOwnerINLINE() == getOwnerINLINE()))
 	{
 		int iOurStrength = GET_PLAYER(getOwnerINLINE()).AI_getOurPlotStrength(plot(), 0, false, false);
 		int iEnemyStrength = GET_PLAYER(getOwnerINLINE()).AI_getEnemyPlotStrength(plot(), 2, false, false);
@@ -15026,7 +15026,7 @@ bool CvUnitAI::AI_wanderAroundAimlessly()
 	CvMap& kMap = GC.getMap();
 	while ((pMissionPlot == NULL) || atPlot(pMissionPlot))
 	{
-		pMissionPlot = kMap.plot(GC.getGameINLINE().getSorenRandNum(kMap.getGridWidthINLINE(), "AI wander X"), GC.getGameINLINE().getSorenRandNum(kMap.getGridWidthINLINE(), "AI wander Y"));
+		pMissionPlot = kMap.plotINLINE(GC.getGameINLINE().getSorenRandNum(kMap.getGridWidthINLINE(), "AI wander X"), GC.getGameINLINE().getSorenRandNum(kMap.getGridWidthINLINE(), "AI wander Y"));
 	}
 
 	int iCurrentDistance = plotDistance(getX_INLINE(), getY_INLINE(), pMissionPlot->getX_INLINE(), pMissionPlot->getY_INLINE());
@@ -15867,7 +15867,7 @@ bool CvUnitAI::AI_tradeWithCity()
 	CvCity* pPlotCity = plot()->getPlotCity();
 	if (pPlotCity != NULL)
 	{
-		CvPlayerAI& kPlotPlayer = GET_PLAYER(pPlotCity->getOwner());
+		CvPlayerAI& kPlotPlayer = GET_PLAYER(pPlotCity->getOwnerINLINE());
 		if (kPlotPlayer.isNative())
 		{
 			if (canTradeYield(plot()))
@@ -18081,7 +18081,7 @@ bool CvUnitAI::AI_moveToStagingCity()
 	}
 
 
-	for (pLoopCity = GET_PLAYER(getOwner()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwner()).nextCity(&iLoop))
+	for (pLoopCity = GET_PLAYER(getOwnerINLINE()).firstCity(&iLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(getOwnerINLINE()).nextCity(&iLoop))
 	{
 		// TAC - AI Assault Sea - koma13, jdog5000(BBAI) - START
 		// BBAI efficiency: check same area
@@ -18797,8 +18797,8 @@ bool CvUnitAI::AI_nativeRaidTreasureUnit()
 					if (pTreasureUnit != NULL)
 					{
 						// R&R, ray, improvement to raiding treasures - START
-						CvPlayerAI& raidOwner = GET_PLAYER(getOwner());
-						PlayerTypes treasureOwner = pTreasureUnit->getOwner();
+						CvPlayerAI& raidOwner = GET_PLAYER(getOwnerINLINE());
+						PlayerTypes treasureOwner = pTreasureUnit->getOwnerINLINE();
 
 						// Natives do not raid treasures of players they like
 						if(raidOwner.AI_getAttitude(treasureOwner) > GC.getLeaderHeadInfo(raidOwner.getPersonalityType()).getNativeRaidAttitudeThreshold())
