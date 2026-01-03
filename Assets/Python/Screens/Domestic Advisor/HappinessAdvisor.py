@@ -22,12 +22,13 @@ class HappinessAdvisor(BaseAdvisorWindow.BaseAdvisorWindow):
 	def drawColonyCell(self, iCity, pCity, iColumn, noInfo):
 		#  0 Total Happiness
 		if (iColumn == 0):
-			if (pCity.getCityHappiness() > pCity.getCityUnHappiness() ):
-				self.tableManager.addText("<color=0,255,0>" + unicode(pCity.getCityHappiness() - pCity.getCityUnHappiness()) + "</font>")
-			elif (pCity.getCityHappiness() < pCity.getCityUnHappiness() ):
-				self.tableManager.addText("<color=255,0,0>" + unicode(pCity.getCityHappiness() - pCity.getCityUnHappiness()) + "</font>")
-			elif (pCity.getCityHappiness() == pCity.getCityUnHappiness() ):
-				self.tableManager.addText(unicode(pCity.getCityHappiness() - pCity.getCityUnHappiness()))
+			iDiff = pCity.getCityHappiness() - pCity.getCityUnHappiness()
+			if (iDiff > 0):
+				self.tableManager.addTextInt("<color=0,255,0>" + unicode(iDiff) + "</color>")
+			elif (iDiff < 0):
+				self.tableManager.addTextInt("<color=255,0,0>" + unicode(iDiff) + "</color>")
+			else:
+				self.tableManager.addTextInt("0")
 		#  1 Happiness from Crosses
 		elif (iColumn == 1):
 			self.tableManager.addIntLeft(pCity.getHappinessFromCrosses())

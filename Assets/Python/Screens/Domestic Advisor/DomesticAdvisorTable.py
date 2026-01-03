@@ -140,6 +140,12 @@ class DomesticAdvisorTable:
 	def addIntLeft(self, iValue, iData1 = -1, iData2 = -1, widget = WidgetTypes.WIDGET_GENERAL):
 		self.__addInt(iValue, iData1, iData2, widget, CvUtil.FONT_LEFT_JUSTIFY)
 
+	def addTextInt(self, szText, iData1 = -1, iData2 = -1, widget = WidgetTypes.WIDGET_GENERAL, justified = CvUtil.FONT_LEFT_JUSTIFY):
+		self.__addTextInt(szText, iData1, iData2, widget, justified)
+
+	def addTextIntRight(self, szText, iData1 = -1, iData2 = -1, widget = WidgetTypes.WIDGET_GENERAL):
+		self.__addTextInt(szText, iData1, iData2, widget, CvUtil.FONT_RIGHT_JUSTIFY)
+
 	def drawChar(self, pInstance ):
 		self.__drawChar(pInstance)
 
@@ -382,6 +388,10 @@ class DomesticAdvisorTable:
 	def __addText(self, szText, iData1 = -1, iData2 = -1, widget = WidgetTypes.WIDGET_GENERAL, justified = CvUtil.FONT_LEFT_JUSTIFY):
 		self.__progressCell()
 		self.__getScreen().setTableText(self.__currentPageName(), self.curColumn, self.curRow, "<font=2>" + szText + "</font>", "", widget, iData1, iData2, justified )
+
+	def __addTextInt(self, szText, iData1 = -1, iData2 = -1, widget = WidgetTypes.WIDGET_GENERAL, justified = CvUtil.FONT_LEFT_JUSTIFY):
+		self.__progressCell()
+		self.__getScreen().setTableInt(self.__currentPageName(), self.curColumn, self.curRow, "<font=2>" + szText + "</font>", "", widget, iData1, iData2, justified )
 
 	def __addTextRight(self, szText, iData1 = -1, iData2 = -1, widget = WidgetTypes.WIDGET_GENERAL):
 		self.__addText(szText, iData1, iData2, widget, CvUtil.FONT_RIGHT_JUSTIFY)
