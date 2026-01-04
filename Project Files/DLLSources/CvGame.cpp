@@ -1384,6 +1384,46 @@ void CvGame::updateScore(bool bForce)
 	}
 }
 
+// advc.003y: Ported from CvUtil.py
+int CvGame::getScoreComponent(int iRawScore, int iInitial, int iMax,
+	int iMultiplier, bool bExponential, bool bFinal, bool bVictory) const
+{
+	if (getEstimateEndTurn() <= 0)
+		return 0;
+
+	static scaled const rSCORE_FREE_PERCENT = per100(GC.getDefineINT(
+		"SCORE_FREE_PERCENT"));
+	static scaled const rSCORE_VICTORY_PERCENT = per100(GC.getDefineINT(
+		"SCORE_VICTORY_PERCENT"));
+	static scaled const rSCORE_HANDICAP_PERCENT_OFFSET = per100(GC.getDefineINT(
+		"SCORE_HANDICAP_PERCENT_OFFSET"));
+	static scaled const rSCORE_HANDICAP_PERCENT_PER = per100(GC.getDefineINT(
+		"SCORE_HANDICAP_PERCENT_PER"));
+
+	scaled rMax = iMax;
+	if (bFinal && bVictory) // Not synchronized; floating point math is fine here.
+	{
+		scaled rTurnRatio(getGameTurn(), getEstimateEndTurn());
+		if (bExponential && iInitial > 0)
+			rMax = iInitial * (rMax / iInitial).pow(rTurnRatio);
+		else rMax = iInitial + rTurnRatio * (rMax - iInitial);
+	}
+	scaled rFreeScore = rSCORE_FREE_PERCENT * rMax;
+	scaled rScore = iMultiplier;
+	scaled rDiv = rFreeScore + rMax;
+	if (rDiv >= 1)
+		rScore = (iRawScore + rFreeScore) * (iMultiplier / rDiv);
+	if (!bVictory && !bFinal)
+		return rScore.round();
+	if (bVictory)
+		rScore *= 1 + rSCORE_VICTORY_PERCENT;
+	if (bFinal)
+	{
+		rScore *= 1 + rSCORE_HANDICAP_PERCENT_OFFSET +
+			scaled((int)getHandicapType()) * rSCORE_HANDICAP_PERCENT_PER;
+	}
+	return rScore.round();
+}
 
 void CvGame::updateColoredPlots()
 {

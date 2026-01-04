@@ -2730,39 +2730,41 @@ bool CvPlayer::hasBusyUnit() const
 	return false;
 }
 
+// advc (caveat): Needs to be consistent with CvGameTextMgr::setScoreHelp
 int CvPlayer::calculateScore(bool bFinal, bool bVictory) const
 {
 	PROFILE_FUNC();
 
-	if (!isAlive())
-	{
+	if (!isAlive() || GET_TEAM(getTeam()).getNumMembers() <= 0)
 		return 0;
-	}
 
-	if (GET_TEAM(getTeam()).getNumMembers() == 0)
-	{
-		return 0;
-	}
-
-    // R&R, Robert Surcouf, No More Variables Hidden game option START
-	//if (isNative())
 	if (isNative() && !GC.getGameINLINE().isOption(GAMEOPTION_NO_MORE_VARIABLES_HIDDEN))
-	{
 		return 0;
-	}
-    // R&R, Robert Surcouf, No More Variables Hidden game option END
 
-	long iScore = 0;
+	/*  <advc.003y> Ported from CvGameUtils.py; WTP: callback deleted.
+		Apart from CvGame::getScoreComponent, the auxiliary functions were already
+		in the DLL. */
+	static int const iSCORE_POPULATION_FACTOR = GC.getDefineINT("SCORE_POPULATION_FACTOR");
+	static int const iSCORE_LAND_FACTOR = GC.getDefineINT("SCORE_LAND_FACTOR");
+	static int const iSCORE_FATHER_FACTOR = GC.getDefineINT("SCORE_FATHER_FACTOR");
+	CvGame const& kGame = GC.getGame();
+	// WTP: Component that were not supported has been removed (wonders, tech)
+	const int iPopulationScore = kGame.getScoreComponent(getPopScore(), kGame.getInitPopulation(),
+		kGame.getMaxPopulation(), iSCORE_POPULATION_FACTOR, true, bFinal, bVictory);
+	const int iLandScore = kGame.getScoreComponent(getLandScore(), kGame.getInitLand(),
+		kGame.getMaxLand(), iSCORE_LAND_FACTOR, true, bFinal, bVictory);
+	const int iFatherScore = kGame.getScoreComponent(getFatherScore(), kGame.getInitFather(),
+		kGame.getMaxFather(), iSCORE_FATHER_FACTOR, true, bFinal, bVictory);
 
-	gDLL->getPythonIFace()->pythonCalculateScore(getID(), &iScore, bFinal, bVictory);
+	int iTotal = iPopulationScore + iLandScore + iFatherScore;
 
 	if (is(CIV_CATEGORY_COLONIAL))
 	{
-		iScore *= getScoreTaxFactor();
-		iScore /= 100;
+		iTotal *= getScoreTaxFactor();
+		iTotal /= 100;
 	}
 
-	return ((int)iScore);
+	return iTotal;
 }
 
 int CvPlayer::getScoreTaxFactor() const

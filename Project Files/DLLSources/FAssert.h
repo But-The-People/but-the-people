@@ -124,4 +124,6 @@ bool FAssertDlg(const char*, const char*, const char*, unsigned int,
 #define FAssertMsgWithCaller( data, expr, msg )
 #endif
 
+#define FErrorMsg(msg) FAssertMsg(false, msg) // advc.006i (from C2C)
+
 #endif // FASSERT_H
