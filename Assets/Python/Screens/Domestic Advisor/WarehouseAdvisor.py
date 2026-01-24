@@ -71,7 +71,7 @@ class WarehouseAdvisor(BaseAdvisorWindow.BaseAdvisorWindow):
 			self.tableManager.skipCell()
 		else:
 			self.tableManager.addTextIntRight("<color=0,255,0>" + unicode(iNetYield) + u"</color>",
-				iCity, iYield, WidgetTypes.WIDGET_HELP_DOMESTIC_DEMAND_ADVISOR)
+				iYield, iCity, WidgetTypes.WIDGET_HELP_YIELD)
 
 
 	def createTableHeader(self):
@@ -80,12 +80,3 @@ class WarehouseAdvisor(BaseAdvisorWindow.BaseAdvisorWindow):
 		self.tableManager.addHeaderCityName()
 		self.tableManager.addHeaderTxt("MAX", self.parent.iWareHouseW)
 		self.tableManager.addHeaderArrayYields()
-
-	def getWidgetHelp(self, argsList):
-		iScreen, eWidgetType, iCity, iYield, bOption = argsList
-
-		if eWidgetType != WidgetTypes.WIDGET_HELP_DOMESTIC_DEMAND_ADVISOR:
-			return ""
-
-		yieldInfo = gc.getYieldInfo(iYield)
-		return yieldInfo.getDescription()
