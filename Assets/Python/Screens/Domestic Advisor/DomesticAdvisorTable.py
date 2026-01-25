@@ -187,7 +187,7 @@ class DomesticAdvisorTable:
 		return self.__numPages()
 
 	def setPage(self, iPage):
-		self.__setPage()
+		self.__setPage(iPage)
 
 	def getScreen(self):
 		return self.__getScreen()
