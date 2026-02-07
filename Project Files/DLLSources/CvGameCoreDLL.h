@@ -41,6 +41,7 @@
 #include <deque>
 #include <queue>
 #include <limits>
+#include <sstream>
 
 #define DllExport   __declspec( dllexport )
 

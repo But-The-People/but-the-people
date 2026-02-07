@@ -210,6 +210,7 @@ public:
 	int movesLeft() const; // K-Mod
 
 	int dangerDetectionRange() const;
+	std::string CvSelectionGroup::debugString() const;
 
 	// for serialization
 	virtual void read(FDataStreamBase* pStream);

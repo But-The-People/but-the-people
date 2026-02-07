@@ -2689,9 +2689,14 @@ bool CvSelectionGroup::groupAttack(AssertCallerData assertData, int iX, int iY, 
 {
 	if (isBusy())
 	{
-		CvUnit* const pHead = getHeadUnit();
-		const std::string unitDebug = (pHead != NULL) ? pHead->debugString() : "No head unit!";
-		FAssertMsgWithCaller(assertData, !isBusy(), unitDebug.c_str()); // K-Mod
+		std::ostringstream oss;
+		oss << "groupAttack !isBusy() failed: "
+			<< "from=(" << getX() << "," << getY() << ")"
+			<< " target=(" << iX << "," << iY << ")"
+			<< " flags=" << iFlags
+			<< "\n"
+			<< debugString();
+		FErrorMsgWithCaller(assertData, oss.str().c_str()); // K-Mod
 	}
 	CvPlot* pDestPlot = GC.getMap().plotINLINE(iX, iY);
 
@@ -4513,4 +4518,75 @@ int CvSelectionGroup::dangerDetectionRange() const
 	{
 		return 2;
 	}
+}
+
+std::string CvSelectionGroup::debugString() const
+{
+	std::ostringstream oss;
+
+	// Basic group identity
+	oss << "Group id=" << getID()
+		<< " owner=" << getOwner()
+		<< " team=" << GET_PLAYER(getOwner()).getTeam()
+		<< " domain=" << getDomainType();
+
+	// Position
+	oss << " plot=(" << getX() << "," << getY() << ")";
+
+	// Core state
+	oss << " numUnits=" << getNumUnits()
+		<< " isBusy=" << (isBusy() ? 1 : 0)
+		<< " missionTimer=" << getMissionTimer()
+		<< " activity=" << getActivityType();
+
+	// Head mission in queue (if any)
+	const CLLNode<MissionData>* pMissionNode = headMissionQueueNode();
+	if (pMissionNode != NULL)
+	{
+		const MissionData& kData = pMissionNode->m_data;
+		oss << " headMissionType=" << kData.eMissionType
+			<< " headFlags=" << kData.iFlags
+			<< " headData=(" << kData.iData1
+			<< "," << kData.iData2 << ")";
+	}
+
+	// AI mission info
+	const CvPlot* pMissionPlot = AI().AI_getMissionAIPlot_();
+	oss << " missionAIType=" << AI().AI_getMissionAIType_();
+	if (pMissionPlot != NULL)
+	{
+		oss << " missionAIPlot=("
+			<< pMissionPlot->getX_INLINE() << ","
+			<< pMissionPlot->getY_INLINE() << ")";
+	}
+
+	// Units in the group (limit to first N for readability)
+	int iIndex = 0;
+	const int iMaxUnitsToPrint = 50; // avoid overly long strings
+
+	for (CLLNode<IDInfo>* pNode = headUnitNode();
+		pNode != NULL;
+		pNode = nextUnitNode(pNode))
+	{
+		const CvUnit* pUnit = ::getUnit(pNode->m_data);
+		if (pUnit == NULL)
+		{
+			continue;
+		}
+
+		oss << "\n  [" << iIndex << "] " << pUnit->debugString();
+		++iIndex;
+
+		if (iIndex >= iMaxUnitsToPrint)
+		{
+			if (getNumUnits() > iIndex)
+			{
+				oss << "\n  ... (" << (getNumUnits() - iIndex)
+					<< " more units not shown)";
+			}
+			break;
+		}
+	}
+
+	return oss.str();
 }

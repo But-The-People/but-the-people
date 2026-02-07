@@ -45,13 +45,17 @@ public:
 	{
 		return AI_getMissionAIPlot_();
 	}
-
 	CvPlot* AI_getMissionAIPlot_() const;
 
 	bool AI_isForceSeparate();
 	void AI_makeForceSeparate();
 
-	MissionAITypes AI_getMissionAIType();
+	MissionAITypes AI_getMissionAIType()
+	{
+		return AI_getMissionAIType_();
+	}
+	MissionAITypes AI_getMissionAIType_() const;
+
 	void AI_setMissionAI(MissionAITypes eNewMissionAI, CvPlot* pNewPlot, CvUnit* pNewUnit);
 	CvUnit* AI_ejectBestDefender(CvPlot* pTargetPlot);
 
