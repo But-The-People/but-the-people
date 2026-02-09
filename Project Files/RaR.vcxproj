@@ -277,6 +277,7 @@
     <ClInclude Include="DLLSources\CyXMLAttributes.h" />
     <ClInclude Include="DLLSources\CyXMLEditor.h" />
     <ClInclude Include="DLLSources\CyXMLObject.h" />
+    <ClInclude Include="DLLSources\DeferredPopEject.h" />
     <ClInclude Include="DLLSources\DesyncMonitor.h" />
     <ClInclude Include="DLLSources\EnumMapSpecializationBool.h" />
     <ClInclude Include="DLLSources\EnumMapCore.h" />

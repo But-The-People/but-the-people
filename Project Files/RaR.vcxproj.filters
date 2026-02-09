@@ -1059,6 +1059,9 @@
     <ClInclude Include="DLLSources\Network\CvNetworkMessage.h">
       <Filter>Classes\Network\Header</Filter>
     </ClInclude>
+    <ClInclude Include="DLLSources\DeferredPopEject.h">
+      <Filter>Misc\Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="DLLSources\FVariableSystem.inl">

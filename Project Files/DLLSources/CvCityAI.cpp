@@ -25,6 +25,8 @@
 #include "TBB.h"
 #include <boost/array.hpp>
 
+#include "DeferredPopEject.h"
+
 #define BUILDINGFOCUS_NO_RECURSION			(1 << 31)
 #define BUILDINGFOCUS_BUILD_ANYTHING		(1 << 30)
 #define BUILDINGFOCUS_MILITARY				(1 << 29)	// TAC - AI Buildings - koma13
@@ -328,36 +330,51 @@ void CvCityAI::AI_assignWorkingPlots()
 		jobMutex.unlock();
 	}
 
-	// lock scope
-	{ 
-		tbb::mutex::scoped_lock lock(jobMutex);
+	// If we failed to find a job for this citizen, just remove it from the city.
+	// In the parallel caller, we defer removals to a deterministic serial phase.
 
-	// If we failed to find a job for this citizen, just remove it from the city
-		int remaining = static_cast<int>(m_aPopulationUnits.size());
-		for (int i = remaining - 1; i >= 0 && remaining > 1; --i)
+	DeferredPopEjectQueue* pQ = g_pDeferredPopEjectQ;
+
+	const int iDefaultProf =
+		GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getDefaultProfession();
+
+	// Serial callers must also respect the "leave 1 colonist" rule.
+	int maxRemoveSerial = getPopulation() - 1;
+
+	for (int i = (int)m_aPopulationUnits.size() - 1; i >= 0; --i)
 	{
 		CvUnit* const pUnit = m_aPopulationUnits[i];
-		const ProfessionTypes eProfession = pUnit->getProfession();
+		if (pUnit == NULL)
+			continue;
 
-			// Only remove NO_PROFESSION citizens, but never remove the last one.
-		if (eProfession == NO_PROFESSION)
+		if (pUnit->getProfession() != NO_PROFESSION)
+			continue;
+
+		if (pQ != NULL)
 		{
-				// TODO: Also check if the citizen can actually leave (movement points, etc.)
-				const bool res = removePopulationUnit(
-					CREATE_ASSERT_DATA,
-					pUnit,
-					false,
-					GC.getCivilizationInfo(GET_PLAYER(getOwnerINLINE()).getCivilizationType()).getDefaultProfession());
+			// Parallel caller: defer mutation
+			DeferredPopEject it;
+			it.pCity = this;
+			it.pUnit = pUnit;
+			pQ->push(it);
+		}
+		else
+		{
+			// Serial callers: remove now, but never remove last citizen.
+			if (maxRemoveSerial <= 0)
+				break;
 
-			FAssertMsg(res, "Failed to remove NO_PROFESSION citizen");
+			const bool ok = removePopulationUnit(
+				CREATE_ASSERT_DATA,
+				pUnit,
+				false,
+				(ProfessionTypes)iDefaultProf);
 
-				if (res)
-				{
-					--remaining;
-				}
-			}
+			if (ok)
+				--maxRemoveSerial;
 		}
 	}
+
 }
 
 void CvCityAI::AI_updateAssignWork()

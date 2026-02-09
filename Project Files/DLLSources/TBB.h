@@ -15,17 +15,19 @@
 #include "lib/tbb/atomic.h"
 #include "lib/tbb/blocked_range.h"
 #include "lib/tbb/cache_aligned_allocator.h"
+#include "lib/tbb/concurrent_queue.h"
 #include "lib/tbb/parallel_for.h"
 #include "lib/tbb/parallel_reduce.h"
 #include "lib/tbb/mutex.h"
 #include "lib/tbb/partitioner.h"
+#include "lib/tbb/task_group.h"
 #include "lib/tbb/task_scheduler_init.h"
 #pragma pop_macro("new")
 #pragma pop_macro("free")
 
 #else
-// singlecore wrappers to allow TBB syntax
 
+// singlecore wrappers to allow TBB syntax
 namespace tbb
 {
 	struct mutex

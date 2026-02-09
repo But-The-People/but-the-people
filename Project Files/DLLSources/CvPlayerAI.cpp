@@ -10,7 +10,6 @@
 #include "CvPlot.h"
 #include "CvGameAI.h"
 #include "CvTeamAI.h"
-#include "CvGameCoreUtils.h"
 #include "CvDiploParameters.h"
 #include "CvInitCore.h"
 #include "CyArgsList.h"
@@ -30,13 +29,123 @@
 #include "BetterBTSAI.h"
 #include "DesyncMonitor.h"
 
-#pragma push_macro("free")
-#pragma push_macro("new")
-#undef free
-#undef new
-#include "lib/tbb/task_group.h"
-#pragma pop_macro("new")
-#pragma pop_macro("free")
+#include "TBB.h"
+
+#include "DeferredPopEject.h"
+
+tbb::concurrent_queue<DeferredPopEject>* g_pDeferredPopEjectQ = NULL;
+
+namespace
+{
+	struct DeferredPopEjectKey
+	{
+		int iOwner;
+		int iCityID;
+		int iUnitID;
+		CvCity* pCity;
+		CvUnit* pUnit;
+	};
+
+	struct DeferredPopEjectKeyLess
+	{
+		bool operator()(const DeferredPopEjectKey& a, const DeferredPopEjectKey& b) const
+		{
+			if (a.iOwner != b.iOwner)  return a.iOwner < b.iOwner;
+			if (a.iCityID != b.iCityID) return a.iCityID < b.iCityID;
+			return a.iUnitID < b.iUnitID;
+		}
+	};
+
+	static void applyDeferredPopEjects(DeferredPopEjectQueue& q)
+	{
+		std::vector<DeferredPopEjectKey> v;
+		v.reserve(128);
+
+		for (;;)
+		{
+			DeferredPopEject it;
+			if (!q.try_pop(it))
+				break;
+
+			if (it.pCity == NULL || it.pUnit == NULL)
+				continue;
+
+			DeferredPopEjectKey k;
+			k.iOwner = (int)it.pCity->getOwnerINLINE();
+			k.iCityID = it.pCity->getID();
+			k.iUnitID = it.pUnit->getID();
+			k.pCity = it.pCity;
+			k.pUnit = it.pUnit;
+			v.push_back(k);
+		}
+
+		if (v.empty())
+			return;
+
+		std::sort(v.begin(), v.end(), DeferredPopEjectKeyLess());
+
+		// Process by (owner, city). Enforce "leave 1 colonist" here (authoritative).
+		for (size_t i = 0; i < v.size(); )
+		{
+			const int owner = v[i].iOwner;
+			const int cityID = v[i].iCityID;
+
+			size_t j = i + 1;
+			while (j < v.size() && v[j].iOwner == owner && v[j].iCityID == cityID)
+				++j;
+
+			CvPlayer& kOwner = GET_PLAYER((PlayerTypes)owner);
+
+			CvCity* pCity = v[i].pCity;
+			if (pCity == NULL || pCity->getOwnerINLINE() != (PlayerTypes)owner || pCity->getID() != cityID)
+			{
+				pCity = kOwner.getCity(cityID);
+			}
+
+			if (pCity != NULL)
+			{
+				int maxRemove = pCity->getPopulation() - 1;
+				if (maxRemove > 0)
+				{
+					const int iDefaultProf =
+						GC.getCivilizationInfo(kOwner.getCivilizationType()).getDefaultProfession();
+
+					int lastUnitID = -1;
+
+					for (size_t k = i; k < j && maxRemove > 0; ++k)
+					{
+						// Skip duplicates of same unit within the sorted block.
+						if (v[k].iUnitID == lastUnitID)
+							continue;
+						lastUnitID = v[k].iUnitID;
+
+						CvUnit* pUnit = v[k].pUnit;
+						if (pUnit == NULL)
+							continue;
+
+						// Cheap eligibility check.
+						if (pUnit->getOwnerINLINE() != (PlayerTypes)owner)
+							continue;
+						if (pUnit->getProfession() != NO_PROFESSION)
+							continue;
+
+						// removePopulationUnit is expected to fail safely if the unit is not in this city anymore.
+						const bool ok = pCity->removePopulationUnit(
+							CREATE_ASSERT_DATA,
+							pUnit,
+							false,
+							(ProfessionTypes)iDefaultProf);
+
+						if (ok)
+							--maxRemove;
+					}
+				}
+			}
+
+			i = j;
+		}
+	}
+}
 
 #define DANGER_RANGE				(4)
 #define GREATER_FOUND_RANGE			(5)
@@ -949,21 +1058,28 @@ struct ApplyAssignWorkingPlots
 
 	CvCity& city;
 };
-
 void CvPlayerAI::AI_assignWorkingPlots()
 {
 	AI_manageEconomy();
 
 	tbb::task_group g;
 
+	FAssert(g_pDeferredPopEjectQ == NULL);
+
+	tbb::concurrent_queue<DeferredPopEject> ejectQ;
+	g_pDeferredPopEjectQ = &ejectQ;
+
 	int iLoop;
 	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
 	{
-		// BUG: This is not thread safe, we need to protect removePop / updatePop
 		g.run(ApplyAssignWorkingPlots(*pLoopCity));
 	}
 
 	g.wait();
+
+	g_pDeferredPopEjectQ = NULL;
+
+	applyDeferredPopEjects(ejectQ);
 }
 
 
