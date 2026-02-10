@@ -33,7 +33,7 @@
 
 #include "DeferredPopEject.h"
 
-tbb::concurrent_queue<DeferredPopEject>* g_pDeferredPopEjectQ = NULL;
+DeferredPopEjectQueue* g_pDeferredPopEjectQ = NULL;
 
 namespace
 {
@@ -1049,36 +1049,54 @@ void CvPlayerAI::AI_makeAssignWorkDirty()
 
 struct ApplyAssignWorkingPlots
 {
-	ApplyAssignWorkingPlots(CvCity& city_) : city(city_) {};
+	ApplyAssignWorkingPlots(std::vector<CvCity*>& v_) : v(v_) {}
 
-	void operator()() const
+	void operator()(const tbb::blocked_range<size_t>& r) const
 	{
-		city.AI_assignWorkingPlots();
+		for (size_t i = r.begin(); i != r.end(); ++i)
+		{
+			v[i]->AI_assignWorkingPlots();
+		}
 	}
 
-	CvCity& city;
+	std::vector<CvCity*>& v;
 };
+
 void CvPlayerAI::AI_assignWorkingPlots()
 {
 	AI_manageEconomy();
 
-	tbb::task_group g;
-
-	FAssert(g_pDeferredPopEjectQ == NULL);
-
-	tbb::concurrent_queue<DeferredPopEject> ejectQ;
-	g_pDeferredPopEjectQ = &ejectQ;
+	// Collect cities
+	std::vector<CvCity*> cities;
+	cities.reserve(getNumCities());
 
 	int iLoop;
-	for (CvCity* pLoopCity = firstCity(&iLoop); pLoopCity != NULL; pLoopCity = nextCity(&iLoop))
+	for (CvCity* pCity = firstCity(&iLoop); pCity != NULL; pCity = nextCity(&iLoop))
 	{
-		g.run(ApplyAssignWorkingPlots(*pLoopCity));
+		cities.push_back(pCity);
 	}
 
-	g.wait();
+	if (cities.empty())
+		return;
+
+	// Enable pop ejection deferral only when processing all cities concurrently
+	FAssert(g_pDeferredPopEjectQ == NULL);
+
+	DeferredPopEjectQueue ejectQ;
+	g_pDeferredPopEjectQ = &ejectQ;
+
+	ApplyAssignWorkingPlots body(cities);
+
+	const int iGrainSize = 1;
+	Threads::parallel_for(
+		tbb::blocked_range<size_t>(0, cities.size(), iGrainSize),
+		body,
+		tbb::auto_partitioner()
+	);
 
 	g_pDeferredPopEjectQ = NULL;
 
+	// Deterministic, serial apply
 	applyDeferredPopEjects(ejectQ);
 }
 
