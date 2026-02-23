@@ -4032,7 +4032,7 @@
 				<PriceTables>
 					<PriceTable>
 						<location>TRADE_LOCATION_EUROPE</location>
-						<iBuyLow>1</iBuyLow>
+						<iBuyLow>15</iBuyLow>
 						<iBuyHigh>17</iBuyHigh>
 						<iBuyLowInit>15</iBuyLowInit>
 						<iBuyHighInit>17</iBuyHighInit>
