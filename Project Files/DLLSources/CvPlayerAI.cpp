@@ -4631,6 +4631,90 @@ int CvPlayerAI::AI_unitImpassableCount(UnitTypes eUnit)
 	return iCount;
 }
 
+// Encodes binary movement abilities (i.e. passability)  into a bitset. The bit is set when the unit CANNOT enter
+// the corresponding feature/terrain/plot/rival
+UnitImpassables CvPlayerAI::AI_unitImpassables(const CvUnit& kUnit) const
+{
+	const unsigned int numTerrains = (unsigned int)GC.getNumTerrainInfos();
+	const unsigned int numFeatures = (unsigned int)GC.getNumFeatureInfos();
+	const unsigned int PEAK_BIT = numTerrains + numFeatures;
+	const unsigned int RIVAL_TERRITORY_BIT = PEAK_BIT + 1;
+	const unsigned int totalBits = RIVAL_TERRITORY_BIT + 1;
+
+	FAssert(totalBits <= UNIT_IMPASSABLES_BITS);
+
+	UnitImpassables kResult;
+	kResult.iFlags.reset();
+	kResult.iCount = 0;
+
+	const CvUnitInfo& kUnitInfo = kUnit.getUnitInfo();
+	const ProfessionTypes eProfession = kUnit.getProfession();
+
+	// Base unit abilities
+	bool bCanMoveIntoPeak = kUnitInfo.allowsMoveIntoPeak();
+	bool bCanCrossLargeRivers = !kUnitInfo.getTerrainImpassable(TERRAIN_LARGE_RIVERS);
+
+	// Profession overrides the base unit abilities for these cases
+	if (eProfession != NO_PROFESSION)
+	{
+		const CvProfessionInfo& kProfessionInfo = GC.getProfessionInfo(eProfession);
+
+		bCanMoveIntoPeak = kProfessionInfo.allowsMoveIntoPeak();
+		bCanCrossLargeRivers = kProfessionInfo.isCanCrossLargeRivers();
+	}
+
+	// Terrain impassables
+	for (int i = 0; i < (int)numTerrains; ++i)
+	{
+		const TerrainTypes eTerrain = (TerrainTypes)i;
+		bool bImpassable = false;
+
+		if (eTerrain == TERRAIN_LARGE_RIVERS)
+		{
+			// Large rivers crossing ability that is enabled by the profession is coalesced into the terrain bitset
+			bImpassable = !bCanCrossLargeRivers;
+		}
+		else
+		{
+			bImpassable = kUnitInfo.getTerrainImpassable(eTerrain);
+		}
+
+		if (bImpassable)
+		{
+			kResult.iFlags.set((unsigned int)i);
+			kResult.iCount++;
+		}
+	}
+
+	// Feature impassables
+	for (int i = 0; i < (int)numFeatures; ++i)
+	{
+		if (kUnitInfo.getFeatureImpassable((FeatureTypes)i))
+		{
+			kResult.iFlags.set(numTerrains + (unsigned int)i);
+			kResult.iCount++;
+		}
+	}
+
+	// Peaks need their own bit because they are plot type, not terrain/feature.
+	if (!bCanMoveIntoPeak)
+	{
+		// Note that this ability is only on the profession level
+		kResult.iFlags.set(PEAK_BIT);
+		kResult.iCount++;
+	}
+
+	// Rival territory is a separate binary enterability rule.
+	if (!kUnit.isRivalTerritory())
+	{
+		kResult.iFlags.set(RIVAL_TERRITORY_BIT);
+		kResult.iCount++;
+	}
+
+	return kResult;
+}
+
+
 //Calculates the value of the unit as "Profit generated in 20 turns" in pCity,
 //or if pCity is NULL it assumes that it will either found somewhere
 //or has some other role.

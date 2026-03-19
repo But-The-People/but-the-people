@@ -11,6 +11,31 @@
 
 class CvEventTriggerInfo;
 
+#include <bitset>
+
+struct UnitImpassables
+{
+	int iCount;                                // Count of impassable terrains/features
+	#define UNIT_IMPASSABLES_BITS 80		   // Max bitset size
+	std::bitset<UNIT_IMPASSABLES_BITS> iFlags; // Bitset for impassable types
+
+	UnitImpassables()
+		: iCount(0), iFlags(0)
+	{
+	}
+
+	// Equality operator
+	bool operator==(const UnitImpassables& other) const
+	{
+		return (iCount == other.iCount && iFlags == other.iFlags);
+	}
+
+	// Inequality operator
+	bool operator!=(const UnitImpassables& other) const
+	{
+		return !(*this == other);
+	}
+};
 class CvPlayerAI : public CvPlayerCivEffect
 {
 
@@ -139,6 +164,7 @@ public:
 	int AI_calculateDamages(TeamTypes eTeam);
 
 	int AI_unitImpassableCount(UnitTypes eUnit);
+	UnitImpassables AI_unitImpassables(const CvUnit& kUnit) const;
 	int AI_unitEconomicValue(UnitTypes eUnit, UnitAITypes* peUnitAI, CvCity* pCity);
 	int AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea);
 	int AI_unitGoldValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea) const;
