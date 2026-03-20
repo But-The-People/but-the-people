@@ -163,7 +163,6 @@ public:
 
 	int AI_calculateDamages(TeamTypes eTeam);
 
-	int AI_unitImpassableCount(UnitTypes eUnit);
 	UnitImpassables AI_unitImpassables(const CvUnit& kUnit) const;
 	int AI_unitEconomicValue(UnitTypes eUnit, UnitAITypes* peUnitAI, CvCity* pCity);
 	int AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea);

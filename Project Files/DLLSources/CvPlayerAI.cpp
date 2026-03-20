@@ -4609,28 +4609,6 @@ int CvPlayerAI::AI_calculateDamages(TeamTypes eTeam)
 	return iValue;
 }
 
-int CvPlayerAI::AI_unitImpassableCount(UnitTypes eUnit)
-{
-	int iCount = 0;
-	for (int iI = 0; iI < GC.getNumTerrainInfos(); iI++)
-	{
-		if (GC.getUnitInfo(eUnit).getTerrainImpassable(iI))
-		{
-				iCount++;
-			}
-		}
-
-	for (int iI = 0; iI < GC.getNumFeatureInfos(); iI++)
-	{
-		if (GC.getUnitInfo(eUnit).getFeatureImpassable(iI))
-		{
-				iCount++;
-			}
-		}
-
-	return iCount;
-}
-
 // Encodes binary movement abilities (i.e. passability)  into a bitset. The bit is set when the unit CANNOT enter
 // the corresponding feature/terrain/plot/rival
 UnitImpassables CvPlayerAI::AI_unitImpassables(const CvUnit& kUnit) const
@@ -4975,10 +4953,7 @@ int CvPlayerAI::AI_unitValue(UnitTypes eUnit, UnitAITypes eUnitAI, CvArea* pArea
 			{
 				if (kUnitInfo.getCargoSpace() == 0)
 				{
-					//if (0 == AI_unitImpassableCount(eUnit))
-					{
-						bValid = true;
-					}
+					bValid = true;
 				}
 			}
 			break;
