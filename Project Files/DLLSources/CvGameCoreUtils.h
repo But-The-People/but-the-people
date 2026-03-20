@@ -278,6 +278,7 @@ bool PUF_isNoMission(const CvUnit* pUnit, int iData1 = -1, int iData2 = -1);
 bool PUF_isAvailableUnitAITypeGroupie(const CvUnit* pUnit, int iData1, int iData2);
 bool PUF_isUnitAITypeGroupie(const CvUnit* pUnit, int iData1, int iData2);
 // TAC - AI Assault Sea - koma13, jdog5000(BBAI) - END
+bool PUF_isMissionAIType(CvUnit const* pUnit, int iMissionAI, int iDummy = -1); // K-Mod
 
 /// post load function - start - Nightinggale
 void postLoadGameFixes();

@@ -1582,3 +1582,17 @@ void CvSelectionGroupAI::unloadToCity(CvCity* pCity, CvUnit* unit, UnloadMode um
 }
 
 // R&R mod, vetiarvind, max yield import limit - end
+
+// <advc.003u> Based on CvSelectionGroup::getHeadUnit
+CvUnitAI const* CvSelectionGroupAI::AI_getHeadUnit() const
+{
+	CLLNode<IDInfo> const* pNode = headUnitNode();
+	return (pNode != NULL ? static_cast<CvUnitAI const*>(::getUnit(pNode->m_data)) : NULL);
+}
+
+
+CvUnitAI* CvSelectionGroupAI::AI_getHeadUnit()
+{
+	CLLNode<IDInfo>* pNode = headUnitNode();
+	return (pNode != NULL ? static_cast<CvUnitAI*>(::getUnit(pNode->m_data)) : NULL);
+} // </advc.003u>

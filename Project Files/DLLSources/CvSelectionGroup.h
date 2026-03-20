@@ -99,6 +99,7 @@ public:
 	bool at(int iX, int iY) const;
 	bool atPlot(const CvPlot* pPlot) const;
 	DllExport CvPlot* plot() const;
+	CvPlot& getPlot() const { return *plot(); } // advc
 	int getArea() const;
 	CvArea* area() const;
 	DomainTypes getDomainType() const;

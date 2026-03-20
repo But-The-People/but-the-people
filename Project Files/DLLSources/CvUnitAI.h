@@ -25,6 +25,7 @@ namespace
 }
 
 class CvCity;
+class CvSelectionGroupAI;
 
 class CvUnitAI : public CvUnit
 {
@@ -60,7 +61,8 @@ public:
 
 	UnitAITypes AI_getUnitAIType() const;
 	void AI_setUnitAIType(UnitAITypes eNewValue);
-
+	CvSelectionGroupAI const* AI_getGroup() const; // advc.003u
+	CvSelectionGroupAI* AI_getGroup(); // advc.003u
 	UnitAIStates AI_getUnitAIState() const;
 	void AI_setUnitAIState(UnitAIStates eNewValue);
 
@@ -244,7 +246,13 @@ protected:
 
 	bool AI_shadow(UnitAITypes eUnitAI, int iMax = -1, int iMaxRatio = -1, bool bWithCargoOnly = true);
 
-	// TAC - AI Assault Sea - koma13, jdog5000(BBAI) - START
+	// K-Mod. I've created AI_omniGroup with the intention of using it to phase out AI_group and AI_groupMergeRange.
+	bool AI_omniGroup(UnitAITypes eUnitAI, int iMaxGroup = -1, int iMaxOwnUnitAI = -1,
+		bool bStackOfDoom = false, int iFlags = 0 /*NO_MOVEMENT_FLAGS*/,
+		int iMaxPath = -1, bool bMergeGroups = true, bool bSafeOnly = true,
+		bool bIgnoreFaster = false, bool bIgnoreOwnUnitType = false,
+		bool bBiggerOnly = true, int iMinUnitAI = -1, bool bWithCargoOnly = false,
+		bool bIgnoreBusyTransports = false);// TAC - AI Assault Sea - koma13, jdog5000(BBAI) - START
 	//bool AI_group(UnitAITypes eUnitAI, int iMaxGroup = -1, int iMaxOwnUnitAI = -1, int iMinUnitAI = -1, bool bIgnoreFaster = false, bool bIgnoreOwnUnitType = false, bool bStackOfDoom = false, int iMaxPath = MAX_INT, bool bAllowRegrouping = false);
 	bool AI_group(UnitAITypes eUnitAI, int iMaxGroup = -1, int iMaxOwnUnitAI = -1, int iMinUnitAI = -1, bool bIgnoreFaster = false, bool bIgnoreOwnUnitType = false, bool bStackOfDoom = false, int iMaxPath = MAX_INT, bool bAllowRegrouping = false, bool bWithCargoOnly = false, bool bInCityOnly = false, MissionAITypes eIgnoreMissionAIType = NO_MISSIONAI);
 	// TAC - AI Assault Sea - koma13, jdog5000(BBAI) - END

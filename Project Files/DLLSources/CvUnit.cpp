@@ -14289,6 +14289,13 @@ int CvUnit::computeWaveSize( bool bRangedRound, int iAttackerMax, int iDefenderM
 		iDefenderMax) );
 }
 
+// advc.opt: Separate function for potentially unowned plot
+bool CvUnit::isEnemy(CvPlot const& kPlot) const
+{
+	TeamTypes const ePlotTeam = kPlot.getTeam();
+	return (ePlotTeam != NO_TEAM && isEnemy(ePlotTeam, &kPlot));
+}
+
 bool CvUnit::isEnemy(TeamTypes eTeam, const CvPlot* pPlot) const
 {
 	if (NULL == pPlot)

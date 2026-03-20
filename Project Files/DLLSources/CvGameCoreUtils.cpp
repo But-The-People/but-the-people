@@ -956,6 +956,15 @@ bool PUF_isUnitAITypeGroupie(const CvUnit* pUnit, int iData1, int iData2)
 }
 // TAC - AI Assault Sea - koma13, jdog5000(BBAI) - END
 
+// K-Mod:
+bool PUF_isMissionAIType(CvUnit const* pUnit, int iMissionAI, int iDummy)
+{
+	FAssert(iDummy == -1);
+	MissionAITypes eMissionAI = (MissionAITypes)iMissionAI;
+	//FAssertEnumBounds(eMissionAI);
+	return (pUnit->AI().AI_getGroup()->AI_getMissionAIType_() == eMissionAI);
+}
+
 namespace
 {
 	// Returns true if no enemy was found near the kGroup's potential target plot x,y. False otherwise

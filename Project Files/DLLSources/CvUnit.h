@@ -13,6 +13,7 @@
 
 class CvPlot;
 class CvArea;
+class CvUnitAI;
 class CvUnitInfo;
 class CvSelectionGroup;
 class FAStarNode;
@@ -76,6 +77,9 @@ class CvUnit : public CvDLLEntity
 {
 
 public:
+
+	__forceinline CvUnitAI& AI() { return (CvUnitAI&)*this; }
+	__forceinline const CvUnitAI& AI() const { return (CvUnitAI&)*this; }
 
     /** NBMOD REF **/
 
@@ -438,8 +442,10 @@ public:
 	void jumpTo(CvPlot *plot, bool bGroup = false, bool bUpdate = true, bool bShow = false, bool bCheckPlotVisible = false);
 	bool at(int iX, int iY) const;
 	bool at(Coordinates testCoord) const;
+	bool at(CvPlot const& kPlot) const { return atPlot(&kPlot); }
 	DllExport bool atPlot(const CvPlot* pPlot) const;
 	DllExport CvPlot* plot() const;
+	CvPlot& getPlot() const { return *plot(); } // advc
 	CvCity* getCity() const;
 	int getArea() const;
 	int getLandArea() const;
@@ -691,6 +697,7 @@ public:
 	int getSubUnitsAlive(int iDamage) const;
 
 	DllExport bool isEnemy(TeamTypes eTeam, const CvPlot* pPlot = NULL) const;
+	bool isEnemy(CvPlot const& kPlot) const;
 	bool isPotentialEnemy(TeamTypes eTeam, const CvPlot* pPlot = NULL) const;
 
 	int getTriggerValue(EventTriggerTypes eTrigger, const CvPlot* pPlot, bool bCheckPlot) const;

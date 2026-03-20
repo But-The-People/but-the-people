@@ -10740,3 +10740,8 @@ EXE_Plot CvPlot::EXE()
 {
 	return EXE_Plot(*this);
 }
+
+CvCityAI * CvPlot::AI_getPlotCity() const
+{
+	return static_cast<CvCityAI*>(getPlotCity());
+} // </advc.003u>

@@ -78,6 +78,10 @@ public:
 	bool AI_isControlled() { return AI_isControlledInternal(); }
 	bool AI_isControlledInternal() const { return (!isHuman() || isAutomated()); }
 
+	// <advc.003u> Counterparts to CvSelectionGroup::getHeadUnit
+	CvUnitAI const* AI_getHeadUnit() const;
+	CvUnitAI* AI_getHeadUnit(); // </advc.003u>
+
 	enum UnloadMode
 	{
 		NoForce,
