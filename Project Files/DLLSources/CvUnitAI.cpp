@@ -8551,7 +8551,7 @@ bool CvUnitAI::AI_betterJob()
 
 		if (pLoopUnit != NULL && pLoopUnit != this && pLoopUnit->getOwnerINLINE() == getOwnerINLINE())
 		{
-			if (!pLoopUnit->AI_hasAIChanged(5) && pLoopUnit->canJoinCity(pPlot))
+			if (!pLoopUnit->AI_hasAIChanged(5) && pLoopUnit->canJoinCity(pPlot) && AI_allowedToJoin(*pPlot->getPlotCity()))
 			{
 				const ProfessionTypes eLoopProfession = pLoopUnit->getProfession();
 
@@ -19153,7 +19153,7 @@ bool CvUnitAI::AI_loadAdjacent(CvPlot* pPlot, bool bTestCity)
 bool CvUnitAI::AI_allowedToJoin(const CvCity& kCity) const
 {
 	// Bail if we're the leader of other units
-	if (getGroup()->getNumUnits() > 1)
+	if (getGroup() != NULL && getGroup()->getNumUnits() > 1)
 		return false;
 
 	if (!canJoinCity(kCity.plot()))
