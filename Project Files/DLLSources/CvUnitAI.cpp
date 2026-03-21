@@ -19152,6 +19152,10 @@ bool CvUnitAI::AI_loadAdjacent(CvPlot* pPlot, bool bTestCity)
 
 bool CvUnitAI::AI_allowedToJoin(const CvCity& kCity) const
 {
+	// Bail if we're the leader of other units
+	if (getGroup()->getNumUnits() > 1)
+		return false;
+
 	if (!canJoinCity(kCity.plot()))
 	{
 		return false;
