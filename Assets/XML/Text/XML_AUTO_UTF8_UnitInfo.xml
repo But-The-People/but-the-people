@@ -88,6 +88,43 @@
 		<German></German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_BARLEY</Tag>
+		<English>Barley</English>
+		<French>
+			<Text>Orge</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Gerste</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Orzo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Cebada</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Ячмень</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BARLEY_PEDIA</Tag>
+		<English>Common [COLOR_HIGHLIGHT_TEXT]barley[COLOR_REVERT] (Hordeum vulgare) is a straw cereal, an annual herbaceous plant of the Poaceae family. It is the oldest cultivated cereal. Well adapted to the Mediterranean climate due to its hardiness, it was the main cereal grown in ancient Greece where it was eaten in the form of a wafer or porridge (maza). Barley can grow in the tropics or at an altitude of 4,500 metres in Tibet.[NEWLINE]Barley is very well suited for making [COLOR_HIGHLIGHT_TEXT]beer[COLOR_REVERT].</English>
+		<French>L'orge commune (Hordeum vulgare) est une céréale à paille, plante herbacée annuelle de la famille des poacées. Elle est la plus ancienne céréale cultivée. Bien adaptée au climat méditerranéen du fait de sa rusticité, elle constituait ainsi la principale céréale cultivée dans l'Antiquité grecque et était consommée sous forme de galette ou de bouillie (maza). L'orge pousse aussi bien sous les tropiques qu'à 4 500 m d'altitude au Tibet.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Gerste[COLOR_REVERT] ist eine der ältesten Getreidesorten, die die Menschheit kennt. Bezüglich des Stärkegehalts und der Mehlerzeugung ist es nicht so ergiebig, wie andere Getreidesorten, so zum Beispiel Weizen, aber es eignet sich hervorragend zur Herstellung von Bier.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BARLEY_STRATEGY</Tag>
+		<English>When assigning a citizen to work a grassland or plains tile, you may decide that your colonist should adopt the [COLOR_HIGHLIGHT_TEXT]barley farmer[COLOR_REVERT] profession, which gives your colony a [COLOR_HIGHLIGHT_TEXT]barley[COLOR_REVERT] crop. By assigning an [COLOR_UNIT_TEXT]expert farmer[COLOR_REVERT] to this profession, your stores will be full of barley!</English>
+		<French>En assignant un citoyen à travailler sur une plaine ou une prairie, vous pouvez choisir le profession de [COLOR_HIGHLIGHT_TEXT]fermier d'orge[COLOR_REVERT]. Celle-ci permet de produire de l'[COLOR_HIGHLIGHT_TEXT]orge[COLOR_REVERT]. Les [COLOR_HIGHLIGHT_TEXT]experts fermiers[COLOR_REVERT] produisent deux fois plus d'orge que les autres colons.</French>
+		<German>Wenn Sie einen Bürger anweisen, ein Ebenen- oder Grasland-Geländefeld zu bearbeiten, können Sie sich entscheiden, diesen Kolonisten den Beruf [COLOR_HIGHLIGHT_TEXT]Gerstebauer[COLOR_REVERT] zuzuweisen, wodurch Ihre Siedlung eine Menge [COLOR_HIGHLIGHT_TEXT]Gerste[COLOR_REVERT] erhält. Wenn Sie diesem Beruf einen [COLOR_UNIT_TEXT]Erfahrenen Bauern[COLOR_REVERT] zuweisen, werden Ihre Lagerhäuser vor [COLOR_UNIT_TEXT]Gerste[COLOR_REVERT] überquellen!</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_BEAR_BLACK</Tag>
 		<English>Black Bear</English>
 		<French>
@@ -161,6 +198,18 @@
 			<Plural>0</Plural>
 		</Spanish>
 		<Russian>Пиво</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BEER_PEDIA</Tag>
+		<English>Beer is an alcoholic beverage produced by the saccharification of starch and fermentation of the resulting sugar.[NEWLINE]The enzymes are derived from malted cereal grains, most commonly malted barley and malted wheat.[NEWLINE]Most beer is also flavoured with hops, which add bitterness and act as a natural preservative, though other flavourings such as herbs or fruit may occasionally be included.[NEWLINE]The preparation of beer is called brewing.[NEWLINE]Beer is the world's most widely consumed alcoholic beverage.[NEWLINE]It is the third-most popular drink overall, after water and tea.</English>
+		<French>La bière est une boisson alcoolisée obtenue par fermentation de matières glucidiques végétales et d'eau. C'est une boisson alcoolisée obtenue par transformation de matières amylacées par voies enzymatiques et microbiologiques. Plus spécifiquement de nos jours, elles est généralement fabriquée à partir d'eau, de malt (céréale germée, principalement de l'orge, parfois additionné d'autres céréales) et depuis le Moyen âge, de houblon. C'est l'une des boissons les plus populaires et consommées au monde.</French>
+		<German>Bier ist ein alkohol- und kohlensäurehaltiges Getränk, das durch Gärung, meist aus den Grundzutaten Wasser, Malz und Hopfen, gewonnen wird. Malz wiederum ist getrocknetes und gekeimtes Getreide, meist Gerste. Bier ist schon seit Jahrtausenden bekannt.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BEER_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Master brewers[COLOR_REVERT] produce double the amount of [COLOR_HIGHLIGHT_TEXT]beer[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]barley[COLOR_REVERT].</English>
+		<French>Les [COLOR_UNIT_TEXT]maîtres brasseurs[COLOR_REVERT] produce deux fois plus de [COLOR_HIGHLIGHT_TEXT]bière[COLOR_REVERT] à partir d'[COLOR_HIGHLIGHT_TEXT]orge[COLOR_REVERT].</French>
+		<German>[COLOR_UNIT_TEXT]Braumeister[COLOR_REVERT] verarbeiten doppelt soviele Gerste in [COLOR_HIGHLIGHT_TEXT]Bier[COLOR_REVERT], wie andere Kolonisten.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BIG_COASTAL_SHIP</Tag>
@@ -239,6 +288,12 @@
 		<English>[COLOR_UNIT_TEXT]Bishops[COLOR_REVERT] are the best source of [LINK=YIELD_CROSSES]crosses[\LINK] a colony could wish for. They are even more effective than [LINK=UNIT_PREACHER]firebrand preachers[\LINK] or [LINK=UNIT_PRIEST]devout priests[\LINK], because they receive a 200% bonus in cross production.[NEWLINE]Your only chance to recruit them is during those rare moments when the [LINK=CONCEPT_CHURCH]Archbishop[\LINK] offers to send you a bishop as a reward for your piety.</English>
 		<French>Les [COLOR_UNIT_TEXT]évêques[COLOR_REVERT] sont la meilleure source de [COLOR_HIGHLIGHT_TEXT]croix[COLOR_REVERT] qu'une colonie peut souhaiter. Ils sont encore plus efficaces que les prédicateurs exaltés, ou les prêtres dévôts mais également très rares.</French>
 		<German>[COLOR_UNIT_TEXT]Bischöfe[COLOR_REVERT] sind die beste Quelle für [LINK=YIELD_CROSSES]Kreuze[\LINK], die sich eine Kolonie wünschen kann. Sie sind sogar noch effektiver als [LINK=UNIT_PREACHER]mitreißende Prediger[\LINK] oder [LINK=UNIT_PRIEST]fromme Priester[\LINK], da sie einen 200%igen Bonus auf die Kreuzproduktion erhalten. Sie sind jedoch sehr selten.[NEWLINE]Du kannst sie rekrutieren, wenn der [LINK=CONCEPT_CHURCH]Erzbischof[\LINK] anbietet, einen Bischof als Belohnung für deine Frömmigkeit zu schicken.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BLACKBEAR_PEDIA</Tag>
+		<English>[TAB]The American black bear (Ursus americanus) is medium-sized by world standards, but nonetheless the continent's smallest. It is the most common bear species. Black bears are omnivores, with their diets varying greatly depending on season and location. They typically live in forested areas, but do leave forests in search of food. They can be attracted to human communities because of the availability of food. The American black bear is listed by the IUCN as Least Concern, due to the species' widespread distribution with a population estimated to be twice that of all other bear species combined. American black bears often mark trees using their teeth and claws as a form of communication with other bears, a behaviour common to many species of bears.</English>
+		<French>[TAB]L'ours noir (Ursus americanus) est de taille moyenne à l'échelle mondiale, mais est l'ours le plus petit du continent. C'est également le plus commun en Amérique du Nord. Ce sont des omnivores, dont le régime varie fortement suivant la saison et le lieu. Ils vivent le plus souvent en forêt, mais peuvent les quitter à la recherche de nourriture. Ils peuvent être attirés par les regroupements humains à cause de la nourriture. L'ours noir américain est listé dans la catégorie IUCN Préoccupation mineire, en raison de son aire géographique étendue et de sa population estimée à deux fois celle des autres epsèces d'ours réunies.  Les ours noirs américains marquent souvent les arbres à coup de griffes et de mâchoires pour laisser un message aux autres ours, ce qui est comportement commun à biens des espèces d'ours.</French>
+		<German>[TAB]Der Amerikanische Schwarzbär (Ursus americanus), auch Baribal genannt, ist eine in Nord-Amerika lebende Raubtierart aus der Familie der Bären (Ursidae). In seiner Heimat wird er meistens als black bear bezeichnet oder als Baribal. Im Vergleich zum eher gefürchteten Grizzlybär gilt der Schwarzbär als weniger gefährlich. Amerikanische Schwarzbären haben den typischen Körperbau der Bären. Der Rumpf ist massiv, die Gliedmaßen kräftig. Die Pfoten haben je fünf starke Krallen, welche die Bären zum Reißen, Graben und Klettern einsetzen. Der Schwanz ist wie bei allen Bären nur ein kurzer Stummel. Der große Kopf ist durch die eher lange, unbehaarte Schnauze, die kleinen Augen und die runden, aufgerichteten Ohren charakterisiert. Trotz ihres Namens sind nicht alle Amerikanischen Schwarzbären schwarz gefärbt. Es gibt auch silbergraue und rötlichbraune Varianten, und manche Baribals haben eine mit Grizzlies nahezu identische Fellfarbe. Die Färbung des Fells hängt mit dem Lebensraum zusammen: während Tiere, die in dichten Wäldern mit kühlerem Klima (im Norden und Osten des Verbreitungsgebietes) leben, eher schwarz sind, haben die Schwarzbären im südlichen und westlichen Teil des Verbreitungsgebietes, die in offenem, trockenerem Terrain wohnen, eine eher bräunliche Färbung. Das Verbreitungsgebiet der Amerikanischen Schwarzbären umfasst große Teile Nord-Amerikas. Sie leben in nahezu ganz Alaska und Kanada mit Ausnahme des äußersten Nordens, im Kerngebiet der Vereinigten Staaten (den 48 zusammenhängenden Staaten) sind sie ebenfalls weit verbreitet und fehlten ursprünglich nur im südwestlichen, trockenen Landesteil. In Mexiko kommen sie vor allem im Bereich der Gebirgszüge Sierra Madre Oriental und Sierra Madre Occidental vor. Amerikanische Schwarzbären wurden und werden vom Menschen aus verschiedensten Gründen gejagt. Dazu zählen die potenzielle Gefährdung des Menschen, die Angst vor gerissenen Weidetieren und zerstörten Agrarflächen und Bienenstöcken, der Bedarf an Fell und Fleisch sowie die Sportjagd. Untersuchungen haben gezeigt, dass der Schaden bei Weidetieren vernachlässigbar ist, dass sie aber wohl auf landwirtschaftlich genutzten Feldern Schäden anrichten können. Die Sportjagd ist weit verbreitet, nach einer Schätzung aus dem Jahr 1995 werden jedes Jahr rund 40.000 Tiere erlegt. Die Verwendung des Bärenfells und des Fleisches ist heute weitgehend zurückgegangen; bei den Indianern war dies der wichtigste Grund für die Bejagung. Die Bärenfellmützen, die zur Paradeuniform verschiedener britischer Regimenter gehören, werden aber bis heute aus dem Fell kanadischer Schwarzbären hergestellt.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BLACKSMITH</Tag>
@@ -323,6 +378,14 @@
 		<Italian>Il [COLOR_UNIT_TEXT]Järnsmed[COLOR_REVERT] è l'unica unità nazionale della Svezia e sostituisce il [LINK=UNIT_BLACKSMITH]maestro fabbro[\LINK].[NEWLINE]Se impiegato come [LINK=PROFESSION_BLACKSMITH]fabbri[\LINK] o [LINK=PROFESSION_BLADESMITH]fabbri[\LINK] per creare [LINK=YIELD_TOOLS]utensili[\LINK] o [LINK=YIELD_BLADES]lame[\LINK] da [LINK=YIELD_ORE]ore[\LINK], järnsmeder creerà strumenti o lame ancora più velocemente di un mastro fabbro.[PARAGRAPH:1]Järnsmeder può essere assunto in [LINK=CONCEPT_EUROPE]Europa[\LINK] e può anche [LINK=CONCEPT_TRAINING]apprendista[\LINK] in una colonia con un [LINK=BUILDING_COLLEGE]collegio[\LINK] o uno dei suoi potenziamenti.</Italian>
 		<Spanish>El [COLOR_UNIT_TEXT]Järnsmed[COLOR_REVERT] es la única unidad nacional de Suecia y reemplaza al [LINK=UNIT_BLACKSMITH]maestro herrero[\LINK].[NEWLINE]Cuando se emplea como [LINK=PROFESSION_BLACKSMITH]herreros[\LINK] o [LINK=PROFESSION_BLADESMITH]herreros[\LINK] para crear [LINK=YIELD_TOOLS]herramientas[\LINK] o [LINK=YIELD_BLADES]cuchillas[\LINK] de [LINK=YIELD_ORE]ore[\LINK], järnsmeder creará herramientas o cuchillas incluso más rápido que un maestro herrero.[PARAGRAPH:1]Järnsmeder puede ser contratado en [LINK=CONCEPT_EUROPE]Europa[\LINK], y también puede [LINK=CONCEPT_TRAINING]aprendiz[\LINK] en una colonia con una [LINK=BUILDING_COLLEGE]universidad[\LINK] o una de sus actualizaciones.</Spanish>
 		<Russian>[COLOR_UNIT_TEXT]Искусный кузнец[COLOR_REVERT] – уникальная национальная единица Швеции, которая заменяет [LINK=UNIT_BLACKSMITH]мастера кузнеца[\LINK].[NEWLINE]При работе в качестве [LINK=PROFESSION_BLACKSMITH]кузнеца инструментов[\LINK] или [LINK=PROFESSION_BLADESMITH]кузнеца клинков[\LINK] для создания [LINK=YIELD_TOOLS]инструментов[\LINK] или [LINK=YIELD_BLADES]клинков[\LINK] из [LINK=YIELD_ORE]руды[\LINK], искусный кузнец создаст инструменты или клинки еще быстрее, чем мастер кузнец.[PARAGRAPH:1]Искусного кузнеца можно нанять в [LINK=CONCEPT_EUROPE]Европе[\LINK], а также [LINK=CONCEPT_TRAINING]обучить[\LINK] в колонии с [LINK=BUILDING_COLLEGE] колледжом[\LINK] или одном из его улучшении.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BLADES_PEDIA</Tag>
+		<English>Blades Background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_BLADES_STRATEGY</Tag>
+		<English>Blades Strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_BREWER</Tag>
@@ -737,6 +800,16 @@
 		<Spanish>The small [COLOR_UNIT_TEXT]Stagecoaches[COLOR_REVERT] and the more spacious [COLOR_UNIT_TEXT]Carriers[COLOR_REVERT] can also transport land units: civilists, troops, even artillery - just no treasures. Units can enter these vehicles in cities only, while unloading is possible everywhere.[PARAGRAPH:2]Stagecoaches can only be built in cities with a [COLOR_BUILDING_TEXT]Wheelwrights Workshop[COLOR_REVERT]. For carriers you even need a [COLOR_BUILDING_TEXT]Great Wheelwrights Workshop[COLOR_REVERT].[PARAGRAPH:2]These vehicles are especially suited for fast troop movements. During the Independence War they can bring reinforcements from the hinterland - for example heavy cavalry or artillery - fast to the beachheads of the Royal Army. These transport vehicles may be produced in any desired number without provoking the King to increase his army strength. Of course they can be used in peacetimes as well - e.g. to bring expert units fast to where they are needed. Please notice that vehicles in general cannot be loaded on ships.[PARAGRAPH:2]If you attack a wagon or trek, you capture it with all transported goods. However, if you attack a stagecoach or carrier a fight emerges - and those combat-weak vehicles will very likely get destroyed including their freight.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_CATTLE_PEDIA</Tag>
+		<English>Early in the colonization of the New World cattle were brought to the plains. Some areas were unsuited for cattle herding, being too arid or disease-ridden, but there was enough good range so that making leather from hides soon became an important industry.[NEWLINE]Professional cattle herders, the cowboys, were soon employed in this industry.[NEWLINE]Good land where cattle could be raised was great demand, leading to conflicts with the Indigenous people.[NEWLINE]Huge cattle ranches spread across good grassland.</English>
+		<French>L'élevage bovin est l'ensemble des opérations visant à reproduire des animaux de l'espèce Bos taurus au profit de l'activité humaine. Il permet de fournir de la viande, du lait, des peaux des animaux reproducteurs, un travail de traction, du fumier et l'entretien des espaces ouverts.</French>
+		<German>Sehr früh in der Kolonisierung der Neuen Welt wurden Rinder aus Europa eingeführt. Obwohl es auch viele Gegenden gab, in denen Rinderzucht aufgrund von Wassermangel oder Krankheiten nicht möglich war, wurde die Rinderzucht und der Verkauf von Lederwaren in die Alte Welt schnell zu einem sehr wichtigen Industriezweig. Eine große Anzahl an Rinderhirten, den Cowboys, war bald in diesem Industriezweig beschäftigt. Die Weidegebiete, in denen Rinderzucht möglich war, waren bald sehr begehrt, was auch zu vielen Konflikten mit den Ureinwohnern führte. Riesige Rinderranches entstanden.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CATTLE_STRATEGY</Tag>
+		<English>Cattle strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_CHRISTIAN_MISSIONARY</Tag>
 		<English>Jesuit Missionary:Jesuit Missionaries</English>
 		<French>
@@ -903,6 +976,93 @@
 		<Russian>Когда [LINK=UNIT_EXPERT_TRADER]опытным торговцам с индейцами[\LINK] не удается открыть торговый пост в деревне индейцев, они становятся неудачливыми торговцами.[NEWLINE]Работают они из рук вон плохо.[NEWLINE]Но, поскольку они не утратили своих знаний о ведении бизнеса, они все еще могут быть полезны в других профессиях.[NEWLINE]Также они могут снова стать экспертами в своей профессии.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_CIGARS</Tag>
+		<English>Cigars</English>
+		<French>
+			<Text>Cigare:Cigares</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Zigarren</German>
+		<Italian>
+			<Text>Sigari</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Puros</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Сигары</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CIGARS_PEDIA</Tag>
+		<English>Cigars background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CIGARS_STRATEGY</Tag>
+		<English>Cigars strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CLOTH</Tag>
+		<English>Cloth</English>
+		<French>
+			<Text>Tissu:Tissus</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Stoff</German>
+		<Italian>
+			<Text>Tessuto</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Tejido</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Ткань</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CLOTH_PEDIA</Tag>
+		<English>Cloth background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_CLOTH_STRATEGY</Tag>
+		<English>Cloth strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COATS</Tag>
+		<English>Coats</English>
+		<French>
+			<Text>Manteau:Manteaux</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Pelze</German>
+		<Italian>
+			<Text>Mantelli</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Abrigos</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Пальто</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COATS_PEDIA</Tag>
+		<English>Coats background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COATS_STRATEGY</Tag>
+		<English>Coats strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_COCA_COLLECTOR</Tag>
 		<English>Expert Coca Collector:Expert Coca Collectors</English>
 		<French>
@@ -938,6 +1098,155 @@
 		<English>[COLOR_UNIT_TEXT]Expert coca collectors[COLOR_REVERT] are specialists in growing, maintaining and harvesting [LINK=BONUS_COCA]coca plants[\LINK].[NEWLINE]When assigned to gather [LINK=YIELD_COCA_LEAVES]coca leaves[\LINK], expert coca collectors will collect 3 more coca leaves as other colonists.[NEWLINE]Some Native villages may be willing to teach this profession to European colonists, and they can also be [LINK=CONCEPT_TRAINING]trained[\LINK] in a colony with a [LINK=BUILDING_COLLEGE]college[\LINK] or one of its upgrades.</English>
 		<French>Les [COLOR_UNIT_TEXT]Experts planteurs de coca[COLOR_REVERT] sont les cultivateurs spécialistes des [LINK=BONUS_COCA]plants de coca[\LINK]. Lorsqu'assigné à la cueillette de [LINK=YIELD_COCA_LEAVES]feuilles de coca[\LINK], ils produisent deux fois plus de feuilles de coca que les autres colons. Certains villages indigènes voudront peut être apprendre cette profession aux colons européen. Ils peuvent également [LINK=CONCEPT_TRAINING]enseigner[\LINK] leur métier dans une [LINK=BUILDING_COLLEGE]académie[\LINK] ou une [LINK=BUILDING_UNIVERSITY]université[\LINK].</French>
 		<German>[COLOR_UNIT_TEXT]Erfahrene Cocasammler[COLOR_REVERT] sind Spezialisten im Heranziehen und Ernten der Blätter der [LINK=BONUS_COCA]Cocapflanze[\LINK]. Wenn man ihnen die Aufgabe zuweist, [LINK=YIELD_COCA_LEAVES]Coca-Blätter[\LINK] zu sammeln, sind Erfahrene Cocasammler effektiver darin, wie andere Kolonisten. Einige Dörfer der Ureinwohner können europäischen Kolonisten diese Spezalisierung des Berufs [LINK=PROFESSION_COCA_COLLECTOR]Cocasammler[\LINK] beibringen. Alternativ können sie auch in einer Kolonie mit einer [LINK=BUILDING_COLLEGE]Akademie[\LINK] oder einer seiner Erweiterungen [LINK=CONCEPT_TRAINING]ausgebildet[\LINK] werden.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COCA_LEAVES</Tag>
+		<English>Coca Leaves</English>
+		<French>
+			<Text>Feuilles de coca</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Coca-Blätter</Text>
+			<Gender>Neuter</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Foglie di coca</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Hojas de coca</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Листья коки</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COCA_LEAVES_PEDIA</Tag>
+		<English>[H1]COCA LEAVES[\H1][PARAGRAPH:2][LINK=YIELD_COCA_LEAVES]Coca leaves[\LINK] can refer to leaves of all four cultivated plants of the Coca family (Erythoxylaceae), native to western South America.[NEWLINE]In times both ancient and modern, these plants have been highly valued for their psychoactive properties, which can be experienced by chewing the leaves, making coca tea ("Mate de coca") out of it and, in modern times, chemically extracting the psychoactive agents to produce the drug cocaine.[NEWLINE]Coca leaves are an effective remedy against altitude sickness, giving better tolerance for hunger, thirst and fatigue.[NEWLINE]Apart from that, coca can be used as an anaesthetic as well and, due to its religious significance in Indigenous cultures, many other properties are ascribed to it, some supported by modern science.[NEWLINE]Coca leaves have been used for medicinal, nutritional and religious purposes in the Andean region since prehistoric times, possibly as long as 8,000 years ago.[NEWLINE]Over this long period the ancestral coca plant was eventually domesticated, after which it diversified into the four modern species.[NEWLINE]In the Inca Empire the plant was thought to have a divine origin, and its leaves were used as offerings, as a method of divination, similar to the reading of tea leaves in the Old World, and also as preparation for prayers or religious ceremonies.[NEWLINE]It eventually spread over a large area, from Colombia in the north to Chile in the south.[PARAGRAPH:2]After the Spanish conquest of the Inca, the use of the leaf was tolerated by the Spanish because it enhanced the performance of forced labourers, but its religious use was prohibited and the Spanish themselves were discouraged from using it.[NEWLINE]Though it was introduced in Europe in the 16th century, it did not become popular until the 19th century when the first cocaine was produced.</English>
+		<French>[H1]FEUILLES DE COCA[\H1][PARAGRAPH:2]La coca est une plante d'Amérique du Sud de la famille des Érythroxylacées. Elle joue un rôle important dans la culture andine, à travers ses utilisations rituelles ou médicinales des [LINK=YIELD_COCA_LEAVES]feuilles de coca[\LINK].[NEWLINE]Elle pousse à l'état sauvage dans la cordillère des Andes à des altitudes variant de 300 à 2 000 m. Comme toutes les espèces du genre Erythroxylum, elle apprécie particulièrement les sols acides.[NEWLINE]C'est un fondement culturel pour l'Amérique latine - notamment les hauts plateaux andins - où son usage remonte à près de 5 000 ans. Du fait de ses différentes vertus, c'est une plante sacrée pour certains peuples amérindiens. Pour ces derniers, Mama Coca est la fille de Pachamama. Elle est ainsi utilisée traditionnellement de la Colombie jusqu'au Chili aussi bien pour ses vertus stimulantes que dans le cadre de cérémonies religieuses, elle aurait même servi de taxe d'imposition. Dans l'Empire inca, la coca issue de l'actuel Pérou (tupa coca) servait aux cérémonies religieuses et aux dignitaires alors que la coca issue de l'actuelle Bolivie (muma coca) servait aux fonctionnaires voire au peuple. Son usage est signalé par les conquérants espagnols dès le XVIe siècle qui en condamnent d'abord l'usage la qualifiant de « satanique » avant de l'encourager en constatant l'efficacité en termes de rentabilité sur les travailleurs. C'est Nicolas Monardés de Séville, un naturaliste espagnol qui en donne la première description dans les années 1580 même si la plante ne sera vraiment connue sur le plan scientifique qu'au XVIIIe siècle.</French>
+		<German>[H1]Coca-Blätter[\H1][PARAGRAPH:2]Der Begriff [LINK=YIELD_COCA_LEAVES]Coca-Blätter[\LINK] bezieht sich meist auf Blätter der kultivierten Planzen aus der Familie der Cocapflanzen (Erythoxylaceae), welche im westlichen Teil Südamerikas beheimatet sind. Sowohl in der alten Geschichte, wie auch in der modernen Zeit wurden diese Pflanzen sehr hoch geschätzt, da sie psychoaktive Substanzen beinhalten, die man durch das Kauen der Blätter oder durch den Konsum des daraus aufgebrühten Tees aufnehmen kann. In der heutigen Zeit, wird aus diesen Blättern auch die Droge Kokain gewonnen. Weniger bedenkliche Anwirkungen der Coca-Blätter sind aber beispielsweise die Anwendung in geringeren Mengen als Mittel gegen Höhenkrankheit oder gegen Hungergefühle, Durstgefühle oder Müdigkeit. Ausserdem kann Coca auch zur Betäubung von Schmerzen verwendet werden.[PARAGRAPH:2]Coca-Blätter wurden jeher in den Regionen der Anden zu relgiösen, medizinischen und nahrungsergänzenden Zwecken eingesetzt. Wahrscheinlich sogar schon seit mehr als 8000 Jahren. In dieser langen Zeitperiode wurde die Cocapflanze irgendwann domestiziert. Heutzutage wird sie in vier unterschiedlichen Gattungen bzw. Unterarten gezüchtet. Im Inkareich glaubte man an einen göttlichen Ursprung der Planze und verwendete die Blätter als Opfergabe, aber auch als Mittel um die Zukunft vorherzusagen oder einfach nur um Gebete und Zeremonien vorzubereiten. Die Pflanze breitete sich schliesslich über ein sehr grosses Gebiet von Kolumbien im Norden bis Chile im Süden aus.[PARAGRAPH:2]Nach der spanischen Eroberung des Inkareiches wurde die Einnahme der Pflanze weiterhin von den Spaniern toleriert, da sie die Leistung der Zwangsarbeiter steigerte. Die religiöse Verwendung der Pflanze wurde aber verboten. Den Spaniern selbst wurde vom Konsum der Blätter abgeraten. Obwohl bereits im 16. Jahrhundert Coca-Blätter in Europa bekannt waren, erlangten diese dort zu dieser Zeit nie Beliebtheit. Dies änderte sich erst, als im 19. Jahrhundert Kokain entdeckt wurde.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COCA_LEAVES_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Coca collectors[COLOR_REVERT] can gather [LINK=YIELD_COCA_LEAVES]coca leaves[\LINK] from hilly [LINK=TERRAIN_SAVANNAH]savanna[\LINK] regions with little or no vegetation.[NEWLINE]The yield will be higher when the [LINK=BONUS_COCA]coca plants[\LINK] bonus is present, and can also be increased by constructing [LINK=IMPROVEMENT_COLLECTORS_POST2]Planter Posts[\LINK].[NEWLINE]If unspecialized colonists practice this profession long enough, they will eventually become [LINK=UNIT_COCA_COLLECTOR]expert coca collectors[\LINK] who produce double the amount of coca leaves a typical colonist could produce.</English>
+		<French>Les [COLOR_UNIT_TEXT]planteurs de coca[COLOR_REVERT] peuvent cultiver des [LINK=YIELD_COCA_LEAVES]feuilles de coca[\LINK] sur des cases de [LINK=TERRAIN_SAVANNAH]Savane[\LINK] vallonnée qui ont peu de végétation. La production est plus importante lorsqu'un bonus de [LINK=BONUS_COCA]plante de coca[\LINK] est présent. Elle est également augmenté en construisant un [LINK=IMPROVEMENT_COLLECTORS_POST2]dépôt de coca[\LINK]. Si un colon non spécialisé pratique cette profession suffisament longtemps, alors il pourrait devenir un [LINK=UNIT_COCA_COLLECTOR]Expert planteur de coca[\LINK], et produire ainsi deux fois plus de feuilles de coca qu'un autre colon.</French>
+		<German>[COLOR_UNIT_TEXT]Cocasammler[COLOR_REVERT] können [LINK=YIELD_COCA_LEAVES]Coca-Blätter[\LINK] von Hügeln auf Regionen der [LINK=TERRAIN_SAVANNAH]Savanne[\LINK] sammeln. Der Ertrag ist höher, wenn es auf dem Feld auch die Bonusresource [LINK=BONUS_COCA]Cocapflanzen[\LINK] gibt und kann noch weiter erhöht werden, wenn man darauf die Geländeverbesserung [LINK=IMPROVEMENT_COLLECTORS_POST2]Cocasammelstelle[\LINK] errichtet. Wenn ein nicht spezialisierter Kolonist lange genug diesen Beruf ausübt, kann er irgendwann zu einem [LINK=UNIT_COCA_COLLECTOR]Erfahrenen Cocasammler[\LINK] werden, der doppelt soviele Coca-Blätter ernten kann.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COCOA</Tag>
+		<English>Cocoa</English>
+		<French>Cacao torréfié</French>
+		<German>
+			<Text>Kakao</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Cacao</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Cacao</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Какао</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COCOA_PEDIA</Tag>
+		<English>Cocoa background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COCOA_STRATEGY</Tag>
+		<English>Cocoa strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COCOA_FRUITS</Tag>
+		<English>Cocoa pods</English>
+		<French>Cacao en cabosse</French>
+		<German>
+			<Text>Kakaofrüchte</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Frutta di cacao</Italian>
+		<Spanish>Fruta del cacao</Spanish>
+		<Russian>Плоды какао</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COCOA_FRUITS_PEDIA</Tag>
+		<English>Cocoa pods background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COCOA_FRUITS_STRATEGY</Tag>
+		<English>Cocoa pods strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COFFEE</Tag>
+		<English>Coffee</English>
+		<French>
+			<Text>Café torréfié</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Kaffee</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Caffè</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Café</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Кофе</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COFFEE_PEDIA</Tag>
+		<English>The history of coffee begins in the 9th century.[NEWLINE]It is thought to have originated in the highlands of Ethiopia and spread to the rest of the world via Egypt and Europe.[NEWLINE]The word 'coffee' is derived from the Arabic word Qah'wa, from Ottoman Turkish Kahve, which originally meant wine or other intoxicating liquors.[NEWLINE]Partly due to the Islamic prohibition on drinking alcohol, preparing and drinking coffee became an important social ritual. In the 15th century Muslims introduced coffee into Persia, Egypt, northern Africa and Turkey, where the first cafeteria, Kiva Han, opened in 1475 in Constantinople, not long before Columbus set sail.[NEWLINE]The stimulant effect of drinking coffee caused it to be forbidden among orthodox and conservative imams in Mecca in 1511 and in Cairo in 1532 by a theological court.[NEWLINE]In Egypt, coffeehouses and warehouses containing coffee cherries were sacked. But the product's popularity, particularly among intellectuals, led to the reversal of this decision in 1524 by an order of the Ottoman Turkish Sultan Selim I.[NEWLINE]From the Muslim world coffee spread to Europe where it became popular in the 17th century.[NEWLINE]Dutch traders were the first to import coffee into Europe on a large scale.</English>
+		<French>L'histoire du café commence au 9ème siècle. On pense que cela avoir provenu des montagnes de l'Ethiopie et se écarterait au reste du monde par l'intermédiaire de l'Egypte et de l'Europe. Le café de mot est dérivé du mot arabe Qah'wa, au-dessus du tabouret Kahve turc, qui a à l'origine signifié le vin ou d'autres boissons alcoolisées intoxiquantes. Partiellement dû à la prohibition islamique sur le café d'alcool, de préparation et de boissons potable est devenu un rituel social important. Au 15ème siècle, les musulmans ont présenté le café en Perse, Egypte, Afrique nordique et la Turquie, où le premier cafétéria, Kiva Han, s'est ouvert en 1475 à Constantinople. L'effet de stimulant de boire du café l'a causé d'être interdit parmi des imams orthodoxes et conservateurs dans Mecque en 1511 et au Caire en 1532 par une cour théologique. En Egypte, les cafés et les entrepôts contenant des cerises de café étaient sacked. Mais la popularité du produit, en particulier parmi des intellectuels, a mené à l'inversion de cette décision en 1524 par un ordre du Sultan turc Selim I de tabouret. Du monde musulman, le café s'est écarté en Europe, où il est devenu populaire au 17ème siècle. Les commerçants hollandais étaient les premiers pour engager l'importation à grande échelle du café dans l'Europe.</French>
+		<German>Die Geschichte des Kaffees fängt im 9. Jahrhundert an. Es wird vermutet, daß die Kaffeepflanze ursprünglich aus dem Hochland von Äthiopien stammt, von wo sich das Kaffeetrinken über Ägypten und Europa in den Rest der Welt verbreitete. Der Wort Kaffee stammt vom arabischen Wort Qah'wa, in Osmanischem Türkisch auch Kahve, ab, das ursprünglich Wein oder andere berauschende Getränke bedeutete. Unter anderem aufgrund des islamischen Alkoholverbots wurde die Zubereitung und das Trinken von Kaffee zu einem wichtigen gesellschaftlichen Ritual. Im 15. Jahrhundert führten Moslems Kaffee in Persien, Ägypten, Nordafrika und in der Türkei ein, wo die erste Cafeteria, Kiva Han, im Jahre 1475 in Konstantinopel eröffnet wurde. Die anregende Wirkung des Kaffeetrinkens führte 1511 zum Verbot durch orthodoxe und konservative Imame in Mekka und 1532 durch ein theologisches Gericht in Kairo. In Ägypten wurden daraufhin die Cafés und Lagerhäuser, die Kaffeebeeren enthielten, geplündert. Aber die Popularität des Produktes, besonders unter Intellektuellen, führten zur Rücknahme der Entscheidung 1524 durch einen Auftrag des Osmanischen Sultans Selim I. Von der moslemischen Welt verbreitete sich das Kaffeetrinken nach Europa, wo es im 17. Jahrhundert populär wurde. Holländische Händler waren die ersten, die im grossen Stil den Import von Kaffee nach Europa begannen.</German>
+		<Italian>La storia di caffè comincia nel nono secolo. Si pensa per provenire dagli altopiani dell'Etiopia e per spargersi al resto del mondo via l'Egitto ed Europa. Il caffè di parola è derivato dalla parola araba Qah'wa, sopra il ottoman Kahve turco, che originalmente ha significato il vino o altri liquori intoxicating. Parzialmente dovuto la proibizione islamica sul caffè di preparazione e di bevanda bevente dell'alcool, è diventato un rituale sociale importante. Nel quindicesimo secolo, i musulmani hanno introdotto il caffè nella Persia, Egitto, Africa del Nord e la Turchia, in cui il primo self-service, Kiva Han, si è aperto in 1475 a Constantinople. L'effetto dello stimolante di bere il caffè lo ha indotto ad essere proibito a fra i imams ortodossi e conservatori in Mecca in 1511 ed a Cairo in 1532 da una corte theological. Nell'Egitto, i coffeehouses ed i magazzini che contengono le ciliege del caffè erano sacked. Ma la popolarità del prodotto, specialmente fra gli intellettuali, ha condotto all'inversione di questa decisione in 1524 da un ordine del ottoman Sultan turco Selim I. Dal mondo musulmano, il caffè si è sparso ad Europa, in cui è diventato popolare nel diciassettesimo secolo. I commercianti olandesi erano i primi per avviare l'importazione della grande scala di caffè in Europa.</Italian>
+		<Spanish>La historia del café comienza en el 9no siglo. Se piensa para haber originado en las montañas de Etiopía y para haberse separado al resto del mundo vía Egipto y Europa. El café de la palabra se deriva de la palabra árabe Qah'wa, sobre el otomano Kahve turco, que significó originalmente el vino u otros licores que intoxicaban. En parte debido a la prohibición islámica en el café del alcohol que bebía, de la preparación y el beber llegó a ser un ritual social importante. En el décimo quinto siglo, los musulmanes introdujeron el café en Persia, Egipto, África norteña y Turquía, adonde la primera cafetería, Kiva Han, se abrió en 1475 en Constantinople. El efecto del estimulante de beber el café lo hizo ser prohibido entre imams ortodoxos y conservadores en Mecca en 1511 y en El Cairo en 1532 por una corte teológica. En Egipto, los cafés y los almacenes que contenían cerezas del café estaban sacked. Pero el renombre del producto, particularmente entre intelectuales, condujo a la revocación de esta decisión en 1524 por una orden del Sultán turco Selim I del otomano. Del mundo musulmán, el café se separó a Europa, en donde llegó a ser popular en el 17mo siglo. Los comerciantes holandeses eran los primeros para encender la importación de la escala grande del café en Europa.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COFFEE_STRATEGY</Tag>
+		<English>Coffee strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COFFEE_BERRIES</Tag>
+		<English>Coffee Berries</English>
+		<French>Cerises de café</French>
+		<German>
+			<Text>Kaffeebeeren</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Bacche di caffè</Italian>
+		<Spanish>Bayas de café</Spanish>
+		<Russian>Кофейные ягоды</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COFFEE_BERRIES_PEDIA</Tag>
+		<English>The history of coffee begins in the 9th century.[NEWLINE]It is thought to have originated in the highlands of Ethiopia and spread to the rest of the world via Egypt and Europe.[NEWLINE]The word 'coffee' is derived from the Arabic word Qah'wa, from Ottoman Turkish Kahve, which originally meant wine or other intoxicating liquors.[NEWLINE]Partly due to the Islamic prohibition on drinking alcohol, preparing and drinking coffee became an important social ritual.[NEWLINE]In the 15th century Muslims introduced coffee into Persia, Egypt, northern Africa and Turkey where the first cafeteria, Kiva Han, opened in 1475 in Constantinople, not long before Columbus set sail.[NEWLINE]The stimulant effect of drinking coffee caused it to be forbidden among orthodox and conservative imams in Mecca in 1511 and in Cairo in 1532 by a theological court.[NEWLINE]In Egypt coffeehouses and warehouses containing coffee beans were sacked.[NEWLINE]Nonetheless the product's popularity, particularly among intellectuals, led to the reversal of this decision in 1524 by an order of the Ottoman Turkish Sultan Selim I.[NEWLINE]From the Muslim world coffee spread to Europe where it became popular in the 17th century.[NEWLINE]Dutch traders were the first to import coffee into Europe on a large scale.</English>
+		<French>L'histoire du café commence au 9ème siècle. On pense que cela avoir provenu des montagnes de l'Ethiopie et se écarterait au reste du monde par l'intermédiaire de l'Egypte et de l'Europe. Le café de mot est dérivé du mot arabe Qah'wa, au-dessus du tabouret Kahve turc, qui a à l'origine signifié le vin ou d'autres boissons alcoolisées intoxiquantes. Partiellement dû à la prohibition islamique sur le café d'alcool, de préparation et de boissons potable est devenu un rituel social important. Au 15ème siècle, les musulmans ont présenté le café en Perse, Egypte, Afrique nordique et la Turquie, où le premier cafétéria, Kiva Han, s'est ouvert en 1475 à Constantinople. L'effet de stimulant de boire du café l'a causé d'être interdit parmi des imams orthodoxes et conservateurs dans Mecque en 1511 et au Caire en 1532 par une cour théologique. En Egypte, les cafés et les entrepôts contenant des cerises de café étaient sacked. Mais la popularité du produit, en particulier parmi des intellectuels, a mené à l'inversion de cette décision en 1524 par un ordre du Sultan turc Selim I de tabouret. Du monde musulman, le café s'est écarté en Europe, où il est devenu populaire au 17ème siècle. Les commerçants hollandais étaient les premiers pour engager l'importation à grande échelle du café dans l'Europe.</French>
+		<German>Die Geschichte des Kaffees fängt im 9. Jahrhundert an. Es wird vermutet, daß die Kaffeepflanze ursprünglich aus dem Hochland von Äthiopien stammt, von wo sich das Kaffeetrinken über Ägypten und Europa in den Rest der Welt verbreitete. Der Wort Kaffee stammt vom arabischen Wort Qah'wa, in Osmanischem Türkisch auch Kahve, ab, das ursprünglich Wein oder andere berauschende Getränke bedeutete. Unter anderem aufgrund des islamischen Alkoholverbots wurde die Zubereitung und das Trinken von Kaffee zu einem wichtigen gesellschaftlichen Ritual. Im 15. Jahrhundert führten Moslems Kaffee in Persien, Ägypten, Nordafrika und in der Türkei ein, wo die erste Cafeteria, Kiva Han, im Jahre 1475 in Konstantinopel eröffnet wurde. Die anregende Wirkung des Kaffeetrinkens führte 1511 zum Verbot durch orthodoxe und konservative Imame in Mekka und 1532 durch ein theologisches Gericht in Kairo. In Ägypten wurden daraufhin die Cafés und Lagerhäuser, die Kaffeebeeren enthielten, geplündert. Aber die Popularität des Produktes, besonders unter Intellektuellen, führten zur Rücknahme der Entscheidung 1524 durch einen Auftrag des Osmanischen Sultans Selim I. Von der moslemischen Welt verbreitete sich das Kaffeetrinken nach Europa, wo es im 17. Jahrhundert populär wurde. Holländische Händler waren die ersten, die im grossen Stil den Import von Kaffee nach Europa begannen.</German>
+		<Italian>La storia di caffè comincia nel nono secolo. Si pensa per provenire dagli altopiani dell'Etiopia e per spargersi al resto del mondo via l'Egitto ed Europa. Il caffè di parola è derivato dalla parola araba Qah'wa, sopra il ottoman Kahve turco, che originalmente ha significato il vino o altri liquori intoxicating. Parzialmente dovuto la proibizione islamica sul caffè di preparazione e di bevanda bevente dell'alcool, è diventato un rituale sociale importante. Nel quindicesimo secolo, i musulmani hanno introdotto il caffè nella Persia, Egitto, Africa del Nord e la Turchia, in cui il primo self-service, Kiva Han, si è aperto in 1475 a Constantinople. L'effetto dello stimolante di bere il caffè lo ha indotto ad essere proibito a fra i imams ortodossi e conservatori in Mecca in 1511 ed a Cairo in 1532 da una corte theological. Nell'Egitto, i coffeehouses ed i magazzini che contengono le ciliege del caffè erano sacked. Ma la popolarità del prodotto, specialmente fra gli intellettuali, ha condotto all'inversione di questa decisione in 1524 da un ordine del ottoman Sultan turco Selim I. Dal mondo musulmano, il caffè si è sparso ad Europa, in cui è diventato popolare nel diciassettesimo secolo. I commercianti olandesi erano i primi per avviare l'importazione della grande scala di caffè in Europa.</Italian>
+		<Spanish>La historia del café comienza en el 9no siglo. Se piensa para haber originado en las montañas de Etiopía y para haberse separado al resto del mundo vía Egipto y Europa. El café de la palabra se deriva de la palabra árabe Qah'wa, sobre el otomano Kahve turco, que significó originalmente el vino u otros licores que intoxicaban. En parte debido a la prohibición islámica en el café del alcohol que bebía, de la preparación y el beber llegó a ser un ritual social importante. En el décimo quinto siglo, los musulmanes introdujeron el café en Persia, Egipto, África norteña y Turquía, adonde la primera cafetería, Kiva Han, se abrió en 1475 en Constantinople. El efecto del estimulante de beber el café lo hizo ser prohibido entre imams ortodoxos y conservadores en Mecca en 1511 y en El Cairo en 1532 por una corte teológica. En Egipto, los cafés y los almacenes que contenían cerezas del café estaban sacked. Pero el renombre del producto, particularmente entre intelectuales, condujo a la revocación de esta decisión en 1524 por una orden del Sultán turco Selim I del otomano. Del mundo musulmán, el café se separó a Europa, en donde llegó a ser popular en el 17mo siglo. Los comerciantes holandeses eran los primeros para encender la importación de la escala grande del café en Europa.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COFFEE_BERRIES_STRATEGY</Tag>
+		<English>Coffee berries strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COFFEE_PLANTER</Tag>
@@ -1014,6 +1323,43 @@
 		<German>[COLOR_UNIT_TEXT]Freie Kolonisten[COLOR_REVERT] sind die Generalisten in den Kolonien. Im Gegensatz zu [COLOR_UNIT_TEXT]Schuldknechten[COLOR_REVERT], [COLOR_UNIT_TEXT]Kleinkriminellen[COLOR_REVERT] und [COLOR_UNIT_TEXT]Konvertierten Ureinwohnern[COLOR_REVERT] erhalten sie bei der Produktion von Rohmaterialien oder Fertigwaren in der Regel weder Boni noch Mali.[PARAGRAPH:2]Die Rebellische Stimmung einer Stadt steigert die Produktivität aller eingesetzten Bürger um die Hälfte des Prozentsatzes der Rebellischen Stimmung. Arbeiten Bürger in Gebäuden, kann man ihre Produktivität steigern, indem man die Gebäude ausbaut. Arbeiten Bürger auf Geländefeldern, kann man ihre Produktivität steigern, indem man Pioniere die Geländefelder aufwerten lässt, z.B. mit Minen oder Farmen.</German>
 		<Italian>I [COLOR_UNIT_TEXT]liberi coloni[COLOR_REVERT] sono i migliori tuttofare in circolazione. Anche se non danno alcun bonus per la produzione di materie prime o di manufatti, non hanno nemmeno alcuna penalità, a differenza di [COLOR_UNIT_TEXT]servi per contratto[COLOR_REVERT], [COLOR_UNIT_TEXT]criminali[COLOR_REVERT] e [COLOR_UNIT_TEXT]nativi convertiti[COLOR_REVERT].</Italian>
 		<Spanish>Los [COLOR_UNIT_TEXT]Colonos libres[COLOR_REVERT] son las unidades más polivalentes. Aunque no dan bonificaciones a la extracción de materias primas o a la producción de artículos, tampoco reciben penalizaciones, a diferencia de los [COLOR_UNIT_TEXT]Siervos por deudas[COLOR_REVERT], los [COLOR_UNIT_TEXT]Convictos[COLOR_REVERT] y los [COLOR_UNIT_TEXT]Nativos conversos[COLOR_REVERT].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COLOURED_CLOTH</Tag>
+		<English>Coloured Cloth</English>
+		<French>
+			<Text>Tissu teinté</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Gefärbte Stoffe</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Tessuti tinti</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Tejidos teñidos</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Цветная ткань</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COLOURED_CLOTH_PEDIA</Tag>
+		<English>For centuries different materials for dying clothes were extremely rare, especially in certain colours like blue.[NEWLINE]Thus coloured cloth was extraordinarily expensive.[NEWLINE]Even after vast indigo plantations developed in the New World, the cost of dyed fabric remained high.</English>
+		<French>Pendant des siècles l'usage de matériaux pour teinter les vêtements était extrêmement rare, particulièrement pour certaines couleurs comme le bleu. Les costumes teintés étaient en conséquence particulièrement chers. Même après la vaste exploitation de l'indigo dans le nouveau monde, les prix ont peu évolués.</French>
+		<German>Über viele Jahrhunderte hinweg waren Materialien zum Färben von Stoffen sehr selten. Besonders für einige Farben, wie beispielsweise Blau, waren diese nur sehr schwer zu bekommen. Dies sorgte dafür, dass gefärbte Stoffe sehr selten waren und meist nur für die Oberschicht bezahlbar waren. Selbst als in den Kolonien große Indigo-Plantagen entstanden, änderte sich daran nur wenig.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COLOURED_CLOTH_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Master dyers[COLOR_REVERT] produce double the amount of [COLOR_HIGHLIGHT_TEXT]coloured cloth[COLOR_REVERT] from cloth and indigo or cochineal or logwood.</English>
+		<French>Les [COLOR_UNIT_TEXT]maîtres teinturiers[COLOR_REVERT] produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]costumes teintés[COLOR_REVERT] à partir de tissu et d'indigo.</French>
+		<German>[COLOR_UNIT_TEXT]Meister-Färber[COLOR_REVERT] verarbeiten doppelt soviele Stoffe und Indigo zu [COLOR_HIGHLIGHT_TEXT]Gefärbten Stoffen[COLOR_REVERT] wie andere Kolonisten.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_CONQUISTADOR</Tag>
@@ -1268,6 +1614,39 @@
 		<Tag>TXT_KEY_UNIT_NAVAL_BRIG_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Brigs-of-war[COLOR_REVERT] are the ideal ships to board and capture other ships due to their maneuverability. They are also excellent escorts for merchant ships since they are especially well-suited for attacking [LINK=UNIT_PRIVATEER]privateers[\LINK] and [LINK=UNIT_PIRATE_FRIGATE]pirate frigates[\LINK], receiving a small attack bonus against both.[NEWLINE]They are fast units, and cheaper to purchase than [LINK=UNIT_FRIGATE]frigates[\LINK].[NEWLINE]In combat, though, they will not stand much of a chance against frigates or other stronger ships.[NEWLINE][COLOR_HIGHLIGHT_TEXT]Brigs-of-war[COLOR_REVERT] can be purchased in [LINK=CONCEPT_EUROPE]Europe[\LINK] or built in colonies with a [LINK=BUILDING_SHIPYARD]shipyard[\LINK] or one of its upgrades.[NEWLINE]Like most ships, they need [LINK=YIELD_CANNONS]cannons[\LINK], [LINK=YIELD_BLADES]blades[\LINK], [LINK=YIELD_SAILCLOTH]sailcloth[\LINK] and [LINK=YIELD_TOOLS]tools[\LINK].[PARAGRAPH:2]For a comparison of all available ships, see [LINK=CONCEPT_SHIPS]Ships[\LINK].</English>
 		<German>[COLOR_UNIT_TEXT]Kanonenbriggs[COLOR_REVERT] sind die besten Schiffe, um andere Schiffe zu entern und als Prise zu nehmen. Sie sind zudem exzellent als Eskorte für Handelsschiffe oder zur Jagd auf Piraten geeignet. Für jedes größere Kriegsschiff, wie eine Fregatte, ein Linienschiff oder gar ein königliches Linienschiff, stellen sie jedoch keine ernsthafte Herausforderung dar. Desweiteren können sie keine Städte bombardieren.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COTTON</Tag>
+		<English>Cotton</English>
+		<French>
+			<Text>Coton</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Baumwolle</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Cotone</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Algodón</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Хлопок</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COTTON_PEDIA</Tag>
+		<English>Cotton background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_COTTON_STRATEGY</Tag>
+		<English>Cotton strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_COTTON_PLANTER</Tag>
@@ -1805,6 +2184,14 @@
 		<Spanish>Las [COLOR_UNIT_TEXT]Carabelas[COLOR_REVERT] son los veleros más primitivos que hay disponibles. Se mueven lentamente, pueden llevar poco cargamento y tripulación y los barcos enemigos pueden hundirlos con facilidad. Sin embargo, a veces pueden escaparse a los asentamientos cercanos que cuenten con Diques secos y Astilleros si son derrotadas.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_FOOD_PEDIA</Tag>
+		<English>Food background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FOOD_STRATEGY</Tag>
+		<English>Food strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_FRIGATE</Tag>
 		<English>Frigate:Frigates</English>
 		<French>
@@ -1869,6 +2256,58 @@
 		<German>[COLOR_UNIT_TEXT]Fregatten[COLOR_REVERT] sind mächtige Kriegsschiffe, die Handels- oder [LINK=CONCEPT_SMUGGLING]Piratenschiffe[\LINK] versenken können. Wenn sie genug [COLOR_HIGHLIGHT_TEXT]Kampferfahrung[COLOR_REVERT] sammeln, um ein paar Beförderungen zu erhalten, haben sie sogar eine sportliche Chance gegen das mächtigere [LINK=UNIT_SHIP_OF_THE_LINE]Linienschiff[\LINK], das langsamer, aber normalerweise stärker als die Fregatte ist. Die [LINK=UNIT_ROYAL_MAN_O_WAR]Königliche Linienschiffe[\LINK] des [LINK=CONCEPT_RELATIONS_TO_KING]Königs[\LINK] sind jedoch selbst für erfahrene Fregatten zu mächtig.[PARAGRAPH:1][COLOR_HIGHLIGHT_TEXT]Fregatten[COLOR_REVERT] können in [LINK=CONCEPT_EUROPE]Europa[\LINK] erworben und in Kolonien mit einer [LINK=BUILDING_SHIPYARD]Schiffswerft[\LINK] oder einer ihrer Erweiterungen gebaut werden. Wie die meisten Schiffe benötigen sie [LINK=YIELD_CANNONS]Kanonen[\LINK], [LINK=YIELD_BLADES]Klingenwaffen[\LINK], [LINK=YIELD_SAILCLOTH]Segeltuch[\LINK] und [LINK=YIELD_TOOLS]Werkzeuge[\LINK].[PARAGRAPH:2]Einen Vergleich aller verfügbaren Schiffe finden Sie unter [LINK=CONCEPT_SHIPS]Schiffe[\LINK].</German>
 		<Italian>Le [COLOR_UNIT_TEXT]Fregate[COLOR_REVERT] sono potenti navi da guerra, capaci di affondare navi mercantili o [LINK=CONCEPT_SMUGGLING]pirata[\LINK]. Se guadagnano abbastanza [COLOR_HIGHLIGHT_TEXT]Esperienza di Combattimento[COLOR_REVERT] da ottenere qualche promozione, avranno anche una possibilità sportiva contro la più potente [LINK=UNIT_SHIP_OF_THE_LINE]Nave di Linea[\LINK], che è più lenta, ma normalmente più forte della Fregata. Il tuo [LINK=CONCEPT_RELATIONS_TO_KING]Re[\LINK] di [LINK=UNIT_ROYAL_MAN_O_WAR]Navi da guerra[\LINK], tuttavia, sono troppo potenti anche per le Fregate esperte.[PARAGRAPH:1]Le [COLOR_HIGHLIGHT_TEXT]Fregate[COLOR_REVERT] possono essere acquistate in [LINK=CONCEPT_EUROPE]Europa[\LINK] e costruite nelle colonie con un [LINK=BUILDING_SHIPYARD]Cantiere[\LINK] o uno dei suoi aggiornamenti. Come la maggior parte delle navi, richiedono [LINK=YIELD_CANNONS]Cannoni[\LINK], [LINK=YIELD_BLADES]Lame[\LINK], [LINK=YIELD_SAILCLOTH]Vele[\LINK] e [LINK=YIELD_TOOLS]Strumenti[\LINK].[PARAGRAPH:2]Per un confronto di tutte le navi disponibili, vedi [LINK=CONCEPT_SHIPS]Navi[\LINK].</Italian>
 		<Spanish>Las [COLOR_UNIT_TEXT]Fragatas[COLOR_REVERT] son poderosos buques de guerra, capaces de hundir barcos mercantes o [LINK=CONCEPT_SMUGGLING]Piratas[\LINK]. Si ganan suficiente [COLOR_HIGHLIGHT_TEXT]Experiencia en combate[COLOR_REVERT] para conseguir algunos ascensos, tendrán incluso una oportunidad deportiva contra el más poderoso [LINK=UNIT_SHIP_OF_THE_LINE]Buque de línea[\LINK], que es más lento, pero normalmente más fuerte que la Fragata. Sin embargo, los [LINK=CONCEPT_RELATIONS_TO_KING]King[\LINK]'s [LINK=UNIT_ROYAL_MAN_O_WAR]Buques de guerra[\LINK] son demasiado poderosos incluso para las Fragatas experimentadas.[PARAGRAPH:1]Las [COLOR_HIGHLIGHT_TEXT]fragatas[COLOR_REVERT] pueden adquirirse en [LINK=CONCEPT_EUROPE]Europa[\LINK] y construirse en colonias con un [LINK=BUILDING_SHIPYARD]Astillero[\LINK] o una de sus mejoras. Como la mayoría de los barcos, necesitan [LINK=YIELD_CANNONS]Cañones[\LINK], [LINK=YIELD_BLADES]Hojas[\LINK], [LINK=YIELD_SAILCLOTH]Tela de vela[\LINK] y [LINK=YIELD_TOOLS]Herramientas[\LINK].[PARAGRAPH:2]Para una comparación de todos los barcos disponibles, ver [LINK=CONCEPT_SHIPS]Barcos[\LINK].</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FUR</Tag>
+		<English>Fur</English>
+		<French>
+			<Text>Fourrure:Fourrures</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>Felle</German>
+		<Italian>
+			<Text>Pelliccia:Pellicce</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pieles</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Мех</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FUR_PEDIA</Tag>
+		<English>Fur background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FUR_STRATEGY</Tag>
+		<English>Fur strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FURNITURE</Tag>
+		<English>Furniture</English>
+		<French>Meubles</French>
+		<German>
+			<Text>Möbel</Text>
+			<Gender>Neuter</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>Mobili</Italian>
+		<Spanish>Muebles</Spanish>
+		<Russian>Мебель</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FURNITURE_PEDIA</Tag>
+		<English>Exotic wood is very hard which, combined with its high density (it is one of the woods that sink in water), fine texture, and ability to take a polish, makes it valuable as an ornamental wood.[NEWLINE]It's frequent in the wild, though threatened by over-harvesting; it is also extensively planted within its native range.</English>
+		<French>L'ébéniste fabrique des meubles et panneaux en bois, composés d'un bâti en menuiserie sur lequel sont appliquées des feuilles de bois précieux appelées placages ou de toute autre matière qui dissimulent entièrement ou partiellement le bâti.</French>
+		<German>Edelholz ist sehr hart, hat eine hohe Dichte, feine Texturen und kann sehr glatt geschliffen werden. Daher ist es sehr begehrt, um Verzierungen oder hochwertige Holzprodukte, wie zum Beispiel Möbel, herzustellen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_FURNITURE_STRATEGY</Tag>
+		<English>Furniture strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FURNITURE_MAKER</Tag>
@@ -2059,6 +2498,30 @@
 		<Tag>TXT_KEY_UNIT_ROYAL_TROOP_GALLEON_STRATEGY</Tag>
 		<English>[COLOR_UNIT_TEXT]Royal Troop Galleons[COLOR_REVERT] are the main transport ships used by the [COLOR_HIGHLIGHT_TEXT]European kings[COLOR_REVERT] to transport their troops. They are also able to transport goods.[NEWLINE]They have six cargo slots, like other galleons the most of any naval unit in the game.[NEWLINE]Stronger than normal [LINK=UNIT_GALLEON]galleons[\LINK], they have the ability to attack other ships.[NEWLINE]They can put up a good fight against attacking colonial ships during the [LINK=CONCEPT_INDEPENDENCE_WAR]War of Independence[\LINK].[NEWLINE]Given the opportunity they can finish off damaged attackers.[NEWLINE][COLOR_HIGHLIGHT_TEXT]Royal Troop Galleons[COLOR_REVERT] are only available to the European kings, but on rare occasions they can be captured.</English>
 		<German>[COLOR_UNIT_TEXT]Königliche Truppengaleonen[COLOR_REVERT] sind das primäre Transportschiff der [COLOR_HIGHLIGHT_TEXT]Europäischen Könige[COLOR_REVERT] um ihre Truppen zu transportieren, können aber auch Güter befördern.[NEWLINE]Sie haben 6 Frachträume und somit mehr als jedes andere Schiff, außer anderen Galeonen.[NEWLINE]Sie sind stärker als normale [LINK=UNIT_GALLEON]Galleonen[\LINK] und können andere Schiffe auch angreifen.[NEWLINE]Während des [LINK=CONCEPT_INDEPENDENCE_WAR]Unabhängigkeitskrieges[\LINK] können sie den Schiffen der Kolonien einen guten Kampf liefern.[NEWLINE][COLOR_HIGHLIGHT_TEXT]Königliche Truppengaleonen[COLOR_REVERT] stehen nur den Königen Europas zur Verfügung.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GEMS_PEDIA</Tag>
+		<English>Gemstones, treasured throughout history for their beauty and value, have always been a treasured commodity.[NEWLINE]Most gemstones, such as diamonds, are mined at scattered locations throughout the world, most notably in Africa.[NEWLINE]Some of the most famous gem deposits, however, were found in archeological digs.[NEWLINE]The ruins of ancient civilizations in the jungles of Central and South America sometimes hid large quantities of precious and semi-precious gems, along with gold and other items of value.[NEWLINE]The discovery of such a site can lead to an increase in trade in the areas surrounding the dig, as both professional and amateur treasure hunters swarm to the region to seek their fortune.</English>
+		<French>Les pierres précieuses, extrêmement prisées pour leur beauté et leur valeur, ont toujours été très recherchées. On trouve des pierres précieuses dans différents endroits du monde, mais le plus fréquemment en Afrique. Cependant, certains des gisements les plus importants ont été découverts sur des sites archéologiques. Les vestiges d'anciennes civilisations originaires d'Amérique centrale ou d'Amérique du Sud cachent parfois d'énormes quantités de pierres précieuses ou semi-précieuses, ainsi que de l'or et autres objets de valeur. La découverte d'un tel site conduit parfois à un net accroissement des échanges autour des fouilles, les chasseurs de trésors amateurs et professionnels désireux de tenter leur chance fourmillant alors dans la région.</French>
+		<German>Edelsteine wurden traditionell wegen ihrer Schönheit und ihres Wertes geschätzt und sind bis heute begehrte Schmucksteine. Edelsteine und Diamanten werden in Minen in aller Welt (primär aber in Afrika) abgebaut. Einige der bemerkenswertesten Edelsteinfunde gehen allerdings auf archäologische Ausgrabungen zurück. In den Ruinen alter Zivilisationen in den Urwäldern Mittel- und Südafrikas fanden sich nicht selten große Mengen Edelsteine und Halbedelsteine, Gold und andere wertvolle Artefakte. Die Entdeckung eines derartigen Ortes kann zu einem gesteigerten Handelsaufkommen in den umliegenden Gebieten führen, da professionelle Schatzsucher und Abenteurer in das Gebiet strömen, um dort ihr Glück zu finden.</German>
+		<Italian>Le gemme sono da sempre ricercate per il loro valore e la loro bellezza. La maggior parte delle gemme, come i diamanti, vengono estratte in varie zone del mondo, tra cui l'Africa. Alcuni dei più importanti giacimenti di gemme, tuttavia, sono stati trovati presso diversi scavi archeologici; le rovine nella giungla delle antiche civiltà che abitavano in America meridionale e centrale, per esempio, nascondevano grandi quantità di gemme più o meno preziose, oltre a oro e altri oggetti di valore. La scoperta di luoghi del genere ha portato a un incremento del commercio nelle zone degli scavi, grazie all'arrivo di cercatori di tesori professionisti e amatoriali, in cerca di fortuna.</Italian>
+		<Spanish>Las piedras preciosas, valoradas desde el inicio por su belleza y valor, siempre han sido un bien codiciado. La mayor parte de ellas, como el diamante, se extraen en minas situadas en varias zonas del mundo, en especial África. Sin embargo, algunos de los depósitos más célebres de piedras preciosas se han encontrado en excavaciones arqueológicas. Las ruinas de antiguas civilizaciones de Centroamérica y Sudamérica han ocultado a veces grandes cantidades de piedras preciosas y semipreciosas, así como de oro y otros valiosos artículos. El descubrimiento de tales emplazamientos puede conducir a un aumento del comercio en las zonas que lo rodean, ya que los cazatesoros profesionales y aficionados invaden la región en busca de fortuna.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GEMS_STRATEGY</Tag>
+		<English>Gems strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GOLD_PEDIA</Tag>
+		<English>Gold has always been one of the most highly valued metals in the world.[NEWLINE]It is used in the manufacture of everything from jewelry to electronics, and has been established as the basis for monetary systems worldwide.[NEWLINE]What makes gold valuable is its rarity.[NEWLINE]Although gold can be found in many different places, the most valuable deposits are large veins of ore running through mountains.[NEWLINE]When a large deposit is found, mining stimulates the economy in settlements and cities near the mine.[NEWLINE]A historical example of this phenomenon is the California gold rush during the 1800s when many towns grew up and prospered over a relatively short time.</English>
+		<French>L'or a toujours été l'un des métaux les plus recherchés au monde. Il est utilisé dans la fabrication de nombreux produits, allant des bijoux aux appareils électroniques. Il sert aussi de référence pour des systèmes monétaires internationaux. Ce qui donne sa valeur à l'or est sa rareté. Bien que l'on en trouve dans de nombreux endroits, les gisements les plus importants sont des veines de minerai d'or situées sous des massifs montagneux. Lorsqu'un gisement important est découvert, son exploitation stimule considérablement l'économie des villes environnantes. Ainsi, au XIXe siècle, la ruée vers l'or en Californie conduisit en peu de temps à la fondation de nombreuses villes prospères.</French>
+		<German>Gold zählt seit jeher zu den begehrtesten und wertvollsten Metallen der Welt.[NEWLINE]Seine Verwendungszwecke reichen von der Schmuckfertigung bis hin zur Elektronik, und sogar das weltweite Währungssystem basiert auf diesem Edelmetall.[NEWLINE]Die Ursache für den hohen Wert von Gold ist seine Seltenheit.[NEWLINE]Zwar gibt es in vielen Regionen der Welt Goldvorkommen, allerdings sind die wertvollsten großen Goldadern tief im Inneren der Berge.[NEWLINE]Das Auffinden eines großen Vorkommens bedeutet für die Siedlungen und Städte in der Nähe der Mine einen bedeutenden wirtschaftlichen Aufschwung.[NEWLINE]Ein historisches Beispiel für dieses Phänomen sind die vielen Ortschaften, die während des kalifornischen Goldrauschs entstanden und nur eine kurze Blütezeit erlebten.</German>
+		<Italian>L'oro è da sempre uno dei metalli più preziosi del pianeta ed è stato utilizzato per realizzare qualsiasi oggetto, dai gioielli ai componenti elettronici, ponendo le basi per un sistema economico mondiale. L'oro è molto prezioso a causa della sua rarità. Sebbene sia possibile trovare oro in differenti zone del mondo, i giacimenti più ricchi sono all'interno delle montagne. Quando viene scoperto un grande giacimento, l'estrazione dell'oro migliora sensibilmente l'economia degli insediamenti e delle città circostanti. Nel 1800, molte città della California sono prosperate in breve tempo durante la corsa all'oro.</Italian>
+		<Spanish>El oro siempre ha sido uno de los metales más valorados del mundo. Se usa en la fabricación de todo tipo de artículos, desde joyas a electrónica, y constituye la base del sistema monetario mundial. El factor que otorga al oro su valor es su rareza. Aunque se puede encontrar oro en muchas regiones distintas, los yacimientos más valiosos son grandes vetas de mineral de oro situadas en el interior de montañas. Cuando se encuentra un gran yacimiento, la explotación de la veta potencia enormemente la economía en las poblaciones y ciudades que están cerca de la mina. Un ejemplo histórico de este fenómeno son las numerosas ciudades que crecieron y prosperaron en poco tiempo durante la fiebre del oro de California en el siglo XIX.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_GOLD_STRATEGY</Tag>
+		<English>Gold strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_GOVERNOR</Tag>
@@ -2480,6 +2943,18 @@
 		<Spanish>La unidad del [COLOR_UNIT_TEXT]Cañón[COLOR_REVERT] es la clave para conseguir la victoria en cualquier asedio. Cuando ataca un asentamiento enemigo, su potencia de ataque se dobla, lo cual lo convierte en la unidad más potente que hay disponible. Estas unidades además reciben una bonificación cuando defienden desde dentro de un asentamiento y se pueden emplear para bajar las bonificaciones defensivas de los asentamientos a los que estén atacando.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_HEMP_PEDIA</Tag>
+		<English>Since the Middle Ages, hemp has been one of the most important natural fibres for cloth, ropes and other woven or braided goods.[NEWLINE]During colonization it was brought to the New World where large plantations evolved.[NEWLINE]George Washington grew hemp.[NEWLINE]Textile hemp is a cultivated variety of the Cannabaceae family.[NEWLINE]It is an annual plant, selected for the size of its stem and its low content of THC or other cannabinoids from the species that botanists call cultivated hemp (Cannabis sativa L.).[NEWLINE]Although referring to the same botanical species, 'hemp' is now the preferred term for the industrial plant and its fibre, while 'cannabis' is the scientific name for the recreational or medical form.</English>
+		<French>[TAB]Le chanvre, chanvre textile, chanvre industriel ou chanvre agricole est une variété de plante cultivée de la famille des Cannabaceae. C'est une plante annuelle, sélectionnée pour la taille de sa tige et sa faible teneur en THC ou autres cannabinoïdes à partir de l'espèce que les botanistes nomment le Chanvre cultivé (Cannabis sativa L.). Il est parfois appelé localement « chènevis », comme le nom de la graine de chanvre. Bien que désignant la même espèce botanique, le terme chanvre est désormais utilisé de préférence pour désigner la plante industrielle et sa fibre végétale, tandis que Cannabis est le nom scientifique utilisé aussi pour désigner la forme récréative ou médicale.</French>
+		<German>[TAB]Hanf war bereits im Mittelalter einer der wichtigsten Rohstoffe, um stabile Stoffe, Seile oder andere Güter herzustellen.[NEWLINE]Während der Kolonisierung der Neuen Welt fand auch Hanf seinen Weg in die Plantagen der Kolonien.[NEWLINE]George Washington besass beispielsweise selbst Hanf-Plantagen.[NEWLINE]Textilhanf ist eine kultivierte Sorte aus der Familie der Cannabaceae.[NEWLINE]Es handelt sich um eine einjährige Pflanze, die aufgrund der Größe ihres Stängels und ihres geringen Gehalts an THC oder anderen Cannabinoiden aus der Art ausgewählt wird, die Botaniker als Kulturhanf (Cannabis sativa L.) bezeichnen.[NEWLINE]Obwohl sie sich auf dieselbe botanische Art bezieht, wird der Begriff "Hanf" jetzt bevorzugt für die Industriepflanze und ihre Faser verwendet, während "Cannabis" der wissenschaftliche Name für die Einstiegsdroge und deren medizinische Form ist.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HEMP_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Expert hemp planters[COLOR_REVERT] are specialists in cultivating [LINK=YIELD_HEMP]hemp[\LINK], the raw material for [LINK=YIELD_ROPE]ropes[\LINK] and [LINK=YIELD_SAILCLOTH]sailcloth[\LINK].[NEWLINE]When employed as [LINK=PROFESSION_HEMP_PLANTER]hemp planters[\LINK], they produce double the amount of [COLOR_HIGHLIGHT_TEXT]hemp[COLOR_REVERT] from any tile they work.[PARAGRAPH:1]Expert hemp planters can be trained by [LINK=CONCEPT_NATIVES]Natives[\LINK], and they can also be [LINK=CONCEPT_TRAINING]taught[\LINK] in a colony with a [LINK=BUILDING_COLLEGE]college[\LINK] or one of its upgrades.</English>
+		<French>Les [COLOR_UNIT_TEXT]experts planteurs de chanvre[COLOR_REVERT] produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]chanvre[COLOR_REVERT] qu'un autre colon.</French>
+		<German>[COLOR_UNIT_TEXT]Erfahrene Hanfpflanzer[COLOR_REVERT] sind die besten Arbeiter, wenn es darum geht, [COLOR_HIGHLIGHT_TEXT]Hanf[COLOR_REVERT] anzubauen und große Mengen dieses Rohstoffs zu ernten. Die Produktion an Hanf eines Geländefelds wird verdoppelt, wenn sie darauf arbeiten!</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_HEMP_PLANTER</Tag>
 		<English>Expert Hemp Planter:Expert Hemp Planters</English>
 		<French>
@@ -2536,6 +3011,51 @@
 		<English>Almost one third of the King's infantry units are [COLOR_UNIT_TEXT]Hessian mercenaries[COLOR_REVERT].[NEWLINE]Hessians are [COLOR_HIGHLIGHT_TEXT]elite soldiers[COLOR_REVERT], meaning that they cannot switch professions or work in settlements.[NEWLINE]Hessian mercenaries fight like the King's [LINK=UNIT_REGULAR]regulars[\LINK], but they don't have the [LINK=PROMOTION_VETERAN2]Veteran II[\LINK] promotion.[NEWLINE]However, the Hessians are very skilled bayonet-fighters.[NEWLINE]Their [LINK=PROMOTION_BAYONET]bayonet[\LINK] promotion grants them a 20% strength bonus against gunpowder units.[NEWLINE]Like regulars, they don't receive defensive bonuses so you'd best try to meet them in the field.[NEWLINE]Hessians appear mostly as enemy units under the command of your King, but there are a few [LINK=CONCEPT_EVENTS]events[\LINK] and [LINK=CONCEPT_FOUNDING_FATHERS]Founding Fathers[\LINK] who can provide Hessians for colonial powers as well.</English>
 		<French>Près d'un tiers des unités d'infanteries royales sont des [COLOR_UNIT_TEXT]mercenaires hessiens[COLOR_REVERT]. Les Hessiens ne peuvent adopter une autre profession, ils ne peuvent que combattre comme c'est également le cas des artilleries. Les hessiens combattent comme des soldats réguliers du Roi, mais ils ne peuvent pas bénéficier de la promotion [LINK=PROMOTION_VETERAN2]Vétéran II[\LINK]. Cela ne les empêche pas d'être de redoutables combattants à la bayonnette. Leur promotion [LINK=PROMOTION_BAYONET]bayonnette[\LINK] leur offre 20% de bonus supplémentaire contre les unités équipés d'armes à feu.</French>
 		<German>[COLOR_UNIT_TEXT]Hessische Söldner[COLOR_REVERT] kämpfen auf Seiten des Königs, sie stellen etwa ein Drittel seiner Fußsoldaten. Die Hessischen Söldner sind [COLOR_HIGHLIGHT_TEXT]Elitesoldaten[COLOR_REVERT], was bedeutet, dass sie nicht den Beruf wechseln oder in Siedlungen arbeiten können, d.h. sie kämpfen ausschließlich als [LINK=CONCEPT_UNITS]Einheit[\LINK]. Hessische Söldner sind so stark wie die normale Infanterie des Königs, verfügen allerdings im Gegensatz zu ihr nicht über die Beförderung [LINK=PROMOTION_VETERAN2]Veteran II[\LINK]. Dafür gibt ihnen die Beförderung [LINK=PROMOTION_BAYONET]Bajonettkämpfer[\LINK] einen gefährlichen Kampfbonus gegen die Kolonialmilizen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HIDES</Tag>
+		<English>Cowhides</English>
+		<French>
+			<Text>Peaux de vache</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Rindshäute</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Pelli di mucca</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pieles de vaca</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Коровьи шкуры</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HIDES_PEDIA</Tag>
+		<English>A tannery is a workshop where animal skins (beef, sheep, goat, pig) are chemically and mechanically treated for leather production.[NEWLINE]The product used can be of natural origin (tannin from certain forest species such as oak, whose bark is crushed in a tanning mill), or it can be a synthetic chemical product.[NEWLINE]In the tannery the hides are cleaned: on their outside the hairs and dirt are removed; the inner skin is removed.[NEWLINE]The hides are then submerged in basins containing tannin.[NEWLINE]After a good long soaking they are removed, washed and dried.</English>
+		<French>Une tannerie est un atelier où des peaux d'animaux (boeuf, mouton, chèvre, cochon) sont traitées chimiquement et mécaniquement pour la production de cuir. Le produit utilisé peut avoir une origine naturelle (tanin en provenance de certaines essences forestières comme le chêne, dont on broyait les écorces dans un moulin à tan), ou bien être un produit chimique de synthèse. Dans la tannerie, les peaux sont nettoyées : sur leur face extérieure les poils et crasses sont enlevés, sur leur face intérieure la peau intérieure est enlevée. Les peaux sont alors trempées dans des bassins contenant du tanin pendant une certaine période, puis elles sont retirées, lavées puis séchées.</French>
+		<German>Sehr früh in der Kolonisierung der Neuen Welt wurden Rinder aus Europa eingeführt. Obwohl es auch viele Gegenden gab, in denen Rinderzucht aufgrund von Wassermangel oder Krankheiten nicht möglich war, wurde die Rinderzucht und der Verkauf von Lederwaren in die Alte Welt schnell zu einem sehr wichtigen Industriezweig. Eine große Anzahl an Rinderhirten, den Cowboys, war bald in diesem Industriezweig beschäftigt. Die Weidegebiete, in denen Rinderzucht möglich war, waren bald sehr begehrt, was auch zu vielen Konflikten mit den Ureinwohnern führte. Riesige Rinderranches entstanden.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HIDES_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Hides[COLOR_REVERT] are produced when a butcher slaughters [COLOR_UNIT_TEXT]cattle[COLOR_REVERT] for meat.</English>
+		<French>Les [COLOR_UNIT_TEXT]peaux[COLOR_REVERT] sont produites à partir d'une boucherie travaillant le [COLOR_UNIT_TEXT]bétail[COLOR_REVERT].</French>
+		<German>[COLOR_UNIT_TEXT]Hides[COLOR_REVERT] are produced when a Butcher is slaughtering [COLOR_UNIT_TEXT]Cattle[COLOR_REVERT], to further process them to meat.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSES_PEDIA</Tag>
+		<English>Horses background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_HORSES_STRATEGY</Tag>
+		<English>Horses strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_HUMPBACK_WHALE</Tag>
@@ -2655,6 +3175,43 @@
 		<Spanish>Los [COLOR_UNIT_TEXT]Siervos por deudas[COLOR_REVERT] son polivalentes, igual que los [COLOR_UNIT_TEXT]Colonos libres[COLOR_REVERT]. Pero, a diferencia de ellos, los Siervos por deudas sufren una penalización cuando producen artículos manufacturados, como Tejido, Ron, Campanas de la libertad, etc.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDIGO</Tag>
+		<English>Indigo</English>
+		<French>
+			<Text>Indigo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Indigo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Indicado</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Indigo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Индиго</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDIGO_PEDIA</Tag>
+		<English>Dyeing is the process of applying colours to fabrics.[NEWLINE]A human practice for over three thousand years, it enabled the natural white colour of silk, wool and cotton to be enhanced with a wider spectrum.[NEWLINE]Natural dyes are created from many sources including shells, animals and plants, though these dyes were frequently expensive and not always permanent.[NEWLINE]Modern dyes are based on artificial or processed substances such as coal and other chemicals.[NEWLINE]One benefit for a nation with an extensive dye industry is that the processes involved in creating dye can be easily retooled.[NEWLINE]Germany took advantage of this in World War I when it discovered that factories producing artificial dye could be easily modified to create explosives, poison gas and other tools of war.</English>
+		<French>La teinture est le procédé de coloration des tissus. Cette pratique, vieille de plus trois mille ans, permet de donner de la couleur aux textiles blancs comme la soie, le coton ou la laine. Les teintures naturelles sont obtenues de multiples façons, que ce soit à partir de coquillages, de plantes ou d'animaux. Mais ces teintures ne sont pas toujours permanentes et sont souvent chères. Les colorants modernes sont à base de produits synthétiques ou traités, comme le charbon ou divers produits chimiques. Un pays possédant une industrie des teintures florissante peut facilement adapter les procédés de fabrication des teintures à d'autres fins. L'Allemagne a ainsi découvert au cours de la Première Guerre mondiale que les usines de fabrication de colorants artificiels pouvaient aisément être transformées pour créer des explosifs, des poisons ou autres instruments de guerre.</French>
+		<German>Das Färben von Stoffen und Fasern gehört schon seit mehr als drei Jahrtausenden zu den vom Menschen praktizierten Handwerken. Durch das Eintauchen der Materialien in Farbe ließ sich das natürliche Weiß von Seide, Wolle und Baumwolle in verschiedene Farbnuancen einfärben. Natürliche Färbemittel wurden aus unzähligen Quellen, einschließlich Muscheln, Tieren und Pflanzen, gewonnen, obwohl diese nicht immer dauerhaft und meist auch teuer waren. Moderne Färbemittel basieren auf künstlichen oder verarbeiteten Substanzen wie Kohle und anderen Chemikalien. Ein Land mit einer ausgedehnten Färbeindustrie hat den Vorteil, dass die zur Herstellung von Färbemitteln notwendigen Verfahren leicht für andere Zwecke abgewandelt werden können. Während des 1. Weltkrieges zeigte es sich in Deutschland, dass Fabriken, in denen künstliche Färbemittel hergestellt wurden, kurzerhand so umstrukturiert werden konnten, dass sie stattdessen Sprengstoffe, giftiges Gas und anderes Kriegsmaterial produzierten.</German>
+		<Italian>La colorazione è il processo di applicazione dei colori ai tessuti. Si tratta di una pratica dell'uomo utilizzata da oltre tremila anni, che consente vari tipi di modifica del colore bianco naturale della seta, della lana e del cotone. La tinta naturale è creata da numerosissime fonti, comprese le conchiglie, gli animali e le piante, malgrado questi non siano sempre disponibili e risultino spesso costosi. La tinta moderna si basa su sostanze artificiali o lavorate, come il carbone e altri elementi chimici; una nazione con una solida industria in questo campo beneficia del fatto che i processi implicati nella creazione della tinta possano essere trasformati agevolmente per altri scopi. La Germania ha effettuato questa scoperta durante la Prima Guerra Mondiale, rendendosi conto che le fabbriche di produzione della tinta artificiale potevano essere facilmente modificate per creare esplosivi e altri strumenti bellici.</Italian>
+		<Spanish>El tinte es el proceso de aplicar colores a los tejidos. Una práctica humana que, durante más de tres mil años, permitía ampliar el blanco natural de la seda, la lana y el algodón a todo un espectro de colores. Los tintes naturales se crean a partir de miles de sustancias, incluyendo conchas, animales y plantas, aunque estos tintes son frecuentemente caros y no siempre permanentes. Los tintes modernos se basan en sustancias artificiales o procesadas, como el carbón vegetal y otros compuestos químicos. Las naciones que poseen grandes industrias de teñido tienen la ventaja de que los procesos para la creación del tinte se pueden reconvertir fácilmente en otros. Alemania lo descubrió en la Primera Guerra Mundial, cuando se comprobó que las fábricas de tinte artificial podían modificarse fácilmente para fabricar explosivos, gas venenoso y otras herramientas bélicas.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_INDIGO_STRATEGY</Tag>
+		<English>Indigo strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_INDIGO_PLANTER</Tag>
 		<English>Expert Indigo Planter:Expert Indigo Planters</English>
 		<French>
@@ -2766,6 +3323,45 @@
 		<English>TXT_KEY_UNIT_ANIMAL_STRATEGY</English>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_LEATHER</Tag>
+		<English>Leather Goods</English>
+		<French>
+			<Text>Cuir</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Lederwaren</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Pelletteria</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Artículos de cuero</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Выделанная кожа</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LEATHER_PEDIA</Tag>
+		<English>Leather is a durable and flexible material created by tanning of rawhide.[NEWLINE]It can manufactured either by cottage industry or heavy industry.[NEWLINE]Tanning transforms the protein of the rawhide into a stable material which will not putrefy and is suitable for a wide variety of uses.[NEWLINE]The principal difference between rawhides and tanned hides is that rawhides dry into a hard inflexible material that will rot in the rain, unlike tanned leather which dries out to a tough yet flexible form.</English>
+		<French>Le cuir est un matériau durable et flexible obtenu par le tannage de la peau brute et de la peau des animaux, souvent des bovins.[NEWLINE]Il peut être produit par des procédés de fabrication artisanaux ou industriels.[NEWLINE]Lors du tannage, les protéines de la peau brute sont transformées en un matériau stable qui ne pourrit pas.[NEWLINE]La principale différence entre les peaux brutes et les peaux tannées est que les peaux brutes se dessèchent et forment un matériau dur et inflexible qui pourrit lorsqu'il est mouillé, tandis que le matériau tanné reste tenace et flexible.</French>
+		<German>Leder ist ein haltbares und flexibles Material, das durch das Gerben von rohen Tierhäuten, häufig Rindern, hergestellt wird.[NEWLINE]Es kann in handwerklichen oder industriellen Herstellungsverfahren produziert werden.[NEWLINE]Beim Gerben wird das Protein der Rohhaut in ein stabiles Material umgewandelt, das nicht verrottet.[NEWLINE]Der Hauptunterschied zwischen Rohhäuten und gegerbten Häuten besteht darin, dass Rohhäute austrocknen und ein hartes, unflexibles Material bilden, das bei Nässe verrottet, während gegerbtes Material zäh und flexibel bleibt.</German>
+		<Italian>La pelle è un materiale resistente e flessibile ottenuto dalla concia della pelle grezza di animali, spesso bovini.[NEWLINE]Può essere prodotta con processi artigianali o industriali.[NEWLINE]Durante la concia, le proteine della pelle grezza vengono convertite in un materiale stabile che non marcisce.[NEWLINE]La differenza principale tra pelli grezze e pelli conciate è che le pelli grezze si seccano e formano un materiale duro e inflessibile che marcisce se bagnato, mentre il materiale conciato rimane duro e flessibile.</Italian>
+		<Spanish>El cuero es un material duradero y flexible que se obtiene curtiendo la piel cruda de animales, a menudo ganado vacuno.[NEWLINE]Puede producirse mediante procesos de fabricación artesanales o industriales.[NEWLINE]El curtido convierte la proteína del cuero crudo en un material estable que no se pudre.[NEWLINE]La principal diferencia entre las pieles crudas y las curtidas es que las primeras se secan y forman un material duro e inflexible que se pudre cuando se moja, mientras que el material curtido sigue siendo duro y flexible.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LEATHER_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Master tanners[COLOR_REVERT] produce double the amount of [COLOR_HIGHLIGHT_TEXT]leather[COLOR_REVERT]from cattle, or pigskin from pigs. Leather, along with [LINK=YIELD_DOWNS]down[\LINK], is used to make lined leather coats.</English>
+		<French>Les [COLOR_UNIT_TEXT]maîtres tanneurs[COLOR_REVERT] produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]cuir[COLOR_REVERT] à partir de [COLOR_HIGHLIGHT_TEXT]peaux[COLOR_REVERT].</French>
+		<German>[COLOR_UNIT_TEXT]Gerbermeister[COLOR_REVERT] verarbeiten doppelt soviele Rindshäute in [COLOR_HIGHLIGHT_TEXT]Lederwaren[COLOR_REVERT], wie andere Kolonisten.</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_LIGHT_ARTILLERY_VETERAN</Tag>
 		<English>
 			<Text>Light Artillery:Light Artilleries</Text>
@@ -2824,6 +3420,35 @@
 		<English>[COLOR_UNIT_TEXT]Light artillery[COLOR_REVERT] can be produced in settlements with an [COLOR_HIGHLIGHT_TEXT]armoury[COLOR_REVERT], where they need a supply of [LINK=YIELD_CANNONS]cannons[\LINK] and [LINK=YIELD_BLACK_POWDER]gunpowder[\LINK], or they can be purchased in [LINK=CONCEPT_EUROPE]Europe[\LINK].[NEWLINE]On the open battlefield or as an assault unit cannon companies are vulnerable.[NEWLINE]But when they are garrisoned in [LINK=CONCEPT_SETTLEMENTS]settlements[\LINK] they are the only siege units that profit from the settlement's [COLOR_HIGHLIGHT_TEXT]defensive bonuses[COLOR_REVERT], added to their own defense bonus of 50%.[NEWLINE]For the protection of important cities it's preferable to employ [LINK=PROFESSION_MUSKETMEN]colonial militia[\LINK], who get better defense bonuses via promotions.[NEWLINE]Each new unit costs more than the previous one.</English>
 		<French>Les [COLOR_UNIT_TEXT]artilleries légères[COLOR_REVERT] peuvent être produits dans les colonies disposant d'une [COLOR_HIGHLIGHT_TEXT]armurerie[COLOR_REVERT]. L'unité est faible en terrain ouvert ou pour un assaut, mais placé en garnison dans une colonie ou un fort, elle est la seule unité d'artillerie à profiter du bonus défensif procuré par les fortifications de vos colonies auquel s'ajoute un bonus supplémentaire de 50%. Pour les colonies de plus grandes tailles, il peut être avisé d'employer malgré tout des fantassins, qui peuvent bénéficier de meilleurs bonus défensifs via promotions.[PARAGRAPH:2]Les canons de garnison peuvent également être acheté en Europe. Son prix augmente alors après chaque achat.</French>
 		<German>[COLOR_UNIT_TEXT]Leichte Artillerie[COLOR_REVERT] kann in Siedlungen mit einer [COLOR_HIGHLIGHT_TEXT]Waffenkammer[COLOR_REVERT] von Zimmerleuten gebaut werden. Auf freiem Feld oder im Angriff sind sie kampfschwach. Stationiert man sie aber in Siedlungen, verfügen sie dort über einen ordentlichen Defensivbonus und können zudem als einzige Artillerieeinheit auch die Verteidigungsboni von Befestigungsanlagen nutzen. Allerdings sollte man zum Schutz wichtiger und gut ausgebauter Städte lieber auf Kolonialmilizen setzen, die - im Gegensatz zu Leichten Artillerien - durch Beförderungen Defensivboni erhalten können. Zudem wirken sich die prozentualen Verteidigungsboni, die durch Verschanztsein, durch Verteidigungsbauwerke oder durch Beförderungen gewährt werden, bei Kolonialmilizen stärker aus als bei Leichten Artillerien, weil die Berechnungsgrundlage dieser Boni - die Basis-Kampfstärke - bei den Infanteristen höher ist.[PARAGRAPH:2]Leichte Artillerien können auch in Europa erworben werden. Beim Kauf kostet jede weitere Einheit mehr Gold als die vorherige.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LUMBER</Tag>
+		<English>Lumber</English>
+		<French>
+			<Text>Bois</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>Holz</German>
+		<Italian>
+			<Text>Legname</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Madera</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Пиломатериалы</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LUMBER_PEDIA</Tag>
+		<English>Lumber background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LUMBER_STRATEGY</Tag>
+		<English>Lumber strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LUMBERJACK</Tag>
@@ -2908,6 +3533,47 @@
 		<Italian>Il [COLOR_UNIT_TEXT]Boscaiolo Siberiano[COLOR_REVERT] è l'unità nazionale unica della Russia e sostituisce il [LINK=UNIT_LUMBERJACK]Boscaiolo esperto[\LINK]. [NEWLINE]Se è assegnato al [COLOR_HIGHLIGHT_TEXT]taglialegna[COLOR_REVERT] ([LINK=PROFESSION_LUMBERJACK]legname[\LINK], [LINK=PROFESSION_VALUABLE_WOOD_LUMBERJACK]legno esotico[\LINK]), qualsiasi tessera foresta da lui lavorata produrrà altri cinque [LINK=YIELD_LUMBER]legname[\LINK], [LINK=YIELD_VALUABLE_WOOD]legno esotico[\LINK].[PARAGRAPH:1]I boscaioli siberiani possono essere assunti in [LINK=CONCEPT_EUROPE]Europa[\LINK], e possono anche essere [LINK=CONCEPT_TRAINING]insegnati[\LINK] in una colonia con una [LINK=BUILDING_SCHOOLHOUSE]scuola[\LINK] o una dei suoi aggiornamenti.</Italian>
 		<Spanish>El [COLOR_UNIT_TEXT]Leñador Siberiano[COLOR_REVERT] es la única unidad nacional de Rusia y reemplaza al [LINK=UNIT_LUMBERJACK]Leñador experto[\LINK]. [NEWLINE]Si está asignado a la [COLOR_HIGHLIGHT_TEXT]leñador[COLOR_REVERT] ([LINK=PROFESSION_LUMBERJACK]madera[\LINK], [LINK=PROFESSION_VALUABLE_WOOD_LUMBERJACK]madera exótica[\LINK]), cualquier loseta de bosque trabajada por él producirá cinco [LINK=YIELD_LUMBER]madera[\LINK], [LINK=YIELD_VALUABLE_WOOD]madera exótica[\LINK].[PARAGRAPH:1]Los leñadores siberianos se pueden contratar en [LINK=CONCEPT_EUROPE]Europa[\LINK], y también se pueden [LINK=CONCEPT_TRAINING]enseñar[\LINK] en una colonia con una [LINK=BUILDING_SCHOOLHOUSE]escuela[\LINK] o una de sus actualizaciones.</Spanish>
 		<Russian>[COLOR_UNIT_TEXT]Сибирский лесоруб[COLOR_REVERT] — уникальная национальная единица России, заменяющая [LINK=UNIT_LUMBERJACK]опытного лесоруба[\LINK].[NEWLINE]При назначении его [COLOR_HIGHLIGHT_TEXT]лесорубом[COLOR_REVERT] ([LINK=PROFESSION_LUMBERJACK]обычным[\LINK], [LINK=PROFESSION_VALUABLE_WOOD_LUMBERJACK]экзотического дерева[\LINK]) любая обработанная им клетка леса даст дополнительных пять единиц [LINK=YIELD_LUMBER]пиломатериалов[\LINK], [LINK=YIELD_VALUABLE_WOOD]экзотической древесины[\LINK].[PARAGRAPH:1]Сибирских лесорубов можно нанять в [LINK=CONCEPT_EUROPE]Европе[\LINK], а также их можно [LINK=CONCEPT_TRAINING]обучить[\LINK] в колонии со [LINK=BUILDING_SCHOOLHOUSE]школой[\LINK] или одном из её улучшений.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LUXURY_GOODS</Tag>
+		<English>
+			<Text>Luxury Goods</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</English>
+		<French>
+			<Text>Biens de luxe</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Luxusgüter</Text>
+			<Gender>Neuter</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Produits de luxe</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Productos de lujo</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Предметы роскоши</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LUXURY_GOODS_PEDIA</Tag>
+		<English>The colonists of the New World were not only producing and exporting goods to Europe but they were themselves consumers.[NEWLINE]Certain goods that the colonies could not produce themselves, especially luxury goods, were imported and sold for high prices in markets there.[NEWLINE]Some of the shopkeepers and traders became extremely rich.</English>
+		<French>Les colons du Nouveau Monde n'exportaient pas uniquement des marchandises, mais également des consommateurs. Certains biens que les colonies ne pouvaient pas produire elles-mêmes, en particulier les articles de luxe, étaient importés et vendus sur les marchés des colonies. Certains vendeurs et importateurs sont ainsi devenus particulièrement riches.</French>
+		<German>Die Kolonisten der Neuen Welt produzierten und exportierten nicht nur Waren, sondern waren natürlich auch selbst Konsumenten.[NEWLINE]Bestimmte Waren, die die Kolonien nicht selbst herstellen konnnten, vor allem Luxuswaren, wurden importiert und zu hohen Preisen auf Märkten, in Läden und in Handelszentren der Kolonien verkauft.[NEWLINE]Einige der Händler und Ladenbesitzer, die diese Geschäfte betrieben, wurden sehr reich.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_LUXURY_GOODS_STRATEGY</Tag>
+		<English>[COLOR_HIGHLIGHT_TEXT]Luxury goods[COLOR_REVERT] can be sold to colonists.[NEWLINE]Demand depends on the number of citizens of the city and their social status.[NEWLINE]They will pay directly in gold.[NEWLINE]A market is needed to develop domestic economy within a city.</English>
+		<French>Les [COLOR_HIGHLIGHT_TEXT]biens de luxe[COLOR_REVERT] et d'autres biens sont vendus aux colons. Le montant dépend fortement du nombre de citoyens dans la ville et de leur statut social. Ils paieront directement en or. Un [COLOR_HIGHLIGHT_TEXT]marché[COLOR_REVERT] est nécessaire pour activer le marché domestique d'une ville.</French>
+		<German>[COLOR_HIGHLIGHT_TEXT]Luxusgüter[COLOR_REVERT] aus Europa und andere Waren werden an die anderen Kolonisten verkauft. Die Nachfrage hängt zwar stark von der Anzahl reicher Bürger in der Stadt ab, führt aber zu konstanten Einnahmen. Ein [COLOR_UNIT_TEXT]Markt[COLOR_REVERT] ist notwendig um den Handel innerhalb einer Kolonie zu ermöglichen.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_LYNX</Tag>
@@ -3230,6 +3896,14 @@
 		<German>[COLOR_UNIT_TEXT]Berittene Konquistadoren[COLOR_REVERT] sind, wie auch [COLOR_UNIT_TEXT]Konquistadoren[COLOR_REVERT], sehr erfahren in Nahkampf-Situationen und eignen sich deshalb hervorragend für den Kampf gegen Ureinwohner oder berittene Einheiten. Allerdings eignen sie sich auf Grund der Pferde nur für den Kampf in offenem Gelände.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_MUSKETS_PEDIA</Tag>
+		<English>Muskets background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_MUSKETS_STRATEGY</Tag>
+		<English>Muskets strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_NATIVE</Tag>
 		<English>Native:Natives</English>
 		<French>
@@ -3406,6 +4080,14 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ORCA_STRATEGY</Tag>
 		<English>TXT_KEY_UNIT_ANIMAL_STRATEGY</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ORE_PEDIA</Tag>
+		<English>Ore background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ORE_STRATEGY</Tag>
+		<English>Ore strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_OXCART</Tag>
@@ -3652,6 +4334,80 @@
 		<German>Viele Europäer sind in die Neue Welt ausgewandert, weil sie hofften, dort ungehindert ihre religiöse Überzeugung entfalten zu können. Dieses historische Motiv wird durch das Spielfeature der Kreuze nachgebildet.[PARAGRAPH:2]Jeweils ein Kreuz entsteht pro Spielrunde automatisch in jeder Siedlung. Baut man eine [COLOR_BUILDING_TEXT]Kirche[COLOR_REVERT] und teilt ihr ein bis zwei Bürger im Beruf des [COLOR_UNIT_TEXT]Predigers[COLOR_REVERT] zu, entstehen zusätzliche Kreuze. Baut man anschließend eine [COLOR_BUILDING_TEXT]Kathedrale[COLOR_REVERT], entstehen doppelt so viele Kreuze pro predigendem Bürger. Setzt man statt eines einfachen Bürgers einen [COLOR_UNIT_TEXT]Mitreißenden Prediger[COLOR_REVERT] oder [COLOR_UNIT_TEXT]Katholischen Priester[COLOR_REVERT] ein, verdoppelt dies ebenfalls die Zahl der entstehenden Kreuze. Schuldknechte, Konvertierte Ureinwohner und Kleinkriminelle erzeugen dagegen weniger Kreuze.[PARAGRAPH:2]Im Europabildschirm kann man ablesen, wieviele Kreuze bislang zusammengekommen sind. Dabei werden die Kreuze aller Siedlungen addiert. Überschreitet die Zahl von Kreuzen einen bestimmten Schwellenwert, ist ein weiterer Europäer zur Auswanderung überzeugt, und will sein Heil in der Neuen Welt suchen. Er steht dann in Europa zur Überfahrt bereit. Mit jedem neuen Emigranten steigt die Zahl der Kreuze, die man ansparen muss, um einen weiteren Auswanderer zu gewinnen.[PARAGRAPH:2]Im Europabildschirm sind immer vier potentielle Emigranten zu sehen. Wird ein neuer Auswanderer freigeschaltet, wird er zufällig aus ihrem Kreis bestimmt. Durch Zahlung einer Geldprämie kann man die Freischaltung beschleunigen und sich gezielt einen der vier Auswanderungswilligen auswählen. Die Höhe dieser Geldprämie hängt davon ab, wieviele Kreuze noch fehlen.</German>
 		<Italian>I [COLOR_UNIT_TEXT]predicatori fanatici[COLOR_REVERT] sono la migliore fonte di [COLOR_HIGHLIGHT_TEXT]croci[COLOR_REVERT] che una colonia potrebbe volere. Assegnandone uno alla professione di predicatore in una [COLOR_BUILDING_TEXT]chiesa[COLOR_REVERT] o [COLOR_BUILDING_TEXT]cattedrale[COLOR_REVERT] si raddoppia il numero di [COLOR_HIGHLIGHT_TEXT]croci[COLOR_REVERT] prodotte da quell'edificio!</Italian>
 		<Spanish>Los [COLOR_UNIT_TEXT]Predicadores exaltados[COLOR_REVERT] son la mejor fuente de [COLOR_HIGHLIGHT_TEXT]Cruces[COLOR_REVERT] que puede querer una colonia. Asignar a uno de ellos a la profesión de Predicador en una [COLOR_BUILDING_TEXT]Iglesia[COLOR_REVERT] o [COLOR_BUILDING_TEXT]Catedral[COLOR_REVERT] doblará el número de [COLOR_HIGHLIGHT_TEXT]Cruces[COLOR_REVERT] que produzca ese edificio.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PREMIUM_COATS</Tag>
+		<English>Premium Coats</English>
+		<French>
+			<Text>Manteaux de qualité</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Teure Pelzkleidung</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Abbigliamento di pelliccia costoso</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ropa de pieles cara</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Премиумные шубы</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PREMIUM_COATS_PEDIA</Tag>
+		<English>Fur coats, hats, and other garments were highly valued by monarchs and aristocrats even before the discovery of the New World. Rare skins could fetch exorbitant prices for the trapper and coat maker lucky enough to find them. One can imagine the fur industry's reaction upon the discovery of an entirely new continent brimming over with the pelts of animals unlike anything else on earth. So popular were the furs of the New World, beavers especially, that pelts were a form of currency in many remote trading posts.</English>
+		<French>A la découverte du Nouveau Monde, chapeaux, manteaux et autres vêtements en fourrure sont déjà très appréciés par les monarques et les aristocrates. Les peaux rares peuvent rapporter des fortunes aux trappeurs et aux fabricants de manteaux assez chanceux pour mettre la main dessus. Par conséquent, on peut imaginer sans peine la réaction de l'industrie de la fourrure en apprenant la découverte d'un continent rempli d'animaux aux fourrures exceptionnelles. Les fourrures du Nouveau Monde, et en particulier la fourrure de castor, deviendront si populaires que les peaux deviendront une forme de monnaie dans beaucoup de comptoirs commerciaux isolés.</French>
+		<German>Pelzmäntel, Pelzhüte und andere Kleidungsstücke aus Fell wurden von Monarchen und Aristokraten schon vor der Entdeckung der Neuen Welt hoch geschätzt. Für seltene Tierhäute konnten Trapper und Pelzhändler exorbitante Preise verlangen, wenn sie das Glück hatten, an solch ein Fell heranzukommen. Man kann sich die Reaktion der Pelzhändler auf die Entdeckung eines ganzen Kontinents vorstellen, der Felle und Häute von Tieren, die es sonst nirgendwo auf der Erde gab, im Überfluss bot. Diese Produkte aus der Neuen Welt, besonders Biberfelle, waren so beliebt, dass sie für viele abgelegene Handelsposten tatsächlich zu einer Art Währung wurden.</German>
+		<Italian>Mantelli, cappelli e altri capi d'abbigliamento in pelliccia erano altamente apprezzati da monarchi e aristocratici ancor prima della scoperta del Nuovo Mondo. Le pellicce rare potevano procurare un ragguardevole profitto al cacciatore e al pellicciaio abbastanza fortunati da trovarle. È quindi possibile immaginare la reazione dell'industria delle pellicce alla scoperta di un continente completamente nuovo zeppo di animali da pelliccia diversi da tutti quelli conosciuti. Le pellicce del Nuovo Mondo erano così popolari, in particolare quelle dei castori, che divennero una forma di valuta in molti remoti centri commerciali.</Italian>
+		<Spanish>Los sombreros, abrigos y otras prendas de piel eran muy apreciados entre la monarquía y la aristocracia, antes incluso del descubrimiento del Nuevo Mundo. Las pieles raras podían alcanzar precios exorbitantes para el trampero y el confeccionista de abrigos que tuvieran la suerte de encontrarlas. Ya se puede imaginar uno la reacción de la industria tras descubrir un nuevo continente que estaba totalmente repleto de pieles como nunca se habían visto. Tan populares se hicieron las pieles del Nuevo Mundo, especialmente las de los castores, que se convirtieron en moneda de cambio en muchos puestos comerciales apartados de la civilización.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PREMIUM_COATS_STRATEGY</Tag>
+		<English>Premium coats strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PREMIUM_FUR</Tag>
+		<English>Premium Fur</English>
+		<French>
+			<Text>Fourrure de qualité</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Hochwertige Pelze</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Pellicce di alta qualità</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pieles de alta calidad</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Премиальный мех</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PREMIUM_FUR_PEDIA</Tag>
+		<English>The wide variety of exotic fauna in the New World fascinated the citizenry of Europe, but none captured their hearts quite like the beaver. The pelts of this small, semi-aquatic mammal became a highly-valued commodity in French and English colonies. The water-resistant nature of the beaver's fur made it the perfect canvas for the haberdasher - the hat maker - to create clothing which could keep its wearer both fashionable and dry. Beaver skin hats remained popular in Europe until the 19th century.</English>
+		<French>A la découverte du Nouveau Monde, les citoyens européens sont fascinés par sa riche faune exotique et tout particulièrement par le castor. La peau de ce petit mammifère semi-aquatique devient alors une marchandise très prisée dans les colonies anglaises et françaises. En raison de son imperméabilité, la fourrure de castor est une matière parfaite pour les chapeliers, qui créent avec des couvre-chefs permettant d'être à la mode tout en restant au sec. Les chapeaux en fourrure de castor resteront populaires en Europe jusqu'au XIXe siècle.</French>
+		<German>Die große Vielfalt der exotischen Fauna in der Neuen Welt faszinierte die europäischen Bürger, doch vom Biber waren sie ganz besonders angetan. Der Pelz dieses kleinen Säugetiers wurde in den französischen und englischen Kolonien zu einer wertvollen Ware. Da das Fell des Bibers wasserdicht ist, war es das perfekte Material für Hutmacher, die praktische und gleichzeitig modische Kleidungsstücke daraus herstellten. Solche Hüte waren in Europa bis ins 19. Jahrhundert hinein sehr beliebt.</German>
+		<Italian>La grande varietà della fauna esotica del Nuovo Mondo affascinò i cittadini europei, ma nessun animale conquistò i loro cuori come il castoro. Le pellicce di questo piccolo mammifero semi-acquatico divennero un bene di grande valore nelle colonie inglesi e francesi. La natura impermeabile della pelliccia del castoro la rendeva la materia prima ideale per l'haberdasher, il cappellaio, che poteva così creare vestiti alla moda e che allo stesso tempo fossero caldi e impermeabili. I cappelli di pelliccia di castoro rimasero popolari in Europa fino al XIX secolo.</Italian>
+		<Spanish>La gran variedad de fauna exótica del Nuevo Mundo fascinó a los ciudadanos de Europa, pero ningún animal los cautivó más que el castor. La piel de este mamífero semiacuático se convirtió en un bien muy preciado en las colonias francesas e inglesas. La naturaleza impermeable del pelaje del castor lo convirtió en la materia prima ideal para que el "haberdasher" el sombrerero y sastre masculino creara prendas para que su portador fuera seco y a la última moda. Los gorros de piel de castor siguieron siendo populares en Europa hasta el s. XIX.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_PREMIUM_FUR_STRATEGY</Tag>
+		<English>Premium fur strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_PRIEST</Tag>
@@ -3950,6 +4706,78 @@
 		<German>[COLOR_UNIT_TEXT]Ranger[COLOR_REVERT] stellen eine [COLOR_HIGHLIGHT_TEXT]Eliteeinheit[COLOR_REVERT] dar und sind Experten für Gelände und versteckte Operationen.[NEWLINE]Man sollte sie weise für Hinterhalte oder für Aktionen tief hinter den feindlichen Linien nutzen.[NEWLINE]Waldläufer erhalten Boni, wenn sie in bewachsenen Gebieten kämpfen.[NEWLINE]Diese Boni genießen Waldläufer sowohl im Angriff als auch in der Verteidigung. Während also die andere auf den Kampf im Wald spezialisierte Einheit, der [LINK=UNIT_NATIVE_MERC]Indianische Söldner[\LINK], besonders stark ist, wenn er in der Wildnis angreift, ist der Waldläufer stärker, wenn er verteidigt.[PARAGRAPH:1]Sie können nur durch [LINK=CONCEPT_EVENTS]Zufallsereignisse[\LINK] erhalten werden.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_RAW_SALT</Tag>
+		<English>Rock Salt</English>
+		<French>
+			<Text>Sel brut</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Steinsalz</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Salgemma</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sal gema</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Каменная соль</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RAW_SALT_PEDIA</Tag>
+		<English>Edible salt is a mineral, one of the few rocks humans eat.[NEWLINE]Salt is necessary for the survival of all living creatures, including humans.[NEWLINE]It helps regulate our body's fluid balance.[NEWLINE]Salt is one of the basic tastes.[NEWLINE]In the past salt was difficult to obtain, but had great importance in food preservation and as a vital food additive.[NEWLINE]Therefore it's been a highly valued trade item throughout history.[NEWLINE]Wars were fought over it; states were formed and destroyed because of it.[NEWLINE]Roman soldiers were partially paid with salt, and this is still evident in the English language as the word 'salary' derives from the Latin word 'salarium' that means payment in salt (Latin sal), as well as the phrase "worth one's salt".[NEWLINE]It was also of high value to the Hebrews, Greeks and other ancient people.[NEWLINE]During the late Roman Empire and throughout the Middle Ages salt was a precious commodity carried along the salt roads into the heartland of the Germanic tribes.[NEWLINE]Cities, states and dukedoms along the salt roads exacted heavy duties and taxes for the salt passing through their territories.[NEWLINE]This practice caused wars.[NEWLINE]It even created cities such as Munich in 1158 when the Duke of Bavaria, Henry XII, called The Lion, decided that the bishops of Freising no longer needed their salt revenue (Wikipedia).</English>
+		<French>Le sel naturel n'est pas raffiné et contient encore tous ses minéraux naturels. Les sels naturels ont donc des propriétés gustatives et un aspect différent suivant la quantité de minéraux qu'ils contiennent. Ainsi, la fleur de sel ou le sel de mer récolté à la main ont une saveur unique qui change d'une région à une autre.</French>
+		<German>Salz zählt seit jeher altersher und überall in der Welt zu den begehrtesten Gewürzen. Viele traditionelle Fleisch- und Milchspeisen können ohne Salz nicht zubereitet werden. In Südamerika wurde Salz häufig durch das Auswaschen, Filtern und Einkochen salziger Erde gewonnen.</German>
+		<Italian>Il sale e anzitutto un esaltatore di sapidita usato in tutte le tradizioni culinarie conosciute ed e ampiamente sfruttato nell'industria conserviera sia come ingrediente che come mezzo di conservazione dei cibi. Quest'ultima proprieta e dovuta all'effetto disidratante che il sale ha sui materiali con cui viene a contatto, da cui estrae l'acqua per osmosi. Sale da cucina additivato di elementi particolari puo essere prescritto per curare o prevenire alcune malattie (ad esempio il sale iodato per il gozzo o addizionato di cloruro di potassio per l'ipertensione). Il sale e anche un reagente usato in chimica, ad esempio per migliorare la precipitazione dei prodotti al termine di una saponificazione. Un uso importante nell'industria chimica e come materia prima negli impianti cloro-soda, in cui viene eseguita l'elettrolisi della salamoia di cloruro di sodio per ottenere cloro gassoso, idrogeno e soda caustica, tutte materie prime fondamentali per l'industria chimica. Il sale trova impiego anche come anti-gelo: sparso sulle superfici ghiacciate, ne provoca lo scioglimento, dato che una miscela di ghiaccio e sale forma un eutettico il cui punto di fusione e inferiore ai meno 10 gradi celsius. - Wikipedia</Italian>
+		<Spanish>La sal se puede emplear en la alimentacion con dos objetivos diferentes, por un lado su capacidad de realzar ciertos sabores hace que sea un condimento muy habitual, por otro lado su capacidad de conservar alimentos hace que sea adecuado para la elaboracion de salazones y encurtidos. Se puede decir que el uso de la sal en la alimentacion se centra en estas dos actividades. Muchos de los alimentos poseen una etimologias que recuerdan a la sal como uno de los ingredientes base, ejemplos de ello son: las ensaladas, las salchichas (proveniente del latin salsus: en sal) y las salsas, el salmorejo, etc. El uso de sal en las elaboraciones de ciertos alimentos ha ido descendiendo desde el siglo XVIII, esta afirmacion puede comprobarse en los libros de recetas en los que puede verse un uso 'excesivo' de sal para los gustos de hoy en dia. Se han realizado investigaciones acerca del consumo de sal en los humanos occidentales, y se ha podido comprobar que el 10% de la sal que se ingiere proviene de forma natural de los alimentos, el 15% proviene de lo que se anade durante la elaboraccion casera de los alimentos y el 75% proviene de lo que anaden las industrias alimentarias en el procesado de los alimentos. Estos estudios muestran que un britanico medio a finales del siglo XX consumia cerca de 10 gramos de sal (en mas detalle 10.7 gramos de sal en un varon y 8.0 gramos para las mujeres). Estos datos indican que una dieta baja en sal debe regularse principalmente en la compra de los productos ademas de reducir su cantidad durante el cocinado. Esta probado que las dietas bajas en sal son pobres en sabores, pudiendo afectar incluso a los aromas. La sal al ser consumida induce a provocar un mayor apetito por los alimentos, este efecto es aprovechado a veces por la industria de alimentacion e incluye a veces un alto contenido de sal en los alimentos con el objeto de que se consuma mas. De todas formas la sal posee ventajas en el procesado de alimentos: resulta barata, potencia sabores, elimina sabores acidos, extiende la vida de los alimentos, hace que pesen mas ya que retiene humedad. Algunos autores han investigado la preferencia animal por la sal desde un fundamento endocrino Uno de los sistemas hormonales para la regulacion del sodio en el cuerpo es angiotensina, se ha demostrado que esta hormona es capaz de regular la sensacion de sed, se sabe que esta hormona puede tener influencia en la preferencia psicologica por la sal. Existen casos investigados en los que un tratamiento hormonal (mediante la adrenomedulina denominada ADM) puede llegar a reducir el apetito por la sal. El apetito innato de los animales (incluido el hombre) por la sal ha despertado numerosas investigaciones acerca del efecto y preferencias por el sabor salado, parece ser que los recien nacidos no parecen distinguir el sabor salado y no es hasta pasados cuatro meses desde su nacimiento cuando empiezan a distinguirlo. De la misma forma se sabe la dependencia de la sal disminuye si se disminuye su consumo, este efecto de dependencia dura solo un par de semanas y posteriormente las personas se acostumbran a una dieta baja en sales. El apetito por la sal puede tener una dependencia climatica, por ejemplo, las personas que viven en climas frios pueden tener en sus gastronomias locales una presencia mayor por los alimentos con fuerte sabor salado. - Wikipedia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RAW_SALT_STRATEGY</Tag>
+		<English>Rock salt strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RED_PEPPER</Tag>
+		<English>Red Pepper</English>
+		<French>
+			<Text>Piment rouge</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Roter Pfeffer</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Pepe rosso</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Pimiento rojo</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Красный перец</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RED_PEPPER_PEDIA</Tag>
+		<English>Cayenne pepper, also known as guinea spice or red pepper, is a hot red chili pepper that is used to refine dishes or as a medicine.[NEWLINE]Named for the city of Cayenne in French Guiana, it is a cultivar of Capsicum annuum related to bell peppers, jalapenos, and others.[NEWLINE]The Capsicum genus is in the nightshade family.</English>
+		<French>Capsicum frutescens est un « piment de Cayenne ». Il appartient à la famille des Solanaceae et est cultivé pour ses fruits à la saveur particulièrement piquante. Sur l'échelle de Scoville, il est noté de 30 000 jusqu'à 50 000. Il en existe plusieurs variétés, dont Capsicum frutescens tabasco qui entre dans la composition de la sauce du même nom.</French>
+		<German>Der Cayenne-Pfeffer, auch bekannt als Guinea-Gewürz oder auch Roter Pfeffer, ist ein scharfer roter Chili-Pfeffer, der genutzt wird, um Gerichte zu verfeinern, oder auch als Medizin Anwendung findet. Benannt nach der Stadt Cayenne in Französisch-Guayana, ist sie eine Sorte von Capsicum annuum, verwandt mit Paprika, Jalapenos und anderen. Capsicum genus zählt zu den Nachtschattengewächsen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RED_PEPPER_STRATEGY</Tag>
+		<English>Red pepper strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_RED_PEPPER_PLANTER</Tag>
 		<English>
 			<Text>Expert Red Pepper Planter:Expert Red Pepper Planters</Text>
@@ -3989,6 +4817,18 @@
 		<English>If you want to get your [LINK=YIELD_SPICES]spice trade[\LINK] booming, hire an [COLOR_UNIT_TEXT]expert red pepper planter[COLOR_REVERT] first.[NEWLINE]Expert red pepper planters gather twice as much [LINK=YIELD_RED_PEPPER]red pepper[\LINK] from the plot where they work, compared to a typical colonist, if they're assigned to the [LINK=PROFESSION_RED_PEPPER_PLANTER]red pepper planter[\LINK] profession.[PARAGRAPH:1]Expert red pepper planters can be trained by [LINK=CONCEPT_NATIVES]Natives[\LINK], and they can also be [LINK=CONCEPT_TRAINING]taught[\LINK] in any colony with a [LINK=BUILDING_COLLEGE]college[\LINK] or one of its upgrades.</English>
 		<French>Les [COLOR_UNIT_TEXT]experts planteurs de piment[COLOR_REVERT] produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]piment[COLOR_REVERT] que les autres colons.</French>
 		<German>[COLOR_UNIT_TEXT]Erfahrene Pfefferpflanzer[COLOR_REVERT] verdoppeln den [COLOR_HIGHLIGHT_TEXT]Pfeffer[COLOR_REVERT]ertrag jedes Geländefelds, auf dem sie arbeiten.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ROPE_PEDIA</Tag>
+		<English>A rope is a linear combination of strands twisted or braided together to combine them into a larger and stronger form.[NEWLINE]Ropes have tensile strength and so can be used for dragging and lifting.[NEWLINE]Rope may be made from any long, stringy, fibrous material, but generally uses natural fibres.[NEWLINE]Common natural fibres for rope are hemp, linen, cotton, coir, jute, straw and sisal.[NEWLINE]Rope is of paramount importance in many fields like construction, seafaring or exploration, and has been used since prehistoric times.[NEWLINE]In order to connect ropes a large number of knots have been invented.</English>
+		<French>Un cordages est un ensemble linéaire de plis, de fils ou de torons qui sont tordus ou tressés ensemble afin de les combiner en une forme plus grande et plus solide. Les cordages ont une résistance à la traction et peuvent donc être utilisées pour traîner et soulever. Le cordage peut être fabriquée à partir de n'importe quel matériau long, filandreux et fibreux, mais elle utilise généralement des fibres naturelles. Les fibres naturelles les plus courantes sont le chanvre, le lin, le coton, le coco, le jute, la paille et le sisal. Le cordages est d'une importance capitale dans de nombreux domaines tels que la construction, la navigation maritime ou l'exploration, et est utilisée depuis la préhistoire. Pour fixer les cordages, un grand nombre de nœuds ont été inventés.</French>
+		<German>Ein Seil ist eine lineare Ansammlung von Lagen, Garnen oder Litzen, die miteinander verdreht oder geflochten sind, um sie zu einer stärkeren Form zu verbinden. Seile haben eine hohe Zugfestigkeit und können zum Ziehen und Heben verwendet werden. Seile können aus jedem langen, fadenförmigen, faserigen Material bestehen, werden aber im Allgemeinen aus Naturfasern hergestellt. Übliche Fasern für Seile sind Hanf, Leinen, Baumwolle, Kokos, Jute, Stroh und Sisal. Seile sind im Bauwesen und in der Seefahrt von größter Bedeutung und werden schon seit prähistorischen Zeiten verwendet. Um Seile zu befestigen, wurden unzählige Knoten für unzählige Zwecke erfunden.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_ROPE_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Master ropers[COLOR_REVERT] produce double the amount of [COLOR_HIGHLIGHT_TEXT]ropes[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]hemp[COLOR_REVERT] or flax.</English>
+		<French>Les [COLOR_UNIT_TEXT]Maîtres cordeliers[COLOR_REVERT] produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]cordages[COLOR_REVERT] à partir de [COLOR_HIGHLIGHT_TEXT]chanvre[COLOR_REVERT].</French>
+		<German>[COLOR_UNIT_TEXT]Seilermeister[COLOR_REVERT] verarbeiten doppelt soviel [COLOR_HIGHLIGHT_TEXT]Hanf[COLOR_REVERT] zu [COLOR_HIGHLIGHT_TEXT]Seilen[COLOR_REVERT], wie andere Kolonisten.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_ROYAL_ARTILLERY</Tag>
@@ -4242,6 +5082,51 @@
 		<German>Die Landtruppen des Königs verfügen mit der [LINK=PROFESSION_ROYAL_LIGHT_INFANTRY]Königlichen Leichten Infanterie[\LINK] (entspricht der Kolonialmiliz) und der [LINK=PROFESSION_ROYAL_LINE_INFANTRY]Königlichen Linieninfanterie[\LINK] (entspricht der Linieninfanterie) über gleich starke Militärberufe wie die Kolonialnationen. Allerdings sind die Einheiten, die diese Berufe ausüben, stärker: Die [COLOR_UNIT_TEXT]Königliche Leichte Infanterie[COLOR_REVERT] verfügt automatisch über die Beförderungen [LINK=PROMOTION_VETERAN1]Veteran I[\LINK], [LINK=PROMOTION_VETERAN2]Veteran II[\LINK] (und damit insgesamt einem Bonus von 20% auf die Kampfstärke und eine Rückzugswahrscheinlichkeit von 20%). Außerdem besitzt die Königliche Leichte Infanterie einen Bonus von 10% beim Angriff auf Siedlungen. Die [COLOR_UNIT_TEXT]Königliche Linieninfanterie[COLOR_REVERT] verfügt automatisch über die Beförderungen [LINK=PROMOTION_VETERAN1]Veteran I[\LINK], [LINK=PROMOTION_VETERAN2]Veteran II[\LINK] und [LINK=PROMOTION_BAYONET]Bajonettkämpfer[\LINK] (und damit insgesamt einem Bonus von 20% auf die Kampfstärke und je einen Bonus von 20% gegen Nahkampf- und Schießpulvereinheiten). Außerdem hat die Königliche Linieninfanterie einen Bonus von 50% beim Angriff auf Siedlungen.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_RUM</Tag>
+		<English>Rum</English>
+		<French>
+			<Text>Rhum</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Rum</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Rum</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ron</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Ром</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RUM_PEDIA</Tag>
+		<English>Rum background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_RUM_STRATEGY</Tag>
+		<English>Rum strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SAILCLOTH_PEDIA</Tag>
+		<English>Sails have been made for all of recorded history.[NEWLINE]Typically sailcloth is made from flax (linen), hemp or cotton in various forms including canvas.[NEWLINE]At the time of the colonization of the New World hemp was the most common raw material.</English>
+		<French>Les voiles ont été fabriquées tout au long de l'histoire.[NEWLINE]Le tissu à voile est généralement fabriqué à partir de lin, de chanvre ou de coton, sous différentes formes, y compris la toile.[NEWLINE]À l'époque de la colonisation du Nouveau Monde, le chanvre était la matière première la plus courante.</French>
+		<German>Segel wurden schon seit der Antike hergestellt.[NEWLINE]Typischerweise wird Segeltuch aus Flachs (Leinen), Hanf oder Baumwolle in verschiedenen Formen einschließlich Leinwand hergestellt.[NEWLINE]Zu Zeiten der Kolonialisierung der Neuen Welt war Hanf der häufigste Rohstoff.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SAILCLOTH_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Master sailmakers[COLOR_REVERT] produce double the amount of [COLOR_HIGHLIGHT_TEXT]sailcloth[COLOR_REVERT] from [COLOR_HIGHLIGHT_TEXT]hemp[COLOR_REVERT] or [COLOR_HIGHLIGHT_TEXT]flax[COLOR_REVERT].</English>
+		<French>Les [COLOR_UNIT_TEXT]maîtres voiliers[COLOR_REVERT] produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]voiles[COLOR_REVERT] à partir de [COLOR_HIGHLIGHT_TEXT]chanvre[COLOR_REVERT].</French>
+		<German>[COLOR_UNIT_TEXT]Meister-Segelmacher[COLOR_REVERT] verarbeiten doppelt soviel [COLOR_HIGHLIGHT_TEXT]Hanf[COLOR_REVERT] zu [COLOR_HIGHLIGHT_TEXT]Segeltuch[COLOR_REVERT], wie andere Kolonisten.</German>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_SAILCLOTH_MAKER</Tag>
 		<English>
 			<Text>Master Sailmaker:Master Sailmakers</Text>
@@ -4281,6 +5166,45 @@
 		<English>If you need a lot of [LINK=YIELD_SAILCLOTH]sailcloth[\LINK] fast, the [COLOR_UNIT_TEXT]master sailmaker[COLOR_REVERT] will be of great help.[NEWLINE]In the [LINK=PROFESSION_SAILCLOTH_MAKER]sailmaker[\LINK] profession, he makes double what an untrained colonist would from [LINK=YIELD_HEMP]hemp[\LINK] or [LINK=YIELD_FLAX]flax[\LINK].[PARAGRAPH:1]Master sailmakers can be hired in [LINK=CONCEPT_EUROPE]Europe[\LINK], and they can also [LINK=CONCEPT_TRAINING]apprentice[\LINK] in a colony with a [LINK=BUILDING_COLLEGE]college[\LINK] or one of its upgrades.</English>
 		<French>Si vous avez besoin rapidement de beaucoup de [LINK=YIELD_SAILCLOTH]Toile à voile[\LINK], le [COLOR_UNIT_TEXT]Maître voilier[COLOR_REVERT] peut vous être d'une grande aide. Dans la profession de [LINK=PROFESSION_SAILCLOTH_MAKER]Voilier[\LINK], il est capable de créer deux fois plus de ces ressources que les colons ordinaires le feraient à partir de [LINK=YIELD_HEMP]chanvre[\LINK].[PARAGRAPH:1]Les maîtres voiliers peuvent être recrutés en [LINK=CONCEPT_EUROPE]Europe[\LINK], et ils peuvent également être [LINK=CONCEPT_TRAINING]formés[\LINK] dans une colonie possédant un [LINK=BUILDING_COLLEGE]College[\LINK] ou l'une de ses améliorations.</French>
 		<German>Wenn Sie schnell eine Menge [LINK=YIELD_SAILCLOTH]Segeltuch[\LINK] benötigen, kann der [COLOR_UNIT_TEXT]Meister-Segelmacher[COLOR_REVERT] eine große Hilfe sein.[NEWLINE]Im Beruf [LINK=PROFESSION_SAILCLOTH_MAKER]Segelmacher[\LINK] ist er in der Lage, die doppelte Menge dieses Produktes aus [LINK=YIELD_HEMP]Hanf[\LINK] zu erzeugen, als es normale Kolonisten tun würden.[PARAGRAPH:1]Meister-Segelmacher können in [LINK=CONCEPT_EUROPE]Europa[\LINK] rekrutiert werden, und sie können auch in einer Kolonie mit einem [LINK=BUILDING_COLLEGE]College[\LINK] oder einer seiner Erweiterungen [LINK=CONCEPT_TRAINING]ausgebildet[\LINK] werden.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SALT</Tag>
+		<English>Salt</English>
+		<French>
+			<Text>Sel alimentaire</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Salz</Text>
+			<Gender>Neuter</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Sale</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Sal</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Соль</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SALT_PEDIA</Tag>
+		<English>Edible salt is a mineral, one of the few rocks humans eat.[NEWLINE]Salt is necessary for the survival of all living creatures, including humans.[NEWLINE]Salt helps regulate the body's fluid balance.[NEWLINE]Salt is one of the basic tastes.[NEWLINE]In the past salt was difficult to obtain, though it had great importance in food preservation and as a food additive.[NEWLINE]It has been a highly valued trade item throughout history.[NEWLINE]Wars were fought over it; states were formed and destroyed because of it.[NEWLINE]Roman soldiers were partially paid with salt, and this is still evident in the English language as the word 'salary' derives from the Latin 'salarium' that means payment in salt, as well as the phrase "worth one's salt".[NEWLINE]It was also of high value to the Hebrews, Greeks and other ancient people.[NEWLINE]During the late Roman Empire and throughout the Middle Ages salt was a precious commodity carried along the salt roads into the heartland of the Germanic tribes.[NEWLINE]Cities, states and dukedoms along the salt roads exacted heavy duties and taxes for the salt passing through their territories.[NEWLINE]This practice caused wars.[NEWLINE]It even created cities such as Munich in 1158 when the Duke of Bavaria, Henry XII, called The Lion, decided that the bishops of Freising no longer needed their salt revenue (Wikipedia).</English>
+		<French>Le sel de table, sel alimentaire ou sel de cuisine, est composé essentiellement de chlorure de sodium. Il se présente sous différentes formes : gros sel (ou sel gros), sel fin, fleur de sel.</French>
+		<German>Salz zählt von altersher und überall in der Welt zu den begehrtesten Gewürzen. Viele traditionelle Fleisch- und Milchspeisen können ohne Salz nicht zubereitet werden. In Südamerika wurde Salz häufig durch das Auswaschen, Filtern und Einkochen salziger Erde gewonnen.</German>
+		<Italian>Il sale e anzitutto un esaltatore di sapidita usato in tutte le tradizioni culinarie conosciute ed e ampiamente sfruttato nell'industria conserviera sia come ingrediente che come mezzo di conservazione dei cibi. Quest'ultima proprieta e dovuta all'effetto disidratante che il sale ha sui materiali con cui viene a contatto, da cui estrae l'acqua per osmosi. Sale da cucina additivato di elementi particolari puo essere prescritto per curare o prevenire alcune malattie (ad esempio il sale iodato per il gozzo o addizionato di cloruro di potassio per l'ipertensione). Il sale e anche un reagente usato in chimica, ad esempio per migliorare la precipitazione dei prodotti al termine di una saponificazione. Un uso importante nell'industria chimica e come materia prima negli impianti cloro-soda, in cui viene eseguita l'elettrolisi della salamoia di cloruro di sodio per ottenere cloro gassoso, idrogeno e soda caustica, tutte materie prime fondamentali per l'industria chimica. Il sale trova impiego anche come anti-gelo: sparso sulle superfici ghiacciate, ne provoca lo scioglimento, dato che una miscela di ghiaccio e sale forma un eutettico il cui punto di fusione e inferiore ai meno 10 gradi celsius. - Wikipedia</Italian>
+		<Spanish>La sal se puede emplear en la alimentacion con dos objetivos diferentes, por un lado su capacidad de realzar ciertos sabores hace que sea un condimento muy habitual, por otro lado su capacidad de conservar alimentos hace que sea adecuado para la elaboracion de salazones y encurtidos. Se puede decir que el uso de la sal en la alimentacion se centra en estas dos actividades. Muchos de los alimentos poseen una etimologias que recuerdan a la sal como uno de los ingredientes base, ejemplos de ello son: las ensaladas, las salchichas (proveniente del latin salsus: en sal) y las salsas, el salmorejo, etc. El uso de sal en las elaboraciones de ciertos alimentos ha ido descendiendo desde el siglo XVIII, esta afirmacion puede comprobarse en los libros de recetas en los que puede verse un uso 'excesivo' de sal para los gustos de hoy en dia. Se han realizado investigaciones acerca del consumo de sal en los humanos occidentales, y se ha podido comprobar que el 10% de la sal que se ingiere proviene de forma natural de los alimentos, el 15% proviene de lo que se anade durante la elaboraccion casera de los alimentos y el 75% proviene de lo que anaden las industrias alimentarias en el procesado de los alimentos. Estos estudios muestran que un britanico medio a finales del siglo XX consumia cerca de 10 gramos de sal (en mas detalle 10.7 gramos de sal en un varon y 8.0 gramos para las mujeres). Estos datos indican que una dieta baja en sal debe regularse principalmente en la compra de los productos ademas de reducir su cantidad durante el cocinado. Esta probado que las dietas bajas en sal son pobres en sabores, pudiendo afectar incluso a los aromas. La sal al ser consumida induce a provocar un mayor apetito por los alimentos, este efecto es aprovechado a veces por la industria de alimentacion e incluye a veces un alto contenido de sal en los alimentos con el objeto de que se consuma mas. De todas formas la sal posee ventajas en el procesado de alimentos: resulta barata, potencia sabores, elimina sabores acidos, extiende la vida de los alimentos, hace que pesen mas ya que retiene humedad. Algunos autores han investigado la preferencia animal por la sal desde un fundamento endocrino Uno de los sistemas hormonales para la regulacion del sodio en el cuerpo es angiotensina, se ha demostrado que esta hormona es capaz de regular la sensacion de sed, se sabe que esta hormona puede tener influencia en la preferencia psicologica por la sal. Existen casos investigados en los que un tratamiento hormonal (mediante la adrenomedulina denominada ADM) puede llegar a reducir el apetito por la sal. El apetito innato de los animales (incluido el hombre) por la sal ha despertado numerosas investigaciones acerca del efecto y preferencias por el sabor salado, parece ser que los recien nacidos no parecen distinguir el sabor salado y no es hasta pasados cuatro meses desde su nacimiento cuando empiezan a distinguirlo. De la misma forma se sabe la dependencia de la sal disminuye si se disminuye su consumo, este efecto de dependencia dura solo un par de semanas y posteriormente las personas se acostumbran a una dieta baja en sales. El apetito por la sal puede tener una dependencia climatica, por ejemplo, las personas que viven en climas frios pueden tener en sus gastronomias locales una presencia mayor por los alimentos con fuerte sabor salado. - Wikipedia</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SALT_STRATEGY</Tag>
+		<English>To make the most of a bountiful salt deposit, bring in an [COLOR_UNIT_TEXT]expert salt miner[COLOR_REVERT] to work it.[NEWLINE]Expert salt miners can produce double the quantity of [COLOR_HIGHLIGHT_TEXT]rock salt[COLOR_REVERT] from a salt deposit.</English>
+		<French>Pour produire davantage de sel, utiliser un [COLOR_UNIT_TEXT]expert mineur de sel[COLOR_REVERT]. Les experts mineurs de sel produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]sel brut[COLOR_REVERT] que les autres colons.</French>
+		<German>Um ein Salzvorkommen optimal zu nutzen, sollten Sie einen [COLOR_UNIT_TEXT]Erfahrenen Salzminenarbeiter[COLOR_REVERT] darauf arbeiten lassen.[NEWLINE]Erfahrene Salzminenarbeiter können doppelt so viel [COLOR_HIGHLIGHT_TEXT]Steinsalz[COLOR_REVERT] wie andere Siedler von einem Salzvorkommen fördern!</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SCOUT</Tag>
@@ -4408,6 +5332,16 @@
 		<German>[COLOR_UNIT_TEXT]Erfahrene Robbenjäger[COLOR_REVERT] sind Meister der Küste und des Ozeans. Sie können auf den Bonusressourcen [LINK=BONUS_SEALS]Robben[\LINK] oder [LINK=BONUS_WALRUSS]Walrösser[\LINK] beträchtliche Mengen an [LINK=YIELD_FUR]Fellen[\LINK] und [LINK=YIELD_FOOD]Nahrung[\LINK] gewinnen.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_SHEEP_PEDIA</Tag>
+		<English>Early in the colonization of the New World sheep arrived.[NEWLINE]Even though because of disease or lack of water not all areas were fit for sheep herding, wool soon was an important industry.[NEWLINE]Although never as important as cattle, sheep still had a big impact on commerce in the New World, giving work to many shepherds.[NEWLINE]Good sheep farming areas were soon in great demand, leading to range wars between cattle ranchers and sheep herders, as well as with the Indigenous people.[NEWLINE]Huge sheep stations stretched across the hills.</English>
+		<French>Au début de la colonisation du Nouveau Monde, les moutons sont arrivés.[NEWLINE]Même si toutes les régions ne se prêtaient pas à l'élevage de moutons en raison de maladies ou du manque d'eau, la laine est rapidement devenue une industrie importante.[NEWLINE]Bien qu'ils n'aient jamais été aussi importants que les bovins, les moutons ont tout de même eu une grande incidence sur l'industrie du Nouveau Monde, employant de nombreux bergers.[NEWLINE]Les bonnes régions d'élevage de moutons ont rapidement été très recherchées, ce qui a entraîné des guerres de territoire entre les éleveurs de bovins et les éleveurs de moutons, ainsi qu'avec les populations autochtones.[NEWLINE]D'énormes élevages de moutons ont été créées.</French>
+		<German>Sehr früh in der Kolonisierung der Neuen Welt wurde Nutzvieh aus Europa eingeführt, darunter auch Schafe.[NEWLINE]Auch wenn nicht alle Gebiete wegen Krankheiten oder Wassermangel für die Schafhaltung geeignet waren, wurde die Wolle bald zu einem wichtigen Wirtschaftszweig, der viele Schäfer beschäftigte.[NEWLINE]Obwohl Schafe und die damit verbundene Produktion von Wolle und Kleidung nie so bedeutend wie die Rinderzucht waren, wurden sie dennoch ein wichtiger Industriezweig.[NEWLINE]Die Weidegebiete, in denen Viehzucht möglich war, waren bald sehr begehrt, was auch zu vielen Konflikten zwischen Rinderzüchtern und Schafzüchtern, wie auch mit den Ureinwohnern, führte.[NEWLINE]Riesige Schafranches entstanden.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SHEEP_STRATEGY</Tag>
+		<English>Sheep strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_SHIP_OF_THE_LINE</Tag>
 		<English>Ship of the Line:Ships of the Line</English>
 		<French>
@@ -4472,6 +5406,14 @@
 		<German>[COLOR_UNIT_TEXT]Karavellen[COLOR_REVERT] und [COLOR_UNIT_TEXT]Fluyten[COLOR_REVERT] sind die einfachsten Handelsschiffe: Die Karavelle ist etwas schneller, die Fluyt kann etwas mehr Fracht transportieren. [COLOR_UNIT_TEXT]Westindienfahrer[COLOR_REVERT] sind bessere Handelsschiffe: Sie sind so schnell wie die Karavelle und können noch mehr Fracht befördern als die Fluyt.[PARAGRAPH:2]Während sich diese Handelsschiffe im Kampf nur verteidigen können, sind [COLOR_UNIT_TEXT]Karacken[COLOR_REVERT] und die [COLOR_UNIT_TEXT]Galeonen[COLOR_REVERT] Allzweckschiffe: Sie können sowohl zum Transport von Waren, als auch zum Angriff eingesetzt werden. Während die Karacke langsam und wenig kampfstark, dafür aber recht billig ist, können sich die Galeonen in vielen Kämpfen behaupten und darüberhinaus mehr Fracht transportieren als jedes andere Schiff (sogar Schätze).[PARAGRAPH:2][COLOR_UNIT_TEXT]Fregatten[COLOR_REVERT] und [COLOR_UNIT_TEXT]Linienschiffe[COLOR_REVERT] sind reine Kriegsschiffe: Während die Fregatte besonders schnell ist, ist das Linienschiff das kampfstärkste Schiff der Kolonialflotte. Über das [COLOR_UNIT_TEXT]Königliche Linienschiff[COLOR_REVERT], die Herrscherin der Meere, verfügt nur der Monarch in seiner Expeditionsflotte.[PARAGRAPH:2]Die Handelsschiffe können in Siedlungen gebaut werden, sobald dort ein Trockendock steht. Für die Allzweck- und die Kriegsschiffe braucht man dagegen eine Schiffswerft. Je größer der Frachtraum eines Schiffes ist, desto mehr Eisenwaren braucht man, es zu bauen. Je schneller es ist, desto mehr Tuch muss man für die Segel beschaffen. Je kampfstärker es ist, desto mehr Schusswaffen werden benötigt.</German>
 		<Italian>La [COLOR_UNIT_TEXT]nave da prima linea[COLOR_REVERT] è la migliore nave da guerra disponibile per le colonie. Pur essendo più lenta di una [COLOR_UNIT_TEXT]fregata[COLOR_REVERT], ottiene un bonus di combattimento nei confronti della più rapida rivale, il che la rende la nave ideale per difendere i porti.</Italian>
 		<Spanish>El [COLOR_UNIT_TEXT]Navío de línea[COLOR_REVERT] es el mejor barco de guerra que puede tener una colonia. Aunque es más lenta que la [COLOR_UNIT_TEXT]Fragata[COLOR_REVERT], recibe una bonificación al combate en comparación a su veloz hermana, lo cual la convierte en el barco ideal para defender puertos.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SILVER_PEDIA</Tag>
+		<English>Silver background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SILVER_STRATEGY</Tag>
+		<English>Silver strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SLOOP</Tag>
@@ -4625,6 +5567,45 @@
 		<German>[COLOR_UNIT_TEXT]Schmugglerschiffe[COLOR_REVERT] ermöglichen es, die Steuern in Europa zu umgehen und selbst boykottierte Waren zu verkaufen.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_SPICES</Tag>
+		<English>
+			<Text>Spices</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</English>
+		<French>
+			<Text>Epices</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Gewürze</Text>
+			<Gender>Neuter</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Spezie</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Especias</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Специи</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SPICES_PEDIA</Tag>
+		<English>Cayenne pepper, also known as guinea spice or red pepper, is a hot red chili pepper that is used to refine dishes or as a medicine.[NEWLINE]Named for the city of Cayenne in French Guiana, it is a cultivar of Capsicum annuum related to bell peppers, jalapenos, and others.[NEWLINE]The Capsicum genus is in the nightshade family.</English>
+		<French>Capsicum frutescens est un « piment de Cayenne ». Il appartient à la famille des Solanaceae et est cultivé pour ses fruits à la saveur particulièrement piquante. Sur l'échelle de Scoville, il est noté de 30 000 jusqu'à 50 000. Il en existe plusieurs variétés, dont Capsicum frutescens tabasco qui entre dans la composition de la sauce du même nom.</French>
+		<German>Der Cayenne-Pfeffer, auch bekannt als Guinea-Gewürz oder auch Roter Pfeffer, ist ein scharfer roter Chili-Pfeffer, der genutzt wird, um Gerichte zu verfeinern, oder auch als Medizin Anwendung findet. Benannt nach der Stadt Cayenne in Französisch-Guayana, ist sie eine Sorte von Capsicum annuum, verwandt mit Paprika, Jalapenos und anderen. Capsicum genus zählt zu den Nachtschattengewächsen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SPICES_STRATEGY</Tag>
+		<English>Spices strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_SPICE_TRADER</Tag>
 		<English>
 			<Text>Master Spice Trader:Master Spice Traders</Text>
@@ -4737,6 +5718,18 @@
 		<Spanish>Los [COLOR_UNIT_TEXT]Estadistas mayores[COLOR_REVERT] son expertos productores de [COLOR_HIGHLIGHT_TEXT]Campanas de la libertad[COLOR_REVERT]. Asignar a uno de ellos a la profesión de Estadista doblará el número de [COLOR_HIGHLIGHT_TEXT]Campanas de la libertad[COLOR_REVERT] producidas.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_STONE_PEDIA</Tag>
+		<English>Stone has always been one of the most important human building materials.[NEWLINE]In fact, stone tools predate human history.[NEWLINE]It appears as if stone tools were used by Paranthropus, an ancestor of man who lived about two million years ago.[PARAGRAPH:1]Most stone tools are created by chipping or grinding.[NEWLINE]Chipping is used when working with crystalline materials such as flint, chert and obsidian.[NEWLINE]The worker taps the stone with a harder stone, carefully chipping off flakes until the stone has been properly shaped.[NEWLINE]Mesoamerican tribes used this method to make their sharp and deadly obsidian swords.[PARAGRAPH:1]Grinding is used when working with harder and coarser materials like basalt and granite.[NEWLINE]This is a long and tedious process where the toolmaker repeatedly grinds away stone with a harder material or with sand, sometimes using water as a lubricant.[NEWLINE]Many of the earliest European stone axes were made using this process.</English>
+		<French>La pierre est depuis toujours le matériau de construction le plus répandu. L'apparition des outils en pierre marque même l'avènement de l'homme. C'est semble-t-il le Paranthropus, un ancêtre de l'homme qui vivait il y a deux millions d'années, qui fut le premier à utiliser des outils en pierre.[PARAGRAPH:1]La plupart des outils en pierre sont fabriqués en taillant ou en polissant la pierre. La première technique est utilisée avec les matériaux cristallins tels que le silex, le chert ou l'obsidienne. Elle consiste à frapper la pierre avec une pierre plus dure pour la tailler progressivement en enlevant des éclats. Les tribus d'Amérique centrale utilisaient cette méthode pour fabriquer leurs épées d'obsidienne.[PARAGRAPH:1]La méthode du polissage est utilisée avec les pierres plus dures, comme le basalte ou le granit. C'est un processus long et laborieux qui consiste à frotter de manière répétée la pierre avec un matériau plus dur ou avec du sable, en l'arrosant parfois pour la lubrifier. Les premières haches de pierre fabriquées en Europe sont nées de ce procédé.</French>
+		<German>Steine waren, sind und bleiben das wichtigste Baumaterial der Menschen. Schon lange vor dem Beginn der Geschichtsschreibung hat es Steinwerkzeuge gegeben. Vermutlich wurden die ersten Steinwerkzeuge vom Paranthropus, einem Urahnen der Menschen, vor etwa zwei Millionen Jahren eingesetzt.[PARAGRAPH:1]Die meisten Steinwerkzeuge werden durch Abschlagen oder Schleifen geschaffen. Erstere Methode wird vor allem bei der Arbeit mit kristallinen Materialien wie Flint, Feuerstein und Obsidian eingesetzt. Der Arbeiter schlägt mit einem härteren Stein auf den Stein, bis dieser die gewünschte Form hat. Mesoamerikanische Stämme nutzten diese Methode, um ihre scharfen und tödlichen Obsidianschwerter herzustellen.[PARAGRAPH:1]Die Schleifmethode wird bei der Arbeit mit härteren Materialien, wie Basalt und Granit, eingesetzt. Bei diesem langen und ermüdenden Prozess schleift der Werkzeugmacher den Stein immer wieder mit einem härteren Material oder mit Sand ab. Manchmal wird dazu auch Wasser als Schmiermittel eingesetzt. Viele der frühen europäischen Steinäxte sind auf diese Art und Weise entstanden.</German>
+		<Italian>La pietra è da sempre il materiale più importante nelle opere di costruzione dell'uomo. Infatti, i primi oggetti in pietra risalgono agli albori della storia dell'umanità. Pare che fu addirittura il Paronthropus, un antenato dell'uomo vissuto due milioni di anni fa, a utilizzare i primi strumenti realizzati in pietra.[PARAGRAPH:1]La maggior parte degli oggetti in pietra veniva creata scheggiando e affilando: l'artigiano colpiva una pietra con un'altra pietra più dura, cercando di rimuovere piccole scaglie, fino a ottenere la forma desiderata. Le tribù mesoamericane usavano questo metodo per realizzare le loro letali e affilate spade di ossidiana.[PARAGRAPH:1]Il metodo di affilamento veniva utilizzato per lavorare materiali più ruvidi e grezzi, come il basalto e il granito; questo processo era lungo e ripetitivo per l'artigiano, che doveva affilare la pietra con materiale più duro o con sabbia, utilizzando acqua come lubrificante. Molte delle prime asce di pietra europee vennero realizzate con questo procedimento.</Italian>
+		<Spanish>La piedra ha sido y sigue siendo uno de los materiales más importantes de construcción de la humanidad. De hecho, las herramientas de piedra pertenecen a la Prehistoria. Parece ser que las primeras fueron empleadas por el parantropus, un antepasado del hombre que vivió hace unos dos millones de años.[PARAGRAPH:1]La mayoría de las herramientas de piedra se creaban a base de cincelar o amolar. La primera técnica se usaba al trabajar materiales cristalinos como el sílex, el pedernal y la obsidiana. El fabricante golpeaba la piedra con otra más dura, separando cuidadosamente escamas de piedra hasta que la herramienta tenía la forma adecuada. Las tribus centroamericanas empleaban este método para fabricar sus afiladas y mortíferas espadas de obsidiana.[PARAGRAPH:1]El método de amolar se empleaba al trabajar con materiales más duros y toscos como el basalto y el granito. Es un proceso largo y tedioso en el que el fabricante desbasta repetidamente la piedra con un material más duro o con arena, empleando a menudo agua como lubricante. Muchas de las primeras hachas de piedra europeas se crearon mediante este proceso.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_STONE_STRATEGY</Tag>
+		<English>Stone strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_STONECUTTER</Tag>
 		<English>Expert Stonecutter:Expert Stonecutters</English>
 		<French>
@@ -4772,6 +5765,39 @@
 		<English>To make the most of a bountiful [LINK=YIELD_STONE]stone[\LINK] [LINK=IMPROVEMENT_QUARRY]quarry[\LINK], bring in an [COLOR_UNIT_TEXT]expert stonecutter[COLOR_REVERT].[NEWLINE]Expert stonecutters are able to produce double the amount of [COLOR_HIGHLIGHT_TEXT]stone[COLOR_REVERT] from a stone-producing tile.[PARAGRAPH:1]Expert stonecutters can be hired in [LINK=CONCEPT_EUROPE]Europe[\LINK], and they can also [LINK=CONCEPT_TRAINING]apprentice[\LINK] in a colony with a [LINK=BUILDING_SCHOOLHOUSE]schoolhouse[\LINK] or one of its upgrades.</English>
 		<French>Pour exploiter au mieux une carrière de pierres, faites la travailler par un [COLOR_UNIT_TEXT]expert tailleur[COLOR_REVERT]. Les experts tailleurs puisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]pierres[COLOR_REVERT] que les autres colons.</French>
 		<German>Nutzen Sie wenn möglich [COLOR_UNIT_TEXT]Erfahrene Steinbrucharbeiter[COLOR_REVERT], da diese die doppelte Menge [COLOR_HIGHLIGHT_TEXT]Stein[COLOR_REVERT] erzeugen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SUGAR</Tag>
+		<English>Sugar</English>
+		<French>
+			<Text>Sucre</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Zucker</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Zucchero</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Azúcar</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Сахар</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SUGAR_PEDIA</Tag>
+		<English>Sugar background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_SUGAR_STRATEGY</Tag>
+		<English>Sugar strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_SUGAR_PLANTER</Tag>
@@ -4850,6 +5876,43 @@
 		<English>[COLOR_UNIT_TEXT]Master tanners[COLOR_REVERT] must be gifted with precision, patience and tolerance for awful smells.[NEWLINE]That's required for anyone practicing the [LINK=PROFESSION_LEATHER_MAKER]leather maker[\LINK] profession.[NEWLINE]They are capable of producing double the quantity of [LINK=YIELD_LEATHER]leather[\LINK] from [LINK=YIELD_CATTLE_HIDES]cowhides[\LINK] a typical colonist would create in the same period of time.[PARAGRAPH:1]Master tanners can be hired in [LINK=CONCEPT_EUROPE]Europe[\LINK], and they can also [LINK=CONCEPT_TRAINING]apprentice[\LINK] in a colony with a [LINK=BUILDING_COLLEGE]college[\LINK] or one of its upgrades.</English>
 		<French>Les [COLOR_UNIT_TEXT]maîtres tanneurs[COLOR_REVERT] produisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]cuir[COLOR_REVERT] à partir de [COLOR_HIGHLIGHT_TEXT]peaux[COLOR_REVERT].</French>
 		<German>[COLOR_UNIT_TEXT]Gerbermeister[COLOR_REVERT] verarbeiten doppelt soviele [COLOR_HIGHLIGHT_TEXT]Rindshäute[COLOR_REVERT] in [COLOR_HIGHLIGHT_TEXT]Lederwaren[COLOR_REVERT], wie andere Kolonisten.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TOBACCO</Tag>
+		<English>
+			<Text>Tobacco</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</English>
+		<French>
+			<Text>Tabac</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Tabak</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Tabacco</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Tabaco</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Табак</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TOBACCO_PEDIA</Tag>
+		<English>Tobacco background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TOBACCO_STRATEGY</Tag>
+		<English>Tobacco strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_TOBACCONIST</Tag>
@@ -4934,6 +5997,51 @@
 		<Spanish>Los [COLOR_UNIT_TEXT]Plantadores de tabaco expertos[COLOR_REVERT] son los mejores amigos del Tabaquero. Un Plantador de tabaco experto produce el doble de cantidad de [COLOR_HIGHLIGHT_TEXT]Tabaco[COLOR_REVERT] en cualquier casilla en la que trabaje.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_TOOLS_PEDIA</Tag>
+		<English>Tools background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TOOLS_STRATEGY</Tag>
+		<English>Tools strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TRADE_GOODS</Tag>
+		<English>
+			<Text>Trade Goods</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</English>
+		<French>
+			<Text>Marchandise:Marchandises</Text>
+			<Gender>Female</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Handelsgüter</Text>
+			<Gender>Neuter</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Beni commerciali</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Mercancías</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Мануфактура</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TRADE_GOODS_PEDIA</Tag>
+		<English>Trade goods background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TRADE_GOODS_STRATEGY</Tag>
+		<English>Trade goods strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_TRAIN</Tag>
 		<English>Carriage:Carriages</English>
 		<French>Convoyeur:Convoyeurs</French>
@@ -5000,6 +6108,47 @@
 		<Spanish>Los [COLOR_UNIT_TEXT]Tramperos expertos[COLOR_REVERT] son los mejores cazadores de las más bellas pieles del Nuevo Mundo. Asignar a un Trampero experto a la profesión de Trampero de pieles doblará la cantidad de [COLOR_HIGHLIGHT_TEXT]Pieles[COLOR_REVERT] que se reciban de esa casilla.</Spanish>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_TREASURE</Tag>
+		<English>Treasure</English>
+		<French>
+			<Text>Trésor:Trésors</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</French>
+		<German>
+			<Text>Schatz:Schätze</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</German>
+		<Italian>
+			<Text>Tesoro:Tesori</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Tesoro:Tesoros</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</Spanish>
+		<Russian>Сокровище</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TREASURE_PEDIA</Tag>
+		<English>Europeans came to the New World looking for a quicker way to access the silks and spices of the Far East.[NEWLINE]While they failed in that respect, they were more than pleased to find that the rulers of many of the Indigenous populations in the New World were draped in gold.[NEWLINE]The Europeans wasted no time trying to acquire as much of it as possible.[NEWLINE]Entire Native villages were emptied and forced to labour in mines to sate the European lust for wealth.[NEWLINE]Others, like Francisco Pizarro, took more creative - if equally ruthless - measures to secure their fortunes.[NEWLINE]In his quest for treasure, Pizarro kidnapped the leader of the Inca Empire, Atahualpa, and ransomed him in return for a room filled with gold.[NEWLINE]As so often happens, once the ransom was paid the victim was killed.</English>
+		<French>Quand ils découvrent le Nouveau Monde, les Européens recherchent en fait un chemin plus rapide pour accéder à la soie et aux épices de l'Extrême-Orient. S'ils n'atteignent pas ce but, ils découvrent en revanche avec plaisir que les chefs de beaucoup de populations indigènes du Nouveau Monde sont drapés d'or. Bien entendu, les Européens tentent aussitôt de s'emparer d'un maximum de ces richesses. Des villages indigènes entiers sont vidés de leur population, leurs habitants sont contraints de travailler dans des mines pour satisfaire la soif de richesses des Européens. D'autres, comme Francisco Pizarro, vont prendre des mesures plus créatives mais tout aussi impitoyables pour s'enrichir. Dans sa quête de trésors, Pizarro enlève l'empereur inca, Atahualpa, et exige une pièce remplie d'or comme rançon. D'après la légende, il aurait obtenu exactement ce qu'il avait demandé.</French>
+		<German>Die Europäer kamen in die Neue Welt, weil sie auf der Suche nach einem schnelleren Seiden- und Gewürzhandelsweg in den Fernen Osten waren. Auch wenn sie in dieser Hinsicht scheiterten, waren sie doch mehr als erfreut festzustellen, dass sich die Herrscher der zahlreichen Ureinwohnerstämme der Neuen Welt in glänzendes Gold hüllten. Die Europäer verschwendeten keine Zeit und versuchten sofort, so viel wie möglich von diesen Schätzen für sich zusammenzuraffen. Komplette Ureinwohnerdörfer wurden versklavt und zur Arbeit in Minen gezwungen, um die Gier der Europäer nach diesem Reichtum zu stillen. Andere, wie etwa Francisco Pizarro, schlugen kreativere - doch gleichermaßen skrupellose - Wege ein, um sich ihren Anteil am Wohlstand zu sichern. In seinem Verlangen nach den Schätzen der Neuen Welt entführte Pizarro den Anführer des Inkareiches Atahualpa und forderte als Lösegeld einen Raum voller Gold. Die Legende besagt, dass diese Forderung erfüllt wurde.</German>
+		<Italian>Gli europei arrivarono nel Nuovo Mondo cercando una via più rapida per arrivare alle sete e alle spezie del lontano oriente. Pur avendo fallito sotto quel punto di vista, furono comunque parecchio contenti di scoprire che molti dei leader delle popolazioni native erano letteralmente ricoperti d'oro. E gli europei non persero certo tempo, cercando di ottenerne il più possibile. Interi villaggi di nativi furono svuotati e gli abitanti costretti a lavorare in miniera per soddisfare la sete di ricchezza degli europei. Altri, come Francisco Pizarro, adottarono misure più creative (anche se ugualmente spietate) per procurarsi una fortuna. Nella sua ricerca di un tesoro, Pizarro rapì il leader dell'impero inca, Atahualpa, e chiese come riscatto una stanza piena d'oro. La leggenda vuole che ricevette esattamente ciò che chiese.</Italian>
+		<Spanish>Los europeos llegaron al Nuevo Mundo en busca de una manera rápida de acceder a las sedas y especias del Lejano Oriente. Aunque no consiguieron su propósito inicial, quedaron muy complacidos al ver que los gobernantes de muchas de las poblaciones indígenas de las Américas vivían rodeados de oro. Y los europeos no perdieron el tiempo en conseguir todo el que pudieron. Aldeas nativas quedaron vacías y se vieron obligadas a trabajar de esclavos para saciar la sed europea de oro. Otros, como Francisco Pizarro, adoptaron medidas más ingeniosas aunque igual de despiadadas para procurarse fortuna. En su búsqueda de tesoros, Pizarro secuestró al líder del Imperio Inca, Atahualpa, y pidió como rescate una habitación llena de oro. Y la leyenda cuenta que fue exactamente eso lo que recibió.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_TREASURE_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Treasures[COLOR_REVERT] represent uncovered caches of New World wealth.[NEWLINE]By sending them to Europe, you can cash in![NEWLINE]There are two ways of doing this: by contacting your [LINK=CONCEPT_RELATIONS_TO_KING]King[\LINK], who will claim 50% of the value to transport it for you, or by loading it into a [LINK=UNIT_GALLEON]galleon[\LINK] and delivering it to [LINK=CONCEPT_EUROPE]Europe[\LINK] yourself.[PARAGRAPH:2]For more information, see [LINK=CONCEPT_CHANGES_TO_TREASURES]Treasures[\LINK].</English>
+		<French>Les [COLOR_UNIT_TEXT]Trésors[COLOR_REVERT] représentent des sources de richesses encore inexplorées. En transportant un [COLOR_UNIT_TEXT]Trésor[COLOR_REVERT] sur un [COLOR_UNIT_TEXT]Galion[COLOR_REVERT] et en l'envoyant en [LINK=CONCEPT_EUROPE]Europe[\LINK], vous pourriez recevoir un énorme bonus financier !</French>
+		<German>[COLOR_UNIT_TEXT]Schatzeinheiten[COLOR_REVERT] belegen 3 Frachtplätze an Bord einer [COLOR_UNIT_TEXT]Galeone[COLOR_REVERT].[PARAGRAPH:2]Die Galeone ist das einzige Schiff, auf dem man Schätze selber nach Europa bringen kann. Dabei fällt nur der übliche Steuersatz an. Alternativ kann man - vorausgesetzt, der Schatz befindet sich in einer Siedlung - den König beauftragen, ihn auf einem seiner Schiffe in die Alte Welt zu transportieren. Der Monarch behält als Transportprämie allerdings die Hälfte der Pretiosen ein.</German>
+		<Italian>Le [COLOR_UNIT_TEXT]unità di tesoro[COLOR_REVERT] rappresentano depositi nascosti di ricchezze del Nuovo Mondo. Portando un'unità di [COLOR_UNIT_TEXT]tesoro[COLOR_REVERT] su un [COLOR_UNIT_TEXT]galeone[COLOR_REVERT] e inviandola in Europa puoi ottenere un enorme bonus di entrate!</Italian>
+		<Spanish>Los [COLOR_UNIT_TEXT]Tesoros[COLOR_REVERT] representan escondrijos sin descubrir de riquezas del Nuevo Mundo. Si lleváis una unidad de [COLOR_UNIT_TEXT]Tesoro[COLOR_REVERT] a un [COLOR_UNIT_TEXT]Galeón[COLOR_REVERT] y lo enviáis a Europa, recibiréis una gran bonificación a los ingresos.</Spanish>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_TREK</Tag>
 		<English>Trek:Treks</English>
 		<French>
@@ -5029,6 +6178,16 @@
 		<German>Wagen können Güter quer durch das Land von einer Siedlung zu einer anderen befördern und damit Ortschaften an das Handelsnetz anschließen, die nicht an der Küste liegen.[PARAGRAPH:2][COLOR_UNIT_TEXT]Planwagen[COLOR_REVERT] können in 2 Transportplätzen jeweils bis zu 100 Güter transportieren. Die gleich teuren [COLOR_UNIT_TEXT]Trecks[COLOR_REVERT] können sogar bis zu 5 Transportplätze nutzen, haben aber im Gegensatz zu den Planwagen nicht zwei, sondern nur einen einzigen Bewegungspunkt. Sie können erst dann gebaut werden, wenn eine Stadt über ein [COLOR_BUILDING_TEXT]Sägewerk[COLOR_REVERT] verfügt.[PARAGRAPH:2]Tipp: Trecks sind insbesondere für Massentransporte zwischen zwei nahegelegenen Städten in der mittleren und späten Spielphase geeignet.[PARAGRAPH:2]Tipp: Bei gedrückter Shift-Taste können die Wagen auch mit Teilmengen beladen werden.[PARAGRAPH:2]Hinweise: Wagen können nicht auf Schiffe geladen werden. Greift man einen Planwagen oder einen Treck an, erobert man ihn mitsamt aller Waren.</German>
 		<Italian>Le [COLOR_UNIT_TEXT]colonne di carovane[COLOR_REVERT] sono preziosi strumenti per il commercio terrestre. Le [COLOR_UNIT_TEXT]colonne di carovane[COLOR_REVERT] possono trasportare i beni tra gli insediamenti via terra, il che significa che possono raggiungere gli insediamenti che non si trovano sulla costa. Sono la chiave per l'espansione verso l'interno del continente.</Italian>
 		<Spanish>Las [COLOR_UNIT_TEXT]Caravanas de carromatos[COLOR_REVERT] son unas herramientas para el comercio terrestre que no tienen precio. Las [COLOR_UNIT_TEXT]Caravanas de carromatos[COLOR_REVERT] pueden transportar mercancías de un asentamiento a otro por tierra, lo cual comporta que no pueden llegar a los que se encuentren en la costa. Son la clave para la expansión hacia el interior del continente.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_VALUABLE_WOOD_PEDIA</Tag>
+		<English>Exotic wood is very hard which, combined with its very high density (it is one of the woods that sink in water), fine texture, and ability to take a polish, has made it valuable as an ornamental wood.[NEWLINE]The species is still frequent in the New World, though threatened by over-harvesting; it is also extensively planted within its native range.</English>
+		<French>Les bois d'ébénisterie, souvent nommés bois précieux peuvent être des bois des régions tempérées ou des bois tropicaux. Ils sont utilisés en ébénisterie, lutherie, marqueterie, sculpture sous forme de bois massif, feuillets ou bois de placage. Le caractère précieux, variable suivant les époques, fait référence à leurs propriétés, leur rareté et leur prix. On les distingue généralement des bois plus courants tels que le frêne, le sapin, l'épicéa ou le peuplier (bois blancs), le pin, le cèdre rouge (bois rouges) et des bois rouges tropicaux dits exotiques, comme le sipo.</French>
+		<German>Edelholz ist sehr hart, hat eine hohe Dichte, feine Texturen und kann sehr glatt geschliffen werden. Daher ist es sehr begehrt, um Verzierungen oder hochwertige Holzprodukte, wie zum Beispiel Möbel, herzustellen.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_VALUABLE_WOOD_STRATEGY</Tag>
+		<English>Valuable wood strategy</English>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_VETERAN_CAVALRY</Tag>
@@ -5309,6 +6468,72 @@
 		<German>Der [COLOR_UNIT_TEXT]Große Westindienfahrer[COLOR_REVERT] ist ein sehr starkes Handelsschiff, welches im Vergleich zur Galeone zwar weniger Frachtraum dafür aber mehr Kanonen hat.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_WHALE_BLUBBER</Tag>
+		<English>Whale Fat</English>
+		<French>
+			<Text>Graisse de baleine</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Walspeck:Walspeck</Text>
+			<Gender>Male</Gender>
+			<Plural>0:1</Plural>
+		</German>
+		<Italian>
+			<Text>Grasso di balena</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Grasa de ballena</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Китовый жир</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WHALE_BLUBBER_PEDIA</Tag>
+		<English>Whale fat background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WHALE_BLUBBER_STRATEGY</Tag>
+		<English>Whale fat strategy</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WHALE_OIL</Tag>
+		<English>Train Oil</English>
+		<French>
+			<Text>Huile de baleine</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Tran</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Olio di balena</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Aceite de ballena</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Ворвань</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WHALE_OIL_PEDIA</Tag>
+		<English>Train oil background</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WHALE_OIL_STRATEGY</Tag>
+		<English>Train oil strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_WHALE_OIL_COOKER</Tag>
 		<English>
 			<Text>Master Train Oil Cooker:Master Train Oil Cookers</Text>
@@ -5389,6 +6614,43 @@
 		<German>Wenn sich ein [COLOR_UNIT_TEXT]Walfänger[COLOR_REVERT] auf einem Feld mit der Bonusressource [COLOR_HIGHLIGHT_TEXT]Wale[COLOR_REVERT] befindet, kann er den Befehl "Waljagd" ausführen. Der Walfänger ist die einzige Einheit, die über diesen Befehl verfügt. Dabei erntet er jede Runde [COLOR_HIGHLIGHT_TEXT]Walspeck[COLOR_REVERT], der so lange im Transportslot des Schiffes landet, bis der Frachtraum voll ist. Auf einer Bonusressource Wale kann immer nur ein Walfänger zur selben Zeit arbeiten. In einer Küstensiedlung kann der Walspeck dann zwecks Verarbeitung zu [COLOR_HIGHLIGHT_TEXT]Tran[COLOR_REVERT] entladen oder direkt in den Europahafen zum Verkauf verschifft werden.</German>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_UNIT_WINE</Tag>
+		<English>Wine</English>
+		<French>
+			<Text>Vin</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Wein</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Vino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Vino</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Вино</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WINE_PEDIA</Tag>
+		<English>Wine, a beverage made from fermented grapes, has been produced since 6000 BC.[NEWLINE]Its use spread throughout the Middle East and Egypt, and it was a popular drink in the ancient world.[NEWLINE]Grapes used for wine making are grown in many different regions of the world. Most vineyards are located in the hills and valleys of temperate regions. Wine making as an industry has been perfected over several centuries.[NEWLINE]Many regions such as the Rhine and Loire valleys of Europe are well known for their fine wines, and derive a significant portion of their economy from wine making.</English>
+		<French>Le vin est une boisson obtenue par la fermentation du raisin. Sa production débute dès 6 000 ans av. J.-C. Sa consommation se répand à travers tout le Moyen-Orient et l'Egypte, et il devient rapidement une boisson très populaire dans le monde antique. Le raisin utilisé dans la fabrication du vin est cultivé dans de nombreuses régions du monde. Les vignes sont généralement situées sur les coteaux et dans les vallées des régions tempérées. Les procédés de fabrication du vin ont été perfectionnés au cours des siècles. De nombreuses régions, comme les vallées du Rhin et de la Loire, sont réputées pour leurs bons vins, et une grande partie de leur économie est liée à la fabrication du vin.</French>
+		<German>Der aus fermentierten Trauben hergestellte Wein wurde erstmals um 6000 vor Christus produziert und war im Nahen Osten und in Ägypten weit verbreitet. Das Getränk entwickelte sich schnell zu einem der beliebtesten kulinarischen Genüsse der Antike. Die für die Weinherstellung benötigten Trauben werden in vielen verschiedenen Gebieten der Welt angebaut, die meisten Weinhänge befinden sich jedoch in den Hügeln und Tälern von Regionen mit gemäßigtem Klima. Im Laufe mehrerer Jahrhunderte wurde die industrielle Weinherstellung immer weiter perfektioniert.[PARAGRAPH:1]Viele Anbaugebiete wie die Rhein- und Loiretäler in Europa sind für ihre feinen Weine bekannt und beziehen einen Großteil ihrer wirtschaftlichen Erträge aus der Weinproduktion.</German>
+		<Italian>Realizzato dalla fermentazione dell'uva, il primo vino risale circa al 6000 a. C. e si diffuse rapirdamente attraverso il Medio Oriente e l'Egitto, diventando una delle bevande più popolari del mondo antico. Le qualità d'uva usate per la realizzazione del vino crescono in differenti zone del mondo; la maggior parte delle vigne si possono trovare sulle colline e nelle vallate di regioni dal clima temperato. L'industria del vino è andata perfezionandosi nel corso dei secoli: molte regioni europee, come le vallate del Reno e della Loira, sono rinomate per la produzione di ottimi vini, principale forma di economia della zona.</Italian>
+		<Spanish>El vino, una bebida preparada a partir de uvas fermentadas, se elaboró por vez primera ya en el 6000 a. C. Su consumo se extendió rápidamente por Oriente Medio y Egipto, y pronto se convirtió en una popular bebida en el mundo antiguo. Las uvas empleadas en la fabricación del vino crecen en muchas y muy distintas partes del mundo. La mayoría de las viñas están en colinas y valles de regiones templadas. La vinicultura se ha perfeccionado como industria a lo largo de varios siglos. Muchas regiones, como los valles del Rin y del Loira en Europa, son conocidas por sus grandes vinos y obtienen una parte significativa de sus ingresos de la vinicultura.</Spanish>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WINE_STRATEGY</Tag>
+		<English>Wine strategy</English>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_UNIT_WINE_MAKER</Tag>
 		<English>
 			<Text>Master Vintager:Master Vintagers</Text>
@@ -5466,6 +6728,80 @@
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_WOLF_STRATEGY</Tag>
 		<English>TXT_KEY_UNIT_ANIMAL_STRATEGY</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WOOL</Tag>
+		<English>Wool</English>
+		<French>
+			<Text>Laine</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</French>
+		<German>
+			<Text>Schafswolle</Text>
+			<Gender>Female</Gender>
+			<Plural>0</Plural>
+		</German>
+		<Italian>
+			<Text>Lana di pecora</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Lana de oveja</Text>
+			<Gender>Male</Gender>
+			<Plural>0</Plural>
+		</Spanish>
+		<Russian>Шерсть</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WOOL_PEDIA</Tag>
+		<English>Early in the colonization of the New World sheep arrived.[NEWLINE]Even though because of disease or lack of water not all areas were fit for sheep herding, wool soon was an important industry.[NEWLINE]Although never as important as cattle, sheep still had a big impact on industry in the New World, giving work to many shepherds.[NEWLINE]Good sheep farming areas were soon in great demand, leading to range wars between cattle ranchers and sheep herders, as well as with the Indigenous people.[NEWLINE]Huge sheep stations stretched across the hills.</English>
+		<French>Au début de la colonisation du Nouveau Monde, les moutons sont arrivés.[NEWLINE]Même si toutes les régions ne se prêtaient pas à l'élevage de moutons en raison de maladies ou du manque d'eau, la laine est rapidement devenue une industrie importante.[NEWLINE]Bien qu'ils n'aient jamais été aussi importants que les bovins, les moutons ont tout de même eu une grande incidence sur l'industrie du Nouveau Monde, employant de nombreux bergers.[NEWLINE]Les bonnes régions d'élevage de moutons ont rapidement été très recherchées, ce qui a entraîné des guerres de territoire entre les éleveurs de bovins et les éleveurs de moutons, ainsi qu'avec les populations autochtones.[NEWLINE]D'énormes élevages de moutons ont été créées.</French>
+		<German>Sehr früh in der Kolonisierung der Neuen Welt wurde Nutzvieh aus Europa eingeführt, darunter auch Schafe.[NEWLINE]Auch wenn nicht alle Gebiete wegen Krankheiten oder Wassermangel für die Schafhaltung geeignet waren, wurde die Wolle bald zu einem wichtigen Wirtschaftszweig, der viele Schäfer beschäftigte.[NEWLINE]Obwohl Schafe und die damit verbundene Produktion von Wolle und Kleidung nie so bedeutend wie die Rinderzucht waren, wurden sie dennoch ein wichtiger Industriezweig.[NEWLINE]Die Weidegebiete, in denen Viehzucht möglich war, waren bald sehr begehrt, was auch zu vielen Konflikten zwischen Rinderzüchtern und Schafzüchtern, wie auch mit den Ureinwohnern, führte.[NEWLINE]Riesige Schafranches entstanden.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WOOL_STRATEGY</Tag>
+		<English>[LINK=YIELD_WOOL]Wool[\LINK] is produced when a [LINK=PROFESSION_BUTCHER_SHEEP]sheep butcher[\LINK] slaughters [LINK=YIELD_SHEEP]sheep[\LINK] to get [LINK=YIELD_FOOD]mutton[\LINK] and [LINK=UNIT_WOOL]wool[\LINK].</English>
+		<French>La [LINK=YIELD_WOOL]laine[\LINK] est produite à partir d'une [LINK=PROFESSION_BUTCHER_SHEEP]boucherie[\LINK] travaillant le [LINK=YIELD_SHEEP]mouton[\LINK].</French>
+		<German>[LINK=YIELD_WOOL]Wolle[\LINK] wird gewonnen, wenn ein [LINK=PROFESSION_BUTCHER_SHEEP]Schafschlachter[\LINK] [LINK=YIELD_SHEEP]Schafe[\LINK] schlachtet, um sie zu [LINK=YIELD_FOOD]Schafsfleisch[\LINK] und [LINK=UNIT_WOOL]Wolle[\LINK] zu verarbeiten.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WOOL_CLOTH</Tag>
+		<English>Wool Cloth</English>
+		<French>
+			<Text>Draps de laine</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</French>
+		<German>
+			<Text>Wollstoffe</Text>
+			<Gender>Female</Gender>
+			<Plural>1</Plural>
+		</German>
+		<Italian>
+			<Text>Vestiti di lana</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Italian>
+		<Spanish>
+			<Text>Ropa de lana</Text>
+			<Gender>Male</Gender>
+			<Plural>1</Plural>
+		</Spanish>
+		<Russian>Шерстяная ткань</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WOOL_CLOTH_PEDIA</Tag>
+		<English>Wool clothes have been worn for thousands of years.[NEWLINE]Once sheep came to the colonies in the New World, wool clothes became quite common.[NEWLINE]Until the middle of the 19th century, in Northern Europe textiles were the most important manufacturing activity.[NEWLINE]During the 18th century wool cloth was the preeminent textile.[NEWLINE]The rise of drapery in the 10th century led to the production of different kinds of woollen fabrics and contributed to the economic revival of the West.[NEWLINE]Textile activity was then concentrated in a few centres such as Flanders from the 11th century, Brabant and Northern Italy from the 13th century and England in the 14th century.</English>
+		<French>Jusqu'au milieu du XIXe siècle, le textile reste l'activité de fabrication la plus importante d'Europe du nord et jusqu'au milieu du XVIIIe siècle, la laine et son principal dérivé, le drap, fut la principale activité textile. L'essor de la draperie au Xe siècle va entraîner la production de différentes sortes de tissus de laine et contribuer au redémarrage économique de l'occident. L'activité textile se concentre alors dans quelques centres tels que la Flandre à partir du XIe siècle, le Brabant et l'Italie du Nord dès le XIIIe siècle ou l'Angleterre au XIVe siècle.</French>
+		<German>Wollkleidung war über Jahrtausende eine der wichtigsten Kleidungsarten in der Alten Welt. Während der Kolonisation wurden größere Mengen an Schafen in die Neue Welt gebracht und dort gezüchtet, wodurch Wollkleidung auch dort üblich wurde.</German>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_UNIT_WOOL_CLOTH_STRATEGY</Tag>
+		<English>[COLOR_UNIT_TEXT]Master weavers[COLOR_REVERT] produce double the amount of [COLOR_HIGHLIGHT_TEXT]wool cloth[COLOR_REVERT].</English>
+		<French>Les [COLOR_UNIT_TEXT]maîtres tisserands[COLOR_REVERT] producisent deux fois plus de [COLOR_HIGHLIGHT_TEXT]draps de laine[COLOR_REVERT].</French>
+		<German>[COLOR_UNIT_TEXT]Meister-Weber[COLOR_REVERT] verarbeiten doppelt soviel Wolle in [COLOR_HIGHLIGHT_TEXT]Wollstoffen[COLOR_REVERT], wie andere Kolonisten.</German>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_UNIT_FREED_SLAVE</Tag>
@@ -5729,10 +7065,4 @@
 		<German>[COLOR_UNIT_TEXT]Feindselige Ureinwohner[COLOR_REVERT] können nicht erworben werden.[NEWLINE]Sie sind dem Spieler gegenüber feindlich gesonnen und meist nur in [COLOR_HIGHLIGHT_TEXT]feindseligen Ureinwohnerdörfern[COLOR_REVERT] zu finden.[NEWLINE]Sie werden ihr Dorf bis zum Tod verteidigen und greifen den Spieler an, wenn dieses zerstört wird.</German>
 	</TEXT>
 </Civ4GameText>
-
-
-
-
-
-
 
