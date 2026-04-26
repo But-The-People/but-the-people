@@ -13,6 +13,7 @@
 		<Italian>[COLOR_HIGHLIGHT_TEXT]Cronaca[COLOR_REVERT] [COLOR:140:255:40:255]&lt; %s1_ModKey &gt;[COLOR_REVERT]</Italian>
 		<Spanish>[COLOR_HIGHLIGHT_TEXT]Crónica[COLOR_REVERT] [COLOR:140:255:40:255]&lt; %s1_ModKey &gt;[COLOR_REVERT]</Spanish>
 		<Russian>[COLOR_HIGHLIGHT_TEXT]Летопись[COLOR_REVERT] [COLOR:140:255:40:255]%s1_ModKey[COLOR_REVERT]</Russian>
+		<Hungarian>[COLOR_HIGHLIGHT_TEXT]Krónika[COLOR_REVERT] [COLOR:140:255:40:255]&lt; %s1_ModKey &gt;[COLOR_REVERT]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_ADVISOR_TITLE</Tag>
@@ -22,6 +23,7 @@
 		<Italian>Cronaca</Italian>
 		<Spanish>Crónica</Spanish>
 		<Russian>Летопись</Russian>
+		<Hungarian>Krónika</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_CONGRESS_ADVISOR_TITLE</Tag>
@@ -31,6 +33,7 @@
 		<Italian>Congresso continentale</Italian>
 		<Spanish>Congreso Continental</Spanish>
 		<Russian>Континентальный конгресс</Russian>
+		<Hungarian>Kontinentális Kongresszus</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_INFO_SCREEN</Tag>
@@ -40,6 +43,7 @@
 		<Italian>Schermata delle informazioni</Italian>
 		<Spanish>Pantalla de información</Spanish>
 		<Russian>Статистика</Russian>
+		<Hungarian>Információk</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_VICTORY_SCREEN_TITLE</Tag>
@@ -49,6 +53,7 @@
 		<Italian>Condizioni di vittoria</Italian>
 		<Spanish>Condiciones para la victoria</Spanish>
 		<Russian>Условия победы</Russian>
+		<Hungarian>Győzelmi Feltételek</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_DOMESTIC_ADVISOR_TITLE</Tag>
@@ -58,6 +63,7 @@
 		<Italian>Consigliere interno</Italian>
 		<Spanish>Consejero de Interior</Spanish>
 		<Russian>Советник по внутренним делам</Russian>
+		<Hungarian>Belföldi Tanácsadó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_REVOLUTION_ADVISOR_TITLE</Tag>
@@ -67,6 +73,7 @@
 		<Italian>Consigliere per la rivoluzione</Italian>
 		<Spanish>Consejero de la Revolución</Spanish>
 		<Russian>Революционный советник</Russian>
+		<Hungarian>Forradalmi Tanácsadó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FOREIGN_ADVISOR_TITLE</Tag>
@@ -76,6 +83,7 @@
 		<Italian>Consigliere estero</Italian>
 		<Spanish>Consejero de Asuntos Exteriores</Spanish>
 		<Russian>Советник по иностранным делам</Russian>
+		<Hungarian>Külföldi Tanácsadó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_MILITARY_ADVISOR_TITLE</Tag>
@@ -85,6 +93,7 @@
 		<Italian>Consigliere militare</Italian>
 		<Spanish>Consejero militar</Spanish>
 		<Russian>Военный советник</Russian>
+		<Hungarian>Katonai Tanácsadó</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_FATHER_SCREEN_TITLE</Tag>
@@ -94,6 +103,7 @@
 		<Italian>Padri Fondatori</Italian>
 		<Spanish>Padres fundadores</Spanish>
 		<Russian>Отцы основатели</Russian>
+		<Hungarian>Alapító Atyák</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVES</Tag>
@@ -103,24 +113,28 @@
 		<Italian>%s1 - %d2 [NUM2:Realizzazione:Realizzazioni]</Italian>
 		<Spanish>%s1 - %d2 [NUM2:Logro:Logros]</Spanish>
 		<Russian>%s1 - %d2 [NUM2:Достижение:Достижений]</Russian>
+		<Hungarian>%s1 - %d2 [NUM2:Eredmény:Eredmény]</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_DEFAULT</Tag>
 		<English>Default Achievement</English>
 		<French>Réalisation (par défaut)</French>
 		<German>Standard-Errungenschaft</German>
+		<Hungarian>Alapértelmezett Eredmény</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_DEFAULT_HEAD</Tag>
 		<English>Main Achievements</English>
 		<French>En-tête de réalisation (par défaut)</French>
 		<German>Haupterrungenschaften</German>
+		<Hungarian>Fő Eredmények</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_DEFAULT_TEXT</Tag>
 		<English>Default Achievement Text</English>
 		<French>Corps de réalisation (par défaut)</French>
 		<German>Text für Standard-Errungenschaft</German>
+		<Hungarian>Alapértelmezett Eredmény Szöveg</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_PACIFIC</Tag>
@@ -128,6 +142,7 @@
 		<French>Découverte du Pacifique</French>
 		<German>Pazifik entdeckt</German>
 		<Russian>Открытие Тихого океана</Russian>
+		<Hungarian>Csendes-óceán Felfedezése</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_PACIFIC_HEAD</Tag>
@@ -135,6 +150,7 @@
 		<French>Une mer aussi calme et sereine que le ciel</French>
 		<German>Ein Meer, so still und friedlich wie der Himmel</German>
 		<Russian>Продолжаем плыть на Запад</Russian>
+		<Hungarian>Olyan csendes és békés tenger, mint az égbolt</Hungarian>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_ACHIEVE_PACIFIC_TEXT</Tag>
