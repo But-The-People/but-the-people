@@ -8691,7 +8691,15 @@ void CvPlayer::setTurnActive(bool bNewValue, bool bDoTurn)
 
 						if (itMessage != m_mapQuestMessages.end())
 						{
-							gDLL->getInterfaceIFace()->addQuestMessage(getID(), itMessage->second, iID);
+							CvTalkingHeadMessage questMessage(
+								kTriggeredData.m_iTurn + 1,
+								iID,
+								itMessage->second.GetCString(),
+								NULL,
+								MESSAGE_TYPE_QUEST);
+
+							addMessage(questMessage);
+							gDLL->getInterfaceIFace()->dirtyTurnLog(getID());
 						}
 					}
 				}
@@ -14053,6 +14061,33 @@ void CvPlayer::setTriggerFired(const EventTriggeredData& kTriggeredData, bool bO
 EventTriggeredData* CvPlayer::initTriggeredData(EventTriggerTypes eEventTrigger, bool bFire, int iCityId, int iPlotX, int iPlotY, PlayerTypes eOtherPlayer, int iOtherPlayerCityId, int iUnitId, BuildingTypes eBuilding)
 {
 	CvEventTriggerInfo& kTrigger = GC.getEventTriggerInfo(eEventTrigger);
+
+	switch (kTrigger.getRequiredColonialStatus())
+	{
+	case COLONIAL_STATUS_COLONIAL:
+		if (getParent() == NO_PLAYER || isInRevolution() || checkIndependence())
+		{
+			return NULL;
+		}
+		break;
+
+	case COLONIAL_STATUS_IN_REVOLUTION:
+		if (!isInRevolution())
+		{
+			return NULL;
+		}
+		break;
+
+	case COLONIAL_STATUS_INDEPENDENT:
+		if (!checkIndependence())
+		{
+			return NULL;
+		}
+		break;
+
+	default:
+		break;
+	}
 
 	// expire quest events, which allowed this event trigger to fire
 	{

@@ -14651,6 +14651,7 @@ CvEventTriggerInfo::CvEventTriggerInfo() :
 	m_iNumPlotsRequired(0),
 	m_iOtherPlayerShareBorders(0),
 	m_eCivic(NO_CIVIC),
+	m_eRequiredColonialStatus(COLONIAL_STATUS_ANY),
 	m_iMinPopulation(0),
 	m_iMaxPopulation(0),
 	m_iMinMapLandmass(0),
@@ -14742,6 +14743,10 @@ int CvEventTriggerInfo::getOtherPlayerShareBorders() const
 CivicTypes CvEventTriggerInfo::getCivic() const
 {
 	return m_eCivic;
+}
+ColonialStatusTypes CvEventTriggerInfo::getRequiredColonialStatus() const
+{
+	return m_eRequiredColonialStatus;
 }
 int CvEventTriggerInfo::PY_getCivic() const
 {
@@ -15018,6 +15023,7 @@ void CvEventTriggerInfo::read(FDataStreamBase* stream)
 	stream->Read(&m_iNumPlotsRequired);
 	stream->Read(&m_iOtherPlayerShareBorders);
 	stream->Read(&m_eCivic);
+	stream->Read(&m_eRequiredColonialStatus);
 	stream->Read(&m_iMinPopulation);
 	stream->Read(&m_iMaxPopulation);
 	stream->Read(&m_iMinMapLandmass);
@@ -15092,6 +15098,7 @@ void CvEventTriggerInfo::write(FDataStreamBase* stream)
 	stream->Write(m_iNumPlotsRequired);
 	stream->Write(m_iOtherPlayerShareBorders);
 	stream->Write(m_eCivic);
+	stream->Write(m_eRequiredColonialStatus);
 	stream->Write(m_iMinPopulation);
 	stream->Write(m_iMaxPopulation);
 	stream->Write(m_iMinMapLandmass);
@@ -15184,6 +15191,26 @@ bool CvEventTriggerInfo::read(CvXMLLoadUtility* pXML)
 	}
 
 	pXML->GetEnum(getType(), m_eCivic, "eCivic", false);
+	CvString szRequiredColonialStatus;
+	if (pXML->GetChildXmlValByName(szRequiredColonialStatus, "RequiredColonialStatus"))
+	{
+		if (szRequiredColonialStatus == "COLONIAL_STATUS_COLONIAL")
+		{
+			m_eRequiredColonialStatus = COLONIAL_STATUS_COLONIAL;
+		}
+		else if (szRequiredColonialStatus == "COLONIAL_STATUS_IN_REVOLUTION")
+		{
+			m_eRequiredColonialStatus = COLONIAL_STATUS_IN_REVOLUTION;
+		}
+		else if (szRequiredColonialStatus == "COLONIAL_STATUS_INDEPENDENT")
+		{
+			m_eRequiredColonialStatus = COLONIAL_STATUS_INDEPENDENT;
+		}
+		else
+		{
+			m_eRequiredColonialStatus = COLONIAL_STATUS_ANY;
+		}
+	}
 	pXML->GetChildXmlValByName(&m_iOtherPlayerShareBorders, "iOtherPlayerShareBorders");
 	pXML->GetChildXmlValByName(&m_iMinPopulation, "iMinPopulation");
 	pXML->GetChildXmlValByName(&m_iMaxPopulation, "iMaxPopulation");

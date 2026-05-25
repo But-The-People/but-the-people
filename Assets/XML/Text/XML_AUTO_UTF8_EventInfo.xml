@@ -8,6 +8,12 @@
 		<Russian>Каждый заслуживает второго шанса. Пусть работает по своей профессии, а мы уладим его проблему с властями.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_HIDE_BUTCHER</Tag>
+		<English>We could really do with any worker. But he should change jobs so that the bailiffs can't track him down so easily.</English>
+		<German>Wir können jeden Handwerker gut gebrauchen. Aber er sollte den Beruf wechseln, damit ihn die Büttel nicht so schnell aufspüren können.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_ADMIRAL_1_1</Tag>
 		<English>Ah, what the heck! He was at sea for a such a long time. He needs to enjoy his time onshore. Our storage is absolutely full. However, we need to keep an eye on him.</English>
 		<French>Ah, peu importe ! Il était en mer pendant si longtemps, qu'il profite de sa permission. Nos entrepôts en débordent. Toutrefois, nous allons le garder à l'oeil, il vaut mieux.</French>
@@ -145,6 +151,13 @@
 		<Russian>Мы знаем этого человека и он действительно достоин стать нашим духовным лидером. Скажите церковным властям, что мы оплатим все необходимые расходы, чтобы назначить его.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_BISHOP_APPOINTMENT_HELP_1</Tag>
+		<English>[ICON_BULLET]One[COLOR_HIGHLIGHT_TEXT] Preacher [COLOR_REVERT]in this city will be appointed [COLOR_HIGHLIGHT_TEXT]Bishop[COLOR_REVERT].</English>
+		<French>[ICON_BULLET]One[COLOR_HIGHLIGHT_TEXT] Preacher [COLOR_REVERT]in this city will be appointed [COLOR_HIGHLIGHT_TEXT]Bishop[COLOR_REVERT].</French>
+		<German>[ICON_BULLET]Ein[COLOR_HIGHLIGHT_TEXT] Prediger [COLOR_REVERT]in dieser Stadt wird zum [COLOR_HIGHLIGHT_TEXT]Bischof [COLOR_REVERT]ernannt.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_BISHOP_APPOINTMENT_2</Tag>
 		<English>That is a lot of money for our colonies to pay. Although having a bishop will one day become necessary, we are too few right now to afford it.</English>
 		<French>Cela représente beaucoup d'argent à payer pour nos colonies. Bien qu'un évêque nous sera forcément un jour nécessaire, nous sommes encore peu nombreux et ne pouvons pas nous le permettre pour le moment.</French>
@@ -192,6 +205,12 @@
 		<French>Hallelujah, nous vivons dans la Patrie du Seigneur ! Soutenons notre prophète autant que nous le pouvons. Je vois déjà le désert fleurir.</French>
 		<German>Halleluja, wir leben wahrhaft in Gottes Reich auf Erden! Unterstützt diesen Propheten, so gut es geht. Ich sehe schon blühende Landschaften in der Wüste entstehen.</German>
 		<Russian>Аллилуйя, мы действительно живем в Божьей стране! Поддержите этого пророка, насколько это возможно. Я уже вижу, как пустыня цветет.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_BOOK_MORMON_HELP</Tag>
+		<English>[ICON_BULLET]A [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] will be built.</English>
+		<German>[ICON_BULLET]Eine [COLOR_HIGHLIGHT_TEXT]%s1[COLOR_REVERT] wird errichtet.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_BRAVE_NATIVE_SLAVE_1</Tag>
@@ -388,6 +407,12 @@
 		<French>C'est malheureusement impossible, l'éclaireur doit poursuivre sa mission.</French>
 		<German>Das ist leider nicht möglich. Der Kundschafter hat einen Auftrag zu erledigen.</German>
 		<Russian>Это невозможно. Разведчик должен выполнить свой долг.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CHIEF_DAUGHTER_HELP</Tag>
+		<English>[ICON_BULLET]Some Indians will join you.</English>
+		<German>[ICON_BULLET]Einige Indianer schließen sich Euch an.</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_COCA_PROBLEM_1</Tag>
@@ -696,10 +721,15 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_EXPERIENCED_SAILORS_2</Tag>
-		<English>The crews of our ship are experienced enough. We don't need to hire such scum.</English>
-		<French>Les équipages de nos navires disposent de suffisamment d'expérience. Nous n'avons pas besoin d'embaucher ces brigands.</French>
-		<German>Die Mannschaften unserer Schiffe sind erfahren genug. Wir brauchen solchen Abschaum nicht auf unseren Schiffen.</German>
-		<Russian>Экипаж нашего корабля достаточно опытный. А это отребье может завербоваться хоть к пиратам.</Russian>
+		<English>Hire them – but not as sailors, rather as shipyard workers. They are to help clean the hull of the ship and remove the fouling.</English>
+		<German>Heuert sie an - aber nicht als Seeleute, sondern als Werftarbeiter. Sie sollen helfen bei dem Schiff den Rumpf zu säubern und den Bewuchs entfernen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_EXPERIENCED_SAILORS_2_HELP</Tag>
+		<English>[ICON_BULLET]The ship gains the [COLOR_HIGHLIGHT_TEXT]promotion %s1[COLOR_REVERT].</English>
+		<German>[ICON_BULLET]Das Schiff erhält die [COLOR_HIGHLIGHT_TEXT]Beförderung %s1[COLOR_REVERT].</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_FAMINE_1</Tag>
@@ -1646,6 +1676,24 @@
 		<Russian>Мы выбираем славу и почет. Расскажите всем о том, что мы открыли западный путь в Азию!</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_ATLANTIC_1</Tag>
+		<English>Hurry up, men! We will be the first to discover the route to Europe on this way.</English>
+		<German>Auf geht's, Männer! Wir werden die Ersten sein, die den Weg nach Europa auf diesem Wege entdecken!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_ATLANTIC_DONE_1</Tag>
+		<English>Gold and glory! We take both!</English>
+		<German>Gold und Ruhm! Wir nehmen beides!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_ATLANTIC_DONE_2</Tag>
+		<English>We prefer honour and glory. Spread the word that we have discovered the eastern route to Europe!</English>
+		<German>Ruhm und Ehre sind uns Lohn genug!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_PEASANT_WARPREP_1</Tag>
 		<English>That's bad news. We shall be prepared.</English>
 		<French>Des nouvelles bien sombres. Tenons-nous prêts.</French>
@@ -2080,6 +2128,12 @@
 		<Russian>Гоните их прочь! Мы не можем рисковать распространением болезней в наших колониях.</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_CITY_HEALTH_PENALTY</Tag>
+		<English>[ICON_BULLET]%s2 suffers [COLOR_NEGATIVE_TEXT]-%d1[COLOR_REVERT] [COLOR_HIGHLIGHT_TEXT]Health[COLOR_REVERT].</English>
+		<German>[ICON_BULLET]In %s2 sinkt die [COLOR_HIGHLIGHT_TEXT]Gesundheit[COLOR_REVERT] um [COLOR_NEGATIVE_TEXT]-%d1[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_SMUGGLERS_CAUGHT_1</Tag>
 		<English>Confiscate the ship and hand over these criminals to the officials in Europe.</English>
 		<French>Confisquez le navire et renvoyez les criminels pour qu'ils soient jugés en Europe.</French>
@@ -2088,9 +2142,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_SMUGGLERS_CAUGHT_2</Tag>
-		<English>Offer them a deal. As long as they regularly give us a small share of the salt they buy, they shall not be bothered any more.</English>
-		<French>Proposez leur un marché. Tant qu'ils nous offrent une partie du sel qu'ils achètent, ils n'auront pas d'ennuis.</French>
-		<German>Bietet ihnen einen Handel an. Solange sie uns regelmässig einen kleinen Teil des Salzes geben, welches sie erwerben, sollen sie von uns unbehelligt bleiben.</German>
+		<English>Offer them a deal. As long as they regularly give us a small share of the goods they buy, they shall not be bothered any more.</English>
+		<French>Proposez leur un marché. Tant qu'ils nous cèdent une partie des marchandises qu'ils achètent, ils n'auront aucun problème.</French>
+		<German>Bietet ihnen einen Handel an. Solange sie uns regelmässig einen kleinen Teil ihrer Waren übergeben, welche sie erwerben, sollen sie von uns unbehelligt bleiben.</German>
 		<Russian>Предложите им сделку. Пока они регулярно отдают нам небольшую долю соли, которую они покупают, их никто не будет беспокоить.</Russian>
 	</TEXT>
 	<TEXT>
@@ -2110,6 +2164,12 @@
 		<Italian>Paga affinché il grano perduto sia sostituito.</Italian>
 		<Spanish>Que se pague la reposición de los cereales perdidos.</Spanish>
 		<Russian>Оплатите замену потерянного зерна.</Russian>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CITY_FOOD_PERCENT_LOST</Tag>
+		<English>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%s3[COLOR_REVERT] loses %d2%% of its stored Food (%d1).</English>
+		<German>[ICON_BULLET][COLOR_HIGHLIGHT_TEXT]%s3[COLOR_REVERT] verliert %d2%% seiner eingelagerten Nahrung (%d1).</German>
+		<Russian/>
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_TAILWIND_1</Tag>
@@ -2597,6 +2657,12 @@
 		<Russian>Это не просто шалость, это кража! Пошлите солдат, чтобы поймать этих преступников. Они будут строго наказаны!</Russian>
 	</TEXT>
 	<TEXT>
+		<Tag>TXT_KEY_EVENT_WINE_THEFT_2_HELP</Tag>
+		<English>[ICON_BULLET]%d1 %s2 appear near the settlement.</English>
+		<German>[ICON_BULLET]%d1 %s2 erscheinen nahe der Siedlung.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
 		<Tag>TXT_KEY_EVENT_WINTER_1</Tag>
 		<English>Send as many furs and coats to Europe as we can spare.</English>
 		<French>Envoyez autant de fourrures et de manteaux vers l'Europe que nous sommes en mesure d'offrir.</French>
@@ -2612,9 +2678,9 @@
 	</TEXT>
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_WITCHTRIAL_2</Tag>
-		<English>A grave accusation that must be taken seriously! Impound them, and send for a learned expert from Europe to deliberate the matter.</English>
+		<English>A grave accusation that must be taken seriously! Impound them, and send for a cleric to deliberate the matter.</English>
 		<French>Une accusation aussi grave doit être prise sérieusement ! Gardez les à vue, et envoyez un expert d'Europe pour délibérer sur le sujet.</French>
-		<German>Eine schwere Anschuldigung, die aber ernst genommen werden muss. Nehmt sie vorläufig fest und schickt nach einem Experten aus Europa um den Sachverhalt zu klären.</German>
+		<German>Eine schwere Anschuldigung, die aber ernst genommen werden muss. Nehmt sie vorläufig fest und schickt nach einem Geistlichen um den Sachverhalt zu klären.</German>
 		<Russian>Серьезное обвинение, к которому следует отнестись серьезно! Арестуйте их и пошлите за образованным экспертом из Европы для обсуждения этого вопроса.</Russian>
 	</TEXT>
 	<TEXT>
@@ -2862,5 +2928,104 @@
 	<TEXT>
 		<Tag>TXT_KEY_EVENT_NATIVE_TRADE_WAGON_DONE_6</Tag>
 		<English>TXT_KEY_EVENT_NATIVE_TRADE_WAGON_DONE_4</English>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_FOUNTAIN_OF_YOUTH</Tag>
+		<English>How extraordinary! And just what we need right now. We can use anything that brings people to the New World – even if it’s just a rumour about a hot spring somewhere in the middle of nowhere!</English>
+		<German>Sehr außergewöhnlich! Und wahrlich zur rechten Zeit. Wir können alles brauchen, was die Menschen in die Neue Welt treibt - und selbst wenn es nur ein Gerücht über eine heiße Quelle irgendwo im Nirgendwo ist!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_INITIAL_EVENT_1</Tag>
+		<English>Unbelievable! If there is even a grain of truth in these rumours, we need to find out more. Bring these [COLOR_HIGHLIGHT_TEXT]conquistadors[COLOR_REVERT] to our [COLOR_HIGHLIGHT_TEXT]capital[COLOR_REVERT] immediately and safely.</English>
+		<German>Unfassbar! Sollte auch nur ein Körnchen Wahrheit in diesen Gerüchten liegen, müssen wir mehr erfahren. Bringt diese [COLOR_HIGHLIGHT_TEXT]Konquistadoren[COLOR_REVERT] unverzüglich und sicher [COLOR_HIGHLIGHT_TEXT]in unsere Hauptstadt[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_INITIAL_EVENT_2</Tag>
+		<English>This isn’t the first time, and it won’t be the last, that we’ve been fed stories like this. We don’t have time for this nonsense. The men are welcome to join us – let’s carry on searching for real treasures.</English>
+		<German>Das ist nicht das erste Mal und es wird auch nicht das letzte Mal sein, dass uns solche Geschichten aufgetischt werden. Für diesen Unsinn haben wir keine Zeit. Die Männer können sich uns anschließen - suchen wir weiter nach echten Schätzen.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_INITIAL_QUEST_FAILED</Tag>
+		<English>The conquistadors, who claimed to have heard rumours of the Seven Cities of Cibola, were swallowed up by the wilderness – and with them went the rumours of the Seven Cities of Cibola. May God have mercy on their poor souls!</English>
+		<German>Die Konquistadoren, die angeblich Gerüchte über die sieben Städte von Cibola gehört haben wollen, wurden von der Wildnis verschluckt - und mit ihnen die Gerüchte über die Sieben Städte von Cibola. Sei Gott ihren armen Seelen gnädig!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_START_MAJOR_EXP_HELP</Tag>
+		<English>A great expedition shall be assembled to search for the legendary Seven Cities of Cibola. The preparations cost [COLOR_HIGHLIGHT_TEXT]2000 gold, 50 provisions, 50 blades and 50 guns as well as two mounted conquistadors in this city[COLOR_REVERT].</English>
+		<German>Eine große Expedition soll zusammengestellt werden, um nach den sagenhaften Sieben Städten von Cibola zu suchen. Die Vorbereitungen kosten [COLOR_HIGHLIGHT_TEXT]2000 Gold, 50 Proviant, 50 Klingenwaffen und 50 Schusswaffen und zwei Einheiten berittene Konquistadoren in der Stadt[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_START_MINOR_EXP_HELP</Tag>
+		<English>A smaller expedition shall cautiously investigate the rumors surrounding Cibola. The preparations cost [COLOR_HIGHLIGHT_TEXT]1000 gold, 30 provisions, 30 blades and 30 guns as well as one mounted conquistadors in this city [COLOR_REVERT].</English>
+		<German>Eine kleinere Expedition soll den Gerüchten um Cibola vorsichtig nachgehen. Die Vorbereitungen kosten [COLOR_HIGHLIGHT_TEXT]1000 Gold, 30 Proviant, 30 Klingenwaffen und 30 Schusswaffen und eine Einheit berittene Konquistadoren in der Stadt[COLOR_REVERT].</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_REJECT_HELP</Tag>
+		<English>The rumors surrounding Cibola shall be dismissed and no further expeditions financed.</English>
+		<German>Die Gerüchte um Cibola sollen verworfen und keine weiteren Expeditionen finanziert werden.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_PREP_MAJOR_EXP</Tag>
+		<English>Wonderful! We’ve been waiting for this news for a very long time. We’re going to organise a major expedition and secure the gold for the crown. Get everything ready at once! I can already smell the gold...</English>
+		<German>Wunderbar! Sehr lange haben wir auf diese Nachricht gewartet. Wir werden eine große Expedition zusammenstellen und das Gold für die Krone sichern. Lasst sofort alles vorbereiten! Ich kann das Gold schon riechen...</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_PREP_MINOR_EXP</Tag>
+		<English>Well, we should be careful. Many have gone in search of it and never returned. We’ll get to the bottom of this, but only with a small expedition. We can’t take responsibility for any more than that. Make the necessary preparations!</English>
+		<German>Nun ja, wir sollten vorsichtig sein. Schon viele haben danach gesucht und sind nicht wieder zurückgekehrt. Wir werden der Sache auf den Grund gehen, aber nur mit einer kleinen Expedition. Mehr können wir nicht verantworten. Trefft die notwendigen Vorbereitungen!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_SEVEN_CITIES_OF_CIBOLA_REJECT</Tag>
+		<English>What do they take me for? I’m a royal official, not an adventurer. I’m not going to make a fool of myself by chasing after a ghost town – not with a large expedition, nor with a small one! It’s all just a figment of the imagination. Forget this nonsense once and for all!</English>
+		<German>Wofür halten die mich - Ich bin königlicher Beamter und kein Abenteurer. Ich mache mich doch nicht lächerlich und jage einer Geisterstadt nach - weder mit einer großen, noch mit einer kleinen Expedition! Das sind doch nur Hirngespinste. Vergesst diese Mär ein für alle Mal!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_START_MAJOR_EXP</Tag>
+		<English>Brilliant, roll out the banners and let's get rich!</English>
+		<German>Ausgezeichnet, rollt die Banner aus und lasst uns reich werden!</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_MAJOR_PREPARATION_DONE_HELP</Tag>
+		<English>How .</English>
+		<German>Sehr .</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_START_MINOR_EXP</Tag>
+		<English>Excellent, give the order. That should calm things down here again – but let’s be honest, we’re unlikely to see those men again, or the gold either.</English>
+		<German>Hervorragend, gebt den Befehl. Dann beruhigt sich die Lage hier wieder - aber mal ehrlich, die Männer werden wir wohl nicht wieder sehen und Gold auch nicht.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_CIBOLA_MINOR_PREPARATION_DONE_HELP</Tag>
+		<English>The smaller expedition is now ready to depart. Supplies and weapons will be taken from the capital. A distant location has been identified as the expedition’s destination, where the first traces of Cibola are believed to be found.</English>
+		<German>Die kleinere Expedition ist nun bereit zum Aufbruch. Vorräte und Waffen werden aus der Hauptstadt entnommen. Ein entfernter Ort wurde festgelegt, den die Expedition ansteuern soll und an dem die ersten Spuren Cibolas vermutet werden.</German>
+		<Russian/>
+	</TEXT>
+	<TEXT>
+		<Tag>TXT_KEY_MESSAGE_CIBOLA_MINOR_STAGE_1_TARGET</Tag>
+		<English>A distant site has been marked for the smaller Cibola expedition. The men must remember the place well, for the wilderness offers no second chance.</English>
+		<German>Ein entfernter Ort wurde für die kleinere Cibola-Expedition markiert. Die Männer sollten sich die Stelle gut einprägen, denn die Wildnis gewährt keine zweite Chance.</German>
+		<Russian/>
+	</TEXT>
+
+
+
+	<TEXT>
+		<Tag>TXT_KEY_EVENT_</Tag>
+		<English>How .</English>
+		<German>Sehr .</German>
+		<Russian/>
 	</TEXT>
 </Civ4GameText>

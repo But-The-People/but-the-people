@@ -1387,6 +1387,11 @@
 			<DefaultUnit>UNIT_WOLF</DefaultUnit>
 		</UnitClassInfo>
 		<UnitClassInfo>
+			<Type>UNITCLASS_WOLF_COMBAT</Type>
+			<Description>TXT_KEY_UNITCLASS_WOLF</Description>
+			<DefaultUnit>UNIT_WOLF_COMBAT</DefaultUnit>
+		</UnitClassInfo>
+		<UnitClassInfo>
 			<Type>UNITCLASS_GRIZZLY</Type>
 			<Description>TXT_KEY_UNITCLASS_GRIZZLY</Description>
 			<DefaultUnit>UNIT_GRIZZLY</DefaultUnit>

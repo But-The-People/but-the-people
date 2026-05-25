@@ -2403,32 +2403,35 @@ bool CvPlot::canBuild(BuildTypes eBuild, PlayerTypes ePlayer, bool bTestVisible)
 					return false;
 				}
 			}
-			//R&R, ray, preventing exploit to build Monasteries or Forts directly next to a Native Village in own culture - START
-			//still allowing to build Monasteries and Forts next to own cities
+			// R&R, ray, preventing exploit to build Monasteries or Forts directly next to a Native Village in own culture - START
+			// WTP: allow Monasteries next to Native Villages, but keep blocking Forts and other OutsideBorders improvements
 			else
 			{
 				if (GC.getImprovementInfo(eImprovement).isOutsideBorders())
 				{
-					bool bFoundNeighbourCity = false;
-					for (int i = 0; i < NUM_DIRECTION_TYPES; ++i)
+					if (eImprovement != GC.getInfoTypeForString("IMPROVEMENT_MONASTERY"))
 					{
-						const CvPlot* const pLoopPlot = ::plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes) i);
-						if (pLoopPlot != NULL && pLoopPlot->getTeam() != GET_PLAYER(ePlayer).getTeam())
+						bool bFoundNeighbourCity = false;
+						for (int i = 0; i < NUM_DIRECTION_TYPES; ++i)
 						{
-							if (pLoopPlot->isCity())
+							const CvPlot* const pLoopPlot = ::plotDirection(getX_INLINE(), getY_INLINE(), (DirectionTypes) i);
+							if (pLoopPlot != NULL && pLoopPlot->getTeam() != GET_PLAYER(ePlayer).getTeam())
 							{
-								bFoundNeighbourCity = true;
-								break;
+								if (pLoopPlot->isCity())
+								{
+									bFoundNeighbourCity = true;
+									break;
+								}
 							}
 						}
-					}
-					if (bFoundNeighbourCity)
-					{
-						return false;
+						if (bFoundNeighbourCity)
+						{
+							return false;
+						}
 					}
 				}
 			}
-			//R&R, ray, preventing exploit to build directly next to a Native Village in own culture - END
+			// R&R, ray, preventing exploit to build directly next to a Native Village in own culture - END
 
 
 			//R&R, vetiarvind, Super Forts begin *AI_worker* - prevent workers from two different players from building a fort in the same plot
@@ -10367,6 +10370,26 @@ void CvPlot::doMonastery()
 		setOwner(MonasteryOwner, true);
 	}
 	//WTP, ray, fix for Monasteries not Growing by giving them Culture - END
+	//WTP, Schmiddie, Monasteries generate religion points with stationed missionary - START
+	if (MonasteryOwner != NO_PLAYER)
+	{
+		int iReligionPoints = 0;
+
+		if (getImprovementType() == GC.getInfoTypeForString("IMPROVEMENT_MONASTERY"))
+		{
+			iReligionPoints = 5;
+		}
+		else if (getImprovementType() == GC.getInfoTypeForString("IMPROVEMENT_LARGE_MONASTERY"))
+		{
+			iReligionPoints = 10;
+		}
+
+		if (iReligionPoints > 0)
+		{
+			GET_TEAM(GET_PLAYER(MonasteryOwner).getTeam()).changeFatherPoints(FATHER_POINT_RELIGION, iReligionPoints);
+		}
+	}
+	//WTP, Schmiddie, Monasteries generate religion points with stationed missionary - END
 
 	bool alreadyDoneMonastery = false;
 

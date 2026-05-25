@@ -10892,9 +10892,10 @@ int CvCity::getUnhappinessFromTaxRate() const
 {
 	const CvPlayer& owner = GET_PLAYER(getOwnerINLINE());
 
-	if (!owner.is(CIV_CATEGORY_COLONIAL))
+	if (!owner.is(CIV_CATEGORY_COLONIAL) || owner.isInRevolution())
 	{
 		// only colonial players pay tax and as such has settings for taxes
+		// Dyllin: Colonies involved in Revolution should not experience Tax Rate anger either.
 		return 0;
 	}
 

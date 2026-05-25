@@ -20,6 +20,7 @@
 	<ElementType name="iCulture" content="textOnly" dt:type="int"/>
 	<ElementType name="iHealth" content="textOnly" dt:type="int"/>
 	<ElementType name="eCivic" content="textOnly"/>
+	<ElementType name="RequiredColonialStatus" content="textOnly"/>
 	<ElementType name="iMinPopulation" content="textOnly" dt:type="int"/>
 	<ElementType name="iMaxPopulation" content="textOnly" dt:type="int"/>
 	<ElementType name="iPopulationChange" content="textOnly" dt:type="int"/>
@@ -243,6 +244,7 @@
 		<element type="bProbabilityUnitMultiply"/>
 		<element type="bProbabilityBuildingMultiply"/>
 		<element type="eCivic"/>
+		<element type="RequiredColonialStatus" minOccurs="0"/>
 		<element type="iMinTreasury"/>
 		<element type="iMinPopulation"/>
 		<element type="iMaxPopulation"/>

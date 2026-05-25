@@ -4484,6 +4484,7 @@ public:
 	int getOtherPlayerShareBorders() const;
 	int getCityFoodWeight() const;
 	CivicTypes getCivic() const;
+	ColonialStatusTypes getRequiredColonialStatus() const;
 	int getMinPopulation() const;
 	int getMaxPopulation() const;
 	int getMinMapLandmass() const;
@@ -4561,6 +4562,7 @@ private:
 	int m_iOtherPlayerShareBorders;
 	int m_iCityFoodWeight;
 	CivicTypes m_eCivic;
+	ColonialStatusTypes m_eRequiredColonialStatus;
 	int m_iMinPopulation;
 	int m_iMaxPopulation;
 	int m_iMinMapLandmass;
